@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>apache24在www目录下配置站点的过程</title>
+</head>
+<xmp theme="united" style="display:none">
+# apache24在www目录下配置站点的过程
+AppServ安装好之后默认目录为/www/
+
+现在要为该目录下的文件夹AppServTest配置一个名为www.appservtest.com的站点。 
+ 
+步骤如下：  
+
+1. 打开C:\AppServ\Apache24\conf下的 httpd.conf文件，找到下面这个位置：  
+```# Virtual hosts```  
+```# Include conf/extra/httpd-vhosts.conf```  
+把它改成（就是去掉前面的#号）：  
+```Virtual hosts```  
+```Include conf/extra/httpd-vhosts.conf```  
+
+2. 打开C:\AppServ\Apache24\conf\extra下的httpd-vhosts.conf文件，找到下面这个位置：  
+```<VirtualHost _default_:80>```  
+```DocumentRoot "${SRVROOT}/htdocs"```  
+```#ServerName www.example.com:80```  
+```</VirtualHost>```  
+把第二行前面添加#号，在下面重新添加一行，其实就是要把默认站点根目录改了（如果不改可能出现403Forbidden错误）：  
+```<VirtualHost _default_:80>```  
+```#DocumentRoot "${SRVROOT}/htdocs"```  
+```DocumentRoot "C:/AppServ/www"```  
+```#ServerName www.example.com:80```  
+```</VirtualHost>```
+
+3. 在httpd-vhosts.conf文件后面添加一个站点配置信息（直接复制原来的站点配置模板，加在后面，改成自己的就行了）：  
+```<VirtualHost *:80>```  
+```ServerAdmin webmaster@dummy-host2.example.com```  
+```DocumentRoot "C:/AppServ/www/AppServTest"```  
+```ServerName www.appservtest.com```  
+```ErrorLog "logs/dummy-host2.example.com-error.log"```  
+```CustomLog "logs/dummy-host2.example.com-access.log" common```  
+```</VirtualHost>```
+
+4. 打开C:\Windows\System32\Drivers\etc下的hosts文件，在末尾添加：  
+```127.0.0.1       localhost```  
+```127.0.0.1       www.appservtest.com```  
+
+5. 重启apache服务，在浏览器中输入www.appservtest.com即可进入创建的站点,其实就是进入AppServTest这个文件夹。如果文件夹中有index.html、index.htm、index.php之类的文件，则会执行它。如果没有这些文件，则会显示文件夹里面的文件。点击相应文件就会执行或显示文件内容。
+</xmp>
+<script src="../../strapdown/strapdown.js"></script>
+</html>
