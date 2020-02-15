@@ -1,2 +1,0 @@
-主页：http://strapdownjs.com/
-GitHub地址：https://github.com/arturadib/strapdown
