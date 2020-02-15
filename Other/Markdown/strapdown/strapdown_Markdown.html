@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>利用strapdown.js实现在浏览器中渲染Mardkown格式内容</title>
+</head>
+<xmp theme="united" style="display:none">
+# 利用strapdown.js实现在浏览器中渲染Mardkown格式内容
+1. 将Markdown内容写在html文档的xmp标签中。
+2. 在后文引用strapdown.js。
+3. 可以在线引用：```<script src="http://strapdownjs.com/v/0.2/strapdown.js"></script>```；也可以在GitHub下载strapdown的文件之后本地引用：```<script src="../strapdown/strapdown.js"></script>```。本地引用时实际引用的文件为strapdown.js，strapdown.css和themes文件夹，可将其单独拷贝到同一个文件夹里方便使用。
+4. strapdown.js项目地址。主页地址：[http://strapdownjs.com/](http://strapdownjs.com/)；GitHub地址：[https://github.com/arturadib/strapdown](https://github.com/arturadib/strapdown)。
+5. 示例，在HTML文档中写入如下内容，在浏览器中打开即可显示其中Markdown格式的内容：
+  
+`<!DOCTYPE html>`  
+`<html>`  
+`<head>`  
+`<meta charset="utf-8">`  
+`<title>这是strapdown测试页面</title>`  
+`</head>`  
+`<xmp theme="united" style="display:none">`  
+`# 这里输入Markdown内容`  
+`<`/`xmp>`  
+`<script src="../../strapdown/strapdown.js"></script>`  
+`</html>` 
+
+</xmp>
+<script src="../../strapdown/strapdown.js"></script>
+</html>
