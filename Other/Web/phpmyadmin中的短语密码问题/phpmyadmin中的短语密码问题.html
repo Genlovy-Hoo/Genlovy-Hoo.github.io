@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>phpmyadmin中的短语密码问题</title>
+</head>
+<xmp theme="united" style="display:none">
+# PhpMyAdmin中的短语密码问题
+新版本的PhpMyAdmin增强了安全性，需要在配置文件设置一个短语密码。否则进入之后会有“配置文件现在需要一个短语密码。”的红色警叹提示。  
+解决方法：  
+1. 将phpMyAdmin/libraries/config.default.php中的  
+```$cfg['blowfish_secret'] = '';```  
+改成  
+```$cfg['blowfish_secret'] = '123456';```  
+(注：其中的'123456······'为随意的字符，长度需要至少32位)。  
+2. 在phpMyAdmin目录中，打开config.sample.inc.php，18行  
+```$cfg['blowfish_secret'] = '';```  
+改成  
+```$cfg['blowfish_secret'] = '123456';```  
+(注：其中的'123456······'为随意的字符，跟第1步中的一样即可)
+
+这个密码用于Cookies的加密，以免多个PhpMyAdmin或者和其他程序共用Cookies时搞混。做好以上两步，刷新网页，OK，“配置文件现在需要一个短语密码。”的提示不存在了！
+</xmp>
+<script src="../../strapdown/strapdown.js"></script>
+</html>
