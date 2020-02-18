@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>和至少为K的最短子数组</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<style type="text/css">
+/* GitHub stylesheet for MarkdownPad (http://markdownpad.com) */
+/* Author: Nicolas Hery - http://nicolashery.com */
+/* Version: b13fe65ca28d2e568c6ed5d7f06581183df8f2ff */
+/* Source: https://github.com/nicolahery/markdownpad-github */
+
+/* RESET
+=============================================================================*/
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+/* BODY
+=============================================================================*/
+
+body {
+  font-family: Helvetica, arial, freesans, clean, sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #333;
+  background-color: #fff;
+  padding: 20px;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+body>*:first-child {
+  margin-top: 0 !important;
+}
+
+body>*:last-child {
+  margin-bottom: 0 !important;
+}
+
+/* BLOCKS
+=============================================================================*/
+
+p, blockquote, ul, ol, dl, table, pre {
+  margin: 15px 0;
+}
+
+/* HEADERS
+=============================================================================*/
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 20px 0 10px;
+  padding: 0;
+  font-weight: bold;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1 tt, h1 code, h2 tt, h2 code, h3 tt, h3 code, h4 tt, h4 code, h5 tt, h5 code, h6 tt, h6 code {
+  font-size: inherit;
+}
+
+h1 {
+  font-size: 28px;
+  color: #000;
+}
+
+h2 {
+  font-size: 24px;
+  border-bottom: 1px solid #ccc;
+  color: #000;
+}
+
+h3 {
+  font-size: 18px;
+}
+
+h4 {
+  font-size: 16px;
+}
+
+h5 {
+  font-size: 14px;
+}
+
+h6 {
+  color: #777;
+  font-size: 14px;
+}
+
+body>h2:first-child, body>h1:first-child, body>h1:first-child+h2, body>h3:first-child, body>h4:first-child, body>h5:first-child, body>h6:first-child {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+a:first-child h1, a:first-child h2, a:first-child h3, a:first-child h4, a:first-child h5, a:first-child h6 {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+h1+p, h2+p, h3+p, h4+p, h5+p, h6+p {
+  margin-top: 10px;
+}
+
+/* LINKS
+=============================================================================*/
+
+a {
+  color: #4183C4;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* LISTS
+=============================================================================*/
+
+ul, ol {
+  padding-left: 30px;
+}
+
+ul li > :first-child, 
+ol li > :first-child, 
+ul li ul:first-of-type, 
+ol li ol:first-of-type, 
+ul li ol:first-of-type, 
+ol li ul:first-of-type {
+  margin-top: 0px;
+}
+
+ul ul, ul ol, ol ol, ol ul {
+  margin-bottom: 0;
+}
+
+dl {
+  padding: 0;
+}
+
+dl dt {
+  font-size: 14px;
+  font-weight: bold;
+  font-style: italic;
+  padding: 0;
+  margin: 15px 0 5px;
+}
+
+dl dt:first-child {
+  padding: 0;
+}
+
+dl dt>:first-child {
+  margin-top: 0px;
+}
+
+dl dt>:last-child {
+  margin-bottom: 0px;
+}
+
+dl dd {
+  margin: 0 0 15px;
+  padding: 0 15px;
+}
+
+dl dd>:first-child {
+  margin-top: 0px;
+}
+
+dl dd>:last-child {
+  margin-bottom: 0px;
+}
+
+/* CODE
+=============================================================================*/
+
+pre, code, tt {
+  font-size: 12px;
+  font-family: Consolas, "Liberation Mono", Courier, monospace;
+}
+
+code, tt {
+  margin: 0 0px;
+  padding: 0px 0px;
+  white-space: nowrap;
+  border: 1px solid #eaeaea;
+  background-color: #f8f8f8;
+  border-radius: 3px;
+}
+
+pre>code {
+  margin: 0;
+  padding: 0;
+  white-space: pre;
+  border: none;
+  background: transparent;
+}
+
+pre {
+  background-color: #f8f8f8;
+  border: 1px solid #ccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px;
+}
+
+pre code, pre tt {
+  background-color: transparent;
+  border: none;
+}
+
+kbd {
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    background-color: #DDDDDD;
+    background-image: linear-gradient(#F1F1F1, #DDDDDD);
+    background-repeat: repeat-x;
+    border-color: #DDDDDD #CCCCCC #CCCCCC #DDDDDD;
+    border-image: none;
+    border-radius: 2px 2px 2px 2px;
+    border-style: solid;
+    border-width: 1px;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    line-height: 10px;
+    padding: 1px 4px;
+}
+
+/* QUOTES
+=============================================================================*/
+
+blockquote {
+  border-left: 4px solid #DDD;
+  padding: 0 15px;
+  color: #777;
+}
+
+blockquote>:first-child {
+  margin-top: 0px;
+}
+
+blockquote>:last-child {
+  margin-bottom: 0px;
+}
+
+/* HORIZONTAL RULES
+=============================================================================*/
+
+hr {
+  clear: both;
+  margin: 15px 0;
+  height: 0px;
+  overflow: hidden;
+  border: none;
+  background: transparent;
+  border-bottom: 4px solid #ddd;
+  padding: 0;
+}
+
+/* TABLES
+=============================================================================*/
+
+table th {
+  font-weight: bold;
+}
+
+table th, table td {
+  border: 1px solid #ccc;
+  padding: 6px 13px;
+}
+
+table tr {
+  border-top: 1px solid #ccc;
+  background-color: #fff;
+}
+
+table tr:nth-child(2n) {
+  background-color: #f8f8f8;
+}
+
+/* IMAGES
+=============================================================================*/
+
+img {
+  max-width: 100%
+}
+</style>
+</head>
+<body>
+<h1>寻找和至少为K的最短子数组</h1>
+<hr />
+<h2>1. 题目</h2>
+<p>题目来自LeetCode:
+<a href="https://leetcode-cn.com/problems/shortest-subarray-with-sum-at-least-k/">https://leetcode-cn.com/problems/shortest-subarray-with-sum-at-least-k/</a></p>
+<p>题目：</p>
+<pre><code>返回非空列表A的最短的非空连续子数组的长度，该子数组的和至少为K。
+如果没有和至少为K的非空子数组，返回 -1 。
+例如，
+input: A = [1, 2],  
+       K = 4
+output:  -1
+
+input: A = [2, -1, 2],  
+       K = 3
+output:  3
+</code></pre>
+
+<h2>2. 思路（来自官方题解）：</h2>
+<pre><code>题目转换：
+记P存放A的累计求和列表(P[x+1] = P[x] + A[x])
+找到在满足P[y]-P[x] &gt;= K情况下使y-x最小的y-x
+
+解答思路：
+   全局最优解：最终需要的结果
+   特定最优解x：当y固定时，满足条件的最大x
+
+   特定最优解x满足规律：
+   当y固定的时候，若x2 &gt; x1且P[x2] &lt;= P[x1](相当于A[x1]和A[x2]之间有负数)
+   则x1必然不是y对应的特定最优解，因为若x1可行，则x2也可行且比x1更优
+   因此(在x递增的方向)寻找y的特定最优解时，若x1 &lt; x2且P[x1] &gt;= P[x2]，则x1可直接删除
+
+   当x为多个y的特定最优解时的规律：
+   对于任何y2 &gt; y1，若x同时是y1和y2对应的特定最优解，则y1-x一定优于y2-x
+   因此在y递增的方向寻找全局最优解时，若x是y的特定最优解，则后续不用再考虑x(因为y递增)
+
+   用一个双端列队deq存放可能是特定最优解的下标x，然后求解分两个步骤，对A的每个元素A[y]：
+       1) 首先y固定，删除deq中所有x &lt; y且P[x] &gt; P[y]的x
+       2) 对deq中的从小到大的每个下标x，若x为当前找到的最好的全局最优解，则将其删除
+</code></pre>
+
+<h2>3. Python代码：</h2>
+<pre><code># -*- coding: utf-8 -*-
+
+import collections
+
+
+def SumKShortestSublist(A, K):
+
+    if not isinstance(A, list) or len(A) &lt; 1:
+        print('A须为非空列表！')
+        return -1
+
+    N = len(A)
+    P = [0] # 存放累计和列表
+    for a in A:
+        P.append(P[-1] + a)
+
+    best_ans = N+1 # best_ans记录全局最优解，N+1 is impossible    
+    deq = collections.deque() # 双端列队deq存放可能是特定最优解的下标x
+    for y, P_y in enumerate(P):
+
+        # 当y固定时，删除d中所有x &lt; y且P[x] &gt; P[y]的x
+        while deq and P_y &lt;= P[deq[-1]]:
+            deq.pop()
+
+        # 若x是y的特定最优解，则后续不用再考虑x
+        while deq and P_y - P[deq[0]] &gt;= K:
+            best_ans = min(best_ans, y-deq.popleft())
+
+        deq.append(y)
+
+    return best_ans if best_ans &lt; N+1 else -1
+
+
+if __name__ == '__main__':
+    A = [1]
+    K = 1
+    print(SumKShortestSublist(A, K))
+
+    A = [1, 2]
+    K = 5
+    print(SumKShortestSublist(A, K))    
+
+    A = [2, 1, 2]
+    K = 3
+    print(SumKShortestSublist(A, K))
+
+    A = [2, -1, 2]
+    K = 3
+    print(SumKShortestSublist(A, K))
+
+    A = [84, -37, 32, 40, 95]
+    K = 167
+    print(SumKShortestSublist(A, K))
+</code></pre>
+
+
+</body>
+</html>
+<!-- This document was created with MarkdownPad, the Markdown editor for Windows (http://markdownpad.com) -->
