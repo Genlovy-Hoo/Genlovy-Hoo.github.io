@@ -53,6 +53,10 @@ def StrongPasswordChecker(s):
         https://leetcode-cn.com/problems/strong-password-checker/solution/si-lu-qing-xi-ban-yun-ban-ben-by-bakezq/
     '''
     
+    if not isinstance(s, str):
+        print('s必须为字符串！')
+        return None
+    
     L = len(s)
     
     # Nmis: 缺失类型数
@@ -162,5 +166,8 @@ if __name__ == '__main__':
     
     s = 'Aa0abcdefghiooookoooooooooo'
     print(s+':')
+    print(StrongPasswordChecker(s))
+    
+    s = 567
     print(StrongPasswordChecker(s))
     
