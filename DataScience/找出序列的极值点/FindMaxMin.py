@@ -17,6 +17,9 @@ def FindMaxMin(series, Tmin=2):
         df: 包含原始序列和label列，label列中1表示极大值点，-1表示极小值点，0表示普通点
     '''
     
+    if len(series) < 2:
+        raise ValueError('输入series长度不能小于2！')
+    
     # 序列名和索引名
     if series.name is None:
         series.name = 'series'
@@ -122,10 +125,25 @@ def FindMaxMin(series, Tmin=2):
                             if df.loc[k2, col] < df.loc[k4, col] and \
                                            df.loc[k3, col] > df.loc[k1, col]:
                                 df.loc[[k2, k3], 'label'] = 0
+                                
+                            if k4-k2 < 2*(Tmin+1) and \
+                                        df.loc[k2, col] == df.loc[k4, col]:
+                                df.loc[[k3, k4], 'label'] = 0
+                            if k3-k1 < 2*(Tmin+1) and \
+                                        df.loc[k1, col] == df.loc[k3, col]:
+                                df.loc[[k2, k3], 'label'] = 0
+                                
                         else:
                             # 删除条件2
                             if df.loc[k2, col] > df.loc[k4, col] and \
                                            df.loc[k3, col] < df.loc[k1, col]:
+                                df.loc[[k2, k3], 'label'] = 0
+                                
+                            if k4-k2 < 2*(Tmin+1) and \
+                                        df.loc[k2, col] == df.loc[k4, col]:
+                                df.loc[[k3, k4], 'label'] = 0
+                            if k3-k1 < 2*(Tmin+1) and \
+                                        df.loc[k1, col] == df.loc[k3, col]:
                                 df.loc[[k2, k3], 'label'] = 0
                             
                     # 开头部分特殊处理
@@ -142,6 +160,7 @@ def FindMaxMin(series, Tmin=2):
             return df
         
         df = del_Tmin(df)         
+        
         df.index = range(df.shape[0]-1, -1, -1)
         df = del_Tmin(df)
         
@@ -212,7 +231,7 @@ if __name__ == '__main__':
     from matplotlib import pyplot as plt
     
     import numpy as np
-    
+        
 
     # 二次曲线叠加正弦余弦
     N = 200
