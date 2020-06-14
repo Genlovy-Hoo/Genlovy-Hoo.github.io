@@ -336,7 +336,7 @@ def check_peaks(df, col, col_label):
 
 if __name__ == '__main__':
     # 二次曲线叠加正弦余弦-------------------------------------------------------
-    N = 400
+    N = 200
     t = np.linspace(0, 1, N)
     s = 6*t*t + np.cos(10*2*np.pi*t*t) + np.sin(6*2*np.pi*t)
     s = pd.Series(s)
@@ -345,7 +345,8 @@ if __name__ == '__main__':
     Tmin = 20
     s_max, s_min, df = FindMaxMin(s, Tmin=Tmin)
     
-    plot_MaxMins(df, 'series', 'label')
+    plot_MaxMins(df, 'series', 'label', 
+                 title='寻找极大极小值test：Tmin='+str(Tmin))
     
     OK, e = check_peaks(df, df.columns[0], df.columns[1])
     if OK:
