@@ -13,6 +13,33 @@ get_ahr999
 
 .. autofunction:: dramkit.fintools.ahr999.get_ahr999
 
+barra
+------
+
+.. automodule:: dramkit.fintools.barra
+
+.. currentmodule:: dramkit.fintools.barra
+
+get_exp_decay_weight
+^^^^^^^^^^^^^^^^^^^^^
+
+.. autofunction:: dramkit.fintools.barra.get_exp_decay_weight
+
+get_regression_beta
+^^^^^^^^^^^^^^^^^^^^
+
+.. autofunction:: dramkit.fintools.barra.get_regression_beta
+
+size
+^^^^^
+
+.. autofunction:: dramkit.fintools.barra.size
+
+get_barra_beta
+^^^^^^^^^^^^^^^
+
+.. autofunction:: dramkit.fintools.barra.get_barra_beta
+
 candle_similar
 ---------------
 
@@ -24,6 +51,45 @@ candle_similar
 ^^^^^^^^^^^^^^^
 
 .. autofunction:: dramkit.fintools.candle_similar.candle_similar
+
+fac_bolls
+----------
+
+.. automodule:: dramkit.fintools.fac_bolls
+
+.. currentmodule:: dramkit.fintools.fac_bolls
+
+boll_label_uplow
+^^^^^^^^^^^^^^^^^
+
+.. autofunction:: dramkit.fintools.fac_bolls.boll_label_uplow
+
+boll_label_uplow_cross
+^^^^^^^^^^^^^^^^^^^^^^^
+
+.. autofunction:: dramkit.fintools.fac_bolls.boll_label_uplow_cross
+
+get_boll_label_uplow
+^^^^^^^^^^^^^^^^^^^^^
+
+.. autofunction:: dramkit.fintools.fac_bolls.get_boll_label_uplow
+
+get_boll_label_uplow_cross
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. autofunction:: dramkit.fintools.fac_bolls.get_boll_label_uplow_cross
+
+finplot
+--------
+
+.. automodule:: dramkit.fintools.finplot
+
+.. currentmodule:: dramkit.fintools.finplot
+
+plot_boll
+^^^^^^^^^^
+
+.. autofunction:: dramkit.fintools.finplot.plot_boll
 
 fintools
 ---------
@@ -394,6 +460,29 @@ get_aligned_data
 ^^^^^^^^^^^^^^^^^
 
 .. autofunction:: dramkit.fintools.report_date_align.get_aligned_data
+
+times_cast
+-----------
+
+.. automodule:: dramkit.fintools.times_cast
+
+.. currentmodule:: dramkit.fintools.times_cast
+
+TimesCasterLottery
+^^^^^^^^^^^^^^^^^^^
+
+.. autoclass:: dramkit.fintools.times_cast.TimesCasterLottery
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+TimesCasterConFuture
+^^^^^^^^^^^^^^^^^^^^^
+
+.. autoclass:: dramkit.fintools.times_cast.TimesCasterConFuture
+    :members:
+    :undoc-members:
+    :show-inheritance:
 
 utils_chn
 ----------
