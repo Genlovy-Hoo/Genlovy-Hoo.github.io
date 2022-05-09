@@ -428,8 +428,9 @@ pd.DataFrame.ewm中对应参数的方法计算a；</div>
 <span class="sig-prename descclassname"><span class="pre">dramkit.fintools.fac_bolls.</span></span><span class="sig-name descname"><span class="pre">boll_label_uplow</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tol</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.002</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">judge_type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'maxmin'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.fintools.fac_bolls.boll_label_uplow" title="Permalink to this definition"></a></dt>
 <dd><div class="line-block">
 <div class="line">根据布林带，构造潜在高低点标签</div>
-<div class="line">思路：最低价低于布林带下轨的被标注为潜在低点（less_low）</div>
+<div class="line">思路：</div>
 <div class="line-block">
+<div class="line">最低价低于布林带下轨的被标注为潜在低点（less_low）</div>
 <div class="line">最高价高于布林带上轨的被标注为潜在高点（more_up）</div>
 <div class="line">上一个低点之后的所有潜在高点中的最高值或最后一个值标为实际高点</div>
 <div class="line">上一个高点之后的所有潜在低点中的最低值或最后一个值标为实际低点</div>
@@ -456,8 +457,9 @@ pd.DataFrame.ewm中对应参数的方法计算a；</div>
 <span class="sig-prename descclassname"><span class="pre">dramkit.fintools.fac_bolls.</span></span><span class="sig-name descname"><span class="pre">boll_label_uplow_cross</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tol</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">judge_type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'maxmin'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.fintools.fac_bolls.boll_label_uplow_cross" title="Permalink to this definition"></a></dt>
 <dd><div class="line-block">
 <div class="line">根据布林带，构造潜在高低点标签</div>
-<div class="line">思路：从下往上穿过布林带下轨被标注为潜在买点（low_buy）</div>
+<div class="line">思路：</div>
 <div class="line-block">
+<div class="line">从下往上穿过布林带下轨被标注为潜在买点（low_buy）</div>
 <div class="line">从上往下穿过布林带下轨被标注为潜在卖点（up_sel）</div>
 <div class="line">上一个买点之后的所有潜在卖点中的最高值或最后一个值标为实际卖点</div>
 <div class="line">上一个卖点之后的所有潜在买点中的最低值或最后一个值标为实际买点</div>
