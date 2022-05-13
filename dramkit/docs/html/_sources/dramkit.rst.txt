@@ -153,6 +153,16 @@ StructureObject
     :undoc-members:
     :show-inheritance:
 
+get_func_arg_names
+^^^^^^^^^^^^^^^^^^^
+
+.. autofunction:: dramkit.gentools.get_func_arg_names
+
+try_repeat_run
+^^^^^^^^^^^^^^^
+
+.. autofunction:: dramkit.gentools.try_repeat_run
+
 log_used_time
 ^^^^^^^^^^^^^^
 
@@ -457,10 +467,45 @@ load_excels
 
 .. autofunction:: dramkit.iotools.load_excels
 
-get_all_files
+get_all_paths
 ^^^^^^^^^^^^^^
 
-.. autofunction:: dramkit.iotools.get_all_files
+.. autofunction:: dramkit.iotools.get_all_paths
+
+del_specified_type_files
+^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. autofunction:: dramkit.iotools.del_specified_type_files
+
+del_dir
+^^^^^^^^
+
+.. autofunction:: dramkit.iotools.del_dir
+
+del_specified_subdir
+^^^^^^^^^^^^^^^^^^^^^
+
+.. autofunction:: dramkit.iotools.del_specified_subdir
+
+copy_file
+^^^^^^^^^^
+
+.. autofunction:: dramkit.iotools.copy_file
+
+copy_dir
+^^^^^^^^^
+
+.. autofunction:: dramkit.iotools.copy_dir
+
+py2pyc_dir
+^^^^^^^^^^^
+
+.. autofunction:: dramkit.iotools.py2pyc_dir
+
+get_mac_address
+^^^^^^^^^^^^^^^^
+
+.. autofunction:: dramkit.iotools.get_mac_address
 
 zip_files
 ^^^^^^^^^^
@@ -506,21 +551,6 @@ rename_files_in_dir
 ^^^^^^^^^^^^^^^^^^^^
 
 .. autofunction:: dramkit.iotools.rename_files_in_dir
-
-del_dir
-^^^^^^^^
-
-.. autofunction:: dramkit.iotools.del_dir
-
-copy_file
-^^^^^^^^^^
-
-.. autofunction:: dramkit.iotools.copy_file
-
-copy_dir
-^^^^^^^^^
-
-.. autofunction:: dramkit.iotools.copy_dir
 
 find_files_include_str
 ^^^^^^^^^^^^^^^^^^^^^^^
