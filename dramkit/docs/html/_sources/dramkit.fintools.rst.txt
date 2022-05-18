@@ -98,140 +98,140 @@ fintools
 
 .. currentmodule:: dramkit.fintools.fintools
 
-cal_IC
+cal_ic
 ^^^^^^^
 
-.. autofunction:: dramkit.fintools.fintools.cal_IC
+.. autofunction:: dramkit.fintools.fintools.cal_ic
 
 kelly_formula
 ^^^^^^^^^^^^^^
 
 .. autofunction:: dramkit.fintools.fintools.kelly_formula
 
-sim_MC
+sim_mc
 ^^^^^^^
 
-.. autofunction:: dramkit.fintools.fintools.sim_MC
+.. autofunction:: dramkit.fintools.fintools.sim_mc
 
 wuxianpu
 ^^^^^^^^^
 
 .. autofunction:: dramkit.fintools.fintools.wuxianpu
 
-MAs_order
+mas_order
 ^^^^^^^^^^
 
-.. autofunction:: dramkit.fintools.fintools.MAs_order
+.. autofunction:: dramkit.fintools.fintools.mas_order
 
-MACD
+macd
 ^^^^^
 
-.. autofunction:: dramkit.fintools.fintools.MACD
+.. autofunction:: dramkit.fintools.fintools.macd
 
-Boll
+boll
 ^^^^^
 
-.. autofunction:: dramkit.fintools.fintools.Boll
+.. autofunction:: dramkit.fintools.fintools.boll
 
-BBI
+bbi
 ^^^^
 
-.. autofunction:: dramkit.fintools.fintools.BBI
+.. autofunction:: dramkit.fintools.fintools.bbi
 
-CCI
+cci
 ^^^^
 
-.. autofunction:: dramkit.fintools.fintools.CCI
+.. autofunction:: dramkit.fintools.fintools.cci
 
-EXPMA
+expma
 ^^^^^^
 
-.. autofunction:: dramkit.fintools.fintools.EXPMA
+.. autofunction:: dramkit.fintools.fintools.expma
 
-weight_MA_linear_decay
+weight_ma_linear_decay
 ^^^^^^^^^^^^^^^^^^^^^^^
 
-.. autofunction:: dramkit.fintools.fintools.weight_MA_linear_decay
+.. autofunction:: dramkit.fintools.fintools.weight_ma_linear_decay
 
-KAMA
+kama
 ^^^^^
 
-.. autofunction:: dramkit.fintools.fintools.KAMA
+.. autofunction:: dramkit.fintools.fintools.kama
 
-ER
+er
 ^^^
 
-.. autofunction:: dramkit.fintools.fintools.ER
+.. autofunction:: dramkit.fintools.fintools.er
 
 ma_trend_strength
 ^^^^^^^^^^^^^^^^^^
 
 .. autofunction:: dramkit.fintools.fintools.ma_trend_strength
 
-KDJ
+kdj
 ^^^^
 
-.. autofunction:: dramkit.fintools.fintools.KDJ
+.. autofunction:: dramkit.fintools.fintools.kdj
 
-talib_RSI
+talib_rsi
 ^^^^^^^^^^
 
-.. autofunction:: dramkit.fintools.fintools.talib_RSI
+.. autofunction:: dramkit.fintools.fintools.talib_rsi
 
-ATR
+atr
 ^^^^
 
-.. autofunction:: dramkit.fintools.fintools.ATR
+.. autofunction:: dramkit.fintools.fintools.atr
 
-talib_ATR
+talib_atr
 ^^^^^^^^^^
 
-.. autofunction:: dramkit.fintools.fintools.talib_ATR
+.. autofunction:: dramkit.fintools.fintools.talib_atr
 
-ADX
+adx
 ^^^^
 
-.. autofunction:: dramkit.fintools.fintools.ADX
+.. autofunction:: dramkit.fintools.fintools.adx
 
-talib_ADX
+talib_adx
 ^^^^^^^^^^
 
-.. autofunction:: dramkit.fintools.fintools.talib_ADX
+.. autofunction:: dramkit.fintools.fintools.talib_adx
 
-talib_ROC
+talib_roc
 ^^^^^^^^^^
 
-.. autofunction:: dramkit.fintools.fintools.talib_ROC
+.. autofunction:: dramkit.fintools.fintools.talib_roc
 
-ROC
+roc
 ^^^^
 
-.. autofunction:: dramkit.fintools.fintools.ROC
+.. autofunction:: dramkit.fintools.fintools.roc
 
-VRI
+vri
 ^^^^
 
-.. autofunction:: dramkit.fintools.fintools.VRI
+.. autofunction:: dramkit.fintools.fintools.vri
 
-BBW
+bbw
 ^^^^
 
-.. autofunction:: dramkit.fintools.fintools.BBW
+.. autofunction:: dramkit.fintools.fintools.bbw
 
 mean_candle
 ^^^^^^^^^^^^
 
 .. autofunction:: dramkit.fintools.fintools.mean_candle
 
-DeMark_TD
+demark_td
 ^^^^^^^^^^
 
-.. autofunction:: dramkit.fintools.fintools.DeMark_TD
+.. autofunction:: dramkit.fintools.fintools.demark_td
 
-ACPMP
+acpmp
 ^^^^^^
 
-.. autofunction:: dramkit.fintools.fintools.ACPMP
+.. autofunction:: dramkit.fintools.fintools.acpmp
 
 get_turn_point
 ^^^^^^^^^^^^^^^
@@ -702,6 +702,11 @@ get_netval_sum
 ^^^^^^^^^^^^^^^
 
 .. autofunction:: dramkit.fintools.utils_gains.get_netval_sum
+
+cal_pct_by_cost_gain
+^^^^^^^^^^^^^^^^^^^^^
+
+.. autofunction:: dramkit.fintools.utils_gains.cal_pct_by_cost_gain
 
 get_gains_act
 ^^^^^^^^^^^^^^

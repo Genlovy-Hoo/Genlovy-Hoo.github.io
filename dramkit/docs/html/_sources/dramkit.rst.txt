@@ -83,6 +83,11 @@ date_add_nday
 
 .. autofunction:: dramkit.datetimetools.date_add_nday
 
+diff_time_second
+^^^^^^^^^^^^^^^^^
+
+.. autofunction:: dramkit.datetimetools.diff_time_second
+
 diff_days_date
 ^^^^^^^^^^^^^^^
 
@@ -506,6 +511,21 @@ get_mac_address
 ^^^^^^^^^^^^^^^^
 
 .. autofunction:: dramkit.iotools.get_mac_address
+
+get_ip1
+^^^^^^^^
+
+.. autofunction:: dramkit.iotools.get_ip1
+
+get_ip2
+^^^^^^^^
+
+.. autofunction:: dramkit.iotools.get_ip2
+
+get_ip_public
+^^^^^^^^^^^^^^
+
+.. autofunction:: dramkit.iotools.get_ip_public
 
 zip_files
 ^^^^^^^^^^

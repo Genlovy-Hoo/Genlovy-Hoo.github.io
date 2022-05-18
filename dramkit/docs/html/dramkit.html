@@ -56,6 +56,7 @@
 <li class="toctree-l3"><a class="reference internal" href="#date8-to-date10">date8_to_date10</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#date10-to-date8">date10_to_date8</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#date-add-nday">date_add_nday</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#diff-time-second">diff_time_second</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#diff-days-date">diff_days_date</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#get-dates-between">get_dates_between</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#get-dayofweek">get_dayofweek</a></li>
@@ -145,6 +146,9 @@
 <li class="toctree-l3"><a class="reference internal" href="#copy-dir">copy_dir</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#py2pyc-dir">py2pyc_dir</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#get-mac-address">get_mac_address</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#get-ip1">get_ip1</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#get-ip2">get_ip2</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#get-ip-public">get_ip_public</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#zip-files">zip_files</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#zip-fpath">zip_fpath</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#zip-fpaths">zip_fpaths</a></li>
@@ -387,6 +391,18 @@
 <dd><div class="line-block">
 <div class="line">在给定日期date上加上n天（减去时n写成负数即可）</div>
 <div class="line">日期输入输出符合get_date_format函数支持的格式</div>
+</div>
+</dd></dl>
+
+</section>
+<section id="diff-time-second">
+<h3>diff_time_second<a class="headerlink" href="#diff-time-second" title="Permalink to this headline"></a></h3>
+<dl class="py function">
+<dt class="sig sig-object py" id="dramkit.datetimetools.diff_time_second">
+<span class="sig-prename descclassname"><span class="pre">dramkit.datetimetools.</span></span><span class="sig-name descname"><span class="pre">diff_time_second</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">time1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">time2</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.datetimetools.diff_time_second" title="Permalink to this definition"></a></dt>
+<dd><div class="line-block">
+<div class="line">计算两个时间的差：time1-time2，time1和time2的格式应相同</div>
+<div class="line">返回两个时间差的秒数</div>
 </div>
 </dd></dl>
 
@@ -2234,6 +2250,42 @@ cols_groupby设定</p>
 <dt class="sig sig-object py" id="dramkit.iotools.get_mac_address">
 <span class="sig-prename descclassname"><span class="pre">dramkit.iotools.</span></span><span class="sig-name descname"><span class="pre">get_mac_address</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.iotools.get_mac_address" title="Permalink to this definition"></a></dt>
 <dd><p>获取Mac地址，返回大写地址，如：F8-A2-D6-CC-BB-AA</p>
+</dd></dl>
+
+</section>
+<section id="get-ip1">
+<h3>get_ip1<a class="headerlink" href="#get-ip1" title="Permalink to this headline"></a></h3>
+<dl class="py function">
+<dt class="sig sig-object py" id="dramkit.iotools.get_ip1">
+<span class="sig-prename descclassname"><span class="pre">dramkit.iotools.</span></span><span class="sig-name descname"><span class="pre">get_ip1</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.iotools.get_ip1" title="Permalink to this definition"></a></dt>
+<dd><div class="line-block">
+<div class="line">获取ip地址</div>
+<div class="line">参考：<a class="reference external" href="https://blog.csdn.net/hemadaili/article/details/89555681">https://blog.csdn.net/hemadaili/article/details/89555681</a></div>
+</div>
+</dd></dl>
+
+</section>
+<section id="get-ip2">
+<h3>get_ip2<a class="headerlink" href="#get-ip2" title="Permalink to this headline"></a></h3>
+<dl class="py function">
+<dt class="sig sig-object py" id="dramkit.iotools.get_ip2">
+<span class="sig-prename descclassname"><span class="pre">dramkit.iotools.</span></span><span class="sig-name descname"><span class="pre">get_ip2</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.iotools.get_ip2" title="Permalink to this definition"></a></dt>
+<dd><div class="line-block">
+<div class="line">查询ip地址</div>
+<div class="line">参考：<a class="reference external" href="https://blog.csdn.net/qq_36530891/article/details/102725580">https://blog.csdn.net/qq_36530891/article/details/102725580</a></div>
+</div>
+</dd></dl>
+
+</section>
+<section id="get-ip-public">
+<h3>get_ip_public<a class="headerlink" href="#get-ip-public" title="Permalink to this headline"></a></h3>
+<dl class="py function">
+<dt class="sig sig-object py" id="dramkit.iotools.get_ip_public">
+<span class="sig-prename descclassname"><span class="pre">dramkit.iotools.</span></span><span class="sig-name descname"><span class="pre">get_ip_public</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.iotools.get_ip_public" title="Permalink to this definition"></a></dt>
+<dd><div class="line-block">
+<div class="line">获取公网ip</div>
+<div class="line">参考：<a class="reference external" href="https://zhuanlan.zhihu.com/p/262185582">https://zhuanlan.zhihu.com/p/262185582</a></div>
+</div>
 </dd></dl>
 
 </section>
