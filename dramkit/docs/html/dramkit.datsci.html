@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>datsci &mdash; DramKit 0.2.1 documentation</title>
+  <title>datsci &mdash; DramKit 0.2.3 documentation</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <!--[if lt IE 9]>
@@ -519,9 +519,10 @@
 <div class="line-block">
 <div class="line">关联规则-Apriori算法实现</div>
 <div class="line"><br /></div>
-<div class="line">关联规则分析（挖掘）用于发现项目或项目集合之间可能存在的关联模式（或因果结构），</div>
-<div class="line">如“由于某些事件的发生而引起另外一些事件的发生”之类的规则。</div>
-<div class="line">经典的案例是通过关联规则挖掘发现“买尿布的年轻父亲通常也会顺便为自己买啤酒”。</div>
+<div class="line">关联规则分析（挖掘）用于发现项目或项目集合之间可能“频繁”出现的“紧密”关联模式（或因果结构），</div>
+<div class="line">如“由于某些事件的发生而引起另外一些事件的发生”之类的规则。“频繁”和“紧密”程度通过
+“支持度”和“置信度”来度量。</div>
+<div class="line">一个被津津乐道的案例是通过关联规则挖掘发现“买尿布的年轻父亲通常也会顺便为自己买啤酒”。</div>
 <div class="line"><br /></div>
 <div class="line">关联规则数据集示例：</div>
 <div class="line">编号, 交易清单</div>
@@ -530,7 +531,7 @@
 <div class="line">003, 可乐 &amp; 尿布 &amp; 啤酒 &amp; 香肠</div>
 <div class="line">004, 尿布 &amp; 啤酒</div>
 <div class="line"><br /></div>
-<div class="line">基本概念：</div>
+<div class="line">相关概念：</div>
 <div class="line">1. 事务：每一个样本（一条交易记录）称为一个事务，示例中的数据集包含四个事务。</div>
 <div class="line">2. 项：事务（交易记录）中的每一个组成部分（交易物品）称为一个项，例如可乐、鸡蛋等。</div>
 <div class="line">3. 项集：包含零个或多个项的集合叫做项集，例如{可乐, 鸡蛋, 香肠}。</div>

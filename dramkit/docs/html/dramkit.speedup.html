@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>speedup &mdash; DramKit 0.2.1 documentation</title>
+  <title>speedup &mdash; DramKit 0.2.3 documentation</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <!--[if lt IE 9]>
@@ -56,7 +56,7 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#module-dramkit.speedup.multi_thread">multi_thread</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#multithread">MultiThread</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#singlethread">SingleThread</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#multi-thread-threading">multi_thread_threading</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#multi-thread-concurrent">multi_thread_concurrent</a></li>
 </ul>
@@ -138,16 +138,23 @@
 </section>
 <section id="module-dramkit.speedup.multi_thread">
 <span id="multi-thread"></span><h2>multi_thread<a class="headerlink" href="#module-dramkit.speedup.multi_thread" title="Permalink to this headline"></a></h2>
-<section id="multithread">
-<h3>MultiThread<a class="headerlink" href="#multithread" title="Permalink to this headline"></a></h3>
+<section id="singlethread">
+<h3>SingleThread<a class="headerlink" href="#singlethread" title="Permalink to this headline"></a></h3>
 <dl class="py class">
-<dt class="sig sig-object py" id="dramkit.speedup.multi_thread.MultiThread">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">dramkit.speedup.multi_thread.</span></span><span class="sig-name descname"><span class="pre">MultiThread</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">func</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">logger</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.speedup.multi_thread.MultiThread" title="Permalink to this definition"></a></dt>
+<dt class="sig sig-object py" id="dramkit.speedup.multi_thread.SingleThread">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">dramkit.speedup.multi_thread.</span></span><span class="sig-name descname"><span class="pre">SingleThread</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">func</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">logger</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.speedup.multi_thread.SingleThread" title="Permalink to this definition"></a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">threading.Thread</span></code></p>
-<p>多线程子任务类</p>
+<div class="line-block">
+<div class="line">单个线程任务</div>
+<div class="line">参考：</div>
+<div class="line"><a class="reference external" href="https://www.csdn.net/tags/MtTaQg3sMDE1MzYtYmxvZwO0O0OO0O0O.html">https://www.csdn.net/tags/MtTaQg3sMDE1MzYtYmxvZwO0O0OO0O0O.html</a></div>
+<div class="line"><a class="reference external" href="https://www.cnblogs.com/ojbk6943/p/14047952.html">https://www.cnblogs.com/ojbk6943/p/14047952.html</a></div>
+<div class="line"><a class="reference external" href="https://blog.csdn.net/weixin_43285186/article/details/124338274">https://blog.csdn.net/weixin_43285186/article/details/124338274</a></div>
+<div class="line"><a class="reference external" href="https://m.php.cn/article/471342.html">https://m.php.cn/article/471342.html</a></div>
+</div>
 <dl class="py method">
-<dt class="sig sig-object py" id="dramkit.speedup.multi_thread.MultiThread.__init__">
-<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">func</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">logger</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.speedup.multi_thread.MultiThread.__init__" title="Permalink to this definition"></a></dt>
+<dt class="sig sig-object py" id="dramkit.speedup.multi_thread.SingleThread.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">func</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">logger</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.speedup.multi_thread.SingleThread.__init__" title="Permalink to this definition"></a></dt>
 <dd><dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
@@ -160,15 +167,21 @@
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="dramkit.speedup.multi_thread.MultiThread.get_result">
-<span class="sig-name descname"><span class="pre">get_result</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.speedup.multi_thread.MultiThread.get_result" title="Permalink to this definition"></a></dt>
+<dt class="sig sig-object py" id="dramkit.speedup.multi_thread.SingleThread.get_result">
+<span class="sig-name descname"><span class="pre">get_result</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.speedup.multi_thread.SingleThread.get_result" title="Permalink to this definition"></a></dt>
 <dd><p>获取执行结果</p>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="dramkit.speedup.multi_thread.MultiThread.run">
-<span class="sig-name descname"><span class="pre">run</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.speedup.multi_thread.MultiThread.run" title="Permalink to this definition"></a></dt>
+<dt class="sig sig-object py" id="dramkit.speedup.multi_thread.SingleThread.run">
+<span class="sig-name descname"><span class="pre">run</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.speedup.multi_thread.SingleThread.run" title="Permalink to this definition"></a></dt>
 <dd><p>执行目标函数func，获取返回结果</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dramkit.speedup.multi_thread.SingleThread.stop_thread">
+<span class="sig-name descname"><span class="pre">stop_thread</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.speedup.multi_thread.SingleThread.stop_thread" title="Permalink to this definition"></a></dt>
+<dd><p>结束线程</p>
 </dd></dl>
 
 </dd></dl>

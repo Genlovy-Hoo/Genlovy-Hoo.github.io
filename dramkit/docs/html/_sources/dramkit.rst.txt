@@ -158,6 +158,11 @@ StructureObject
     :undoc-members:
     :show-inheritance:
 
+run_func_with_timeout
+^^^^^^^^^^^^^^^^^^^^^^
+
+.. autofunction:: dramkit.gentools.run_func_with_timeout
+
 get_func_arg_names
 ^^^^^^^^^^^^^^^^^^^
 
@@ -422,6 +427,16 @@ iotools
 
 .. currentmodule:: dramkit.iotools
 
+get_input_with_timeout
+^^^^^^^^^^^^^^^^^^^^^^^
+
+.. autofunction:: dramkit.iotools.get_input_with_timeout
+
+get_input_multi_line
+^^^^^^^^^^^^^^^^^^^^^
+
+.. autofunction:: dramkit.iotools.get_input_multi_line
+
 pickle_file
 ^^^^^^^^^^^^
 
@@ -511,6 +526,11 @@ get_mac_address
 ^^^^^^^^^^^^^^^^
 
 .. autofunction:: dramkit.iotools.get_mac_address
+
+get_hardware_ids
+^^^^^^^^^^^^^^^^^
+
+.. autofunction:: dramkit.iotools.get_hardware_ids
 
 get_ip1
 ^^^^^^^^

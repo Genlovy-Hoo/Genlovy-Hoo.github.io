@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Index &mdash; DramKit 0.2.1 documentation</title>
+  <title>Index &mdash; DramKit 0.2.3 documentation</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <!--[if lt IE 9]>
@@ -126,7 +126,7 @@
 </li>
         <li><a href="dramkit.pystyles.html#dramkit.pystyles.dramkit_style.DramkitClassStyle.__init__">(dramkit.pystyles.dramkit_style.DramkitClassStyle method)</a>
 </li>
-        <li><a href="dramkit.speedup.html#dramkit.speedup.multi_thread.MultiThread.__init__">(dramkit.speedup.multi_thread.MultiThread method)</a>
+        <li><a href="dramkit.speedup.html#dramkit.speedup.multi_thread.SingleThread.__init__">(dramkit.speedup.multi_thread.SingleThread method)</a>
 </li>
       </ul></li>
   </ul></td>
@@ -910,6 +910,13 @@
 </li>
       </ul></li>
       <li>
+    dramkit.plottools.utils_plot
+
+      <ul>
+        <li><a href="dramkit.plottools.html#module-dramkit.plottools.utils_plot">module</a>
+</li>
+      </ul></li>
+      <li>
     dramkit.pystyles.dramkit_style
 
       <ul>
@@ -1213,9 +1220,15 @@
 </li>
       <li><a href="dramkit.fintools.html#dramkit.fintools.utils_gains.get_gains_act">get_gains_act() (in module dramkit.fintools.utils_gains)</a>
 </li>
+      <li><a href="dramkit.html#dramkit.iotools.get_hardware_ids">get_hardware_ids() (in module dramkit.iotools)</a>
+</li>
       <li><a href="dramkit.webtools.html#dramkit.webtools.utils_html.get_head_num">get_head_num() (in module dramkit.webtools.utils_html)</a>
 </li>
       <li><a href="dramkit.datsci.html#dramkit.datsci.find_maxmin.get_his_maxmin_info">get_his_maxmin_info() (in module dramkit.datsci.find_maxmin)</a>
+</li>
+      <li><a href="dramkit.html#dramkit.iotools.get_input_multi_line">get_input_multi_line() (in module dramkit.iotools)</a>
+</li>
+      <li><a href="dramkit.html#dramkit.iotools.get_input_with_timeout">get_input_with_timeout() (in module dramkit.iotools)</a>
 </li>
       <li><a href="dramkit.html#dramkit.iotools.get_ip1">get_ip1() (in module dramkit.iotools)</a>
 </li>
@@ -1299,7 +1312,7 @@
 </li>
       <li><a href="dramkit.fintools.html#dramkit.fintools.barra.get_regression_beta">get_regression_beta() (in module dramkit.fintools.barra)</a>
 </li>
-      <li><a href="dramkit.speedup.html#dramkit.speedup.multi_thread.MultiThread.get_result">get_result() (dramkit.speedup.multi_thread.MultiThread method)</a>
+      <li><a href="dramkit.speedup.html#dramkit.speedup.multi_thread.SingleThread.get_result">get_result() (dramkit.speedup.multi_thread.SingleThread method)</a>
 </li>
       <li><a href="dramkit.datsci.html#dramkit.datsci.ahp_sim_ri.get_RIs">get_RIs() (in module dramkit.datsci.ahp_sim_ri)</a>
 </li>
@@ -1633,6 +1646,8 @@
 </li>
         <li><a href="dramkit.plottools.html#module-dramkit.plottools.plot_scatter">dramkit.plottools.plot_scatter</a>
 </li>
+        <li><a href="dramkit.plottools.html#module-dramkit.plottools.utils_plot">dramkit.plottools.utils_plot</a>
+</li>
         <li><a href="dramkit.pystyles.html#module-dramkit.pystyles.dramkit_style">dramkit.pystyles.dramkit_style</a>
 </li>
         <li><a href="dramkit.sorts.html#module-dramkit.sorts.bubble_sort">dramkit.sorts.bubble_sort</a>
@@ -1665,8 +1680,6 @@
       <li><a href="dramkit.speedup.html#dramkit.speedup.multi_thread.multi_thread_concurrent">multi_thread_concurrent() (in module dramkit.speedup.multi_thread)</a>
 </li>
       <li><a href="dramkit.speedup.html#dramkit.speedup.multi_thread.multi_thread_threading">multi_thread_threading() (in module dramkit.speedup.multi_thread)</a>
-</li>
-      <li><a href="dramkit.speedup.html#dramkit.speedup.multi_thread.MultiThread">MultiThread (class in dramkit.speedup.multi_thread)</a>
 </li>
   </ul></td>
 </tr></table>
@@ -1832,10 +1845,10 @@
 </li>
       <li><a href="dramkit.logtools.html#dramkit.logtools.utils_logger.remove_handlers">remove_handlers() (in module dramkit.logtools.utils_logger)</a>
 </li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="dramkit.html#dramkit.iotools.rename_files_in_dir">rename_files_in_dir() (in module dramkit.iotools)</a>
 </li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="dramkit.other.html#dramkit.other.replace_endblank.replace_endblank_in_file">replace_endblank_in_file() (in module dramkit.other.replace_endblank)</a>
 </li>
       <li><a href="dramkit.html#dramkit.gentools.replace_repeat_func_iter">replace_repeat_func_iter() (in module dramkit.gentools)</a>
@@ -1866,7 +1879,9 @@
 </li>
       <li><a href="dramkit.datsci.html#dramkit.datsci.freq_item_set.rules2df">rules2df() (in module dramkit.datsci.freq_item_set)</a>
 </li>
-      <li><a href="dramkit.speedup.html#dramkit.speedup.multi_thread.MultiThread.run">run() (dramkit.speedup.multi_thread.MultiThread method)</a>
+      <li><a href="dramkit.speedup.html#dramkit.speedup.multi_thread.SingleThread.run">run() (dramkit.speedup.multi_thread.SingleThread method)</a>
+</li>
+      <li><a href="dramkit.html#dramkit.gentools.run_func_with_timeout">run_func_with_timeout() (in module dramkit.gentools)</a>
 </li>
   </ul></td>
 </tr></table>
@@ -1912,13 +1927,15 @@
         <li><a href="dramkit.datsci.html#dramkit.datsci.activate_funcs.sigmoid">(in module dramkit.datsci.activate_funcs)</a>
 </li>
       </ul></li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="dramkit.fintools.html#dramkit.fintools.utils_gains.signal_merge">signal_merge() (in module dramkit.fintools.utils_gains)</a>
 </li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="dramkit.fintools.html#dramkit.fintools.fintools.sim_mc">sim_mc() (in module dramkit.fintools.fintools)</a>
 </li>
       <li><a href="dramkit.datsci.html#dramkit.datsci.ahp_sim_ri.sim_ri">sim_ri() (in module dramkit.datsci.ahp_sim_ri)</a>
+</li>
+      <li><a href="dramkit.speedup.html#dramkit.speedup.multi_thread.SingleThread">SingleThread (class in dramkit.speedup.multi_thread)</a>
 </li>
       <li><a href="dramkit.fintools.html#dramkit.fintools.barra.size">size() (in module dramkit.fintools.barra)</a>
 </li>
@@ -1945,6 +1962,8 @@
       <li><a href="dramkit.optimizer.html#dramkit.optimizer.base_funcs.TestFuncs.sphere">sphere() (dramkit.optimizer.base_funcs.TestFuncs static method)</a>
 </li>
       <li><a href="dramkit.optimizer.html#dramkit.optimizer.utils_heuristic.FuncOpterInfo.start_time">start_time (dramkit.optimizer.utils_heuristic.FuncOpterInfo property)</a>
+</li>
+      <li><a href="dramkit.speedup.html#dramkit.speedup.multi_thread.SingleThread.stop_thread">stop_thread() (dramkit.speedup.multi_thread.SingleThread method)</a>
 </li>
       <li><a href="dramkit.html#dramkit.datetimetools.str2datetime">str2datetime() (in module dramkit.datetimetools)</a>
 </li>
@@ -1986,10 +2005,10 @@
 </li>
       <li><a href="dramkit.html#dramkit.datetimetools.timestamp2str">timestamp2str() (in module dramkit.datetimetools)</a>
 </li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="dramkit.html#dramkit.datetimetools.today_date">today_date() (in module dramkit.datetimetools)</a>
 </li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="dramkit.html#dramkit.datetimetools.today_month">today_month() (in module dramkit.datetimetools)</a>
 </li>
       <li><a href="dramkit.html#dramkit.datetimetools.today_quarter">today_quarter() (in module dramkit.datetimetools)</a>
@@ -2015,6 +2034,8 @@
       <li><a href="dramkit.html#dramkit.gentools.try_repeat_run">try_repeat_run() (in module dramkit.gentools)</a>
 </li>
       <li><a href="dramkit.datsci.html#dramkit.datsci.stats.ttest">ttest() (in module dramkit.datsci.stats)</a>
+</li>
+      <li><a href="dramkit.plottools.html#dramkit.plottools.utils_plot.twinx_align">twinx_align() (in module dramkit.plottools.utils_plot)</a>
 </li>
   </ul></td>
 </tr></table>

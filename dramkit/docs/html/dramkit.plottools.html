@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>plottools &mdash; DramKit 0.2.1 documentation</title>
+  <title>plottools &mdash; DramKit 0.2.3 documentation</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <!--[if lt IE 9]>
@@ -68,6 +68,10 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#module-dramkit.plottools.plot_scatter">plot_scatter</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#id5">plot_scatter</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#module-dramkit.plottools.utils_plot">utils_plot</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#twinx-align">twinx_align</a></li>
 </ul>
 </li>
 </ul>
@@ -404,6 +408,18 @@ label设置图例内容，可为None或str或False，为None时默认’kde’�
 <dt class="sig sig-object py" id="dramkit.plottools.plot_scatter.plot_scatter">
 <span class="sig-prename descclassname"><span class="pre">dramkit.plottools.plot_scatter.</span></span><span class="sig-name descname"><span class="pre">plot_scatter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">colx</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">coly</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">reg_type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dotstyl</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'.k'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">regstyl</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'-b'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">figsize</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">(10,</span> <span class="pre">7)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">title</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">xlabel</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ylabel</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fontsize</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">15</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nXticks</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">8</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fig_save_path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.plottools.plot_scatter.plot_scatter" title="Permalink to this definition"></a></dt>
 <dd><p>散点图绘制</p>
+</dd></dl>
+
+</section>
+</section>
+<section id="module-dramkit.plottools.utils_plot">
+<span id="utils-plot"></span><h2>utils_plot<a class="headerlink" href="#module-dramkit.plottools.utils_plot" title="Permalink to this headline"></a></h2>
+<section id="twinx-align">
+<h3>twinx_align<a class="headerlink" href="#twinx-align" title="Permalink to this headline"></a></h3>
+<dl class="py function">
+<dt class="sig sig-object py" id="dramkit.plottools.utils_plot.twinx_align">
+<span class="sig-prename descclassname"><span class="pre">dramkit.plottools.utils_plot.</span></span><span class="sig-name descname"><span class="pre">twinx_align</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ax_left</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ax_right</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">v_left</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">v_right</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.plottools.utils_plot.twinx_align" title="Permalink to this definition"></a></dt>
+<dd><p>实现左轴(ax_left)在v_left位置和右轴(ax_right)在v_right位置对齐</p>
 </dd></dl>
 
 </section>

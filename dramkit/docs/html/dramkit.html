@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>dramkit &mdash; DramKit 0.2.1 documentation</title>
+  <title>dramkit &mdash; DramKit 0.2.3 documentation</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <!--[if lt IE 9]>
@@ -72,6 +72,7 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#module-dramkit.gentools">gentools</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#structureobject">StructureObject</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#run-func-with-timeout">run_func_with_timeout</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#get-func-arg-names">get_func_arg_names</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#try-repeat-run">try_repeat_run</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#log-used-time">log_used_time</a></li>
@@ -128,6 +129,8 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#module-dramkit.iotools">iotools</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#get-input-with-timeout">get_input_with_timeout</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#get-input-multi-line">get_input_multi_line</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#pickle-file">pickle_file</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#unpickle-file">unpickle_file</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#load-json">load_json</a></li>
@@ -146,6 +149,7 @@
 <li class="toctree-l3"><a class="reference internal" href="#copy-dir">copy_dir</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#py2pyc-dir">py2pyc_dir</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#get-mac-address">get_mac_address</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#get-hardware-ids">get_hardware_ids</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#get-ip1">get_ip1</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#get-ip2">get_ip2</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#get-ip-public">get_ip_public</a></li>
@@ -569,6 +573,18 @@
 <dd><p>删除属性变量key，无返回</p>
 </dd></dl>
 
+</dd></dl>
+
+</section>
+<section id="run-func-with-timeout">
+<h3>run_func_with_timeout<a class="headerlink" href="#run-func-with-timeout" title="Permalink to this headline"></a></h3>
+<dl class="py function">
+<dt class="sig sig-object py" id="dramkit.gentools.run_func_with_timeout">
+<span class="sig-prename descclassname"><span class="pre">dramkit.gentools.</span></span><span class="sig-name descname"><span class="pre">run_func_with_timeout</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">func</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timeout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.gentools.run_func_with_timeout" title="Permalink to this definition"></a></dt>
+<dd><div class="line-block">
+<div class="line">限定时间(timeout秒)执行函数func，若限定时间内未执行完毕，返回None</div>
+<div class="line">args为tuple或list，为func函数接受的参数列表</div>
+</div>
 </dd></dl>
 
 </section>
@@ -1942,6 +1958,39 @@ cols_groupby设定</p>
 </section>
 <section id="module-dramkit.iotools">
 <span id="iotools"></span><h2>iotools<a class="headerlink" href="#module-dramkit.iotools" title="Permalink to this headline"></a></h2>
+<section id="get-input-with-timeout">
+<h3>get_input_with_timeout<a class="headerlink" href="#get-input-with-timeout" title="Permalink to this headline"></a></h3>
+<dl class="py function">
+<dt class="sig sig-object py" id="dramkit.iotools.get_input_with_timeout">
+<span class="sig-prename descclassname"><span class="pre">dramkit.iotools.</span></span><span class="sig-name descname"><span class="pre">get_input_with_timeout</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">timeout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hint_str</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.iotools.get_input_with_timeout" title="Permalink to this definition"></a></dt>
+<dd><div class="line-block">
+<div class="line">通过input函数获取输入</div>
+<div class="line">若等待时间超过timeout秒没接收到输入，则返回None</div>
+<div class="line">hint_str为input函数提示信息</div>
+<div class="line">参考：<a class="reference external" href="https://zhuanlan.zhihu.com/p/367634630">https://zhuanlan.zhihu.com/p/367634630</a></div>
+</div>
+</dd></dl>
+
+</section>
+<section id="get-input-multi-line">
+<h3>get_input_multi_line<a class="headerlink" href="#get-input-multi-line" title="Permalink to this headline"></a></h3>
+<dl class="py function">
+<dt class="sig sig-object py" id="dramkit.iotools.get_input_multi_line">
+<span class="sig-prename descclassname"><span class="pre">dramkit.iotools.</span></span><span class="sig-name descname"><span class="pre">get_input_multi_line</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">end_word</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'end'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">end_char</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hint_str</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hint_lineno</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.iotools.get_input_multi_line" title="Permalink to this definition"></a></dt>
+<dd><div class="line-block">
+<div class="line">input读取多行输入（包括回车换行符也会被保留）</div>
+<div class="line">end_word设置结束词，当在一行里面输入完整结束词，则表示输入完毕</div>
+<div class="line">注：若end_word设置为’’，则空行输入回车时会结束输入，
+此时返回结果中上下行之间回车换行符不会被保留</div>
+<div class="line">end_char设置结束字符串，当在一行里面任意位置输入end_char，则表示输入完毕，
+此时返回在end_char之前输入的内容(不包括end_char和end_char之后的内容)</div>
+<div class="line">hint_str设置input函数中的输入提示</div>
+<div class="line">若hint_lineno为True，则input函数输入时提示当前是第几行</div>
+<div class="line">参考：<a class="reference external" href="https://blog.csdn.net/weixin_45642669/article/details/114199303">https://blog.csdn.net/weixin_45642669/article/details/114199303</a></div>
+</div>
+</dd></dl>
+
+</section>
 <section id="pickle-file">
 <h3>pickle_file<a class="headerlink" href="#pickle-file" title="Permalink to this headline"></a></h3>
 <dl class="py function">
@@ -2123,14 +2172,14 @@ cols_groupby设定</p>
 <h3>load_csvs<a class="headerlink" href="#load-csvs" title="Permalink to this headline"></a></h3>
 <dl class="py function">
 <dt class="sig sig-object py" id="dramkit.iotools.load_csvs">
-<span class="sig-prename descclassname"><span class="pre">dramkit.iotools.</span></span><span class="sig-name descname"><span class="pre">load_csvs</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fdir</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sort_cols</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">drop_duplicates</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs_loadcsv</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.iotools.load_csvs" title="Permalink to this definition"></a></dt>
+<span class="sig-prename descclassname"><span class="pre">dramkit.iotools.</span></span><span class="sig-name descname"><span class="pre">load_csvs</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fdir</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kwargs_sort</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">{}</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kwargs_drop_dup</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">{}</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs_loadcsv</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.iotools.load_csvs" title="Permalink to this definition"></a></dt>
 <dd><p>读取指定文件夹中所有的csv文件，整合到一个df里面</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>fdir</strong> (<em>str</em>) – 文件夹路径</p></li>
-<li><p><strong>sort_cols</strong> (<em>None</em><em>, </em><em>str</em><em>, </em><em>list</em>) – 根据sort_cols指定列排序(升序)和去重</p></li>
-<li><p><strong>drop_duplicates</strong> (<em>bool</em>) – 是否删除重复值(重复值保留第一条)</p></li>
+<li><p><strong>kwargs_sort</strong> (<em>dict</em>) – 设置sort_values接受的排序参数</p></li>
+<li><p><strong>kwargs_drop_dup</strong> (<em>dict</em>) – 设置drop_duplicates接受的去重参数</p></li>
 <li><p><strong>**kwargs_loadcsv</strong> – <a class="reference internal" href="#dramkit.iotools.load_csv" title="dramkit.iotools.load_csv"><code class="xref py py-func docutils literal notranslate"><span class="pre">dramkit.iotools.load_csv()</span></code></a> 接受的其它参数</p></li>
 </ul>
 </dd>
@@ -2145,14 +2194,14 @@ cols_groupby设定</p>
 <h3>load_excels<a class="headerlink" href="#load-excels" title="Permalink to this headline"></a></h3>
 <dl class="py function">
 <dt class="sig sig-object py" id="dramkit.iotools.load_excels">
-<span class="sig-prename descclassname"><span class="pre">dramkit.iotools.</span></span><span class="sig-name descname"><span class="pre">load_excels</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fdir</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sort_cols</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">drop_duplicates</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs_readexcel</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.iotools.load_excels" title="Permalink to this definition"></a></dt>
+<span class="sig-prename descclassname"><span class="pre">dramkit.iotools.</span></span><span class="sig-name descname"><span class="pre">load_excels</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fdir</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kwargs_sort</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">{}</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kwargs_drop_dup</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">{}</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs_readexcel</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.iotools.load_excels" title="Permalink to this definition"></a></dt>
 <dd><p>读取指定文件夹中所有的excel文件，整合到一个df里面</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>fdir</strong> (<em>str</em>) – 文件夹路径</p></li>
-<li><p><strong>sort_cols</strong> (<em>None</em><em>, </em><em>str</em><em>, </em><em>list</em>) – 根据sort_cols指定列排序(升序)和去重</p></li>
-<li><p><strong>drop_duplicates</strong> (<em>bool</em>) – 是否删除重复值(重复值保留第一条)</p></li>
+<li><p><strong>kwargs_sort</strong> (<em>dict</em>) – 设置sort_values接受的排序参数</p></li>
+<li><p><strong>kwargs_drop_dup</strong> (<em>dict</em>) – 设置drop_duplicates接受的去重参数</p></li>
 <li><p><strong>**kwargs_readexcel</strong> – <code class="docutils literal notranslate"><span class="pre">pd.read_excel</span></code> 接受的其它参数</p></li>
 </ul>
 </dd>
@@ -2250,6 +2299,18 @@ cols_groupby设定</p>
 <dt class="sig sig-object py" id="dramkit.iotools.get_mac_address">
 <span class="sig-prename descclassname"><span class="pre">dramkit.iotools.</span></span><span class="sig-name descname"><span class="pre">get_mac_address</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.iotools.get_mac_address" title="Permalink to this definition"></a></dt>
 <dd><p>获取Mac地址，返回大写地址，如：F8-A2-D6-CC-BB-AA</p>
+</dd></dl>
+
+</section>
+<section id="get-hardware-ids">
+<h3>get_hardware_ids<a class="headerlink" href="#get-hardware-ids" title="Permalink to this headline"></a></h3>
+<dl class="py function">
+<dt class="sig sig-object py" id="dramkit.iotools.get_hardware_ids">
+<span class="sig-prename descclassname"><span class="pre">dramkit.iotools.</span></span><span class="sig-name descname"><span class="pre">get_hardware_ids</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.iotools.get_hardware_ids" title="Permalink to this definition"></a></dt>
+<dd><div class="line-block">
+<div class="line">获取电脑硬件序列号信息，包括主板和硬盘序列号、MAC地址、BIOS序列号等</div>
+<div class="line">参考：<a class="reference external" href="https://blog.csdn.net/lekmoon/article/details/111478394">https://blog.csdn.net/lekmoon/article/details/111478394</a></div>
+</div>
 </dd></dl>
 
 </section>

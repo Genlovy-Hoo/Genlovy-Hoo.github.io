@@ -20,10 +20,10 @@ multi_thread
 
 .. currentmodule:: dramkit.speedup.multi_thread
 
-MultiThread
-^^^^^^^^^^^^
+SingleThread
+^^^^^^^^^^^^^
 
-.. autoclass:: dramkit.speedup.multi_thread.MultiThread
+.. autoclass:: dramkit.speedup.multi_thread.SingleThread
     :members:
     :undoc-members:
     :show-inheritance:

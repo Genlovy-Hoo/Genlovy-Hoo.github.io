@@ -70,3 +70,15 @@ plot_scatter
 ^^^^^^^^^^^^^
 
 .. autofunction:: dramkit.plottools.plot_scatter.plot_scatter
+
+utils_plot
+-----------
+
+.. automodule:: dramkit.plottools.utils_plot
+
+.. currentmodule:: dramkit.plottools.utils_plot
+
+twinx_align
+^^^^^^^^^^^^
+
+.. autofunction:: dramkit.plottools.utils_plot.twinx_align
