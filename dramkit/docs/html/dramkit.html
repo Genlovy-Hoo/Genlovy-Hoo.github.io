@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>dramkit &mdash; DramKit 0.2.3 documentation</title>
+  <title>dramkit &mdash; DramKit 0.2.4 documentation</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <!--[if lt IE 9]>
@@ -114,6 +114,8 @@
 <li class="toctree-l3"><a class="reference internal" href="#get-appear-order">get_appear_order</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#label-rep-index-str">label_rep_index_str</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#drop-index-duplicates">drop_index_duplicates</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#count-values">count_values</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#count-index">count_index</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#group-shift">group_shift</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#group-fillna">group_fillna</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#group-rank">group_rank</a></li>
@@ -147,7 +149,10 @@
 <li class="toctree-l3"><a class="reference internal" href="#del-specified-subdir">del_specified_subdir</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#copy-file">copy_file</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#copy-dir">copy_dir</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#py2pyc">py2pyc</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#py2pyc-dir">py2pyc_dir</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#pyc2py">pyc2py</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#pyc2py-dir">pyc2py_dir</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#get-mac-address">get_mac_address</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#get-hardware-ids">get_hardware_ids</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#get-ip1">get_ip1</a></li>
@@ -556,6 +561,12 @@
 </dd></dl>
 
 <dl class="py method">
+<dt class="sig sig-object py" id="dramkit.gentools.StructureObject.add_from_dict">
+<span class="sig-name descname"><span class="pre">add_from_dict</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">d</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.gentools.StructureObject.add_from_dict" title="Permalink to this definition"></a></dt>
+<dd><p>通过dict批量增加属性变量</p>
+</dd></dl>
+
+<dl class="py method">
 <dt class="sig sig-object py" id="dramkit.gentools.StructureObject.clear">
 <span class="sig-name descname"><span class="pre">clear</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.gentools.StructureObject.clear" title="Permalink to this definition"></a></dt>
 <dd><p>清空所有属性变量</p>
@@ -682,6 +693,8 @@
 <li><p><a class="reference external" href="https://www.cnblogs.com/xiuyou/p/11283512.html">https://www.cnblogs.com/xiuyou/p/11283512.html</a></p></li>
 <li><p><a class="reference external" href="https://www.cnblogs.com/slysky/p/9777424.html">https://www.cnblogs.com/slysky/p/9777424.html</a></p></li>
 <li><p><a class="reference external" href="https://www.cnblogs.com/zhzhang/p/11375574.html">https://www.cnblogs.com/zhzhang/p/11375574.html</a></p></li>
+<li><p><a class="reference external" href="https://www.cnblogs.com/zhzhang/p/11375774.html">https://www.cnblogs.com/zhzhang/p/11375774.html</a></p></li>
+<li><p><a class="reference external" href="https://blog.csdn.net/weixin_33711647/article/details/92549215">https://blog.csdn.net/weixin_33711647/article/details/92549215</a></p></li>
 </ul>
 </dd></dl>
 
@@ -1829,6 +1842,24 @@ func_val0的值(这里连续出现是指不出现除了满足func_val为True和�
 </dd></dl>
 
 </section>
+<section id="count-values">
+<h3>count_values<a class="headerlink" href="#count-values" title="Permalink to this headline"></a></h3>
+<dl class="py function">
+<dt class="sig sig-object py" id="dramkit.gentools.count_values">
+<span class="sig-prename descclassname"><span class="pre">dramkit.gentools.</span></span><span class="sig-name descname"><span class="pre">count_values</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">df</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cols</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.gentools.count_values" title="Permalink to this definition"></a></dt>
+<dd><p>计算df列中cols指定列的值出现次数</p>
+</dd></dl>
+
+</section>
+<section id="count-index">
+<h3>count_index<a class="headerlink" href="#count-index" title="Permalink to this headline"></a></h3>
+<dl class="py function">
+<dt class="sig sig-object py" id="dramkit.gentools.count_index">
+<span class="sig-prename descclassname"><span class="pre">dramkit.gentools.</span></span><span class="sig-name descname"><span class="pre">count_index</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">df</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.gentools.count_index" title="Permalink to this definition"></a></dt>
+<dd><p>计算df的每个index出现的次数</p>
+</dd></dl>
+
+</section>
 <section id="group-shift">
 <h3>group_shift<a class="headerlink" href="#group-shift" title="Permalink to this headline"></a></h3>
 <dl class="py function">
@@ -2227,7 +2258,7 @@ cols_groupby设定</p>
 <li><p><strong>ext</strong> (<em>None</em><em>, </em><em>str</em><em>, </em><em>list</em>) – 指定文件后缀列表，若为None，则包含所有类型文件</p></li>
 <li><p><strong>include_dir</strong> (<em>bool</em>) – 返回结果中是否包含文件夹路径，默认不包含（即只返回文件路径）</p></li>
 <li><p><strong>abspath</strong> (<em>bool</em>) – 是否返回绝对路径，默认返回相对路径</p></li>
-<li><p><strong>rec_sub_dir</strong> (<em>bool</em>) – 若为False，则不对子文件中的文件进行变量，即只返回dir_path下的文件（夹）路径</p></li>
+<li><p><strong>rec_sub_dir</strong> (<em>bool</em>) – 若为False，则不对子文件中的文件进行遍历，即只返回dir_path下的文件（夹）路径</p></li>
 <li><p><strong>only_dir</strong> (<em>bool</em>) – 若为True，则只返回子文件夹路径(文件夹名称尾部与ext指定尾部相同的文件夹)，
 不返回文件路径，此时include_dir不起作用</p></li>
 </ul>
@@ -2284,12 +2315,39 @@ cols_groupby设定</p>
 </dd></dl>
 
 </section>
+<section id="py2pyc">
+<h3>py2pyc<a class="headerlink" href="#py2pyc" title="Permalink to this headline"></a></h3>
+<dl class="py function">
+<dt class="sig sig-object py" id="dramkit.iotools.py2pyc">
+<span class="sig-prename descclassname"><span class="pre">dramkit.iotools.</span></span><span class="sig-name descname"><span class="pre">py2pyc</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">py_path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pyc_path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">force</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">del_py</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs_compile</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.iotools.py2pyc" title="Permalink to this definition"></a></dt>
+<dd><p>py文件编译为pyc文件</p>
+</dd></dl>
+
+</section>
 <section id="py2pyc-dir">
 <h3>py2pyc_dir<a class="headerlink" href="#py2pyc-dir" title="Permalink to this headline"></a></h3>
 <dl class="py function">
 <dt class="sig sig-object py" id="dramkit.iotools.py2pyc_dir">
-<span class="sig-prename descclassname"><span class="pre">dramkit.iotools.</span></span><span class="sig-name descname"><span class="pre">py2pyc_dir</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dir_path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">force</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">del_py</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">recu_sub_dir</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.iotools.py2pyc_dir" title="Permalink to this definition"></a></dt>
+<span class="sig-prename descclassname"><span class="pre">dramkit.iotools.</span></span><span class="sig-name descname"><span class="pre">py2pyc_dir</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dir_path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">force</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">del_py</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">recu_sub_dir</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs_compile</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.iotools.py2pyc_dir" title="Permalink to this definition"></a></dt>
 <dd><p>将一个文件夹下的所有.py文件编译为.pyc文件</p>
+</dd></dl>
+
+</section>
+<section id="pyc2py">
+<h3>pyc2py<a class="headerlink" href="#pyc2py" title="Permalink to this headline"></a></h3>
+<dl class="py function">
+<dt class="sig sig-object py" id="dramkit.iotools.pyc2py">
+<span class="sig-prename descclassname"><span class="pre">dramkit.iotools.</span></span><span class="sig-name descname"><span class="pre">pyc2py</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pyc_path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">py_path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">force</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">del_pyc</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">logger</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.iotools.pyc2py" title="Permalink to this definition"></a></dt>
+<dd><p>pyc文件反编译为py</p>
+</dd></dl>
+
+</section>
+<section id="pyc2py-dir">
+<h3>pyc2py_dir<a class="headerlink" href="#pyc2py-dir" title="Permalink to this headline"></a></h3>
+<dl class="py function">
+<dt class="sig sig-object py" id="dramkit.iotools.pyc2py_dir">
+<span class="sig-prename descclassname"><span class="pre">dramkit.iotools.</span></span><span class="sig-name descname"><span class="pre">pyc2py_dir</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dir_path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">force</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">del_pyc</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">recu_sub_dir</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">logger</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.iotools.pyc2py_dir" title="Permalink to this definition"></a></dt>
+<dd><p>将一个文件夹下的所有.pyc文件反编译为.py文件</p>
 </dd></dl>
 
 </section>

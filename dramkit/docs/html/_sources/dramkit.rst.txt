@@ -368,6 +368,16 @@ drop_index_duplicates
 
 .. autofunction:: dramkit.gentools.drop_index_duplicates
 
+count_values
+^^^^^^^^^^^^^
+
+.. autofunction:: dramkit.gentools.count_values
+
+count_index
+^^^^^^^^^^^^
+
+.. autofunction:: dramkit.gentools.count_index
+
 group_shift
 ^^^^^^^^^^^^
 
@@ -517,10 +527,25 @@ copy_dir
 
 .. autofunction:: dramkit.iotools.copy_dir
 
+py2pyc
+^^^^^^^
+
+.. autofunction:: dramkit.iotools.py2pyc
+
 py2pyc_dir
 ^^^^^^^^^^^
 
 .. autofunction:: dramkit.iotools.py2pyc_dir
+
+pyc2py
+^^^^^^^
+
+.. autofunction:: dramkit.iotools.pyc2py
+
+pyc2py_dir
+^^^^^^^^^^^
+
+.. autofunction:: dramkit.iotools.pyc2py_dir
 
 get_mac_address
 ^^^^^^^^^^^^^^^^
