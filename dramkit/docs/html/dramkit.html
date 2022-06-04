@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>dramkit &mdash; DramKit 0.2.4 documentation</title>
+  <title>dramkit &mdash; DramKit 0.2.5 documentation</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <!--[if lt IE 9]>
@@ -72,6 +72,7 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#module-dramkit.gentools">gentools</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#structureobject">StructureObject</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#dirtmodifyerror">DirtModifyError</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#run-func-with-timeout">run_func_with_timeout</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#get-func-arg-names">get_func_arg_names</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#try-repeat-run">try_repeat_run</a></li>
@@ -551,19 +552,13 @@
 <h3>StructureObject<a class="headerlink" href="#structureobject" title="Permalink to this headline"></a></h3>
 <dl class="py class">
 <dt class="sig sig-object py" id="dramkit.gentools.StructureObject">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">dramkit.gentools.</span></span><span class="sig-name descname"><span class="pre">StructureObject</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.gentools.StructureObject" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">dramkit.gentools.</span></span><span class="sig-name descname"><span class="pre">StructureObject</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dirt_modify</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">logger</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.gentools.StructureObject" title="Permalink to this definition"></a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>类似于MATLAB结构数组，存放变量，便于直接赋值和查看</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="dramkit.gentools.StructureObject.__init__">
-<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.gentools.StructureObject.__init__" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dirt_modify</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">logger</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.gentools.StructureObject.__init__" title="Permalink to this definition"></a></dt>
 <dd><p>初始化</p>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="dramkit.gentools.StructureObject.add_from_dict">
-<span class="sig-name descname"><span class="pre">add_from_dict</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">d</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.gentools.StructureObject.add_from_dict" title="Permalink to this definition"></a></dt>
-<dd><p>通过dict批量增加属性变量</p>
 </dd></dl>
 
 <dl class="py method">
@@ -571,6 +566,11 @@
 <span class="sig-name descname"><span class="pre">clear</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.gentools.StructureObject.clear" title="Permalink to this definition"></a></dt>
 <dd><p>清空所有属性变量</p>
 </dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="dramkit.gentools.StructureObject.dirt_modify">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">dirt_modify</span></span><a class="headerlink" href="#dramkit.gentools.StructureObject.dirt_modify" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="dramkit.gentools.StructureObject.pop">
@@ -584,6 +584,31 @@
 <dd><p>删除属性变量key，无返回</p>
 </dd></dl>
 
+<dl class="py method">
+<dt class="sig sig-object py" id="dramkit.gentools.StructureObject.set_dirt_modify">
+<span class="sig-name descname"><span class="pre">set_dirt_modify</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dirt_modify</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.gentools.StructureObject.set_dirt_modify" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dramkit.gentools.StructureObject.set_from_dict">
+<span class="sig-name descname"><span class="pre">set_from_dict</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">d</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.gentools.StructureObject.set_from_dict" title="Permalink to this definition"></a></dt>
+<dd><p>通过dict批量增加属性变量</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dramkit.gentools.StructureObject.set_key_value">
+<span class="sig-name descname"><span class="pre">set_key_value</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.gentools.StructureObject.set_key_value" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="dirtmodifyerror">
+<h3>DirtModifyError<a class="headerlink" href="#dirtmodifyerror" title="Permalink to this headline"></a></h3>
+<dl class="py class">
+<dt class="sig sig-object py" id="dramkit.gentools.DirtModifyError">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">dramkit.gentools.</span></span><span class="sig-name descname"><span class="pre">DirtModifyError</span></span><a class="headerlink" href="#dramkit.gentools.DirtModifyError" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Exception</span></code></p>
 </dd></dl>
 
 </section>
@@ -2293,7 +2318,7 @@ cols_groupby设定</p>
 <dl class="py function">
 <dt class="sig sig-object py" id="dramkit.iotools.del_specified_subdir">
 <span class="sig-prename descclassname"><span class="pre">dramkit.iotools.</span></span><span class="sig-name descname"><span class="pre">del_specified_subdir</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dir_path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">del_names</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">recu_sub_dir</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.iotools.del_specified_subdir" title="Permalink to this definition"></a></dt>
-<dd><p>删除dir_path文件夹下所有文件夹名在del_names中的子文件夹</p>
+<dd><p>删除dir_path文件夹下所有文件夹名尾缀在del_names中的子文件夹</p>
 </dd></dl>
 
 </section>

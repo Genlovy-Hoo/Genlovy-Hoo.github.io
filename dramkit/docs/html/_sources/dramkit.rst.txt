@@ -158,6 +158,14 @@ StructureObject
     :undoc-members:
     :show-inheritance:
 
+DirtModifyError
+^^^^^^^^^^^^^^^^
+
+.. autoclass:: dramkit.gentools.DirtModifyError
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
 run_func_with_timeout
 ^^^^^^^^^^^^^^^^^^^^^^
 
