@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>dramkit &mdash; DramKit 0.2.5 documentation</title>
+  <title>dramkit &mdash; DramKit 0.2.7 documentation</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <!--[if lt IE 9]>
@@ -136,6 +136,8 @@
 <li class="toctree-l3"><a class="reference internal" href="#get-input-multi-line">get_input_multi_line</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#pickle-file">pickle_file</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#unpickle-file">unpickle_file</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#load-yml">load_yml</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#write-yml">write_yml</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#load-json">load_json</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#write-json">write_json</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#read-lines">read_lines</a></li>
@@ -144,12 +146,17 @@
 <li class="toctree-l3"><a class="reference internal" href="#load-csv">load_csv</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#load-csvs">load_csvs</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#load-excels">load_excels</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#clear-text-file">clear_text_file</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#clear-specified-type-files">clear_specified_type_files</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#get-all-paths">get_all_paths</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#del-specified-type-files">del_specified_type_files</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#del-dir">del_dir</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#del-specified-subdir">del_specified_subdir</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#copy-file">copy_file</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#copy-dir">copy_dir</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#move-file">move_file</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#move-dir">move_dir</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#make-dir">make_dir</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#py2pyc">py2pyc</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#py2pyc-dir">py2pyc_dir</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#pyc2py">pyc2py</a></li>
@@ -167,6 +174,7 @@
 <li class="toctree-l3"><a class="reference internal" href="#zip-fpaths-7z">zip_fpaths_7z</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#extract-7z">extract_7z</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#cmdrun">cmdrun</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#cmd-run-pys">cmd_run_pys</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#rename-files-in-dir">rename_files_in_dir</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#find-files-include-str">find_files_include_str</a></li>
 </ul>
@@ -552,12 +560,12 @@
 <h3>StructureObject<a class="headerlink" href="#structureobject" title="Permalink to this headline"></a></h3>
 <dl class="py class">
 <dt class="sig sig-object py" id="dramkit.gentools.StructureObject">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">dramkit.gentools.</span></span><span class="sig-name descname"><span class="pre">StructureObject</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dirt_modify</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">logger</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.gentools.StructureObject" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">dramkit.gentools.</span></span><span class="sig-name descname"><span class="pre">StructureObject</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dirt_modify</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.gentools.StructureObject" title="Permalink to this definition"></a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>类似于MATLAB结构数组，存放变量，便于直接赋值和查看</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="dramkit.gentools.StructureObject.__init__">
-<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dirt_modify</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">logger</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.gentools.StructureObject.__init__" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dirt_modify</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.gentools.StructureObject.__init__" title="Permalink to this definition"></a></dt>
 <dd><p>初始化</p>
 </dd></dl>
 
@@ -2078,6 +2086,28 @@ cols_groupby设定</p>
 </dd></dl>
 
 </section>
+<section id="load-yml">
+<h3>load_yml<a class="headerlink" href="#load-yml" title="Permalink to this headline"></a></h3>
+<dl class="py function">
+<dt class="sig sig-object py" id="dramkit.iotools.load_yml">
+<span class="sig-prename descclassname"><span class="pre">dramkit.iotools.</span></span><span class="sig-name descname"><span class="pre">load_yml</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fpath</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs_open</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.iotools.load_yml" title="Permalink to this definition"></a></dt>
+<dd><div class="line-block">
+<div class="line">读取yml文件内容</div>
+<div class="line">参考：</div>
+<div class="line"><a class="reference external" href="https://blog.csdn.net/qq_33106045/article/details/108507775">https://blog.csdn.net/qq_33106045/article/details/108507775</a></div>
+</div>
+</dd></dl>
+
+</section>
+<section id="write-yml">
+<h3>write_yml<a class="headerlink" href="#write-yml" title="Permalink to this headline"></a></h3>
+<dl class="py function">
+<dt class="sig sig-object py" id="dramkit.iotools.write_yml">
+<span class="sig-prename descclassname"><span class="pre">dramkit.iotools.</span></span><span class="sig-name descname"><span class="pre">write_yml</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.iotools.write_yml" title="Permalink to this definition"></a></dt>
+<dd><p>写入yml文件，待实现</p>
+</dd></dl>
+
+</section>
 <section id="load-json">
 <h3>load_json<a class="headerlink" href="#load-json" title="Permalink to this headline"></a></h3>
 <dl class="py function">
@@ -2268,6 +2298,24 @@ cols_groupby设定</p>
 </dd></dl>
 
 </section>
+<section id="clear-text-file">
+<h3>clear_text_file<a class="headerlink" href="#clear-text-file" title="Permalink to this headline"></a></h3>
+<dl class="py function">
+<dt class="sig sig-object py" id="dramkit.iotools.clear_text_file">
+<span class="sig-prename descclassname"><span class="pre">dramkit.iotools.</span></span><span class="sig-name descname"><span class="pre">clear_text_file</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fpath</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">encoding</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.iotools.clear_text_file" title="Permalink to this definition"></a></dt>
+<dd><p>清空文本文件中的内容，保留文件</p>
+</dd></dl>
+
+</section>
+<section id="clear-specified-type-files">
+<h3>clear_specified_type_files<a class="headerlink" href="#clear-specified-type-files" title="Permalink to this headline"></a></h3>
+<dl class="py function">
+<dt class="sig sig-object py" id="dramkit.iotools.clear_specified_type_files">
+<span class="sig-prename descclassname"><span class="pre">dramkit.iotools.</span></span><span class="sig-name descname"><span class="pre">clear_specified_type_files</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dir_path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">type_list</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">encoding</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">recu_sub_dir</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.iotools.clear_specified_type_files" title="Permalink to this definition"></a></dt>
+<dd><p>清空dir_path文件夹下所有类型在type_list中的文件内容，保留文件</p>
+</dd></dl>
+
+</section>
 <section id="get-all-paths">
 <h3>get_all_paths<a class="headerlink" href="#get-all-paths" title="Permalink to this headline"></a></h3>
 <dl class="py function">
@@ -2337,6 +2385,33 @@ cols_groupby设定</p>
 <dt class="sig sig-object py" id="dramkit.iotools.copy_dir">
 <span class="sig-prename descclassname"><span class="pre">dramkit.iotools.</span></span><span class="sig-name descname"><span class="pre">copy_dir</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.iotools.copy_dir" title="Permalink to this definition"></a></dt>
 <dd><p>复制文件夹，待实现</p>
+</dd></dl>
+
+</section>
+<section id="move-file">
+<h3>move_file<a class="headerlink" href="#move-file" title="Permalink to this headline"></a></h3>
+<dl class="py function">
+<dt class="sig sig-object py" id="dramkit.iotools.move_file">
+<span class="sig-prename descclassname"><span class="pre">dramkit.iotools.</span></span><span class="sig-name descname"><span class="pre">move_file</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.iotools.move_file" title="Permalink to this definition"></a></dt>
+<dd><p>移动文件，待实现</p>
+</dd></dl>
+
+</section>
+<section id="move-dir">
+<h3>move_dir<a class="headerlink" href="#move-dir" title="Permalink to this headline"></a></h3>
+<dl class="py function">
+<dt class="sig sig-object py" id="dramkit.iotools.move_dir">
+<span class="sig-prename descclassname"><span class="pre">dramkit.iotools.</span></span><span class="sig-name descname"><span class="pre">move_dir</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.iotools.move_dir" title="Permalink to this definition"></a></dt>
+<dd><p>移动文件夹，待实现</p>
+</dd></dl>
+
+</section>
+<section id="make-dir">
+<h3>make_dir<a class="headerlink" href="#make-dir" title="Permalink to this headline"></a></h3>
+<dl class="py function">
+<dt class="sig sig-object py" id="dramkit.iotools.make_dir">
+<span class="sig-prename descclassname"><span class="pre">dramkit.iotools.</span></span><span class="sig-name descname"><span class="pre">make_dir</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dir_path</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.iotools.make_dir" title="Permalink to this definition"></a></dt>
+<dd><p>新建文件夹</p>
 </dd></dl>
 
 </section>
@@ -2496,7 +2571,7 @@ cols_groupby设定</p>
 <h3>zip_extract<a class="headerlink" href="#zip-extract" title="Permalink to this headline"></a></h3>
 <dl class="py function">
 <dt class="sig sig-object py" id="dramkit.iotools.zip_extract">
-<span class="sig-prename descclassname"><span class="pre">dramkit.iotools.</span></span><span class="sig-name descname"><span class="pre">zip_extract</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.iotools.zip_extract" title="Permalink to this definition"></a></dt>
+<span class="sig-prename descclassname"><span class="pre">dramkit.iotools.</span></span><span class="sig-name descname"><span class="pre">zip_extract</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fzip</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">to_dir</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">replace_exists</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.iotools.zip_extract" title="Permalink to this definition"></a></dt>
 <dd><p>用zipfile解压文件，待实现</p>
 </dd></dl>
 
@@ -2569,6 +2644,15 @@ cols_groupby设定</p>
 <dt class="sig sig-object py" id="dramkit.iotools.cmdrun">
 <span class="sig-prename descclassname"><span class="pre">dramkit.iotools.</span></span><span class="sig-name descname"><span class="pre">cmdrun</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cmd_str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.iotools.cmdrun" title="Permalink to this definition"></a></dt>
 <dd><p>调用cmd执行cmd_str命令，待实现</p>
+</dd></dl>
+
+</section>
+<section id="cmd-run-pys">
+<h3>cmd_run_pys<a class="headerlink" href="#cmd-run-pys" title="Permalink to this headline"></a></h3>
+<dl class="py function">
+<dt class="sig sig-object py" id="dramkit.iotools.cmd_run_pys">
+<span class="sig-prename descclassname"><span class="pre">dramkit.iotools.</span></span><span class="sig-name descname"><span class="pre">cmd_run_pys</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">py_list</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">logger</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.iotools.cmd_run_pys" title="Permalink to this definition"></a></dt>
+<dd><p>cmd命令批量运行py脚本，logger捕捉日志</p>
 </dd></dl>
 
 </section>

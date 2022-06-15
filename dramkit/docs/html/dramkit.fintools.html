@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>fintools &mdash; DramKit 0.2.5 documentation</title>
+  <title>fintools &mdash; DramKit 0.2.7 documentation</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <!--[if lt IE 9]>
@@ -109,26 +109,6 @@
 <li class="toctree-l2"><a class="reference internal" href="#module-dramkit.fintools.limit_stock_value">limit_stock_value</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#app">app</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#cal-limit-stock-value">cal_limit_stock_value</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="#module-dramkit.fintools.load_his_data">load_his_data</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#find-target-dir">find_target_dir</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#get-15s-dir">get_15s_dir</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#get-1min-dir1">get_1min_dir1</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#get-1min-dir2">get_1min_dir2</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#get-daily-dir1">get_daily_dir1</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#load-15s-data">load_15s_data</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#load-minute-data">load_minute_data</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#handle-minute-930">handle_minute_930</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#get-minute-data">get_minute_data</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#load-daily-data">load_daily_data</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#load-index-daily">load_index_daily</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#load-index-minute">load_index_minute</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#load-btc-daily">load_btc_daily</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#load-eth-daily">load_eth_daily</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#load-index-futures-daily">load_index_futures_daily</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#load-index-futures-minute">load_index_futures_minute</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#check-daily-data-is-new">check_daily_data_is_new</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#module-dramkit.fintools.options">options</a><ul>
@@ -1066,162 +1046,6 @@ pd.DataFrame.ewm中对应参数的方法计算a；</div>
 <div class="line">参考：</div>
 <div class="line">中证指数有限公司流通受限股票流动性折扣计算说明v2.docx</div>
 <div class="line"><a class="reference external" href="https://www.sohu.com/a/193630728_656666">https://www.sohu.com/a/193630728_656666</a></div>
-</div>
-</dd></dl>
-
-</section>
-</section>
-<section id="module-dramkit.fintools.load_his_data">
-<span id="load-his-data"></span><h2>load_his_data<a class="headerlink" href="#module-dramkit.fintools.load_his_data" title="Permalink to this headline"></a></h2>
-<section id="find-target-dir">
-<h3>find_target_dir<a class="headerlink" href="#find-target-dir" title="Permalink to this headline"></a></h3>
-<dl class="py function">
-<dt class="sig sig-object py" id="dramkit.fintools.load_his_data.find_target_dir">
-<span class="sig-prename descclassname"><span class="pre">dramkit.fintools.load_his_data.</span></span><span class="sig-name descname"><span class="pre">find_target_dir</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dir_name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.fintools.load_his_data.find_target_dir" title="Permalink to this definition"></a></dt>
-<dd><p>从不同磁盘分区中搜索dir_name文件夹所做的路径，并返回完整路径</p>
-</dd></dl>
-
-</section>
-<section id="get-15s-dir">
-<h3>get_15s_dir<a class="headerlink" href="#get-15s-dir" title="Permalink to this headline"></a></h3>
-<dl class="py function">
-<dt class="sig sig-object py" id="dramkit.fintools.load_his_data.get_15s_dir">
-<span class="sig-prename descclassname"><span class="pre">dramkit.fintools.load_his_data.</span></span><span class="sig-name descname"><span class="pre">get_15s_dir</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.fintools.load_his_data.get_15s_dir" title="Permalink to this definition"></a></dt>
-<dd><p>查找15秒K线数据存放路径</p>
-</dd></dl>
-
-</section>
-<section id="get-1min-dir1">
-<h3>get_1min_dir1<a class="headerlink" href="#get-1min-dir1" title="Permalink to this headline"></a></h3>
-<dl class="py function">
-<dt class="sig sig-object py" id="dramkit.fintools.load_his_data.get_1min_dir1">
-<span class="sig-prename descclassname"><span class="pre">dramkit.fintools.load_his_data.</span></span><span class="sig-name descname"><span class="pre">get_1min_dir1</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.fintools.load_his_data.get_1min_dir1" title="Permalink to this definition"></a></dt>
-<dd><p>查找1分钟K线数据存放路径</p>
-</dd></dl>
-
-</section>
-<section id="get-1min-dir2">
-<h3>get_1min_dir2<a class="headerlink" href="#get-1min-dir2" title="Permalink to this headline"></a></h3>
-<dl class="py function">
-<dt class="sig sig-object py" id="dramkit.fintools.load_his_data.get_1min_dir2">
-<span class="sig-prename descclassname"><span class="pre">dramkit.fintools.load_his_data.</span></span><span class="sig-name descname"><span class="pre">get_1min_dir2</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.fintools.load_his_data.get_1min_dir2" title="Permalink to this definition"></a></dt>
-<dd><p>查找1分钟K线数据存放路径</p>
-</dd></dl>
-
-</section>
-<section id="get-daily-dir1">
-<h3>get_daily_dir1<a class="headerlink" href="#get-daily-dir1" title="Permalink to this headline"></a></h3>
-<dl class="py function">
-<dt class="sig sig-object py" id="dramkit.fintools.load_his_data.get_daily_dir1">
-<span class="sig-prename descclassname"><span class="pre">dramkit.fintools.load_his_data.</span></span><span class="sig-name descname"><span class="pre">get_daily_dir1</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.fintools.load_his_data.get_daily_dir1" title="Permalink to this definition"></a></dt>
-<dd><p>查找日K线数据存放路径</p>
-</dd></dl>
-
-</section>
-<section id="load-15s-data">
-<h3>load_15s_data<a class="headerlink" href="#load-15s-data" title="Permalink to this headline"></a></h3>
-<dl class="py function">
-<dt class="sig sig-object py" id="dramkit.fintools.load_his_data.load_15s_data">
-<span class="sig-prename descclassname"><span class="pre">dramkit.fintools.load_his_data.</span></span><span class="sig-name descname"><span class="pre">load_15s_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">code</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">start_date</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">end_date</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.fintools.load_his_data.load_15s_data" title="Permalink to this definition"></a></dt>
-<dd><p>读取15s数据</p>
-</dd></dl>
-
-</section>
-<section id="load-minute-data">
-<h3>load_minute_data<a class="headerlink" href="#load-minute-data" title="Permalink to this headline"></a></h3>
-<dl class="py function">
-<dt class="sig sig-object py" id="dramkit.fintools.load_his_data.load_minute_data">
-<span class="sig-prename descclassname"><span class="pre">dramkit.fintools.load_his_data.</span></span><span class="sig-name descname"><span class="pre">load_minute_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">code</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">start_date</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">end_date</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.fintools.load_his_data.load_minute_data" title="Permalink to this definition"></a></dt>
-<dd><p>读取分钟数据</p>
-</dd></dl>
-
-</section>
-<section id="handle-minute-930">
-<h3>handle_minute_930<a class="headerlink" href="#handle-minute-930" title="Permalink to this headline"></a></h3>
-<dl class="py function">
-<dt class="sig sig-object py" id="dramkit.fintools.load_his_data.handle_minute_930">
-<span class="sig-prename descclassname"><span class="pre">dramkit.fintools.load_his_data.</span></span><span class="sig-name descname"><span class="pre">handle_minute_930</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">df_minute</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.fintools.load_his_data.handle_minute_930" title="Permalink to this definition"></a></dt>
-<dd><p>处理9.30分开盘行情</p>
-</dd></dl>
-
-</section>
-<section id="get-minute-data">
-<h3>get_minute_data<a class="headerlink" href="#get-minute-data" title="Permalink to this headline"></a></h3>
-<dl class="py function">
-<dt class="sig sig-object py" id="dramkit.fintools.load_his_data.get_minute_data">
-<span class="sig-prename descclassname"><span class="pre">dramkit.fintools.load_his_data.</span></span><span class="sig-name descname"><span class="pre">get_minute_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">code</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">start_date</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">end_date</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.fintools.load_his_data.get_minute_data" title="Permalink to this definition"></a></dt>
-<dd><p>分钟行情数据获取</p>
-</dd></dl>
-
-</section>
-<section id="load-daily-data">
-<h3>load_daily_data<a class="headerlink" href="#load-daily-data" title="Permalink to this headline"></a></h3>
-<dl class="py function">
-<dt class="sig sig-object py" id="dramkit.fintools.load_his_data.load_daily_data">
-<span class="sig-prename descclassname"><span class="pre">dramkit.fintools.load_his_data.</span></span><span class="sig-name descname"><span class="pre">load_daily_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">code</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.fintools.load_his_data.load_daily_data" title="Permalink to this definition"></a></dt>
-<dd></dd></dl>
-
-</section>
-<section id="load-index-daily">
-<h3>load_index_daily<a class="headerlink" href="#load-index-daily" title="Permalink to this headline"></a></h3>
-<dl class="py function">
-<dt class="sig sig-object py" id="dramkit.fintools.load_his_data.load_index_daily">
-<span class="sig-prename descclassname"><span class="pre">dramkit.fintools.load_his_data.</span></span><span class="sig-name descname"><span class="pre">load_index_daily</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">code</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.fintools.load_his_data.load_index_daily" title="Permalink to this definition"></a></dt>
-<dd><p>读取指数日K线数据</p>
-</dd></dl>
-
-</section>
-<section id="load-index-minute">
-<h3>load_index_minute<a class="headerlink" href="#load-index-minute" title="Permalink to this headline"></a></h3>
-<dl class="py function">
-<dt class="sig sig-object py" id="dramkit.fintools.load_his_data.load_index_minute">
-<span class="sig-prename descclassname"><span class="pre">dramkit.fintools.load_his_data.</span></span><span class="sig-name descname"><span class="pre">load_index_minute</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">code</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">freq_minute</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.fintools.load_his_data.load_index_minute" title="Permalink to this definition"></a></dt>
-<dd><p>读取指数分钟K线数据</p>
-</dd></dl>
-
-</section>
-<section id="load-btc-daily">
-<h3>load_btc_daily<a class="headerlink" href="#load-btc-daily" title="Permalink to this headline"></a></h3>
-<dl class="py function">
-<dt class="sig sig-object py" id="dramkit.fintools.load_his_data.load_btc_daily">
-<span class="sig-prename descclassname"><span class="pre">dramkit.fintools.load_his_data.</span></span><span class="sig-name descname"><span class="pre">load_btc_daily</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.fintools.load_his_data.load_btc_daily" title="Permalink to this definition"></a></dt>
-<dd></dd></dl>
-
-</section>
-<section id="load-eth-daily">
-<h3>load_eth_daily<a class="headerlink" href="#load-eth-daily" title="Permalink to this headline"></a></h3>
-<dl class="py function">
-<dt class="sig sig-object py" id="dramkit.fintools.load_his_data.load_eth_daily">
-<span class="sig-prename descclassname"><span class="pre">dramkit.fintools.load_his_data.</span></span><span class="sig-name descname"><span class="pre">load_eth_daily</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.fintools.load_his_data.load_eth_daily" title="Permalink to this definition"></a></dt>
-<dd></dd></dl>
-
-</section>
-<section id="load-index-futures-daily">
-<h3>load_index_futures_daily<a class="headerlink" href="#load-index-futures-daily" title="Permalink to this headline"></a></h3>
-<dl class="py function">
-<dt class="sig sig-object py" id="dramkit.fintools.load_his_data.load_index_futures_daily">
-<span class="sig-prename descclassname"><span class="pre">dramkit.fintools.load_his_data.</span></span><span class="sig-name descname"><span class="pre">load_index_futures_daily</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">code</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.fintools.load_his_data.load_index_futures_daily" title="Permalink to this definition"></a></dt>
-<dd><p>读取股指期货日K线数据</p>
-</dd></dl>
-
-</section>
-<section id="load-index-futures-minute">
-<h3>load_index_futures_minute<a class="headerlink" href="#load-index-futures-minute" title="Permalink to this headline"></a></h3>
-<dl class="py function">
-<dt class="sig sig-object py" id="dramkit.fintools.load_his_data.load_index_futures_minute">
-<span class="sig-prename descclassname"><span class="pre">dramkit.fintools.load_his_data.</span></span><span class="sig-name descname"><span class="pre">load_index_futures_minute</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">code</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">freq_minute</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.fintools.load_his_data.load_index_futures_minute" title="Permalink to this definition"></a></dt>
-<dd><p>读取股指期货分钟K线数据</p>
-</dd></dl>
-
-</section>
-<section id="check-daily-data-is-new">
-<h3>check_daily_data_is_new<a class="headerlink" href="#check-daily-data-is-new" title="Permalink to this headline"></a></h3>
-<dl class="py function">
-<dt class="sig sig-object py" id="dramkit.fintools.load_his_data.check_daily_data_is_new">
-<span class="sig-prename descclassname"><span class="pre">dramkit.fintools.load_his_data.</span></span><span class="sig-name descname"><span class="pre">check_daily_data_is_new</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">df_path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">date_col</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'date'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">only_trade_day</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">only_workday</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">only_inweek</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">return_data</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.fintools.load_his_data.check_daily_data_is_new" title="Permalink to this definition"></a></dt>
-<dd><div class="line-block">
-<div class="line">检查日频数据是否为最新值</div>
-<div class="line">若date_col列不存在，则默认将索引作为日期</div>
 </div>
 </dd></dl>
 

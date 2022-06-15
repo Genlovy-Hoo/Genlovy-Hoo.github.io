@@ -8,10 +8,15 @@ othertools
 
 .. currentmodule:: dramkit.other.othertools
 
-get_csv_colmaxmin
-^^^^^^^^^^^^^^^^^^
+archive_data
+^^^^^^^^^^^^^
 
-.. autofunction:: dramkit.other.othertools.get_csv_colmaxmin
+.. autofunction:: dramkit.other.othertools.archive_data
+
+get_csv_df_colmaxmin
+^^^^^^^^^^^^^^^^^^^^^
+
+.. autofunction:: dramkit.other.othertools.get_csv_df_colmaxmin
 
 load_text_multi
 ^^^^^^^^^^^^^^^^

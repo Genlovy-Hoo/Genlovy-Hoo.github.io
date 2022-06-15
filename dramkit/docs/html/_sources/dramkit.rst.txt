@@ -465,6 +465,16 @@ unpickle_file
 
 .. autofunction:: dramkit.iotools.unpickle_file
 
+load_yml
+^^^^^^^^^
+
+.. autofunction:: dramkit.iotools.load_yml
+
+write_yml
+^^^^^^^^^^
+
+.. autofunction:: dramkit.iotools.write_yml
+
 load_json
 ^^^^^^^^^^
 
@@ -505,6 +515,16 @@ load_excels
 
 .. autofunction:: dramkit.iotools.load_excels
 
+clear_text_file
+^^^^^^^^^^^^^^^^
+
+.. autofunction:: dramkit.iotools.clear_text_file
+
+clear_specified_type_files
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. autofunction:: dramkit.iotools.clear_specified_type_files
+
 get_all_paths
 ^^^^^^^^^^^^^^
 
@@ -534,6 +554,21 @@ copy_dir
 ^^^^^^^^^
 
 .. autofunction:: dramkit.iotools.copy_dir
+
+move_file
+^^^^^^^^^^
+
+.. autofunction:: dramkit.iotools.move_file
+
+move_dir
+^^^^^^^^^
+
+.. autofunction:: dramkit.iotools.move_dir
+
+make_dir
+^^^^^^^^^
+
+.. autofunction:: dramkit.iotools.make_dir
 
 py2pyc
 ^^^^^^^
@@ -619,6 +654,11 @@ cmdrun
 ^^^^^^^
 
 .. autofunction:: dramkit.iotools.cmdrun
+
+cmd_run_pys
+^^^^^^^^^^^^
+
+.. autofunction:: dramkit.iotools.cmd_run_pys
 
 rename_files_in_dir
 ^^^^^^^^^^^^^^^^^^^^
