@@ -424,40 +424,25 @@ trade_fee_Astock
 
 .. autofunction:: dramkit.fintools.utils_chn.trade_fee_Astock
 
-is_trade_day_chncal
-^^^^^^^^^^^^^^^^^^^^
+is_trade_day
+^^^^^^^^^^^^^
 
-.. autofunction:: dramkit.fintools.utils_chn.is_trade_day_chncal
+.. autofunction:: dramkit.fintools.utils_chn.is_trade_day
 
-get_recent_trade_date_chncal
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+get_recent_trade_date
+^^^^^^^^^^^^^^^^^^^^^^
 
-.. autofunction:: dramkit.fintools.utils_chn.get_recent_trade_date_chncal
-
-get_next_nth_trade_date_chncal
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-.. autofunction:: dramkit.fintools.utils_chn.get_next_nth_trade_date_chncal
+.. autofunction:: dramkit.fintools.utils_chn.get_recent_trade_date
 
 get_next_nth_trade_date
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. autofunction:: dramkit.fintools.utils_chn.get_next_nth_trade_date
 
-get_trade_dates_chncal
-^^^^^^^^^^^^^^^^^^^^^^^
-
-.. autofunction:: dramkit.fintools.utils_chn.get_trade_dates_chncal
-
 get_trade_dates
 ^^^^^^^^^^^^^^^^
 
 .. autofunction:: dramkit.fintools.utils_chn.get_trade_dates
-
-get_trade_dates_bk
-^^^^^^^^^^^^^^^^^^^
-
-.. autofunction:: dramkit.fintools.utils_chn.get_trade_dates_bk
 
 get_num_trade_dates
 ^^^^^^^^^^^^^^^^^^^^

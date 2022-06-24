@@ -123,15 +123,15 @@ get_next_nth_workday_chncal
 
 .. autofunction:: dramkit.datetimetools.get_next_nth_workday_chncal
 
-get_recent_inweekday_chncal
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+get_recent_inweekday
+^^^^^^^^^^^^^^^^^^^^^
 
-.. autofunction:: dramkit.datetimetools.get_recent_inweekday_chncal
+.. autofunction:: dramkit.datetimetools.get_recent_inweekday
 
-get_next_nth_inweekday_chncal
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+get_next_nth_inweekday
+^^^^^^^^^^^^^^^^^^^^^^^
 
-.. autofunction:: dramkit.datetimetools.get_next_nth_inweekday_chncal
+.. autofunction:: dramkit.datetimetools.get_next_nth_inweekday
 
 cut_date
 ^^^^^^^^^
@@ -569,6 +569,11 @@ make_dir
 ^^^^^^^^^
 
 .. autofunction:: dramkit.iotools.make_dir
+
+get_last_change_time
+^^^^^^^^^^^^^^^^^^^^^
+
+.. autofunction:: dramkit.iotools.get_last_change_time
 
 py2pyc
 ^^^^^^^

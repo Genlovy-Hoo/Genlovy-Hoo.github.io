@@ -64,8 +64,8 @@
 <li class="toctree-l3"><a class="reference internal" href="#isworkday-chncal">isworkday_chncal</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#get-recent-workday-chncal">get_recent_workday_chncal</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#get-next-nth-workday-chncal">get_next_nth_workday_chncal</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#get-recent-inweekday-chncal">get_recent_inweekday_chncal</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#get-next-nth-inweekday-chncal">get_next_nth_inweekday_chncal</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#get-recent-inweekday">get_recent_inweekday</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#get-next-nth-inweekday">get_next_nth_inweekday</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#cut-date">cut_date</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#diff-workdays-date">diff_workdays_date</a></li>
 </ul>
@@ -157,6 +157,7 @@
 <li class="toctree-l3"><a class="reference internal" href="#move-file">move_file</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#move-dir">move_dir</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#make-dir">make_dir</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#get-last-change-time">get_last_change_time</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#py2pyc">py2pyc</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#py2pyc-dir">py2pyc_dir</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#pyc2py">pyc2py</a></li>
@@ -443,6 +444,10 @@
 <dt class="sig sig-object py" id="dramkit.datetimetools.get_dates_between">
 <span class="sig-prename descclassname"><span class="pre">dramkit.datetimetools.</span></span><span class="sig-name descname"><span class="pre">get_dates_between</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">date1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">date2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">keep1</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">keep2</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">only_workday</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">del_weekend</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">joiner</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.datetimetools.get_dates_between" title="Permalink to this definition"></a></dt>
 <dd><p>获取date1到date2之间的日期列表，keep1和keep2设置结果是否保留date1和date2</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>是否为workday用了chinese_calendar包，若chinese_calendar库没更新，可能导致结果不准确</p>
+</div>
 </dd></dl>
 
 </section>
@@ -450,7 +455,7 @@
 <h3>get_dayofweek<a class="headerlink" href="#get-dayofweek" title="Permalink to this headline"></a></h3>
 <dl class="py function">
 <dt class="sig sig-object py" id="dramkit.datetimetools.get_dayofweek">
-<span class="sig-prename descclassname"><span class="pre">dramkit.datetimetools.</span></span><span class="sig-name descname"><span class="pre">get_dayofweek</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">date</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.datetimetools.get_dayofweek" title="Permalink to this definition"></a></dt>
+<span class="sig-prename descclassname"><span class="pre">dramkit.datetimetools.</span></span><span class="sig-name descname"><span class="pre">get_dayofweek</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">date</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.datetimetools.get_dayofweek" title="Permalink to this definition"></a></dt>
 <dd><p>返回date属于星期几（1-7）</p>
 </dd></dl>
 
@@ -459,7 +464,7 @@
 <h3>get_dayofyear<a class="headerlink" href="#get-dayofyear" title="Permalink to this headline"></a></h3>
 <dl class="py function">
 <dt class="sig sig-object py" id="dramkit.datetimetools.get_dayofyear">
-<span class="sig-prename descclassname"><span class="pre">dramkit.datetimetools.</span></span><span class="sig-name descname"><span class="pre">get_dayofyear</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">date</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.datetimetools.get_dayofyear" title="Permalink to this definition"></a></dt>
+<span class="sig-prename descclassname"><span class="pre">dramkit.datetimetools.</span></span><span class="sig-name descname"><span class="pre">get_dayofyear</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">date</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.datetimetools.get_dayofyear" title="Permalink to this definition"></a></dt>
 <dd><p>返回date属于一年当中的第几天（从1开始记）</p>
 </dd></dl>
 
@@ -468,7 +473,7 @@
 <h3>isworkday_chncal<a class="headerlink" href="#isworkday-chncal" title="Permalink to this headline"></a></h3>
 <dl class="py function">
 <dt class="sig sig-object py" id="dramkit.datetimetools.isworkday_chncal">
-<span class="sig-prename descclassname"><span class="pre">dramkit.datetimetools.</span></span><span class="sig-name descname"><span class="pre">isworkday_chncal</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">date</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.datetimetools.isworkday_chncal" title="Permalink to this definition"></a></dt>
+<span class="sig-prename descclassname"><span class="pre">dramkit.datetimetools.</span></span><span class="sig-name descname"><span class="pre">isworkday_chncal</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">date</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.datetimetools.isworkday_chncal" title="Permalink to this definition"></a></dt>
 <dd><p>利用chinese_calendar库判断date（str格式）是否为工作日</p>
 </dd></dl>
 
@@ -490,7 +495,7 @@
 <h3>get_next_nth_workday_chncal<a class="headerlink" href="#get-next-nth-workday-chncal" title="Permalink to this headline"></a></h3>
 <dl class="py function">
 <dt class="sig sig-object py" id="dramkit.datetimetools.get_next_nth_workday_chncal">
-<span class="sig-prename descclassname"><span class="pre">dramkit.datetimetools.</span></span><span class="sig-name descname"><span class="pre">get_next_nth_workday_chncal</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">date</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.datetimetools.get_next_nth_workday_chncal" title="Permalink to this definition"></a></dt>
+<span class="sig-prename descclassname"><span class="pre">dramkit.datetimetools.</span></span><span class="sig-name descname"><span class="pre">get_next_nth_workday_chncal</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">date</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.datetimetools.get_next_nth_workday_chncal" title="Permalink to this definition"></a></dt>
 <dd><div class="line-block">
 <div class="line">给定日期date，返回其后第n个工作日日期，n可为负数（返回结果在date之前）</div>
 <div class="line">若n为0，直接返回date</div>
@@ -502,20 +507,20 @@
 </dd></dl>
 
 </section>
-<section id="get-recent-inweekday-chncal">
-<h3>get_recent_inweekday_chncal<a class="headerlink" href="#get-recent-inweekday-chncal" title="Permalink to this headline"></a></h3>
+<section id="get-recent-inweekday">
+<h3>get_recent_inweekday<a class="headerlink" href="#get-recent-inweekday" title="Permalink to this headline"></a></h3>
 <dl class="py function">
-<dt class="sig sig-object py" id="dramkit.datetimetools.get_recent_inweekday_chncal">
-<span class="sig-prename descclassname"><span class="pre">dramkit.datetimetools.</span></span><span class="sig-name descname"><span class="pre">get_recent_inweekday_chncal</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">date</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dirt</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'post'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.datetimetools.get_recent_inweekday_chncal" title="Permalink to this definition"></a></dt>
+<dt class="sig sig-object py" id="dramkit.datetimetools.get_recent_inweekday">
+<span class="sig-prename descclassname"><span class="pre">dramkit.datetimetools.</span></span><span class="sig-name descname"><span class="pre">get_recent_inweekday</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">date</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dirt</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'post'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.datetimetools.get_recent_inweekday" title="Permalink to this definition"></a></dt>
 <dd><p>若date不是周末，则返回，否则返回下一个(post)或上一个(pre)周内日期</p>
 </dd></dl>
 
 </section>
-<section id="get-next-nth-inweekday-chncal">
-<h3>get_next_nth_inweekday_chncal<a class="headerlink" href="#get-next-nth-inweekday-chncal" title="Permalink to this headline"></a></h3>
+<section id="get-next-nth-inweekday">
+<h3>get_next_nth_inweekday<a class="headerlink" href="#get-next-nth-inweekday" title="Permalink to this headline"></a></h3>
 <dl class="py function">
-<dt class="sig sig-object py" id="dramkit.datetimetools.get_next_nth_inweekday_chncal">
-<span class="sig-prename descclassname"><span class="pre">dramkit.datetimetools.</span></span><span class="sig-name descname"><span class="pre">get_next_nth_inweekday_chncal</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">date</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.datetimetools.get_next_nth_inweekday_chncal" title="Permalink to this definition"></a></dt>
+<dt class="sig sig-object py" id="dramkit.datetimetools.get_next_nth_inweekday">
+<span class="sig-prename descclassname"><span class="pre">dramkit.datetimetools.</span></span><span class="sig-name descname"><span class="pre">get_next_nth_inweekday</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">date</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.datetimetools.get_next_nth_inweekday" title="Permalink to this definition"></a></dt>
 <dd><div class="line-block">
 <div class="line">给定日期date，返回其后第n个周内日日期，n可为负数（返回结果在date之前）</div>
 <div class="line">若n为0，直接返回date</div>
@@ -2412,6 +2417,15 @@ cols_groupby设定</p>
 <dt class="sig sig-object py" id="dramkit.iotools.make_dir">
 <span class="sig-prename descclassname"><span class="pre">dramkit.iotools.</span></span><span class="sig-name descname"><span class="pre">make_dir</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dir_path</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.iotools.make_dir" title="Permalink to this definition"></a></dt>
 <dd><p>新建文件夹</p>
+</dd></dl>
+
+</section>
+<section id="get-last-change-time">
+<h3>get_last_change_time<a class="headerlink" href="#get-last-change-time" title="Permalink to this headline"></a></h3>
+<dl class="py function">
+<dt class="sig sig-object py" id="dramkit.iotools.get_last_change_time">
+<span class="sig-prename descclassname"><span class="pre">dramkit.iotools.</span></span><span class="sig-name descname"><span class="pre">get_last_change_time</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fpath</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">strformat</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'%Y-%m-%d</span> <span class="pre">%H:%M:%S'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.iotools.get_last_change_time" title="Permalink to this definition"></a></dt>
+<dd><p>获取文件的最后修改时间</p>
 </dd></dl>
 
 </section>
