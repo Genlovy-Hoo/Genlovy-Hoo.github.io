@@ -1,0 +1,71 @@
+utils
+======
+
+utils
+------
+
+.. automodule:: finfactory.utils.utils
+
+.. currentmodule:: finfactory.utils.utils
+
+gen_py_logger
+^^^^^^^^^^^^^^
+
+.. autofunction:: finfactory.utils.utils.gen_py_logger
+
+check_date_loss
+^^^^^^^^^^^^^^^^
+
+.. autofunction:: finfactory.utils.utils.check_date_loss
+
+check_daily_data_is_new
+^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. autofunction:: finfactory.utils.utils.check_daily_data_is_new
+
+check_month_loss
+^^^^^^^^^^^^^^^^^
+
+.. autofunction:: finfactory.utils.utils.check_month_loss
+
+check_minute_loss
+^^^^^^^^^^^^^^^^^^
+
+.. autofunction:: finfactory.utils.utils.check_minute_loss
+
+get_tushare_api
+^^^^^^^^^^^^^^^^
+
+.. autofunction:: finfactory.utils.utils.get_tushare_api
+
+parms_check_ts_daily
+^^^^^^^^^^^^^^^^^^^^^
+
+.. autofunction:: finfactory.utils.utils.parms_check_ts_daily
+
+get_gm_api
+^^^^^^^^^^^
+
+.. autofunction:: finfactory.utils.utils.get_gm_api
+
+utils_crypto
+-------------
+
+.. automodule:: finfactory.utils.utils_crypto
+
+.. currentmodule:: finfactory.utils.utils_crypto
+
+get_ccxt_market
+^^^^^^^^^^^^^^^^
+
+.. autofunction:: finfactory.utils.utils_crypto.get_ccxt_market
+
+check_loss
+^^^^^^^^^^^
+
+.. autofunction:: finfactory.utils.utils_crypto.check_loss
+
+get_klines_ccxt
+^^^^^^^^^^^^^^^^
+
+.. autofunction:: finfactory.utils.utils_crypto.get_klines_ccxt

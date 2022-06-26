@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>dramkit &mdash; DramKit 0.2.7 documentation</title>
+  <title>dramkit &mdash; DramKit 0.2.8 documentation</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <!--[if lt IE 9]>
@@ -158,6 +158,9 @@
 <li class="toctree-l3"><a class="reference internal" href="#move-dir">move_dir</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#make-dir">make_dir</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#get-last-change-time">get_last_change_time</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#get-file-info">get_file_info</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#get-files-info">get_files_info</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#get-files-info-dir">get_files_info_dir</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#py2pyc">py2pyc</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#py2pyc-dir">py2pyc_dir</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#pyc2py">pyc2py</a></li>
@@ -185,7 +188,6 @@
 <li class="toctree-l1"><a class="reference internal" href="dramkit.backpacks.html">backpacks</a></li>
 <li class="toctree-l1"><a class="reference internal" href="dramkit.datsci.html">datsci</a></li>
 <li class="toctree-l1"><a class="reference internal" href="dramkit.find_addends.html">find_addends</a></li>
-<li class="toctree-l1"><a class="reference internal" href="dramkit.fintools.html">fintools</a></li>
 <li class="toctree-l1"><a class="reference internal" href="dramkit.logtools.html">logtools</a></li>
 <li class="toctree-l1"><a class="reference internal" href="dramkit.optimizer.html">optimizer</a></li>
 <li class="toctree-l1"><a class="reference internal" href="dramkit.other.html">other</a></li>
@@ -2426,6 +2428,36 @@ cols_groupby设定</p>
 <dt class="sig sig-object py" id="dramkit.iotools.get_last_change_time">
 <span class="sig-prename descclassname"><span class="pre">dramkit.iotools.</span></span><span class="sig-name descname"><span class="pre">get_last_change_time</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fpath</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">strformat</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'%Y-%m-%d</span> <span class="pre">%H:%M:%S'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.iotools.get_last_change_time" title="Permalink to this definition"></a></dt>
 <dd><p>获取文件的最后修改时间</p>
+</dd></dl>
+
+</section>
+<section id="get-file-info">
+<h3>get_file_info<a class="headerlink" href="#get-file-info" title="Permalink to this headline"></a></h3>
+<dl class="py function">
+<dt class="sig sig-object py" id="dramkit.iotools.get_file_info">
+<span class="sig-prename descclassname"><span class="pre">dramkit.iotools.</span></span><span class="sig-name descname"><span class="pre">get_file_info</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fpath</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.iotools.get_file_info" title="Permalink to this definition"></a></dt>
+<dd><p>获取文件信息</p>
+</dd></dl>
+
+</section>
+<section id="get-files-info">
+<h3>get_files_info<a class="headerlink" href="#get-files-info" title="Permalink to this headline"></a></h3>
+<dl class="py function">
+<dt class="sig sig-object py" id="dramkit.iotools.get_files_info">
+<span class="sig-prename descclassname"><span class="pre">dramkit.iotools.</span></span><span class="sig-name descname"><span class="pre">get_files_info</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fpaths</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.iotools.get_files_info" title="Permalink to this definition"></a></dt>
+<dd><p>获取列表中的文件信息</p>
+</dd></dl>
+
+</section>
+<section id="get-files-info-dir">
+<h3>get_files_info_dir<a class="headerlink" href="#get-files-info-dir" title="Permalink to this headline"></a></h3>
+<dl class="py function">
+<dt class="sig sig-object py" id="dramkit.iotools.get_files_info_dir">
+<span class="sig-prename descclassname"><span class="pre">dramkit.iotools.</span></span><span class="sig-name descname"><span class="pre">get_files_info_dir</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dir_path</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.iotools.get_files_info_dir" title="Permalink to this definition"></a></dt>
+<dd><div class="line-block">
+<div class="line">获取dir_path文件夹中所有文件的信息</div>
+<div class="line">**kwargs为 <code class="xref py py-func docutils literal notranslate"><span class="pre">dramkit.iotoos.get_all_paths()</span></code> 接受的参数</div>
+</div>
 </dd></dl>
 
 </section>

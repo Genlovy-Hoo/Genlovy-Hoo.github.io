@@ -1,0 +1,108 @@
+finfactory
+===========
+
+config
+-------
+
+.. automodule:: finfactory.config
+
+.. currentmodule:: finfactory.config
+
+install_check
+--------------
+
+.. automodule:: finfactory.install_check
+
+.. currentmodule:: finfactory.install_check
+
+install_check
+^^^^^^^^^^^^^^
+
+.. autofunction:: finfactory.install_check.install_check
+
+load_his_data
+--------------
+
+.. automodule:: finfactory.load_his_data
+
+.. currentmodule:: finfactory.load_his_data
+
+find_target_dir
+^^^^^^^^^^^^^^^^
+
+.. autofunction:: finfactory.load_his_data.find_target_dir
+
+load_ccxt_daily
+^^^^^^^^^^^^^^^^
+
+.. autofunction:: finfactory.load_his_data.load_ccxt_daily
+
+load_daily_btc126
+^^^^^^^^^^^^^^^^^^
+
+.. autofunction:: finfactory.load_his_data.load_daily_btc126
+
+load_daily_qkl123
+^^^^^^^^^^^^^^^^^^
+
+.. autofunction:: finfactory.load_his_data.load_daily_qkl123
+
+load_daily_crypto_usdt
+^^^^^^^^^^^^^^^^^^^^^^^
+
+.. autofunction:: finfactory.load_his_data.load_daily_crypto_usdt
+
+load_ccxt_minute
+^^^^^^^^^^^^^^^^^
+
+.. autofunction:: finfactory.load_his_data.load_ccxt_minute
+
+load_trade_dates_tushare
+^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. autofunction:: finfactory.load_his_data.load_trade_dates_tushare
+
+load_index_info_tushare
+^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. autofunction:: finfactory.load_his_data.load_index_info_tushare
+
+load_index_info_all_tushare
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. autofunction:: finfactory.load_his_data.load_index_info_all_tushare
+
+get_index_code_name_tushare
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. autofunction:: finfactory.load_his_data.get_index_code_name_tushare
+
+find_ts_index_code
+^^^^^^^^^^^^^^^^^^^
+
+.. autofunction:: finfactory.load_his_data.find_ts_index_code
+
+load_index_daily_tushare
+^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. autofunction:: finfactory.load_his_data.load_index_daily_tushare
+
+load_index_daily_basic_tushare
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. autofunction:: finfactory.load_his_data.load_index_daily_basic_tushare
+
+load_chn_bond_yields
+^^^^^^^^^^^^^^^^^^^^^
+
+.. autofunction:: finfactory.load_his_data.load_chn_bond_yields
+
+load_cffex_lhb_future
+^^^^^^^^^^^^^^^^^^^^^^
+
+.. autofunction:: finfactory.load_his_data.load_cffex_lhb_future
+
+load_future_daily_tushare
+^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. autofunction:: finfactory.load_his_data.load_future_daily_tushare

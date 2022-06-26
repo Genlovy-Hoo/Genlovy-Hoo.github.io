@@ -575,6 +575,21 @@ get_last_change_time
 
 .. autofunction:: dramkit.iotools.get_last_change_time
 
+get_file_info
+^^^^^^^^^^^^^^
+
+.. autofunction:: dramkit.iotools.get_file_info
+
+get_files_info
+^^^^^^^^^^^^^^^
+
+.. autofunction:: dramkit.iotools.get_files_info
+
+get_files_info_dir
+^^^^^^^^^^^^^^^^^^^
+
+.. autofunction:: dramkit.iotools.get_files_info_dir
+
 py2pyc
 ^^^^^^^
 

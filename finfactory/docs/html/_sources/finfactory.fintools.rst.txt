@@ -1,0 +1,652 @@
+fintools
+=========
+
+ahr999
+-------
+
+.. automodule:: finfactory.fintools.ahr999
+
+.. currentmodule:: finfactory.fintools.ahr999
+
+get_ahr999
+^^^^^^^^^^^
+
+.. autofunction:: finfactory.fintools.ahr999.get_ahr999
+
+barra
+------
+
+.. automodule:: finfactory.fintools.barra
+
+.. currentmodule:: finfactory.fintools.barra
+
+get_exp_decay_weight
+^^^^^^^^^^^^^^^^^^^^^
+
+.. autofunction:: finfactory.fintools.barra.get_exp_decay_weight
+
+get_regression_beta
+^^^^^^^^^^^^^^^^^^^^
+
+.. autofunction:: finfactory.fintools.barra.get_regression_beta
+
+size
+^^^^^
+
+.. autofunction:: finfactory.fintools.barra.size
+
+get_barra_beta
+^^^^^^^^^^^^^^^
+
+.. autofunction:: finfactory.fintools.barra.get_barra_beta
+
+candle_similar
+---------------
+
+.. automodule:: finfactory.fintools.candle_similar
+
+.. currentmodule:: finfactory.fintools.candle_similar
+
+candle_similar
+^^^^^^^^^^^^^^^
+
+.. autofunction:: finfactory.fintools.candle_similar.candle_similar
+
+fac_bolls
+----------
+
+.. automodule:: finfactory.fintools.fac_bolls
+
+.. currentmodule:: finfactory.fintools.fac_bolls
+
+boll_label_uplow
+^^^^^^^^^^^^^^^^^
+
+.. autofunction:: finfactory.fintools.fac_bolls.boll_label_uplow
+
+boll_label_uplow_cross
+^^^^^^^^^^^^^^^^^^^^^^^
+
+.. autofunction:: finfactory.fintools.fac_bolls.boll_label_uplow_cross
+
+get_boll_label_uplow
+^^^^^^^^^^^^^^^^^^^^^
+
+.. autofunction:: finfactory.fintools.fac_bolls.get_boll_label_uplow
+
+get_boll_label_uplow_cross
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. autofunction:: finfactory.fintools.fac_bolls.get_boll_label_uplow_cross
+
+fintools
+---------
+
+.. automodule:: finfactory.fintools.fintools
+
+.. currentmodule:: finfactory.fintools.fintools
+
+cal_ic
+^^^^^^^
+
+.. autofunction:: finfactory.fintools.fintools.cal_ic
+
+kelly_formula
+^^^^^^^^^^^^^^
+
+.. autofunction:: finfactory.fintools.fintools.kelly_formula
+
+sim_mc
+^^^^^^^
+
+.. autofunction:: finfactory.fintools.fintools.sim_mc
+
+wuxianpu
+^^^^^^^^^
+
+.. autofunction:: finfactory.fintools.fintools.wuxianpu
+
+mas_order
+^^^^^^^^^^
+
+.. autofunction:: finfactory.fintools.fintools.mas_order
+
+macd
+^^^^^
+
+.. autofunction:: finfactory.fintools.fintools.macd
+
+boll
+^^^^^
+
+.. autofunction:: finfactory.fintools.fintools.boll
+
+bbi
+^^^^
+
+.. autofunction:: finfactory.fintools.fintools.bbi
+
+cci
+^^^^
+
+.. autofunction:: finfactory.fintools.fintools.cci
+
+expma
+^^^^^^
+
+.. autofunction:: finfactory.fintools.fintools.expma
+
+weight_ma_linear_decay
+^^^^^^^^^^^^^^^^^^^^^^^
+
+.. autofunction:: finfactory.fintools.fintools.weight_ma_linear_decay
+
+kama
+^^^^^
+
+.. autofunction:: finfactory.fintools.fintools.kama
+
+er
+^^^
+
+.. autofunction:: finfactory.fintools.fintools.er
+
+ma_trend_strength
+^^^^^^^^^^^^^^^^^^
+
+.. autofunction:: finfactory.fintools.fintools.ma_trend_strength
+
+kdj
+^^^^
+
+.. autofunction:: finfactory.fintools.fintools.kdj
+
+talib_rsi
+^^^^^^^^^^
+
+.. autofunction:: finfactory.fintools.fintools.talib_rsi
+
+atr
+^^^^
+
+.. autofunction:: finfactory.fintools.fintools.atr
+
+talib_atr
+^^^^^^^^^^
+
+.. autofunction:: finfactory.fintools.fintools.talib_atr
+
+adx
+^^^^
+
+.. autofunction:: finfactory.fintools.fintools.adx
+
+talib_adx
+^^^^^^^^^^
+
+.. autofunction:: finfactory.fintools.fintools.talib_adx
+
+talib_roc
+^^^^^^^^^^
+
+.. autofunction:: finfactory.fintools.fintools.talib_roc
+
+roc
+^^^^
+
+.. autofunction:: finfactory.fintools.fintools.roc
+
+vri
+^^^^
+
+.. autofunction:: finfactory.fintools.fintools.vri
+
+bbw
+^^^^
+
+.. autofunction:: finfactory.fintools.fintools.bbw
+
+mean_candle
+^^^^^^^^^^^^
+
+.. autofunction:: finfactory.fintools.fintools.mean_candle
+
+demark_td
+^^^^^^^^^^
+
+.. autofunction:: finfactory.fintools.fintools.demark_td
+
+acpmp
+^^^^^^
+
+.. autofunction:: finfactory.fintools.fintools.acpmp
+
+get_turn_point
+^^^^^^^^^^^^^^^
+
+.. autofunction:: finfactory.fintools.fintools.get_turn_point
+
+cross
+^^^^^^
+
+.. autofunction:: finfactory.fintools.fintools.cross
+
+cross_plot
+^^^^^^^^^^^
+
+.. autofunction:: finfactory.fintools.fintools.cross_plot
+
+cross2
+^^^^^^^
+
+.. autofunction:: finfactory.fintools.fintools.cross2
+
+cross2_plot
+^^^^^^^^^^^^
+
+.. autofunction:: finfactory.fintools.fintools.cross2_plot
+
+cross_cum_maxmin_dif
+^^^^^^^^^^^^^^^^^^^^^
+
+.. autofunction:: finfactory.fintools.fintools.cross_cum_maxmin_dif
+
+limit_stock_value
+------------------
+
+.. automodule:: finfactory.fintools.limit_stock_value
+
+.. currentmodule:: finfactory.fintools.limit_stock_value
+
+app
+^^^^
+
+.. autofunction:: finfactory.fintools.limit_stock_value.app
+
+cal_limit_stock_value
+^^^^^^^^^^^^^^^^^^^^^^
+
+.. autofunction:: finfactory.fintools.limit_stock_value.cal_limit_stock_value
+
+options
+--------
+
+.. automodule:: finfactory.fintools.options
+
+.. currentmodule:: finfactory.fintools.options
+
+bs_opt
+^^^^^^^
+
+.. autofunction:: finfactory.fintools.options.bs_opt
+
+mc_bs_opt
+^^^^^^^^^^
+
+.. autofunction:: finfactory.fintools.options.mc_bs_opt
+
+mc_log_bs_opt
+^^^^^^^^^^^^^^
+
+.. autofunction:: finfactory.fintools.options.mc_log_bs_opt
+
+bopm_european
+^^^^^^^^^^^^^^
+
+.. autofunction:: finfactory.fintools.options.bopm_european
+
+bsm_iv_dichotomy
+^^^^^^^^^^^^^^^^^
+
+.. autofunction:: finfactory.fintools.options.bsm_iv_dichotomy
+
+bsm_iv_dichotomy0
+^^^^^^^^^^^^^^^^^^
+
+.. autofunction:: finfactory.fintools.options.bsm_iv_dichotomy0
+
+bsm_iv_newton
+^^^^^^^^^^^^^^
+
+.. autofunction:: finfactory.fintools.options.bsm_iv_newton
+
+bs_vega
+^^^^^^^^
+
+.. autofunction:: finfactory.fintools.options.bs_vega
+
+bs_delta
+^^^^^^^^^
+
+.. autofunction:: finfactory.fintools.options.bs_delta
+
+bs_gamma
+^^^^^^^^^
+
+.. autofunction:: finfactory.fintools.options.bs_gamma
+
+bs_theta
+^^^^^^^^^
+
+.. autofunction:: finfactory.fintools.options.bs_theta
+
+bs_rho
+^^^^^^^
+
+.. autofunction:: finfactory.fintools.options.bs_rho
+
+report_date_align
+------------------
+
+.. automodule:: finfactory.fintools.report_date_align
+
+.. currentmodule:: finfactory.fintools.report_date_align
+
+get_tushare_api
+^^^^^^^^^^^^^^^^
+
+.. autofunction:: finfactory.fintools.report_date_align.get_tushare_api
+
+get_trade_date
+^^^^^^^^^^^^^^^
+
+.. autofunction:: finfactory.fintools.report_date_align.get_trade_date
+
+get_aligned_data
+^^^^^^^^^^^^^^^^^
+
+.. autofunction:: finfactory.fintools.report_date_align.get_aligned_data
+
+times_cast
+-----------
+
+.. automodule:: finfactory.fintools.times_cast
+
+.. currentmodule:: finfactory.fintools.times_cast
+
+TimesCasterLottery
+^^^^^^^^^^^^^^^^^^^
+
+.. autoclass:: finfactory.fintools.times_cast.TimesCasterLottery
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+TimesCasterConFuture
+^^^^^^^^^^^^^^^^^^^^^
+
+.. autoclass:: finfactory.fintools.times_cast.TimesCasterConFuture
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+utils_chn
+----------
+
+.. automodule:: finfactory.fintools.utils_chn
+
+.. currentmodule:: finfactory.fintools.utils_chn
+
+get_finreport_date_by_delta
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. autofunction:: finfactory.fintools.utils_chn.get_finreport_date_by_delta
+
+get_last_effect_finreport_dates
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. autofunction:: finfactory.fintools.utils_chn.get_last_effect_finreport_dates
+
+get_code_ext
+^^^^^^^^^^^^^
+
+.. autofunction:: finfactory.fintools.utils_chn.get_code_ext
+
+get_trade_fee_Astock
+^^^^^^^^^^^^^^^^^^^^^
+
+.. autofunction:: finfactory.fintools.utils_chn.get_trade_fee_Astock
+
+trade_fee_Astock
+^^^^^^^^^^^^^^^^^
+
+.. autofunction:: finfactory.fintools.utils_chn.trade_fee_Astock
+
+is_trade_day
+^^^^^^^^^^^^^
+
+.. autofunction:: finfactory.fintools.utils_chn.is_trade_day
+
+get_recent_trade_date
+^^^^^^^^^^^^^^^^^^^^^^
+
+.. autofunction:: finfactory.fintools.utils_chn.get_recent_trade_date
+
+get_next_nth_trade_date
+^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. autofunction:: finfactory.fintools.utils_chn.get_next_nth_trade_date
+
+get_trade_dates
+^^^^^^^^^^^^^^^^
+
+.. autofunction:: finfactory.fintools.utils_chn.get_trade_dates
+
+get_num_trade_dates
+^^^^^^^^^^^^^^^^^^^^
+
+.. autofunction:: finfactory.fintools.utils_chn.get_num_trade_dates
+
+utils_gains
+------------
+
+.. automodule:: finfactory.fintools.utils_gains
+
+.. currentmodule:: finfactory.fintools.utils_gains
+
+signal_merge
+^^^^^^^^^^^^^
+
+.. autofunction:: finfactory.fintools.utils_gains.signal_merge
+
+cal_cost_add
+^^^^^^^^^^^^^
+
+.. autofunction:: finfactory.fintools.utils_gains.cal_cost_add
+
+get_mean_cost
+^^^^^^^^^^^^^^
+
+.. autofunction:: finfactory.fintools.utils_gains.get_mean_cost
+
+cal_gain_con_futures
+^^^^^^^^^^^^^^^^^^^^^
+
+.. autofunction:: finfactory.fintools.utils_gains.cal_gain_con_futures
+
+cal_gain_con_futures2
+^^^^^^^^^^^^^^^^^^^^^^
+
+.. autofunction:: finfactory.fintools.utils_gains.cal_gain_con_futures2
+
+cal_expect_return
+^^^^^^^^^^^^^^^^^^
+
+.. autofunction:: finfactory.fintools.utils_gains.cal_expect_return
+
+cal_gain_pct_log
+^^^^^^^^^^^^^^^^^
+
+.. autofunction:: finfactory.fintools.utils_gains.cal_gain_pct_log
+
+cal_gain_pct
+^^^^^^^^^^^^^
+
+.. autofunction:: finfactory.fintools.utils_gains.cal_gain_pct
+
+cal_gain_pcts
+^^^^^^^^^^^^^^
+
+.. autofunction:: finfactory.fintools.utils_gains.cal_gain_pcts
+
+cal_beta
+^^^^^^^^^
+
+.. autofunction:: finfactory.fintools.utils_gains.cal_beta
+
+cal_alpha_beta
+^^^^^^^^^^^^^^^
+
+.. autofunction:: finfactory.fintools.utils_gains.cal_alpha_beta
+
+cal_alpha_by_beta_and_r
+^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. autofunction:: finfactory.fintools.utils_gains.cal_alpha_by_beta_and_r
+
+cal_return_period_by_gain_pct
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. autofunction:: finfactory.fintools.utils_gains.cal_return_period_by_gain_pct
+
+cal_ext_return_period_by_gain_pct
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. autofunction:: finfactory.fintools.utils_gains.cal_ext_return_period_by_gain_pct
+
+cal_ext_return_period
+^^^^^^^^^^^^^^^^^^^^^^
+
+.. autofunction:: finfactory.fintools.utils_gains.cal_ext_return_period
+
+cal_returns_period
+^^^^^^^^^^^^^^^^^^^
+
+.. autofunction:: finfactory.fintools.utils_gains.cal_returns_period
+
+cal_returns_period_mean
+^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. autofunction:: finfactory.fintools.utils_gains.cal_returns_period_mean
+
+cal_volatility
+^^^^^^^^^^^^^^^
+
+.. autofunction:: finfactory.fintools.utils_gains.cal_volatility
+
+cal_sharpe
+^^^^^^^^^^^
+
+.. autofunction:: finfactory.fintools.utils_gains.cal_sharpe
+
+cal_sharpe2
+^^^^^^^^^^^^
+
+.. autofunction:: finfactory.fintools.utils_gains.cal_sharpe2
+
+get_maxdown
+^^^^^^^^^^^^
+
+.. autofunction:: finfactory.fintools.utils_gains.get_maxdown
+
+get_maxdown_all
+^^^^^^^^^^^^^^^^
+
+.. autofunction:: finfactory.fintools.utils_gains.get_maxdown_all
+
+get_maxdown_dy
+^^^^^^^^^^^^^^^
+
+.. autofunction:: finfactory.fintools.utils_gains.get_maxdown_dy
+
+get_maxup
+^^^^^^^^^^
+
+.. autofunction:: finfactory.fintools.utils_gains.get_maxup
+
+get_maxdown_pd
+^^^^^^^^^^^^^^^
+
+.. autofunction:: finfactory.fintools.utils_gains.get_maxdown_pd
+
+cal_n_period_1year
+^^^^^^^^^^^^^^^^^^^
+
+.. autofunction:: finfactory.fintools.utils_gains.cal_n_period_1year
+
+get_netval_prod
+^^^^^^^^^^^^^^^^
+
+.. autofunction:: finfactory.fintools.utils_gains.get_netval_prod
+
+get_netval_sum
+^^^^^^^^^^^^^^^
+
+.. autofunction:: finfactory.fintools.utils_gains.get_netval_sum
+
+cal_pct_by_cost_gain
+^^^^^^^^^^^^^^^^^^^^^
+
+.. autofunction:: finfactory.fintools.utils_gains.cal_pct_by_cost_gain
+
+get_gains_act
+^^^^^^^^^^^^^^
+
+.. autofunction:: finfactory.fintools.utils_gains.get_gains_act
+
+get_fundnet
+^^^^^^^^^^^^
+
+.. autofunction:: finfactory.fintools.utils_gains.get_fundnet
+
+get_gains
+^^^^^^^^^^
+
+.. autofunction:: finfactory.fintools.utils_gains.get_gains
+
+plot_gain_act
+^^^^^^^^^^^^^^
+
+.. autofunction:: finfactory.fintools.utils_gains.plot_gain_act
+
+plot_gain_prod
+^^^^^^^^^^^^^^^
+
+.. autofunction:: finfactory.fintools.utils_gains.plot_gain_prod
+
+cal_sig_gains
+^^^^^^^^^^^^^^
+
+.. autofunction:: finfactory.fintools.utils_gains.cal_sig_gains
+
+get_open_gain_info
+^^^^^^^^^^^^^^^^^^^
+
+.. autofunction:: finfactory.fintools.utils_gains.get_open_gain_info
+
+get_yield_curve
+^^^^^^^^^^^^^^^^
+
+.. autofunction:: finfactory.fintools.utils_gains.get_yield_curve
+
+get_yield_curve2
+^^^^^^^^^^^^^^^^^
+
+.. autofunction:: finfactory.fintools.utils_gains.get_yield_curve2
+
+zigzag
+-------
+
+.. automodule:: finfactory.fintools.zigzag
+
+.. currentmodule:: finfactory.fintools.zigzag
+
+zigzag
+^^^^^^^
+
+.. autofunction:: finfactory.fintools.zigzag.zigzag
+
+plot_candle_zz
+^^^^^^^^^^^^^^^
+
+.. autofunction:: finfactory.fintools.zigzag.plot_candle_zz

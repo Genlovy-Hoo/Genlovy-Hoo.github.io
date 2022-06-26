@@ -1,0 +1,20 @@
+Welcome to FinFactory's documentation!
+=======================================
+
+.. toctree::
+   :maxdepth: 2
+   :caption: Contents:
+
+   finfactory <finfactory>
+   factor <finfactory.factor>
+   finplot <finfactory.finplot>
+   fintools <finfactory.fintools>
+   get_data <finfactory.get_data>
+   strategy <finfactory.strategy>
+   utils <finfactory.utils>
+
+Indices and tables
+===================
+
+* :ref:`genindex`
+* :ref:`modindex`

@@ -1,0 +1,26 @@
+finplot
+========
+
+finplot
+--------
+
+.. automodule:: finfactory.finplot.finplot
+
+.. currentmodule:: finfactory.finplot.finplot
+
+plot_boll
+^^^^^^^^^^
+
+.. autofunction:: finfactory.finplot.finplot.plot_boll
+
+plot_candle
+------------
+
+.. automodule:: finfactory.finplot.plot_candle
+
+.. currentmodule:: finfactory.finplot.plot_candle
+
+plot_candle
+^^^^^^^^^^^^
+
+.. autofunction:: finfactory.finplot.plot_candle.plot_candle

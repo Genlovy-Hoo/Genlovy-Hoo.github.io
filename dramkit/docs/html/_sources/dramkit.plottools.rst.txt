@@ -13,18 +13,6 @@ plot_barslines
 
 .. autofunction:: dramkit.plottools.plot_barline.plot_barslines
 
-plot_candle
-------------
-
-.. automodule:: dramkit.plottools.plot_candle
-
-.. currentmodule:: dramkit.plottools.plot_candle
-
-plot_candle
-^^^^^^^^^^^^
-
-.. autofunction:: dramkit.plottools.plot_candle.plot_candle
-
 plot_common
 ------------
 

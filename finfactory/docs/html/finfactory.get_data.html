@@ -1,0 +1,1391 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>get_data &mdash; FinFactory 0.0.1 documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="strategy" href="finfactory.strategy.html" />
+    <link rel="prev" title="fintools" href="finfactory.fintools.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="index.html" class="icon icon-home"> FinFactory
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="finfactory.html">finfactory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="finfactory.factor.html">factor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="finfactory.finplot.html">finplot</a></li>
+<li class="toctree-l1"><a class="reference internal" href="finfactory.fintools.html">fintools</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">get_data</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#module-finfactory.get_data.ccxt_1d">ccxt_1d</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#check-daily-loss">check_daily_loss</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#update-daily">update_daily</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#update-daily-check">update_daily_check</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#module-finfactory.get_data.ccxt_minute">ccxt_minute</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#check-minute-loss">check_minute_loss</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#update-minute">update_minute</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#update-minute-check">update_minute_check</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#module-finfactory.get_data.cffex_futures_lhb">cffex_futures_lhb</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#is-good-data">is_good_data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#get-save-path">get_save_path</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#download-cffex-lhb">download_cffex_lhb</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#download-cffex-lhb-all">download_cffex_lhb_all</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#cffex-lhb-futures-check">cffex_lhb_futures_check</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#module-finfactory.get_data.chn_local_bond_rates">chn_local_bond_rates</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#check-loss">check_loss</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#get-bond-yields-by-date">get_bond_yields_by_date</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#get-bond-yields-by-dates">get_bond_yields_by_dates</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#update-bond-yields">update_bond_yields</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#update-bond-yields-check">update_bond_yields_check</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#module-finfactory.get_data.chn_national_bond_rates">chn_national_bond_rates</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id1">check_loss</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id2">get_bond_yields_by_date</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id3">get_bond_yields_by_dates</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id4">update_bond_yields</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id5">update_bond_yields_check</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#module-finfactory.get_data.eastmoney_tonorth_netbuy_daily">eastmoney_tonorth_netbuy_daily</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id6">check_loss</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#get-tonorth-netbuy">get_tonorth_netbuy</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#update-tonorth-netbuy-daily">update_tonorth_netbuy_daily</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#update-tonorth-netbuy-daily-check">update_tonorth_netbuy_daily_check</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#module-finfactory.get_data.eastmoney_tonorth_netin_daily">eastmoney_tonorth_netin_daily</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id7">check_loss</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#get-tonorth-netin">get_tonorth_netin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#update-tonorth-netin-daily">update_tonorth_netin_daily</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#update-tonorth-netin-daily-check">update_tonorth_netin_daily_check</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#module-finfactory.get_data.eastmoney_tosouth_netbuy_daily">eastmoney_tosouth_netbuy_daily</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id8">check_loss</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#get-tosouth-netbuy">get_tosouth_netbuy</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#update-tosouth-netbuy-daily">update_tosouth_netbuy_daily</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#update-tosouth-netbuy-daily-check">update_tosouth_netbuy_daily_check</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#module-finfactory.get_data.eastmoney_tosouth_netin_daily">eastmoney_tosouth_netin_daily</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id9">check_loss</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#get-tosouth-netin">get_tosouth_netin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#update-tosouth-netin-daily">update_tosouth_netin_daily</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#update-tosouth-netin-daily-check">update_tosouth_netin_daily_check</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#module-finfactory.get_data.eniu_index_pe">eniu_index_pe</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id10">check_loss</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#get-index-pe">get_index_pe</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#update-index-pe">update_index_pe</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#update-index-pe-check">update_index_pe_check</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#module-finfactory.get_data.fundex_index_dpe">fundex_index_dpe</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id11">check_loss</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#get-index-pe-daily-cy">get_index_pe_daily_cy</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#get-index-pe-daily-his">get_index_pe_daily_his</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#get-index-pe-daily">get_index_pe_daily</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#update-index-pe-daily">update_index_pe_daily</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#update-index-pe-daily-check">update_index_pe_daily_check</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#module-finfactory.get_data.hexun_gold_daily">hexun_gold_daily</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id12">check_loss</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#get-gold-daily">get_gold_daily</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#update-gold-daily">update_gold_daily</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#update-gold-daily-check">update_gold_daily_check</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#module-finfactory.get_data.hexun_silver_daily">hexun_silver_daily</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id13">check_loss</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#get-silver-daily">get_silver_daily</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#update-silver-daily">update_silver_daily</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#update-silver-daily-check">update_silver_daily_check</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#module-finfactory.get_data.sw_daily_info">sw_daily_info</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#load-sw-daily-ori">load_sw_daily_ori</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id14">check_loss</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#get-daily-info-by-date">get_daily_info_by_date</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#get-daily-info-by-dates">get_daily_info_by_dates</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#update-daily-info">update_daily_info</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#update-daily-info-check">update_daily_info_check</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#module-finfactory.get_data.tushare_chn_money">tushare_chn_money</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id15">check_loss</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#get-chn-money">get_chn_money</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#update-chn-money">update_chn_money</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#update-chn-money-check">update_chn_money_check</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#module-finfactory.get_data.tushare_futures_daily">tushare_futures_daily</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id16">check_loss</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#get-future-daily">get_future_daily</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#update-future-daily">update_future_daily</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#update-future-daily-check">update_future_daily_check</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#module-finfactory.get_data.tushare_futures_daily_ex">tushare_futures_daily_ex</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id17">check_loss</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#get-futures-daily">get_futures_daily</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#get-futures-daily-by-dates">get_futures_daily_by_dates</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#update-futures-daily">update_futures_daily</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#update-futures-daily-check">update_futures_daily_check</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#module-finfactory.get_data.tushare_futures_info">tushare_futures_info</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#get-futures-info">get_futures_info</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#update-futures-info">update_futures_info</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#module-finfactory.get_data.tushare_futures_mapping">tushare_futures_mapping</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id18">check_loss</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#get-future-mapping">get_future_mapping</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#get-futures-mapping">get_futures_mapping</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#update-futures-mapping">update_futures_mapping</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#update-futures-mapping-check">update_futures_mapping_check</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#module-finfactory.get_data.tushare_index_daily">tushare_index_daily</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id19">check_loss</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#get-index-daily">get_index_daily</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#update-index-daily">update_index_daily</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#update-index-daily-check">update_index_daily_check</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#module-finfactory.get_data.tushare_index_daily_basic">tushare_index_daily_basic</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id20">check_loss</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#get-index-daily-basic">get_index_daily_basic</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#update-index-daily-basic">update_index_daily_basic</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#update-index-daily-basic-check">update_index_daily_basic_check</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#module-finfactory.get_data.tushare_index_info">tushare_index_info</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#get-index-info">get_index_info</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#update-index-info">update_index_info</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#module-finfactory.get_data.tushare_options_daily">tushare_options_daily</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id21">check_loss</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#get-options-daily">get_options_daily</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#get-options-daily-by-dates">get_options_daily_by_dates</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#update-options-daily">update_options_daily</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#update-options-daily-check">update_options_daily_check</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#module-finfactory.get_data.tushare_options_info">tushare_options_info</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#get-options-info">get_options_info</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#update-options-info">update_options_info</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#module-finfactory.get_data.tushare_trade_dates">tushare_trade_dates</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id22">check_loss</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#get-his-trade-dates">get_his_trade_dates</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#update-trade-dates">update_trade_dates</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#update-trade-dates-check">update_trade_dates_check</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="finfactory.strategy.html">strategy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="finfactory.utils.html">utils</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">FinFactory</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>get_data</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/finfactory.get_data.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="get-data">
+<h1>get_data<a class="headerlink" href="#get-data" title="Permalink to this headline"></a></h1>
+<section id="module-finfactory.get_data.ccxt_1d">
+<span id="ccxt-1d"></span><h2>ccxt_1d<a class="headerlink" href="#module-finfactory.get_data.ccxt_1d" title="Permalink to this headline"></a></h2>
+<section id="check-daily-loss">
+<h3>check_daily_loss<a class="headerlink" href="#check-daily-loss" title="Permalink to this headline"></a></h3>
+<dl class="py function">
+<dt class="sig sig-object py" id="finfactory.get_data.ccxt_1d.check_daily_loss">
+<span class="sig-prename descclassname"><span class="pre">finfactory.get_data.ccxt_1d.</span></span><span class="sig-name descname"><span class="pre">check_daily_loss</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">symbol</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">logger</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#finfactory.get_data.ccxt_1d.check_daily_loss" title="Permalink to this definition"></a></dt>
+<dd><p>检查日线缺失</p>
+</dd></dl>
+
+</section>
+<section id="update-daily">
+<h3>update_daily<a class="headerlink" href="#update-daily" title="Permalink to this headline"></a></h3>
+<dl class="py function">
+<dt class="sig sig-object py" id="finfactory.get_data.ccxt_1d.update_daily">
+<span class="sig-prename descclassname"><span class="pre">finfactory.get_data.ccxt_1d.</span></span><span class="sig-name descname"><span class="pre">update_daily</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">symbol</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">df_exist</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fpath</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">start_time</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">end_time</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">force</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mkt</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">logger</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#finfactory.get_data.ccxt_1d.update_daily" title="Permalink to this definition"></a></dt>
+<dd><div class="line-block">
+<div class="line">增量更新日线数据</div>
+<div class="line">注：日收盘时间为北京时间早上八点</div>
+</div>
+</dd></dl>
+
+</section>
+<section id="update-daily-check">
+<h3>update_daily_check<a class="headerlink" href="#update-daily-check" title="Permalink to this headline"></a></h3>
+<dl class="py function">
+<dt class="sig sig-object py" id="finfactory.get_data.ccxt_1d.update_daily_check">
+<span class="sig-prename descclassname"><span class="pre">finfactory.get_data.ccxt_1d.</span></span><span class="sig-name descname"><span class="pre">update_daily_check</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">symbol</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">save_path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">root_dir</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name1</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name2</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">start_time</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'2012-01-01</span> <span class="pre">08:00:00'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mkt</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'binance'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">logger</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#finfactory.get_data.ccxt_1d.update_daily_check" title="Permalink to this definition"></a></dt>
+<dd><p>更新日线行情数据</p>
+</dd></dl>
+
+</section>
+</section>
+<section id="module-finfactory.get_data.ccxt_minute">
+<span id="ccxt-minute"></span><h2>ccxt_minute<a class="headerlink" href="#module-finfactory.get_data.ccxt_minute" title="Permalink to this headline"></a></h2>
+<section id="check-minute-loss">
+<h3>check_minute_loss<a class="headerlink" href="#check-minute-loss" title="Permalink to this headline"></a></h3>
+<dl class="py function">
+<dt class="sig sig-object py" id="finfactory.get_data.ccxt_minute.check_minute_loss">
+<span class="sig-prename descclassname"><span class="pre">finfactory.get_data.ccxt_minute.</span></span><span class="sig-name descname"><span class="pre">check_minute_loss</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">symbol</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">minute</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">logger</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#finfactory.get_data.ccxt_minute.check_minute_loss" title="Permalink to this definition"></a></dt>
+<dd><p>检查分钟数据缺失</p>
+</dd></dl>
+
+</section>
+<section id="update-minute">
+<h3>update_minute<a class="headerlink" href="#update-minute" title="Permalink to this headline"></a></h3>
+<dl class="py function">
+<dt class="sig sig-object py" id="finfactory.get_data.ccxt_minute.update_minute">
+<span class="sig-prename descclassname"><span class="pre">finfactory.get_data.ccxt_minute.</span></span><span class="sig-name descname"><span class="pre">update_minute</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">symbol</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">minute</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">df_exist</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fpath</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">start_time</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">end_time</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">force</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mkt</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">logger</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#finfactory.get_data.ccxt_minute.update_minute" title="Permalink to this definition"></a></dt>
+<dd><p>增量更新分钟数据</p>
+</dd></dl>
+
+</section>
+<section id="update-minute-check">
+<h3>update_minute_check<a class="headerlink" href="#update-minute-check" title="Permalink to this headline"></a></h3>
+<dl class="py function">
+<dt class="sig sig-object py" id="finfactory.get_data.ccxt_minute.update_minute_check">
+<span class="sig-prename descclassname"><span class="pre">finfactory.get_data.ccxt_minute.</span></span><span class="sig-name descname"><span class="pre">update_minute_check</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">symbol</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">minute</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">save_path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">root_dir</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name1</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name2</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">start_time</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'2022-06-01</span> <span class="pre">00:00:00'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mkt</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'binance'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">logger</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#finfactory.get_data.ccxt_minute.update_minute_check" title="Permalink to this definition"></a></dt>
+<dd><p>更新分钟行情数据</p>
+</dd></dl>
+
+</section>
+</section>
+<section id="module-finfactory.get_data.cffex_futures_lhb">
+<span id="cffex-futures-lhb"></span><h2>cffex_futures_lhb<a class="headerlink" href="#module-finfactory.get_data.cffex_futures_lhb" title="Permalink to this headline"></a></h2>
+<section id="is-good-data">
+<h3>is_good_data<a class="headerlink" href="#is-good-data" title="Permalink to this headline"></a></h3>
+<dl class="py function">
+<dt class="sig sig-object py" id="finfactory.get_data.cffex_futures_lhb.is_good_data">
+<span class="sig-prename descclassname"><span class="pre">finfactory.get_data.cffex_futures_lhb.</span></span><span class="sig-name descname"><span class="pre">is_good_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fpath</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">encoding</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">logger</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#finfactory.get_data.cffex_futures_lhb.is_good_data" title="Permalink to this definition"></a></dt>
+<dd><p>判断是否为正确数据文件</p>
+</dd></dl>
+
+</section>
+<section id="get-save-path">
+<h3>get_save_path<a class="headerlink" href="#get-save-path" title="Permalink to this headline"></a></h3>
+<dl class="py function">
+<dt class="sig sig-object py" id="finfactory.get_data.cffex_futures_lhb.get_save_path">
+<span class="sig-prename descclassname"><span class="pre">finfactory.get_data.cffex_futures_lhb.</span></span><span class="sig-name descname"><span class="pre">get_save_path</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">code</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">date</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">root_dir</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">logger</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#finfactory.get_data.cffex_futures_lhb.get_save_path" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</section>
+<section id="download-cffex-lhb">
+<h3>download_cffex_lhb<a class="headerlink" href="#download-cffex-lhb" title="Permalink to this headline"></a></h3>
+<dl class="py function">
+<dt class="sig sig-object py" id="finfactory.get_data.cffex_futures_lhb.download_cffex_lhb">
+<span class="sig-prename descclassname"><span class="pre">finfactory.get_data.cffex_futures_lhb.</span></span><span class="sig-name descname"><span class="pre">download_cffex_lhb</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">code</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">date</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">save_path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">root_dir</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">logger</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#finfactory.get_data.cffex_futures_lhb.download_cffex_lhb" title="Permalink to this definition"></a></dt>
+<dd><p>下载保存中金所期货龙虎榜数据</p>
+</dd></dl>
+
+</section>
+<section id="download-cffex-lhb-all">
+<h3>download_cffex_lhb_all<a class="headerlink" href="#download-cffex-lhb-all" title="Permalink to this headline"></a></h3>
+<dl class="py function">
+<dt class="sig sig-object py" id="finfactory.get_data.cffex_futures_lhb.download_cffex_lhb_all">
+<span class="sig-prename descclassname"><span class="pre">finfactory.get_data.cffex_futures_lhb.</span></span><span class="sig-name descname"><span class="pre">download_cffex_lhb_all</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">code_start_end_dates</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">root_dir</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">trade_dates</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">check_last</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">check_all</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">logger</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#finfactory.get_data.cffex_futures_lhb.download_cffex_lhb_all" title="Permalink to this definition"></a></dt>
+<dd><p>下载所有中金所期货龙虎榜数据
+code_start_dates格式如：{‘IC’: ‘2015-04-16’}</p>
+</dd></dl>
+
+</section>
+<section id="cffex-lhb-futures-check">
+<h3>cffex_lhb_futures_check<a class="headerlink" href="#cffex-lhb-futures-check" title="Permalink to this headline"></a></h3>
+<dl class="py function">
+<dt class="sig sig-object py" id="finfactory.get_data.cffex_futures_lhb.cffex_lhb_futures_check">
+<span class="sig-prename descclassname"><span class="pre">finfactory.get_data.cffex_futures_lhb.</span></span><span class="sig-name descname"><span class="pre">cffex_lhb_futures_check</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">code_start_end_dates</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">root_dir</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">trade_dates</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">del_bad</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">logger</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#finfactory.get_data.cffex_futures_lhb.cffex_lhb_futures_check" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</section>
+</section>
+<section id="module-finfactory.get_data.chn_local_bond_rates">
+<span id="chn-local-bond-rates"></span><h2>chn_local_bond_rates<a class="headerlink" href="#module-finfactory.get_data.chn_local_bond_rates" title="Permalink to this headline"></a></h2>
+<section id="check-loss">
+<h3>check_loss<a class="headerlink" href="#check-loss" title="Permalink to this headline"></a></h3>
+<dl class="py function">
+<dt class="sig sig-object py" id="finfactory.get_data.chn_local_bond_rates.check_loss">
+<span class="sig-prename descclassname"><span class="pre">finfactory.get_data.chn_local_bond_rates.</span></span><span class="sig-name descname"><span class="pre">check_loss</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">logger</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#finfactory.get_data.chn_local_bond_rates.check_loss" title="Permalink to this definition"></a></dt>
+<dd><p>检查缺失</p>
+</dd></dl>
+
+</section>
+<section id="get-bond-yields-by-date">
+<h3>get_bond_yields_by_date<a class="headerlink" href="#get-bond-yields-by-date" title="Permalink to this headline"></a></h3>
+<dl class="py function">
+<dt class="sig sig-object py" id="finfactory.get_data.chn_local_bond_rates.get_bond_yields_by_date">
+<span class="sig-prename descclassname"><span class="pre">finfactory.get_data.chn_local_bond_rates.</span></span><span class="sig-name descname"><span class="pre">get_bond_yields_by_date</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">date</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">save_ori</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ori_save_path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">root_dir</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">logger</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#finfactory.get_data.chn_local_bond_rates.get_bond_yields_by_date" title="Permalink to this definition"></a></dt>
+<dd><div class="line-block">
+<div class="line">从财政部网站爬取指定日期地方政府债收益率数据</div>
+<div class="line">date格式如: ‘2022-06-10’</div>
+<div class="line"><a class="reference external" href="https://yield.chinabond.com.cn/cbweb-czb-web/czb/moreInfo?locale=cn_ZH">https://yield.chinabond.com.cn/cbweb-czb-web/czb/moreInfo?locale=cn_ZH</a></div>
+</div>
+</dd></dl>
+
+</section>
+<section id="get-bond-yields-by-dates">
+<h3>get_bond_yields_by_dates<a class="headerlink" href="#get-bond-yields-by-dates" title="Permalink to this headline"></a></h3>
+<dl class="py function">
+<dt class="sig sig-object py" id="finfactory.get_data.chn_local_bond_rates.get_bond_yields_by_dates">
+<span class="sig-prename descclassname"><span class="pre">finfactory.get_data.chn_local_bond_rates.</span></span><span class="sig-name descname"><span class="pre">get_bond_yields_by_dates</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dates</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">save_ori</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">root_dir</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">logger</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#finfactory.get_data.chn_local_bond_rates.get_bond_yields_by_dates" title="Permalink to this definition"></a></dt>
+<dd><p>从财政部网站爬取指定多个日期地方政府债收益率数据</p>
+</dd></dl>
+
+</section>
+<section id="update-bond-yields">
+<h3>update_bond_yields<a class="headerlink" href="#update-bond-yields" title="Permalink to this headline"></a></h3>
+<dl class="py function">
+<dt class="sig sig-object py" id="finfactory.get_data.chn_local_bond_rates.update_bond_yields">
+<span class="sig-prename descclassname"><span class="pre">finfactory.get_data.chn_local_bond_rates.</span></span><span class="sig-name descname"><span class="pre">update_bond_yields</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">df_exist</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fpath</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">save_ori</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">root_dir</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">start_date</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">end_date</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">logger</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#finfactory.get_data.chn_local_bond_rates.update_bond_yields" title="Permalink to this definition"></a></dt>
+<dd><p>增量更新地方政府债收益率数据</p>
+</dd></dl>
+
+</section>
+<section id="update-bond-yields-check">
+<h3>update_bond_yields_check<a class="headerlink" href="#update-bond-yields-check" title="Permalink to this headline"></a></h3>
+<dl class="py function">
+<dt class="sig sig-object py" id="finfactory.get_data.chn_local_bond_rates.update_bond_yields_check">
+<span class="sig-prename descclassname"><span class="pre">finfactory.get_data.chn_local_bond_rates.</span></span><span class="sig-name descname"><span class="pre">update_bond_yields_check</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">save_path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">root_dir</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">start_date</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'2022-02-24'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">save_ori</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">logger</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#finfactory.get_data.chn_local_bond_rates.update_bond_yields_check" title="Permalink to this definition"></a></dt>
+<dd><p>更新所有地方政府债收益率历史数据</p>
+</dd></dl>
+
+</section>
+</section>
+<section id="module-finfactory.get_data.chn_national_bond_rates">
+<span id="chn-national-bond-rates"></span><h2>chn_national_bond_rates<a class="headerlink" href="#module-finfactory.get_data.chn_national_bond_rates" title="Permalink to this headline"></a></h2>
+<section id="id1">
+<h3>check_loss<a class="headerlink" href="#id1" title="Permalink to this headline"></a></h3>
+<dl class="py function">
+<dt class="sig sig-object py" id="finfactory.get_data.chn_national_bond_rates.check_loss">
+<span class="sig-prename descclassname"><span class="pre">finfactory.get_data.chn_national_bond_rates.</span></span><span class="sig-name descname"><span class="pre">check_loss</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">logger</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#finfactory.get_data.chn_national_bond_rates.check_loss" title="Permalink to this definition"></a></dt>
+<dd><p>检查缺失</p>
+</dd></dl>
+
+</section>
+<section id="id2">
+<h3>get_bond_yields_by_date<a class="headerlink" href="#id2" title="Permalink to this headline"></a></h3>
+<dl class="py function">
+<dt class="sig sig-object py" id="finfactory.get_data.chn_national_bond_rates.get_bond_yields_by_date">
+<span class="sig-prename descclassname"><span class="pre">finfactory.get_data.chn_national_bond_rates.</span></span><span class="sig-name descname"><span class="pre">get_bond_yields_by_date</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">date</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">save_ori</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ori_save_path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">root_dir</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">logger</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#finfactory.get_data.chn_national_bond_rates.get_bond_yields_by_date" title="Permalink to this definition"></a></dt>
+<dd><div class="line-block">
+<div class="line">从财政部网站爬取指定日期国债收益率数据</div>
+<div class="line">date格式如: ‘2022-06-10’</div>
+<div class="line"><a class="reference external" href="https://yield.chinabond.com.cn/cbweb-czb-web/czb/moreInfo?locale=cn_ZH">https://yield.chinabond.com.cn/cbweb-czb-web/czb/moreInfo?locale=cn_ZH</a></div>
+</div>
+</dd></dl>
+
+</section>
+<section id="id3">
+<h3>get_bond_yields_by_dates<a class="headerlink" href="#id3" title="Permalink to this headline"></a></h3>
+<dl class="py function">
+<dt class="sig sig-object py" id="finfactory.get_data.chn_national_bond_rates.get_bond_yields_by_dates">
+<span class="sig-prename descclassname"><span class="pre">finfactory.get_data.chn_national_bond_rates.</span></span><span class="sig-name descname"><span class="pre">get_bond_yields_by_dates</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dates</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">save_ori</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">root_dir</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">logger</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#finfactory.get_data.chn_national_bond_rates.get_bond_yields_by_dates" title="Permalink to this definition"></a></dt>
+<dd><div class="line-block">
+<div class="line">从财政部网站爬取指定多个日期国债收益率数据</div>
+<div class="line">dates中日期格式如: ‘2022-06-10’</div>
+</div>
+</dd></dl>
+
+</section>
+<section id="id4">
+<h3>update_bond_yields<a class="headerlink" href="#id4" title="Permalink to this headline"></a></h3>
+<dl class="py function">
+<dt class="sig sig-object py" id="finfactory.get_data.chn_national_bond_rates.update_bond_yields">
+<span class="sig-prename descclassname"><span class="pre">finfactory.get_data.chn_national_bond_rates.</span></span><span class="sig-name descname"><span class="pre">update_bond_yields</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">df_exist</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fpath</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">save_ori</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">root_dir</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">start_date</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">end_date</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">logger</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#finfactory.get_data.chn_national_bond_rates.update_bond_yields" title="Permalink to this definition"></a></dt>
+<dd><p>增量更新国债收益率数据</p>
+</dd></dl>
+
+</section>
+<section id="id5">
+<h3>update_bond_yields_check<a class="headerlink" href="#id5" title="Permalink to this headline"></a></h3>
+<dl class="py function">
+<dt class="sig sig-object py" id="finfactory.get_data.chn_national_bond_rates.update_bond_yields_check">
+<span class="sig-prename descclassname"><span class="pre">finfactory.get_data.chn_national_bond_rates.</span></span><span class="sig-name descname"><span class="pre">update_bond_yields_check</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">save_path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">root_dir</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">start_date</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'2006-02-28'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">save_ori</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">logger</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#finfactory.get_data.chn_national_bond_rates.update_bond_yields_check" title="Permalink to this definition"></a></dt>
+<dd><p>更新所有地方政府债收益率历史数据</p>
+</dd></dl>
+
+</section>
+</section>
+<section id="module-finfactory.get_data.eastmoney_tonorth_netbuy_daily">
+<span id="eastmoney-tonorth-netbuy-daily"></span><h2>eastmoney_tonorth_netbuy_daily<a class="headerlink" href="#module-finfactory.get_data.eastmoney_tonorth_netbuy_daily" title="Permalink to this headline"></a></h2>
+<section id="id6">
+<h3>check_loss<a class="headerlink" href="#id6" title="Permalink to this headline"></a></h3>
+<dl class="py function">
+<dt class="sig sig-object py" id="finfactory.get_data.eastmoney_tonorth_netbuy_daily.check_loss">
+<span class="sig-prename descclassname"><span class="pre">finfactory.get_data.eastmoney_tonorth_netbuy_daily.</span></span><span class="sig-name descname"><span class="pre">check_loss</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">trade_dates</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">logger</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#finfactory.get_data.eastmoney_tonorth_netbuy_daily.check_loss" title="Permalink to this definition"></a></dt>
+<dd><p>检查缺失</p>
+</dd></dl>
+
+</section>
+<section id="get-tonorth-netbuy">
+<h3>get_tonorth_netbuy<a class="headerlink" href="#get-tonorth-netbuy" title="Permalink to this headline"></a></h3>
+<dl class="py function">
+<dt class="sig sig-object py" id="finfactory.get_data.eastmoney_tonorth_netbuy_daily.get_tonorth_netbuy">
+<span class="sig-prename descclassname"><span class="pre">finfactory.get_data.eastmoney_tonorth_netbuy_daily.</span></span><span class="sig-name descname"><span class="pre">get_tonorth_netbuy</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#finfactory.get_data.eastmoney_tonorth_netbuy_daily.get_tonorth_netbuy" title="Permalink to this definition"></a></dt>
+<dd><div class="line-block">
+<div class="line">爬取东财北上资金净买入数据</div>
+<div class="line"><a class="reference external" href="https://data.eastmoney.com/hsgtcg/gzcglist.html">https://data.eastmoney.com/hsgtcg/gzcglist.html</a></div>
+</div>
+</dd></dl>
+
+</section>
+<section id="update-tonorth-netbuy-daily">
+<h3>update_tonorth_netbuy_daily<a class="headerlink" href="#update-tonorth-netbuy-daily" title="Permalink to this headline"></a></h3>
+<dl class="py function">
+<dt class="sig sig-object py" id="finfactory.get_data.eastmoney_tonorth_netbuy_daily.update_tonorth_netbuy_daily">
+<span class="sig-prename descclassname"><span class="pre">finfactory.get_data.eastmoney_tonorth_netbuy_daily.</span></span><span class="sig-name descname"><span class="pre">update_tonorth_netbuy_daily</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">df_exist</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fpath</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">logger</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#finfactory.get_data.eastmoney_tonorth_netbuy_daily.update_tonorth_netbuy_daily" title="Permalink to this definition"></a></dt>
+<dd><div class="line-block">
+<div class="line">从东方财富更新北上资金净买入日数据</div>
+<div class="line"><a class="reference external" href="https://data.eastmoney.com/hsgtcg/gzcglist.html">https://data.eastmoney.com/hsgtcg/gzcglist.html</a></div>
+</div>
+</dd></dl>
+
+</section>
+<section id="update-tonorth-netbuy-daily-check">
+<h3>update_tonorth_netbuy_daily_check<a class="headerlink" href="#update-tonorth-netbuy-daily-check" title="Permalink to this headline"></a></h3>
+<dl class="py function">
+<dt class="sig sig-object py" id="finfactory.get_data.eastmoney_tonorth_netbuy_daily.update_tonorth_netbuy_daily_check">
+<span class="sig-prename descclassname"><span class="pre">finfactory.get_data.eastmoney_tonorth_netbuy_daily.</span></span><span class="sig-name descname"><span class="pre">update_tonorth_netbuy_daily_check</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">save_path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">root_dir</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">trade_dates</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">logger</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#finfactory.get_data.eastmoney_tonorth_netbuy_daily.update_tonorth_netbuy_daily_check" title="Permalink to this definition"></a></dt>
+<dd><p>从东方财富更新北上资金净买入日数据</p>
+</dd></dl>
+
+</section>
+</section>
+<section id="module-finfactory.get_data.eastmoney_tonorth_netin_daily">
+<span id="eastmoney-tonorth-netin-daily"></span><h2>eastmoney_tonorth_netin_daily<a class="headerlink" href="#module-finfactory.get_data.eastmoney_tonorth_netin_daily" title="Permalink to this headline"></a></h2>
+<section id="id7">
+<h3>check_loss<a class="headerlink" href="#id7" title="Permalink to this headline"></a></h3>
+<dl class="py function">
+<dt class="sig sig-object py" id="finfactory.get_data.eastmoney_tonorth_netin_daily.check_loss">
+<span class="sig-prename descclassname"><span class="pre">finfactory.get_data.eastmoney_tonorth_netin_daily.</span></span><span class="sig-name descname"><span class="pre">check_loss</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">trade_dates</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">logger</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#finfactory.get_data.eastmoney_tonorth_netin_daily.check_loss" title="Permalink to this definition"></a></dt>
+<dd><p>检查缺失</p>
+</dd></dl>
+
+</section>
+<section id="get-tonorth-netin">
+<h3>get_tonorth_netin<a class="headerlink" href="#get-tonorth-netin" title="Permalink to this headline"></a></h3>
+<dl class="py function">
+<dt class="sig sig-object py" id="finfactory.get_data.eastmoney_tonorth_netin_daily.get_tonorth_netin">
+<span class="sig-prename descclassname"><span class="pre">finfactory.get_data.eastmoney_tonorth_netin_daily.</span></span><span class="sig-name descname"><span class="pre">get_tonorth_netin</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#finfactory.get_data.eastmoney_tonorth_netin_daily.get_tonorth_netin" title="Permalink to this definition"></a></dt>
+<dd><div class="line-block">
+<div class="line">爬取东财北上资金净流入数据</div>
+<div class="line"><a class="reference external" href="https://data.eastmoney.com/hsgtcg/gzcglist.html">https://data.eastmoney.com/hsgtcg/gzcglist.html</a></div>
+</div>
+</dd></dl>
+
+</section>
+<section id="update-tonorth-netin-daily">
+<h3>update_tonorth_netin_daily<a class="headerlink" href="#update-tonorth-netin-daily" title="Permalink to this headline"></a></h3>
+<dl class="py function">
+<dt class="sig sig-object py" id="finfactory.get_data.eastmoney_tonorth_netin_daily.update_tonorth_netin_daily">
+<span class="sig-prename descclassname"><span class="pre">finfactory.get_data.eastmoney_tonorth_netin_daily.</span></span><span class="sig-name descname"><span class="pre">update_tonorth_netin_daily</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">df_exist</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fpath</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">logger</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#finfactory.get_data.eastmoney_tonorth_netin_daily.update_tonorth_netin_daily" title="Permalink to this definition"></a></dt>
+<dd><div class="line-block">
+<div class="line">从东方财富更新北上资金净流入日数据</div>
+<div class="line"><a class="reference external" href="https://data.eastmoney.com/hsgtcg/gzcglist.html">https://data.eastmoney.com/hsgtcg/gzcglist.html</a></div>
+</div>
+</dd></dl>
+
+</section>
+<section id="update-tonorth-netin-daily-check">
+<h3>update_tonorth_netin_daily_check<a class="headerlink" href="#update-tonorth-netin-daily-check" title="Permalink to this headline"></a></h3>
+<dl class="py function">
+<dt class="sig sig-object py" id="finfactory.get_data.eastmoney_tonorth_netin_daily.update_tonorth_netin_daily_check">
+<span class="sig-prename descclassname"><span class="pre">finfactory.get_data.eastmoney_tonorth_netin_daily.</span></span><span class="sig-name descname"><span class="pre">update_tonorth_netin_daily_check</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">save_path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">root_dir</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">trade_dates</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">logger</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#finfactory.get_data.eastmoney_tonorth_netin_daily.update_tonorth_netin_daily_check" title="Permalink to this definition"></a></dt>
+<dd><p>从东方财富更新北上资金净流入日数据</p>
+</dd></dl>
+
+</section>
+</section>
+<section id="module-finfactory.get_data.eastmoney_tosouth_netbuy_daily">
+<span id="eastmoney-tosouth-netbuy-daily"></span><h2>eastmoney_tosouth_netbuy_daily<a class="headerlink" href="#module-finfactory.get_data.eastmoney_tosouth_netbuy_daily" title="Permalink to this headline"></a></h2>
+<section id="id8">
+<h3>check_loss<a class="headerlink" href="#id8" title="Permalink to this headline"></a></h3>
+<dl class="py function">
+<dt class="sig sig-object py" id="finfactory.get_data.eastmoney_tosouth_netbuy_daily.check_loss">
+<span class="sig-prename descclassname"><span class="pre">finfactory.get_data.eastmoney_tosouth_netbuy_daily.</span></span><span class="sig-name descname"><span class="pre">check_loss</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">trade_dates</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">logger</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#finfactory.get_data.eastmoney_tosouth_netbuy_daily.check_loss" title="Permalink to this definition"></a></dt>
+<dd><p>检查缺失</p>
+</dd></dl>
+
+</section>
+<section id="get-tosouth-netbuy">
+<h3>get_tosouth_netbuy<a class="headerlink" href="#get-tosouth-netbuy" title="Permalink to this headline"></a></h3>
+<dl class="py function">
+<dt class="sig sig-object py" id="finfactory.get_data.eastmoney_tosouth_netbuy_daily.get_tosouth_netbuy">
+<span class="sig-prename descclassname"><span class="pre">finfactory.get_data.eastmoney_tosouth_netbuy_daily.</span></span><span class="sig-name descname"><span class="pre">get_tosouth_netbuy</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#finfactory.get_data.eastmoney_tosouth_netbuy_daily.get_tosouth_netbuy" title="Permalink to this definition"></a></dt>
+<dd><div class="line-block">
+<div class="line">爬取东财南下资金净买入数据</div>
+<div class="line"><a class="reference external" href="https://data.eastmoney.com/hsgtcg/lz.html">https://data.eastmoney.com/hsgtcg/lz.html</a></div>
+</div>
+</dd></dl>
+
+</section>
+<section id="update-tosouth-netbuy-daily">
+<h3>update_tosouth_netbuy_daily<a class="headerlink" href="#update-tosouth-netbuy-daily" title="Permalink to this headline"></a></h3>
+<dl class="py function">
+<dt class="sig sig-object py" id="finfactory.get_data.eastmoney_tosouth_netbuy_daily.update_tosouth_netbuy_daily">
+<span class="sig-prename descclassname"><span class="pre">finfactory.get_data.eastmoney_tosouth_netbuy_daily.</span></span><span class="sig-name descname"><span class="pre">update_tosouth_netbuy_daily</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">df_exist</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fpath</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">logger</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#finfactory.get_data.eastmoney_tosouth_netbuy_daily.update_tosouth_netbuy_daily" title="Permalink to this definition"></a></dt>
+<dd><div class="line-block">
+<div class="line">从东方财富更新南下资金净买入日数据</div>
+<div class="line"><a class="reference external" href="https://data.eastmoney.com/hsgtcg/gzcglist.html">https://data.eastmoney.com/hsgtcg/gzcglist.html</a></div>
+</div>
+</dd></dl>
+
+</section>
+<section id="update-tosouth-netbuy-daily-check">
+<h3>update_tosouth_netbuy_daily_check<a class="headerlink" href="#update-tosouth-netbuy-daily-check" title="Permalink to this headline"></a></h3>
+<dl class="py function">
+<dt class="sig sig-object py" id="finfactory.get_data.eastmoney_tosouth_netbuy_daily.update_tosouth_netbuy_daily_check">
+<span class="sig-prename descclassname"><span class="pre">finfactory.get_data.eastmoney_tosouth_netbuy_daily.</span></span><span class="sig-name descname"><span class="pre">update_tosouth_netbuy_daily_check</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">save_path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">root_dir</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">trade_dates</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">logger</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#finfactory.get_data.eastmoney_tosouth_netbuy_daily.update_tosouth_netbuy_daily_check" title="Permalink to this definition"></a></dt>
+<dd><p>从东方财富更新南下资金净买入日数据</p>
+</dd></dl>
+
+</section>
+</section>
+<section id="module-finfactory.get_data.eastmoney_tosouth_netin_daily">
+<span id="eastmoney-tosouth-netin-daily"></span><h2>eastmoney_tosouth_netin_daily<a class="headerlink" href="#module-finfactory.get_data.eastmoney_tosouth_netin_daily" title="Permalink to this headline"></a></h2>
+<section id="id9">
+<h3>check_loss<a class="headerlink" href="#id9" title="Permalink to this headline"></a></h3>
+<dl class="py function">
+<dt class="sig sig-object py" id="finfactory.get_data.eastmoney_tosouth_netin_daily.check_loss">
+<span class="sig-prename descclassname"><span class="pre">finfactory.get_data.eastmoney_tosouth_netin_daily.</span></span><span class="sig-name descname"><span class="pre">check_loss</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">trade_dates</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">logger</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#finfactory.get_data.eastmoney_tosouth_netin_daily.check_loss" title="Permalink to this definition"></a></dt>
+<dd><p>检查缺失</p>
+</dd></dl>
+
+</section>
+<section id="get-tosouth-netin">
+<h3>get_tosouth_netin<a class="headerlink" href="#get-tosouth-netin" title="Permalink to this headline"></a></h3>
+<dl class="py function">
+<dt class="sig sig-object py" id="finfactory.get_data.eastmoney_tosouth_netin_daily.get_tosouth_netin">
+<span class="sig-prename descclassname"><span class="pre">finfactory.get_data.eastmoney_tosouth_netin_daily.</span></span><span class="sig-name descname"><span class="pre">get_tosouth_netin</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#finfactory.get_data.eastmoney_tosouth_netin_daily.get_tosouth_netin" title="Permalink to this definition"></a></dt>
+<dd><div class="line-block">
+<div class="line">爬取东财南下资金净流入数据</div>
+<div class="line"><a class="reference external" href="https://data.eastmoney.com/hsgtcg/lz.html">https://data.eastmoney.com/hsgtcg/lz.html</a></div>
+</div>
+</dd></dl>
+
+</section>
+<section id="update-tosouth-netin-daily">
+<h3>update_tosouth_netin_daily<a class="headerlink" href="#update-tosouth-netin-daily" title="Permalink to this headline"></a></h3>
+<dl class="py function">
+<dt class="sig sig-object py" id="finfactory.get_data.eastmoney_tosouth_netin_daily.update_tosouth_netin_daily">
+<span class="sig-prename descclassname"><span class="pre">finfactory.get_data.eastmoney_tosouth_netin_daily.</span></span><span class="sig-name descname"><span class="pre">update_tosouth_netin_daily</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">df_exist</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fpath</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">logger</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#finfactory.get_data.eastmoney_tosouth_netin_daily.update_tosouth_netin_daily" title="Permalink to this definition"></a></dt>
+<dd><div class="line-block">
+<div class="line">从东方财富更新南下资金净流入日数据</div>
+<div class="line"><a class="reference external" href="https://data.eastmoney.com/hsgtcg/gzcglist.html">https://data.eastmoney.com/hsgtcg/gzcglist.html</a></div>
+</div>
+</dd></dl>
+
+</section>
+<section id="update-tosouth-netin-daily-check">
+<h3>update_tosouth_netin_daily_check<a class="headerlink" href="#update-tosouth-netin-daily-check" title="Permalink to this headline"></a></h3>
+<dl class="py function">
+<dt class="sig sig-object py" id="finfactory.get_data.eastmoney_tosouth_netin_daily.update_tosouth_netin_daily_check">
+<span class="sig-prename descclassname"><span class="pre">finfactory.get_data.eastmoney_tosouth_netin_daily.</span></span><span class="sig-name descname"><span class="pre">update_tosouth_netin_daily_check</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">save_path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">root_dir</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">trade_dates</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">logger</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#finfactory.get_data.eastmoney_tosouth_netin_daily.update_tosouth_netin_daily_check" title="Permalink to this definition"></a></dt>
+<dd><p>从东方财富更新南下资金净流入日数据</p>
+</dd></dl>
+
+</section>
+</section>
+<section id="module-finfactory.get_data.eniu_index_pe">
+<span id="eniu-index-pe"></span><h2>eniu_index_pe<a class="headerlink" href="#module-finfactory.get_data.eniu_index_pe" title="Permalink to this headline"></a></h2>
+<section id="id10">
+<h3>check_loss<a class="headerlink" href="#id10" title="Permalink to this headline"></a></h3>
+<dl class="py function">
+<dt class="sig sig-object py" id="finfactory.get_data.eniu_index_pe.check_loss">
+<span class="sig-prename descclassname"><span class="pre">finfactory.get_data.eniu_index_pe.</span></span><span class="sig-name descname"><span class="pre">check_loss</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">code</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">trade_dates</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">logger</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#finfactory.get_data.eniu_index_pe.check_loss" title="Permalink to this definition"></a></dt>
+<dd><p>检查缺失</p>
+</dd></dl>
+
+</section>
+<section id="get-index-pe">
+<h3>get_index_pe<a class="headerlink" href="#get-index-pe" title="Permalink to this headline"></a></h3>
+<dl class="py function">
+<dt class="sig sig-object py" id="finfactory.get_data.eniu_index_pe.get_index_pe">
+<span class="sig-prename descclassname"><span class="pre">finfactory.get_data.eniu_index_pe.</span></span><span class="sig-name descname"><span class="pre">get_index_pe</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">eniu_code</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#finfactory.get_data.eniu_index_pe.get_index_pe" title="Permalink to this definition"></a></dt>
+<dd><div class="line-block">
+<div class="line">爬取亿牛网指数PE估值数据</div>
+<div class="line">eniu_code格式如：sz399300、sh000016</div>
+<div class="line"><a class="reference external" href="https://eniu.com/gu/sz399300">https://eniu.com/gu/sz399300</a></div>
+</div>
+</dd></dl>
+
+</section>
+<section id="update-index-pe">
+<h3>update_index_pe<a class="headerlink" href="#update-index-pe" title="Permalink to this headline"></a></h3>
+<dl class="py function">
+<dt class="sig sig-object py" id="finfactory.get_data.eniu_index_pe.update_index_pe">
+<span class="sig-prename descclassname"><span class="pre">finfactory.get_data.eniu_index_pe.</span></span><span class="sig-name descname"><span class="pre">update_index_pe</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">eniu_code</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">df_exist</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fpath</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">logger</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#finfactory.get_data.eniu_index_pe.update_index_pe" title="Permalink to this definition"></a></dt>
+<dd><div class="line-block">
+<div class="line">从亿牛网爬取更新指数PE估值日数据</div>
+<div class="line">eniu_code格式如：sz399300、sh000016</div>
+<div class="line"><a class="reference external" href="https://eniu.com/">https://eniu.com/</a></div>
+</div>
+</dd></dl>
+
+</section>
+<section id="update-index-pe-check">
+<h3>update_index_pe_check<a class="headerlink" href="#update-index-pe-check" title="Permalink to this headline"></a></h3>
+<dl class="py function">
+<dt class="sig sig-object py" id="finfactory.get_data.eniu_index_pe.update_index_pe_check">
+<span class="sig-prename descclassname"><span class="pre">finfactory.get_data.eniu_index_pe.</span></span><span class="sig-name descname"><span class="pre">update_index_pe_check</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">eniu_code</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">save_path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">root_dir</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">trade_dates</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">logger</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#finfactory.get_data.eniu_index_pe.update_index_pe_check" title="Permalink to this definition"></a></dt>
+<dd><p>从亿牛网爬取更新指数PE估值日数据</p>
+</dd></dl>
+
+</section>
+</section>
+<section id="module-finfactory.get_data.fundex_index_dpe">
+<span id="fundex-index-dpe"></span><h2>fundex_index_dpe<a class="headerlink" href="#module-finfactory.get_data.fundex_index_dpe" title="Permalink to this headline"></a></h2>
+<section id="id11">
+<h3>check_loss<a class="headerlink" href="#id11" title="Permalink to this headline"></a></h3>
+<dl class="py function">
+<dt class="sig sig-object py" id="finfactory.get_data.fundex_index_dpe.check_loss">
+<span class="sig-prename descclassname"><span class="pre">finfactory.get_data.fundex_index_dpe.</span></span><span class="sig-name descname"><span class="pre">check_loss</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">code</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">trade_dates</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">logger</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#finfactory.get_data.fundex_index_dpe.check_loss" title="Permalink to this definition"></a></dt>
+<dd><p>检查缺失</p>
+</dd></dl>
+
+</section>
+<section id="get-index-pe-daily-cy">
+<h3>get_index_pe_daily_cy<a class="headerlink" href="#get-index-pe-daily-cy" title="Permalink to this headline"></a></h3>
+<dl class="py function">
+<dt class="sig sig-object py" id="finfactory.get_data.fundex_index_dpe.get_index_pe_daily_cy">
+<span class="sig-prename descclassname"><span class="pre">finfactory.get_data.fundex_index_dpe.</span></span><span class="sig-name descname"><span class="pre">get_index_pe_daily_cy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">code</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">js_dir</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#finfactory.get_data.fundex_index_dpe.get_index_pe_daily_cy" title="Permalink to this definition"></a></dt>
+<dd><p>获取当年的指数动态PE日数据</p>
+</dd></dl>
+
+</section>
+<section id="get-index-pe-daily-his">
+<h3>get_index_pe_daily_his<a class="headerlink" href="#get-index-pe-daily-his" title="Permalink to this headline"></a></h3>
+<dl class="py function">
+<dt class="sig sig-object py" id="finfactory.get_data.fundex_index_dpe.get_index_pe_daily_his">
+<span class="sig-prename descclassname"><span class="pre">finfactory.get_data.fundex_index_dpe.</span></span><span class="sig-name descname"><span class="pre">get_index_pe_daily_his</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">code</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">js_dir</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#finfactory.get_data.fundex_index_dpe.get_index_pe_daily_his" title="Permalink to this definition"></a></dt>
+<dd><p>获取历史（当年以前）的指数动态PE日数据</p>
+</dd></dl>
+
+</section>
+<section id="get-index-pe-daily">
+<h3>get_index_pe_daily<a class="headerlink" href="#get-index-pe-daily" title="Permalink to this headline"></a></h3>
+<dl class="py function">
+<dt class="sig sig-object py" id="finfactory.get_data.fundex_index_dpe.get_index_pe_daily">
+<span class="sig-prename descclassname"><span class="pre">finfactory.get_data.fundex_index_dpe.</span></span><span class="sig-name descname"><span class="pre">get_index_pe_daily</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">code</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">js_dir</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#finfactory.get_data.fundex_index_dpe.get_index_pe_daily" title="Permalink to this definition"></a></dt>
+<dd><p>获取指数动态PE日数据</p>
+</dd></dl>
+
+</section>
+<section id="update-index-pe-daily">
+<h3>update_index_pe_daily<a class="headerlink" href="#update-index-pe-daily" title="Permalink to this headline"></a></h3>
+<dl class="py function">
+<dt class="sig sig-object py" id="finfactory.get_data.fundex_index_dpe.update_index_pe_daily">
+<span class="sig-prename descclassname"><span class="pre">finfactory.get_data.fundex_index_dpe.</span></span><span class="sig-name descname"><span class="pre">update_index_pe_daily</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">code</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">df_exist</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fpath</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">js_dir</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">logger</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#finfactory.get_data.fundex_index_dpe.update_index_pe_daily" title="Permalink to this definition"></a></dt>
+<dd><p>更新指数动态PE数据</p>
+</dd></dl>
+
+</section>
+<section id="update-index-pe-daily-check">
+<h3>update_index_pe_daily_check<a class="headerlink" href="#update-index-pe-daily-check" title="Permalink to this headline"></a></h3>
+<dl class="py function">
+<dt class="sig sig-object py" id="finfactory.get_data.fundex_index_dpe.update_index_pe_daily_check">
+<span class="sig-prename descclassname"><span class="pre">finfactory.get_data.fundex_index_dpe.</span></span><span class="sig-name descname"><span class="pre">update_index_pe_daily_check</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">code</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">save_path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">js_dir</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">root_dir</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">trade_dates</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">logger</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#finfactory.get_data.fundex_index_dpe.update_index_pe_daily_check" title="Permalink to this definition"></a></dt>
+<dd><p>更新指数动态PE数据</p>
+</dd></dl>
+
+</section>
+</section>
+<section id="module-finfactory.get_data.hexun_gold_daily">
+<span id="hexun-gold-daily"></span><h2>hexun_gold_daily<a class="headerlink" href="#module-finfactory.get_data.hexun_gold_daily" title="Permalink to this headline"></a></h2>
+<section id="id12">
+<h3>check_loss<a class="headerlink" href="#id12" title="Permalink to this headline"></a></h3>
+<dl class="py function">
+<dt class="sig sig-object py" id="finfactory.get_data.hexun_gold_daily.check_loss">
+<span class="sig-prename descclassname"><span class="pre">finfactory.get_data.hexun_gold_daily.</span></span><span class="sig-name descname"><span class="pre">check_loss</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">logger</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#finfactory.get_data.hexun_gold_daily.check_loss" title="Permalink to this definition"></a></dt>
+<dd><p>检查缺失</p>
+</dd></dl>
+
+</section>
+<section id="get-gold-daily">
+<h3>get_gold_daily<a class="headerlink" href="#get-gold-daily" title="Permalink to this headline"></a></h3>
+<dl class="py function">
+<dt class="sig sig-object py" id="finfactory.get_data.hexun_gold_daily.get_gold_daily">
+<span class="sig-prename descclassname"><span class="pre">finfactory.get_data.hexun_gold_daily.</span></span><span class="sig-name descname"><span class="pre">get_gold_daily</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">start_date</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'1983-01-05'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">end_date</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">logger</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#finfactory.get_data.hexun_gold_daily.get_gold_daily" title="Permalink to this definition"></a></dt>
+<dd><p>和讯网爬取黄金现货日K线数据</p>
+</dd></dl>
+
+</section>
+<section id="update-gold-daily">
+<h3>update_gold_daily<a class="headerlink" href="#update-gold-daily" title="Permalink to this headline"></a></h3>
+<dl class="py function">
+<dt class="sig sig-object py" id="finfactory.get_data.hexun_gold_daily.update_gold_daily">
+<span class="sig-prename descclassname"><span class="pre">finfactory.get_data.hexun_gold_daily.</span></span><span class="sig-name descname"><span class="pre">update_gold_daily</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">df_exist</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fpath</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">start_date</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'1983-01-05'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">end_date</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">logger</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#finfactory.get_data.hexun_gold_daily.update_gold_daily" title="Permalink to this definition"></a></dt>
+<dd><p>增量更新黄金现货日线数据</p>
+</dd></dl>
+
+</section>
+<section id="update-gold-daily-check">
+<h3>update_gold_daily_check<a class="headerlink" href="#update-gold-daily-check" title="Permalink to this headline"></a></h3>
+<dl class="py function">
+<dt class="sig sig-object py" id="finfactory.get_data.hexun_gold_daily.update_gold_daily_check">
+<span class="sig-prename descclassname"><span class="pre">finfactory.get_data.hexun_gold_daily.</span></span><span class="sig-name descname"><span class="pre">update_gold_daily_check</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">save_path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">root_dir</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">start_date</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'1983-01-05'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">logger</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#finfactory.get_data.hexun_gold_daily.update_gold_daily_check" title="Permalink to this definition"></a></dt>
+<dd><p>更新黄金现货日线行情数据</p>
+</dd></dl>
+
+</section>
+</section>
+<section id="module-finfactory.get_data.hexun_silver_daily">
+<span id="hexun-silver-daily"></span><h2>hexun_silver_daily<a class="headerlink" href="#module-finfactory.get_data.hexun_silver_daily" title="Permalink to this headline"></a></h2>
+<section id="id13">
+<h3>check_loss<a class="headerlink" href="#id13" title="Permalink to this headline"></a></h3>
+<dl class="py function">
+<dt class="sig sig-object py" id="finfactory.get_data.hexun_silver_daily.check_loss">
+<span class="sig-prename descclassname"><span class="pre">finfactory.get_data.hexun_silver_daily.</span></span><span class="sig-name descname"><span class="pre">check_loss</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">logger</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#finfactory.get_data.hexun_silver_daily.check_loss" title="Permalink to this definition"></a></dt>
+<dd><p>检查缺失</p>
+</dd></dl>
+
+</section>
+<section id="get-silver-daily">
+<h3>get_silver_daily<a class="headerlink" href="#get-silver-daily" title="Permalink to this headline"></a></h3>
+<dl class="py function">
+<dt class="sig sig-object py" id="finfactory.get_data.hexun_silver_daily.get_silver_daily">
+<span class="sig-prename descclassname"><span class="pre">finfactory.get_data.hexun_silver_daily.</span></span><span class="sig-name descname"><span class="pre">get_silver_daily</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">start_date</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'1983-01-17'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">end_date</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">logger</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#finfactory.get_data.hexun_silver_daily.get_silver_daily" title="Permalink to this definition"></a></dt>
+<dd><p>和讯网爬取白银现货日K线数据</p>
+</dd></dl>
+
+</section>
+<section id="update-silver-daily">
+<h3>update_silver_daily<a class="headerlink" href="#update-silver-daily" title="Permalink to this headline"></a></h3>
+<dl class="py function">
+<dt class="sig sig-object py" id="finfactory.get_data.hexun_silver_daily.update_silver_daily">
+<span class="sig-prename descclassname"><span class="pre">finfactory.get_data.hexun_silver_daily.</span></span><span class="sig-name descname"><span class="pre">update_silver_daily</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">df_exist</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fpath</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">start_date</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'1983-01-17'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">end_date</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">logger</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#finfactory.get_data.hexun_silver_daily.update_silver_daily" title="Permalink to this definition"></a></dt>
+<dd><p>增量更新白银现货日线数据</p>
+</dd></dl>
+
+</section>
+<section id="update-silver-daily-check">
+<h3>update_silver_daily_check<a class="headerlink" href="#update-silver-daily-check" title="Permalink to this headline"></a></h3>
+<dl class="py function">
+<dt class="sig sig-object py" id="finfactory.get_data.hexun_silver_daily.update_silver_daily_check">
+<span class="sig-prename descclassname"><span class="pre">finfactory.get_data.hexun_silver_daily.</span></span><span class="sig-name descname"><span class="pre">update_silver_daily_check</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">save_path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">root_dir</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">start_date</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'1983-01-17'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">logger</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#finfactory.get_data.hexun_silver_daily.update_silver_daily_check" title="Permalink to this definition"></a></dt>
+<dd><p>更新白银现货日线行情数据</p>
+</dd></dl>
+
+</section>
+</section>
+<section id="module-finfactory.get_data.sw_daily_info">
+<span id="sw-daily-info"></span><h2>sw_daily_info<a class="headerlink" href="#module-finfactory.get_data.sw_daily_info" title="Permalink to this headline"></a></h2>
+<section id="load-sw-daily-ori">
+<h3>load_sw_daily_ori<a class="headerlink" href="#load-sw-daily-ori" title="Permalink to this headline"></a></h3>
+<dl class="py function">
+<dt class="sig sig-object py" id="finfactory.get_data.sw_daily_info.load_sw_daily_ori">
+<span class="sig-prename descclassname"><span class="pre">finfactory.get_data.sw_daily_info.</span></span><span class="sig-name descname"><span class="pre">load_sw_daily_ori</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">root_dir</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">save_path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#finfactory.get_data.sw_daily_info.load_sw_daily_ori" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</section>
+<section id="id14">
+<h3>check_loss<a class="headerlink" href="#id14" title="Permalink to this headline"></a></h3>
+<dl class="py function">
+<dt class="sig sig-object py" id="finfactory.get_data.sw_daily_info.check_loss">
+<span class="sig-prename descclassname"><span class="pre">finfactory.get_data.sw_daily_info.</span></span><span class="sig-name descname"><span class="pre">check_loss</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">trade_dates</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">logger</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#finfactory.get_data.sw_daily_info.check_loss" title="Permalink to this definition"></a></dt>
+<dd><p>检查缺失</p>
+</dd></dl>
+
+</section>
+<section id="get-daily-info-by-date">
+<h3>get_daily_info_by_date<a class="headerlink" href="#get-daily-info-by-date" title="Permalink to this headline"></a></h3>
+<dl class="py function">
+<dt class="sig sig-object py" id="finfactory.get_data.sw_daily_info.get_daily_info_by_date">
+<span class="sig-prename descclassname"><span class="pre">finfactory.get_data.sw_daily_info.</span></span><span class="sig-name descname"><span class="pre">get_daily_info_by_date</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">date</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">save_ori</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ori_save_path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">root_dir</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">logger</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#finfactory.get_data.sw_daily_info.get_daily_info_by_date" title="Permalink to this definition"></a></dt>
+<dd><div class="line-block">
+<div class="line"><a class="reference external" href="http://www.swsindex.com/idx0200.aspx?columnid=8838&amp;type=Day">http://www.swsindex.com/idx0200.aspx?columnid=8838&amp;type=Day</a></div>
+<div class="line"><a class="reference external" href="http://www.swsindex.com/idx0130.aspx?columnid=8838">http://www.swsindex.com/idx0130.aspx?columnid=8838</a></div>
+</div>
+</dd></dl>
+
+</section>
+<section id="get-daily-info-by-dates">
+<h3>get_daily_info_by_dates<a class="headerlink" href="#get-daily-info-by-dates" title="Permalink to this headline"></a></h3>
+<dl class="py function">
+<dt class="sig sig-object py" id="finfactory.get_data.sw_daily_info.get_daily_info_by_dates">
+<span class="sig-prename descclassname"><span class="pre">finfactory.get_data.sw_daily_info.</span></span><span class="sig-name descname"><span class="pre">get_daily_info_by_dates</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dates</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">save_ori</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">root_dir</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">logger</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#finfactory.get_data.sw_daily_info.get_daily_info_by_dates" title="Permalink to this definition"></a></dt>
+<dd><p>指定多个日期，从申万网站爬取申万指数日数据</p>
+</dd></dl>
+
+</section>
+<section id="update-daily-info">
+<h3>update_daily_info<a class="headerlink" href="#update-daily-info" title="Permalink to this headline"></a></h3>
+<dl class="py function">
+<dt class="sig sig-object py" id="finfactory.get_data.sw_daily_info.update_daily_info">
+<span class="sig-prename descclassname"><span class="pre">finfactory.get_data.sw_daily_info.</span></span><span class="sig-name descname"><span class="pre">update_daily_info</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">df_exist</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fpath</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">save_ori</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">root_dir</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">start_date</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">end_date</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">trade_dates</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">logger</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#finfactory.get_data.sw_daily_info.update_daily_info" title="Permalink to this definition"></a></dt>
+<dd><p>增量更新申万指数日数据</p>
+</dd></dl>
+
+</section>
+<section id="update-daily-info-check">
+<h3>update_daily_info_check<a class="headerlink" href="#update-daily-info-check" title="Permalink to this headline"></a></h3>
+<dl class="py function">
+<dt class="sig sig-object py" id="finfactory.get_data.sw_daily_info.update_daily_info_check">
+<span class="sig-prename descclassname"><span class="pre">finfactory.get_data.sw_daily_info.</span></span><span class="sig-name descname"><span class="pre">update_daily_info_check</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">save_path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">root_dir</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">save_ori</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">start_date</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'2022-06-01'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">trade_dates</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">logger</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#finfactory.get_data.sw_daily_info.update_daily_info_check" title="Permalink to this definition"></a></dt>
+<dd><p>更新所有申万指数日数据</p>
+</dd></dl>
+
+</section>
+</section>
+<section id="module-finfactory.get_data.tushare_chn_money">
+<span id="tushare-chn-money"></span><h2>tushare_chn_money<a class="headerlink" href="#module-finfactory.get_data.tushare_chn_money" title="Permalink to this headline"></a></h2>
+<section id="id15">
+<h3>check_loss<a class="headerlink" href="#id15" title="Permalink to this headline"></a></h3>
+<dl class="py function">
+<dt class="sig sig-object py" id="finfactory.get_data.tushare_chn_money.check_loss">
+<span class="sig-prename descclassname"><span class="pre">finfactory.get_data.tushare_chn_money.</span></span><span class="sig-name descname"><span class="pre">check_loss</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">df</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">logger</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#finfactory.get_data.tushare_chn_money.check_loss" title="Permalink to this definition"></a></dt>
+<dd><p>检查缺失</p>
+</dd></dl>
+
+</section>
+<section id="get-chn-money">
+<h3>get_chn_money<a class="headerlink" href="#get-chn-money" title="Permalink to this headline"></a></h3>
+<dl class="py function">
+<dt class="sig sig-object py" id="finfactory.get_data.tushare_chn_money.get_chn_money">
+<span class="sig-prename descclassname"><span class="pre">finfactory.get_data.tushare_chn_money.</span></span><span class="sig-name descname"><span class="pre">get_chn_money</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">start_month</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'197701'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">end_month</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ts_api</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#finfactory.get_data.tushare_chn_money.get_chn_money" title="Permalink to this definition"></a></dt>
+<dd><p>tushare获取中国货币供应量数据</p>
+</dd></dl>
+
+</section>
+<section id="update-chn-money">
+<h3>update_chn_money<a class="headerlink" href="#update-chn-money" title="Permalink to this headline"></a></h3>
+<dl class="py function">
+<dt class="sig sig-object py" id="finfactory.get_data.tushare_chn_money.update_chn_money">
+<span class="sig-prename descclassname"><span class="pre">finfactory.get_data.tushare_chn_money.</span></span><span class="sig-name descname"><span class="pre">update_chn_money</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">df_exist</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fpath</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">start_month</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'197701'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">end_month</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ts_api</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">logger</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#finfactory.get_data.tushare_chn_money.update_chn_money" title="Permalink to this definition"></a></dt>
+<dd><p>增量更新中国货币供应量数据</p>
+</dd></dl>
+
+</section>
+<section id="update-chn-money-check">
+<h3>update_chn_money_check<a class="headerlink" href="#update-chn-money-check" title="Permalink to this headline"></a></h3>
+<dl class="py function">
+<dt class="sig sig-object py" id="finfactory.get_data.tushare_chn_money.update_chn_money_check">
+<span class="sig-prename descclassname"><span class="pre">finfactory.get_data.tushare_chn_money.</span></span><span class="sig-name descname"><span class="pre">update_chn_money_check</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">save_path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">root_dir</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">start_month</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'197701'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ts_api</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">logger</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#finfactory.get_data.tushare_chn_money.update_chn_money_check" title="Permalink to this definition"></a></dt>
+<dd><p>更新中国货币供应量</p>
+</dd></dl>
+
+</section>
+</section>
+<section id="module-finfactory.get_data.tushare_futures_daily">
+<span id="tushare-futures-daily"></span><h2>tushare_futures_daily<a class="headerlink" href="#module-finfactory.get_data.tushare_futures_daily" title="Permalink to this headline"></a></h2>
+<section id="id16">
+<h3>check_loss<a class="headerlink" href="#id16" title="Permalink to this headline"></a></h3>
+<dl class="py function">
+<dt class="sig sig-object py" id="finfactory.get_data.tushare_futures_daily.check_loss">
+<span class="sig-prename descclassname"><span class="pre">finfactory.get_data.tushare_futures_daily.</span></span><span class="sig-name descname"><span class="pre">check_loss</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">code</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">trade_dates</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">logger</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#finfactory.get_data.tushare_futures_daily.check_loss" title="Permalink to this definition"></a></dt>
+<dd><p>检查缺失</p>
+</dd></dl>
+
+</section>
+<section id="get-future-daily">
+<h3>get_future_daily<a class="headerlink" href="#get-future-daily" title="Permalink to this headline"></a></h3>
+<dl class="py function">
+<dt class="sig sig-object py" id="finfactory.get_data.tushare_futures_daily.get_future_daily">
+<span class="sig-prename descclassname"><span class="pre">finfactory.get_data.tushare_futures_daily.</span></span><span class="sig-name descname"><span class="pre">get_future_daily</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">code</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">start_date</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">end_date</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ts_api</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#finfactory.get_data.tushare_futures_daily.get_future_daily" title="Permalink to this definition"></a></dt>
+<dd><div class="line-block">
+<div class="line">tushare获取期货日线数据</div>
+<div class="line">start_date和end_date格式：’20220610’</div>
+</div>
+</dd></dl>
+
+</section>
+<section id="update-future-daily">
+<h3>update_future_daily<a class="headerlink" href="#update-future-daily" title="Permalink to this headline"></a></h3>
+<dl class="py function">
+<dt class="sig sig-object py" id="finfactory.get_data.tushare_futures_daily.update_future_daily">
+<span class="sig-prename descclassname"><span class="pre">finfactory.get_data.tushare_futures_daily.</span></span><span class="sig-name descname"><span class="pre">update_future_daily</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">code</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">df_exist</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fpath</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">start_date</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'20100415'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">end_date</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">trade_dates</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ts_api</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">logger</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#finfactory.get_data.tushare_futures_daily.update_future_daily" title="Permalink to this definition"></a></dt>
+<dd><p>增量更新期货日线数据</p>
+</dd></dl>
+
+</section>
+<section id="update-future-daily-check">
+<h3>update_future_daily_check<a class="headerlink" href="#update-future-daily-check" title="Permalink to this headline"></a></h3>
+<dl class="py function">
+<dt class="sig sig-object py" id="finfactory.get_data.tushare_futures_daily.update_future_daily_check">
+<span class="sig-prename descclassname"><span class="pre">finfactory.get_data.tushare_futures_daily.</span></span><span class="sig-name descname"><span class="pre">update_future_daily_check</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">code</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">save_path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">root_dir</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">start_date</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'20100415'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">trade_dates</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ts_api</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">logger</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#finfactory.get_data.tushare_futures_daily.update_future_daily_check" title="Permalink to this definition"></a></dt>
+<dd><div class="line-block">
+<div class="line">更新期货日线行情数据</div>
+<div class="line">code: tushare代码</div>
+<div class="line">trade_dates: 历史交易（开市）日期数据或存档路径</div>
+</div>
+</dd></dl>
+
+</section>
+</section>
+<section id="module-finfactory.get_data.tushare_futures_daily_ex">
+<span id="tushare-futures-daily-ex"></span><h2>tushare_futures_daily_ex<a class="headerlink" href="#module-finfactory.get_data.tushare_futures_daily_ex" title="Permalink to this headline"></a></h2>
+<section id="id17">
+<h3>check_loss<a class="headerlink" href="#id17" title="Permalink to this headline"></a></h3>
+<dl class="py function">
+<dt class="sig sig-object py" id="finfactory.get_data.tushare_futures_daily_ex.check_loss">
+<span class="sig-prename descclassname"><span class="pre">finfactory.get_data.tushare_futures_daily_ex.</span></span><span class="sig-name descname"><span class="pre">check_loss</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">exchange</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">trade_dates</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">logger</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#finfactory.get_data.tushare_futures_daily_ex.check_loss" title="Permalink to this definition"></a></dt>
+<dd><p>检查缺失</p>
+</dd></dl>
+
+</section>
+<section id="get-futures-daily">
+<h3>get_futures_daily<a class="headerlink" href="#get-futures-daily" title="Permalink to this headline"></a></h3>
+<dl class="py function">
+<dt class="sig sig-object py" id="finfactory.get_data.tushare_futures_daily_ex.get_futures_daily">
+<span class="sig-prename descclassname"><span class="pre">finfactory.get_data.tushare_futures_daily_ex.</span></span><span class="sig-name descname"><span class="pre">get_futures_daily</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">exchange</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">date</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ts_api</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#finfactory.get_data.tushare_futures_daily_ex.get_futures_daily" title="Permalink to this definition"></a></dt>
+<dd><div class="line-block">
+<div class="line">tushare获取给定交易所exchange的期货日线数据</div>
+</div>
+</dd></dl>
+
+</section>
+<section id="get-futures-daily-by-dates">
+<h3>get_futures_daily_by_dates<a class="headerlink" href="#get-futures-daily-by-dates" title="Permalink to this headline"></a></h3>
+<dl class="py function">
+<dt class="sig sig-object py" id="finfactory.get_data.tushare_futures_daily_ex.get_futures_daily_by_dates">
+<span class="sig-prename descclassname"><span class="pre">finfactory.get_data.tushare_futures_daily_ex.</span></span><span class="sig-name descname"><span class="pre">get_futures_daily_by_dates</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">exchange</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dates</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ts_api</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">logger</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#finfactory.get_data.tushare_futures_daily_ex.get_futures_daily_by_dates" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</section>
+<section id="update-futures-daily">
+<h3>update_futures_daily<a class="headerlink" href="#update-futures-daily" title="Permalink to this headline"></a></h3>
+<dl class="py function">
+<dt class="sig sig-object py" id="finfactory.get_data.tushare_futures_daily_ex.update_futures_daily">
+<span class="sig-prename descclassname"><span class="pre">finfactory.get_data.tushare_futures_daily_ex.</span></span><span class="sig-name descname"><span class="pre">update_futures_daily</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">exchange</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">df_exist</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fpath</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">start_date</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'19950417'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">end_date</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">trade_dates</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ts_api</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">logger</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#finfactory.get_data.tushare_futures_daily_ex.update_futures_daily" title="Permalink to this definition"></a></dt>
+<dd><p>增量更新期货日线数据</p>
+</dd></dl>
+
+</section>
+<section id="update-futures-daily-check">
+<h3>update_futures_daily_check<a class="headerlink" href="#update-futures-daily-check" title="Permalink to this headline"></a></h3>
+<dl class="py function">
+<dt class="sig sig-object py" id="finfactory.get_data.tushare_futures_daily_ex.update_futures_daily_check">
+<span class="sig-prename descclassname"><span class="pre">finfactory.get_data.tushare_futures_daily_ex.</span></span><span class="sig-name descname"><span class="pre">update_futures_daily_check</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">exchange</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">save_path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">root_dir</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">start_date</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'19950417'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">trade_dates</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ts_api</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">logger</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#finfactory.get_data.tushare_futures_daily_ex.update_futures_daily_check" title="Permalink to this definition"></a></dt>
+<dd><p>更新交易所期货日线数据</p>
+</dd></dl>
+
+</section>
+</section>
+<section id="module-finfactory.get_data.tushare_futures_info">
+<span id="tushare-futures-info"></span><h2>tushare_futures_info<a class="headerlink" href="#module-finfactory.get_data.tushare_futures_info" title="Permalink to this headline"></a></h2>
+<section id="get-futures-info">
+<h3>get_futures_info<a class="headerlink" href="#get-futures-info" title="Permalink to this headline"></a></h3>
+<dl class="py function">
+<dt class="sig sig-object py" id="finfactory.get_data.tushare_futures_info.get_futures_info">
+<span class="sig-prename descclassname"><span class="pre">finfactory.get_data.tushare_futures_info.</span></span><span class="sig-name descname"><span class="pre">get_futures_info</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">exchange</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ts_api</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#finfactory.get_data.tushare_futures_info.get_futures_info" title="Permalink to this definition"></a></dt>
+<dd><div class="line-block">
+<div class="line">tushare获取给定交易所exchange的期货合约信息</div>
+<div class="line">exchange表示交易所（与tushare官方文档一致）:</div>
+<div class="line-block">
+<div class="line">CFFEX-中金所 DCE-大商所 CZCE-郑商所 SHFE-上期所</div>
+<div class="line">INE-上海国际能源交易中心</div>
+</div>
+</div>
+</dd></dl>
+
+</section>
+<section id="update-futures-info">
+<h3>update_futures_info<a class="headerlink" href="#update-futures-info" title="Permalink to this headline"></a></h3>
+<dl class="py function">
+<dt class="sig sig-object py" id="finfactory.get_data.tushare_futures_info.update_futures_info">
+<span class="sig-prename descclassname"><span class="pre">finfactory.get_data.tushare_futures_info.</span></span><span class="sig-name descname"><span class="pre">update_futures_info</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">exchange</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">save_path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">root_dir</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ts_api</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">logger</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#finfactory.get_data.tushare_futures_info.update_futures_info" title="Permalink to this definition"></a></dt>
+<dd><p>更新给定交易所的期货合约基本信息</p>
+</dd></dl>
+
+</section>
+</section>
+<section id="module-finfactory.get_data.tushare_futures_mapping">
+<span id="tushare-futures-mapping"></span><h2>tushare_futures_mapping<a class="headerlink" href="#module-finfactory.get_data.tushare_futures_mapping" title="Permalink to this headline"></a></h2>
+<section id="id18">
+<h3>check_loss<a class="headerlink" href="#id18" title="Permalink to this headline"></a></h3>
+<dl class="py function">
+<dt class="sig sig-object py" id="finfactory.get_data.tushare_futures_mapping.check_loss">
+<span class="sig-prename descclassname"><span class="pre">finfactory.get_data.tushare_futures_mapping.</span></span><span class="sig-name descname"><span class="pre">check_loss</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">trade_dates</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">logger</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#finfactory.get_data.tushare_futures_mapping.check_loss" title="Permalink to this definition"></a></dt>
+<dd><p>检查缺失</p>
+</dd></dl>
+
+</section>
+<section id="get-future-mapping">
+<h3>get_future_mapping<a class="headerlink" href="#get-future-mapping" title="Permalink to this headline"></a></h3>
+<dl class="py function">
+<dt class="sig sig-object py" id="finfactory.get_data.tushare_futures_mapping.get_future_mapping">
+<span class="sig-prename descclassname"><span class="pre">finfactory.get_data.tushare_futures_mapping.</span></span><span class="sig-name descname"><span class="pre">get_future_mapping</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">code</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">date</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ts_api</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#finfactory.get_data.tushare_futures_mapping.get_future_mapping" title="Permalink to this definition"></a></dt>
+<dd><p>tushare获取主力与连续合约映射数据，指定主力/连续合约代码和日期</p>
+</dd></dl>
+
+</section>
+<section id="get-futures-mapping">
+<h3>get_futures_mapping<a class="headerlink" href="#get-futures-mapping" title="Permalink to this headline"></a></h3>
+<dl class="py function">
+<dt class="sig sig-object py" id="finfactory.get_data.tushare_futures_mapping.get_futures_mapping">
+<span class="sig-prename descclassname"><span class="pre">finfactory.get_data.tushare_futures_mapping.</span></span><span class="sig-name descname"><span class="pre">get_futures_mapping</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">start_date</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'20220601'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">end_date</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ts_api</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#finfactory.get_data.tushare_futures_mapping.get_futures_mapping" title="Permalink to this definition"></a></dt>
+<dd><p>tushare获取主力与连续合约映射数据</p>
+</dd></dl>
+
+</section>
+<section id="update-futures-mapping">
+<h3>update_futures_mapping<a class="headerlink" href="#update-futures-mapping" title="Permalink to this headline"></a></h3>
+<dl class="py function">
+<dt class="sig sig-object py" id="finfactory.get_data.tushare_futures_mapping.update_futures_mapping">
+<span class="sig-prename descclassname"><span class="pre">finfactory.get_data.tushare_futures_mapping.</span></span><span class="sig-name descname"><span class="pre">update_futures_mapping</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">df_exist</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fpath</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">start_date</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'19950416'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">end_date</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ts_api</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">logger</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#finfactory.get_data.tushare_futures_mapping.update_futures_mapping" title="Permalink to this definition"></a></dt>
+<dd><p>增量更新主力与连续合约映射数据</p>
+</dd></dl>
+
+</section>
+<section id="update-futures-mapping-check">
+<h3>update_futures_mapping_check<a class="headerlink" href="#update-futures-mapping-check" title="Permalink to this headline"></a></h3>
+<dl class="py function">
+<dt class="sig sig-object py" id="finfactory.get_data.tushare_futures_mapping.update_futures_mapping_check">
+<span class="sig-prename descclassname"><span class="pre">finfactory.get_data.tushare_futures_mapping.</span></span><span class="sig-name descname"><span class="pre">update_futures_mapping_check</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">save_path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">root_dir</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">start_date</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'19950416'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">trade_dates</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ts_api</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">logger</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#finfactory.get_data.tushare_futures_mapping.update_futures_mapping_check" title="Permalink to this definition"></a></dt>
+<dd><p>更新主力与连续合约映射数据</p>
+</dd></dl>
+
+</section>
+</section>
+<section id="module-finfactory.get_data.tushare_index_daily">
+<span id="tushare-index-daily"></span><h2>tushare_index_daily<a class="headerlink" href="#module-finfactory.get_data.tushare_index_daily" title="Permalink to this headline"></a></h2>
+<section id="id19">
+<h3>check_loss<a class="headerlink" href="#id19" title="Permalink to this headline"></a></h3>
+<dl class="py function">
+<dt class="sig sig-object py" id="finfactory.get_data.tushare_index_daily.check_loss">
+<span class="sig-prename descclassname"><span class="pre">finfactory.get_data.tushare_index_daily.</span></span><span class="sig-name descname"><span class="pre">check_loss</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">code</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">trade_dates</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">logger</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#finfactory.get_data.tushare_index_daily.check_loss" title="Permalink to this definition"></a></dt>
+<dd><p>检查缺失</p>
+</dd></dl>
+
+</section>
+<section id="get-index-daily">
+<h3>get_index_daily<a class="headerlink" href="#get-index-daily" title="Permalink to this headline"></a></h3>
+<dl class="py function">
+<dt class="sig sig-object py" id="finfactory.get_data.tushare_index_daily.get_index_daily">
+<span class="sig-prename descclassname"><span class="pre">finfactory.get_data.tushare_index_daily.</span></span><span class="sig-name descname"><span class="pre">get_index_daily</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">code</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">start_date</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">end_date</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ts_api</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#finfactory.get_data.tushare_index_daily.get_index_daily" title="Permalink to this definition"></a></dt>
+<dd><div class="line-block">
+<div class="line">tushare获取指数日线数据</div>
+<div class="line">start_date和end_date格式：’20220610’</div>
+</div>
+</dd></dl>
+
+</section>
+<section id="update-index-daily">
+<h3>update_index_daily<a class="headerlink" href="#update-index-daily" title="Permalink to this headline"></a></h3>
+<dl class="py function">
+<dt class="sig sig-object py" id="finfactory.get_data.tushare_index_daily.update_index_daily">
+<span class="sig-prename descclassname"><span class="pre">finfactory.get_data.tushare_index_daily.</span></span><span class="sig-name descname"><span class="pre">update_index_daily</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">code</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">df_exist</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fpath</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">start_date</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'19901218'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">end_date</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">trade_dates</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ts_api</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">logger</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#finfactory.get_data.tushare_index_daily.update_index_daily" title="Permalink to this definition"></a></dt>
+<dd><p>增量更新指数日线数据</p>
+</dd></dl>
+
+</section>
+<section id="update-index-daily-check">
+<h3>update_index_daily_check<a class="headerlink" href="#update-index-daily-check" title="Permalink to this headline"></a></h3>
+<dl class="py function">
+<dt class="sig sig-object py" id="finfactory.get_data.tushare_index_daily.update_index_daily_check">
+<span class="sig-prename descclassname"><span class="pre">finfactory.get_data.tushare_index_daily.</span></span><span class="sig-name descname"><span class="pre">update_index_daily_check</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">code</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">save_path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">root_dir</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">start_date</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'19901218'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">trade_dates</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ts_api</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">logger</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#finfactory.get_data.tushare_index_daily.update_index_daily_check" title="Permalink to this definition"></a></dt>
+<dd><div class="line-block">
+<div class="line">更新指数日线行情数据</div>
+<div class="line">code: tushare代码(带后缀，如000300.SH)</div>
+<div class="line">trade_dates: 历史交易（开市）日期数据或存档路径</div>
+</div>
+</dd></dl>
+
+</section>
+</section>
+<section id="module-finfactory.get_data.tushare_index_daily_basic">
+<span id="tushare-index-daily-basic"></span><h2>tushare_index_daily_basic<a class="headerlink" href="#module-finfactory.get_data.tushare_index_daily_basic" title="Permalink to this headline"></a></h2>
+<section id="id20">
+<h3>check_loss<a class="headerlink" href="#id20" title="Permalink to this headline"></a></h3>
+<dl class="py function">
+<dt class="sig sig-object py" id="finfactory.get_data.tushare_index_daily_basic.check_loss">
+<span class="sig-prename descclassname"><span class="pre">finfactory.get_data.tushare_index_daily_basic.</span></span><span class="sig-name descname"><span class="pre">check_loss</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">code</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">trade_dates</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">logger</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#finfactory.get_data.tushare_index_daily_basic.check_loss" title="Permalink to this definition"></a></dt>
+<dd><p>检查缺失</p>
+</dd></dl>
+
+</section>
+<section id="get-index-daily-basic">
+<h3>get_index_daily_basic<a class="headerlink" href="#get-index-daily-basic" title="Permalink to this headline"></a></h3>
+<dl class="py function">
+<dt class="sig sig-object py" id="finfactory.get_data.tushare_index_daily_basic.get_index_daily_basic">
+<span class="sig-prename descclassname"><span class="pre">finfactory.get_data.tushare_index_daily_basic.</span></span><span class="sig-name descname"><span class="pre">get_index_daily_basic</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">code</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">start_date</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">end_date</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ts_api</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#finfactory.get_data.tushare_index_daily_basic.get_index_daily_basic" title="Permalink to this definition"></a></dt>
+<dd><div class="line-block">
+<div class="line">tushare获取指数日基本数据</div>
+<div class="line">start_date和end_date格式：’20220610’</div>
+</div>
+</dd></dl>
+
+</section>
+<section id="update-index-daily-basic">
+<h3>update_index_daily_basic<a class="headerlink" href="#update-index-daily-basic" title="Permalink to this headline"></a></h3>
+<dl class="py function">
+<dt class="sig sig-object py" id="finfactory.get_data.tushare_index_daily_basic.update_index_daily_basic">
+<span class="sig-prename descclassname"><span class="pre">finfactory.get_data.tushare_index_daily_basic.</span></span><span class="sig-name descname"><span class="pre">update_index_daily_basic</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">code</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">df_exist</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fpath</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">start_date</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'20040101'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">end_date</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">trade_dates</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ts_api</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">logger</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#finfactory.get_data.tushare_index_daily_basic.update_index_daily_basic" title="Permalink to this definition"></a></dt>
+<dd><p>增量更新指数日线基本数据</p>
+</dd></dl>
+
+</section>
+<section id="update-index-daily-basic-check">
+<h3>update_index_daily_basic_check<a class="headerlink" href="#update-index-daily-basic-check" title="Permalink to this headline"></a></h3>
+<dl class="py function">
+<dt class="sig sig-object py" id="finfactory.get_data.tushare_index_daily_basic.update_index_daily_basic_check">
+<span class="sig-prename descclassname"><span class="pre">finfactory.get_data.tushare_index_daily_basic.</span></span><span class="sig-name descname"><span class="pre">update_index_daily_basic_check</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">code</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">save_path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">root_dir</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">start_date</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'20040101'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">trade_dates</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ts_api</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">logger</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#finfactory.get_data.tushare_index_daily_basic.update_index_daily_basic_check" title="Permalink to this definition"></a></dt>
+<dd><div class="line-block">
+<div class="line">更新指数日线基本数据</div>
+<div class="line">code: tushare代码(带后缀，如000300.SH)</div>
+<div class="line">trade_dates: 历史交易（开市）日期数据或存档路径</div>
+</div>
+</dd></dl>
+
+</section>
+</section>
+<section id="module-finfactory.get_data.tushare_index_info">
+<span id="tushare-index-info"></span><h2>tushare_index_info<a class="headerlink" href="#module-finfactory.get_data.tushare_index_info" title="Permalink to this headline"></a></h2>
+<section id="get-index-info">
+<h3>get_index_info<a class="headerlink" href="#get-index-info" title="Permalink to this headline"></a></h3>
+<dl class="py function">
+<dt class="sig sig-object py" id="finfactory.get_data.tushare_index_info.get_index_info">
+<span class="sig-prename descclassname"><span class="pre">finfactory.get_data.tushare_index_info.</span></span><span class="sig-name descname"><span class="pre">get_index_info</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">market</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ts_api</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#finfactory.get_data.tushare_index_info.get_index_info" title="Permalink to this definition"></a></dt>
+<dd><div class="line-block">
+<div class="line">tushare获取给定市场market的指数信息</div>
+<div class="line">market表示交易市场（与tushare官方文档一致）:</div>
+<div class="line-block">
+<div class="line">MSCI MSCI指数, CSI 中证指数, SSE 上交所指数, SZSE 深交所指数</div>
+<div class="line">CICC 中金指数, SW 申万指数, OTH 其他指数</div>
+</div>
+</div>
+</dd></dl>
+
+</section>
+<section id="update-index-info">
+<h3>update_index_info<a class="headerlink" href="#update-index-info" title="Permalink to this headline"></a></h3>
+<dl class="py function">
+<dt class="sig sig-object py" id="finfactory.get_data.tushare_index_info.update_index_info">
+<span class="sig-prename descclassname"><span class="pre">finfactory.get_data.tushare_index_info.</span></span><span class="sig-name descname"><span class="pre">update_index_info</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">market</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">save_path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">root_dir</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ts_api</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">logger</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#finfactory.get_data.tushare_index_info.update_index_info" title="Permalink to this definition"></a></dt>
+<dd><p>更新给定市场的指数基本信息</p>
+</dd></dl>
+
+</section>
+</section>
+<section id="module-finfactory.get_data.tushare_options_daily">
+<span id="tushare-options-daily"></span><h2>tushare_options_daily<a class="headerlink" href="#module-finfactory.get_data.tushare_options_daily" title="Permalink to this headline"></a></h2>
+<section id="id21">
+<h3>check_loss<a class="headerlink" href="#id21" title="Permalink to this headline"></a></h3>
+<dl class="py function">
+<dt class="sig sig-object py" id="finfactory.get_data.tushare_options_daily.check_loss">
+<span class="sig-prename descclassname"><span class="pre">finfactory.get_data.tushare_options_daily.</span></span><span class="sig-name descname"><span class="pre">check_loss</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">exchange</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">trade_dates</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">logger</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#finfactory.get_data.tushare_options_daily.check_loss" title="Permalink to this definition"></a></dt>
+<dd><p>检查缺失</p>
+</dd></dl>
+
+</section>
+<section id="get-options-daily">
+<h3>get_options_daily<a class="headerlink" href="#get-options-daily" title="Permalink to this headline"></a></h3>
+<dl class="py function">
+<dt class="sig sig-object py" id="finfactory.get_data.tushare_options_daily.get_options_daily">
+<span class="sig-prename descclassname"><span class="pre">finfactory.get_data.tushare_options_daily.</span></span><span class="sig-name descname"><span class="pre">get_options_daily</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">exchange</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">date</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ts_api</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#finfactory.get_data.tushare_options_daily.get_options_daily" title="Permalink to this definition"></a></dt>
+<dd><div class="line-block">
+<div class="line">tushare获取给定交易所exchange的期权日线数据</div>
+<div class="line">exchange表示交易所（与tushare官方文档一致）:</div>
+<div class="line-block">
+<div class="line">CFFEX-中金所 DCE-大商所 CZCE-郑商所 SHFE-上期所</div>
+<div class="line">SSE-上交所 SZSE-深交所</div>
+</div>
+<div class="line">注意：上交所深交所中金所合约比较少，一次能取当日所有日线，</div>
+<div class="line-block">
+<div class="line">别的交易所有可能会出现一次取不全的情况（可能需要根据合约代码来取）！</div>
+</div>
+</div>
+</dd></dl>
+
+</section>
+<section id="get-options-daily-by-dates">
+<h3>get_options_daily_by_dates<a class="headerlink" href="#get-options-daily-by-dates" title="Permalink to this headline"></a></h3>
+<dl class="py function">
+<dt class="sig sig-object py" id="finfactory.get_data.tushare_options_daily.get_options_daily_by_dates">
+<span class="sig-prename descclassname"><span class="pre">finfactory.get_data.tushare_options_daily.</span></span><span class="sig-name descname"><span class="pre">get_options_daily_by_dates</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">exchange</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dates</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ts_api</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">logger</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#finfactory.get_data.tushare_options_daily.get_options_daily_by_dates" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</section>
+<section id="update-options-daily">
+<h3>update_options_daily<a class="headerlink" href="#update-options-daily" title="Permalink to this headline"></a></h3>
+<dl class="py function">
+<dt class="sig sig-object py" id="finfactory.get_data.tushare_options_daily.update_options_daily">
+<span class="sig-prename descclassname"><span class="pre">finfactory.get_data.tushare_options_daily.</span></span><span class="sig-name descname"><span class="pre">update_options_daily</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">exchange</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">df_exist</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fpath</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">start_date</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'20150209'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">end_date</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">trade_dates</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ts_api</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">logger</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#finfactory.get_data.tushare_options_daily.update_options_daily" title="Permalink to this definition"></a></dt>
+<dd><p>增量更新期权日线数据</p>
+</dd></dl>
+
+</section>
+<section id="update-options-daily-check">
+<h3>update_options_daily_check<a class="headerlink" href="#update-options-daily-check" title="Permalink to this headline"></a></h3>
+<dl class="py function">
+<dt class="sig sig-object py" id="finfactory.get_data.tushare_options_daily.update_options_daily_check">
+<span class="sig-prename descclassname"><span class="pre">finfactory.get_data.tushare_options_daily.</span></span><span class="sig-name descname"><span class="pre">update_options_daily_check</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">exchange</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">save_path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">root_dir</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">start_date</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'20150209'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">trade_dates</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ts_api</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">logger</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#finfactory.get_data.tushare_options_daily.update_options_daily_check" title="Permalink to this definition"></a></dt>
+<dd><p>更新交易所期权日线数据</p>
+</dd></dl>
+
+</section>
+</section>
+<section id="module-finfactory.get_data.tushare_options_info">
+<span id="tushare-options-info"></span><h2>tushare_options_info<a class="headerlink" href="#module-finfactory.get_data.tushare_options_info" title="Permalink to this headline"></a></h2>
+<section id="get-options-info">
+<h3>get_options_info<a class="headerlink" href="#get-options-info" title="Permalink to this headline"></a></h3>
+<dl class="py function">
+<dt class="sig sig-object py" id="finfactory.get_data.tushare_options_info.get_options_info">
+<span class="sig-prename descclassname"><span class="pre">finfactory.get_data.tushare_options_info.</span></span><span class="sig-name descname"><span class="pre">get_options_info</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">exchange</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ts_api</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">logger</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#finfactory.get_data.tushare_options_info.get_options_info" title="Permalink to this definition"></a></dt>
+<dd><div class="line-block">
+<div class="line">tushare获取给定交易所exchange的期权合约信息</div>
+<div class="line">exchange表示交易所（与tushare官方文档一致）:</div>
+<div class="line-block">
+<div class="line">CFFEX-中金所 DCE-大商所 CZCE-郑商所 SHFE-上期所</div>
+<div class="line">SSE-上交所 SZSE-深交所</div>
+</div>
+</div>
+</dd></dl>
+
+</section>
+<section id="update-options-info">
+<h3>update_options_info<a class="headerlink" href="#update-options-info" title="Permalink to this headline"></a></h3>
+<dl class="py function">
+<dt class="sig sig-object py" id="finfactory.get_data.tushare_options_info.update_options_info">
+<span class="sig-prename descclassname"><span class="pre">finfactory.get_data.tushare_options_info.</span></span><span class="sig-name descname"><span class="pre">update_options_info</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">exchange</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">save_path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">root_dir</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ts_api</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">logger</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#finfactory.get_data.tushare_options_info.update_options_info" title="Permalink to this definition"></a></dt>
+<dd><p>更新给定交易所的期权合约基本信息</p>
+</dd></dl>
+
+</section>
+</section>
+<section id="module-finfactory.get_data.tushare_trade_dates">
+<span id="tushare-trade-dates"></span><h2>tushare_trade_dates<a class="headerlink" href="#module-finfactory.get_data.tushare_trade_dates" title="Permalink to this headline"></a></h2>
+<section id="id22">
+<h3>check_loss<a class="headerlink" href="#id22" title="Permalink to this headline"></a></h3>
+<dl class="py function">
+<dt class="sig sig-object py" id="finfactory.get_data.tushare_trade_dates.check_loss">
+<span class="sig-prename descclassname"><span class="pre">finfactory.get_data.tushare_trade_dates.</span></span><span class="sig-name descname"><span class="pre">check_loss</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">exchange</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">logger</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#finfactory.get_data.tushare_trade_dates.check_loss" title="Permalink to this definition"></a></dt>
+<dd><p>检查缺失</p>
+</dd></dl>
+
+</section>
+<section id="get-his-trade-dates">
+<h3>get_his_trade_dates<a class="headerlink" href="#get-his-trade-dates" title="Permalink to this headline"></a></h3>
+<dl class="py function">
+<dt class="sig sig-object py" id="finfactory.get_data.tushare_trade_dates.get_his_trade_dates">
+<span class="sig-prename descclassname"><span class="pre">finfactory.get_data.tushare_trade_dates.</span></span><span class="sig-name descname"><span class="pre">get_his_trade_dates</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">exchange</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'SSE'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">start_date</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'19891231'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">end_date</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ts_api</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#finfactory.get_data.tushare_trade_dates.get_his_trade_dates" title="Permalink to this definition"></a></dt>
+<dd><div class="line-block">
+<div class="line">tushare获取历史交易日数据</div>
+<div class="line">start_date和end_date格式：’20220611’</div>
+<div class="line">exchange表示交易所（与tushare官方文档一致，默认上交所）:</div>
+<div class="line-block">
+<div class="line">SSE上交所, SZSE深交所, CFFEX中金所, SHFE上期所,</div>
+<div class="line">CZCE郑商所, DCE大商所, INE上能源</div>
+</div>
+<div class="line">exchange若为None，则默认上交所</div>
+</div>
+</dd></dl>
+
+</section>
+<section id="update-trade-dates">
+<h3>update_trade_dates<a class="headerlink" href="#update-trade-dates" title="Permalink to this headline"></a></h3>
+<dl class="py function">
+<dt class="sig sig-object py" id="finfactory.get_data.tushare_trade_dates.update_trade_dates">
+<span class="sig-prename descclassname"><span class="pre">finfactory.get_data.tushare_trade_dates.</span></span><span class="sig-name descname"><span class="pre">update_trade_dates</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">exchange</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'SSE'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">df_exist</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fpath</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">start_date</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">end_date</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ts_api</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">logger</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#finfactory.get_data.tushare_trade_dates.update_trade_dates" title="Permalink to this definition"></a></dt>
+<dd><p>增量更新历史交易日数据</p>
+</dd></dl>
+
+</section>
+<section id="update-trade-dates-check">
+<h3>update_trade_dates_check<a class="headerlink" href="#update-trade-dates-check" title="Permalink to this headline"></a></h3>
+<dl class="py function">
+<dt class="sig sig-object py" id="finfactory.get_data.tushare_trade_dates.update_trade_dates_check">
+<span class="sig-prename descclassname"><span class="pre">finfactory.get_data.tushare_trade_dates.</span></span><span class="sig-name descname"><span class="pre">update_trade_dates_check</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">exchange</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'SSE'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">save_path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">root_dir</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">start_date</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'19891231'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ts_api</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">logger</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#finfactory.get_data.tushare_trade_dates.update_trade_dates_check" title="Permalink to this definition"></a></dt>
+<dd><p>更新交易日期数据</p>
+</dd></dl>
+
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="finfactory.fintools.html" class="btn btn-neutral float-left" title="fintools" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="finfactory.strategy.html" class="btn btn-neutral float-right" title="strategy" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2020-2022, YueYong Hu.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
