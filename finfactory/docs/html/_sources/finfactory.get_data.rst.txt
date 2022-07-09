@@ -404,6 +404,141 @@ update_daily_info_check
 
 .. autofunction:: finfactory.get_data.sw_daily_info.update_daily_info_check
 
+tushare_astocks_list
+---------------------
+
+.. automodule:: finfactory.get_data.tushare_astocks_list
+
+.. currentmodule:: finfactory.get_data.tushare_astocks_list
+
+get_cols_info
+^^^^^^^^^^^^^^
+
+.. autofunction:: finfactory.get_data.tushare_astocks_list.get_cols_info
+
+get_astocks_list
+^^^^^^^^^^^^^^^^^
+
+.. autofunction:: finfactory.get_data.tushare_astocks_list.get_astocks_list
+
+update_astocks_list
+^^^^^^^^^^^^^^^^^^^^
+
+.. autofunction:: finfactory.get_data.tushare_astocks_list.update_astocks_list
+
+tushare_block_trades
+---------------------
+
+.. automodule:: finfactory.get_data.tushare_block_trades
+
+.. currentmodule:: finfactory.get_data.tushare_block_trades
+
+check_loss
+^^^^^^^^^^^
+
+.. autofunction:: finfactory.get_data.tushare_block_trades.check_loss
+
+get_block_trades
+^^^^^^^^^^^^^^^^^
+
+.. autofunction:: finfactory.get_data.tushare_block_trades.get_block_trades
+
+update_block_trades
+^^^^^^^^^^^^^^^^^^^^
+
+.. autofunction:: finfactory.get_data.tushare_block_trades.update_block_trades
+
+update_block_trades_check
+^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. autofunction:: finfactory.get_data.tushare_block_trades.update_block_trades_check
+
+tushare_cctv_news
+------------------
+
+.. automodule:: finfactory.get_data.tushare_cctv_news
+
+.. currentmodule:: finfactory.get_data.tushare_cctv_news
+
+check_loss
+^^^^^^^^^^^
+
+.. autofunction:: finfactory.get_data.tushare_cctv_news.check_loss
+
+get_cctv_news_by_date
+^^^^^^^^^^^^^^^^^^^^^^
+
+.. autofunction:: finfactory.get_data.tushare_cctv_news.get_cctv_news_by_date
+
+get_cctv_news_by_dates
+^^^^^^^^^^^^^^^^^^^^^^^
+
+.. autofunction:: finfactory.get_data.tushare_cctv_news.get_cctv_news_by_dates
+
+get_cctv_news
+^^^^^^^^^^^^^^
+
+.. autofunction:: finfactory.get_data.tushare_cctv_news.get_cctv_news
+
+update_cctv_news
+^^^^^^^^^^^^^^^^^
+
+.. autofunction:: finfactory.get_data.tushare_cctv_news.update_cctv_news
+
+tushare_chn_cpi
+----------------
+
+.. automodule:: finfactory.get_data.tushare_chn_cpi
+
+.. currentmodule:: finfactory.get_data.tushare_chn_cpi
+
+check_loss
+^^^^^^^^^^^
+
+.. autofunction:: finfactory.get_data.tushare_chn_cpi.check_loss
+
+get_chn_cpi
+^^^^^^^^^^^^
+
+.. autofunction:: finfactory.get_data.tushare_chn_cpi.get_chn_cpi
+
+update_chn_cpi
+^^^^^^^^^^^^^^^
+
+.. autofunction:: finfactory.get_data.tushare_chn_cpi.update_chn_cpi
+
+update_chn_cpi_check
+^^^^^^^^^^^^^^^^^^^^^
+
+.. autofunction:: finfactory.get_data.tushare_chn_cpi.update_chn_cpi_check
+
+tushare_chn_gdp
+----------------
+
+.. automodule:: finfactory.get_data.tushare_chn_gdp
+
+.. currentmodule:: finfactory.get_data.tushare_chn_gdp
+
+check_loss
+^^^^^^^^^^^
+
+.. autofunction:: finfactory.get_data.tushare_chn_gdp.check_loss
+
+get_chn_gdp
+^^^^^^^^^^^^
+
+.. autofunction:: finfactory.get_data.tushare_chn_gdp.get_chn_gdp
+
+update_chn_gdp
+^^^^^^^^^^^^^^^
+
+.. autofunction:: finfactory.get_data.tushare_chn_gdp.update_chn_gdp
+
+update_chn_gdp_check
+^^^^^^^^^^^^^^^^^^^^^
+
+.. autofunction:: finfactory.get_data.tushare_chn_gdp.update_chn_gdp_check
+
 tushare_chn_money
 ------------------
 
@@ -430,6 +565,126 @@ update_chn_money_check
 ^^^^^^^^^^^^^^^^^^^^^^^
 
 .. autofunction:: finfactory.get_data.tushare_chn_money.update_chn_money_check
+
+tushare_chn_ppi
+----------------
+
+.. automodule:: finfactory.get_data.tushare_chn_ppi
+
+.. currentmodule:: finfactory.get_data.tushare_chn_ppi
+
+get_cols_info
+^^^^^^^^^^^^^^
+
+.. autofunction:: finfactory.get_data.tushare_chn_ppi.get_cols_info
+
+check_loss
+^^^^^^^^^^^
+
+.. autofunction:: finfactory.get_data.tushare_chn_ppi.check_loss
+
+get_chn_ppi
+^^^^^^^^^^^^
+
+.. autofunction:: finfactory.get_data.tushare_chn_ppi.get_chn_ppi
+
+update_chn_ppi
+^^^^^^^^^^^^^^^
+
+.. autofunction:: finfactory.get_data.tushare_chn_ppi.update_chn_ppi
+
+update_chn_ppi_check
+^^^^^^^^^^^^^^^^^^^^^
+
+.. autofunction:: finfactory.get_data.tushare_chn_ppi.update_chn_ppi_check
+
+tushare_fund_adj
+-----------------
+
+.. automodule:: finfactory.get_data.tushare_fund_adj
+
+.. currentmodule:: finfactory.get_data.tushare_fund_adj
+
+check_loss
+^^^^^^^^^^^
+
+.. autofunction:: finfactory.get_data.tushare_fund_adj.check_loss
+
+get_fund_adj
+^^^^^^^^^^^^^
+
+.. autofunction:: finfactory.get_data.tushare_fund_adj.get_fund_adj
+
+update_fund_adj
+^^^^^^^^^^^^^^^^
+
+.. autofunction:: finfactory.get_data.tushare_fund_adj.update_fund_adj
+
+update_fund_adj_check
+^^^^^^^^^^^^^^^^^^^^^^
+
+.. autofunction:: finfactory.get_data.tushare_fund_adj.update_fund_adj_check
+
+tushare_fund_daily
+-------------------
+
+.. automodule:: finfactory.get_data.tushare_fund_daily
+
+.. currentmodule:: finfactory.get_data.tushare_fund_daily
+
+check_loss
+^^^^^^^^^^^
+
+.. autofunction:: finfactory.get_data.tushare_fund_daily.check_loss
+
+get_fund_daily
+^^^^^^^^^^^^^^^
+
+.. autofunction:: finfactory.get_data.tushare_fund_daily.get_fund_daily
+
+update_fund_daily
+^^^^^^^^^^^^^^^^^^
+
+.. autofunction:: finfactory.get_data.tushare_fund_daily.update_fund_daily
+
+update_fund_daily_check
+^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. autofunction:: finfactory.get_data.tushare_fund_daily.update_fund_daily_check
+
+tushare_fund_fq
+----------------
+
+.. automodule:: finfactory.get_data.tushare_fund_fq
+
+.. currentmodule:: finfactory.get_data.tushare_fund_fq
+
+fund_qfq
+^^^^^^^^^
+
+.. autofunction:: finfactory.get_data.tushare_fund_fq.fund_qfq
+
+tushare_fund_list
+------------------
+
+.. automodule:: finfactory.get_data.tushare_fund_list
+
+.. currentmodule:: finfactory.get_data.tushare_fund_list
+
+get_cols_info
+^^^^^^^^^^^^^^
+
+.. autofunction:: finfactory.get_data.tushare_fund_list.get_cols_info
+
+get_fund_list
+^^^^^^^^^^^^^^
+
+.. autofunction:: finfactory.get_data.tushare_fund_list.get_fund_list
+
+update_fund_list
+^^^^^^^^^^^^^^^^^
+
+.. autofunction:: finfactory.get_data.tushare_fund_list.update_fund_list
 
 tushare_futures_daily
 ----------------------
@@ -610,6 +865,33 @@ update_index_info
 
 .. autofunction:: finfactory.get_data.tushare_index_info.update_index_info
 
+tushare_lpr
+------------
+
+.. automodule:: finfactory.get_data.tushare_lpr
+
+.. currentmodule:: finfactory.get_data.tushare_lpr
+
+check_loss
+^^^^^^^^^^^
+
+.. autofunction:: finfactory.get_data.tushare_lpr.check_loss
+
+get_lpr
+^^^^^^^^
+
+.. autofunction:: finfactory.get_data.tushare_lpr.get_lpr
+
+update_lpr
+^^^^^^^^^^^
+
+.. autofunction:: finfactory.get_data.tushare_lpr.update_lpr
+
+update_lpr_check
+^^^^^^^^^^^^^^^^^
+
+.. autofunction:: finfactory.get_data.tushare_lpr.update_lpr_check
+
 tushare_options_daily
 ----------------------
 
@@ -659,6 +941,282 @@ update_options_info
 
 .. autofunction:: finfactory.get_data.tushare_options_info.update_options_info
 
+tushare_rzrq_daily
+-------------------
+
+.. automodule:: finfactory.get_data.tushare_rzrq_daily
+
+.. currentmodule:: finfactory.get_data.tushare_rzrq_daily
+
+check_loss
+^^^^^^^^^^^
+
+.. autofunction:: finfactory.get_data.tushare_rzrq_daily.check_loss
+
+get_rzrq_daily
+^^^^^^^^^^^^^^^
+
+.. autofunction:: finfactory.get_data.tushare_rzrq_daily.get_rzrq_daily
+
+update_rzrq_daily
+^^^^^^^^^^^^^^^^^^
+
+.. autofunction:: finfactory.get_data.tushare_rzrq_daily.update_rzrq_daily
+
+update_rzrq_daily_check
+^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. autofunction:: finfactory.get_data.tushare_rzrq_daily.update_rzrq_daily_check
+
+tushare_shibor
+---------------
+
+.. automodule:: finfactory.get_data.tushare_shibor
+
+.. currentmodule:: finfactory.get_data.tushare_shibor
+
+check_loss
+^^^^^^^^^^^
+
+.. autofunction:: finfactory.get_data.tushare_shibor.check_loss
+
+get_shibor
+^^^^^^^^^^^
+
+.. autofunction:: finfactory.get_data.tushare_shibor.get_shibor
+
+update_shibor
+^^^^^^^^^^^^^^
+
+.. autofunction:: finfactory.get_data.tushare_shibor.update_shibor
+
+update_shibor_check
+^^^^^^^^^^^^^^^^^^^^
+
+.. autofunction:: finfactory.get_data.tushare_shibor.update_shibor_check
+
+tushare_stock_daily
+--------------------
+
+.. automodule:: finfactory.get_data.tushare_stock_daily
+
+.. currentmodule:: finfactory.get_data.tushare_stock_daily
+
+get_cols_info
+^^^^^^^^^^^^^^
+
+.. autofunction:: finfactory.get_data.tushare_stock_daily.get_cols_info
+
+check_loss
+^^^^^^^^^^^
+
+.. autofunction:: finfactory.get_data.tushare_stock_daily.check_loss
+
+get_fpath
+^^^^^^^^^^
+
+.. autofunction:: finfactory.get_data.tushare_stock_daily.get_fpath
+
+get_stock_daily
+^^^^^^^^^^^^^^^^
+
+.. autofunction:: finfactory.get_data.tushare_stock_daily.get_stock_daily
+
+update_stock_daily
+^^^^^^^^^^^^^^^^^^^
+
+.. autofunction:: finfactory.get_data.tushare_stock_daily.update_stock_daily
+
+update_stock_daily_check
+^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. autofunction:: finfactory.get_data.tushare_stock_daily.update_stock_daily_check
+
+tushare_stock_daily_basic
+--------------------------
+
+.. automodule:: finfactory.get_data.tushare_stock_daily_basic
+
+.. currentmodule:: finfactory.get_data.tushare_stock_daily_basic
+
+get_cols_info
+^^^^^^^^^^^^^^
+
+.. autofunction:: finfactory.get_data.tushare_stock_daily_basic.get_cols_info
+
+check_loss
+^^^^^^^^^^^
+
+.. autofunction:: finfactory.get_data.tushare_stock_daily_basic.check_loss
+
+get_fpath
+^^^^^^^^^^
+
+.. autofunction:: finfactory.get_data.tushare_stock_daily_basic.get_fpath
+
+get_stock_daily_basic
+^^^^^^^^^^^^^^^^^^^^^^
+
+.. autofunction:: finfactory.get_data.tushare_stock_daily_basic.get_stock_daily_basic
+
+update_stock_daily_basic
+^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. autofunction:: finfactory.get_data.tushare_stock_daily_basic.update_stock_daily_basic
+
+update_stock_daily_basic_check
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. autofunction:: finfactory.get_data.tushare_stock_daily_basic.update_stock_daily_basic_check
+
+tushare_stock_daily_stk
+------------------------
+
+.. automodule:: finfactory.get_data.tushare_stock_daily_stk
+
+.. currentmodule:: finfactory.get_data.tushare_stock_daily_stk
+
+get_cols_info
+^^^^^^^^^^^^^^
+
+.. autofunction:: finfactory.get_data.tushare_stock_daily_stk.get_cols_info
+
+check_loss
+^^^^^^^^^^^
+
+.. autofunction:: finfactory.get_data.tushare_stock_daily_stk.check_loss
+
+get_fpath
+^^^^^^^^^^
+
+.. autofunction:: finfactory.get_data.tushare_stock_daily_stk.get_fpath
+
+get_stock_daily_stk
+^^^^^^^^^^^^^^^^^^^^
+
+.. autofunction:: finfactory.get_data.tushare_stock_daily_stk.get_stock_daily_stk
+
+update_stock_daily_stk
+^^^^^^^^^^^^^^^^^^^^^^^
+
+.. autofunction:: finfactory.get_data.tushare_stock_daily_stk.update_stock_daily_stk
+
+update_stock_daily_stk_check
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. autofunction:: finfactory.get_data.tushare_stock_daily_stk.update_stock_daily_stk_check
+
+tushare_stocks_daily
+---------------------
+
+.. automodule:: finfactory.get_data.tushare_stocks_daily
+
+.. currentmodule:: finfactory.get_data.tushare_stocks_daily
+
+get_cols_info
+^^^^^^^^^^^^^^
+
+.. autofunction:: finfactory.get_data.tushare_stocks_daily.get_cols_info
+
+check_loss
+^^^^^^^^^^^
+
+.. autofunction:: finfactory.get_data.tushare_stocks_daily.check_loss
+
+get_fpath
+^^^^^^^^^^
+
+.. autofunction:: finfactory.get_data.tushare_stocks_daily.get_fpath
+
+get_stocks_daily
+^^^^^^^^^^^^^^^^^
+
+.. autofunction:: finfactory.get_data.tushare_stocks_daily.get_stocks_daily
+
+update_stocks_daily
+^^^^^^^^^^^^^^^^^^^^
+
+.. autofunction:: finfactory.get_data.tushare_stocks_daily.update_stocks_daily
+
+update_stocks_daily_check
+^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. autofunction:: finfactory.get_data.tushare_stocks_daily.update_stocks_daily_check
+
+tushare_stocks_daily_basic
+---------------------------
+
+.. automodule:: finfactory.get_data.tushare_stocks_daily_basic
+
+.. currentmodule:: finfactory.get_data.tushare_stocks_daily_basic
+
+get_cols_info
+^^^^^^^^^^^^^^
+
+.. autofunction:: finfactory.get_data.tushare_stocks_daily_basic.get_cols_info
+
+check_loss
+^^^^^^^^^^^
+
+.. autofunction:: finfactory.get_data.tushare_stocks_daily_basic.check_loss
+
+get_fpath
+^^^^^^^^^^
+
+.. autofunction:: finfactory.get_data.tushare_stocks_daily_basic.get_fpath
+
+get_stocks_daily_basic
+^^^^^^^^^^^^^^^^^^^^^^^
+
+.. autofunction:: finfactory.get_data.tushare_stocks_daily_basic.get_stocks_daily_basic
+
+update_stocks_daily_basic
+^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. autofunction:: finfactory.get_data.tushare_stocks_daily_basic.update_stocks_daily_basic
+
+update_stocks_daily_basic_check
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. autofunction:: finfactory.get_data.tushare_stocks_daily_basic.update_stocks_daily_basic_check
+
+tushare_stocks_daily_stk
+-------------------------
+
+.. automodule:: finfactory.get_data.tushare_stocks_daily_stk
+
+.. currentmodule:: finfactory.get_data.tushare_stocks_daily_stk
+
+get_cols_info
+^^^^^^^^^^^^^^
+
+.. autofunction:: finfactory.get_data.tushare_stocks_daily_stk.get_cols_info
+
+check_loss
+^^^^^^^^^^^
+
+.. autofunction:: finfactory.get_data.tushare_stocks_daily_stk.check_loss
+
+get_fpath
+^^^^^^^^^^
+
+.. autofunction:: finfactory.get_data.tushare_stocks_daily_stk.get_fpath
+
+get_stocks_daily_stk
+^^^^^^^^^^^^^^^^^^^^^
+
+.. autofunction:: finfactory.get_data.tushare_stocks_daily_stk.get_stocks_daily_stk
+
+update_stocks_daily_stk
+^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. autofunction:: finfactory.get_data.tushare_stocks_daily_stk.update_stocks_daily_stk
+
+update_stocks_daily_stk_check
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. autofunction:: finfactory.get_data.tushare_stocks_daily_stk.update_stocks_daily_stk_check
+
 tushare_trade_dates
 --------------------
 
@@ -685,3 +1243,57 @@ update_trade_dates_check
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. autofunction:: finfactory.get_data.tushare_trade_dates.update_trade_dates_check
+
+tushare_usa_bond_rates
+-----------------------
+
+.. automodule:: finfactory.get_data.tushare_usa_bond_rates
+
+.. currentmodule:: finfactory.get_data.tushare_usa_bond_rates
+
+check_loss
+^^^^^^^^^^^
+
+.. autofunction:: finfactory.get_data.tushare_usa_bond_rates.check_loss
+
+get_usa_bonds
+^^^^^^^^^^^^^^
+
+.. autofunction:: finfactory.get_data.tushare_usa_bond_rates.get_usa_bonds
+
+update_usa_bonds
+^^^^^^^^^^^^^^^^^
+
+.. autofunction:: finfactory.get_data.tushare_usa_bond_rates.update_usa_bonds
+
+update_usa_bonds_check
+^^^^^^^^^^^^^^^^^^^^^^^
+
+.. autofunction:: finfactory.get_data.tushare_usa_bond_rates.update_usa_bonds_check
+
+tushare_usa_bond_rates_act
+---------------------------
+
+.. automodule:: finfactory.get_data.tushare_usa_bond_rates_act
+
+.. currentmodule:: finfactory.get_data.tushare_usa_bond_rates_act
+
+check_loss
+^^^^^^^^^^^
+
+.. autofunction:: finfactory.get_data.tushare_usa_bond_rates_act.check_loss
+
+get_usa_bonds_act
+^^^^^^^^^^^^^^^^^^
+
+.. autofunction:: finfactory.get_data.tushare_usa_bond_rates_act.get_usa_bonds_act
+
+update_usa_bonds_act
+^^^^^^^^^^^^^^^^^^^^^
+
+.. autofunction:: finfactory.get_data.tushare_usa_bond_rates_act.update_usa_bonds_act
+
+update_usa_bonds_act_check
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. autofunction:: finfactory.get_data.tushare_usa_bond_rates_act.update_usa_bonds_act_check

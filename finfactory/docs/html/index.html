@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Welcome to FinFactory’s documentation! &mdash; FinFactory 0.0.1 documentation</title>
+  <title>Welcome to FinFactory’s documentation! &mdash; FinFactory 0.0.3 documentation</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <!--[if lt IE 9]>
@@ -39,10 +39,11 @@
               <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="finfactory.html">finfactory</a></li>
-<li class="toctree-l1"><a class="reference internal" href="finfactory.factor.html">factor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="finfactory.factors.html">factors</a></li>
 <li class="toctree-l1"><a class="reference internal" href="finfactory.finplot.html">finplot</a></li>
 <li class="toctree-l1"><a class="reference internal" href="finfactory.fintools.html">fintools</a></li>
 <li class="toctree-l1"><a class="reference internal" href="finfactory.get_data.html">get_data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="finfactory.options_trader.html">options_trader</a></li>
 <li class="toctree-l1"><a class="reference internal" href="finfactory.strategy.html">strategy</a></li>
 <li class="toctree-l1"><a class="reference internal" href="finfactory.utils.html">utils</a></li>
 </ul>
@@ -82,7 +83,7 @@
 <li class="toctree-l2"><a class="reference internal" href="finfactory.html#module-finfactory.load_his_data">load_his_data</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="finfactory.factor.html">factor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="finfactory.factors.html">factors</a></li>
 <li class="toctree-l1"><a class="reference internal" href="finfactory.finplot.html">finplot</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="finfactory.finplot.html#id1">finplot</a></li>
 <li class="toctree-l2"><a class="reference internal" href="finfactory.finplot.html#module-finfactory.finplot.plot_candle">plot_candle</a></li>
@@ -118,7 +119,17 @@
 <li class="toctree-l2"><a class="reference internal" href="finfactory.get_data.html#module-finfactory.get_data.hexun_gold_daily">hexun_gold_daily</a></li>
 <li class="toctree-l2"><a class="reference internal" href="finfactory.get_data.html#module-finfactory.get_data.hexun_silver_daily">hexun_silver_daily</a></li>
 <li class="toctree-l2"><a class="reference internal" href="finfactory.get_data.html#module-finfactory.get_data.sw_daily_info">sw_daily_info</a></li>
+<li class="toctree-l2"><a class="reference internal" href="finfactory.get_data.html#module-finfactory.get_data.tushare_astocks_list">tushare_astocks_list</a></li>
+<li class="toctree-l2"><a class="reference internal" href="finfactory.get_data.html#module-finfactory.get_data.tushare_block_trades">tushare_block_trades</a></li>
+<li class="toctree-l2"><a class="reference internal" href="finfactory.get_data.html#module-finfactory.get_data.tushare_cctv_news">tushare_cctv_news</a></li>
+<li class="toctree-l2"><a class="reference internal" href="finfactory.get_data.html#module-finfactory.get_data.tushare_chn_cpi">tushare_chn_cpi</a></li>
+<li class="toctree-l2"><a class="reference internal" href="finfactory.get_data.html#module-finfactory.get_data.tushare_chn_gdp">tushare_chn_gdp</a></li>
 <li class="toctree-l2"><a class="reference internal" href="finfactory.get_data.html#module-finfactory.get_data.tushare_chn_money">tushare_chn_money</a></li>
+<li class="toctree-l2"><a class="reference internal" href="finfactory.get_data.html#module-finfactory.get_data.tushare_chn_ppi">tushare_chn_ppi</a></li>
+<li class="toctree-l2"><a class="reference internal" href="finfactory.get_data.html#module-finfactory.get_data.tushare_fund_adj">tushare_fund_adj</a></li>
+<li class="toctree-l2"><a class="reference internal" href="finfactory.get_data.html#module-finfactory.get_data.tushare_fund_daily">tushare_fund_daily</a></li>
+<li class="toctree-l2"><a class="reference internal" href="finfactory.get_data.html#module-finfactory.get_data.tushare_fund_fq">tushare_fund_fq</a></li>
+<li class="toctree-l2"><a class="reference internal" href="finfactory.get_data.html#module-finfactory.get_data.tushare_fund_list">tushare_fund_list</a></li>
 <li class="toctree-l2"><a class="reference internal" href="finfactory.get_data.html#module-finfactory.get_data.tushare_futures_daily">tushare_futures_daily</a></li>
 <li class="toctree-l2"><a class="reference internal" href="finfactory.get_data.html#module-finfactory.get_data.tushare_futures_daily_ex">tushare_futures_daily_ex</a></li>
 <li class="toctree-l2"><a class="reference internal" href="finfactory.get_data.html#module-finfactory.get_data.tushare_futures_info">tushare_futures_info</a></li>
@@ -126,9 +137,27 @@
 <li class="toctree-l2"><a class="reference internal" href="finfactory.get_data.html#module-finfactory.get_data.tushare_index_daily">tushare_index_daily</a></li>
 <li class="toctree-l2"><a class="reference internal" href="finfactory.get_data.html#module-finfactory.get_data.tushare_index_daily_basic">tushare_index_daily_basic</a></li>
 <li class="toctree-l2"><a class="reference internal" href="finfactory.get_data.html#module-finfactory.get_data.tushare_index_info">tushare_index_info</a></li>
+<li class="toctree-l2"><a class="reference internal" href="finfactory.get_data.html#module-finfactory.get_data.tushare_lpr">tushare_lpr</a></li>
 <li class="toctree-l2"><a class="reference internal" href="finfactory.get_data.html#module-finfactory.get_data.tushare_options_daily">tushare_options_daily</a></li>
 <li class="toctree-l2"><a class="reference internal" href="finfactory.get_data.html#module-finfactory.get_data.tushare_options_info">tushare_options_info</a></li>
+<li class="toctree-l2"><a class="reference internal" href="finfactory.get_data.html#module-finfactory.get_data.tushare_rzrq_daily">tushare_rzrq_daily</a></li>
+<li class="toctree-l2"><a class="reference internal" href="finfactory.get_data.html#module-finfactory.get_data.tushare_shibor">tushare_shibor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="finfactory.get_data.html#module-finfactory.get_data.tushare_stock_daily">tushare_stock_daily</a></li>
+<li class="toctree-l2"><a class="reference internal" href="finfactory.get_data.html#module-finfactory.get_data.tushare_stock_daily_basic">tushare_stock_daily_basic</a></li>
+<li class="toctree-l2"><a class="reference internal" href="finfactory.get_data.html#module-finfactory.get_data.tushare_stock_daily_stk">tushare_stock_daily_stk</a></li>
+<li class="toctree-l2"><a class="reference internal" href="finfactory.get_data.html#module-finfactory.get_data.tushare_stocks_daily">tushare_stocks_daily</a></li>
+<li class="toctree-l2"><a class="reference internal" href="finfactory.get_data.html#module-finfactory.get_data.tushare_stocks_daily_basic">tushare_stocks_daily_basic</a></li>
+<li class="toctree-l2"><a class="reference internal" href="finfactory.get_data.html#module-finfactory.get_data.tushare_stocks_daily_stk">tushare_stocks_daily_stk</a></li>
 <li class="toctree-l2"><a class="reference internal" href="finfactory.get_data.html#module-finfactory.get_data.tushare_trade_dates">tushare_trade_dates</a></li>
+<li class="toctree-l2"><a class="reference internal" href="finfactory.get_data.html#module-finfactory.get_data.tushare_usa_bond_rates">tushare_usa_bond_rates</a></li>
+<li class="toctree-l2"><a class="reference internal" href="finfactory.get_data.html#module-finfactory.get_data.tushare_usa_bond_rates_act">tushare_usa_bond_rates_act</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="finfactory.options_trader.html">options_trader</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="finfactory.options_trader.html#module-finfactory.options_trader.asset_account">asset_account</a></li>
+<li class="toctree-l2"><a class="reference internal" href="finfactory.options_trader.html#module-finfactory.options_trader.basic_config">basic_config</a></li>
+<li class="toctree-l2"><a class="reference internal" href="finfactory.options_trader.html#module-finfactory.options_trader.strategy_target_multiple">strategy_target_multiple</a></li>
+<li class="toctree-l2"><a class="reference internal" href="finfactory.options_trader.html#module-finfactory.options_trader.utils_opts">utils_opts</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="finfactory.strategy.html">strategy</a></li>

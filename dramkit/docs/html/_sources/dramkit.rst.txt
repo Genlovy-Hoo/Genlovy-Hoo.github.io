@@ -48,6 +48,11 @@ today_month
 
 .. autofunction:: dramkit.datetimetools.today_month
 
+get_quarter
+^^^^^^^^^^^^
+
+.. autofunction:: dramkit.datetimetools.get_quarter
+
 today_quarter
 ^^^^^^^^^^^^^^
 
@@ -509,6 +514,21 @@ load_csvs
 ^^^^^^^^^^
 
 .. autofunction:: dramkit.iotools.load_csvs
+
+load_csvs_dir
+^^^^^^^^^^^^^^
+
+.. autofunction:: dramkit.iotools.load_csvs_dir
+
+cut_csv_by_maxline
+^^^^^^^^^^^^^^^^^^^
+
+.. autofunction:: dramkit.iotools.cut_csv_by_maxline
+
+cut_csv_by_year
+^^^^^^^^^^^^^^^^
+
+.. autofunction:: dramkit.iotools.cut_csv_by_year
 
 load_excels
 ^^^^^^^^^^^^

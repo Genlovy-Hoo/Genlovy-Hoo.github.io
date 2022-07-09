@@ -28,6 +28,11 @@ check_month_loss
 
 .. autofunction:: finfactory.utils.utils.check_month_loss
 
+check_quarter_loss
+^^^^^^^^^^^^^^^^^^^
+
+.. autofunction:: finfactory.utils.utils.check_quarter_loss
+
 check_minute_loss
 ^^^^^^^^^^^^^^^^^^
 

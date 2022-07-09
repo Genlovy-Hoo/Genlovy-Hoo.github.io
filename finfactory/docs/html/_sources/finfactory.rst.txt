@@ -32,6 +32,11 @@ find_target_dir
 
 .. autofunction:: finfactory.load_his_data.find_target_dir
 
+find_paths_year
+^^^^^^^^^^^^^^^^
+
+.. autofunction:: finfactory.load_his_data.find_paths_year
+
 load_ccxt_daily
 ^^^^^^^^^^^^^^^^
 
@@ -77,10 +82,10 @@ get_index_code_name_tushare
 
 .. autofunction:: finfactory.load_his_data.get_index_code_name_tushare
 
-find_ts_index_code
-^^^^^^^^^^^^^^^^^^^
+find_index_code_tushare
+^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. autofunction:: finfactory.load_his_data.find_ts_index_code
+.. autofunction:: finfactory.load_his_data.find_index_code_tushare
 
 load_index_daily_tushare
 ^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -92,6 +97,21 @@ load_index_daily_basic_tushare
 
 .. autofunction:: finfactory.load_his_data.load_index_daily_basic_tushare
 
+load_astocks_list_tushare
+^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. autofunction:: finfactory.load_his_data.load_astocks_list_tushare
+
+find_stocks_code_tushare
+^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. autofunction:: finfactory.load_his_data.find_stocks_code_tushare
+
+load_stock_daily_tushare
+^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. autofunction:: finfactory.load_his_data.load_stock_daily_tushare
+
 load_chn_bond_yields
 ^^^^^^^^^^^^^^^^^^^^^
 
@@ -102,7 +122,42 @@ load_cffex_lhb_future
 
 .. autofunction:: finfactory.load_his_data.load_cffex_lhb_future
 
+load_futures_info_tushare
+^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. autofunction:: finfactory.load_his_data.load_futures_info_tushare
+
+find_futures_exchange_tushare
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. autofunction:: finfactory.load_his_data.find_futures_exchange_tushare
+
+find_futures_code_tushare
+^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. autofunction:: finfactory.load_his_data.find_futures_code_tushare
+
+load_future_daily_ex_tushare
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. autofunction:: finfactory.load_his_data.load_future_daily_ex_tushare
+
 load_future_daily_tushare
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. autofunction:: finfactory.load_his_data.load_future_daily_tushare
+
+load_options_info_tushare
+^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. autofunction:: finfactory.load_his_data.load_options_info_tushare
+
+load_options_daily_ex_tushare
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. autofunction:: finfactory.load_his_data.load_options_daily_ex_tushare
+
+load_fund_daily_tushare
+^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. autofunction:: finfactory.load_his_data.load_fund_daily_tushare

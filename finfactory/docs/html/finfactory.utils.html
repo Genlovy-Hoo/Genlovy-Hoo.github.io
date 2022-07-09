@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>utils &mdash; FinFactory 0.0.1 documentation</title>
+  <title>utils &mdash; FinFactory 0.0.3 documentation</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <!--[if lt IE 9]>
@@ -39,10 +39,11 @@
               <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="finfactory.html">finfactory</a></li>
-<li class="toctree-l1"><a class="reference internal" href="finfactory.factor.html">factor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="finfactory.factors.html">factors</a></li>
 <li class="toctree-l1"><a class="reference internal" href="finfactory.finplot.html">finplot</a></li>
 <li class="toctree-l1"><a class="reference internal" href="finfactory.fintools.html">fintools</a></li>
 <li class="toctree-l1"><a class="reference internal" href="finfactory.get_data.html">get_data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="finfactory.options_trader.html">options_trader</a></li>
 <li class="toctree-l1"><a class="reference internal" href="finfactory.strategy.html">strategy</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">utils</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#id1">utils</a><ul>
@@ -50,6 +51,7 @@
 <li class="toctree-l3"><a class="reference internal" href="#check-date-loss">check_date_loss</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#check-daily-data-is-new">check_daily_data_is_new</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#check-month-loss">check_month_loss</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#check-quarter-loss">check_quarter_loss</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#check-minute-loss">check_minute_loss</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#get-tushare-api">get_tushare_api</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#parms-check-ts-daily">parms_check_ts_daily</a></li>
@@ -98,7 +100,7 @@
 <h3>gen_py_logger<a class="headerlink" href="#gen-py-logger" title="Permalink to this headline"></a></h3>
 <dl class="py function">
 <dt class="sig sig-object py" id="finfactory.utils.utils.gen_py_logger">
-<span class="sig-prename descclassname"><span class="pre">finfactory.utils.utils.</span></span><span class="sig-name descname"><span class="pre">gen_py_logger</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pypath</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">logdir</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#finfactory.utils.utils.gen_py_logger" title="Permalink to this definition"></a></dt>
+<span class="sig-prename descclassname"><span class="pre">finfactory.utils.utils.</span></span><span class="sig-name descname"><span class="pre">gen_py_logger</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pypath</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">logdir</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">config</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#finfactory.utils.utils.gen_py_logger" title="Permalink to this definition"></a></dt>
 <dd><p>根据Python文件路径生成对应的日志文件路径</p>
 </dd></dl>
 
@@ -129,7 +131,23 @@
 <dl class="py function">
 <dt class="sig sig-object py" id="finfactory.utils.utils.check_month_loss">
 <span class="sig-prename descclassname"><span class="pre">finfactory.utils.utils.</span></span><span class="sig-name descname"><span class="pre">check_month_loss</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">df</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">month_col</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'month'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">return_loss_data</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#finfactory.utils.utils.check_month_loss" title="Permalink to this definition"></a></dt>
-<dd></dd></dl>
+<dd><div class="line-block">
+<div class="line">月度数据缺失检查</div>
+<div class="line">注：month_col格式须如：’202206’</div>
+</div>
+</dd></dl>
+
+</section>
+<section id="check-quarter-loss">
+<h3>check_quarter_loss<a class="headerlink" href="#check-quarter-loss" title="Permalink to this headline"></a></h3>
+<dl class="py function">
+<dt class="sig sig-object py" id="finfactory.utils.utils.check_quarter_loss">
+<span class="sig-prename descclassname"><span class="pre">finfactory.utils.utils.</span></span><span class="sig-name descname"><span class="pre">check_quarter_loss</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">df</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">quarter_col</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'quarter'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">return_loss_data</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#finfactory.utils.utils.check_quarter_loss" title="Permalink to this definition"></a></dt>
+<dd><div class="line-block">
+<div class="line">季度数据缺失检查</div>
+<div class="line">注：quarter_col格式须如：’2022Q2’</div>
+</div>
+</dd></dl>
 
 </section>
 <section id="check-minute-loss">

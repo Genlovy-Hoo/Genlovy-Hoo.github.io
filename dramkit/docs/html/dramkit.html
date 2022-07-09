@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>dramkit &mdash; DramKit 0.2.8 documentation</title>
+  <title>dramkit &mdash; DramKit 0.3.1 documentation</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <!--[if lt IE 9]>
@@ -49,6 +49,7 @@
 <li class="toctree-l3"><a class="reference internal" href="#get-year-month">get_year_month</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#today-date">today_date</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#today-month">today_month</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#get-quarter">get_quarter</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#today-quarter">today_quarter</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#date-reformat-simple">date_reformat_simple</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#date-reformat-chn">date_reformat_chn</a></li>
@@ -145,6 +146,9 @@
 <li class="toctree-l3"><a class="reference internal" href="#load-text">load_text</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#load-csv">load_csv</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#load-csvs">load_csvs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#load-csvs-dir">load_csvs_dir</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#cut-csv-by-maxline">cut_csv_by_maxline</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#cut-csv-by-year">cut_csv_by_year</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#load-excels">load_excels</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#clear-text-file">clear_text_file</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#clear-specified-type-files">clear_specified_type_files</a></li>
@@ -347,6 +351,15 @@
 </dd></dl>
 
 </section>
+<section id="get-quarter">
+<h3>get_quarter<a class="headerlink" href="#get-quarter" title="Permalink to this headline"></a></h3>
+<dl class="py function">
+<dt class="sig sig-object py" id="dramkit.datetimetools.get_quarter">
+<span class="sig-prename descclassname"><span class="pre">dramkit.datetimetools.</span></span><span class="sig-name descname"><span class="pre">get_quarter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">date_time</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">joiner</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'Q'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.datetimetools.get_quarter" title="Permalink to this definition"></a></dt>
+<dd><p>获取日期所在季度</p>
+</dd></dl>
+
+</section>
 <section id="today-quarter">
 <h3>today_quarter<a class="headerlink" href="#today-quarter" title="Permalink to this headline"></a></h3>
 <dl class="py function">
@@ -534,7 +547,7 @@
 <h3>cut_date<a class="headerlink" href="#cut-date" title="Permalink to this headline"></a></h3>
 <dl class="py function">
 <dt class="sig sig-object py" id="dramkit.datetimetools.cut_date">
-<span class="sig-prename descclassname"><span class="pre">dramkit.datetimetools.</span></span><span class="sig-name descname"><span class="pre">cut_date</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">start_date</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">end_date</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">500</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.datetimetools.cut_date" title="Permalink to this definition"></a></dt>
+<span class="sig-prename descclassname"><span class="pre">dramkit.datetimetools.</span></span><span class="sig-name descname"><span class="pre">cut_date</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">start_date</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">end_date</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">500</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">joiner</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.datetimetools.cut_date" title="Permalink to this definition"></a></dt>
 <dd><p>以间隔为n天划分start_date和end_date之间日期子集</p>
 <p class="rubric">Examples</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">start_date</span><span class="p">,</span> <span class="n">end_date</span><span class="p">,</span> <span class="n">n</span> <span class="o">=</span> <span class="s1">&#39;20200201&#39;</span><span class="p">,</span> <span class="s1">&#39;20200225&#39;</span><span class="p">,</span> <span class="mi">10</span>
@@ -2265,7 +2278,29 @@ cols_groupby设定</p>
 <h3>load_csvs<a class="headerlink" href="#load-csvs" title="Permalink to this headline"></a></h3>
 <dl class="py function">
 <dt class="sig sig-object py" id="dramkit.iotools.load_csvs">
-<span class="sig-prename descclassname"><span class="pre">dramkit.iotools.</span></span><span class="sig-name descname"><span class="pre">load_csvs</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fdir</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kwargs_sort</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">{}</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kwargs_drop_dup</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">{}</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs_loadcsv</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.iotools.load_csvs" title="Permalink to this definition"></a></dt>
+<span class="sig-prename descclassname"><span class="pre">dramkit.iotools.</span></span><span class="sig-name descname"><span class="pre">load_csvs</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fpaths</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kwargs_sort</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">{}</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kwargs_drop_dup</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">{}</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs_loadcsv</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.iotools.load_csvs" title="Permalink to this definition"></a></dt>
+<dd><p>读取指定路径列表中所有的csv文件，整合到一个df里面</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>fpaths</strong> (<em>list</em>) – 文件夹路径列表</p></li>
+<li><p><strong>kwargs_sort</strong> (<em>dict</em>) – 设置sort_values接受的排序参数</p></li>
+<li><p><strong>kwargs_drop_dup</strong> (<em>dict</em>) – 设置drop_duplicates接受的去重参数</p></li>
+<li><p><strong>**kwargs_loadcsv</strong> – <a class="reference internal" href="#dramkit.iotools.load_csv" title="dramkit.iotools.load_csv"><code class="xref py py-func docutils literal notranslate"><span class="pre">dramkit.iotools.load_csv()</span></code></a> 接受的其它参数</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><cite>pandas.DataFrame</cite> - 读取的数据</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="load-csvs-dir">
+<h3>load_csvs_dir<a class="headerlink" href="#load-csvs-dir" title="Permalink to this headline"></a></h3>
+<dl class="py function">
+<dt class="sig sig-object py" id="dramkit.iotools.load_csvs_dir">
+<span class="sig-prename descclassname"><span class="pre">dramkit.iotools.</span></span><span class="sig-name descname"><span class="pre">load_csvs_dir</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fdir</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kwargs_sort</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">{}</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kwargs_drop_dup</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">{}</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs_loadcsv</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.iotools.load_csvs_dir" title="Permalink to this definition"></a></dt>
 <dd><p>读取指定文件夹中所有的csv文件，整合到一个df里面</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -2280,6 +2315,24 @@ cols_groupby设定</p>
 <dd class="field-even"><p><cite>pandas.DataFrame</cite> - 读取的数据</p>
 </dd>
 </dl>
+</dd></dl>
+
+</section>
+<section id="cut-csv-by-maxline">
+<h3>cut_csv_by_maxline<a class="headerlink" href="#cut-csv-by-maxline" title="Permalink to this headline"></a></h3>
+<dl class="py function">
+<dt class="sig sig-object py" id="dramkit.iotools.cut_csv_by_maxline">
+<span class="sig-prename descclassname"><span class="pre">dramkit.iotools.</span></span><span class="sig-name descname"><span class="pre">cut_csv_by_maxline</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fpath</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_line</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10000</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kwargs_loadcsv</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">{}</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kwargs_tocsv</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">{'index':</span> <span class="pre">None}</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.iotools.cut_csv_by_maxline" title="Permalink to this definition"></a></dt>
+<dd><p>csv大文件分割，max_line指定子文件最大行数</p>
+</dd></dl>
+
+</section>
+<section id="cut-csv-by-year">
+<h3>cut_csv_by_year<a class="headerlink" href="#cut-csv-by-year" title="Permalink to this headline"></a></h3>
+<dl class="py function">
+<dt class="sig sig-object py" id="dramkit.iotools.cut_csv_by_year">
+<span class="sig-prename descclassname"><span class="pre">dramkit.iotools.</span></span><span class="sig-name descname"><span class="pre">cut_csv_by_year</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fpath</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tcol</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name_last_year</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kwargs_loadcsv</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">{}</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kwargs_tocsv</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">{'index':</span> <span class="pre">None}</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">logger</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.iotools.cut_csv_by_year" title="Permalink to this definition"></a></dt>
+<dd><p>csv大文件分割，按年份，tcol指定时间列</p>
 </dd></dl>
 
 </section>
