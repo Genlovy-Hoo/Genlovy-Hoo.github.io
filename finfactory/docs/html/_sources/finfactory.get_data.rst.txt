@@ -1106,6 +1106,117 @@ update_stock_daily_stk_check
 
 .. autofunction:: finfactory.get_data.tushare_stock_daily_stk.update_stock_daily_stk_check
 
+tushare_stock_top10holders
+---------------------------
+
+.. automodule:: finfactory.get_data.tushare_stock_top10holders
+
+.. currentmodule:: finfactory.get_data.tushare_stock_top10holders
+
+get_cols_info
+^^^^^^^^^^^^^^
+
+.. autofunction:: finfactory.get_data.tushare_stock_top10holders.get_cols_info
+
+get_fpath
+^^^^^^^^^^
+
+.. autofunction:: finfactory.get_data.tushare_stock_top10holders.get_fpath
+
+get_stock_top10holders
+^^^^^^^^^^^^^^^^^^^^^^^
+
+.. autofunction:: finfactory.get_data.tushare_stock_top10holders.get_stock_top10holders
+
+update_stock_top10holders
+^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. autofunction:: finfactory.get_data.tushare_stock_top10holders.update_stock_top10holders
+
+get_save_path
+^^^^^^^^^^^^^^
+
+.. autofunction:: finfactory.get_data.tushare_stock_top10holders.get_save_path
+
+update_stock_top10holders_check
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. autofunction:: finfactory.get_data.tushare_stock_top10holders.update_stock_top10holders_check
+
+tushare_stock_top10holders_free
+--------------------------------
+
+.. automodule:: finfactory.get_data.tushare_stock_top10holders_free
+
+.. currentmodule:: finfactory.get_data.tushare_stock_top10holders_free
+
+get_cols_info
+^^^^^^^^^^^^^^
+
+.. autofunction:: finfactory.get_data.tushare_stock_top10holders_free.get_cols_info
+
+get_fpath
+^^^^^^^^^^
+
+.. autofunction:: finfactory.get_data.tushare_stock_top10holders_free.get_fpath
+
+get_stock_top10holders_free
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. autofunction:: finfactory.get_data.tushare_stock_top10holders_free.get_stock_top10holders_free
+
+update_stock_top10holders_free
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. autofunction:: finfactory.get_data.tushare_stock_top10holders_free.update_stock_top10holders_free
+
+get_save_path
+^^^^^^^^^^^^^^
+
+.. autofunction:: finfactory.get_data.tushare_stock_top10holders_free.get_save_path
+
+update_stock_top10holders_free_check
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. autofunction:: finfactory.get_data.tushare_stock_top10holders_free.update_stock_top10holders_free_check
+
+tushare_stock_zjc
+------------------
+
+.. automodule:: finfactory.get_data.tushare_stock_zjc
+
+.. currentmodule:: finfactory.get_data.tushare_stock_zjc
+
+get_cols_info
+^^^^^^^^^^^^^^
+
+.. autofunction:: finfactory.get_data.tushare_stock_zjc.get_cols_info
+
+get_fpath
+^^^^^^^^^^
+
+.. autofunction:: finfactory.get_data.tushare_stock_zjc.get_fpath
+
+get_stock_zjc
+^^^^^^^^^^^^^^
+
+.. autofunction:: finfactory.get_data.tushare_stock_zjc.get_stock_zjc
+
+update_stock_zjc
+^^^^^^^^^^^^^^^^^
+
+.. autofunction:: finfactory.get_data.tushare_stock_zjc.update_stock_zjc
+
+get_save_path
+^^^^^^^^^^^^^^
+
+.. autofunction:: finfactory.get_data.tushare_stock_zjc.get_save_path
+
+update_stock_zjc_check
+^^^^^^^^^^^^^^^^^^^^^^^
+
+.. autofunction:: finfactory.get_data.tushare_stock_zjc.update_stock_zjc_check
+
 tushare_stocks_daily
 ---------------------
 

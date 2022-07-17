@@ -8,6 +8,22 @@ utils
 
 .. currentmodule:: finfactory.utils.utils
 
+LogDirError
+^^^^^^^^^^^^
+
+.. autoclass:: finfactory.utils.utils.LogDirError
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+TokenError
+^^^^^^^^^^^
+
+.. autoclass:: finfactory.utils.utils.TokenError
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
 gen_py_logger
 ^^^^^^^^^^^^^^
 

@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>fintools &mdash; FinFactory 0.0.3 documentation</title>
+  <title>fintools &mdash; FinFactory 0.0.5 documentation</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <!--[if lt IE 9]>
@@ -93,6 +93,7 @@
 <li class="toctree-l3"><a class="reference internal" href="#mean-candle">mean_candle</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#demark-td">demark_td</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#acpmp">acpmp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#get-limit-turn-point">get_limit_turn_point</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#get-turn-point">get_turn_point</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#cross">cross</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#cross-plot">cross_plot</a></li>
@@ -133,6 +134,7 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#module-finfactory.fintools.utils_chn">utils_chn</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#merge-minute-candle">merge_minute_candle</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#get-finreport-date-by-delta">get_finreport_date_by_delta</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#get-last-effect-finreport-dates">get_last_effect_finreport_dates</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#get-code-ext">get_code_ext</a></li>
@@ -916,6 +918,21 @@ pd.DataFrame.ewm中对应参数的方法计算a；</div>
 </dd></dl>
 
 </section>
+<section id="get-limit-turn-point">
+<h3>get_limit_turn_point<a class="headerlink" href="#get-limit-turn-point" title="Permalink to this headline"></a></h3>
+<dl class="py function">
+<dt class="sig sig-object py" id="finfactory.fintools.fintools.get_limit_turn_point">
+<span class="sig-prename descclassname"><span class="pre">finfactory.fintools.fintools.</span></span><span class="sig-name descname"><span class="pre">get_limit_turn_point</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">series</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">limit_up</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">limit_low</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#finfactory.fintools.fintools.get_limit_turn_point" title="Permalink to this definition"></a></dt>
+<dd><div class="line-block">
+<div class="line">带界限值限制的拐点标注：</div>
+<div class="line-block">
+<div class="line">series中的值大于limit_up时才记录向上的拐点</div>
+<div class="line">series中的值小于limit_low时才记录向下的拐点</div>
+</div>
+</div>
+</dd></dl>
+
+</section>
 <section id="get-turn-point">
 <h3>get_turn_point<a class="headerlink" href="#get-turn-point" title="Permalink to this headline"></a></h3>
 <dl class="py function">
@@ -1615,6 +1632,22 @@ pd.DataFrame.ewm中对应参数的方法计算a；</div>
 </section>
 <section id="module-finfactory.fintools.utils_chn">
 <span id="utils-chn"></span><h2>utils_chn<a class="headerlink" href="#module-finfactory.fintools.utils_chn" title="Permalink to this headline"></a></h2>
+<section id="merge-minute-candle">
+<h3>merge_minute_candle<a class="headerlink" href="#merge-minute-candle" title="Permalink to this headline"></a></h3>
+<dl class="py function">
+<dt class="sig sig-object py" id="finfactory.fintools.utils_chn.merge_minute_candle">
+<span class="sig-prename descclassname"><span class="pre">finfactory.fintools.utils_chn.</span></span><span class="sig-name descname"><span class="pre">merge_minute_candle</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">new_freq</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">30</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cols_sum</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">time_trans</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#finfactory.fintools.utils_chn.merge_minute_candle" title="Permalink to this definition"></a></dt>
+<dd><div class="line-block">
+<div class="line">用一分钟K线合成更低频分钟K线</div>
+<div class="line">new_freq指定合成的频率，必须能被240整除</div>
+<div class="line">data时间列必须为time且时间为每个K线的结束时间</div>
+<div class="line">data中必须包含[‘time’, ‘open’, ‘close’, ‘high’, ‘low’]</div>
+<div class="line">cols_sum为求和字段，如可指定成交量’volume’或成交额’value’等</div>
+<div class="line">若data中的time列格式不为’%Y-%m-%d %H:%M:%S’格式，应将time_trans设置为True</div>
+</div>
+</dd></dl>
+
+</section>
 <section id="get-finreport-date-by-delta">
 <h3>get_finreport_date_by_delta<a class="headerlink" href="#get-finreport-date-by-delta" title="Permalink to this headline"></a></h3>
 <dl class="py function">

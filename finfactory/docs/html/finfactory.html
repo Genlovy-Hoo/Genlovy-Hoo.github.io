@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>finfactory &mdash; FinFactory 0.0.3 documentation</title>
+  <title>finfactory &mdash; FinFactory 0.0.5 documentation</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <!--[if lt IE 9]>
@@ -46,6 +46,7 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#module-finfactory.load_his_data">load_his_data</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#dataarchivesrootdirerror">DataArchivesRootDirError</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#find-target-dir">find_target_dir</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#find-paths-year">find_paths_year</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#load-ccxt-daily">load_ccxt_daily</a></li>
@@ -60,6 +61,7 @@
 <li class="toctree-l3"><a class="reference internal" href="#find-index-code-tushare">find_index_code_tushare</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#load-index-daily-tushare">load_index_daily_tushare</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#load-index-daily-basic-tushare">load_index_daily_basic_tushare</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#load-index-joinquant">load_index_joinquant</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#load-astocks-list-tushare">load_astocks_list_tushare</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#find-stocks-code-tushare">find_stocks_code_tushare</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#load-stock-daily-tushare">load_stock_daily_tushare</a></li>
@@ -70,8 +72,10 @@
 <li class="toctree-l3"><a class="reference internal" href="#find-futures-code-tushare">find_futures_code_tushare</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#load-future-daily-ex-tushare">load_future_daily_ex_tushare</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#load-future-daily-tushare">load_future_daily_tushare</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#load-future-mindgo">load_future_mindgo</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#load-options-info-tushare">load_options_info_tushare</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#load-options-daily-ex-tushare">load_options_daily_ex_tushare</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#load-options-daily-tushare">load_options_daily_tushare</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#load-fund-daily-tushare">load_fund_daily_tushare</a></li>
 </ul>
 </li>
@@ -130,6 +134,15 @@
 </section>
 <section id="module-finfactory.load_his_data">
 <span id="load-his-data"></span><h2>load_his_data<a class="headerlink" href="#module-finfactory.load_his_data" title="Permalink to this headline"></a></h2>
+<section id="dataarchivesrootdirerror">
+<h3>DataArchivesRootDirError<a class="headerlink" href="#dataarchivesrootdirerror" title="Permalink to this headline"></a></h3>
+<dl class="py class">
+<dt class="sig sig-object py" id="finfactory.load_his_data.DataArchivesRootDirError">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">finfactory.load_his_data.</span></span><span class="sig-name descname"><span class="pre">DataArchivesRootDirError</span></span><a class="headerlink" href="#finfactory.load_his_data.DataArchivesRootDirError" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Exception</span></code></p>
+</dd></dl>
+
+</section>
 <section id="find-target-dir">
 <h3>find_target_dir<a class="headerlink" href="#find-target-dir" title="Permalink to this headline"></a></h3>
 <dl class="py function">
@@ -176,7 +189,13 @@
 <dl class="py function">
 <dt class="sig sig-object py" id="finfactory.load_his_data.load_daily_crypto_usdt">
 <span class="sig-prename descclassname"><span class="pre">finfactory.load_his_data.</span></span><span class="sig-name descname"><span class="pre">load_daily_crypto_usdt</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mkt</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'binance'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">root_dir</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">logger</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#finfactory.load_his_data.load_daily_crypto_usdt" title="Permalink to this definition"></a></dt>
-<dd></dd></dl>
+<dd><p>读取BTC和ETH对USDT日行情数据</p>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">df_eth</span> <span class="o">=</span> <span class="n">load_daily_crypto_usdt</span><span class="p">(</span><span class="s1">&#39;eth&#39;</span><span class="p">,</span> <span class="s1">&#39;eth_usdt&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">df_btc</span> <span class="o">=</span> <span class="n">load_daily_crypto_usdt</span><span class="p">(</span><span class="s1">&#39;btc&#39;</span><span class="p">,</span> <span class="s1">&#39;btc_usdt&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
 
 </section>
 <section id="load-ccxt-minute">
@@ -184,7 +203,16 @@
 <dl class="py function">
 <dt class="sig sig-object py" id="finfactory.load_his_data.load_ccxt_minute">
 <span class="sig-prename descclassname"><span class="pre">finfactory.load_his_data.</span></span><span class="sig-name descname"><span class="pre">load_ccxt_minute</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">minute</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">15</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mkt</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'binance'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">root_dir</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">start_time</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">end_time</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#finfactory.load_his_data.load_ccxt_minute" title="Permalink to this definition"></a></dt>
-<dd></dd></dl>
+<dd><p>读取ccxt数字货币行情分钟数据</p>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">df_eth_15m</span> <span class="o">=</span> <span class="n">load_ccxt_minute</span><span class="p">(</span><span class="s1">&#39;eth&#39;</span><span class="p">,</span> <span class="s1">&#39;eth_usdt&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">df_btc_5m</span> <span class="o">=</span> <span class="n">load_ccxt_minute</span><span class="p">(</span><span class="s1">&#39;btc&#39;</span><span class="p">,</span> <span class="s1">&#39;btc_usdt&#39;</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">df_btc_1m</span> <span class="o">=</span> <span class="n">load_ccxt_minute</span><span class="p">(</span><span class="s1">&#39;btc&#39;</span><span class="p">,</span> <span class="s1">&#39;btc_usdt&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span>
+<span class="gp">&gt;&gt;&gt; </span>                             <span class="n">start_time</span><span class="o">=</span><span class="s1">&#39;2022-02-01 05:00:00&#39;</span><span class="p">,</span>
+<span class="gp">&gt;&gt;&gt; </span>                             <span class="n">end_time</span><span class="o">=</span><span class="s1">&#39;2022-06-09 14:00:00&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
 
 </section>
 <section id="load-trade-dates-tushare">
@@ -193,6 +221,10 @@
 <dt class="sig sig-object py" id="finfactory.load_his_data.load_trade_dates_tushare">
 <span class="sig-prename descclassname"><span class="pre">finfactory.load_his_data.</span></span><span class="sig-name descname"><span class="pre">load_trade_dates_tushare</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">exchange</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'SSE'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">root_dir</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#finfactory.load_his_data.load_trade_dates_tushare" title="Permalink to this definition"></a></dt>
 <dd><p>读取交易所交易日历历史数据</p>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">df_trade_dates</span> <span class="o">=</span> <span class="n">load_trade_dates_tushare</span><span class="p">()</span>
+</pre></div>
+</div>
 </dd></dl>
 
 </section>
@@ -202,6 +234,10 @@
 <dt class="sig sig-object py" id="finfactory.load_his_data.load_index_info_tushare">
 <span class="sig-prename descclassname"><span class="pre">finfactory.load_his_data.</span></span><span class="sig-name descname"><span class="pre">load_index_info_tushare</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">market</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">root_dir</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#finfactory.load_his_data.load_index_info_tushare" title="Permalink to this definition"></a></dt>
 <dd><p>根据market读取tushare指数基本信息数据</p>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">df_sse</span> <span class="o">=</span> <span class="n">load_index_info_tushare</span><span class="p">(</span><span class="s1">&#39;SSE&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
 </dd></dl>
 
 </section>
@@ -238,6 +274,14 @@
 <dt class="sig sig-object py" id="finfactory.load_his_data.load_index_daily_tushare">
 <span class="sig-prename descclassname"><span class="pre">finfactory.load_his_data.</span></span><span class="sig-name descname"><span class="pre">load_index_daily_tushare</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">code</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">root_dir</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#finfactory.load_his_data.load_index_daily_tushare" title="Permalink to this definition"></a></dt>
 <dd><p>读取tushare指数日线数据</p>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">df</span> <span class="o">=</span> <span class="n">load_index_daily_tushare</span><span class="p">(</span><span class="s1">&#39;中证1000&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">df_sh</span> <span class="o">=</span> <span class="n">load_index_daily_tushare</span><span class="p">(</span><span class="s1">&#39;000001.SH&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">df_hs300</span> <span class="o">=</span> <span class="n">load_index_daily_tushare</span><span class="p">(</span><span class="s1">&#39;000300.SH&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">df_hs300_</span> <span class="o">=</span> <span class="n">load_index_daily_tushare</span><span class="p">(</span><span class="s1">&#39;399300.SZ&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">df_zz500</span> <span class="o">=</span> <span class="n">load_index_daily_tushare</span><span class="p">(</span><span class="s1">&#39;000905.SH&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
 </dd></dl>
 
 </section>
@@ -247,6 +291,26 @@
 <dt class="sig sig-object py" id="finfactory.load_his_data.load_index_daily_basic_tushare">
 <span class="sig-prename descclassname"><span class="pre">finfactory.load_his_data.</span></span><span class="sig-name descname"><span class="pre">load_index_daily_basic_tushare</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">code</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">root_dir</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#finfactory.load_his_data.load_index_daily_basic_tushare" title="Permalink to this definition"></a></dt>
 <dd><p>读取tushare指数日线数据</p>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">df</span> <span class="o">=</span> <span class="n">load_index_daily_basic_tushare</span><span class="p">(</span><span class="s1">&#39;沪深300&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">df_sh_basic</span> <span class="o">=</span> <span class="n">load_index_daily_basic_tushare</span><span class="p">(</span><span class="s1">&#39;000001.SH&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">df_hs300_basic</span> <span class="o">=</span> <span class="n">load_index_daily_basic_tushare</span><span class="p">(</span><span class="s1">&#39;000300.SH&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">df_zz500_basic</span> <span class="o">=</span> <span class="n">load_index_daily_basic_tushare</span><span class="p">(</span><span class="s1">&#39;000905.SH&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</section>
+<section id="load-index-joinquant">
+<h3>load_index_joinquant<a class="headerlink" href="#load-index-joinquant" title="Permalink to this headline"></a></h3>
+<dl class="py function">
+<dt class="sig sig-object py" id="finfactory.load_his_data.load_index_joinquant">
+<span class="sig-prename descclassname"><span class="pre">finfactory.load_his_data.</span></span><span class="sig-name descname"><span class="pre">load_index_joinquant</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">code</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">freq</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'daily'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">root_dir</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#finfactory.load_his_data.load_index_joinquant" title="Permalink to this definition"></a></dt>
+<dd><p>读取聚宽指数行情数据</p>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">df</span> <span class="o">=</span> <span class="n">load_index_joinquant</span><span class="p">(</span><span class="s1">&#39;沪深300&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
 </dd></dl>
 
 </section>
@@ -256,6 +320,10 @@
 <dt class="sig sig-object py" id="finfactory.load_his_data.load_astocks_list_tushare">
 <span class="sig-prename descclassname"><span class="pre">finfactory.load_his_data.</span></span><span class="sig-name descname"><span class="pre">load_astocks_list_tushare</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">root_dir</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">del_dup</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#finfactory.load_his_data.load_astocks_list_tushare" title="Permalink to this definition"></a></dt>
 <dd><p>导入A股列表数据</p>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">df_a</span> <span class="o">=</span> <span class="n">load_astocks_list_tushare</span><span class="p">()</span>
+</pre></div>
+</div>
 </dd></dl>
 
 </section>
@@ -274,6 +342,11 @@
 <dt class="sig sig-object py" id="finfactory.load_his_data.load_stock_daily_tushare">
 <span class="sig-prename descclassname"><span class="pre">finfactory.load_his_data.</span></span><span class="sig-name descname"><span class="pre">load_stock_daily_tushare</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">code</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ext</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">root_dir</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#finfactory.load_his_data.load_stock_daily_tushare" title="Permalink to this definition"></a></dt>
 <dd><p>读取tushare股票日线数据</p>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">df</span> <span class="o">=</span> <span class="n">load_stock_daily_tushare</span><span class="p">(</span><span class="s1">&#39;同花顺&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">df</span> <span class="o">=</span> <span class="n">load_stock_daily_tushare</span><span class="p">(</span><span class="s1">&#39;600570.SH&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
 </dd></dl>
 
 </section>
@@ -283,6 +356,11 @@
 <dt class="sig sig-object py" id="finfactory.load_his_data.load_chn_bond_yields">
 <span class="sig-prename descclassname"><span class="pre">finfactory.load_his_data.</span></span><span class="sig-name descname"><span class="pre">load_chn_bond_yields</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cate</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'national'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">root_dir</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#finfactory.load_his_data.load_chn_bond_yields" title="Permalink to this definition"></a></dt>
 <dd><p>读取国债收益率历史数据</p>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">df_chn_bonds</span> <span class="o">=</span> <span class="n">load_chn_bond_yields</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">df_chn_bonds_local</span> <span class="o">=</span> <span class="n">load_chn_bond_yields</span><span class="p">(</span><span class="s1">&#39;local&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
 </dd></dl>
 
 </section>
@@ -292,6 +370,10 @@
 <dt class="sig sig-object py" id="finfactory.load_his_data.load_cffex_lhb_future">
 <span class="sig-prename descclassname"><span class="pre">finfactory.load_his_data.</span></span><span class="sig-name descname"><span class="pre">load_cffex_lhb_future</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">code</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">date</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">root_dir</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#finfactory.load_his_data.load_cffex_lhb_future" title="Permalink to this definition"></a></dt>
 <dd><p>读取中金所期货龙虎榜数据</p>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">df_cffex</span> <span class="o">=</span> <span class="n">load_cffex_lhb_future</span><span class="p">(</span><span class="s1">&#39;IF&#39;</span><span class="p">,</span> <span class="s1">&#39;2022-06-10&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
 </dd></dl>
 
 </section>
@@ -340,6 +422,25 @@
 <dt class="sig sig-object py" id="finfactory.load_his_data.load_future_daily_tushare">
 <span class="sig-prename descclassname"><span class="pre">finfactory.load_his_data.</span></span><span class="sig-name descname"><span class="pre">load_future_daily_tushare</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">code</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">root_dir</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">logger</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#finfactory.load_his_data.load_future_daily_tushare" title="Permalink to this definition"></a></dt>
 <dd><p>读取tushare期货日线数据，code为tushare代码</p>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">df_if</span> <span class="o">=</span> <span class="n">load_future_daily_tushare</span><span class="p">(</span><span class="s1">&#39;IF.CFX&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">df_ic</span> <span class="o">=</span> <span class="n">load_future_daily_tushare</span><span class="p">(</span><span class="s1">&#39;IC&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</section>
+<section id="load-future-mindgo">
+<h3>load_future_mindgo<a class="headerlink" href="#load-future-mindgo" title="Permalink to this headline"></a></h3>
+<dl class="py function">
+<dt class="sig sig-object py" id="finfactory.load_his_data.load_future_mindgo">
+<span class="sig-prename descclassname"><span class="pre">finfactory.load_his_data.</span></span><span class="sig-name descname"><span class="pre">load_future_mindgo</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">code</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">freq</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'daily'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">root_dir</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#finfactory.load_his_data.load_future_mindgo" title="Permalink to this definition"></a></dt>
+<dd><p>读取mindgo期货行情数据</p>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">df</span> <span class="o">=</span> <span class="n">load_future_mindgo</span><span class="p">(</span><span class="s1">&#39;IF9999&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">df</span> <span class="o">=</span> <span class="n">load_future_mindgo</span><span class="p">(</span><span class="s1">&#39;IF9999&#39;</span><span class="p">,</span> <span class="s1">&#39;1min&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
 </dd></dl>
 
 </section>
@@ -358,6 +459,19 @@
 <dt class="sig sig-object py" id="finfactory.load_his_data.load_options_daily_ex_tushare">
 <span class="sig-prename descclassname"><span class="pre">finfactory.load_his_data.</span></span><span class="sig-name descname"><span class="pre">load_options_daily_ex_tushare</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">exchange</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">root_dir</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#finfactory.load_his_data.load_options_daily_ex_tushare" title="Permalink to this definition"></a></dt>
 <dd><p>读取tushare交易所期权日线数据</p>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">df_opt_sse</span> <span class="o">=</span> <span class="n">load_options_daily_ex_tushare</span><span class="p">(</span><span class="s1">&#39;SSE&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</section>
+<section id="load-options-daily-tushare">
+<h3>load_options_daily_tushare<a class="headerlink" href="#load-options-daily-tushare" title="Permalink to this headline"></a></h3>
+<dl class="py function">
+<dt class="sig sig-object py" id="finfactory.load_his_data.load_options_daily_tushare">
+<span class="sig-prename descclassname"><span class="pre">finfactory.load_his_data.</span></span><span class="sig-name descname"><span class="pre">load_options_daily_tushare</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">code</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">root_dir</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#finfactory.load_his_data.load_options_daily_tushare" title="Permalink to this definition"></a></dt>
+<dd><p>读取tushare期权日线数据</p>
 </dd></dl>
 
 </section>

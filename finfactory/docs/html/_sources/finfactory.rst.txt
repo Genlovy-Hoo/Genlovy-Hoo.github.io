@@ -27,6 +27,14 @@ load_his_data
 
 .. currentmodule:: finfactory.load_his_data
 
+DataArchivesRootDirError
+^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. autoclass:: finfactory.load_his_data.DataArchivesRootDirError
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
 find_target_dir
 ^^^^^^^^^^^^^^^^
 
@@ -97,6 +105,11 @@ load_index_daily_basic_tushare
 
 .. autofunction:: finfactory.load_his_data.load_index_daily_basic_tushare
 
+load_index_joinquant
+^^^^^^^^^^^^^^^^^^^^^
+
+.. autofunction:: finfactory.load_his_data.load_index_joinquant
+
 load_astocks_list_tushare
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -147,6 +160,11 @@ load_future_daily_tushare
 
 .. autofunction:: finfactory.load_his_data.load_future_daily_tushare
 
+load_future_mindgo
+^^^^^^^^^^^^^^^^^^^
+
+.. autofunction:: finfactory.load_his_data.load_future_mindgo
+
 load_options_info_tushare
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -156,6 +174,11 @@ load_options_daily_ex_tushare
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. autofunction:: finfactory.load_his_data.load_options_daily_ex_tushare
+
+load_options_daily_tushare
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. autofunction:: finfactory.load_his_data.load_options_daily_tushare
 
 load_fund_daily_tushare
 ^^^^^^^^^^^^^^^^^^^^^^^^

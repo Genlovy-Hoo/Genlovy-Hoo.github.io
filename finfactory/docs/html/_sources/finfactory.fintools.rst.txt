@@ -221,6 +221,11 @@ acpmp
 
 .. autofunction:: finfactory.fintools.fintools.acpmp
 
+get_limit_turn_point
+^^^^^^^^^^^^^^^^^^^^^
+
+.. autofunction:: finfactory.fintools.fintools.get_limit_turn_point
+
 get_turn_point
 ^^^^^^^^^^^^^^^
 
@@ -386,6 +391,11 @@ utils_chn
 .. automodule:: finfactory.fintools.utils_chn
 
 .. currentmodule:: finfactory.fintools.utils_chn
+
+merge_minute_candle
+^^^^^^^^^^^^^^^^^^^^
+
+.. autofunction:: finfactory.fintools.utils_chn.merge_minute_candle
 
 get_finreport_date_by_delta
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^

@@ -341,6 +341,11 @@ power
 
 .. autofunction:: dramkit.gentools.power
 
+log
+^^^^
+
+.. autofunction:: dramkit.gentools.log
+
 cal_pct
 ^^^^^^^^
 
