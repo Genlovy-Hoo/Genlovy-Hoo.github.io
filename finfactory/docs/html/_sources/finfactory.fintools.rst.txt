@@ -221,15 +221,15 @@ acpmp
 
 .. autofunction:: finfactory.fintools.fintools.acpmp
 
-get_limit_turn_point
-^^^^^^^^^^^^^^^^^^^^^
-
-.. autofunction:: finfactory.fintools.fintools.get_limit_turn_point
-
 get_turn_point
 ^^^^^^^^^^^^^^^
 
 .. autofunction:: finfactory.fintools.fintools.get_turn_point
+
+get_limit_turn_point
+^^^^^^^^^^^^^^^^^^^^^
+
+.. autofunction:: finfactory.fintools.fintools.get_limit_turn_point
 
 cross
 ^^^^^^

@@ -33,6 +33,11 @@ get_date_format
 
 .. autofunction:: dramkit.datetimetools.get_date_format
 
+is_datetime
+^^^^^^^^^^^^
+
+.. autofunction:: dramkit.datetimetools.is_datetime
+
 get_year_month
 ^^^^^^^^^^^^^^^
 
@@ -371,6 +376,11 @@ max_com_divisor_tad
 
 .. autofunction:: dramkit.gentools.max_com_divisor_tad
 
+get_first_appear_index
+^^^^^^^^^^^^^^^^^^^^^^^
+
+.. autofunction:: dramkit.gentools.get_first_appear_index
+
 get_appear_order
 ^^^^^^^^^^^^^^^^^
 
@@ -580,6 +590,16 @@ copy_dir
 
 .. autofunction:: dramkit.iotools.copy_dir
 
+copy_dir_structure
+^^^^^^^^^^^^^^^^^^^
+
+.. autofunction:: dramkit.iotools.copy_dir_structure
+
+copy_specified_type_files
+^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. autofunction:: dramkit.iotools.copy_specified_type_files
+
 move_file
 ^^^^^^^^^^
 
@@ -589,6 +609,11 @@ move_dir
 ^^^^^^^^^
 
 .. autofunction:: dramkit.iotools.move_dir
+
+move_specified_type_files
+^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. autofunction:: dramkit.iotools.move_specified_type_files
 
 make_dir
 ^^^^^^^^^

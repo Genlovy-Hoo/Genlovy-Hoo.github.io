@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>dramkit &mdash; DramKit 0.3.1 documentation</title>
+  <title>dramkit &mdash; DramKit 0.3.6 documentation</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <!--[if lt IE 9]>
@@ -46,6 +46,7 @@
 <li class="toctree-l3"><a class="reference internal" href="#timestamp2str">timestamp2str</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#datetime-now">datetime_now</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#get-date-format">get_date_format</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#is-datetime">is_datetime</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#get-year-month">get_year_month</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#today-date">today_date</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#today-month">today_month</a></li>
@@ -114,6 +115,7 @@
 <li class="toctree-l3"><a class="reference internal" href="#max-com-divisor">max_com_divisor</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#mcd2-tad">mcd2_tad</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#max-com-divisor-tad">max_com_divisor_tad</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#get-first-appear-index">get_first_appear_index</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#get-appear-order">get_appear_order</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#label-rep-index-str">label_rep_index_str</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#drop-index-duplicates">drop_index_duplicates</a></li>
@@ -159,8 +161,11 @@
 <li class="toctree-l3"><a class="reference internal" href="#del-specified-subdir">del_specified_subdir</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#copy-file">copy_file</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#copy-dir">copy_dir</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#copy-dir-structure">copy_dir_structure</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#copy-specified-type-files">copy_specified_type_files</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#move-file">move_file</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#move-dir">move_dir</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#move-specified-type-files">move_specified_type_files</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#make-dir">make_dir</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#get-last-change-time">get_last_change_time</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#get-file-info">get_file_info</a></li>
@@ -319,6 +324,15 @@
 <dd class="field-even"><p>tuple - (日期位数（可能为date字符串长度或’未知日期格式’）, 格式连接符（或None）)</p>
 </dd>
 </dl>
+</dd></dl>
+
+</section>
+<section id="is-datetime">
+<h3>is_datetime<a class="headerlink" href="#is-datetime" title="Permalink to this headline"></a></h3>
+<dl class="py function">
+<dt class="sig sig-object py" id="dramkit.datetimetools.is_datetime">
+<span class="sig-prename descclassname"><span class="pre">dramkit.datetimetools.</span></span><span class="sig-name descname"><span class="pre">is_datetime</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.datetimetools.is_datetime" title="Permalink to this definition"></a></dt>
+<dd><p>判断x是否为时间日期</p>
 </dd></dl>
 
 </section>
@@ -1846,6 +1860,15 @@ func_val0的值(这里连续出现是指不出现除了满足func_val为True和�
 </dd></dl>
 
 </section>
+<section id="get-first-appear-index">
+<h3>get_first_appear_index<a class="headerlink" href="#get-first-appear-index" title="Permalink to this headline"></a></h3>
+<dl class="py function">
+<dt class="sig sig-object py" id="dramkit.gentools.get_first_appear_index">
+<span class="sig-prename descclassname"><span class="pre">dramkit.gentools.</span></span><span class="sig-name descname"><span class="pre">get_first_appear_index</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">series</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">values</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ascending</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">return_iloc</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.gentools.get_first_appear_index" title="Permalink to this definition"></a></dt>
+<dd><p>获取values中的值在series中第一次出现时的索引</p>
+</dd></dl>
+
+</section>
 <section id="get-appear-order">
 <h3>get_appear_order<a class="headerlink" href="#get-appear-order" title="Permalink to this headline"></a></h3>
 <dl class="py function">
@@ -1881,22 +1904,32 @@ func_val0的值(这里连续出现是指不出现除了满足func_val为True和�
 <p>若存在重复的index，则添加后缀编号之后返回的df，其index为str类型</p>
 </div>
 <p class="rubric">Examples</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">])</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">10</span><span class="p">])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">label_rep_index_str</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
-<span class="go">   0</span>
-<span class="go">0  1</span>
-<span class="go">1  2</span>
-<span class="go">2  3</span>
-<span class="go">3  4</span>
-<span class="go">4  5</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">df</span><span class="o">.</span><span class="n">index</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span>
+<span class="go">    0</span>
+<span class="go">0   1</span>
+<span class="go">1   2</span>
+<span class="go">2   3</span>
+<span class="go">3   4</span>
+<span class="go">4   5</span>
+<span class="go">5   6</span>
+<span class="go">6   7</span>
+<span class="go">7   8</span>
+<span class="go">8   9</span>
+<span class="go">9  10</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">df</span><span class="o">.</span><span class="n">index</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">label_rep_index_str</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
-<span class="go">     0</span>
-<span class="go">0    1</span>
-<span class="go">0_2  2</span>
-<span class="go">1    3</span>
-<span class="go">2    4</span>
-<span class="go">2_2  5</span>
+<span class="go">      0</span>
+<span class="go">0     1</span>
+<span class="go">0_2   2</span>
+<span class="go">0_3   3</span>
+<span class="go">1     4</span>
+<span class="go">1_2   5</span>
+<span class="go">2     6</span>
+<span class="go">2_2   7</span>
+<span class="go">2_3   8</span>
+<span class="go">2_4   9</span>
+<span class="go">3    10</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -2451,7 +2484,7 @@ cols_groupby设定</p>
 <dl class="py function">
 <dt class="sig sig-object py" id="dramkit.iotools.copy_file">
 <span class="sig-prename descclassname"><span class="pre">dramkit.iotools.</span></span><span class="sig-name descname"><span class="pre">copy_file</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.iotools.copy_file" title="Permalink to this definition"></a></dt>
-<dd><p>复制文件，待实现</p>
+<dd><p>复制文件</p>
 </dd></dl>
 
 </section>
@@ -2460,7 +2493,25 @@ cols_groupby设定</p>
 <dl class="py function">
 <dt class="sig sig-object py" id="dramkit.iotools.copy_dir">
 <span class="sig-prename descclassname"><span class="pre">dramkit.iotools.</span></span><span class="sig-name descname"><span class="pre">copy_dir</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.iotools.copy_dir" title="Permalink to this definition"></a></dt>
-<dd><p>复制文件夹，待实现</p>
+<dd><p>复制文件夹</p>
+</dd></dl>
+
+</section>
+<section id="copy-dir-structure">
+<h3>copy_dir_structure<a class="headerlink" href="#copy-dir-structure" title="Permalink to this headline"></a></h3>
+<dl class="py function">
+<dt class="sig sig-object py" id="dramkit.iotools.copy_dir_structure">
+<span class="sig-prename descclassname"><span class="pre">dramkit.iotools.</span></span><span class="sig-name descname"><span class="pre">copy_dir_structure</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">src_dir</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tgt_dir</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ext</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">recu_sub_dir</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.iotools.copy_dir_structure" title="Permalink to this definition"></a></dt>
+<dd><p>复制文件夹结构，不复制里面的文件</p>
+</dd></dl>
+
+</section>
+<section id="copy-specified-type-files">
+<h3>copy_specified_type_files<a class="headerlink" href="#copy-specified-type-files" title="Permalink to this headline"></a></h3>
+<dl class="py function">
+<dt class="sig sig-object py" id="dramkit.iotools.copy_specified_type_files">
+<span class="sig-prename descclassname"><span class="pre">dramkit.iotools.</span></span><span class="sig-name descname"><span class="pre">copy_specified_type_files</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dir_path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">type_list</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_dir</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">recu_sub_dir</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.iotools.copy_specified_type_files" title="Permalink to this definition"></a></dt>
+<dd><p>复制dir_path文件夹下所有类型在type_list中的文件到target_dir中</p>
 </dd></dl>
 
 </section>
@@ -2479,6 +2530,15 @@ cols_groupby设定</p>
 <dt class="sig sig-object py" id="dramkit.iotools.move_dir">
 <span class="sig-prename descclassname"><span class="pre">dramkit.iotools.</span></span><span class="sig-name descname"><span class="pre">move_dir</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.iotools.move_dir" title="Permalink to this definition"></a></dt>
 <dd><p>移动文件夹，待实现</p>
+</dd></dl>
+
+</section>
+<section id="move-specified-type-files">
+<h3>move_specified_type_files<a class="headerlink" href="#move-specified-type-files" title="Permalink to this headline"></a></h3>
+<dl class="py function">
+<dt class="sig sig-object py" id="dramkit.iotools.move_specified_type_files">
+<span class="sig-prename descclassname"><span class="pre">dramkit.iotools.</span></span><span class="sig-name descname"><span class="pre">move_specified_type_files</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dir_path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">type_list</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_dir</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">recu_sub_dir</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.iotools.move_specified_type_files" title="Permalink to this definition"></a></dt>
+<dd><p>移动dir_path文件夹下所有类型在type_list中的文件到target_dir中</p>
 </dd></dl>
 
 </section>

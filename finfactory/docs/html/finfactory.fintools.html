@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>fintools &mdash; FinFactory 0.0.5 documentation</title>
+  <title>fintools &mdash; FinFactory 0.0.8 documentation</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <!--[if lt IE 9]>
@@ -93,8 +93,8 @@
 <li class="toctree-l3"><a class="reference internal" href="#mean-candle">mean_candle</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#demark-td">demark_td</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#acpmp">acpmp</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#get-limit-turn-point">get_limit_turn_point</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#get-turn-point">get_turn_point</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#get-limit-turn-point">get_limit_turn_point</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#cross">cross</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#cross-plot">cross_plot</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#cross2">cross2</a></li>
@@ -918,21 +918,6 @@ pd.DataFrame.ewm中对应参数的方法计算a；</div>
 </dd></dl>
 
 </section>
-<section id="get-limit-turn-point">
-<h3>get_limit_turn_point<a class="headerlink" href="#get-limit-turn-point" title="Permalink to this headline"></a></h3>
-<dl class="py function">
-<dt class="sig sig-object py" id="finfactory.fintools.fintools.get_limit_turn_point">
-<span class="sig-prename descclassname"><span class="pre">finfactory.fintools.fintools.</span></span><span class="sig-name descname"><span class="pre">get_limit_turn_point</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">series</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">limit_up</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">limit_low</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#finfactory.fintools.fintools.get_limit_turn_point" title="Permalink to this definition"></a></dt>
-<dd><div class="line-block">
-<div class="line">带界限值限制的拐点标注：</div>
-<div class="line-block">
-<div class="line">series中的值大于limit_up时才记录向上的拐点</div>
-<div class="line">series中的值小于limit_low时才记录向下的拐点</div>
-</div>
-</div>
-</dd></dl>
-
-</section>
 <section id="get-turn-point">
 <h3>get_turn_point<a class="headerlink" href="#get-turn-point" title="Permalink to this headline"></a></h3>
 <dl class="py function">
@@ -941,6 +926,21 @@ pd.DataFrame.ewm中对应参数的方法计算a；</div>
 <dd><div class="line-block">
 <div class="line">拐点标注</div>
 <div class="line">返回结果中1位从上往下拐，-1位从下往上拐</div>
+</div>
+</dd></dl>
+
+</section>
+<section id="get-limit-turn-point">
+<h3>get_limit_turn_point<a class="headerlink" href="#get-limit-turn-point" title="Permalink to this headline"></a></h3>
+<dl class="py function">
+<dt class="sig sig-object py" id="finfactory.fintools.fintools.get_limit_turn_point">
+<span class="sig-prename descclassname"><span class="pre">finfactory.fintools.fintools.</span></span><span class="sig-name descname"><span class="pre">get_limit_turn_point</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">series</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">limit_up</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">limit_low</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#finfactory.fintools.fintools.get_limit_turn_point" title="Permalink to this definition"></a></dt>
+<dd><div class="line-block">
+<div class="line">带界限值限制的拐点标注：</div>
+<div class="line-block">
+<div class="line">series中的值大于等于limit_up时才记录向上的拐点</div>
+<div class="line">series中的值小于等于limit_low时才记录向下的拐点</div>
+</div>
 </div>
 </dd></dl>
 
@@ -2431,7 +2431,7 @@ pd.DataFrame.ewm中对应参数的方法计算a；</div>
 <h3>get_fundnet<a class="headerlink" href="#get-fundnet" title="Permalink to this headline"></a></h3>
 <dl class="py function">
 <dt class="sig sig-object py" id="finfactory.fintools.utils_gains.get_fundnet">
-<span class="sig-prename descclassname"><span class="pre">finfactory.fintools.utils_gains.</span></span><span class="sig-name descname"><span class="pre">get_fundnet</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">df_settle</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">when</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'before'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#finfactory.fintools.utils_gains.get_fundnet" title="Permalink to this definition"></a></dt>
+<span class="sig-prename descclassname"><span class="pre">finfactory.fintools.utils_gains.</span></span><span class="sig-name descname"><span class="pre">get_fundnet</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">df_settle</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">when</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'before'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">restart</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#finfactory.fintools.utils_gains.get_fundnet" title="Permalink to this definition"></a></dt>
 <dd><p>用基金净值法根据转入转出和资产总值记录计算净值</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -2460,7 +2460,7 @@ pd.DataFrame.ewm中对应参数的方法计算a；</div>
 <h3>get_gains<a class="headerlink" href="#get-gains" title="Permalink to this headline"></a></h3>
 <dl class="py function">
 <dt class="sig sig-object py" id="finfactory.fintools.utils_gains.get_gains">
-<span class="sig-prename descclassname"><span class="pre">finfactory.fintools.utils_gains.</span></span><span class="sig-name descname"><span class="pre">get_gains</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">df_settle</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gain_types</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">['act',</span> <span class="pre">'fundnet']</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">when</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">act_gain_pct_method</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#finfactory.fintools.utils_gains.get_gains" title="Permalink to this definition"></a></dt>
+<span class="sig-prename descclassname"><span class="pre">finfactory.fintools.utils_gains.</span></span><span class="sig-name descname"><span class="pre">get_gains</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">df_settle</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gain_types</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">['act',</span> <span class="pre">'fundnet']</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">when</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">restart</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">act_gain_pct_method</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#finfactory.fintools.utils_gains.get_gains" title="Permalink to this definition"></a></dt>
 <dd><div class="line-block">
 <div class="line">不同类型的盈亏情况统计</div>
 <div class="line">gain_types为累计收益计算方法，可选：</div>

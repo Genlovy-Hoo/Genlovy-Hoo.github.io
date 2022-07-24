@@ -23,11 +23,6 @@ load_text_multi
 
 .. autofunction:: dramkit.other.othertools.load_text_multi
 
-find_pypkgs_str
-^^^^^^^^^^^^^^^^
-
-.. autofunction:: dramkit.other.othertools.find_pypkgs_str
-
 install_pkg
 ^^^^^^^^^^^^
 
