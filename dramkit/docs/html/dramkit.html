@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>dramkit &mdash; DramKit 0.3.8 documentation</title>
+  <title>dramkit &mdash; DramKit 0.3.10 documentation</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <!--[if lt IE 9]>
@@ -64,6 +64,7 @@
 <li class="toctree-l3"><a class="reference internal" href="#get-dayofweek">get_dayofweek</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#get-dayofyear">get_dayofyear</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#isworkday-chncal">isworkday_chncal</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#get-work-dates">get_work_dates</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#get-recent-workday-chncal">get_recent_workday_chncal</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#get-next-nth-workday-chncal">get_next_nth_workday_chncal</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#get-recent-inweekday">get_recent_inweekday</a></li>
@@ -73,6 +74,7 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#module-dramkit.gentools">gentools</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#timerecoder">TimeRecoder</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#structureobject">StructureObject</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#dirtmodifyerror">DirtModifyError</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#run-func-with-timeout">run_func_with_timeout</a></li>
@@ -508,6 +510,15 @@
 </dd></dl>
 
 </section>
+<section id="get-work-dates">
+<h3>get_work_dates<a class="headerlink" href="#get-work-dates" title="Permalink to this headline"></a></h3>
+<dl class="py function">
+<dt class="sig sig-object py" id="dramkit.datetimetools.get_work_dates">
+<span class="sig-prename descclassname"><span class="pre">dramkit.datetimetools.</span></span><span class="sig-name descname"><span class="pre">get_work_dates</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">start_date</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">end_date</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.datetimetools.get_work_dates" title="Permalink to this definition"></a></dt>
+<dd><p>利用chinese_calendar获取指定范围内的工作日列表</p>
+</dd></dl>
+
+</section>
 <section id="get-recent-workday-chncal">
 <h3>get_recent_workday_chncal<a class="headerlink" href="#get-recent-workday-chncal" title="Permalink to this headline"></a></h3>
 <dl class="py function">
@@ -591,6 +602,41 @@
 <section id="module-dramkit.gentools">
 <span id="gentools"></span><h2>gentools<a class="headerlink" href="#module-dramkit.gentools" title="Permalink to this headline"></a></h2>
 <p>General toolboxs</p>
+<section id="timerecoder">
+<h3>TimeRecoder<a class="headerlink" href="#timerecoder" title="Permalink to this headline"></a></h3>
+<dl class="py class">
+<dt class="sig sig-object py" id="dramkit.gentools.TimeRecoder">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">dramkit.gentools.</span></span><span class="sig-name descname"><span class="pre">TimeRecoder</span></span><a class="headerlink" href="#dramkit.gentools.TimeRecoder" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>运行时间记录器</p>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">tr</span> <span class="o">=</span> <span class="n">TimeRecoder</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">tr</span><span class="o">.</span><span class="n">useds</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">60</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">tr</span><span class="o">.</span><span class="n">usedm</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">tr</span><span class="o">.</span><span class="n">used</span><span class="p">()</span>
+</pre></div>
+</div>
+<dl class="py method">
+<dt class="sig sig-object py" id="dramkit.gentools.TimeRecoder.used">
+<span class="sig-name descname"><span class="pre">used</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">logger</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.gentools.TimeRecoder.used" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dramkit.gentools.TimeRecoder.usedm">
+<span class="sig-name descname"><span class="pre">usedm</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">logger</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.gentools.TimeRecoder.usedm" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dramkit.gentools.TimeRecoder.useds">
+<span class="sig-name descname"><span class="pre">useds</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">logger</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.gentools.TimeRecoder.useds" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
 <section id="structureobject">
 <h3>StructureObject<a class="headerlink" href="#structureobject" title="Permalink to this headline"></a></h3>
 <dl class="py class">

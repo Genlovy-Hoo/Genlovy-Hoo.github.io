@@ -123,6 +123,11 @@ isworkday_chncal
 
 .. autofunction:: dramkit.datetimetools.isworkday_chncal
 
+get_work_dates
+^^^^^^^^^^^^^^^
+
+.. autofunction:: dramkit.datetimetools.get_work_dates
+
 get_recent_workday_chncal
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -159,6 +164,14 @@ gentools
 .. automodule:: dramkit.gentools
 
 .. currentmodule:: dramkit.gentools
+
+TimeRecoder
+^^^^^^^^^^^^
+
+.. autoclass:: dramkit.gentools.TimeRecoder
+    :members:
+    :undoc-members:
+    :show-inheritance:
 
 StructureObject
 ^^^^^^^^^^^^^^^^
