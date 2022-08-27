@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>dramkit &mdash; DramKit 0.3.10 documentation</title>
+  <title>dramkit &mdash; DramKit 0.3.11 documentation</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <!--[if lt IE 9]>
@@ -64,7 +64,7 @@
 <li class="toctree-l3"><a class="reference internal" href="#get-dayofweek">get_dayofweek</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#get-dayofyear">get_dayofyear</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#isworkday-chncal">isworkday_chncal</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#get-work-dates">get_work_dates</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#get-work-dates-chncal">get_work_dates_chncal</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#get-recent-workday-chncal">get_recent_workday_chncal</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#get-next-nth-workday-chncal">get_next_nth_workday_chncal</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#get-recent-inweekday">get_recent_inweekday</a></li>
@@ -82,6 +82,7 @@
 <li class="toctree-l3"><a class="reference internal" href="#try-repeat-run">try_repeat_run</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#log-used-time">log_used_time</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#print-used-time">print_used_time</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#func-runtime-test">func_runtime_test</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#get-update-kwargs">get_update_kwargs</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#roulette-base">roulette_base</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#roulette-stochastic-accept">roulette_stochastic_accept</a></li>
@@ -478,7 +479,7 @@
 <dd><p>获取date1到date2之间的日期列表，keep1和keep2设置结果是否保留date1和date2</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>是否为workday用了chinese_calendar包，若chinese_calendar库没更新，可能导致结果不准确</p>
+<p>是否为workday用了chncal包，若chncal库没更新，可能导致结果不准确</p>
 </div>
 </dd></dl>
 
@@ -506,16 +507,16 @@
 <dl class="py function">
 <dt class="sig sig-object py" id="dramkit.datetimetools.isworkday_chncal">
 <span class="sig-prename descclassname"><span class="pre">dramkit.datetimetools.</span></span><span class="sig-name descname"><span class="pre">isworkday_chncal</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">date</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.datetimetools.isworkday_chncal" title="Permalink to this definition"></a></dt>
-<dd><p>利用chinese_calendar库判断date（str格式）是否为工作日</p>
+<dd><p>利用chncal库判断date（str格式）是否为工作日</p>
 </dd></dl>
 
 </section>
-<section id="get-work-dates">
-<h3>get_work_dates<a class="headerlink" href="#get-work-dates" title="Permalink to this headline"></a></h3>
+<section id="get-work-dates-chncal">
+<h3>get_work_dates_chncal<a class="headerlink" href="#get-work-dates-chncal" title="Permalink to this headline"></a></h3>
 <dl class="py function">
-<dt class="sig sig-object py" id="dramkit.datetimetools.get_work_dates">
-<span class="sig-prename descclassname"><span class="pre">dramkit.datetimetools.</span></span><span class="sig-name descname"><span class="pre">get_work_dates</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">start_date</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">end_date</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.datetimetools.get_work_dates" title="Permalink to this definition"></a></dt>
-<dd><p>利用chinese_calendar获取指定范围内的工作日列表</p>
+<dt class="sig sig-object py" id="dramkit.datetimetools.get_work_dates_chncal">
+<span class="sig-prename descclassname"><span class="pre">dramkit.datetimetools.</span></span><span class="sig-name descname"><span class="pre">get_work_dates_chncal</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">start_date</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">end_date</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.datetimetools.get_work_dates_chncal" title="Permalink to this definition"></a></dt>
+<dd><p>利用chncal获取指定范围内的工作日列表</p>
 </dd></dl>
 
 </section>
@@ -527,7 +528,7 @@
 <dd><p>若date为工作日，则返回，否则返回下一个(post)或上一个(pre)工作日</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>若chinese_calendar库没更新，可能导致结果不准确</p>
+<p>若chncal库没更新，可能导致结果不准确</p>
 </div>
 </dd></dl>
 
@@ -543,7 +544,7 @@
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>若chinese_calendar库没更新，可能导致结果不准确</p>
+<p>若chncal库没更新，可能导致结果不准确</p>
 </div>
 </dd></dl>
 
@@ -867,6 +868,15 @@
 <li><p><a class="reference external" href="https://www.cnblogs.com/slysky/p/9777424.html">https://www.cnblogs.com/slysky/p/9777424.html</a></p></li>
 <li><p><a class="reference external" href="https://www.cnblogs.com/zhzhang/p/11375574.html">https://www.cnblogs.com/zhzhang/p/11375574.html</a></p></li>
 </ul>
+</dd></dl>
+
+</section>
+<section id="func-runtime-test">
+<h3>func_runtime_test<a class="headerlink" href="#func-runtime-test" title="Permalink to this headline"></a></h3>
+<dl class="py function">
+<dt class="sig sig-object py" id="dramkit.gentools.func_runtime_test">
+<span class="sig-prename descclassname"><span class="pre">dramkit.gentools.</span></span><span class="sig-name descname"><span class="pre">func_runtime_test</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">func</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10000</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.gentools.func_runtime_test" title="Permalink to this definition"></a></dt>
+<dd><p>函数性能（运行时间）测试，n设置测试运行测试</p>
 </dd></dl>
 
 </section>

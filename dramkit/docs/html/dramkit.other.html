@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>other &mdash; DramKit 0.3.10 documentation</title>
+  <title>other &mdash; DramKit 0.3.11 documentation</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <!--[if lt IE 9]>
@@ -46,7 +46,19 @@
 <li class="toctree-l1"><a class="reference internal" href="dramkit.logtools.html">logtools</a></li>
 <li class="toctree-l1"><a class="reference internal" href="dramkit.optimizer.html">optimizer</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">other</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#module-dramkit.other.langconv">langconv</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#node">Node</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#convertmap">ConvertMap</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#statesmachineexception">StatesMachineException</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#statesmachine">StatesMachine</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#converter">Converter</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#registery">registery</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#run">run</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="#module-dramkit.other.othertools">othertools</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#traditional2simplified">traditional2simplified</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#simplified2traditional">simplified2traditional</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#archive-data">archive_data</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#get-csv-df-colmaxmin">get_csv_df_colmaxmin</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#load-text-multi">load_text_multi</a></li>
@@ -57,6 +69,7 @@
 <li class="toctree-l3"><a class="reference internal" href="#replace-endblank-in-file">replace_endblank_in_file</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="#module-dramkit.other.zh_wiki">zh_wiki</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="dramkit.plottools.html">plottools</a></li>
@@ -93,9 +106,145 @@
              
   <section id="other">
 <h1>other<a class="headerlink" href="#other" title="Permalink to this headline"></a></h1>
+<section id="module-dramkit.other.langconv">
+<span id="langconv"></span><h2>langconv<a class="headerlink" href="#module-dramkit.other.langconv" title="Permalink to this headline"></a></h2>
+<section id="node">
+<h3>Node<a class="headerlink" href="#node" title="Permalink to this headline"></a></h3>
+<dl class="py class">
+<dt class="sig sig-object py" id="dramkit.other.langconv.Node">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">dramkit.other.langconv.</span></span><span class="sig-name descname"><span class="pre">Node</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">from_word</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">to_word</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">is_tail</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">have_child</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.other.langconv.Node" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="dramkit.other.langconv.Node.is_follow">
+<span class="sig-name descname"><span class="pre">is_follow</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">chars</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.other.langconv.Node.is_follow" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dramkit.other.langconv.Node.is_original_long_word">
+<span class="sig-name descname"><span class="pre">is_original_long_word</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.other.langconv.Node.is_original_long_word" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="convertmap">
+<h3>ConvertMap<a class="headerlink" href="#convertmap" title="Permalink to this headline"></a></h3>
+<dl class="py class">
+<dt class="sig sig-object py" id="dramkit.other.langconv.ConvertMap">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">dramkit.other.langconv.</span></span><span class="sig-name descname"><span class="pre">ConvertMap</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mapping</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.other.langconv.ConvertMap" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="dramkit.other.langconv.ConvertMap.set_convert_map">
+<span class="sig-name descname"><span class="pre">set_convert_map</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mapping</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.other.langconv.ConvertMap.set_convert_map" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="statesmachineexception">
+<h3>StatesMachineException<a class="headerlink" href="#statesmachineexception" title="Permalink to this headline"></a></h3>
+<dl class="py class">
+<dt class="sig sig-object py" id="dramkit.other.langconv.StatesMachineException">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">dramkit.other.langconv.</span></span><span class="sig-name descname"><span class="pre">StatesMachineException</span></span><a class="headerlink" href="#dramkit.other.langconv.StatesMachineException" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Exception</span></code></p>
+</dd></dl>
+
+</section>
+<section id="statesmachine">
+<h3>StatesMachine<a class="headerlink" href="#statesmachine" title="Permalink to this headline"></a></h3>
+<dl class="py class">
+<dt class="sig sig-object py" id="dramkit.other.langconv.StatesMachine">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">dramkit.other.langconv.</span></span><span class="sig-name descname"><span class="pre">StatesMachine</span></span><a class="headerlink" href="#dramkit.other.langconv.StatesMachine" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="dramkit.other.langconv.StatesMachine.clone">
+<span class="sig-name descname"><span class="pre">clone</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pool</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.other.langconv.StatesMachine.clone" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dramkit.other.langconv.StatesMachine.feed">
+<span class="sig-name descname"><span class="pre">feed</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">char</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">map</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.other.langconv.StatesMachine.feed" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="converter">
+<h3>Converter<a class="headerlink" href="#converter" title="Permalink to this headline"></a></h3>
+<dl class="py class">
+<dt class="sig sig-object py" id="dramkit.other.langconv.Converter">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">dramkit.other.langconv.</span></span><span class="sig-name descname"><span class="pre">Converter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">to_encoding</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.other.langconv.Converter" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="dramkit.other.langconv.Converter.convert">
+<span class="sig-name descname"><span class="pre">convert</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">string</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.other.langconv.Converter.convert" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dramkit.other.langconv.Converter.end">
+<span class="sig-name descname"><span class="pre">end</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.other.langconv.Converter.end" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dramkit.other.langconv.Converter.feed">
+<span class="sig-name descname"><span class="pre">feed</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">char</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.other.langconv.Converter.feed" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dramkit.other.langconv.Converter.get_result">
+<span class="sig-name descname"><span class="pre">get_result</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.other.langconv.Converter.get_result" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dramkit.other.langconv.Converter.start">
+<span class="sig-name descname"><span class="pre">start</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.other.langconv.Converter.start" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="registery">
+<h3>registery<a class="headerlink" href="#registery" title="Permalink to this headline"></a></h3>
+<dl class="py function">
+<dt class="sig sig-object py" id="dramkit.other.langconv.registery">
+<span class="sig-prename descclassname"><span class="pre">dramkit.other.langconv.</span></span><span class="sig-name descname"><span class="pre">registery</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mapping</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.other.langconv.registery" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</section>
+<section id="run">
+<h3>run<a class="headerlink" href="#run" title="Permalink to this headline"></a></h3>
+<dl class="py function">
+<dt class="sig sig-object py" id="dramkit.other.langconv.run">
+<span class="sig-prename descclassname"><span class="pre">dramkit.other.langconv.</span></span><span class="sig-name descname"><span class="pre">run</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.other.langconv.run" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</section>
+</section>
 <section id="module-dramkit.other.othertools">
 <span id="othertools"></span><h2>othertools<a class="headerlink" href="#module-dramkit.other.othertools" title="Permalink to this headline"></a></h2>
 <p>Uncommonly used utility functions</p>
+<section id="traditional2simplified">
+<h3>traditional2simplified<a class="headerlink" href="#traditional2simplified" title="Permalink to this headline"></a></h3>
+<dl class="py function">
+<dt class="sig sig-object py" id="dramkit.other.othertools.traditional2simplified">
+<span class="sig-prename descclassname"><span class="pre">dramkit.other.othertools.</span></span><span class="sig-name descname"><span class="pre">traditional2simplified</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">content</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.other.othertools.traditional2simplified" title="Permalink to this definition"></a></dt>
+<dd><div class="line-block">
+<div class="line">繁体转简体</div>
+<div class="line"><a class="reference external" href="https://github.com/skydark/nstools">https://github.com/skydark/nstools</a></div>
+<div class="line"><a class="reference external" href="https://yang-roc.blog.csdn.net/article/details/110952091">https://yang-roc.blog.csdn.net/article/details/110952091</a></div>
+</div>
+</dd></dl>
+
+</section>
+<section id="simplified2traditional">
+<h3>simplified2traditional<a class="headerlink" href="#simplified2traditional" title="Permalink to this headline"></a></h3>
+<dl class="py function">
+<dt class="sig sig-object py" id="dramkit.other.othertools.simplified2traditional">
+<span class="sig-prename descclassname"><span class="pre">dramkit.other.othertools.</span></span><span class="sig-name descname"><span class="pre">simplified2traditional</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">content</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.other.othertools.simplified2traditional" title="Permalink to this definition"></a></dt>
+<dd><p>简体转繁体</p>
+</dd></dl>
+
+</section>
 <section id="archive-data">
 <h3>archive_data<a class="headerlink" href="#archive-data" title="Permalink to this headline"></a></h3>
 <dl class="py function">
@@ -214,6 +363,9 @@
 </dd></dl>
 
 </section>
+</section>
+<section id="module-dramkit.other.zh_wiki">
+<span id="zh-wiki"></span><h2>zh_wiki<a class="headerlink" href="#module-dramkit.other.zh_wiki" title="Permalink to this headline"></a></h2>
 </section>
 </section>
 

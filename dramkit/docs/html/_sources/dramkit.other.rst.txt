@@ -1,12 +1,79 @@
 other
 ======
 
+langconv
+---------
+
+.. automodule:: dramkit.other.langconv
+
+.. currentmodule:: dramkit.other.langconv
+
+Node
+^^^^^
+
+.. autoclass:: dramkit.other.langconv.Node
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+ConvertMap
+^^^^^^^^^^^
+
+.. autoclass:: dramkit.other.langconv.ConvertMap
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+StatesMachineException
+^^^^^^^^^^^^^^^^^^^^^^^
+
+.. autoclass:: dramkit.other.langconv.StatesMachineException
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+StatesMachine
+^^^^^^^^^^^^^^
+
+.. autoclass:: dramkit.other.langconv.StatesMachine
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+Converter
+^^^^^^^^^^
+
+.. autoclass:: dramkit.other.langconv.Converter
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+registery
+^^^^^^^^^^
+
+.. autofunction:: dramkit.other.langconv.registery
+
+run
+^^^^
+
+.. autofunction:: dramkit.other.langconv.run
+
 othertools
 -----------
 
 .. automodule:: dramkit.other.othertools
 
 .. currentmodule:: dramkit.other.othertools
+
+traditional2simplified
+^^^^^^^^^^^^^^^^^^^^^^^
+
+.. autofunction:: dramkit.other.othertools.traditional2simplified
+
+simplified2traditional
+^^^^^^^^^^^^^^^^^^^^^^^
+
+.. autofunction:: dramkit.other.othertools.simplified2traditional
 
 archive_data
 ^^^^^^^^^^^^^
@@ -39,3 +106,10 @@ replace_endblank_in_file
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. autofunction:: dramkit.other.replace_endblank.replace_endblank_in_file
+
+zh_wiki
+--------
+
+.. automodule:: dramkit.other.zh_wiki
+
+.. currentmodule:: dramkit.other.zh_wiki

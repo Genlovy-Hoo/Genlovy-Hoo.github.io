@@ -392,6 +392,11 @@ utils_chn
 
 .. currentmodule:: finfactory.fintools.utils_chn
 
+get_merge_candle
+^^^^^^^^^^^^^^^^^
+
+.. autofunction:: finfactory.fintools.utils_chn.get_merge_candle
+
 merge_minute_candle
 ^^^^^^^^^^^^^^^^^^^^
 

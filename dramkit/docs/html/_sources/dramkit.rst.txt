@@ -123,10 +123,10 @@ isworkday_chncal
 
 .. autofunction:: dramkit.datetimetools.isworkday_chncal
 
-get_work_dates
-^^^^^^^^^^^^^^^
+get_work_dates_chncal
+^^^^^^^^^^^^^^^^^^^^^^
 
-.. autofunction:: dramkit.datetimetools.get_work_dates
+.. autofunction:: dramkit.datetimetools.get_work_dates_chncal
 
 get_recent_workday_chncal
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -213,6 +213,11 @@ print_used_time
 ^^^^^^^^^^^^^^^^
 
 .. autofunction:: dramkit.gentools.print_used_time
+
+func_runtime_test
+^^^^^^^^^^^^^^^^^^
+
+.. autofunction:: dramkit.gentools.func_runtime_test
 
 get_update_kwargs
 ^^^^^^^^^^^^^^^^^^
