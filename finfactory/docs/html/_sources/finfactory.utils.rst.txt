@@ -90,3 +90,8 @@ get_klines_ccxt
 ^^^^^^^^^^^^^^^^
 
 .. autofunction:: finfactory.utils.utils_crypto.get_klines_ccxt
+
+merge_minute_candle
+^^^^^^^^^^^^^^^^^^^^
+
+.. autofunction:: finfactory.utils.utils_crypto.merge_minute_candle

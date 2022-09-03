@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>utils &mdash; FinFactory 0.0.17 documentation</title>
+  <title>utils &mdash; FinFactory 0.0.18 documentation</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <!--[if lt IE 9]>
@@ -64,6 +64,7 @@
 <li class="toctree-l3"><a class="reference internal" href="#get-ccxt-market">get_ccxt_market</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#check-loss">check_loss</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#get-klines-ccxt">get_klines_ccxt</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#merge-minute-candle">merge_minute_candle</a></li>
 </ul>
 </li>
 </ul>
@@ -201,7 +202,7 @@
 <h3>get_gm_api<a class="headerlink" href="#get-gm-api" title="Permalink to this headline"></a></h3>
 <dl class="py function">
 <dt class="sig sig-object py" id="finfactory.utils.utils.get_gm_api">
-<span class="sig-prename descclassname"><span class="pre">finfactory.utils.utils.</span></span><span class="sig-name descname"><span class="pre">get_gm_api</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">token</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#finfactory.utils.utils.get_gm_api" title="Permalink to this definition"></a></dt>
+<span class="sig-prename descclassname"><span class="pre">finfactory.utils.utils.</span></span><span class="sig-name descname"><span class="pre">get_gm_api</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">token</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">logger</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#finfactory.utils.utils.get_gm_api" title="Permalink to this definition"></a></dt>
 <dd><p>根据token获取掘金API接口</p>
 </dd></dl>
 
@@ -237,6 +238,38 @@
 <dd><div class="line-block">
 <div class="line">ccxt获取K线数据</div>
 <div class="line">freq如’1d’, ‘1m’等</div>
+</div>
+</dd></dl>
+
+</section>
+<section id="merge-minute-candle">
+<h3>merge_minute_candle<a class="headerlink" href="#merge-minute-candle" title="Permalink to this headline"></a></h3>
+<dl class="py function">
+<dt class="sig sig-object py" id="finfactory.utils.utils_crypto.merge_minute_candle">
+<span class="sig-prename descclassname"><span class="pre">finfactory.utils.utils_crypto.</span></span><span class="sig-name descname"><span class="pre">merge_minute_candle</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">new_freq</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">30</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cols_sum</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tstart</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">time_trans</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#finfactory.utils.utils_crypto.merge_minute_candle" title="Permalink to this definition"></a></dt>
+<dd><div class="line-block">
+<div class="line">用一分钟K线合成更低频分钟K线</div>
+<div class="line">new_freq指定合成的频率，必须能被240整除</div>
+<div class="line">data中必须包含[‘time’, ‘open’, ‘close’, ‘high’, ‘low’]</div>
+<div class="line">cols_sum为求和字段，如可指定成交量’volume’</div>
+<div class="line">tstart设置time列是否为K先开始时间，默认视为开始时间</div>
+<div class="line">若data中的time列格式不为’%Y-%m-%d %H:%M:%S’格式，应将time_trans设置为True</div>
+<div class="line">注：只适用于数字货币交易时间，即全天24小时</div>
+</div>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">finfactory.load_his_data</span> <span class="kn">import</span> <span class="n">load_ccxt_minute</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">df1m</span> <span class="o">=</span> <span class="n">load_ccxt_minute</span><span class="p">(</span><span class="s1">&#39;eth&#39;</span><span class="p">,</span> <span class="s1">&#39;eth_usdt&#39;</span><span class="p">,</span> <span class="s1">&#39;1&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">df1m</span> <span class="o">=</span> <span class="n">df1m</span><span class="p">[</span><span class="n">df1m</span><span class="p">[</span><span class="s1">&#39;time&#39;</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="s1">&#39;2022-08-24 11:09:00&#39;</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">c1</span> <span class="o">=</span> <span class="n">merge_minute_candle</span><span class="p">(</span><span class="n">df1m</span><span class="p">,</span> <span class="n">cols_sum</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;volume&#39;</span><span class="p">],</span>
+<span class="go">                             tstart=True)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">c2</span> <span class="o">=</span> <span class="n">merge_minute_candle</span><span class="p">(</span><span class="n">df1m</span><span class="p">,</span> <span class="n">cols_sum</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;volume&#39;</span><span class="p">],</span>
+<span class="go">                             tstart=False)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">datetime</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">tdelta</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">timedelta</span><span class="p">(</span><span class="n">seconds</span><span class="o">=</span><span class="mi">60</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">df1m</span><span class="p">[</span><span class="s1">&#39;time&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">df1m</span><span class="p">[</span><span class="s1">&#39;time&#39;</span><span class="p">])</span> <span class="o">+</span> <span class="n">tdelta</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">c3</span> <span class="o">=</span> <span class="n">merge_minute_candle</span><span class="p">(</span><span class="n">df1m</span><span class="p">,</span> <span class="n">cols_sum</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;volume&#39;</span><span class="p">],</span>
+<span class="go">                             time_trans=True)</span>
+</pre></div>
 </div>
 </dd></dl>
 

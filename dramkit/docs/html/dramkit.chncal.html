@@ -1,0 +1,747 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>chncal &mdash; DramKit 0.3.12 documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="datsci" href="dramkit.datsci.html" />
+    <link rel="prev" title="backpacks" href="dramkit.backpacks.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="index.html" class="icon icon-home"> DramKit
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="dramkit.html">dramkit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dramkit.backpacks.html">backpacks</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">chncal</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#module-dramkit.chncal.apis">apis</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#is-holiday">is_holiday</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#is-workday">is_workday</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#is-in-lieu">is_in_lieu</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#get-holiday-detail">get_holiday_detail</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#get-dates">get_dates</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#get-holidays">get_holidays</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#get-workdays">get_workdays</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#find-workday">find_workday</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#get-solar-terms">get_solar_terms</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#get-tgdz-year">get_tgdz_year</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#get-tgdz-date">get_tgdz_date</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#get-tgdz-hour">get_tgdz_hour</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#get-bazi">get_bazi</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#get-bazi-lunar">get_bazi_lunar</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#get-wuxing">get_wuxing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#get-wuxing-lunar">get_wuxing_lunar</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#get-zodiac-match">get_zodiac_match</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#get-zodiac-match-lunar">get_zodiac_match_lunar</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#fate-weight">fate_weight</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#fate-weight-lunar">fate_weight_lunar</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#get-xingzuo">get_xingzuo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#get-recent-workday">get_recent_workday</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#get-next-nth-workday">get_next_nth_workday</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#get-work-dates">get_work_dates</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#is-tradeday">is_tradeday</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#get-recent-tradeday">get_recent_tradeday</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#get-next-nth-tradeday">get_next_nth_tradeday</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#get-trade-dates">get_trade_dates</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#gen2lun">gen2lun</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#gen2gz">gen2gz</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#lun2gen">lun2gen</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#module-dramkit.chncal.constants">constants</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#holiday">Holiday</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#module-dramkit.chncal.constants_atrade">constants_atrade</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-dramkit.chncal.constants_fate">constants_fate</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-dramkit.chncal.constants_hko">constants_hko</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-dramkit.chncal.constants_wuxing">constants_wuxing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-dramkit.chncal.constants_zodiac_marry">constants_zodiac_marry</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-dramkit.chncal.solar_terms">solar_terms</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#solarterms">SolarTerms</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="dramkit.datsci.html">datsci</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dramkit.find_addends.html">find_addends</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dramkit.logtools.html">logtools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dramkit.optimizer.html">optimizer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dramkit.other.html">other</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dramkit.plottools.html">plottools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dramkit.pystyles.html">pystyles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dramkit.sorts.html">sorts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dramkit.speedup.html">speedup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dramkit.sqltools.html">sqltools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dramkit.webtools.html">webtools</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">DramKit</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>chncal</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/dramkit.chncal.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="chncal">
+<h1>chncal<a class="headerlink" href="#chncal" title="Permalink to this headline"></a></h1>
+<section id="module-dramkit.chncal.apis">
+<span id="apis"></span><h2>apis<a class="headerlink" href="#module-dramkit.chncal.apis" title="Permalink to this headline"></a></h2>
+<section id="is-holiday">
+<h3>is_holiday<a class="headerlink" href="#is-holiday" title="Permalink to this headline"></a></h3>
+<dl class="py function">
+<dt class="sig sig-object py" id="dramkit.chncal.apis.is_holiday">
+<span class="sig-prename descclassname"><span class="pre">dramkit.chncal.apis.</span></span><span class="sig-name descname"><span class="pre">is_holiday</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">date</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.chncal.apis.is_holiday" title="Permalink to this definition"></a></dt>
+<dd><p>check if one date is holiday in China.
+in other words, Chinese people get rest at that day.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="is-workday">
+<h3>is_workday<a class="headerlink" href="#is-workday" title="Permalink to this headline"></a></h3>
+<dl class="py function">
+<dt class="sig sig-object py" id="dramkit.chncal.apis.is_workday">
+<span class="sig-prename descclassname"><span class="pre">dramkit.chncal.apis.</span></span><span class="sig-name descname"><span class="pre">is_workday</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">date</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.chncal.apis.is_workday" title="Permalink to this definition"></a></dt>
+<dd><p>check if one date is workday in China.
+in other words, Chinese people works at that day.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="is-in-lieu">
+<h3>is_in_lieu<a class="headerlink" href="#is-in-lieu" title="Permalink to this headline"></a></h3>
+<dl class="py function">
+<dt class="sig sig-object py" id="dramkit.chncal.apis.is_in_lieu">
+<span class="sig-prename descclassname"><span class="pre">dramkit.chncal.apis.</span></span><span class="sig-name descname"><span class="pre">is_in_lieu</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">date</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.chncal.apis.is_in_lieu" title="Permalink to this definition"></a></dt>
+<dd><p>check if one date is in lieu in China.
+in other words, Chinese people get rest at that day because of legal holiday.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="get-holiday-detail">
+<h3>get_holiday_detail<a class="headerlink" href="#get-holiday-detail" title="Permalink to this headline"></a></h3>
+<dl class="py function">
+<dt class="sig sig-object py" id="dramkit.chncal.apis.get_holiday_detail">
+<span class="sig-prename descclassname"><span class="pre">dramkit.chncal.apis.</span></span><span class="sig-name descname"><span class="pre">get_holiday_detail</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">date</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.chncal.apis.get_holiday_detail" title="Permalink to this definition"></a></dt>
+<dd><p>check if one date is holiday in China,
+and return the holiday name (None if it’s a normal day)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>holiday bool indicator, and holiday name if it’s holiday related day</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>(bool, str | None)</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="get-dates">
+<h3>get_dates<a class="headerlink" href="#get-dates" title="Permalink to this headline"></a></h3>
+<dl class="py function">
+<dt class="sig sig-object py" id="dramkit.chncal.apis.get_dates">
+<span class="sig-prename descclassname"><span class="pre">dramkit.chncal.apis.</span></span><span class="sig-name descname"><span class="pre">get_dates</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">start</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">end</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.chncal.apis.get_dates" title="Permalink to this definition"></a></dt>
+<dd><p>get dates between start date and end date. (includes start date and end date)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>list[datetime.date]</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="get-holidays">
+<h3>get_holidays<a class="headerlink" href="#get-holidays" title="Permalink to this headline"></a></h3>
+<dl class="py function">
+<dt class="sig sig-object py" id="dramkit.chncal.apis.get_holidays">
+<span class="sig-prename descclassname"><span class="pre">dramkit.chncal.apis.</span></span><span class="sig-name descname"><span class="pre">get_holidays</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">start</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">end</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">include_weekends</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.chncal.apis.get_holidays" title="Permalink to this definition"></a></dt>
+<dd><p>get holidays between start date and end date. (includes start date and end date)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>include_weekends</strong> (<em>bool</em>) – False for excluding Saturdays and Sundays</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>list[datetime.date]</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="get-workdays">
+<h3>get_workdays<a class="headerlink" href="#get-workdays" title="Permalink to this headline"></a></h3>
+<dl class="py function">
+<dt class="sig sig-object py" id="dramkit.chncal.apis.get_workdays">
+<span class="sig-prename descclassname"><span class="pre">dramkit.chncal.apis.</span></span><span class="sig-name descname"><span class="pre">get_workdays</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">start</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">end</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.chncal.apis.get_workdays" title="Permalink to this definition"></a></dt>
+<dd><p>get workdays between start date and end date. (includes start date and end date)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>list[datetime.date]</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="find-workday">
+<h3>find_workday<a class="headerlink" href="#find-workday" title="Permalink to this headline"></a></h3>
+<dl class="py function">
+<dt class="sig sig-object py" id="dramkit.chncal.apis.find_workday">
+<span class="sig-prename descclassname"><span class="pre">dramkit.chncal.apis.</span></span><span class="sig-name descname"><span class="pre">find_workday</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">delta_days</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">date</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.chncal.apis.find_workday" title="Permalink to this definition"></a></dt>
+<dd><p>find the workday after {delta_days} days.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>delta_days</strong> (<em>int</em>) – 0 means next workday (includes today), -1 means previous workday.</p>
+</dd>
+<dt class="field-even">Param</dt>
+<dd class="field-even"><p>the start point</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>datetime.date</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="get-solar-terms">
+<h3>get_solar_terms<a class="headerlink" href="#get-solar-terms" title="Permalink to this headline"></a></h3>
+<dl class="py function">
+<dt class="sig sig-object py" id="dramkit.chncal.apis.get_solar_terms">
+<span class="sig-prename descclassname"><span class="pre">dramkit.chncal.apis.</span></span><span class="sig-name descname"><span class="pre">get_solar_terms</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">start</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">end</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.chncal.apis.get_solar_terms" title="Permalink to this definition"></a></dt>
+<dd><p>生成24节气
+通用寿星公式：<a class="reference external" href="https://www.jianshu.com/p/1f814c6bb475">https://www.jianshu.com/p/1f814c6bb475</a></p>
+<p>通式寿星公式：[Y×D+C]-L
+[]里面取整数；Y=年数的后2位数；D=0.2422；L=Y/4，小寒、大寒、立春、雨水的 L=(Y-1)/4</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>start</strong> (<em>datetime.date</em>) – 开始日期</p></li>
+<li><p><strong>end</strong> (<em>datetime.date</em>) – 结束日期</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>list[(datetime.date, str)]</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="get-tgdz-year">
+<h3>get_tgdz_year<a class="headerlink" href="#get-tgdz-year" title="Permalink to this headline"></a></h3>
+<dl class="py function">
+<dt class="sig sig-object py" id="dramkit.chncal.apis.get_tgdz_year">
+<span class="sig-prename descclassname"><span class="pre">dramkit.chncal.apis.</span></span><span class="sig-name descname"><span class="pre">get_tgdz_year</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">year</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.chncal.apis.get_tgdz_year" title="Permalink to this definition"></a></dt>
+<dd><p>计算（农历）年份天干地支</p>
+</dd></dl>
+
+</section>
+<section id="get-tgdz-date">
+<h3>get_tgdz_date<a class="headerlink" href="#get-tgdz-date" title="Permalink to this headline"></a></h3>
+<dl class="py function">
+<dt class="sig sig-object py" id="dramkit.chncal.apis.get_tgdz_date">
+<span class="sig-prename descclassname"><span class="pre">dramkit.chncal.apis.</span></span><span class="sig-name descname"><span class="pre">get_tgdz_date</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">date</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.chncal.apis.get_tgdz_date" title="Permalink to this definition"></a></dt>
+<dd><p>根据公历日期计算农历干支纪日</p>
+</dd></dl>
+
+</section>
+<section id="get-tgdz-hour">
+<h3>get_tgdz_hour<a class="headerlink" href="#get-tgdz-hour" title="Permalink to this headline"></a></h3>
+<dl class="py function">
+<dt class="sig sig-object py" id="dramkit.chncal.apis.get_tgdz_hour">
+<span class="sig-prename descclassname"><span class="pre">dramkit.chncal.apis.</span></span><span class="sig-name descname"><span class="pre">get_tgdz_hour</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">time</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.chncal.apis.get_tgdz_hour" title="Permalink to this definition"></a></dt>
+<dd><p>根据公历时间（小时）计算农历干支纪时</p>
+</dd></dl>
+
+</section>
+<section id="get-bazi">
+<h3>get_bazi<a class="headerlink" href="#get-bazi" title="Permalink to this headline"></a></h3>
+<dl class="py function">
+<dt class="sig sig-object py" id="dramkit.chncal.apis.get_bazi">
+<span class="sig-prename descclassname"><span class="pre">dramkit.chncal.apis.</span></span><span class="sig-name descname"><span class="pre">get_bazi</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">time</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.chncal.apis.get_bazi" title="Permalink to this definition"></a></dt>
+<dd><p>根据公历时间生成八字</p>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">get_bazi</span><span class="p">(</span><span class="s1">&#39;1992.05.14 18:00&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</section>
+<section id="get-bazi-lunar">
+<h3>get_bazi_lunar<a class="headerlink" href="#get-bazi-lunar" title="Permalink to this headline"></a></h3>
+<dl class="py function">
+<dt class="sig sig-object py" id="dramkit.chncal.apis.get_bazi_lunar">
+<span class="sig-prename descclassname"><span class="pre">dramkit.chncal.apis.</span></span><span class="sig-name descname"><span class="pre">get_bazi_lunar</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">time</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">run</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.chncal.apis.get_bazi_lunar" title="Permalink to this definition"></a></dt>
+<dd><div class="line-block">
+<div class="line">根据农历时间生成八字</div>
+<div class="line">time格式如’2023.02.30 19:30:20’，时分秒可以不写</div>
+<div class="line">run为True表示闰月日期</div>
+</div>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">get_bazi_lunar</span><span class="p">(</span><span class="s1">&#39;2023.02.30&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</section>
+<section id="get-wuxing">
+<h3>get_wuxing<a class="headerlink" href="#get-wuxing" title="Permalink to this headline"></a></h3>
+<dl class="py function">
+<dt class="sig sig-object py" id="dramkit.chncal.apis.get_wuxing">
+<span class="sig-prename descclassname"><span class="pre">dramkit.chncal.apis.</span></span><span class="sig-name descname"><span class="pre">get_wuxing</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">time</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.chncal.apis.get_wuxing" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</section>
+<section id="get-wuxing-lunar">
+<h3>get_wuxing_lunar<a class="headerlink" href="#get-wuxing-lunar" title="Permalink to this headline"></a></h3>
+<dl class="py function">
+<dt class="sig sig-object py" id="dramkit.chncal.apis.get_wuxing_lunar">
+<span class="sig-prename descclassname"><span class="pre">dramkit.chncal.apis.</span></span><span class="sig-name descname"><span class="pre">get_wuxing_lunar</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">time</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">run</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.chncal.apis.get_wuxing_lunar" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</section>
+<section id="get-zodiac-match">
+<h3>get_zodiac_match<a class="headerlink" href="#get-zodiac-match" title="Permalink to this headline"></a></h3>
+<dl class="py function">
+<dt class="sig sig-object py" id="dramkit.chncal.apis.get_zodiac_match">
+<span class="sig-prename descclassname"><span class="pre">dramkit.chncal.apis.</span></span><span class="sig-name descname"><span class="pre">get_zodiac_match</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">time</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.chncal.apis.get_zodiac_match" title="Permalink to this definition"></a></dt>
+<dd><p>根据公历时间获取属相合婚信息</p>
+</dd></dl>
+
+</section>
+<section id="get-zodiac-match-lunar">
+<h3>get_zodiac_match_lunar<a class="headerlink" href="#get-zodiac-match-lunar" title="Permalink to this headline"></a></h3>
+<dl class="py function">
+<dt class="sig sig-object py" id="dramkit.chncal.apis.get_zodiac_match_lunar">
+<span class="sig-prename descclassname"><span class="pre">dramkit.chncal.apis.</span></span><span class="sig-name descname"><span class="pre">get_zodiac_match_lunar</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">time</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">run</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.chncal.apis.get_zodiac_match_lunar" title="Permalink to this definition"></a></dt>
+<dd><p>根据农历时间获取属相合婚信息</p>
+</dd></dl>
+
+</section>
+<section id="fate-weight">
+<h3>fate_weight<a class="headerlink" href="#fate-weight" title="Permalink to this headline"></a></h3>
+<dl class="py function">
+<dt class="sig sig-object py" id="dramkit.chncal.apis.fate_weight">
+<span class="sig-prename descclassname"><span class="pre">dramkit.chncal.apis.</span></span><span class="sig-name descname"><span class="pre">fate_weight</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">time</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.chncal.apis.fate_weight" title="Permalink to this definition"></a></dt>
+<dd><p>称命，传入公历时间</p>
+</dd></dl>
+
+</section>
+<section id="fate-weight-lunar">
+<h3>fate_weight_lunar<a class="headerlink" href="#fate-weight-lunar" title="Permalink to this headline"></a></h3>
+<dl class="py function">
+<dt class="sig sig-object py" id="dramkit.chncal.apis.fate_weight_lunar">
+<span class="sig-prename descclassname"><span class="pre">dramkit.chncal.apis.</span></span><span class="sig-name descname"><span class="pre">fate_weight_lunar</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">time</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">run</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.chncal.apis.fate_weight_lunar" title="Permalink to this definition"></a></dt>
+<dd><p>称命，传入农历时间</p>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">fate_weight_lunar</span><span class="p">(</span><span class="s1">&#39;2023.02.30 09:30:00&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</section>
+<section id="get-xingzuo">
+<h3>get_xingzuo<a class="headerlink" href="#get-xingzuo" title="Permalink to this headline"></a></h3>
+<dl class="py function">
+<dt class="sig sig-object py" id="dramkit.chncal.apis.get_xingzuo">
+<span class="sig-prename descclassname"><span class="pre">dramkit.chncal.apis.</span></span><span class="sig-name descname"><span class="pre">get_xingzuo</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">date</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.chncal.apis.get_xingzuo" title="Permalink to this definition"></a></dt>
+<dd><p>获取星座</p>
+</dd></dl>
+
+</section>
+<section id="get-recent-workday">
+<h3>get_recent_workday<a class="headerlink" href="#get-recent-workday" title="Permalink to this headline"></a></h3>
+<dl class="py function">
+<dt class="sig sig-object py" id="dramkit.chncal.apis.get_recent_workday">
+<span class="sig-prename descclassname"><span class="pre">dramkit.chncal.apis.</span></span><span class="sig-name descname"><span class="pre">get_recent_workday</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">date</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dirt</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'post'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.chncal.apis.get_recent_workday" title="Permalink to this definition"></a></dt>
+<dd><p>若date为工作日，则返回，否则返回下一个(post)或上一个(pre)工作日</p>
+</dd></dl>
+
+</section>
+<section id="get-next-nth-workday">
+<h3>get_next_nth_workday<a class="headerlink" href="#get-next-nth-workday" title="Permalink to this headline"></a></h3>
+<dl class="py function">
+<dt class="sig sig-object py" id="dramkit.chncal.apis.get_next_nth_workday">
+<span class="sig-prename descclassname"><span class="pre">dramkit.chncal.apis.</span></span><span class="sig-name descname"><span class="pre">get_next_nth_workday</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">date</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.chncal.apis.get_next_nth_workday" title="Permalink to this definition"></a></dt>
+<dd><div class="line-block">
+<div class="line">给定日期date，返回其后第n个工作日日期，n可为负数（返回结果在date之前）</div>
+<div class="line">若n为0，直接返回date</div>
+</div>
+</dd></dl>
+
+</section>
+<section id="get-work-dates">
+<h3>get_work_dates<a class="headerlink" href="#get-work-dates" title="Permalink to this headline"></a></h3>
+<dl class="py function">
+<dt class="sig sig-object py" id="dramkit.chncal.apis.get_work_dates">
+<span class="sig-prename descclassname"><span class="pre">dramkit.chncal.apis.</span></span><span class="sig-name descname"><span class="pre">get_work_dates</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">start_date</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">end_date</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.chncal.apis.get_work_dates" title="Permalink to this definition"></a></dt>
+<dd><p>取指定起止日期内的工作日</p>
+</dd></dl>
+
+</section>
+<section id="is-tradeday">
+<h3>is_tradeday<a class="headerlink" href="#is-tradeday" title="Permalink to this headline"></a></h3>
+<dl class="py function">
+<dt class="sig sig-object py" id="dramkit.chncal.apis.is_tradeday">
+<span class="sig-prename descclassname"><span class="pre">dramkit.chncal.apis.</span></span><span class="sig-name descname"><span class="pre">is_tradeday</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">date</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.chncal.apis.is_tradeday" title="Permalink to this definition"></a></dt>
+<dd><p>判断是否为沪深A股交易日</p>
+</dd></dl>
+
+</section>
+<section id="get-recent-tradeday">
+<h3>get_recent_tradeday<a class="headerlink" href="#get-recent-tradeday" title="Permalink to this headline"></a></h3>
+<dl class="py function">
+<dt class="sig sig-object py" id="dramkit.chncal.apis.get_recent_tradeday">
+<span class="sig-prename descclassname"><span class="pre">dramkit.chncal.apis.</span></span><span class="sig-name descname"><span class="pre">get_recent_tradeday</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">date</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dirt</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'post'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.chncal.apis.get_recent_tradeday" title="Permalink to this definition"></a></dt>
+<dd><p>若date为交易日，则直接返回date，否则返回下一个(dirt=’post’)或上一个(dirt=’pre’)交易日</p>
+</dd></dl>
+
+</section>
+<section id="get-next-nth-tradeday">
+<h3>get_next_nth_tradeday<a class="headerlink" href="#get-next-nth-tradeday" title="Permalink to this headline"></a></h3>
+<dl class="py function">
+<dt class="sig sig-object py" id="dramkit.chncal.apis.get_next_nth_tradeday">
+<span class="sig-prename descclassname"><span class="pre">dramkit.chncal.apis.</span></span><span class="sig-name descname"><span class="pre">get_next_nth_tradeday</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">date</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.chncal.apis.get_next_nth_tradeday" title="Permalink to this definition"></a></dt>
+<dd><div class="line-block">
+<div class="line">给定日期date，返回其后第n个交易日日期，n可为负数（返回结果在date之前）</div>
+<div class="line">若n为0，直接返回date</div>
+</div>
+</dd></dl>
+
+</section>
+<section id="get-trade-dates">
+<h3>get_trade_dates<a class="headerlink" href="#get-trade-dates" title="Permalink to this headline"></a></h3>
+<dl class="py function">
+<dt class="sig sig-object py" id="dramkit.chncal.apis.get_trade_dates">
+<span class="sig-prename descclassname"><span class="pre">dramkit.chncal.apis.</span></span><span class="sig-name descname"><span class="pre">get_trade_dates</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">start_date</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">end_date</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.chncal.apis.get_trade_dates" title="Permalink to this definition"></a></dt>
+<dd><p>取指定起止日期内的交易日期（周内的工作日）</p>
+</dd></dl>
+
+</section>
+<section id="gen2lun">
+<h3>gen2lun<a class="headerlink" href="#gen2lun" title="Permalink to this headline"></a></h3>
+<dl class="py function">
+<dt class="sig sig-object py" id="dramkit.chncal.apis.gen2lun">
+<span class="sig-prename descclassname"><span class="pre">dramkit.chncal.apis.</span></span><span class="sig-name descname"><span class="pre">gen2lun</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">date</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.chncal.apis.gen2lun" title="Permalink to this definition"></a></dt>
+<dd><p>公历日期转农历日期</p>
+</dd></dl>
+
+</section>
+<section id="gen2gz">
+<h3>gen2gz<a class="headerlink" href="#gen2gz" title="Permalink to this headline"></a></h3>
+<dl class="py function">
+<dt class="sig sig-object py" id="dramkit.chncal.apis.gen2gz">
+<span class="sig-prename descclassname"><span class="pre">dramkit.chncal.apis.</span></span><span class="sig-name descname"><span class="pre">gen2gz</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">date</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.chncal.apis.gen2gz" title="Permalink to this definition"></a></dt>
+<dd><p>公历日期转干支纪日法</p>
+</dd></dl>
+
+</section>
+<section id="lun2gen">
+<h3>lun2gen<a class="headerlink" href="#lun2gen" title="Permalink to this headline"></a></h3>
+<dl class="py function">
+<dt class="sig sig-object py" id="dramkit.chncal.apis.lun2gen">
+<span class="sig-prename descclassname"><span class="pre">dramkit.chncal.apis.</span></span><span class="sig-name descname"><span class="pre">lun2gen</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">date</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">run</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.chncal.apis.lun2gen" title="Permalink to this definition"></a></dt>
+<dd><div class="line-block">
+<div class="line">农历日期转普通日期</div>
+<div class="line">date格式如’2023.02.30’</div>
+<div class="line">run为True表示闰月日期</div>
+</div>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">lun2gen</span><span class="p">(</span><span class="s1">&#39;2023.02.30&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</section>
+</section>
+<section id="module-dramkit.chncal.constants">
+<span id="constants"></span><h2>constants<a class="headerlink" href="#module-dramkit.chncal.constants" title="Permalink to this headline"></a></h2>
+<section id="holiday">
+<h3>Holiday<a class="headerlink" href="#holiday" title="Permalink to this headline"></a></h3>
+<dl class="py class">
+<dt class="sig sig-object py" id="dramkit.chncal.constants.Holiday">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">dramkit.chncal.constants.</span></span><span class="sig-name descname"><span class="pre">Holiday</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.chncal.constants.Holiday" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">enum.Enum</span></code></p>
+<p>An enumeration.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dramkit.chncal.constants.Holiday.anti_fascist_70th_day">
+<span class="sig-name descname"><span class="pre">anti_fascist_70th_day</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'Anti-Fascist</span> <span class="pre">70th</span> <span class="pre">Day'</span></em><a class="headerlink" href="#dramkit.chncal.constants.Holiday.anti_fascist_70th_day" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dramkit.chncal.constants.Holiday.dragon_boat_festival">
+<span class="sig-name descname"><span class="pre">dragon_boat_festival</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'Dragon</span> <span class="pre">Boat</span> <span class="pre">Festival'</span></em><a class="headerlink" href="#dramkit.chncal.constants.Holiday.dragon_boat_festival" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dramkit.chncal.constants.Holiday.labour_day">
+<span class="sig-name descname"><span class="pre">labour_day</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'Labour</span> <span class="pre">Day'</span></em><a class="headerlink" href="#dramkit.chncal.constants.Holiday.labour_day" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dramkit.chncal.constants.Holiday.mid_autumn_festival">
+<span class="sig-name descname"><span class="pre">mid_autumn_festival</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'Mid-autumn</span> <span class="pre">Festival'</span></em><a class="headerlink" href="#dramkit.chncal.constants.Holiday.mid_autumn_festival" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dramkit.chncal.constants.Holiday.national_day">
+<span class="sig-name descname"><span class="pre">national_day</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'National</span> <span class="pre">Day'</span></em><a class="headerlink" href="#dramkit.chncal.constants.Holiday.national_day" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dramkit.chncal.constants.Holiday.new_years_day">
+<span class="sig-name descname"><span class="pre">new_years_day</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&quot;New</span> <span class="pre">Year's</span> <span class="pre">Day&quot;</span></em><a class="headerlink" href="#dramkit.chncal.constants.Holiday.new_years_day" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dramkit.chncal.constants.Holiday.spring_festival">
+<span class="sig-name descname"><span class="pre">spring_festival</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'Spring</span> <span class="pre">Festival'</span></em><a class="headerlink" href="#dramkit.chncal.constants.Holiday.spring_festival" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dramkit.chncal.constants.Holiday.tomb_sweeping_day">
+<span class="sig-name descname"><span class="pre">tomb_sweeping_day</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'Tomb-sweeping</span> <span class="pre">Day'</span></em><a class="headerlink" href="#dramkit.chncal.constants.Holiday.tomb_sweeping_day" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+</section>
+<section id="module-dramkit.chncal.constants_atrade">
+<span id="constants-atrade"></span><h2>constants_atrade<a class="headerlink" href="#module-dramkit.chncal.constants_atrade" title="Permalink to this headline"></a></h2>
+</section>
+<section id="module-dramkit.chncal.constants_fate">
+<span id="constants-fate"></span><h2>constants_fate<a class="headerlink" href="#module-dramkit.chncal.constants_fate" title="Permalink to this headline"></a></h2>
+</section>
+<section id="module-dramkit.chncal.constants_hko">
+<span id="constants-hko"></span><h2>constants_hko<a class="headerlink" href="#module-dramkit.chncal.constants_hko" title="Permalink to this headline"></a></h2>
+</section>
+<section id="module-dramkit.chncal.constants_wuxing">
+<span id="constants-wuxing"></span><h2>constants_wuxing<a class="headerlink" href="#module-dramkit.chncal.constants_wuxing" title="Permalink to this headline"></a></h2>
+</section>
+<section id="module-dramkit.chncal.constants_zodiac_marry">
+<span id="constants-zodiac-marry"></span><h2>constants_zodiac_marry<a class="headerlink" href="#module-dramkit.chncal.constants_zodiac_marry" title="Permalink to this headline"></a></h2>
+</section>
+<section id="module-dramkit.chncal.solar_terms">
+<span id="solar-terms"></span><h2>solar_terms<a class="headerlink" href="#module-dramkit.chncal.solar_terms" title="Permalink to this headline"></a></h2>
+<section id="solarterms">
+<h3>SolarTerms<a class="headerlink" href="#solarterms" title="Permalink to this headline"></a></h3>
+<dl class="py class">
+<dt class="sig sig-object py" id="dramkit.chncal.solar_terms.SolarTerms">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">dramkit.chncal.solar_terms.</span></span><span class="sig-name descname"><span class="pre">SolarTerms</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.chncal.solar_terms.SolarTerms" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">enum.Enum</span></code></p>
+<p>中国24节气</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dramkit.chncal.solar_terms.SolarTerms.code_dew">
+<span class="sig-name descname"><span class="pre">code_dew</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">('Cold</span> <span class="pre">Dew',</span> <span class="pre">'寒露')</span></em><a class="headerlink" href="#dramkit.chncal.solar_terms.SolarTerms.code_dew" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dramkit.chncal.solar_terms.SolarTerms.frost_descent">
+<span class="sig-name descname"><span class="pre">frost_descent</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">(&quot;Frost's</span> <span class="pre">Descent&quot;,</span> <span class="pre">'霜降')</span></em><a class="headerlink" href="#dramkit.chncal.solar_terms.SolarTerms.frost_descent" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dramkit.chncal.solar_terms.SolarTerms.grain_in_beard">
+<span class="sig-name descname"><span class="pre">grain_in_beard</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">('Grain</span> <span class="pre">in</span> <span class="pre">Beard',</span> <span class="pre">'芒种')</span></em><a class="headerlink" href="#dramkit.chncal.solar_terms.SolarTerms.grain_in_beard" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dramkit.chncal.solar_terms.SolarTerms.grain_rain">
+<span class="sig-name descname"><span class="pre">grain_rain</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">('Grain</span> <span class="pre">Rain',</span> <span class="pre">'谷雨')</span></em><a class="headerlink" href="#dramkit.chncal.solar_terms.SolarTerms.grain_rain" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dramkit.chncal.solar_terms.SolarTerms.greater_cold">
+<span class="sig-name descname"><span class="pre">greater_cold</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">('Greater</span> <span class="pre">Cold',</span> <span class="pre">'大寒')</span></em><a class="headerlink" href="#dramkit.chncal.solar_terms.SolarTerms.greater_cold" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dramkit.chncal.solar_terms.SolarTerms.greater_heat">
+<span class="sig-name descname"><span class="pre">greater_heat</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">('Greater</span> <span class="pre">Heat',</span> <span class="pre">'大暑')</span></em><a class="headerlink" href="#dramkit.chncal.solar_terms.SolarTerms.greater_heat" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dramkit.chncal.solar_terms.SolarTerms.greater_snow">
+<span class="sig-name descname"><span class="pre">greater_snow</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">('Greater</span> <span class="pre">Snow',</span> <span class="pre">'大雪')</span></em><a class="headerlink" href="#dramkit.chncal.solar_terms.SolarTerms.greater_snow" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dramkit.chncal.solar_terms.SolarTerms.lesser_cold">
+<span class="sig-name descname"><span class="pre">lesser_cold</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">('Lesser</span> <span class="pre">Cold',</span> <span class="pre">'小寒')</span></em><a class="headerlink" href="#dramkit.chncal.solar_terms.SolarTerms.lesser_cold" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dramkit.chncal.solar_terms.SolarTerms.lesser_fullness_of_grain">
+<span class="sig-name descname"><span class="pre">lesser_fullness_of_grain</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">('Lesser</span> <span class="pre">Fullness</span> <span class="pre">of</span> <span class="pre">Grain',</span> <span class="pre">'小满')</span></em><a class="headerlink" href="#dramkit.chncal.solar_terms.SolarTerms.lesser_fullness_of_grain" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dramkit.chncal.solar_terms.SolarTerms.lesser_heat">
+<span class="sig-name descname"><span class="pre">lesser_heat</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">('Lesser</span> <span class="pre">Heat',</span> <span class="pre">'小暑')</span></em><a class="headerlink" href="#dramkit.chncal.solar_terms.SolarTerms.lesser_heat" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dramkit.chncal.solar_terms.SolarTerms.lesser_snow">
+<span class="sig-name descname"><span class="pre">lesser_snow</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">('Lesser</span> <span class="pre">Snow',</span> <span class="pre">'小雪')</span></em><a class="headerlink" href="#dramkit.chncal.solar_terms.SolarTerms.lesser_snow" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dramkit.chncal.solar_terms.SolarTerms.pure_brightness">
+<span class="sig-name descname"><span class="pre">pure_brightness</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">('Pure</span> <span class="pre">Brightness',</span> <span class="pre">'清明')</span></em><a class="headerlink" href="#dramkit.chncal.solar_terms.SolarTerms.pure_brightness" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dramkit.chncal.solar_terms.SolarTerms.rain_water">
+<span class="sig-name descname"><span class="pre">rain_water</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">('Rain</span> <span class="pre">Water',</span> <span class="pre">'雨水')</span></em><a class="headerlink" href="#dramkit.chncal.solar_terms.SolarTerms.rain_water" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dramkit.chncal.solar_terms.SolarTerms.the_autumn_equinox">
+<span class="sig-name descname"><span class="pre">the_autumn_equinox</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">('the</span> <span class="pre">Autumn</span> <span class="pre">Equinox',</span> <span class="pre">'秋分')</span></em><a class="headerlink" href="#dramkit.chncal.solar_terms.SolarTerms.the_autumn_equinox" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dramkit.chncal.solar_terms.SolarTerms.the_beginning_of_autumn">
+<span class="sig-name descname"><span class="pre">the_beginning_of_autumn</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">('the</span> <span class="pre">Beginning</span> <span class="pre">of</span> <span class="pre">Autumn',</span> <span class="pre">'立秋')</span></em><a class="headerlink" href="#dramkit.chncal.solar_terms.SolarTerms.the_beginning_of_autumn" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dramkit.chncal.solar_terms.SolarTerms.the_beginning_of_spring">
+<span class="sig-name descname"><span class="pre">the_beginning_of_spring</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">('the</span> <span class="pre">Beginning</span> <span class="pre">of</span> <span class="pre">Spring',</span> <span class="pre">'立春')</span></em><a class="headerlink" href="#dramkit.chncal.solar_terms.SolarTerms.the_beginning_of_spring" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dramkit.chncal.solar_terms.SolarTerms.the_beginning_of_summer">
+<span class="sig-name descname"><span class="pre">the_beginning_of_summer</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">('the</span> <span class="pre">Beginning</span> <span class="pre">of</span> <span class="pre">Summer',</span> <span class="pre">'立夏')</span></em><a class="headerlink" href="#dramkit.chncal.solar_terms.SolarTerms.the_beginning_of_summer" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dramkit.chncal.solar_terms.SolarTerms.the_beginning_of_winter">
+<span class="sig-name descname"><span class="pre">the_beginning_of_winter</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">('the</span> <span class="pre">Beginning</span> <span class="pre">of</span> <span class="pre">Winter',</span> <span class="pre">'立冬')</span></em><a class="headerlink" href="#dramkit.chncal.solar_terms.SolarTerms.the_beginning_of_winter" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dramkit.chncal.solar_terms.SolarTerms.the_end_of_heat">
+<span class="sig-name descname"><span class="pre">the_end_of_heat</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">('the</span> <span class="pre">End</span> <span class="pre">of</span> <span class="pre">Heat',</span> <span class="pre">'处暑')</span></em><a class="headerlink" href="#dramkit.chncal.solar_terms.SolarTerms.the_end_of_heat" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dramkit.chncal.solar_terms.SolarTerms.the_spring_equinox">
+<span class="sig-name descname"><span class="pre">the_spring_equinox</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">('the</span> <span class="pre">Spring</span> <span class="pre">Equinox',</span> <span class="pre">'春分')</span></em><a class="headerlink" href="#dramkit.chncal.solar_terms.SolarTerms.the_spring_equinox" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dramkit.chncal.solar_terms.SolarTerms.the_summer_solstice">
+<span class="sig-name descname"><span class="pre">the_summer_solstice</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">('the</span> <span class="pre">Summer</span> <span class="pre">Solstice',</span> <span class="pre">'夏至')</span></em><a class="headerlink" href="#dramkit.chncal.solar_terms.SolarTerms.the_summer_solstice" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dramkit.chncal.solar_terms.SolarTerms.the_waking_of_insects">
+<span class="sig-name descname"><span class="pre">the_waking_of_insects</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">('the</span> <span class="pre">Waking</span> <span class="pre">of</span> <span class="pre">Insects',</span> <span class="pre">'惊蛰')</span></em><a class="headerlink" href="#dramkit.chncal.solar_terms.SolarTerms.the_waking_of_insects" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dramkit.chncal.solar_terms.SolarTerms.the_winter_solstice">
+<span class="sig-name descname"><span class="pre">the_winter_solstice</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">('the</span> <span class="pre">Winter</span> <span class="pre">Solstice',</span> <span class="pre">'冬至')</span></em><a class="headerlink" href="#dramkit.chncal.solar_terms.SolarTerms.the_winter_solstice" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dramkit.chncal.solar_terms.SolarTerms.white_dew">
+<span class="sig-name descname"><span class="pre">white_dew</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">('White</span> <span class="pre">Dew',</span> <span class="pre">'白露')</span></em><a class="headerlink" href="#dramkit.chncal.solar_terms.SolarTerms.white_dew" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="dramkit.backpacks.html" class="btn btn-neutral float-left" title="backpacks" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="dramkit.datsci.html" class="btn btn-neutral float-right" title="datsci" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2020-2022, YueYong Hu.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

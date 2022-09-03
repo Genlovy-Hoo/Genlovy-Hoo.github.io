@@ -86,6 +86,16 @@ fintools
 
 .. currentmodule:: finfactory.fintools.fintools
 
+get_merge1min_candle
+^^^^^^^^^^^^^^^^^^^^^
+
+.. autofunction:: finfactory.fintools.fintools.get_merge1min_candle
+
+cal_ir
+^^^^^^^
+
+.. autofunction:: finfactory.fintools.fintools.cal_ir
+
 cal_ic
 ^^^^^^^
 
@@ -256,6 +266,18 @@ cross_cum_maxmin_dif
 
 .. autofunction:: finfactory.fintools.fintools.cross_cum_maxmin_dif
 
+fundnet
+--------
+
+.. automodule:: finfactory.fintools.fundnet
+
+.. currentmodule:: finfactory.fintools.fundnet
+
+get_fundnet
+^^^^^^^^^^^^
+
+.. autofunction:: finfactory.fintools.fundnet.get_fundnet
+
 limit_stock_value
 ------------------
 
@@ -391,11 +413,6 @@ utils_chn
 .. automodule:: finfactory.fintools.utils_chn
 
 .. currentmodule:: finfactory.fintools.utils_chn
-
-get_merge_candle
-^^^^^^^^^^^^^^^^^
-
-.. autofunction:: finfactory.fintools.utils_chn.get_merge_candle
 
 merge_minute_candle
 ^^^^^^^^^^^^^^^^^^^^
@@ -609,10 +626,10 @@ get_gains_act
 
 .. autofunction:: finfactory.fintools.utils_gains.get_gains_act
 
-get_fundnet
-^^^^^^^^^^^^
+get_fundnet0
+^^^^^^^^^^^^^
 
-.. autofunction:: finfactory.fintools.utils_gains.get_fundnet
+.. autofunction:: finfactory.fintools.utils_gains.get_fundnet0
 
 get_gains
 ^^^^^^^^^^

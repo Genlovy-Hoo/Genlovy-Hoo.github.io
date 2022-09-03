@@ -1,0 +1,229 @@
+chncal
+=======
+
+apis
+-----
+
+.. automodule:: dramkit.chncal.apis
+
+.. currentmodule:: dramkit.chncal.apis
+
+is_holiday
+^^^^^^^^^^^
+
+.. autofunction:: dramkit.chncal.apis.is_holiday
+
+is_workday
+^^^^^^^^^^^
+
+.. autofunction:: dramkit.chncal.apis.is_workday
+
+is_in_lieu
+^^^^^^^^^^^
+
+.. autofunction:: dramkit.chncal.apis.is_in_lieu
+
+get_holiday_detail
+^^^^^^^^^^^^^^^^^^^
+
+.. autofunction:: dramkit.chncal.apis.get_holiday_detail
+
+get_dates
+^^^^^^^^^^
+
+.. autofunction:: dramkit.chncal.apis.get_dates
+
+get_holidays
+^^^^^^^^^^^^^
+
+.. autofunction:: dramkit.chncal.apis.get_holidays
+
+get_workdays
+^^^^^^^^^^^^^
+
+.. autofunction:: dramkit.chncal.apis.get_workdays
+
+find_workday
+^^^^^^^^^^^^^
+
+.. autofunction:: dramkit.chncal.apis.find_workday
+
+get_solar_terms
+^^^^^^^^^^^^^^^^
+
+.. autofunction:: dramkit.chncal.apis.get_solar_terms
+
+get_tgdz_year
+^^^^^^^^^^^^^^
+
+.. autofunction:: dramkit.chncal.apis.get_tgdz_year
+
+get_tgdz_date
+^^^^^^^^^^^^^^
+
+.. autofunction:: dramkit.chncal.apis.get_tgdz_date
+
+get_tgdz_hour
+^^^^^^^^^^^^^^
+
+.. autofunction:: dramkit.chncal.apis.get_tgdz_hour
+
+get_bazi
+^^^^^^^^^
+
+.. autofunction:: dramkit.chncal.apis.get_bazi
+
+get_bazi_lunar
+^^^^^^^^^^^^^^^
+
+.. autofunction:: dramkit.chncal.apis.get_bazi_lunar
+
+get_wuxing
+^^^^^^^^^^^
+
+.. autofunction:: dramkit.chncal.apis.get_wuxing
+
+get_wuxing_lunar
+^^^^^^^^^^^^^^^^^
+
+.. autofunction:: dramkit.chncal.apis.get_wuxing_lunar
+
+get_zodiac_match
+^^^^^^^^^^^^^^^^^
+
+.. autofunction:: dramkit.chncal.apis.get_zodiac_match
+
+get_zodiac_match_lunar
+^^^^^^^^^^^^^^^^^^^^^^^
+
+.. autofunction:: dramkit.chncal.apis.get_zodiac_match_lunar
+
+fate_weight
+^^^^^^^^^^^^
+
+.. autofunction:: dramkit.chncal.apis.fate_weight
+
+fate_weight_lunar
+^^^^^^^^^^^^^^^^^^
+
+.. autofunction:: dramkit.chncal.apis.fate_weight_lunar
+
+get_xingzuo
+^^^^^^^^^^^^
+
+.. autofunction:: dramkit.chncal.apis.get_xingzuo
+
+get_recent_workday
+^^^^^^^^^^^^^^^^^^^
+
+.. autofunction:: dramkit.chncal.apis.get_recent_workday
+
+get_next_nth_workday
+^^^^^^^^^^^^^^^^^^^^^
+
+.. autofunction:: dramkit.chncal.apis.get_next_nth_workday
+
+get_work_dates
+^^^^^^^^^^^^^^^
+
+.. autofunction:: dramkit.chncal.apis.get_work_dates
+
+is_tradeday
+^^^^^^^^^^^^
+
+.. autofunction:: dramkit.chncal.apis.is_tradeday
+
+get_recent_tradeday
+^^^^^^^^^^^^^^^^^^^^
+
+.. autofunction:: dramkit.chncal.apis.get_recent_tradeday
+
+get_next_nth_tradeday
+^^^^^^^^^^^^^^^^^^^^^^
+
+.. autofunction:: dramkit.chncal.apis.get_next_nth_tradeday
+
+get_trade_dates
+^^^^^^^^^^^^^^^^
+
+.. autofunction:: dramkit.chncal.apis.get_trade_dates
+
+gen2lun
+^^^^^^^^
+
+.. autofunction:: dramkit.chncal.apis.gen2lun
+
+gen2gz
+^^^^^^^
+
+.. autofunction:: dramkit.chncal.apis.gen2gz
+
+lun2gen
+^^^^^^^^
+
+.. autofunction:: dramkit.chncal.apis.lun2gen
+
+constants
+----------
+
+.. automodule:: dramkit.chncal.constants
+
+.. currentmodule:: dramkit.chncal.constants
+
+Holiday
+^^^^^^^^
+
+.. autoclass:: dramkit.chncal.constants.Holiday
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+constants_atrade
+-----------------
+
+.. automodule:: dramkit.chncal.constants_atrade
+
+.. currentmodule:: dramkit.chncal.constants_atrade
+
+constants_fate
+---------------
+
+.. automodule:: dramkit.chncal.constants_fate
+
+.. currentmodule:: dramkit.chncal.constants_fate
+
+constants_hko
+--------------
+
+.. automodule:: dramkit.chncal.constants_hko
+
+.. currentmodule:: dramkit.chncal.constants_hko
+
+constants_wuxing
+-----------------
+
+.. automodule:: dramkit.chncal.constants_wuxing
+
+.. currentmodule:: dramkit.chncal.constants_wuxing
+
+constants_zodiac_marry
+-----------------------
+
+.. automodule:: dramkit.chncal.constants_zodiac_marry
+
+.. currentmodule:: dramkit.chncal.constants_zodiac_marry
+
+solar_terms
+------------
+
+.. automodule:: dramkit.chncal.solar_terms
+
+.. currentmodule:: dramkit.chncal.solar_terms
+
+SolarTerms
+^^^^^^^^^^^
+
+.. autoclass:: dramkit.chncal.solar_terms.SolarTerms
+    :members:
+    :undoc-members:
+    :show-inheritance:

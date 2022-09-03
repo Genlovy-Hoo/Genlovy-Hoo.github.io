@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Index &mdash; FinFactory 0.0.17 documentation</title>
+  <title>Index &mdash; FinFactory 0.0.18 documentation</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <!--[if lt IE 9]>
@@ -213,6 +213,8 @@
       <li><a href="finfactory.fintools.html#finfactory.fintools.utils_gains.cal_gain_pcts">cal_gain_pcts() (in module finfactory.fintools.utils_gains)</a>
 </li>
       <li><a href="finfactory.fintools.html#finfactory.fintools.fintools.cal_ic">cal_ic() (in module finfactory.fintools.fintools)</a>
+</li>
+      <li><a href="finfactory.fintools.html#finfactory.fintools.fintools.cal_ir">cal_ir() (in module finfactory.fintools.fintools)</a>
 </li>
       <li><a href="finfactory.fintools.html#finfactory.fintools.limit_stock_value.cal_limit_stock_value">cal_limit_stock_value() (in module finfactory.fintools.limit_stock_value)</a>
 </li>
@@ -472,6 +474,13 @@
 
       <ul>
         <li><a href="finfactory.fintools.html#module-finfactory.fintools.fintools">module</a>
+</li>
+      </ul></li>
+      <li>
+    finfactory.fintools.fundnet
+
+      <ul>
+        <li><a href="finfactory.fintools.html#module-finfactory.fintools.fundnet">module</a>
 </li>
       </ul></li>
       <li>
@@ -1044,7 +1053,9 @@
 </li>
       <li><a href="finfactory.get_data.html#finfactory.get_data.tushare_fund_list.get_fund_list">get_fund_list() (in module finfactory.get_data.tushare_fund_list)</a>
 </li>
-      <li><a href="finfactory.fintools.html#finfactory.fintools.utils_gains.get_fundnet">get_fundnet() (in module finfactory.fintools.utils_gains)</a>
+      <li><a href="finfactory.fintools.html#finfactory.fintools.fundnet.get_fundnet">get_fundnet() (in module finfactory.fintools.fundnet)</a>
+</li>
+      <li><a href="finfactory.fintools.html#finfactory.fintools.utils_gains.get_fundnet0">get_fundnet0() (in module finfactory.fintools.utils_gains)</a>
 </li>
       <li><a href="finfactory.get_data.html#finfactory.get_data.tushare_futures_daily.get_future_daily">get_future_daily() (in module finfactory.get_data.tushare_futures_daily)</a>
 </li>
@@ -1074,8 +1085,6 @@
 </li>
       <li><a href="finfactory.options_trader.html#finfactory.options_trader.strategy_target_multiple.OptsTrader.get_hold_cash">get_hold_cash() (finfactory.options_trader.strategy_target_multiple.OptsTrader method)</a>
 </li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="finfactory.options_trader.html#finfactory.options_trader.asset_account.AssetAccount.get_hold_info">get_hold_info() (finfactory.options_trader.asset_account.AssetAccount method)</a>
 </li>
       <li><a href="finfactory.html#finfactory.load_his_data.get_index_code_name_tushare">get_index_code_name_tushare() (in module finfactory.load_his_data)</a>
@@ -1092,6 +1101,8 @@
 </li>
       <li><a href="finfactory.get_data.html#finfactory.get_data.fundex_index_dpe.get_index_pe_daily_cy">get_index_pe_daily_cy() (in module finfactory.get_data.fundex_index_dpe)</a>
 </li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="finfactory.get_data.html#finfactory.get_data.fundex_index_dpe.get_index_pe_daily_his">get_index_pe_daily_his() (in module finfactory.get_data.fundex_index_dpe)</a>
 </li>
       <li><a href="finfactory.utils.html#finfactory.utils.utils_crypto.get_klines_ccxt">get_klines_ccxt() (in module finfactory.utils.utils_crypto)</a>
@@ -1114,7 +1125,7 @@
 </li>
       <li><a href="finfactory.fintools.html#finfactory.fintools.utils_gains.get_mean_cost">get_mean_cost() (in module finfactory.fintools.utils_gains)</a>
 </li>
-      <li><a href="finfactory.fintools.html#finfactory.fintools.utils_chn.get_merge_candle">get_merge_candle() (in module finfactory.fintools.utils_chn)</a>
+      <li><a href="finfactory.fintools.html#finfactory.fintools.fintools.get_merge1min_candle">get_merge1min_candle() (in module finfactory.fintools.fintools)</a>
 </li>
       <li><a href="finfactory.fintools.html#finfactory.fintools.utils_gains.get_netval_prod">get_netval_prod() (in module finfactory.fintools.utils_gains)</a>
 </li>
@@ -1139,6 +1150,42 @@
       <li><a href="finfactory.options_trader.html#finfactory.options_trader.asset_account.AssetAccount.get_opts_settle">get_opts_settle() (finfactory.options_trader.asset_account.AssetAccount static method)</a>
 </li>
       <li><a href="finfactory.options_trader.html#finfactory.options_trader.asset_account.AssetAccount.get_opts_val_daily">get_opts_val_daily() (finfactory.options_trader.asset_account.AssetAccount static method)</a>
+</li>
+      <li><a href="finfactory.html#finfactory.load_his_data.get_path_astocks_list_tushare">get_path_astocks_list_tushare() (in module finfactory.load_his_data)</a>
+</li>
+      <li><a href="finfactory.html#finfactory.load_his_data.get_path_ccxt_daily">get_path_ccxt_daily() (in module finfactory.load_his_data)</a>
+</li>
+      <li><a href="finfactory.html#finfactory.load_his_data.get_path_ccxt_minute">get_path_ccxt_minute() (in module finfactory.load_his_data)</a>
+</li>
+      <li><a href="finfactory.html#finfactory.load_his_data.get_path_cffex_lhb_future">get_path_cffex_lhb_future() (in module finfactory.load_his_data)</a>
+</li>
+      <li><a href="finfactory.html#finfactory.load_his_data.get_path_chn_bond_yields">get_path_chn_bond_yields() (in module finfactory.load_his_data)</a>
+</li>
+      <li><a href="finfactory.html#finfactory.load_his_data.get_path_fund_daily_tushare">get_path_fund_daily_tushare() (in module finfactory.load_his_data)</a>
+</li>
+      <li><a href="finfactory.html#finfactory.load_his_data.get_path_future_daily_ex_tushare">get_path_future_daily_ex_tushare() (in module finfactory.load_his_data)</a>
+</li>
+      <li><a href="finfactory.html#finfactory.load_his_data.get_path_future_daily_tushare">get_path_future_daily_tushare() (in module finfactory.load_his_data)</a>
+</li>
+      <li><a href="finfactory.html#finfactory.load_his_data.get_path_future_mindgo">get_path_future_mindgo() (in module finfactory.load_his_data)</a>
+</li>
+      <li><a href="finfactory.html#finfactory.load_his_data.get_path_futures_info_tushare">get_path_futures_info_tushare() (in module finfactory.load_his_data)</a>
+</li>
+      <li><a href="finfactory.html#finfactory.load_his_data.get_path_index_daily_basic_tushare">get_path_index_daily_basic_tushare() (in module finfactory.load_his_data)</a>
+</li>
+      <li><a href="finfactory.html#finfactory.load_his_data.get_path_index_daily_tushare">get_path_index_daily_tushare() (in module finfactory.load_his_data)</a>
+</li>
+      <li><a href="finfactory.html#finfactory.load_his_data.get_path_index_info_tushare">get_path_index_info_tushare() (in module finfactory.load_his_data)</a>
+</li>
+      <li><a href="finfactory.html#finfactory.load_his_data.get_path_index_joinquant">get_path_index_joinquant() (in module finfactory.load_his_data)</a>
+</li>
+      <li><a href="finfactory.html#finfactory.load_his_data.get_path_options_daily_ex_tushare">get_path_options_daily_ex_tushare() (in module finfactory.load_his_data)</a>
+</li>
+      <li><a href="finfactory.html#finfactory.load_his_data.get_path_options_info_tushare">get_path_options_info_tushare() (in module finfactory.load_his_data)</a>
+</li>
+      <li><a href="finfactory.html#finfactory.load_his_data.get_path_stock_daily_tushare">get_path_stock_daily_tushare() (in module finfactory.load_his_data)</a>
+</li>
+      <li><a href="finfactory.html#finfactory.load_his_data.get_path_trade_dates_tushare">get_path_trade_dates_tushare() (in module finfactory.load_his_data)</a>
 </li>
       <li><a href="finfactory.options_trader.html#finfactory.options_trader.strategy_target_multiple.OptsTrader.get_price_most_close_opts">get_price_most_close_opts() (finfactory.options_trader.strategy_target_multiple.OptsTrader static method)</a>
 </li>
@@ -1339,7 +1386,11 @@
       <li><a href="finfactory.fintools.html#finfactory.fintools.fintools.mean_candle">mean_candle() (in module finfactory.fintools.fintools)</a>
 </li>
       <li><a href="finfactory.fintools.html#finfactory.fintools.utils_chn.merge_minute_candle">merge_minute_candle() (in module finfactory.fintools.utils_chn)</a>
+
+      <ul>
+        <li><a href="finfactory.utils.html#finfactory.utils.utils_crypto.merge_minute_candle">(in module finfactory.utils.utils_crypto)</a>
 </li>
+      </ul></li>
       <li>
     module
 
@@ -1359,6 +1410,8 @@
         <li><a href="finfactory.fintools.html#module-finfactory.fintools.fac_bolls">finfactory.fintools.fac_bolls</a>
 </li>
         <li><a href="finfactory.fintools.html#module-finfactory.fintools.fintools">finfactory.fintools.fintools</a>
+</li>
+        <li><a href="finfactory.fintools.html#module-finfactory.fintools.fundnet">finfactory.fintools.fundnet</a>
 </li>
         <li><a href="finfactory.fintools.html#module-finfactory.fintools.limit_stock_value">finfactory.fintools.limit_stock_value</a>
 </li>

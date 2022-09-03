@@ -7,6 +7,7 @@ Welcome to DramKit's documentation!
 
    dramkit <dramkit>
    backpacks <dramkit.backpacks>
+   chncal <dramkit.chncal>
    datsci <dramkit.datsci>
    find_addends <dramkit.find_addends>
    logtools <dramkit.logtools>

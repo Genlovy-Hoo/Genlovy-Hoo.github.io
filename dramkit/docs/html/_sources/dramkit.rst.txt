@@ -28,6 +28,11 @@ datetime_now
 
 .. autofunction:: dramkit.datetimetools.datetime_now
 
+time_add
+^^^^^^^^^
+
+.. autofunction:: dramkit.datetimetools.time_add
+
 get_date_format
 ^^^^^^^^^^^^^^^^
 

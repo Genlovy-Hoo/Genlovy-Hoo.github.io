@@ -45,6 +45,11 @@ find_paths_year
 
 .. autofunction:: finfactory.load_his_data.find_paths_year
 
+get_path_ccxt_daily
+^^^^^^^^^^^^^^^^^^^^
+
+.. autofunction:: finfactory.load_his_data.get_path_ccxt_daily
+
 load_ccxt_daily
 ^^^^^^^^^^^^^^^^
 
@@ -65,15 +70,30 @@ load_daily_crypto_usdt
 
 .. autofunction:: finfactory.load_his_data.load_daily_crypto_usdt
 
+get_path_ccxt_minute
+^^^^^^^^^^^^^^^^^^^^^
+
+.. autofunction:: finfactory.load_his_data.get_path_ccxt_minute
+
 load_ccxt_minute
 ^^^^^^^^^^^^^^^^^
 
 .. autofunction:: finfactory.load_his_data.load_ccxt_minute
 
+get_path_trade_dates_tushare
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. autofunction:: finfactory.load_his_data.get_path_trade_dates_tushare
+
 load_trade_dates_tushare
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. autofunction:: finfactory.load_his_data.load_trade_dates_tushare
+
+get_path_index_info_tushare
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. autofunction:: finfactory.load_his_data.get_path_index_info_tushare
 
 load_index_info_tushare
 ^^^^^^^^^^^^^^^^^^^^^^^^
@@ -95,20 +115,40 @@ find_index_code_tushare
 
 .. autofunction:: finfactory.load_his_data.find_index_code_tushare
 
+get_path_index_daily_tushare
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. autofunction:: finfactory.load_his_data.get_path_index_daily_tushare
+
 load_index_daily_tushare
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. autofunction:: finfactory.load_his_data.load_index_daily_tushare
+
+get_path_index_daily_basic_tushare
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. autofunction:: finfactory.load_his_data.get_path_index_daily_basic_tushare
 
 load_index_daily_basic_tushare
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. autofunction:: finfactory.load_his_data.load_index_daily_basic_tushare
 
+get_path_index_joinquant
+^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. autofunction:: finfactory.load_his_data.get_path_index_joinquant
+
 load_index_joinquant
 ^^^^^^^^^^^^^^^^^^^^^
 
 .. autofunction:: finfactory.load_his_data.load_index_joinquant
+
+get_path_astocks_list_tushare
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. autofunction:: finfactory.load_his_data.get_path_astocks_list_tushare
 
 load_astocks_list_tushare
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -120,20 +160,40 @@ find_stocks_code_tushare
 
 .. autofunction:: finfactory.load_his_data.find_stocks_code_tushare
 
+get_path_stock_daily_tushare
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. autofunction:: finfactory.load_his_data.get_path_stock_daily_tushare
+
 load_stock_daily_tushare
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. autofunction:: finfactory.load_his_data.load_stock_daily_tushare
+
+get_path_chn_bond_yields
+^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. autofunction:: finfactory.load_his_data.get_path_chn_bond_yields
 
 load_chn_bond_yields
 ^^^^^^^^^^^^^^^^^^^^^
 
 .. autofunction:: finfactory.load_his_data.load_chn_bond_yields
 
+get_path_cffex_lhb_future
+^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. autofunction:: finfactory.load_his_data.get_path_cffex_lhb_future
+
 load_cffex_lhb_future
 ^^^^^^^^^^^^^^^^^^^^^^
 
 .. autofunction:: finfactory.load_his_data.load_cffex_lhb_future
+
+get_path_futures_info_tushare
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. autofunction:: finfactory.load_his_data.get_path_futures_info_tushare
 
 load_futures_info_tushare
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -150,25 +210,50 @@ find_futures_code_tushare
 
 .. autofunction:: finfactory.load_his_data.find_futures_code_tushare
 
+get_path_future_daily_ex_tushare
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. autofunction:: finfactory.load_his_data.get_path_future_daily_ex_tushare
+
 load_future_daily_ex_tushare
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. autofunction:: finfactory.load_his_data.load_future_daily_ex_tushare
+
+get_path_future_daily_tushare
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. autofunction:: finfactory.load_his_data.get_path_future_daily_tushare
 
 load_future_daily_tushare
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. autofunction:: finfactory.load_his_data.load_future_daily_tushare
 
+get_path_future_mindgo
+^^^^^^^^^^^^^^^^^^^^^^^
+
+.. autofunction:: finfactory.load_his_data.get_path_future_mindgo
+
 load_future_mindgo
 ^^^^^^^^^^^^^^^^^^^
 
 .. autofunction:: finfactory.load_his_data.load_future_mindgo
 
+get_path_options_info_tushare
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. autofunction:: finfactory.load_his_data.get_path_options_info_tushare
+
 load_options_info_tushare
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. autofunction:: finfactory.load_his_data.load_options_info_tushare
+
+get_path_options_daily_ex_tushare
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. autofunction:: finfactory.load_his_data.get_path_options_daily_ex_tushare
 
 load_options_daily_ex_tushare
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -179,6 +264,11 @@ load_options_daily_tushare
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. autofunction:: finfactory.load_his_data.load_options_daily_tushare
+
+get_path_fund_daily_tushare
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. autofunction:: finfactory.load_his_data.get_path_fund_daily_tushare
 
 load_fund_daily_tushare
 ^^^^^^^^^^^^^^^^^^^^^^^^

@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>fintools &mdash; FinFactory 0.0.17 documentation</title>
+  <title>fintools &mdash; FinFactory 0.0.18 documentation</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <!--[if lt IE 9]>
@@ -66,6 +66,8 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#id2">fintools</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#get-merge1min-candle">get_merge1min_candle</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#cal-ir">cal_ir</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#cal-ic">cal_ic</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#kelly-formula">kelly_formula</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#sim-mc">sim_mc</a></li>
@@ -102,6 +104,10 @@
 <li class="toctree-l3"><a class="reference internal" href="#cross-cum-maxmin-dif">cross_cum_maxmin_dif</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="#module-finfactory.fintools.fundnet">fundnet</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#get-fundnet">get_fundnet</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="#module-finfactory.fintools.limit_stock_value">limit_stock_value</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#app">app</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#cal-limit-stock-value">cal_limit_stock_value</a></li>
@@ -134,7 +140,6 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#module-finfactory.fintools.utils_chn">utils_chn</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#get-merge-candle">get_merge_candle</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#merge-minute-candle">merge_minute_candle</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#get-finreport-date-by-delta">get_finreport_date_by_delta</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#get-last-effect-finreport-dates">get_last_effect_finreport_dates</a></li>
@@ -179,7 +184,7 @@
 <li class="toctree-l3"><a class="reference internal" href="#get-netval-sum">get_netval_sum</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#cal-pct-by-cost-gain">cal_pct_by_cost_gain</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#get-gains-act">get_gains_act</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#get-fundnet">get_fundnet</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#get-fundnet0">get_fundnet0</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#get-gains">get_gains</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#plot-gain-act">plot_gain_act</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#plot-gain-prod">plot_gain_prod</a></li>
@@ -481,7 +486,35 @@ pd.DataFrame.ewm中对应参数的方法计算a；</div>
 </section>
 <section id="id2">
 <h2>fintools<a class="headerlink" href="#id2" title="Permalink to this headline"></a></h2>
-<span class="target" id="module-finfactory.fintools.fintools"></span><section id="cal-ic">
+<span class="target" id="module-finfactory.fintools.fintools"></span><section id="get-merge1min-candle">
+<h3>get_merge1min_candle<a class="headerlink" href="#get-merge1min-candle" title="Permalink to this headline"></a></h3>
+<dl class="py function">
+<dt class="sig sig-object py" id="finfactory.fintools.fintools.get_merge1min_candle">
+<span class="sig-prename descclassname"><span class="pre">finfactory.fintools.fintools.</span></span><span class="sig-name descname"><span class="pre">get_merge1min_candle</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">df1m</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">func_merge</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">50</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">new_freq</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">15</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs_merge</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#finfactory.fintools.fintools.get_merge1min_candle" title="Permalink to this definition"></a></dt>
+<dd><div class="line-block">
+<div class="line">用1分钟K线合成更低频K线</div>
+<div class="line">func_merge为用1分钟K先合成低频K线的函数，其接收new_freq和kwargs_merge参数</div>
+</div>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">finfactory.load_his_data</span> <span class="kn">import</span> <span class="n">load_index_joinquant</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">df1m</span> <span class="o">=</span> <span class="n">load_index_joinquant</span><span class="p">(</span><span class="s1">&#39;000300&#39;</span><span class="p">,</span> <span class="s1">&#39;1min&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">df1m</span> <span class="o">=</span> <span class="n">df1m</span><span class="p">[</span><span class="n">df1m</span><span class="p">[</span><span class="s1">&#39;time&#39;</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="s1">&#39;2022-08-24 11:09:00&#39;</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">finfactory.fintools.utils_chn</span> <span class="kn">import</span> <span class="n">merge_minute_candle</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">df</span> <span class="o">=</span> <span class="n">get_merge1min_candle</span><span class="p">(</span><span class="n">df1m</span><span class="p">,</span> <span class="n">merge_minute_candle</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</section>
+<section id="cal-ir">
+<h3>cal_ir<a class="headerlink" href="#cal-ir" title="Permalink to this headline"></a></h3>
+<dl class="py function">
+<dt class="sig sig-object py" id="finfactory.fintools.fintools.cal_ir">
+<span class="sig-prename descclassname"><span class="pre">finfactory.fintools.fintools.</span></span><span class="sig-name descname"><span class="pre">cal_ir</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#finfactory.fintools.fintools.cal_ir" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</section>
+<section id="cal-ic">
 <h3>cal_ic<a class="headerlink" href="#cal-ic" title="Permalink to this headline"></a></h3>
 <dl class="py function">
 <dt class="sig sig-object py" id="finfactory.fintools.fintools.cal_ic">
@@ -1004,6 +1037,70 @@ pd.DataFrame.ewm中对应参数的方法计算a；</div>
 <dt class="sig sig-object py" id="finfactory.fintools.fintools.cross_cum_maxmin_dif">
 <span class="sig-prename descclassname"><span class="pre">finfactory.fintools.fintools.</span></span><span class="sig-name descname"><span class="pre">cross_cum_maxmin_dif</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">col</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rlag</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">thr_rmax2now</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">thr_rmin2now</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">col_price</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'close'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">buy_sig</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sel_sig</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">-</span> <span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">plot</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kwargs_plot</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">{}</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#finfactory.fintools.fintools.cross_cum_maxmin_dif" title="Permalink to this definition"></a></dt>
 <dd><p>依据指标值与滚动最大最小值的差值绝对大小来生成信号</p>
+</dd></dl>
+
+</section>
+</section>
+<section id="module-finfactory.fintools.fundnet">
+<span id="fundnet"></span><h2>fundnet<a class="headerlink" href="#module-finfactory.fintools.fundnet" title="Permalink to this headline"></a></h2>
+<section id="get-fundnet">
+<h3>get_fundnet<a class="headerlink" href="#get-fundnet" title="Permalink to this headline"></a></h3>
+<dl class="py function">
+<dt class="sig sig-object py" id="finfactory.fintools.fundnet.get_fundnet">
+<span class="sig-prename descclassname"><span class="pre">finfactory.fintools.fundnet.</span></span><span class="sig-name descname"><span class="pre">get_fundnet</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">df_settle</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">when_in</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">when_out</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">outtype</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">intype</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">restart</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#finfactory.fintools.fundnet.get_fundnet" title="Permalink to this definition"></a></dt>
+<dd><p>用基金净值法根据转入转出和资产总值记录计算净值</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>df_settle</strong> (<em>pd.DataFrame</em>) – 须包含列[‘转入’, ‘转出’, ‘资产总值’]三列</p></li>
+<li><p><strong>when_in</strong> (<em>str</em><em>, </em><em>None</em>) – <div class="line-block">
+<div class="line">列用于指定当期转入计算份额时使用的净值对应的时间:</div>
+<div class="line-block">
+<div class="line">若为’before’，表示转入发生在当天净值结算之前（计算增减份额用前一期净值）</div>
+<div class="line">若为’after’，表示转入发生在当天净值结算之后（计算增减份额用结算之后的净值）</div>
+<div class="line">若为’when’，在df_settle中通过’when’列指定，’when’列的值只能为’before’或’after’</div>
+<div class="line">若为None，当转入大于等于转出时设置为’before’，当转出大于转入时设置为’after’</div>
+</div>
+</div>
+</p></li>
+<li><p><strong>when_out</strong> (<em>str</em><em>, </em><em>None</em>) – <div class="line-block">
+<div class="line">列用于指定当期转出计算份额时使用的净值对应的时间，格式同: <code class="docutils literal notranslate"><span class="pre">when_in</span></code></div>
+</div>
+</p></li>
+<li><p><strong>outtype</strong> (<em>int</em><em>, </em><em>str</em>) – <div class="line-block">
+<div class="line">用于设置资金转出类型:</div>
+<div class="line-block">
+<div class="line">若为1，表示份额赎回</div>
+<div class="line">若为2，表示净值分红</div>
+<div class="line">若为3，表示成本损耗</div>
+<div class="line">若为4，表示忽略</div>
+<div class="line">若为’outtype’，则在df_settle中通过’outtype列’设置，该列值只能为1, 2, 3, 4</div>
+</div>
+<div class="line">赎回和分红在计算累计净值时要加入，损耗和忽略不加入</div>
+</div>
+</p></li>
+<li><p><strong>intype</strong> (<em>int</em><em>, </em><em>str</em>) – <div class="line-block">
+<div class="line">用于设置资金转入用途类型:</div>
+<div class="line-block">
+<div class="line">若为1，表示增加份额</div>
+<div class="line">若为2，表示增加净值</div>
+</div>
+</div>
+</p></li>
+<li><p><strong>restart</strong> (<em>boll</em><em>, </em><em>str</em>) – <div class="line-block">
+<div class="line">用于指定策略净值重启:</div>
+<div class="line-block">
+<div class="line">若为False，表示不考虑重启</div>
+<div class="line">若为’restart’，则df_settle中须有’restart’列，该列为1表示重启</div>
+</div>
+</div>
+</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><cite>pd.DataFrame</cite> - 包含[‘新增份额’, ‘份额’, ‘净值’, ‘累计净值’]</p>
+</dd>
+</dl>
 </dd></dl>
 
 </section>
@@ -1633,36 +1730,34 @@ pd.DataFrame.ewm中对应参数的方法计算a；</div>
 </section>
 <section id="module-finfactory.fintools.utils_chn">
 <span id="utils-chn"></span><h2>utils_chn<a class="headerlink" href="#module-finfactory.fintools.utils_chn" title="Permalink to this headline"></a></h2>
-<section id="get-merge-candle">
-<h3>get_merge_candle<a class="headerlink" href="#get-merge-candle" title="Permalink to this headline"></a></h3>
-<dl class="py function">
-<dt class="sig sig-object py" id="finfactory.fintools.utils_chn.get_merge_candle">
-<span class="sig-prename descclassname"><span class="pre">finfactory.fintools.utils_chn.</span></span><span class="sig-name descname"><span class="pre">get_merge_candle</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">df1m</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">50</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">new_freq</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">15</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs_merge</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#finfactory.fintools.utils_chn.get_merge_candle" title="Permalink to this definition"></a></dt>
-<dd><p>根据分钟K线合成更低频K线</p>
-<p class="rubric">Examples</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">finfactory.load_his_data</span> <span class="kn">import</span> <span class="n">load_index_joinquant</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">df1m</span> <span class="o">=</span> <span class="n">load_index_joinquant</span><span class="p">(</span><span class="s1">&#39;000300&#39;</span><span class="p">,</span> <span class="s1">&#39;1min&#39;</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">df1m</span> <span class="o">=</span> <span class="n">df1m</span><span class="p">[</span><span class="n">df1m</span><span class="p">[</span><span class="s1">&#39;time&#39;</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="s1">&#39;2022-08-24 11:09:00&#39;</span><span class="p">]</span>
-<span class="go"># &gt;&gt;&gt; df1m = df1m[df1m[&#39;time&#39;] &gt;= &#39;2022-08-22 09:33:00&#39;]</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">df</span> <span class="o">=</span> <span class="n">get_merge_candle</span><span class="p">(</span><span class="n">df1m</span><span class="p">)</span>
-</pre></div>
-</div>
-</dd></dl>
-
-</section>
 <section id="merge-minute-candle">
 <h3>merge_minute_candle<a class="headerlink" href="#merge-minute-candle" title="Permalink to this headline"></a></h3>
 <dl class="py function">
 <dt class="sig sig-object py" id="finfactory.fintools.utils_chn.merge_minute_candle">
-<span class="sig-prename descclassname"><span class="pre">finfactory.fintools.utils_chn.</span></span><span class="sig-name descname"><span class="pre">merge_minute_candle</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">new_freq</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">30</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cols_sum</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">time_trans</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#finfactory.fintools.utils_chn.merge_minute_candle" title="Permalink to this definition"></a></dt>
+<span class="sig-prename descclassname"><span class="pre">finfactory.fintools.utils_chn.</span></span><span class="sig-name descname"><span class="pre">merge_minute_candle</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">new_freq</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">30</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cols_sum</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tstart</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">time_trans</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#finfactory.fintools.utils_chn.merge_minute_candle" title="Permalink to this definition"></a></dt>
 <dd><div class="line-block">
 <div class="line">用一分钟K线合成更低频分钟K线</div>
 <div class="line">new_freq指定合成的频率，必须能被240整除</div>
-<div class="line">data时间列必须为time且时间为每个K线的结束时间</div>
 <div class="line">data中必须包含[‘time’, ‘open’, ‘close’, ‘high’, ‘low’]</div>
 <div class="line">cols_sum为求和字段，如可指定成交量’volume’或成交额’value’等</div>
+<div class="line">tstart设置time列是否为K先开始时间，默认视为结束时间</div>
 <div class="line">若data中的time列格式不为’%Y-%m-%d %H:%M:%S’格式，应将time_trans设置为True</div>
 <div class="line">注：只适用于A股交易时间：上午09:30——11:30下午13:00——15:00</div>
+</div>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">finfactory.load_his_data</span> <span class="kn">import</span> <span class="n">load_index_joinquant</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">df1m</span> <span class="o">=</span> <span class="n">load_index_joinquant</span><span class="p">(</span><span class="s1">&#39;000300&#39;</span><span class="p">,</span> <span class="s1">&#39;1min&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">df1m</span> <span class="o">=</span> <span class="n">df1m</span><span class="p">[</span><span class="n">df1m</span><span class="p">[</span><span class="s1">&#39;time&#39;</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="s1">&#39;2022-08-24 11:09:00&#39;</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">c1</span> <span class="o">=</span> <span class="n">merge_minute_candle</span><span class="p">(</span><span class="n">df1m</span><span class="p">,</span> <span class="n">cols_sum</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;volume&#39;</span><span class="p">],</span>
+<span class="go">                             tstart=False)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">c2</span> <span class="o">=</span> <span class="n">merge_minute_candle</span><span class="p">(</span><span class="n">df1m</span><span class="p">,</span> <span class="n">cols_sum</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;volume&#39;</span><span class="p">],</span>
+<span class="go">                             tstart=True)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">datetime</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">tdelta</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">timedelta</span><span class="p">(</span><span class="n">seconds</span><span class="o">=-</span><span class="mi">60</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">df1m</span><span class="p">[</span><span class="s1">&#39;time&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">df1m</span><span class="p">[</span><span class="s1">&#39;time&#39;</span><span class="p">])</span> <span class="o">+</span> <span class="n">tdelta</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">c3</span> <span class="o">=</span> <span class="n">merge_minute_candle</span><span class="p">(</span><span class="n">df1m</span><span class="p">,</span> <span class="n">cols_sum</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;volume&#39;</span><span class="p">],</span>
+<span class="go">                             tstart=True, time_trans=True)</span>
+</pre></div>
 </div>
 </dd></dl>
 
@@ -2446,11 +2541,11 @@ pd.DataFrame.ewm中对应参数的方法计算a；</div>
 </dd></dl>
 
 </section>
-<section id="get-fundnet">
-<h3>get_fundnet<a class="headerlink" href="#get-fundnet" title="Permalink to this headline"></a></h3>
+<section id="get-fundnet0">
+<h3>get_fundnet0<a class="headerlink" href="#get-fundnet0" title="Permalink to this headline"></a></h3>
 <dl class="py function">
-<dt class="sig sig-object py" id="finfactory.fintools.utils_gains.get_fundnet">
-<span class="sig-prename descclassname"><span class="pre">finfactory.fintools.utils_gains.</span></span><span class="sig-name descname"><span class="pre">get_fundnet</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">df_settle</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">when</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'before'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">restart</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#finfactory.fintools.utils_gains.get_fundnet" title="Permalink to this definition"></a></dt>
+<dt class="sig sig-object py" id="finfactory.fintools.utils_gains.get_fundnet0">
+<span class="sig-prename descclassname"><span class="pre">finfactory.fintools.utils_gains.</span></span><span class="sig-name descname"><span class="pre">get_fundnet0</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">df_settle</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">when</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'before'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">restart</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#finfactory.fintools.utils_gains.get_fundnet0" title="Permalink to this definition"></a></dt>
 <dd><p>用基金净值法根据转入转出和资产总值记录计算净值</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -2479,7 +2574,7 @@ pd.DataFrame.ewm中对应参数的方法计算a；</div>
 <h3>get_gains<a class="headerlink" href="#get-gains" title="Permalink to this headline"></a></h3>
 <dl class="py function">
 <dt class="sig sig-object py" id="finfactory.fintools.utils_gains.get_gains">
-<span class="sig-prename descclassname"><span class="pre">finfactory.fintools.utils_gains.</span></span><span class="sig-name descname"><span class="pre">get_gains</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">df_settle</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gain_types</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">['act',</span> <span class="pre">'fundnet']</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">when</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">restart</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">act_gain_pct_method</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#finfactory.fintools.utils_gains.get_gains" title="Permalink to this definition"></a></dt>
+<span class="sig-prename descclassname"><span class="pre">finfactory.fintools.utils_gains.</span></span><span class="sig-name descname"><span class="pre">get_gains</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">df_settle</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gain_types</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">['act',</span> <span class="pre">'fundnet']</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">when</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">restart</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">act_gain_pct_method</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">when_in</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">when_out</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">outtype</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">intype</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fundnet_func</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#finfactory.fintools.utils_gains.get_gains" title="Permalink to this definition"></a></dt>
 <dd><div class="line-block">
 <div class="line">不同类型的盈亏情况统计</div>
 <div class="line">gain_types为累计收益计算方法，可选：</div>
