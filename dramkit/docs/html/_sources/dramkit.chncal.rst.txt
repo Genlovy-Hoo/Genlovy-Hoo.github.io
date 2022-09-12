@@ -163,6 +163,11 @@ lun2gen
 
 .. autofunction:: dramkit.chncal.apis.lun2gen
 
+get_age_by_suxing
+^^^^^^^^^^^^^^^^^^
+
+.. autofunction:: dramkit.chncal.apis.get_age_by_suxing
+
 constants
 ----------
 

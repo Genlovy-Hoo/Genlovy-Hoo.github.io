@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>datsci &mdash; DramKit 0.3.12 documentation</title>
+  <title>datsci &mdash; DramKit 0.3.14 documentation</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <!--[if lt IE 9]>
@@ -133,6 +133,8 @@
 <li class="toctree-l3"><a class="reference internal" href="#scale-skl">scale_skl</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#scale-skl-inverse">scale_skl_inverse</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#get-miss-rate">get_miss_rate</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#drop-miss-feature">drop_miss_feature</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#drop-miss-sample">drop_miss_sample</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#fillna-ma">fillna_ma</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#fillna-by-mean">fillna_by_mean</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#fillna-by-median">fillna_by_median</a></li>
@@ -266,6 +268,7 @@
 <li class="toctree-l1"><a class="reference internal" href="dramkit.speedup.html">speedup</a></li>
 <li class="toctree-l1"><a class="reference internal" href="dramkit.sqltools.html">sqltools</a></li>
 <li class="toctree-l1"><a class="reference internal" href="dramkit.webtools.html">webtools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dramkit.wechat.html">wechat</a></li>
 </ul>
 
         </div>
@@ -1562,6 +1565,27 @@ joiner设置项集元素之间的文本连接符</p>
 <div class="admonition-todo admonition" id="id7">
 <p class="admonition-title">Todo</p>
 <p>cols可为str，指定单列，返回单个值</p>
+</div>
+</dd></dl>
+
+</section>
+<section id="drop-miss-feature">
+<h3>drop_miss_feature<a class="headerlink" href="#drop-miss-feature" title="Permalink to this headline"></a></h3>
+<dl class="py function">
+<dt class="sig sig-object py" id="dramkit.datsci.preprocess.drop_miss_feature">
+<span class="sig-prename descclassname"><span class="pre">dramkit.datsci.preprocess.</span></span><span class="sig-name descname"><span class="pre">drop_miss_feature</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cols</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">thre</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.8</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.datsci.preprocess.drop_miss_feature" title="Permalink to this definition"></a></dt>
+<dd><p>删除缺失率大于thre的列</p>
+</dd></dl>
+
+</section>
+<section id="drop-miss-sample">
+<h3>drop_miss_sample<a class="headerlink" href="#drop-miss-sample" title="Permalink to this headline"></a></h3>
+<dl class="py function">
+<dt class="sig sig-object py" id="dramkit.datsci.preprocess.drop_miss_sample">
+<span class="sig-prename descclassname"><span class="pre">dramkit.datsci.preprocess.</span></span><span class="sig-name descname"><span class="pre">drop_miss_sample</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">thre</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.5</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.datsci.preprocess.drop_miss_sample" title="Permalink to this definition"></a></dt>
+<dd><div class="line-block">
+<div class="line">删除数据缺失率大于thre的样本（行）</div>
+<div class="line">注：应保证data.index是唯一的</div>
 </div>
 </dd></dl>
 
@@ -3156,11 +3180,12 @@ pandas.DataFrame中设置为.astype(‘category’)</div>
 <h3>lgb_predict<a class="headerlink" href="#lgb-predict" title="Permalink to this headline"></a></h3>
 <dl class="py function">
 <dt class="sig sig-object py" id="dramkit.datsci.utils_lgb.lgb_predict">
-<span class="sig-prename descclassname"><span class="pre">dramkit.datsci.utils_lgb.</span></span><span class="sig-name descname"><span class="pre">lgb_predict</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mdl</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">X</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p_cut</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.5</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.datsci.utils_lgb.lgb_predict" title="Permalink to this definition"></a></dt>
+<span class="sig-prename descclassname"><span class="pre">dramkit.datsci.utils_lgb.</span></span><span class="sig-name descname"><span class="pre">lgb_predict</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mdl</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">X</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p_cut</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.5</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rate1</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.datsci.utils_lgb.lgb_predict" title="Permalink to this definition"></a></dt>
 <dd><div class="line-block">
 <div class="line">lgb模型预测</div>
 <div class="line">mdl为训练好的模型或本地模型路径，X为待预测输入</div>
 <div class="line">p_cut为二分类确定标签时的概率切分点</div>
+<div class="line">rate1为二分类确定标签时为1的比例</div>
 </div>
 </dd></dl>
 

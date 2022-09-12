@@ -1,84 +1,6 @@
 fintools
 =========
 
-ahr999
--------
-
-.. automodule:: finfactory.fintools.ahr999
-
-.. currentmodule:: finfactory.fintools.ahr999
-
-get_ahr999
-^^^^^^^^^^^
-
-.. autofunction:: finfactory.fintools.ahr999.get_ahr999
-
-barra
-------
-
-.. automodule:: finfactory.fintools.barra
-
-.. currentmodule:: finfactory.fintools.barra
-
-get_exp_decay_weight
-^^^^^^^^^^^^^^^^^^^^^
-
-.. autofunction:: finfactory.fintools.barra.get_exp_decay_weight
-
-get_regression_beta
-^^^^^^^^^^^^^^^^^^^^
-
-.. autofunction:: finfactory.fintools.barra.get_regression_beta
-
-size
-^^^^^
-
-.. autofunction:: finfactory.fintools.barra.size
-
-get_barra_beta
-^^^^^^^^^^^^^^^
-
-.. autofunction:: finfactory.fintools.barra.get_barra_beta
-
-candle_similar
----------------
-
-.. automodule:: finfactory.fintools.candle_similar
-
-.. currentmodule:: finfactory.fintools.candle_similar
-
-candle_similar
-^^^^^^^^^^^^^^^
-
-.. autofunction:: finfactory.fintools.candle_similar.candle_similar
-
-fac_bolls
-----------
-
-.. automodule:: finfactory.fintools.fac_bolls
-
-.. currentmodule:: finfactory.fintools.fac_bolls
-
-boll_label_uplow
-^^^^^^^^^^^^^^^^^
-
-.. autofunction:: finfactory.fintools.fac_bolls.boll_label_uplow
-
-boll_label_uplow_cross
-^^^^^^^^^^^^^^^^^^^^^^^
-
-.. autofunction:: finfactory.fintools.fac_bolls.boll_label_uplow_cross
-
-get_boll_label_uplow
-^^^^^^^^^^^^^^^^^^^^^
-
-.. autofunction:: finfactory.fintools.fac_bolls.get_boll_label_uplow
-
-get_boll_label_uplow_cross
-^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-.. autofunction:: finfactory.fintools.fac_bolls.get_boll_label_uplow_cross
-
 fintools
 ---------
 
@@ -278,23 +200,6 @@ get_fundnet
 
 .. autofunction:: finfactory.fintools.fundnet.get_fundnet
 
-limit_stock_value
-------------------
-
-.. automodule:: finfactory.fintools.limit_stock_value
-
-.. currentmodule:: finfactory.fintools.limit_stock_value
-
-app
-^^^^
-
-.. autofunction:: finfactory.fintools.limit_stock_value.app
-
-cal_limit_stock_value
-^^^^^^^^^^^^^^^^^^^^^^
-
-.. autofunction:: finfactory.fintools.limit_stock_value.cal_limit_stock_value
-
 options
 --------
 
@@ -383,29 +288,6 @@ get_aligned_data
 ^^^^^^^^^^^^^^^^^
 
 .. autofunction:: finfactory.fintools.report_date_align.get_aligned_data
-
-times_cast
------------
-
-.. automodule:: finfactory.fintools.times_cast
-
-.. currentmodule:: finfactory.fintools.times_cast
-
-TimesCasterLottery
-^^^^^^^^^^^^^^^^^^^
-
-.. autoclass:: finfactory.fintools.times_cast.TimesCasterLottery
-    :members:
-    :undoc-members:
-    :show-inheritance:
-
-TimesCasterConFuture
-^^^^^^^^^^^^^^^^^^^^^
-
-.. autoclass:: finfactory.fintools.times_cast.TimesCasterConFuture
-    :members:
-    :undoc-members:
-    :show-inheritance:
 
 utils_chn
 ----------

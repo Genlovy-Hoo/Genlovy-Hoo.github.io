@@ -249,6 +249,23 @@ update_tosouth_netin_daily_check
 
 .. autofunction:: finfactory.get_data.eastmoney_tosouth_netin_daily.update_tosouth_netin_daily_check
 
+ef
+---
+
+.. automodule:: finfactory.get_data.ef
+
+.. currentmodule:: finfactory.get_data.ef
+
+get_stock_realtime
+^^^^^^^^^^^^^^^^^^^
+
+.. autofunction:: finfactory.get_data.ef.get_stock_realtime
+
+get_future_realtime
+^^^^^^^^^^^^^^^^^^^^
+
+.. autofunction:: finfactory.get_data.ef.get_future_realtime
+
 eniu_index_pe
 --------------
 

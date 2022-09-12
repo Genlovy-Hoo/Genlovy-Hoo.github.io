@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>fintools &mdash; FinFactory 0.0.18 documentation</title>
+  <title>fintools &mdash; FinFactory 0.0.19 documentation</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <!--[if lt IE 9]>
@@ -40,32 +40,10 @@
               <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="finfactory.html">finfactory</a></li>
-<li class="toctree-l1"><a class="reference internal" href="finfactory.factors.html">factors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="finfactory.apis.html">apis</a></li>
 <li class="toctree-l1"><a class="reference internal" href="finfactory.finplot.html">finplot</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">fintools</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#module-finfactory.fintools.ahr999">ahr999</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#get-ahr999">get_ahr999</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="#module-finfactory.fintools.barra">barra</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#get-exp-decay-weight">get_exp_decay_weight</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#get-regression-beta">get_regression_beta</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#size">size</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#get-barra-beta">get_barra_beta</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="#module-finfactory.fintools.candle_similar">candle_similar</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id1">candle_similar</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="#module-finfactory.fintools.fac_bolls">fac_bolls</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#boll-label-uplow">boll_label_uplow</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#boll-label-uplow-cross">boll_label_uplow_cross</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#get-boll-label-uplow">get_boll_label_uplow</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#get-boll-label-uplow-cross">get_boll_label_uplow_cross</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="#id2">fintools</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#id1">fintools</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#get-merge1min-candle">get_merge1min_candle</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#cal-ir">cal_ir</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#cal-ic">cal_ic</a></li>
@@ -108,11 +86,6 @@
 <li class="toctree-l3"><a class="reference internal" href="#get-fundnet">get_fundnet</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#module-finfactory.fintools.limit_stock_value">limit_stock_value</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#app">app</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#cal-limit-stock-value">cal_limit_stock_value</a></li>
-</ul>
-</li>
 <li class="toctree-l2"><a class="reference internal" href="#module-finfactory.fintools.options">options</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#bs-opt">bs_opt</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#mc-bs-opt">mc_bs_opt</a></li>
@@ -132,11 +105,6 @@
 <li class="toctree-l3"><a class="reference internal" href="#get-tushare-api">get_tushare_api</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#get-trade-date">get_trade_date</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#get-aligned-data">get_aligned_data</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="#module-finfactory.fintools.times_cast">times_cast</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#timescasterlottery">TimesCasterLottery</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#timescasterconfuture">TimesCasterConFuture</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#module-finfactory.fintools.utils_chn">utils_chn</a><ul>
@@ -195,15 +163,13 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#module-finfactory.fintools.zigzag">zigzag</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id9">zigzag</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id7">zigzag</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#plot-candle-zz">plot_candle_zz</a></li>
 </ul>
 </li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="finfactory.get_data.html">get_data</a></li>
-<li class="toctree-l1"><a class="reference internal" href="finfactory.options_trader.html">options_trader</a></li>
-<li class="toctree-l1"><a class="reference internal" href="finfactory.strategy.html">strategy</a></li>
 <li class="toctree-l1"><a class="reference internal" href="finfactory.utils.html">utils</a></li>
 </ul>
 
@@ -233,259 +199,8 @@
              
   <section id="fintools">
 <h1>fintools<a class="headerlink" href="#fintools" title="Permalink to this headline"></a></h1>
-<section id="module-finfactory.fintools.ahr999">
-<span id="ahr999"></span><h2>ahr999<a class="headerlink" href="#module-finfactory.fintools.ahr999" title="Permalink to this headline"></a></h2>
-<section id="get-ahr999">
-<h3>get_ahr999<a class="headerlink" href="#get-ahr999" title="Permalink to this headline"></a></h3>
-<dl class="py function">
-<dt class="sig sig-object py" id="finfactory.fintools.ahr999.get_ahr999">
-<span class="sig-prename descclassname"><span class="pre">finfactory.fintools.ahr999.</span></span><span class="sig-name descname"><span class="pre">get_ahr999</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">birthday</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">col_price</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'close'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">poly</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fit_log</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">model</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'lr'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_fix_inv</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">200</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fix_inv_cost</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'gmean'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">col_weight</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'volume'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">plot</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kwargs_plot</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">{'figsize':</span> <span class="pre">(12,</span> <span class="pre">8),</span> <span class="pre">'title':</span> <span class="pre">None}</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#finfactory.fintools.ahr999.get_ahr999" title="Permalink to this definition"></a></dt>
-<dd><div class="line-block">
-<div class="line">AHR999指标计算</div>
-<div class="line">data中需包含[‘time’|’date’, col_price]列
-以及VWAP用到的[col_vol, col_val]列</div>
-<div class="line">poly设置拟合模型输入X进行多项式扩展的最高次方数</div>
-<div class="line">fit_log设置拟合模型是否进行对数变换</div>
-<div class="line">model指定模型类别：’lr’为线性回归，’gbr’为gbdt回归</div>
-<div class="line">n_fix_inv设置几定投历史期数</div>
-<div class="line">fix_inv_cost设置定投成本计算方法，可选’gmean’，’vwap’</div>
-<div class="line">col_weight指定VWAP方法中的权重列（通常是成交量）</div>
-<div class="line">参考：</div>
-<div class="line"><a class="reference external" href="https://www.qkl123.com/data/ahr999/btc">https://www.qkl123.com/data/ahr999/btc</a></div>
-<div class="line"><a class="reference external" href="https://weibo.com/ttarticle/p/show?id=2309404441088189399138">https://weibo.com/ttarticle/p/show?id=2309404441088189399138</a></div>
-<div class="line"><a class="reference external" href="https://blog.csdn.net/weixin_30521175/article/details/112435923">https://blog.csdn.net/weixin_30521175/article/details/112435923</a></div>
-</div>
-</dd></dl>
-
-</section>
-</section>
-<section id="module-finfactory.fintools.barra">
-<span id="barra"></span><h2>barra<a class="headerlink" href="#module-finfactory.fintools.barra" title="Permalink to this headline"></a></h2>
-<section id="get-exp-decay-weight">
-<h3>get_exp_decay_weight<a class="headerlink" href="#get-exp-decay-weight" title="Permalink to this headline"></a></h3>
-<dl class="py function">
-<dt class="sig sig-object py" id="finfactory.fintools.barra.get_exp_decay_weight">
-<span class="sig-prename descclassname"><span class="pre">finfactory.fintools.barra.</span></span><span class="sig-name descname"><span class="pre">get_exp_decay_weight</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">n</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">adjust</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">logger</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#finfactory.fintools.barra.get_exp_decay_weight" title="Permalink to this definition"></a></dt>
-<dd><p>计算指数衰减权重序列</p>
-<div class="line-block">
-<div class="line">x为原始序列，y为加权序列</div>
-<div class="line">记y[t] = sum(w[i] * x[i])，权重序列w有多种计算方式</div>
-<div class="line">指数加权方式一般为：</div>
-<div class="line-block">
-<div class="line">y[0) = x[0]</div>
-<div class="line">y[t] = (1-a)*y[t-1] + a*x[t]</div>
-<div class="line">递推式为：</div>
-<div class="line">y[t] = (1-a)^t*x[0] + (1-a)^(t-1)*a*x[1] +···+ (1-a)*a*x[t-1] + a*x[t]</div>
-</div>
-</div>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>n</strong> (<em>int</em>) – 权重序列长度</p></li>
-<li><p><strong>adjust</strong> (<em>bool</em>) – 若为False，则采用精确方法计算权重，True采用近似方法</p></li>
-<li><p><strong>kwargs</strong> – <div class="line-block">
-<div class="line">设置计算最新一期权重a的参数：</div>
-<div class="line">- 若kwargs中有参数’a’或’alpha’，则直接将其值作为a；</div>
-<div class="line">- 若kwargs中有参数’halflife’或’span’或’com’，则采用
-pd.DataFrame.ewm中对应参数的方法计算a；</div>
-<div class="line">注：若上述kwargs中参数有多个同时设置，则按
-[‘a’, ‘alpha’, ‘halflife’, ‘span’, ‘com’]顺序取第一个。</div>
-</div>
-</p></li>
-</ul>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p><strong>w</strong> – 权重序列，返回中w[-1]为最近一期权重，w[0]为最远一期权重</p>
-</dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>np.array</p>
-</dd>
-</dl>
-<p class="rubric">References</p>
-<ul class="simple">
-<li><p><a class="reference external" href="https://zhuanlan.zhihu.com/p/31412967">https://zhuanlan.zhihu.com/p/31412967</a></p></li>
-<li><p><a class="reference external" href="https://www.zhihu.com/question/49694102">https://www.zhihu.com/question/49694102</a></p></li>
-<li><p><a class="reference external" href="https://zh.wikipedia.org/wiki">https://zh.wikipedia.org/wiki</a>/移動平均</p></li>
-</ul>
-</dd></dl>
-
-</section>
-<section id="get-regression-beta">
-<h3>get_regression_beta<a class="headerlink" href="#get-regression-beta" title="Permalink to this headline"></a></h3>
-<dl class="py function">
-<dt class="sig sig-object py" id="finfactory.fintools.barra.get_regression_beta">
-<span class="sig-prename descclassname"><span class="pre">finfactory.fintools.barra.</span></span><span class="sig-name descname"><span class="pre">get_regression_beta</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">vals_y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vals_x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">weights</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">intercept</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gls_reg</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">algo</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'ori'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#finfactory.fintools.barra.get_regression_beta" title="Permalink to this definition"></a></dt>
-<dd><p>计算beta：一元回归中的斜率项</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>vals_y</strong> (<em>list</em><em>, </em><em>np.ndarray</em><em>, </em><em>pd.Series</em>) – 因变量数据，一维</p></li>
-<li><p><strong>vals_x</strong> (<em>list</em><em>, </em><em>np.ndarray</em><em>, </em><em>pd.Series</em>) – 自变量数据，一维</p></li>
-<li><p><strong>weights</strong> (<em>np.array</em>) – 一维权重向量。若为None则进行普通回归；若为一维权重向量，则进行加权回归</p></li>
-<li><p><strong>intercept</strong> (<em>bool</em>) – 设置回归是否加入截距项</p></li>
-<li><p><strong>gls_reg</strong> (<em>bool</em>) – 是否用GLS回归（weights不为None时不适用）</p></li>
-<li><p><strong>algo</strong> (<em>str</em>) – <div class="line-block">
-<div class="line">计算回归系数算法设置：</div>
-<div class="line">- ‘ori’: 用原始样本数据直接计算</div>
-<div class="line">- ‘sklearn’: 用sklearn中的线性回归算法计算</div>
-<div class="line">- ‘sm’: 用statsmodels.api计算</div>
-<div class="line">（默认用’ori’速度快些）</div>
-</div>
-</p></li>
-</ul>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p><strong>beta</strong> – beta值，即一元回归系数</p>
-</dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>float</p>
-</dd>
-</dl>
-<p class="rubric">References</p>
-<ul class="simple">
-<li><p><a class="reference external" href="https://max.book118.com/html/2019/0801/8143045042002040.shtm">https://max.book118.com/html/2019/0801/8143045042002040.shtm</a></p></li>
-<li><p><a class="reference external" href="https://zhuanlan.zhihu.com/p/31412967">https://zhuanlan.zhihu.com/p/31412967</a></p></li>
-</ul>
-</dd></dl>
-
-</section>
-<section id="size">
-<h3>size<a class="headerlink" href="#size" title="Permalink to this headline"></a></h3>
-<dl class="py function">
-<dt class="sig sig-object py" id="finfactory.fintools.barra.size">
-<span class="sig-prename descclassname"><span class="pre">finfactory.fintools.barra.</span></span><span class="sig-name descname"><span class="pre">size</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#finfactory.fintools.barra.size" title="Permalink to this definition"></a></dt>
-<dd><p>市值因子：流通市值的自然对数</p>
-</dd></dl>
-
-</section>
-<section id="get-barra-beta">
-<h3>get_barra_beta<a class="headerlink" href="#get-barra-beta" title="Permalink to this headline"></a></h3>
-<dl class="py function">
-<dt class="sig sig-object py" id="finfactory.fintools.barra.get_barra_beta">
-<span class="sig-prename descclassname"><span class="pre">finfactory.fintools.barra.</span></span><span class="sig-name descname"><span class="pre">get_barra_beta</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">col_pct</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">col_pct_mkt</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rf</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.03</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">halflife</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">63</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">d1year</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">252</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">intercept</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gls_reg</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">algo</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'ori'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#finfactory.fintools.barra.get_barra_beta" title="Permalink to this definition"></a></dt>
-<dd><p>beta因子计算</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>data</strong> (<em>pd.DataFrame</em>) – 须包含col_pct和col_pct_mkt指定的两列</p></li>
-<li><p><strong>col_pct</strong> (<em>str</em>) – col_pct指定列为个股收益率序列数据</p></li>
-<li><p><strong>col_pct_mkt</strong> (<em>str</em>) – col_pct_mkt指定列为指数收益率数据</p></li>
-<li><p><strong>rf</strong> (<em>float</em>) – 无风险收益（年化）</p></li>
-<li><p><strong>halflife</strong> (<em>int</em>) – 半衰期</p></li>
-<li><p><strong>d1year</strong> (<em>int</em>) – 一年交易天数</p></li>
-<li><p><strong>intercept</strong> (<em>bool</em>) – 回归是否考虑截距</p></li>
-<li><p><strong>gls_reg</strong> (<em>bool</em>) – 是否使用GLS回归</p></li>
-<li><p><strong>algo</strong> (<em>str</em>) – 回归算法选择，参见 <a class="reference internal" href="#finfactory.fintools.barra.get_regression_beta" title="finfactory.fintools.barra.get_regression_beta"><code class="xref py py-func docutils literal notranslate"><span class="pre">get_regression_beta()</span></code></a> 函数</p></li>
-</ul>
-</dd>
-</dl>
-</dd></dl>
-
-</section>
-</section>
-<section id="module-finfactory.fintools.candle_similar">
-<span id="candle-similar"></span><h2>candle_similar<a class="headerlink" href="#module-finfactory.fintools.candle_similar" title="Permalink to this headline"></a></h2>
 <section id="id1">
-<h3>candle_similar<a class="headerlink" href="#id1" title="Permalink to this headline"></a></h3>
-<dl class="py function">
-<dt class="sig sig-object py" id="finfactory.fintools.candle_similar.candle_similar">
-<span class="sig-prename descclassname"><span class="pre">finfactory.fintools.candle_similar.</span></span><span class="sig-name descname"><span class="pre">candle_similar</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">df1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">df2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cols</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">std01</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#finfactory.fintools.candle_similar.candle_similar" title="Permalink to this definition"></a></dt>
-<dd><p>计算K线相似度，df1和df2应包含K线数据指定列cols</p>
-</dd></dl>
-
-</section>
-</section>
-<section id="module-finfactory.fintools.fac_bolls">
-<span id="fac-bolls"></span><h2>fac_bolls<a class="headerlink" href="#module-finfactory.fintools.fac_bolls" title="Permalink to this headline"></a></h2>
-<section id="boll-label-uplow">
-<h3>boll_label_uplow<a class="headerlink" href="#boll-label-uplow" title="Permalink to this headline"></a></h3>
-<dl class="py function">
-<dt class="sig sig-object py" id="finfactory.fintools.fac_bolls.boll_label_uplow">
-<span class="sig-prename descclassname"><span class="pre">finfactory.fintools.fac_bolls.</span></span><span class="sig-name descname"><span class="pre">boll_label_uplow</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tol</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.002</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">judge_type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'maxmin'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#finfactory.fintools.fac_bolls.boll_label_uplow" title="Permalink to this definition"></a></dt>
-<dd><div class="line-block">
-<div class="line">根据布林带，构造潜在高低点标签</div>
-<div class="line">思路：</div>
-<div class="line-block">
-<div class="line">最低价低于布林带下轨的被标注为潜在低点（less_low）</div>
-<div class="line">最高价高于布林带上轨的被标注为潜在高点（more_up）</div>
-<div class="line">上一个低点之后的所有潜在高点中的最高值或最后一个值标为实际高点</div>
-<div class="line">上一个高点之后的所有潜在低点中的最低值或最后一个值标为实际低点</div>
-<div class="line">（判断方式由judge_type指定，judge_type可取’maxmin’或’last’）</div>
-<div class="line"><br /></div>
-</div>
-<div class="line">data须包含[‘high’, ‘low’, ‘close’, ‘boll_low’, ‘boll_up’]列</div>
-<div class="line">tol指定潜在高低点判断时距离布林带上下轨的距离容忍度</div>
-<div class="line"><br /></div>
-<div class="line">返回结果包含列：</div>
-<div class="line">[‘high’, ‘low’, ‘close’, ‘boll_low’, ‘boll_up’, ‘less_low’, ‘more_up’, ‘label’]，</div>
-<div class="line">其中</div>
-<div class="line">less_low标注最低价是否低于布林带下轨，</div>
-<div class="line">more_up标注最高价是否高于布林带上轨，</div>
-<div class="line">label标注是否为阶段高低点</div>
-</div>
-</dd></dl>
-
-</section>
-<section id="boll-label-uplow-cross">
-<h3>boll_label_uplow_cross<a class="headerlink" href="#boll-label-uplow-cross" title="Permalink to this headline"></a></h3>
-<dl class="py function">
-<dt class="sig sig-object py" id="finfactory.fintools.fac_bolls.boll_label_uplow_cross">
-<span class="sig-prename descclassname"><span class="pre">finfactory.fintools.fac_bolls.</span></span><span class="sig-name descname"><span class="pre">boll_label_uplow_cross</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tol</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">judge_type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'maxmin'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#finfactory.fintools.fac_bolls.boll_label_uplow_cross" title="Permalink to this definition"></a></dt>
-<dd><div class="line-block">
-<div class="line">根据布林带，构造潜在高低点标签</div>
-<div class="line">思路：</div>
-<div class="line-block">
-<div class="line">从下往上穿过布林带下轨被标注为潜在买点（low_buy）</div>
-<div class="line">从上往下穿过布林带下轨被标注为潜在卖点（up_sel）</div>
-<div class="line">上一个买点之后的所有潜在卖点中的最高值或最后一个值标为实际卖点</div>
-<div class="line">上一个卖点之后的所有潜在买点中的最低值或最后一个值标为实际买点</div>
-<div class="line">（判断方式由judge_type指定，judge_type可取’maxmin’或’last’）</div>
-<div class="line"><br /></div>
-</div>
-<div class="line">data须包含[‘high’, ‘low’, ‘close’, ‘boll_low’, ‘boll_up’]列</div>
-<div class="line">tol指定潜在高低点判断时距离布林带上下轨的距离容忍度</div>
-<div class="line"><br /></div>
-<div class="line">返回结果包含列：</div>
-<div class="line">[‘high’, ‘low’, ‘close’, ‘boll_low’, ‘boll_up’, ‘low_buy’, ‘up_sel’, ‘label’]，</div>
-<div class="line">其中</div>
-<div class="line">low_buy标注潜在买点，</div>
-<div class="line">more_up标注潜在卖点，</div>
-<div class="line">label标注是否为阶段买卖点</div>
-</div>
-</dd></dl>
-
-</section>
-<section id="get-boll-label-uplow">
-<h3>get_boll_label_uplow<a class="headerlink" href="#get-boll-label-uplow" title="Permalink to this headline"></a></h3>
-<dl class="py function">
-<dt class="sig sig-object py" id="finfactory.fintools.fac_bolls.get_boll_label_uplow">
-<span class="sig-prename descclassname"><span class="pre">finfactory.fintools.fac_bolls.</span></span><span class="sig-name descname"><span class="pre">get_boll_label_uplow</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lag</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">15</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">width</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tol</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.002</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">judge_type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'maxmin'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_dot</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#finfactory.fintools.fac_bolls.get_boll_label_uplow" title="Permalink to this definition"></a></dt>
-<dd><div class="line-block">
-<div class="line">生成基于布林带的高低点标签</div>
-<div class="line">data中必须包含[‘close’, ‘high’, ‘low’]三列</div>
-<div class="line">lag、width、n_dot参数同 <a class="reference internal" href="#finfactory.fintools.fintools.boll" title="finfactory.fintools.fintools.boll"><code class="xref py py-func docutils literal notranslate"><span class="pre">finfactory.fintools.fintools.boll()</span></code></a> 函数</div>
-<div class="line">judge_type、tol参数同 <a class="reference internal" href="#finfactory.fintools.fac_bolls.boll_label_uplow" title="finfactory.fintools.fac_bolls.boll_label_uplow"><code class="xref py py-func docutils literal notranslate"><span class="pre">boll_label_uplow()</span></code></a> 函数</div>
-</div>
-</dd></dl>
-
-</section>
-<section id="get-boll-label-uplow-cross">
-<h3>get_boll_label_uplow_cross<a class="headerlink" href="#get-boll-label-uplow-cross" title="Permalink to this headline"></a></h3>
-<dl class="py function">
-<dt class="sig sig-object py" id="finfactory.fintools.fac_bolls.get_boll_label_uplow_cross">
-<span class="sig-prename descclassname"><span class="pre">finfactory.fintools.fac_bolls.</span></span><span class="sig-name descname"><span class="pre">get_boll_label_uplow_cross</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lag</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">15</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">width</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tol</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">judge_type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'maxmin'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_dot</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#finfactory.fintools.fac_bolls.get_boll_label_uplow_cross" title="Permalink to this definition"></a></dt>
-<dd><div class="line-block">
-<div class="line">生成基于布林带穿越的高低点标签</div>
-<div class="line">data中必须包含[‘close’, ‘high’, ‘low’]三列</div>
-<div class="line">lag、width、n_dot参数同 <a class="reference internal" href="#finfactory.fintools.fintools.boll" title="finfactory.fintools.fintools.boll"><code class="xref py py-func docutils literal notranslate"><span class="pre">finfactory.fintools.fintools.boll()</span></code></a> 函数</div>
-<div class="line">judge_type、tol参数同 <a class="reference internal" href="#finfactory.fintools.fac_bolls.boll_label_uplow_cross" title="finfactory.fintools.fac_bolls.boll_label_uplow_cross"><code class="xref py py-func docutils literal notranslate"><span class="pre">boll_label_uplow_cross()</span></code></a> 函数</div>
-</div>
-</dd></dl>
-
-</section>
-</section>
-<section id="id2">
-<h2>fintools<a class="headerlink" href="#id2" title="Permalink to this headline"></a></h2>
+<h2>fintools<a class="headerlink" href="#id1" title="Permalink to this headline"></a></h2>
 <span class="target" id="module-finfactory.fintools.fintools"></span><section id="get-merge1min-candle">
 <h3>get_merge1min_candle<a class="headerlink" href="#get-merge1min-candle" title="Permalink to this headline"></a></h3>
 <dl class="py function">
@@ -1074,9 +789,10 @@ pd.DataFrame.ewm中对应参数的方法计算a；</div>
 <div class="line">若为2，表示净值分红</div>
 <div class="line">若为3，表示成本损耗</div>
 <div class="line">若为4，表示忽略</div>
+<div class="line">若为5，表示转托</div>
 <div class="line">若为’outtype’，则在df_settle中通过’outtype列’设置，该列值只能为1, 2, 3, 4</div>
 </div>
-<div class="line">赎回和分红在计算累计净值时要加入，损耗和忽略不加入</div>
+<div class="line">赎回和分红在计算累计净值时要加入，损耗、转托和忽略不加入</div>
 </div>
 </p></li>
 <li><p><strong>intype</strong> (<em>int</em><em>, </em><em>str</em>) – <div class="line-block">
@@ -1101,36 +817,6 @@ pd.DataFrame.ewm中对应参数的方法计算a；</div>
 <dd class="field-even"><p><cite>pd.DataFrame</cite> - 包含[‘新增份额’, ‘份额’, ‘净值’, ‘累计净值’]</p>
 </dd>
 </dl>
-</dd></dl>
-
-</section>
-</section>
-<section id="module-finfactory.fintools.limit_stock_value">
-<span id="limit-stock-value"></span><h2>limit_stock_value<a class="headerlink" href="#module-finfactory.fintools.limit_stock_value" title="Permalink to this headline"></a></h2>
-<section id="app">
-<h3>app<a class="headerlink" href="#app" title="Permalink to this headline"></a></h3>
-<dl class="py function">
-<dt class="sig sig-object py" id="finfactory.fintools.limit_stock_value.app">
-<span class="sig-prename descclassname"><span class="pre">finfactory.fintools.limit_stock_value.</span></span><span class="sig-name descname"><span class="pre">app</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">S</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">T</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sigma</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">q</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#finfactory.fintools.limit_stock_value.app" title="Permalink to this definition"></a></dt>
-<dd><p>平均价格亚式期权模型（“AAP模型”）</p>
-</dd></dl>
-
-</section>
-<section id="cal-limit-stock-value">
-<h3>cal_limit_stock_value<a class="headerlink" href="#cal-limit-stock-value" title="Permalink to this headline"></a></h3>
-<dl class="py function">
-<dt class="sig sig-object py" id="finfactory.fintools.limit_stock_value.cal_limit_stock_value">
-<span class="sig-prename descclassname"><span class="pre">finfactory.fintools.limit_stock_value.</span></span><span class="sig-name descname"><span class="pre">cal_limit_stock_value</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">S</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">T</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sigma</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">q</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#finfactory.fintools.limit_stock_value.cal_limit_stock_value" title="Permalink to this definition"></a></dt>
-<dd><div class="line-block">
-<div class="line">S：估值日在证券交易所上市交易的同一股票的公允价值</div>
-<div class="line">T：剩余限售期，以年为单位表示</div>
-<div class="line">sigma：股票在剩余限售期内的股价的预期年化波动率</div>
-<div class="line">q：股票预期年化股利收益率</div>
-<div class="line"><br /></div>
-<div class="line">参考：</div>
-<div class="line">中证指数有限公司流通受限股票流动性折扣计算说明v2.docx</div>
-<div class="line"><a class="reference external" href="https://www.sohu.com/a/193630728_656666">https://www.sohu.com/a/193630728_656666</a></div>
-</div>
 </dd></dl>
 
 </section>
@@ -1622,112 +1308,6 @@ pd.DataFrame.ewm中对应参数的方法计算a；</div>
 
 </section>
 </section>
-<section id="module-finfactory.fintools.times_cast">
-<span id="times-cast"></span><h2>times_cast<a class="headerlink" href="#module-finfactory.fintools.times_cast" title="Permalink to this headline"></a></h2>
-<section id="timescasterlottery">
-<h3>TimesCasterLottery<a class="headerlink" href="#timescasterlottery" title="Permalink to this headline"></a></h3>
-<dl class="py class">
-<dt class="sig sig-object py" id="finfactory.fintools.times_cast.TimesCasterLottery">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">finfactory.fintools.times_cast.</span></span><span class="sig-name descname"><span class="pre">TimesCasterLottery</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">base_cost</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">base_back</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">5</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">expect_gain_pct</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.5</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">init_n</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#finfactory.fintools.times_cast.TimesCasterLottery" title="Permalink to this definition"></a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
-<div class="line-block">
-<div class="line">简单倍投法博弈过程计算</div>
-<div class="line">适用场景：</div>
-<div class="line">单次博弈仅有两种结果，即要么盈利，要么本金亏完，且每次投入只能为基准投入得整数倍
-（例如彩票，要么中奖，要么本金亏完，每次只能买整数张）</div>
-</div>
-<dl class="py method">
-<dt class="sig sig-object py" id="finfactory.fintools.times_cast.TimesCasterLottery.__init__">
-<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">base_cost</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">base_back</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">5</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">expect_gain_pct</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.5</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">init_n</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#finfactory.fintools.times_cast.TimesCasterLottery.__init__" title="Permalink to this definition"></a></dt>
-<dd><div class="line-block">
-<div class="line">base_cost: 单次博弈成本（比如彩票2块钱一张）</div>
-<div class="line">base_back: 单次胜出获得收入（比如彩票中奖最低奖励为5块钱）</div>
-<div class="line">expect_gain_pct: 倍投一个回合结束时期望盈利占总投入的比例</div>
-<div class="line">init_n: 初始投入的基准倍数（比如init_n=2表示第一次买两张彩票）</div>
-</div>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="finfactory.fintools.times_cast.TimesCasterLottery.play_n_round">
-<span class="sig-name descname"><span class="pre">play_n_round</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">n</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#finfactory.fintools.times_cast.TimesCasterLottery.play_n_round" title="Permalink to this definition"></a></dt>
-<dd><p>假设玩n次之后实现盈利，计算博弈过程</p>
-</dd></dl>
-
-</dd></dl>
-
-</section>
-<section id="timescasterconfuture">
-<h3>TimesCasterConFuture<a class="headerlink" href="#timescasterconfuture" title="Permalink to this headline"></a></h3>
-<dl class="py class">
-<dt class="sig sig-object py" id="finfactory.fintools.times_cast.TimesCasterConFuture">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">finfactory.fintools.times_cast.</span></span><span class="sig-name descname"><span class="pre">TimesCasterConFuture</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">player</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">start_price</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pct_add</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.02</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lever</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">100</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">expect_gain_pct</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.02</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">func_vol_add</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'ctrl_loss_pct_1.0/100'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">init_vol</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vol_dot</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_hold_rate</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fee_pct</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.001</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_future2target</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.001</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">seller_cost_base</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'open'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#finfactory.fintools.times_cast.TimesCasterConFuture" title="Permalink to this definition"></a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
-<div class="line-block">
-<div class="line">永续合约交易倍投法交易博弈过程计算</div>
-<div class="line">使用情景：永续合约，分买方-做多和卖方-做空两种角色（如比特币永续合约）</div>
-</div>
-<dl class="py method">
-<dt class="sig sig-object py" id="finfactory.fintools.times_cast.TimesCasterConFuture.__init__">
-<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">player</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">start_price</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pct_add</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.02</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lever</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">100</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">expect_gain_pct</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.02</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">func_vol_add</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'ctrl_loss_pct_1.0/100'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">init_vol</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vol_dot</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_hold_rate</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fee_pct</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.001</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_future2target</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.001</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">seller_cost_base</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'open'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#finfactory.fintools.times_cast.TimesCasterConFuture.__init__" title="Permalink to this definition"></a></dt>
-<dd><div class="admonition-todo admonition" id="id3">
-<p class="admonition-title">Todo</p>
-<ul class="simple">
-<li><p>增加更多加仓方式选择（如每次加仓量跟当前加仓总次数相关联等）</p></li>
-<li><p>fee卖出和买入分开考虑</p></li>
-</ul>
-</div>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>player</strong> (<em>str</em>) – <div class="line-block">
-<div class="line">交易角色</div>
-<div class="line">- 买方：[‘buyer’, ‘Buyer’, ‘b’, ‘B’, ‘buy’, ‘Buy’]</div>
-<div class="line">- 卖方：[‘seller’, ‘Seller’, ‘s’, ‘S’, ‘sell’, ‘Sell’, ‘sel’, ‘Sel’]</div>
-</div>
-</p></li>
-<li><p><strong>start_price</strong> (<em>float</em>) – 开始时（一个单位标的证券对应的）合约价格
-（eg. 一个BTC对应的永续合约价格为50000，注意：不是BTC的价格）</p></li>
-<li><p><strong>pct_add</strong> (<em>float</em>) – 合约价格每次跌|涨幅达到pct_add就加仓</p></li>
-<li><p><strong>lever</strong> (<em>int</em>) – 杠杆倍数</p></li>
-<li><p><strong>expect_gain_pct</strong> (<em>float</em>) – 期望盈利比例（注：成本为实际参与交易的资金总额，不是账户总额）</p></li>
-<li><p><strong>func_vol_add</strong> (<em>str</em>) – <div class="line-block">
-<div class="line">加仓时的交易量确定方式</div>
-<div class="line">- 当func_vol_add指定为’base_x’时，每次加仓量为底仓init_vol的x倍</div>
-<div class="line">- 当func_vol_add指定为’hold_x’时，每次加仓量为持有量的x倍</div>
-<div class="line">- 当func_vol_add为’ctrl_loss_pct_x’: 每次加仓量根据加仓完成之后的目标亏损比例
-来计算（计算目标成本时暂不考虑平仓时的交易成本），
-例如’ctrl_loss_pct_2.0/100’表示加仓完成之后亏损控制在2%</div>
-<div class="line">- 当func_vol_add指定为’base_kth_x’时，第k次加仓量为底仓init_vol的k倍乘以x</div>
-<div class="line">- 当func_vol_add指定为’hold_kth_x’时，第k次加仓量为底仓init_vol的k倍乘以x</div>
-</div>
-</p></li>
-<li><p><strong>init_vol</strong> (<em>int</em><em>, </em><em>float</em>) – 初次下单合约张数（基准开仓量）</p></li>
-<li><p><strong>vol_dot</strong> (<em>int</em>) – 下单量最多保留的小数点位数</p></li>
-<li><p><strong>max_hold_rate</strong> (<em>float</em>) – 最大仓位比例限制（用于计算账户所需保证金最低额）</p></li>
-<li><p><strong>fee_pct</strong> (<em>float</em>) – 交易成本（手续费）比例（单次）</p></li>
-<li><p><strong>n_future2target</strong> (<em>float</em>) – 一张合约对应多少个标的证券
-（用于计算保证金，eg. 一张BTC永续合约对应0.001个BTC）</p></li>
-<li><p><strong>seller_cost_base</strong> (<em>str</em>) – <div class="line-block">
-<div class="line">计算卖方-做空盈亏比时成本用开仓价`open`还是平仓价`close`：</div>
-<div class="line">- 成本以open即卖出价格为准时有：卖出（开仓）价 * (1 - 盈亏%) = 买入（平仓）价</div>
-<div class="line">- 成本以close即买入价格为准时有：买入（平仓）价 * ( 1 + 盈亏%) = 卖出（开仓）价</div>
-</div>
-</p></li>
-</ul>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="finfactory.fintools.times_cast.TimesCasterConFuture.play_n_round">
-<span class="sig-name descname"><span class="pre">play_n_round</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">N</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#finfactory.fintools.times_cast.TimesCasterConFuture.play_n_round" title="Permalink to this definition"></a></dt>
-<dd><p>假设开（加）仓N次之后锁仓，计算博弈过程</p>
-</dd></dl>
-
-</dd></dl>
-
-</section>
-</section>
 <section id="module-finfactory.fintools.utils_chn">
 <span id="utils-chn"></span><h2>utils_chn<a class="headerlink" href="#module-finfactory.fintools.utils_chn" title="Permalink to this headline"></a></h2>
 <section id="merge-minute-candle">
@@ -1780,7 +1360,7 @@ pd.DataFrame.ewm中对应参数的方法计算a；</div>
 <dl class="py function">
 <dt class="sig sig-object py" id="finfactory.fintools.utils_chn.get_last_effect_finreport_dates">
 <span class="sig-prename descclassname"><span class="pre">finfactory.fintools.utils_chn.</span></span><span class="sig-name descname"><span class="pre">get_last_effect_finreport_dates</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">date</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">force_q1q3</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">wait_finished</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">semi_annual_only</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">annual_only</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">adjust_report</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#finfactory.fintools.utils_chn.get_last_effect_finreport_dates" title="Permalink to this definition"></a></dt>
-<dd><div class="admonition-todo admonition" id="id4">
+<dd><div class="admonition-todo admonition" id="id2">
 <p class="admonition-title">Todo</p>
 <ul class="simple">
 <li><p>完成adjust_report设置部分</p></li>
@@ -1806,7 +1386,7 @@ pd.DataFrame.ewm中对应参数的方法计算a；</div>
 <dl class="py function">
 <dt class="sig sig-object py" id="finfactory.fintools.utils_chn.get_code_ext">
 <span class="sig-prename descclassname"><span class="pre">finfactory.fintools.utils_chn.</span></span><span class="sig-name descname"><span class="pre">get_code_ext</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">code</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">return_sure</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#finfactory.fintools.utils_chn.get_code_ext" title="Permalink to this definition"></a></dt>
-<dd><div class="admonition-todo admonition" id="id5">
+<dd><div class="admonition-todo admonition" id="id3">
 <p class="admonition-title">Todo</p>
 <p>检查更新代码规则</p>
 </div>
@@ -1826,7 +1406,7 @@ pd.DataFrame.ewm中对应参数的方法计算a；</div>
 <dt class="sig sig-object py" id="finfactory.fintools.utils_chn.get_trade_fee_Astock">
 <span class="sig-prename descclassname"><span class="pre">finfactory.fintools.utils_chn.</span></span><span class="sig-name descname"><span class="pre">get_trade_fee_Astock</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">code</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">buy_or_sel</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vol</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">price</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fee_least</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">5</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fee_pct</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.00025</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#finfactory.fintools.utils_chn.get_trade_fee_Astock" title="Permalink to this definition"></a></dt>
 <dd><p>普通A股股票普通交易费用计算</p>
-<div class="admonition-todo admonition" id="id6">
+<div class="admonition-todo admonition" id="id4">
 <p class="admonition-title">Todo</p>
 <ul class="simple">
 <li><p>检查更新交易费率变化(若同一个交易所不同板块费率不同，新增按板块计算)</p></li>
@@ -1841,7 +1421,7 @@ pd.DataFrame.ewm中对应参数的方法计算a；</div>
 <dl class="py function">
 <dt class="sig sig-object py" id="finfactory.fintools.utils_chn.trade_fee_Astock">
 <span class="sig-prename descclassname"><span class="pre">finfactory.fintools.utils_chn.</span></span><span class="sig-name descname"><span class="pre">trade_fee_Astock</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mkt</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">buy_or_sel</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vol</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">price</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fee_least</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">5</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fee_pct</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.00025</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#finfactory.fintools.utils_chn.trade_fee_Astock" title="Permalink to this definition"></a></dt>
-<dd><div class="admonition-todo admonition" id="id7">
+<dd><div class="admonition-todo admonition" id="id5">
 <p class="admonition-title">Todo</p>
 <ul class="simple">
 <li><p>检查更新交易费率变化(若同一个交易所不同板块费率不同，新增按板块计算)</p></li>
@@ -2772,7 +2352,7 @@ pd.DataFrame.ewm中对应参数的方法计算a；</div>
 </p>
 </dd>
 </dl>
-<div class="admonition-todo admonition" id="id8">
+<div class="admonition-todo admonition" id="id6">
 <p class="admonition-title">Todo</p>
 <ul>
 <li><p>增加根据固定盈亏点位止盈止损/减仓（比如IF赚30个点止盈，亏20个点止损）</p></li>
@@ -2836,13 +2416,13 @@ pd.DataFrame.ewm中对应参数的方法计算a；</div>
 </section>
 <section id="module-finfactory.fintools.zigzag">
 <span id="zigzag"></span><h2>zigzag<a class="headerlink" href="#module-finfactory.fintools.zigzag" title="Permalink to this headline"></a></h2>
-<section id="id9">
-<h3>zigzag<a class="headerlink" href="#id9" title="Permalink to this headline"></a></h3>
+<section id="id7">
+<h3>zigzag<a class="headerlink" href="#id7" title="Permalink to this headline"></a></h3>
 <dl class="py function">
 <dt class="sig sig-object py" id="finfactory.fintools.zigzag.zigzag">
 <span class="sig-prename descclassname"><span class="pre">finfactory.fintools.zigzag.</span></span><span class="sig-name descname"><span class="pre">zigzag</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">high_col</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'high'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">low_col</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'low'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">up_pct</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.01</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">down_pct</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.01</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#finfactory.fintools.zigzag.zigzag" title="Permalink to this definition"></a></dt>
 <dd><p>ZigZag转折点</p>
-<div class="admonition-todo admonition" id="id10">
+<div class="admonition-todo admonition" id="id8">
 <p class="admonition-title">Todo</p>
 <p>加入时间间隔控制</p>
 </div>

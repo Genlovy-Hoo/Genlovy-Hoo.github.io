@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>dramkit &mdash; DramKit 0.3.12 documentation</title>
+  <title>dramkit &mdash; DramKit 0.3.14 documentation</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <!--[if lt IE 9]>
@@ -108,6 +108,7 @@
 <li class="toctree-l3"><a class="reference internal" href="#cut-df-by-con-val">cut_df_by_con_val</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#get-con-start-end">get_con_start_end</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#cut-range-to-subs">cut_range_to_subs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#cut-to-subs">cut_to_subs</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#check-l-allin-l0">check_l_allin_l0</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#check-exist-data">check_exist_data</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#isnull">isnull</a></li>
@@ -130,8 +131,10 @@
 <li class="toctree-l3"><a class="reference internal" href="#group-rank">group_rank</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#bootstrapping">bootstrapping</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#groupby-rolling-func">groupby_rolling_func</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#merge-dicts">merge_dicts</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#link-lists">link_lists</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#get-num-decimal">get_num_decimal</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#list2dict">list2dict</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#sort-dict">sort_dict</a></li>
 </ul>
 </li>
@@ -163,10 +166,10 @@
 <li class="toctree-l3"><a class="reference internal" href="#del-specified-type-files">del_specified_type_files</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#del-dir">del_dir</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#del-specified-subdir">del_specified_subdir</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#copy-file">copy_file</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#copy-dir">copy_dir</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#copy-file-to-dir">copy_file_to_dir</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#copy-file-to-file">copy_file_to_file</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#copy-dir-structure">copy_dir_structure</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#copy-specified-type-files">copy_specified_type_files</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#copy-dir">copy_dir</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#move-file">move_file</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#move-dir">move_dir</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#move-specified-type-files">move_specified_type_files</a></li>
@@ -212,6 +215,7 @@
 <li class="toctree-l1"><a class="reference internal" href="dramkit.speedup.html">speedup</a></li>
 <li class="toctree-l1"><a class="reference internal" href="dramkit.sqltools.html">sqltools</a></li>
 <li class="toctree-l1"><a class="reference internal" href="dramkit.webtools.html">webtools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dramkit.wechat.html">wechat</a></li>
 </ul>
 
         </div>
@@ -633,17 +637,17 @@
 </div>
 <dl class="py method">
 <dt class="sig sig-object py" id="dramkit.gentools.TimeRecoder.used">
-<span class="sig-name descname"><span class="pre">used</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">logger</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.gentools.TimeRecoder.used" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">used</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">logger</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">return_s</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.gentools.TimeRecoder.used" title="Permalink to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="dramkit.gentools.TimeRecoder.usedm">
-<span class="sig-name descname"><span class="pre">usedm</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">logger</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.gentools.TimeRecoder.usedm" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">usedm</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">logger</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">return_s</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.gentools.TimeRecoder.usedm" title="Permalink to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="dramkit.gentools.TimeRecoder.useds">
-<span class="sig-name descname"><span class="pre">useds</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">logger</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.gentools.TimeRecoder.useds" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">useds</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">logger</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">return_s</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.gentools.TimeRecoder.useds" title="Permalink to this definition"></a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -1793,6 +1797,15 @@ func_val0的值(这里连续出现是指不出现除了满足func_val为True和�
 </dd></dl>
 
 </section>
+<section id="cut-to-subs">
+<h3>cut_to_subs<a class="headerlink" href="#cut-to-subs" title="Permalink to this headline"></a></h3>
+<dl class="py function">
+<dt class="sig sig-object py" id="dramkit.gentools.cut_to_subs">
+<span class="sig-prename descclassname"><span class="pre">dramkit.gentools.</span></span><span class="sig-name descname"><span class="pre">cut_to_subs</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">l</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gap</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.gentools.cut_to_subs" title="Permalink to this definition"></a></dt>
+<dd><p>将列表分段，gap指定每段的个数</p>
+</dd></dl>
+
+</section>
 <section id="check-l-allin-l0">
 <h3>check_l_allin_l0<a class="headerlink" href="#check-l-allin-l0" title="Permalink to this headline"></a></h3>
 <dl class="py function">
@@ -2116,6 +2129,15 @@ cols_groupby设定</p>
 </dd></dl>
 
 </section>
+<section id="merge-dicts">
+<h3>merge_dicts<a class="headerlink" href="#merge-dicts" title="Permalink to this headline"></a></h3>
+<dl class="py function">
+<dt class="sig sig-object py" id="dramkit.gentools.merge_dicts">
+<span class="sig-prename descclassname"><span class="pre">dramkit.gentools.</span></span><span class="sig-name descname"><span class="pre">merge_dicts</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dicts</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.gentools.merge_dicts" title="Permalink to this definition"></a></dt>
+<dd><p>将多个字典合并成一个字典</p>
+</dd></dl>
+
+</section>
 <section id="link-lists">
 <h3>link_lists<a class="headerlink" href="#link-lists" title="Permalink to this headline"></a></h3>
 <dl class="py function">
@@ -2146,6 +2168,15 @@ cols_groupby设定</p>
 <div class="line">获取浮点数x的小数位数</div>
 <div class="line">ignore_tail0设置是否忽略小数点尾部无效的0</div>
 </div>
+</dd></dl>
+
+</section>
+<section id="list2dict">
+<h3>list2dict<a class="headerlink" href="#list2dict" title="Permalink to this headline"></a></h3>
+<dl class="py function">
+<dt class="sig sig-object py" id="dramkit.gentools.list2dict">
+<span class="sig-prename descclassname"><span class="pre">dramkit.gentools.</span></span><span class="sig-name descname"><span class="pre">list2dict</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">list_key</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">list_val</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.gentools.list2dict" title="Permalink to this definition"></a></dt>
+<dd><p>两个列表生成字典</p>
 </dd></dl>
 
 </section>
@@ -2256,7 +2287,7 @@ cols_groupby设定</p>
 <dl class="py function">
 <dt class="sig sig-object py" id="dramkit.iotools.write_yml">
 <span class="sig-prename descclassname"><span class="pre">dramkit.iotools.</span></span><span class="sig-name descname"><span class="pre">write_yml</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.iotools.write_yml" title="Permalink to this definition"></a></dt>
-<dd><p>写入yml文件，待实现</p>
+<dd><p>写入yml文件</p>
 </dd></dl>
 
 </section>
@@ -2285,7 +2316,7 @@ cols_groupby设定</p>
 <h3>write_json<a class="headerlink" href="#write-json" title="Permalink to this headline"></a></h3>
 <dl class="py function">
 <dt class="sig sig-object py" id="dramkit.iotools.write_json">
-<span class="sig-prename descclassname"><span class="pre">dramkit.iotools.</span></span><span class="sig-name descname"><span class="pre">write_json</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fpath</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">encoding</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.iotools.write_json" title="Permalink to this definition"></a></dt>
+<span class="sig-prename descclassname"><span class="pre">dramkit.iotools.</span></span><span class="sig-name descname"><span class="pre">write_json</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fpath</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">encoding</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mode</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'w'</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.iotools.write_json" title="Permalink to this definition"></a></dt>
 <dd><p>把data写入json格式文件</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -2562,21 +2593,21 @@ cols_groupby设定</p>
 </dd></dl>
 
 </section>
-<section id="copy-file">
-<h3>copy_file<a class="headerlink" href="#copy-file" title="Permalink to this headline"></a></h3>
+<section id="copy-file-to-dir">
+<h3>copy_file_to_dir<a class="headerlink" href="#copy-file-to-dir" title="Permalink to this headline"></a></h3>
 <dl class="py function">
-<dt class="sig sig-object py" id="dramkit.iotools.copy_file">
-<span class="sig-prename descclassname"><span class="pre">dramkit.iotools.</span></span><span class="sig-name descname"><span class="pre">copy_file</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.iotools.copy_file" title="Permalink to this definition"></a></dt>
+<dt class="sig sig-object py" id="dramkit.iotools.copy_file_to_dir">
+<span class="sig-prename descclassname"><span class="pre">dramkit.iotools.</span></span><span class="sig-name descname"><span class="pre">copy_file_to_dir</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">src_path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tgt_dir</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">force</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.iotools.copy_file_to_dir" title="Permalink to this definition"></a></dt>
 <dd><p>复制文件</p>
 </dd></dl>
 
 </section>
-<section id="copy-dir">
-<h3>copy_dir<a class="headerlink" href="#copy-dir" title="Permalink to this headline"></a></h3>
+<section id="copy-file-to-file">
+<h3>copy_file_to_file<a class="headerlink" href="#copy-file-to-file" title="Permalink to this headline"></a></h3>
 <dl class="py function">
-<dt class="sig sig-object py" id="dramkit.iotools.copy_dir">
-<span class="sig-prename descclassname"><span class="pre">dramkit.iotools.</span></span><span class="sig-name descname"><span class="pre">copy_dir</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.iotools.copy_dir" title="Permalink to this definition"></a></dt>
-<dd><p>复制文件夹</p>
+<dt class="sig sig-object py" id="dramkit.iotools.copy_file_to_file">
+<span class="sig-prename descclassname"><span class="pre">dramkit.iotools.</span></span><span class="sig-name descname"><span class="pre">copy_file_to_file</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">src_path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tgt_path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">force</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.iotools.copy_file_to_file" title="Permalink to this definition"></a></dt>
+<dd><p>文件复制（重命名）</p>
 </dd></dl>
 
 </section>
@@ -2584,17 +2615,17 @@ cols_groupby设定</p>
 <h3>copy_dir_structure<a class="headerlink" href="#copy-dir-structure" title="Permalink to this headline"></a></h3>
 <dl class="py function">
 <dt class="sig sig-object py" id="dramkit.iotools.copy_dir_structure">
-<span class="sig-prename descclassname"><span class="pre">dramkit.iotools.</span></span><span class="sig-name descname"><span class="pre">copy_dir_structure</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">src_dir</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tgt_dir</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ext</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">recu_sub_dir</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.iotools.copy_dir_structure" title="Permalink to this definition"></a></dt>
+<span class="sig-prename descclassname"><span class="pre">dramkit.iotools.</span></span><span class="sig-name descname"><span class="pre">copy_dir_structure</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">src_dir</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tgt_dir</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ext</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">recu_sub_dir</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">keep_root_same</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">return_map</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.iotools.copy_dir_structure" title="Permalink to this definition"></a></dt>
 <dd><p>复制文件夹结构，不复制里面的文件</p>
 </dd></dl>
 
 </section>
-<section id="copy-specified-type-files">
-<h3>copy_specified_type_files<a class="headerlink" href="#copy-specified-type-files" title="Permalink to this headline"></a></h3>
+<section id="copy-dir">
+<h3>copy_dir<a class="headerlink" href="#copy-dir" title="Permalink to this headline"></a></h3>
 <dl class="py function">
-<dt class="sig sig-object py" id="dramkit.iotools.copy_specified_type_files">
-<span class="sig-prename descclassname"><span class="pre">dramkit.iotools.</span></span><span class="sig-name descname"><span class="pre">copy_specified_type_files</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dir_path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">type_list</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_dir</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">recu_sub_dir</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.iotools.copy_specified_type_files" title="Permalink to this definition"></a></dt>
-<dd><p>复制dir_path文件夹下所有类型在type_list中的文件到target_dir中</p>
+<dt class="sig sig-object py" id="dramkit.iotools.copy_dir">
+<span class="sig-prename descclassname"><span class="pre">dramkit.iotools.</span></span><span class="sig-name descname"><span class="pre">copy_dir</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">src_dir</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tgt_dir</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ext_file</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ext_dir</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">recu_sub_dir</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">force</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">keep_root_same</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">keep_empty_dir_when_not_recu</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.iotools.copy_dir" title="Permalink to this definition"></a></dt>
+<dd><p>复制整个文件夹及其内容</p>
 </dd></dl>
 
 </section>
@@ -2603,7 +2634,7 @@ cols_groupby设定</p>
 <dl class="py function">
 <dt class="sig sig-object py" id="dramkit.iotools.move_file">
 <span class="sig-prename descclassname"><span class="pre">dramkit.iotools.</span></span><span class="sig-name descname"><span class="pre">move_file</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.iotools.move_file" title="Permalink to this definition"></a></dt>
-<dd><p>移动文件，待实现</p>
+<dd><p>移动文件</p>
 </dd></dl>
 
 </section>
@@ -2612,7 +2643,7 @@ cols_groupby设定</p>
 <dl class="py function">
 <dt class="sig sig-object py" id="dramkit.iotools.move_dir">
 <span class="sig-prename descclassname"><span class="pre">dramkit.iotools.</span></span><span class="sig-name descname"><span class="pre">move_dir</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.iotools.move_dir" title="Permalink to this definition"></a></dt>
-<dd><p>移动文件夹，待实现</p>
+<dd><p>移动文件夹</p>
 </dd></dl>
 
 </section>
@@ -2830,7 +2861,7 @@ cols_groupby设定</p>
 <dl class="py function">
 <dt class="sig sig-object py" id="dramkit.iotools.zip_extract">
 <span class="sig-prename descclassname"><span class="pre">dramkit.iotools.</span></span><span class="sig-name descname"><span class="pre">zip_extract</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fzip</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">to_dir</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">replace_exists</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.iotools.zip_extract" title="Permalink to this definition"></a></dt>
-<dd><p>用zipfile解压文件，待实现</p>
+<dd><p>用zipfile解压文件</p>
 </dd></dl>
 
 </section>
@@ -2892,7 +2923,7 @@ cols_groupby设定</p>
 <dl class="py function">
 <dt class="sig sig-object py" id="dramkit.iotools.extract_7z">
 <span class="sig-prename descclassname"><span class="pre">dramkit.iotools.</span></span><span class="sig-name descname"><span class="pre">extract_7z</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.iotools.extract_7z" title="Permalink to this definition"></a></dt>
-<dd><p>7z命令解压文件，待实现</p>
+<dd><p>7z命令解压文件</p>
 </dd></dl>
 
 </section>
@@ -2901,7 +2932,7 @@ cols_groupby设定</p>
 <dl class="py function">
 <dt class="sig sig-object py" id="dramkit.iotools.cmdrun">
 <span class="sig-prename descclassname"><span class="pre">dramkit.iotools.</span></span><span class="sig-name descname"><span class="pre">cmdrun</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cmd_str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.iotools.cmdrun" title="Permalink to this definition"></a></dt>
-<dd><p>调用cmd执行cmd_str命令，待实现</p>
+<dd><p>调用cmd执行cmd_str命令</p>
 </dd></dl>
 
 </section>

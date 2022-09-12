@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Index &mdash; DramKit 0.3.12 documentation</title>
+  <title>Index &mdash; DramKit 0.3.14 documentation</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <!--[if lt IE 9]>
@@ -50,6 +50,7 @@
 <li class="toctree-l1"><a class="reference internal" href="dramkit.speedup.html">speedup</a></li>
 <li class="toctree-l1"><a class="reference internal" href="dramkit.sqltools.html">sqltools</a></li>
 <li class="toctree-l1"><a class="reference internal" href="dramkit.webtools.html">webtools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dramkit.wechat.html">wechat</a></li>
 </ul>
 
         </div>
@@ -124,6 +125,8 @@
 </li>
         <li><a href="dramkit.speedup.html#dramkit.speedup.multi_thread.SingleThread.__init__">(dramkit.speedup.multi_thread.SingleThread method)</a>
 </li>
+        <li><a href="dramkit.wechat.html#dramkit.wechat.qywechat.WechatWork.__init__">(dramkit.wechat.qywechat.WechatWork method)</a>
+</li>
       </ul></li>
   </ul></td>
 </tr></table>
@@ -131,6 +134,10 @@
 <h2 id="A">A</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="dramkit.wechat.html#dramkit.wechat.qywechat.WechatWork.access_token">access_token (dramkit.wechat.qywechat.WechatWork attribute)</a>
+</li>
+      <li><a href="dramkit.wechat.html#dramkit.wechat.qywechat.WechatWork.access_token_expires_time">access_token_expires_time (dramkit.wechat.qywechat.WechatWork attribute)</a>
+</li>
       <li><a href="dramkit.pystyles.html#dramkit.pystyles.dramkit_style.DramkitClassStyle.account_id">account_id (dramkit.pystyles.dramkit_style.DramkitClassStyle property)</a>
 </li>
       <li><a href="dramkit.optimizer.html#dramkit.optimizer.base_funcs.TestFuncs.ackley">ackley() (dramkit.optimizer.base_funcs.TestFuncs static method)</a>
@@ -141,10 +148,10 @@
 </li>
       <li><a href="dramkit.optimizer.html#dramkit.optimizer.alo.alo">alo() (in module dramkit.optimizer.alo)</a>
 </li>
-      <li><a href="dramkit.datsci.html#dramkit.datsci.stats.anova_oneway">anova_oneway() (in module dramkit.datsci.stats)</a>
-</li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="dramkit.datsci.html#dramkit.datsci.stats.anova_oneway">anova_oneway() (in module dramkit.datsci.stats)</a>
+</li>
       <li><a href="dramkit.chncal.html#dramkit.chncal.constants.Holiday.anti_fascist_70th_day">anti_fascist_70th_day (dramkit.chncal.constants.Holiday attribute)</a>
 </li>
       <li><a href="dramkit.datsci.html#dramkit.datsci.freq_item_set.apriori_dramkit">apriori_dramkit() (in module dramkit.datsci.freq_item_set)</a>
@@ -279,9 +286,9 @@
 </li>
       <li><a href="dramkit.html#dramkit.iotools.copy_dir_structure">copy_dir_structure() (in module dramkit.iotools)</a>
 </li>
-      <li><a href="dramkit.html#dramkit.iotools.copy_file">copy_file() (in module dramkit.iotools)</a>
+      <li><a href="dramkit.html#dramkit.iotools.copy_file_to_dir">copy_file_to_dir() (in module dramkit.iotools)</a>
 </li>
-      <li><a href="dramkit.html#dramkit.iotools.copy_specified_type_files">copy_specified_type_files() (in module dramkit.iotools)</a>
+      <li><a href="dramkit.html#dramkit.iotools.copy_file_to_file">copy_file_to_file() (in module dramkit.iotools)</a>
 </li>
       <li><a href="dramkit.html#dramkit.gentools.count_between_gap">count_between_gap() (in module dramkit.gentools)</a>
 </li>
@@ -327,6 +334,8 @@
 </li>
       <li><a href="dramkit.html#dramkit.gentools.cut_range_to_subs">cut_range_to_subs() (in module dramkit.gentools)</a>
 </li>
+      <li><a href="dramkit.html#dramkit.gentools.cut_to_subs">cut_to_subs() (in module dramkit.gentools)</a>
+</li>
   </ul></td>
 </tr></table>
 
@@ -363,8 +372,12 @@
 </li>
       <li><a href="dramkit.datsci.html#dramkit.datsci.stats.delta_var_d0">delta_var_d0() (in module dramkit.datsci.stats)</a>
 </li>
-      <li><a href="dramkit.sqltools.html#dramkit.sqltools.mysql.df_to_sql_pymysql">df_to_sql_pymysql() (in module dramkit.sqltools.mysql)</a>
+      <li><a href="dramkit.sqltools.html#dramkit.sqltools.py_mysql.PyMySQL.df_to_mysql">df_to_mysql() (dramkit.sqltools.py_mysql.PyMySQL method)</a>
+
+      <ul>
+        <li><a href="dramkit.sqltools.html#dramkit.sqltools.py_mysql.df_to_mysql">(in module dramkit.sqltools.py_mysql)</a>
 </li>
+      </ul></li>
       <li><a href="dramkit.html#dramkit.datetimetools.diff_days_date">diff_days_date() (in module dramkit.datetimetools)</a>
 </li>
       <li><a href="dramkit.html#dramkit.datetimetools.diff_time_second">diff_time_second() (in module dramkit.datetimetools)</a>
@@ -596,8 +609,6 @@
         <li><a href="dramkit.find_addends.html#module-dramkit.find_addends.find_addends_bigfirst">module</a>
 </li>
       </ul></li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li>
     dramkit.find_addends.find_addends_recu
 
@@ -605,6 +616,8 @@
         <li><a href="dramkit.find_addends.html#module-dramkit.find_addends.find_addends_recu">module</a>
 </li>
       </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li>
     dramkit.find_addends.find_addends_smlfirst
 
@@ -872,10 +885,17 @@
 </li>
       </ul></li>
       <li>
-    dramkit.sqltools.mysql
+    dramkit.sqltools.py_mysql
 
       <ul>
-        <li><a href="dramkit.sqltools.html#module-dramkit.sqltools.mysql">module</a>
+        <li><a href="dramkit.sqltools.html#module-dramkit.sqltools.py_mysql">module</a>
+</li>
+      </ul></li>
+      <li>
+    dramkit.sqltools.sql_alchemy
+
+      <ul>
+        <li><a href="dramkit.sqltools.html#module-dramkit.sqltools.sql_alchemy">module</a>
 </li>
       </ul></li>
       <li>
@@ -885,11 +905,22 @@
         <li><a href="dramkit.webtools.html#module-dramkit.webtools.utils_html">module</a>
 </li>
       </ul></li>
+      <li>
+    dramkit.wechat.qywechat
+
+      <ul>
+        <li><a href="dramkit.wechat.html#module-dramkit.wechat.qywechat">module</a>
+</li>
+      </ul></li>
       <li><a href="dramkit.pystyles.html#dramkit.pystyles.dramkit_style.dramkit_funcsytle">dramkit_funcsytle() (in module dramkit.pystyles.dramkit_style)</a>
 </li>
       <li><a href="dramkit.pystyles.html#dramkit.pystyles.dramkit_style.DramkitClassStyle">DramkitClassStyle (class in dramkit.pystyles.dramkit_style)</a>
 </li>
       <li><a href="dramkit.html#dramkit.gentools.drop_index_duplicates">drop_index_duplicates() (in module dramkit.gentools)</a>
+</li>
+      <li><a href="dramkit.datsci.html#dramkit.datsci.preprocess.drop_miss_feature">drop_miss_feature() (in module dramkit.datsci.preprocess)</a>
+</li>
+      <li><a href="dramkit.datsci.html#dramkit.datsci.preprocess.drop_miss_sample">drop_miss_sample() (in module dramkit.datsci.preprocess)</a>
 </li>
   </ul></td>
 </tr></table>
@@ -905,12 +936,20 @@
 </li>
       <li><a href="dramkit.optimizer.html#dramkit.optimizer.utils_heuristic.FuncOpterInfo.end_time">end_time (dramkit.optimizer.utils_heuristic.FuncOpterInfo property)</a>
 </li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="dramkit.datsci.html#dramkit.datsci.entropy_weight.entropy_weight">entropy_weight() (in module dramkit.datsci.entropy_weight)</a>
 </li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="dramkit.optimizer.html#dramkit.optimizer.utils_heuristic.FuncOpterInfo.exe_time">exe_time (dramkit.optimizer.utils_heuristic.FuncOpterInfo property)</a>
 </li>
+      <li><a href="dramkit.sqltools.html#dramkit.sqltools.py_mysql.PyMySQL.execute_sql">execute_sql() (dramkit.sqltools.py_mysql.PyMySQL method)</a>
+
+      <ul>
+        <li><a href="dramkit.sqltools.html#dramkit.sqltools.sql_alchemy.SQLAlchemy.execute_sql">(dramkit.sqltools.sql_alchemy.SQLAlchemy method)</a>
+</li>
+        <li><a href="dramkit.sqltools.html#dramkit.sqltools.py_mysql.execute_sql">(in module dramkit.sqltools.py_mysql)</a>
+</li>
+      </ul></li>
       <li><a href="dramkit.datsci.html#dramkit.datsci.preprocess.ExternalStd">ExternalStd (class in dramkit.datsci.preprocess)</a>
 </li>
       <li><a href="dramkit.html#dramkit.iotools.extract_7z">extract_7z() (in module dramkit.iotools)</a>
@@ -1073,6 +1112,10 @@
 </li>
       <li><a href="dramkit.datsci.html#dramkit.datsci.time_series.genXy_X2d_y1dsteps">genXy_X2d_y1dsteps() (in module dramkit.datsci.time_series)</a>
 </li>
+      <li><a href="dramkit.wechat.html#dramkit.wechat.qywechat.WechatWork.get_access_token">get_access_token() (dramkit.wechat.qywechat.WechatWork method)</a>
+</li>
+      <li><a href="dramkit.chncal.html#dramkit.chncal.apis.get_age_by_suxing">get_age_by_suxing() (in module dramkit.chncal.apis)</a>
+</li>
       <li><a href="dramkit.html#dramkit.iotools.get_all_paths">get_all_paths() (in module dramkit.iotools)</a>
 </li>
       <li><a href="dramkit.find_addends.html#dramkit.find_addends.find_addends_utils.get_alts_sml">get_alts_sml() (in module dramkit.find_addends.find_addends_utils)</a>
@@ -1091,6 +1134,12 @@
 </li>
       <li><a href="dramkit.html#dramkit.gentools.get_con_start_end">get_con_start_end() (in module dramkit.gentools)</a>
 </li>
+      <li><a href="dramkit.sqltools.html#dramkit.sqltools.py_mysql.get_conn">get_conn() (in module dramkit.sqltools.py_mysql)</a>
+
+      <ul>
+        <li><a href="dramkit.sqltools.html#dramkit.sqltools.sql_alchemy.get_conn">(in module dramkit.sqltools.sql_alchemy)</a>
+</li>
+      </ul></li>
       <li><a href="dramkit.datsci.html#dramkit.datsci.find_maxmin.get_continue_maxmin_info">get_continue_maxmin_info() (in module dramkit.datsci.find_maxmin)</a>
 </li>
       <li><a href="dramkit.other.html#dramkit.other.othertools.get_csv_df_colmaxmin">get_csv_df_colmaxmin() (in module dramkit.other.othertools)</a>
@@ -1183,6 +1232,12 @@
 </li>
       <li><a href="dramkit.html#dramkit.gentools.get_preval_func_cond">get_preval_func_cond() (in module dramkit.gentools)</a>
 </li>
+      <li><a href="dramkit.sqltools.html#dramkit.sqltools.py_mysql.PyMySQL.get_primary_keys">get_primary_keys() (dramkit.sqltools.py_mysql.PyMySQL method)</a>
+
+      <ul>
+        <li><a href="dramkit.sqltools.html#dramkit.sqltools.py_mysql.get_primary_keys">(in module dramkit.sqltools.py_mysql)</a>
+</li>
+      </ul></li>
       <li><a href="dramkit.datsci.html#dramkit.datsci.stats.get_quantiles">get_quantiles() (in module dramkit.datsci.stats)</a>
 </li>
       <li><a href="dramkit.html#dramkit.datetimetools.get_quarter">get_quarter() (in module dramkit.datetimetools)</a>
@@ -1213,6 +1268,12 @@
 </li>
       <li><a href="dramkit.chncal.html#dramkit.chncal.apis.get_trade_dates">get_trade_dates() (in module dramkit.chncal.apis)</a>
 </li>
+      <li><a href="dramkit.sqltools.html#dramkit.sqltools.py_mysql.PyMySQL.get_uni_indexs">get_uni_indexs() (dramkit.sqltools.py_mysql.PyMySQL method)</a>
+
+      <ul>
+        <li><a href="dramkit.sqltools.html#dramkit.sqltools.py_mysql.get_uni_indexs">(in module dramkit.sqltools.py_mysql)</a>
+</li>
+      </ul></li>
       <li><a href="dramkit.html#dramkit.gentools.get_update_kwargs">get_update_kwargs() (in module dramkit.gentools)</a>
 </li>
       <li><a href="dramkit.chncal.html#dramkit.chncal.apis.get_work_dates">get_work_dates() (in module dramkit.chncal.apis)</a>
@@ -1353,14 +1414,16 @@
 </li>
       <li><a href="dramkit.html#dramkit.gentools.link_lists">link_lists() (in module dramkit.gentools)</a>
 </li>
+      <li><a href="dramkit.html#dramkit.gentools.list2dict">list2dict() (in module dramkit.gentools)</a>
+</li>
       <li><a href="dramkit.html#dramkit.iotools.load_csv">load_csv() (in module dramkit.iotools)</a>
 </li>
       <li><a href="dramkit.html#dramkit.iotools.load_csvs">load_csvs() (in module dramkit.iotools)</a>
 </li>
-      <li><a href="dramkit.html#dramkit.iotools.load_csvs_dir">load_csvs_dir() (in module dramkit.iotools)</a>
-</li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="dramkit.html#dramkit.iotools.load_csvs_dir">load_csvs_dir() (in module dramkit.iotools)</a>
+</li>
       <li><a href="dramkit.html#dramkit.iotools.load_excels">load_excels() (in module dramkit.iotools)</a>
 </li>
       <li><a href="dramkit.html#dramkit.iotools.load_json">load_json() (in module dramkit.iotools)</a>
@@ -1412,6 +1475,8 @@
       <li><a href="dramkit.html#dramkit.gentools.StructureObject.merge">merge() (dramkit.gentools.StructureObject method)</a>
 </li>
       <li><a href="dramkit.html#dramkit.gentools.merge_df">merge_df() (in module dramkit.gentools)</a>
+</li>
+      <li><a href="dramkit.html#dramkit.gentools.merge_dicts">merge_dicts() (in module dramkit.gentools)</a>
 </li>
       <li><a href="dramkit.chncal.html#dramkit.chncal.constants.Holiday.mid_autumn_festival">mid_autumn_festival (dramkit.chncal.constants.Holiday attribute)</a>
 </li>
@@ -1561,9 +1626,13 @@
 </li>
         <li><a href="dramkit.speedup.html#module-dramkit.speedup.multi_thread">dramkit.speedup.multi_thread</a>
 </li>
-        <li><a href="dramkit.sqltools.html#module-dramkit.sqltools.mysql">dramkit.sqltools.mysql</a>
+        <li><a href="dramkit.sqltools.html#module-dramkit.sqltools.py_mysql">dramkit.sqltools.py_mysql</a>
+</li>
+        <li><a href="dramkit.sqltools.html#module-dramkit.sqltools.sql_alchemy">dramkit.sqltools.sql_alchemy</a>
 </li>
         <li><a href="dramkit.webtools.html#module-dramkit.webtools.utils_html">dramkit.webtools.utils_html</a>
+</li>
+        <li><a href="dramkit.wechat.html#module-dramkit.wechat.qywechat">dramkit.wechat.qywechat</a>
 </li>
       </ul></li>
   </ul></td>
@@ -1700,6 +1769,8 @@
 </li>
       <li><a href="dramkit.html#dramkit.iotools.pyc2py_dir">pyc2py_dir() (in module dramkit.iotools)</a>
 </li>
+      <li><a href="dramkit.sqltools.html#dramkit.sqltools.py_mysql.PyMySQL">PyMySQL (class in dramkit.sqltools.py_mysql)</a>
+</li>
   </ul></td>
 </tr></table>
 
@@ -1750,10 +1821,10 @@
 </li>
       <li><a href="dramkit.logtools.html#dramkit.logtools.utils_logger.remove_handlers">remove_handlers() (in module dramkit.logtools.utils_logger)</a>
 </li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="dramkit.html#dramkit.iotools.rename_files_in_dir">rename_files_in_dir() (in module dramkit.iotools)</a>
 </li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="dramkit.other.html#dramkit.other.replace_endblank.replace_endblank_in_file">replace_endblank_in_file() (in module dramkit.other.replace_endblank)</a>
 </li>
       <li><a href="dramkit.html#dramkit.gentools.replace_repeat_func_iter">replace_repeat_func_iter() (in module dramkit.gentools)</a>
@@ -1763,6 +1834,10 @@
       <li><a href="dramkit.html#dramkit.gentools.replace_repeat_iter">replace_repeat_iter() (in module dramkit.gentools)</a>
 </li>
       <li><a href="dramkit.html#dramkit.gentools.replace_repeat_pd">replace_repeat_pd() (in module dramkit.gentools)</a>
+</li>
+      <li><a href="dramkit.sqltools.html#dramkit.sqltools.py_mysql.PyMySQL.reset_db">reset_db() (dramkit.sqltools.py_mysql.PyMySQL method)</a>
+</li>
+      <li><a href="dramkit.sqltools.html#dramkit.sqltools.py_mysql.PyMySQL.reset_db_ori">reset_db_ori() (dramkit.sqltools.py_mysql.PyMySQL method)</a>
 </li>
       <li><a href="dramkit.datsci.html#dramkit.datsci.stats.rmse">rmse() (in module dramkit.datsci.stats)</a>
 </li>
@@ -1804,6 +1879,18 @@
 </li>
       <li><a href="dramkit.datsci.html#dramkit.datsci.ahp.score2JM">score2JM() (in module dramkit.datsci.ahp)</a>
 </li>
+      <li><a href="dramkit.sqltools.html#dramkit.sqltools.py_mysql.PyMySQL.select_db">select_db() (dramkit.sqltools.py_mysql.PyMySQL method)</a>
+</li>
+      <li><a href="dramkit.wechat.html#dramkit.wechat.qywechat.WechatWork.send">send() (dramkit.wechat.qywechat.WechatWork method)</a>
+</li>
+      <li><a href="dramkit.wechat.html#dramkit.wechat.qywechat.WechatWork.send_file">send_file() (dramkit.wechat.qywechat.WechatWork method)</a>
+</li>
+      <li><a href="dramkit.wechat.html#dramkit.wechat.qywechat.WechatWork.send_image">send_image() (dramkit.wechat.qywechat.WechatWork method)</a>
+</li>
+      <li><a href="dramkit.wechat.html#dramkit.wechat.qywechat.WechatWork.send_markdown">send_markdown() (dramkit.wechat.qywechat.WechatWork method)</a>
+</li>
+      <li><a href="dramkit.wechat.html#dramkit.wechat.qywechat.WechatWork.send_text">send_text() (dramkit.wechat.qywechat.WechatWork method)</a>
+</li>
       <li><a href="dramkit.optimizer.html#dramkit.optimizer.utils_heuristic.FuncOpterInfo.set_best_val">set_best_val() (dramkit.optimizer.utils_heuristic.FuncOpterInfo method)</a>
 </li>
       <li><a href="dramkit.optimizer.html#dramkit.optimizer.utils_heuristic.FuncOpterInfo.set_best_x">set_best_x() (dramkit.optimizer.utils_heuristic.FuncOpterInfo method)</a>
@@ -1824,12 +1911,28 @@
 </li>
       <li><a href="dramkit.html#dramkit.gentools.StructureObject.set_key_value">set_key_value() (dramkit.gentools.StructureObject method)</a>
 </li>
+      <li><a href="dramkit.logtools.html#dramkit.logtools.utils_logger.set_level">set_level() (in module dramkit.logtools.utils_logger)</a>
+</li>
+      <li><a href="dramkit.sqltools.html#dramkit.sqltools.py_mysql.PyMySQL.set_primary_key">set_primary_key() (dramkit.sqltools.py_mysql.PyMySQL method)</a>
+
+      <ul>
+        <li><a href="dramkit.sqltools.html#dramkit.sqltools.py_mysql.set_primary_key">(in module dramkit.sqltools.py_mysql)</a>
+</li>
+      </ul></li>
       <li><a href="dramkit.optimizer.html#dramkit.optimizer.utils_heuristic.FuncOpterInfo.set_start_time">set_start_time() (dramkit.optimizer.utils_heuristic.FuncOpterInfo method)</a>
 </li>
+      <li><a href="dramkit.sqltools.html#dramkit.sqltools.py_mysql.PyMySQL.set_uni_index">set_uni_index() (dramkit.sqltools.py_mysql.PyMySQL method)</a>
+
+      <ul>
+        <li><a href="dramkit.sqltools.html#dramkit.sqltools.py_mysql.set_uni_index">(in module dramkit.sqltools.py_mysql)</a>
+</li>
+      </ul></li>
       <li><a href="dramkit.pystyles.html#dramkit.pystyles.dramkit_style.DramkitClassStyle.show">show() (dramkit.pystyles.dramkit_style.DramkitClassStyle method)</a>
 </li>
       <li><a href="dramkit.pystyles.html#dramkit.pystyles.dramkit_style.DramkitClassStyle.show2">show2() (dramkit.pystyles.dramkit_style.DramkitClassStyle method)</a>
 </li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="dramkit.pystyles.html#dramkit.pystyles.dramkit_style.DramkitClassStyle.show3">show3() (dramkit.pystyles.dramkit_style.DramkitClassStyle static method)</a>
 </li>
       <li><a href="dramkit.datsci.html#dramkit.datsci.elm_cls.ELMClassifier.sigmoid">sigmoid() (dramkit.datsci.elm_cls.ELMClassifier static method)</a>
@@ -1842,8 +1945,6 @@
         <li><a href="dramkit.datsci.html#dramkit.datsci.activate_funcs.sigmoid">(in module dramkit.datsci.activate_funcs)</a>
 </li>
       </ul></li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="dramkit.datsci.html#dramkit.datsci.ahp_sim_ri.sim_ri">sim_ri() (in module dramkit.datsci.ahp_sim_ri)</a>
 </li>
       <li><a href="dramkit.other.html#dramkit.other.othertools.simplified2traditional">simplified2traditional() (in module dramkit.other.othertools)</a>
@@ -1875,6 +1976,8 @@
       <li><a href="dramkit.optimizer.html#dramkit.optimizer.base_funcs.TestFuncs.sphere">sphere() (dramkit.optimizer.base_funcs.TestFuncs static method)</a>
 </li>
       <li><a href="dramkit.chncal.html#dramkit.chncal.constants.Holiday.spring_festival">spring_festival (dramkit.chncal.constants.Holiday attribute)</a>
+</li>
+      <li><a href="dramkit.sqltools.html#dramkit.sqltools.sql_alchemy.SQLAlchemy">SQLAlchemy (class in dramkit.sqltools.sql_alchemy)</a>
 </li>
       <li><a href="dramkit.other.html#dramkit.other.langconv.Converter.start">start() (dramkit.other.langconv.Converter method)</a>
 </li>
@@ -1980,10 +2083,12 @@
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="dramkit.html#dramkit.iotools.unpickle_file">unpickle_file() (in module dramkit.iotools)</a>
 </li>
-      <li><a href="dramkit.html#dramkit.gentools.TimeRecoder.used">used() (dramkit.gentools.TimeRecoder method)</a>
+      <li><a href="dramkit.wechat.html#dramkit.wechat.qywechat.WechatWork.upload_file">upload_file() (dramkit.wechat.qywechat.WechatWork method)</a>
 </li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="dramkit.html#dramkit.gentools.TimeRecoder.used">used() (dramkit.gentools.TimeRecoder method)</a>
+</li>
       <li><a href="dramkit.html#dramkit.gentools.TimeRecoder.usedm">usedm() (dramkit.gentools.TimeRecoder method)</a>
 </li>
       <li><a href="dramkit.html#dramkit.gentools.TimeRecoder.useds">useds() (dramkit.gentools.TimeRecoder method)</a>
@@ -2016,6 +2121,8 @@
 <h2 id="W">W</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="dramkit.wechat.html#dramkit.wechat.qywechat.WechatWork">WechatWork (class in dramkit.wechat.qywechat)</a>
+</li>
       <li><a href="dramkit.datsci.html#dramkit.datsci.stats.weibullcdf">weibullcdf() (in module dramkit.datsci.stats)</a>
 </li>
       <li><a href="dramkit.datsci.html#dramkit.datsci.stats.weibullfit">weibullfit() (in module dramkit.datsci.stats)</a>

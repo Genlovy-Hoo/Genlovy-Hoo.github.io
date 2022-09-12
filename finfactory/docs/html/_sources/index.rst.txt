@@ -6,12 +6,10 @@ Welcome to FinFactory's documentation!
    :caption: Contents:
 
    finfactory <finfactory>
-   factors <finfactory.factors>
+   apis <finfactory.apis>
    finplot <finfactory.finplot>
    fintools <finfactory.fintools>
    get_data <finfactory.get_data>
-   options_trader <finfactory.options_trader>
-   strategy <finfactory.strategy>
    utils <finfactory.utils>
 
 Indices and tables

@@ -1,0 +1,17 @@
+wechat
+=======
+
+qywechat
+---------
+
+.. automodule:: dramkit.wechat.qywechat
+
+.. currentmodule:: dramkit.wechat.qywechat
+
+WechatWork
+^^^^^^^^^^^
+
+.. autoclass:: dramkit.wechat.qywechat.WechatWork
+    :members:
+    :undoc-members:
+    :show-inheritance:

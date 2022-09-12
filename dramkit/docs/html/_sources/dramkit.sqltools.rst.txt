@@ -1,14 +1,72 @@
 sqltools
 =========
 
-mysql
-------
+py_mysql
+---------
 
-.. automodule:: dramkit.sqltools.mysql
+.. automodule:: dramkit.sqltools.py_mysql
 
-.. currentmodule:: dramkit.sqltools.mysql
+.. currentmodule:: dramkit.sqltools.py_mysql
 
-df_to_sql_pymysql
-^^^^^^^^^^^^^^^^^^
+PyMySQL
+^^^^^^^^
 
-.. autofunction:: dramkit.sqltools.mysql.df_to_sql_pymysql
+.. autoclass:: dramkit.sqltools.py_mysql.PyMySQL
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+get_conn
+^^^^^^^^^
+
+.. autofunction:: dramkit.sqltools.py_mysql.get_conn
+
+execute_sql
+^^^^^^^^^^^^
+
+.. autofunction:: dramkit.sqltools.py_mysql.execute_sql
+
+get_primary_keys
+^^^^^^^^^^^^^^^^^
+
+.. autofunction:: dramkit.sqltools.py_mysql.get_primary_keys
+
+get_uni_indexs
+^^^^^^^^^^^^^^^
+
+.. autofunction:: dramkit.sqltools.py_mysql.get_uni_indexs
+
+set_primary_key
+^^^^^^^^^^^^^^^^
+
+.. autofunction:: dramkit.sqltools.py_mysql.set_primary_key
+
+set_uni_index
+^^^^^^^^^^^^^^
+
+.. autofunction:: dramkit.sqltools.py_mysql.set_uni_index
+
+df_to_mysql
+^^^^^^^^^^^^
+
+.. autofunction:: dramkit.sqltools.py_mysql.df_to_mysql
+
+sql_alchemy
+------------
+
+.. automodule:: dramkit.sqltools.sql_alchemy
+
+.. currentmodule:: dramkit.sqltools.sql_alchemy
+
+SQLAlchemy
+^^^^^^^^^^^
+
+.. autoclass:: dramkit.sqltools.sql_alchemy.SQLAlchemy
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+get_conn
+^^^^^^^^^
+
+.. autofunction:: dramkit.sqltools.sql_alchemy.get_conn

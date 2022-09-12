@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>chncal &mdash; DramKit 0.3.12 documentation</title>
+  <title>chncal &mdash; DramKit 0.3.14 documentation</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <!--[if lt IE 9]>
@@ -74,6 +74,7 @@
 <li class="toctree-l3"><a class="reference internal" href="#gen2lun">gen2lun</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#gen2gz">gen2gz</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#lun2gen">lun2gen</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#get-age-by-suxing">get_age_by_suxing</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#module-dramkit.chncal.constants">constants</a><ul>
@@ -102,6 +103,7 @@
 <li class="toctree-l1"><a class="reference internal" href="dramkit.speedup.html">speedup</a></li>
 <li class="toctree-l1"><a class="reference internal" href="dramkit.sqltools.html">sqltools</a></li>
 <li class="toctree-l1"><a class="reference internal" href="dramkit.webtools.html">webtools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dramkit.wechat.html">wechat</a></li>
 </ul>
 
         </div>
@@ -506,6 +508,15 @@ and return the holiday name (None if it’s a normal day)</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">lun2gen</span><span class="p">(</span><span class="s1">&#39;2023.02.30&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
+</dd></dl>
+
+</section>
+<section id="get-age-by-suxing">
+<h3>get_age_by_suxing<a class="headerlink" href="#get-age-by-suxing" title="Permalink to this headline"></a></h3>
+<dl class="py function">
+<dt class="sig sig-object py" id="dramkit.chncal.apis.get_age_by_suxing">
+<span class="sig-prename descclassname"><span class="pre">dramkit.chncal.apis.</span></span><span class="sig-name descname"><span class="pre">get_age_by_suxing</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">suxing</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">return_n</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.chncal.apis.get_age_by_suxing" title="Permalink to this definition"></a></dt>
+<dd><p>根据属性获取可能年龄</p>
 </dd></dl>
 
 </section>

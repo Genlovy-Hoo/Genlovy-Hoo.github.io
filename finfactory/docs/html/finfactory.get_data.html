@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>get_data &mdash; FinFactory 0.0.18 documentation</title>
+  <title>get_data &mdash; FinFactory 0.0.19 documentation</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <!--[if lt IE 9]>
@@ -18,7 +18,7 @@
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="options_trader" href="finfactory.options_trader.html" />
+    <link rel="next" title="utils" href="finfactory.utils.html" />
     <link rel="prev" title="fintools" href="finfactory.fintools.html" /> 
 </head>
 
@@ -40,7 +40,7 @@
               <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="finfactory.html">finfactory</a></li>
-<li class="toctree-l1"><a class="reference internal" href="finfactory.factors.html">factors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="finfactory.apis.html">apis</a></li>
 <li class="toctree-l1"><a class="reference internal" href="finfactory.finplot.html">finplot</a></li>
 <li class="toctree-l1"><a class="reference internal" href="finfactory.fintools.html">fintools</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">get_data</a><ul>
@@ -106,6 +106,11 @@
 <li class="toctree-l3"><a class="reference internal" href="#get-tosouth-netin">get_tosouth_netin</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#update-tosouth-netin-daily">update_tosouth_netin_daily</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#update-tosouth-netin-daily-check">update_tosouth_netin_daily_check</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#module-finfactory.get_data.ef">ef</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#get-stock-realtime">get_stock_realtime</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#get-future-realtime">get_future_realtime</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#module-finfactory.get_data.eniu_index_pe">eniu_index_pe</a><ul>
@@ -406,8 +411,6 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="finfactory.options_trader.html">options_trader</a></li>
-<li class="toctree-l1"><a class="reference internal" href="finfactory.strategy.html">strategy</a></li>
 <li class="toctree-l1"><a class="reference internal" href="finfactory.utils.html">utils</a></li>
 </ul>
 
@@ -830,6 +833,40 @@ code_start_dates格式如：{‘IC’: ‘2015-04-16’}</p>
 <dt class="sig sig-object py" id="finfactory.get_data.eastmoney_tosouth_netin_daily.update_tosouth_netin_daily_check">
 <span class="sig-prename descclassname"><span class="pre">finfactory.get_data.eastmoney_tosouth_netin_daily.</span></span><span class="sig-name descname"><span class="pre">update_tosouth_netin_daily_check</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">save_path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">root_dir</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">trade_dates</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">logger</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#finfactory.get_data.eastmoney_tosouth_netin_daily.update_tosouth_netin_daily_check" title="Permalink to this definition"></a></dt>
 <dd><p>从东方财富更新南下资金净流入日数据</p>
+</dd></dl>
+
+</section>
+</section>
+<section id="module-finfactory.get_data.ef">
+<span id="ef"></span><h2>ef<a class="headerlink" href="#module-finfactory.get_data.ef" title="Permalink to this headline"></a></h2>
+<section id="get-stock-realtime">
+<h3>get_stock_realtime<a class="headerlink" href="#get-stock-realtime" title="Permalink to this headline"></a></h3>
+<dl class="py function">
+<dt class="sig sig-object py" id="finfactory.get_data.ef.get_stock_realtime">
+<span class="sig-prename descclassname"><span class="pre">finfactory.get_data.ef.</span></span><span class="sig-name descname"><span class="pre">get_stock_realtime</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">stock</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#finfactory.get_data.ef.get_stock_realtime" title="Permalink to this definition"></a></dt>
+<dd><p>股票实时行情数据获取</p>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">get_stock_realtime</span><span class="p">(</span><span class="s1">&#39;600570&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">get_stock_realtime</span><span class="p">([</span><span class="s1">&#39;600570&#39;</span><span class="p">,</span> <span class="s1">&#39;300033&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</section>
+<section id="get-future-realtime">
+<h3>get_future_realtime<a class="headerlink" href="#get-future-realtime" title="Permalink to this headline"></a></h3>
+<dl class="py function">
+<dt class="sig sig-object py" id="finfactory.get_data.ef.get_future_realtime">
+<span class="sig-prename descclassname"><span class="pre">finfactory.get_data.ef.</span></span><span class="sig-name descname"><span class="pre">get_future_realtime</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#finfactory.get_data.ef.get_future_realtime" title="Permalink to this definition"></a></dt>
+<dd><p>期货实时行情获取</p>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">get_future_realtime</span><span class="p">(</span>
+<span class="gp">... </span>   <span class="p">(</span><span class="s1">&#39;IF2209&#39;</span><span class="p">,</span> <span class="s1">&#39;IC2209&#39;</span><span class="p">,</span> <span class="s1">&#39;IH2209&#39;</span><span class="p">,</span> <span class="s1">&#39;IM2209&#39;</span><span class="p">))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">get_future_realtime</span><span class="p">(</span>
+<span class="gp">... </span>   <span class="p">(</span><span class="s1">&#39;IF主力合约&#39;</span><span class="p">,</span> <span class="s1">&#39;IC主力合约&#39;</span><span class="p">,</span> <span class="s1">&#39;IH主力合约&#39;</span><span class="p">,</span> <span class="s1">&#39;IM主力合约&#39;</span><span class="p">))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">get_future_realtime</span><span class="p">(</span><span class="s1">&#39;IF2210&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
 </dd></dl>
 
 </section>
@@ -2642,7 +2679,7 @@ code_start_dates格式如：{‘IC’: ‘2015-04-16’}</p>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="finfactory.fintools.html" class="btn btn-neutral float-left" title="fintools" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="finfactory.options_trader.html" class="btn btn-neutral float-right" title="options_trader" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="finfactory.utils.html" class="btn btn-neutral float-right" title="utils" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

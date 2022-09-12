@@ -377,6 +377,16 @@ get_miss_rate
 
 .. autofunction:: dramkit.datsci.preprocess.get_miss_rate
 
+drop_miss_feature
+^^^^^^^^^^^^^^^^^^
+
+.. autofunction:: dramkit.datsci.preprocess.drop_miss_feature
+
+drop_miss_sample
+^^^^^^^^^^^^^^^^^
+
+.. autofunction:: dramkit.datsci.preprocess.drop_miss_sample
+
 fillna_ma
 ^^^^^^^^^^
 

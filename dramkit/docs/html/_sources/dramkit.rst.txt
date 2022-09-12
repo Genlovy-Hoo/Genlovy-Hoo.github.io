@@ -344,6 +344,11 @@ cut_range_to_subs
 
 .. autofunction:: dramkit.gentools.cut_range_to_subs
 
+cut_to_subs
+^^^^^^^^^^^^
+
+.. autofunction:: dramkit.gentools.cut_to_subs
+
 check_l_allin_l0
 ^^^^^^^^^^^^^^^^^
 
@@ -454,6 +459,11 @@ groupby_rolling_func
 
 .. autofunction:: dramkit.gentools.groupby_rolling_func
 
+merge_dicts
+^^^^^^^^^^^^
+
+.. autofunction:: dramkit.gentools.merge_dicts
+
 link_lists
 ^^^^^^^^^^^
 
@@ -463,6 +473,11 @@ get_num_decimal
 ^^^^^^^^^^^^^^^^
 
 .. autofunction:: dramkit.gentools.get_num_decimal
+
+list2dict
+^^^^^^^^^^
+
+.. autofunction:: dramkit.gentools.list2dict
 
 sort_dict
 ^^^^^^^^^^
@@ -603,25 +618,25 @@ del_specified_subdir
 
 .. autofunction:: dramkit.iotools.del_specified_subdir
 
-copy_file
-^^^^^^^^^^
+copy_file_to_dir
+^^^^^^^^^^^^^^^^^
 
-.. autofunction:: dramkit.iotools.copy_file
+.. autofunction:: dramkit.iotools.copy_file_to_dir
 
-copy_dir
-^^^^^^^^^
+copy_file_to_file
+^^^^^^^^^^^^^^^^^^
 
-.. autofunction:: dramkit.iotools.copy_dir
+.. autofunction:: dramkit.iotools.copy_file_to_file
 
 copy_dir_structure
 ^^^^^^^^^^^^^^^^^^^
 
 .. autofunction:: dramkit.iotools.copy_dir_structure
 
-copy_specified_type_files
-^^^^^^^^^^^^^^^^^^^^^^^^^^
+copy_dir
+^^^^^^^^^
 
-.. autofunction:: dramkit.iotools.copy_specified_type_files
+.. autofunction:: dramkit.iotools.copy_dir
 
 move_file
 ^^^^^^^^^^

@@ -19,6 +19,7 @@ Welcome to DramKit's documentation!
    speedup <dramkit.speedup>
    sqltools <dramkit.sqltools>
    webtools <dramkit.webtools>
+   wechat <dramkit.wechat>
 
 Indices and tables
 ===================

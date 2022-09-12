@@ -58,3 +58,8 @@ remove_handlers
 ^^^^^^^^^^^^^^^^
 
 .. autofunction:: dramkit.logtools.utils_logger.remove_handlers
+
+set_level
+^^^^^^^^^^
+
+.. autofunction:: dramkit.logtools.utils_logger.set_level
