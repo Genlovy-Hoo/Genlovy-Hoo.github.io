@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>sqltools &mdash; DramKit 0.3.14 documentation</title>
+  <title>sqltools &mdash; DramKit 0.3.15 documentation</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <!--[if lt IE 9]>
@@ -55,17 +55,41 @@
 <li class="toctree-l2"><a class="reference internal" href="#module-dramkit.sqltools.py_mysql">py_mysql</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#pymysql">PyMySQL</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#get-conn">get_conn</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#get-fields">get_fields</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#execute-sql">execute_sql</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#get-unique-values">get_unique_values</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#show-tables">show_tables</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#get-now-database">get_now_database</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#get-split-tabel-info">get_split_tabel_info</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#drop-table-split">drop_table_split</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#cancel-split-table">cancel_split_table</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#get-primary-keys">get_primary_keys</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#get-uni-indexs">get_uni_indexs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#get-id-fields">get_id_fields</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#set-primary-key">set_primary_key</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#set-uni-index">set_uni_index</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#drop-index">drop_index</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#drop-primary-key">drop_primary_key</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#create-database">create_database</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#create-table">create_table</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#drop-database">drop_database</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#drop-table">drop_table</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#drop-cols">drop_cols</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#clear-data">clear_data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#get-data">get_data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#get-data-tables">get_data_tables</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#drop-data-by-where-str">drop_data_by_where_str</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#add-cols">add_cols</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#modify-cols-type">modify_cols_type</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#change-cols-info">change_cols_info</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#get-cols-info-df">get_cols_info_df</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#df-to-mysql">df_to_mysql</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#df-to-mysql-by-row">df_to_mysql_by_row</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#module-dramkit.sqltools.sql_alchemy">sql_alchemy</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#sqlalchemy">SQLAlchemy</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id1">get_conn</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id3">get_conn</a></li>
 </ul>
 </li>
 </ul>
@@ -106,11 +130,81 @@
 <h3>PyMySQL<a class="headerlink" href="#pymysql" title="Permalink to this headline"></a></h3>
 <dl class="py class">
 <dt class="sig sig-object py" id="dramkit.sqltools.py_mysql.PyMySQL">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">dramkit.sqltools.py_mysql.</span></span><span class="sig-name descname"><span class="pre">PyMySQL</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">host</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'localhost'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">user</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'root'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">password</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">database</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">port</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3306</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.sqltools.py_mysql.PyMySQL" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">dramkit.sqltools.py_mysql.</span></span><span class="sig-name descname"><span class="pre">PyMySQL</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">host</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'localhost'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">user</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'root'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">password</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">database</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">port</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3306</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">logger</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.sqltools.py_mysql.PyMySQL" title="Permalink to this definition"></a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <dl class="py method">
+<dt class="sig sig-object py" id="dramkit.sqltools.py_mysql.PyMySQL.add_cols">
+<span class="sig-name descname"><span class="pre">add_cols</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tb_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cols_info</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">db_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.sqltools.py_mysql.PyMySQL.add_cols" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dramkit.sqltools.py_mysql.PyMySQL.cancel_split_table">
+<span class="sig-name descname"><span class="pre">cancel_split_table</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tb_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">db_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.sqltools.py_mysql.PyMySQL.cancel_split_table" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dramkit.sqltools.py_mysql.PyMySQL.change_cols_info">
+<span class="sig-name descname"><span class="pre">change_cols_info</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tb_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cols_info</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">db_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.sqltools.py_mysql.PyMySQL.change_cols_info" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dramkit.sqltools.py_mysql.PyMySQL.clear_data">
+<span class="sig-name descname"><span class="pre">clear_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tb_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">db_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.sqltools.py_mysql.PyMySQL.clear_data" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dramkit.sqltools.py_mysql.PyMySQL.create_database">
+<span class="sig-name descname"><span class="pre">create_database</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">db_name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.sqltools.py_mysql.PyMySQL.create_database" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dramkit.sqltools.py_mysql.PyMySQL.create_table">
+<span class="sig-name descname"><span class="pre">create_table</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tb_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cols_info</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">idcols</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">db_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">force</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.sqltools.py_mysql.PyMySQL.create_table" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
 <dt class="sig sig-object py" id="dramkit.sqltools.py_mysql.PyMySQL.df_to_mysql">
-<span class="sig-name descname"><span class="pre">df_to_mysql</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">df</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tb_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">act_type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'insert'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cols</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">db_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.sqltools.py_mysql.PyMySQL.df_to_mysql" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">df_to_mysql</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">df</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tb_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">act_type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'insert'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cols</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">db_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">na_val</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">idcols</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">logger</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs_cols</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.sqltools.py_mysql.PyMySQL.df_to_mysql" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dramkit.sqltools.py_mysql.PyMySQL.df_to_mysql_by_row">
+<span class="sig-name descname"><span class="pre">df_to_mysql_by_row</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">df</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tb_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">act_type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'insert'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cols</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">db_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">na_val</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">idcols</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">logger</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs_cols</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.sqltools.py_mysql.PyMySQL.df_to_mysql_by_row" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dramkit.sqltools.py_mysql.PyMySQL.drop_cols">
+<span class="sig-name descname"><span class="pre">drop_cols</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tb_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cols</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">db_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.sqltools.py_mysql.PyMySQL.drop_cols" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dramkit.sqltools.py_mysql.PyMySQL.drop_data_by_where_str">
+<span class="sig-name descname"><span class="pre">drop_data_by_where_str</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tb_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">where_str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">db_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.sqltools.py_mysql.PyMySQL.drop_data_by_where_str" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dramkit.sqltools.py_mysql.PyMySQL.drop_database">
+<span class="sig-name descname"><span class="pre">drop_database</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">db_name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.sqltools.py_mysql.PyMySQL.drop_database" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dramkit.sqltools.py_mysql.PyMySQL.drop_index">
+<span class="sig-name descname"><span class="pre">drop_index</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tb_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">index_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">db_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.sqltools.py_mysql.PyMySQL.drop_index" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dramkit.sqltools.py_mysql.PyMySQL.drop_primary_key">
+<span class="sig-name descname"><span class="pre">drop_primary_key</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tb_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">db_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.sqltools.py_mysql.PyMySQL.drop_primary_key" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dramkit.sqltools.py_mysql.PyMySQL.drop_table">
+<span class="sig-name descname"><span class="pre">drop_table</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tb_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">db_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.sqltools.py_mysql.PyMySQL.drop_table" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dramkit.sqltools.py_mysql.PyMySQL.drop_table_split">
+<span class="sig-name descname"><span class="pre">drop_table_split</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tb_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">part_names</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">db_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.sqltools.py_mysql.PyMySQL.drop_table_split" title="Permalink to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
@@ -119,13 +213,48 @@
 <dd></dd></dl>
 
 <dl class="py method">
+<dt class="sig sig-object py" id="dramkit.sqltools.py_mysql.PyMySQL.get_data">
+<span class="sig-name descname"><span class="pre">get_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tb_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cols</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">where_str</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">db_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.sqltools.py_mysql.PyMySQL.get_data" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dramkit.sqltools.py_mysql.PyMySQL.get_fields">
+<span class="sig-name descname"><span class="pre">get_fields</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tb_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">db_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.sqltools.py_mysql.PyMySQL.get_fields" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dramkit.sqltools.py_mysql.PyMySQL.get_id_fields">
+<span class="sig-name descname"><span class="pre">get_id_fields</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tb_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">db_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.sqltools.py_mysql.PyMySQL.get_id_fields" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dramkit.sqltools.py_mysql.PyMySQL.get_now_database">
+<span class="sig-name descname"><span class="pre">get_now_database</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.sqltools.py_mysql.PyMySQL.get_now_database" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
 <dt class="sig sig-object py" id="dramkit.sqltools.py_mysql.PyMySQL.get_primary_keys">
 <span class="sig-name descname"><span class="pre">get_primary_keys</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tb_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">db_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.sqltools.py_mysql.PyMySQL.get_primary_keys" title="Permalink to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
+<dt class="sig sig-object py" id="dramkit.sqltools.py_mysql.PyMySQL.get_split_tabel_info">
+<span class="sig-name descname"><span class="pre">get_split_tabel_info</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tb_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.sqltools.py_mysql.PyMySQL.get_split_tabel_info" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
 <dt class="sig sig-object py" id="dramkit.sqltools.py_mysql.PyMySQL.get_uni_indexs">
 <span class="sig-name descname"><span class="pre">get_uni_indexs</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tb_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">db_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.sqltools.py_mysql.PyMySQL.get_uni_indexs" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dramkit.sqltools.py_mysql.PyMySQL.get_unique_values">
+<span class="sig-name descname"><span class="pre">get_unique_values</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tb_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">field</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">db_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.sqltools.py_mysql.PyMySQL.get_unique_values" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dramkit.sqltools.py_mysql.PyMySQL.modify_cols_type">
+<span class="sig-name descname"><span class="pre">modify_cols_type</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tb_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cols_info</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">db_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.sqltools.py_mysql.PyMySQL.modify_cols_type" title="Permalink to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
@@ -153,6 +282,11 @@
 <span class="sig-name descname"><span class="pre">set_uni_index</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tb_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cols_uni</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">index_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">db_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.sqltools.py_mysql.PyMySQL.set_uni_index" title="Permalink to this definition"></a></dt>
 <dd></dd></dl>
 
+<dl class="py method">
+<dt class="sig sig-object py" id="dramkit.sqltools.py_mysql.PyMySQL.show_tables">
+<span class="sig-name descname"><span class="pre">show_tables</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">db_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.sqltools.py_mysql.PyMySQL.show_tables" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 </section>
@@ -165,12 +299,75 @@
 </dd></dl>
 
 </section>
+<section id="get-fields">
+<h3>get_fields<a class="headerlink" href="#get-fields" title="Permalink to this headline"></a></h3>
+<dl class="py function">
+<dt class="sig sig-object py" id="dramkit.sqltools.py_mysql.get_fields">
+<span class="sig-prename descclassname"><span class="pre">dramkit.sqltools.py_mysql.</span></span><span class="sig-name descname"><span class="pre">get_fields</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">conn</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tb_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">db_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.sqltools.py_mysql.get_fields" title="Permalink to this definition"></a></dt>
+<dd><p>获取表字段名列表</p>
+</dd></dl>
+
+</section>
 <section id="execute-sql">
 <h3>execute_sql<a class="headerlink" href="#execute-sql" title="Permalink to this headline"></a></h3>
 <dl class="py function">
 <dt class="sig sig-object py" id="dramkit.sqltools.py_mysql.execute_sql">
 <span class="sig-prename descclassname"><span class="pre">dramkit.sqltools.py_mysql.</span></span><span class="sig-name descname"><span class="pre">execute_sql</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">conn</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sql_str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">db_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">to_df</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.sqltools.py_mysql.execute_sql" title="Permalink to this definition"></a></dt>
 <dd><p>执行sql语句并返回结果</p>
+</dd></dl>
+
+</section>
+<section id="get-unique-values">
+<h3>get_unique_values<a class="headerlink" href="#get-unique-values" title="Permalink to this headline"></a></h3>
+<dl class="py function">
+<dt class="sig sig-object py" id="dramkit.sqltools.py_mysql.get_unique_values">
+<span class="sig-prename descclassname"><span class="pre">dramkit.sqltools.py_mysql.</span></span><span class="sig-name descname"><span class="pre">get_unique_values</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">conn</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tb_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">field</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">db_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.sqltools.py_mysql.get_unique_values" title="Permalink to this definition"></a></dt>
+<dd><p>获取某个字段的不重复值</p>
+</dd></dl>
+
+</section>
+<section id="show-tables">
+<h3>show_tables<a class="headerlink" href="#show-tables" title="Permalink to this headline"></a></h3>
+<dl class="py function">
+<dt class="sig sig-object py" id="dramkit.sqltools.py_mysql.show_tables">
+<span class="sig-prename descclassname"><span class="pre">dramkit.sqltools.py_mysql.</span></span><span class="sig-name descname"><span class="pre">show_tables</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">conn</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">db_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.sqltools.py_mysql.show_tables" title="Permalink to this definition"></a></dt>
+<dd><p>查看已有表名</p>
+</dd></dl>
+
+</section>
+<section id="get-now-database">
+<h3>get_now_database<a class="headerlink" href="#get-now-database" title="Permalink to this headline"></a></h3>
+<dl class="py function">
+<dt class="sig sig-object py" id="dramkit.sqltools.py_mysql.get_now_database">
+<span class="sig-prename descclassname"><span class="pre">dramkit.sqltools.py_mysql.</span></span><span class="sig-name descname"><span class="pre">get_now_database</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">conn</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.sqltools.py_mysql.get_now_database" title="Permalink to this definition"></a></dt>
+<dd><p>查询当前选择的数据库</p>
+</dd></dl>
+
+</section>
+<section id="get-split-tabel-info">
+<h3>get_split_tabel_info<a class="headerlink" href="#get-split-tabel-info" title="Permalink to this headline"></a></h3>
+<dl class="py function">
+<dt class="sig sig-object py" id="dramkit.sqltools.py_mysql.get_split_tabel_info">
+<span class="sig-prename descclassname"><span class="pre">dramkit.sqltools.py_mysql.</span></span><span class="sig-name descname"><span class="pre">get_split_tabel_info</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">conn</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tb_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.sqltools.py_mysql.get_split_tabel_info" title="Permalink to this definition"></a></dt>
+<dd><p>查询表分区信息</p>
+</dd></dl>
+
+</section>
+<section id="drop-table-split">
+<h3>drop_table_split<a class="headerlink" href="#drop-table-split" title="Permalink to this headline"></a></h3>
+<dl class="py function">
+<dt class="sig sig-object py" id="dramkit.sqltools.py_mysql.drop_table_split">
+<span class="sig-prename descclassname"><span class="pre">dramkit.sqltools.py_mysql.</span></span><span class="sig-name descname"><span class="pre">drop_table_split</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">conn</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tb_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">part_names</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">db_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.sqltools.py_mysql.drop_table_split" title="Permalink to this definition"></a></dt>
+<dd><p>删除表分区</p>
+</dd></dl>
+
+</section>
+<section id="cancel-split-table">
+<h3>cancel_split_table<a class="headerlink" href="#cancel-split-table" title="Permalink to this headline"></a></h3>
+<dl class="py function">
+<dt class="sig sig-object py" id="dramkit.sqltools.py_mysql.cancel_split_table">
+<span class="sig-prename descclassname"><span class="pre">dramkit.sqltools.py_mysql.</span></span><span class="sig-name descname"><span class="pre">cancel_split_table</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">conn</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tb_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">db_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.sqltools.py_mysql.cancel_split_table" title="Permalink to this definition"></a></dt>
+<dd><p>取消表分区</p>
 </dd></dl>
 
 </section>
@@ -192,6 +389,15 @@
 </dd></dl>
 
 </section>
+<section id="get-id-fields">
+<h3>get_id_fields<a class="headerlink" href="#get-id-fields" title="Permalink to this headline"></a></h3>
+<dl class="py function">
+<dt class="sig sig-object py" id="dramkit.sqltools.py_mysql.get_id_fields">
+<span class="sig-prename descclassname"><span class="pre">dramkit.sqltools.py_mysql.</span></span><span class="sig-name descname"><span class="pre">get_id_fields</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">conn</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tb_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">db_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.sqltools.py_mysql.get_id_fields" title="Permalink to this definition"></a></dt>
+<dd><p>获取表中的唯一值字段列表</p>
+</dd></dl>
+
+</section>
 <section id="set-primary-key">
 <h3>set_primary_key<a class="headerlink" href="#set-primary-key" title="Permalink to this headline"></a></h3>
 <dl class="py function">
@@ -210,52 +416,282 @@
 </dd></dl>
 
 </section>
+<section id="drop-index">
+<h3>drop_index<a class="headerlink" href="#drop-index" title="Permalink to this headline"></a></h3>
+<dl class="py function">
+<dt class="sig sig-object py" id="dramkit.sqltools.py_mysql.drop_index">
+<span class="sig-prename descclassname"><span class="pre">dramkit.sqltools.py_mysql.</span></span><span class="sig-name descname"><span class="pre">drop_index</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">conn</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tb_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">index_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">db_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.sqltools.py_mysql.drop_index" title="Permalink to this definition"></a></dt>
+<dd><p>删除索引</p>
+</dd></dl>
+
+</section>
+<section id="drop-primary-key">
+<h3>drop_primary_key<a class="headerlink" href="#drop-primary-key" title="Permalink to this headline"></a></h3>
+<dl class="py function">
+<dt class="sig sig-object py" id="dramkit.sqltools.py_mysql.drop_primary_key">
+<span class="sig-prename descclassname"><span class="pre">dramkit.sqltools.py_mysql.</span></span><span class="sig-name descname"><span class="pre">drop_primary_key</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">conn</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tb_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">db_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.sqltools.py_mysql.drop_primary_key" title="Permalink to this definition"></a></dt>
+<dd><p>删除主键</p>
+</dd></dl>
+
+</section>
+<section id="create-database">
+<h3>create_database<a class="headerlink" href="#create-database" title="Permalink to this headline"></a></h3>
+<dl class="py function">
+<dt class="sig sig-object py" id="dramkit.sqltools.py_mysql.create_database">
+<span class="sig-prename descclassname"><span class="pre">dramkit.sqltools.py_mysql.</span></span><span class="sig-name descname"><span class="pre">create_database</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">conn</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">db_name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.sqltools.py_mysql.create_database" title="Permalink to this definition"></a></dt>
+<dd><p>新建数据库</p>
+</dd></dl>
+
+</section>
+<section id="create-table">
+<h3>create_table<a class="headerlink" href="#create-table" title="Permalink to this headline"></a></h3>
+<dl class="py function">
+<dt class="sig sig-object py" id="dramkit.sqltools.py_mysql.create_table">
+<span class="sig-prename descclassname"><span class="pre">dramkit.sqltools.py_mysql.</span></span><span class="sig-name descname"><span class="pre">create_table</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">conn</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tb_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cols_info</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">idcols</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">db_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">force</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.sqltools.py_mysql.create_table" title="Permalink to this definition"></a></dt>
+<dd><p>新建表</p>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">conn</span> <span class="o">=</span> <span class="n">get_conn</span><span class="p">(</span><span class="n">password</span><span class="o">=</span><span class="s1">&#39;xxxxxxxxxxx&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">create_table</span><span class="p">(</span><span class="n">conn</span><span class="p">,</span> <span class="s1">&#39;test2&#39;</span><span class="p">,</span>
+<span class="gp">... </span>             <span class="p">(</span><span class="s1">&#39;a VARCHAR(255)&#39;</span><span class="p">,</span>
+<span class="gp">... </span>              <span class="s1">&#39;b DOUBLE NOT NULL DEFAULT 1&#39;</span><span class="p">,</span>
+<span class="gp">... </span>              <span class="s1">&#39;c DATETIME&#39;</span><span class="p">),</span>
+<span class="gp">... </span>             <span class="n">idcols</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">],</span>
+<span class="gp">... </span>             <span class="n">db_name</span><span class="o">=</span><span class="s1">&#39;test&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</section>
+<section id="drop-database">
+<h3>drop_database<a class="headerlink" href="#drop-database" title="Permalink to this headline"></a></h3>
+<dl class="py function">
+<dt class="sig sig-object py" id="dramkit.sqltools.py_mysql.drop_database">
+<span class="sig-prename descclassname"><span class="pre">dramkit.sqltools.py_mysql.</span></span><span class="sig-name descname"><span class="pre">drop_database</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">conn</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">db_name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.sqltools.py_mysql.drop_database" title="Permalink to this definition"></a></dt>
+<dd><p>删除数据库</p>
+</dd></dl>
+
+</section>
+<section id="drop-table">
+<h3>drop_table<a class="headerlink" href="#drop-table" title="Permalink to this headline"></a></h3>
+<dl class="py function">
+<dt class="sig sig-object py" id="dramkit.sqltools.py_mysql.drop_table">
+<span class="sig-prename descclassname"><span class="pre">dramkit.sqltools.py_mysql.</span></span><span class="sig-name descname"><span class="pre">drop_table</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">conn</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tb_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">db_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.sqltools.py_mysql.drop_table" title="Permalink to this definition"></a></dt>
+<dd><p>删除表</p>
+</dd></dl>
+
+</section>
+<section id="drop-cols">
+<h3>drop_cols<a class="headerlink" href="#drop-cols" title="Permalink to this headline"></a></h3>
+<dl class="py function">
+<dt class="sig sig-object py" id="dramkit.sqltools.py_mysql.drop_cols">
+<span class="sig-prename descclassname"><span class="pre">dramkit.sqltools.py_mysql.</span></span><span class="sig-name descname"><span class="pre">drop_cols</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">conn</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tb_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cols</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">db_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.sqltools.py_mysql.drop_cols" title="Permalink to this definition"></a></dt>
+<dd><p>删除字段</p>
+</dd></dl>
+
+</section>
+<section id="clear-data">
+<h3>clear_data<a class="headerlink" href="#clear-data" title="Permalink to this headline"></a></h3>
+<dl class="py function">
+<dt class="sig sig-object py" id="dramkit.sqltools.py_mysql.clear_data">
+<span class="sig-prename descclassname"><span class="pre">dramkit.sqltools.py_mysql.</span></span><span class="sig-name descname"><span class="pre">clear_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">conn</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tb_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">db_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.sqltools.py_mysql.clear_data" title="Permalink to this definition"></a></dt>
+<dd><p>清空数据</p>
+</dd></dl>
+
+</section>
+<section id="get-data">
+<h3>get_data<a class="headerlink" href="#get-data" title="Permalink to this headline"></a></h3>
+<dl class="py function">
+<dt class="sig sig-object py" id="dramkit.sqltools.py_mysql.get_data">
+<span class="sig-prename descclassname"><span class="pre">dramkit.sqltools.py_mysql.</span></span><span class="sig-name descname"><span class="pre">get_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">conn</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tb_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cols</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">where_str</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">db_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.sqltools.py_mysql.get_data" title="Permalink to this definition"></a></dt>
+<dd><p>获取数据</p>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">conn</span> <span class="o">=</span> <span class="n">get_conn</span><span class="p">(</span><span class="n">password</span><span class="o">=</span><span class="s1">&#39;xxxxxxxxxxx&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">get_data</span><span class="p">(</span><span class="n">conn</span><span class="p">,</span> <span class="s1">&#39;test1&#39;</span><span class="p">,</span> <span class="n">cols</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+<span class="gp">... </span>         <span class="n">where_str</span><span class="o">=</span><span class="s1">&#39;year = &quot;2012&quot;&#39;</span><span class="p">,</span>
+<span class="gp">... </span>         <span class="n">db_name</span><span class="o">=</span><span class="s1">&#39;test&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">get_data</span><span class="p">(</span><span class="n">conn</span><span class="p">,</span> <span class="s1">&#39;test1&#39;</span><span class="p">,</span> <span class="n">cols</span><span class="o">=</span><span class="s1">&#39;value&#39;</span><span class="p">,</span>
+<span class="gp">... </span>         <span class="n">where_str</span><span class="o">=</span><span class="s1">&#39;value2 IS NULL&#39;</span><span class="p">,</span>
+<span class="gp">... </span>         <span class="n">db_name</span><span class="o">=</span><span class="s1">&#39;test&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</section>
+<section id="get-data-tables">
+<h3>get_data_tables<a class="headerlink" href="#get-data-tables" title="Permalink to this headline"></a></h3>
+<dl class="py function">
+<dt class="sig sig-object py" id="dramkit.sqltools.py_mysql.get_data_tables">
+<span class="sig-prename descclassname"><span class="pre">dramkit.sqltools.py_mysql.</span></span><span class="sig-name descname"><span class="pre">get_data_tables</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">conn</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tb_cols_dict</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">join_cols</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">db_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.sqltools.py_mysql.get_data_tables" title="Permalink to this definition"></a></dt>
+<dd><p>联表查数据</p>
+</dd></dl>
+
+</section>
+<section id="drop-data-by-where-str">
+<h3>drop_data_by_where_str<a class="headerlink" href="#drop-data-by-where-str" title="Permalink to this headline"></a></h3>
+<dl class="py function">
+<dt class="sig sig-object py" id="dramkit.sqltools.py_mysql.drop_data_by_where_str">
+<span class="sig-prename descclassname"><span class="pre">dramkit.sqltools.py_mysql.</span></span><span class="sig-name descname"><span class="pre">drop_data_by_where_str</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">conn</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tb_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">where_str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">db_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.sqltools.py_mysql.drop_data_by_where_str" title="Permalink to this definition"></a></dt>
+<dd><p>删除数据，where_str为where条件语句</p>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">conn</span> <span class="o">=</span> <span class="n">get_conn</span><span class="p">(</span><span class="n">password</span><span class="o">=</span><span class="s1">&#39;xxxxxxxxxxx&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">drop_data_by_where_str</span><span class="p">(</span><span class="n">conn</span><span class="p">,</span> <span class="s1">&#39;test1&#39;</span><span class="p">,</span>
+<span class="gp">... </span>                       <span class="s1">&#39;year = &quot;2012&quot;&#39;</span><span class="p">,</span>
+<span class="gp">... </span>                       <span class="n">db_name</span><span class="o">=</span><span class="s1">&#39;test&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">drop_data_by_where_str</span><span class="p">(</span><span class="n">conn</span><span class="p">,</span> <span class="s1">&#39;test1&#39;</span><span class="p">,</span>
+<span class="gp">... </span>                       <span class="s1">&#39;value2 IS NULL&#39;</span><span class="p">,</span>
+<span class="gp">... </span>                       <span class="n">db_name</span><span class="o">=</span><span class="s1">&#39;test&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</section>
+<section id="add-cols">
+<h3>add_cols<a class="headerlink" href="#add-cols" title="Permalink to this headline"></a></h3>
+<dl class="py function">
+<dt class="sig sig-object py" id="dramkit.sqltools.py_mysql.add_cols">
+<span class="sig-prename descclassname"><span class="pre">dramkit.sqltools.py_mysql.</span></span><span class="sig-name descname"><span class="pre">add_cols</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">conn</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tb_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cols_info</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">db_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.sqltools.py_mysql.add_cols" title="Permalink to this definition"></a></dt>
+<dd><p>新增字段</p>
+<div class="admonition-todo admonition" id="id1">
+<p class="admonition-title">Todo</p>
+<p>在指定位置处插入新的列？</p>
+</div>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">conn</span> <span class="o">=</span> <span class="n">get_conn</span><span class="p">(</span><span class="n">password</span><span class="o">=</span><span class="s1">&#39;xxxxxxxxxxx&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">add_cols</span><span class="p">(</span><span class="n">conn</span><span class="p">,</span> <span class="s1">&#39;test1&#39;</span><span class="p">,</span>
+<span class="gp">... </span>         <span class="p">(</span><span class="s1">&#39;a VARCHAR(255)&#39;</span><span class="p">,</span>
+<span class="gp">... </span>          <span class="s1">&#39;b DOUBLE NOT NULL DEFAULT 1&#39;</span><span class="p">,</span>
+<span class="gp">... </span>          <span class="s1">&#39;c DATETIME&#39;</span><span class="p">),</span>
+<span class="gp">... </span>         <span class="n">db_name</span><span class="o">=</span><span class="s1">&#39;test&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</section>
+<section id="modify-cols-type">
+<h3>modify_cols_type<a class="headerlink" href="#modify-cols-type" title="Permalink to this headline"></a></h3>
+<dl class="py function">
+<dt class="sig sig-object py" id="dramkit.sqltools.py_mysql.modify_cols_type">
+<span class="sig-prename descclassname"><span class="pre">dramkit.sqltools.py_mysql.</span></span><span class="sig-name descname"><span class="pre">modify_cols_type</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">conn</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tb_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cols_info</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">db_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.sqltools.py_mysql.modify_cols_type" title="Permalink to this definition"></a></dt>
+<dd><p>更改字段属性</p>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">conn</span> <span class="o">=</span> <span class="n">get_conn</span><span class="p">(</span><span class="n">password</span><span class="o">=</span><span class="s1">&#39;xxxxxxxxxxx&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">modify_cols_type</span><span class="p">(</span><span class="n">conn</span><span class="p">,</span> <span class="s1">&#39;test1&#39;</span><span class="p">,</span>
+<span class="gp">... </span>                 <span class="p">(</span><span class="s1">&#39;code VARCHAR(21)&#39;</span><span class="p">,</span>
+<span class="gp">... </span>                  <span class="s1">&#39;year VARCHAR(20) DEFAULT &quot;XX&quot;&#39;</span><span class="p">),</span>
+<span class="gp">... </span>                 <span class="n">db_name</span><span class="o">=</span><span class="s1">&#39;test&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</section>
+<section id="change-cols-info">
+<h3>change_cols_info<a class="headerlink" href="#change-cols-info" title="Permalink to this headline"></a></h3>
+<dl class="py function">
+<dt class="sig sig-object py" id="dramkit.sqltools.py_mysql.change_cols_info">
+<span class="sig-prename descclassname"><span class="pre">dramkit.sqltools.py_mysql.</span></span><span class="sig-name descname"><span class="pre">change_cols_info</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">conn</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tb_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cols_info</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">db_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.sqltools.py_mysql.change_cols_info" title="Permalink to this definition"></a></dt>
+<dd><p>修改字段信息，如重命名，修改字段类型等</p>
+</dd></dl>
+
+</section>
+<section id="get-cols-info-df">
+<h3>get_cols_info_df<a class="headerlink" href="#get-cols-info-df" title="Permalink to this headline"></a></h3>
+<dl class="py function">
+<dt class="sig sig-object py" id="dramkit.sqltools.py_mysql.get_cols_info_df">
+<span class="sig-prename descclassname"><span class="pre">dramkit.sqltools.py_mysql.</span></span><span class="sig-name descname"><span class="pre">get_cols_info_df</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">df</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cols</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">all2str</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">big_text</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.sqltools.py_mysql.get_cols_info_df" title="Permalink to this definition"></a></dt>
+<dd><p>根据pd.DataFrame中的列cols，识别对应列在MySQL中的字段类别</p>
+<div class="admonition-todo admonition" id="id2">
+<p class="admonition-title">Todo</p>
+<ul class="simple">
+<li><p>是否为长文本分字段单独设置</p></li>
+<li><p>单独设置每列的类型或指定某些类型需要特殊处理的列</p></li>
+</ul>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>df</strong> (<em>pandas.DataFrame</em>) – 待识别数据</p></li>
+<li><p><strong>cols</strong> (<em>list</em><em>, </em><em>None</em>) – 待识别列名列表，默认所有列</p></li>
+<li><p><strong>all2str</strong> (<em>bool</em>) – 若为True，则数据均按文本类型处理</p></li>
+<li><p><strong>big_text</strong> (<em>bool</em>) – 文本是否为长文本，若为True，则文本保存为TEXT类型</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><ul class="simple">
+<li><p><strong>cols_info</strong> (<em>str</em>) – 列类型信息，格式如’col1 col1_type, col2 col2_type, …’</p></li>
+<li><p><strong>cols_type</strong> (<em>str</em>) – 列格式信息，格式如’%s, %s, …’</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+<p class="rubric">References</p>
+<p><a class="reference external" href="https://blog.csdn.net/tonydz0523/article/details/82529941">https://blog.csdn.net/tonydz0523/article/details/82529941</a></p>
+</dd></dl>
+
+</section>
 <section id="df-to-mysql">
 <h3>df_to_mysql<a class="headerlink" href="#df-to-mysql" title="Permalink to this headline"></a></h3>
 <dl class="py function">
 <dt class="sig sig-object py" id="dramkit.sqltools.py_mysql.df_to_mysql">
-<span class="sig-prename descclassname"><span class="pre">dramkit.sqltools.py_mysql.</span></span><span class="sig-name descname"><span class="pre">df_to_mysql</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">df</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">conn</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tb_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">act_type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'insert'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">db_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cols</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.sqltools.py_mysql.df_to_mysql" title="Permalink to this definition"></a></dt>
+<span class="sig-prename descclassname"><span class="pre">dramkit.sqltools.py_mysql.</span></span><span class="sig-name descname"><span class="pre">df_to_mysql</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">df</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">conn</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tb_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">act_type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'insert'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cols</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">db_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">na_val</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">idcols</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">logger</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs_cols</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.sqltools.py_mysql.df_to_mysql" title="Permalink to this definition"></a></dt>
 <dd><p>把pandas.DataFrame存入MySQL数据库中</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>df</strong> (<em>pandas.DataFrame</em>) – 待存数据</p></li>
 <li><p><strong>conn</strong> (<em>pymysql.connect</em>) – pymysql.connect数据库连接对象</p></li>
-<li><p><strong>db_name</strong> (<em>str</em>) – 存入的数据库名</p></li>
 <li><p><strong>tb_name</strong> (<em>str</em>) – 存入的表名</p></li>
 <li><p><strong>act_type</strong> (<em>str</em>) – <div class="line-block">
 <div class="line">存入方式：</div>
 <div class="line-block">
-<div class="line">若为’new’，则新建表（若原表已存在，则会删除重建）</div>
+<div class="line">若为’new’，则新建表（若原表已存在，则会清空已有数据）</div>
 <div class="line">若为’insert’，则直接插入</div>
-<div class="line">若为’replace’，则将已存在的数据更新，不存在的新插入</div>
-<div class="line">若为’insert_ignore’，则已有的不更新，不存在的新插入</div>
+<div class="line">若为’replace’，则将已存在的数据更新，不存在的行和列都新插入</div>
+<div class="line">若为’insert_ignore’，则已有的行不更新，不存在的行新插入</div>
+<div class="line">若为’insert_newcols’，则对已存在的列同直接insert，有新列则插入新列内容</div>
+<div class="line">若为’insert_ignore_newcols’，则对已存在的列同直接insert_ignore，有新列则插入新列内容</div>
 </div>
 </div>
 </p></li>
 <li><p><strong>cols</strong> (<em>None</em><em>, </em><em>list</em>) – 需要存入的数据列</p></li>
+<li><p><strong>db_name</strong> (<em>str</em>) – 存入的数据库名</p></li>
+<li><p><strong>na_val</strong> (<em>None</em><em>, </em><em>bool</em><em>, </em><em>str</em>) – 设置df中na值的填充值</p></li>
+<li><p><strong>idcols</strong> (<em>None</em><em>, </em><em>str</em><em>, </em><em>list</em>) – 设置唯一值标识字段，只有在表不存在需要新建的时候才起作用</p></li>
 </ul>
 </dd>
 </dl>
 <p class="rubric">Examples</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">db_name</span> <span class="o">=</span> <span class="s1">&#39;test&#39;</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">tb_name</span> <span class="o">=</span> <span class="s1">&#39;test1&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">tb_name2</span> <span class="o">=</span> <span class="s1">&#39;test2&#39;</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">&#39;code&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;001&#39;</span><span class="p">,</span> <span class="s1">&#39;002&#39;</span><span class="p">,</span> <span class="s1">&#39;003&#39;</span><span class="p">],</span>
 <span class="gp">... </span>                   <span class="s1">&#39;year&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;2011&#39;</span><span class="p">,</span> <span class="s1">&#39;2012&#39;</span><span class="p">,</span> <span class="s1">&#39;2013&#39;</span><span class="p">],</span>
 <span class="gp">... </span>                   <span class="s1">&#39;value&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]})</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">conn</span> <span class="o">=</span> <span class="n">get_conn</span><span class="p">(</span><span class="n">password</span><span class="o">=</span><span class="s1">&#39;xxxxxxxxxxx&#39;</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">df_to_mysql</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">conn</span><span class="p">,</span> <span class="n">tb_name</span><span class="p">,</span> <span class="s1">&#39;new&#39;</span><span class="p">,</span> <span class="n">db_name</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">df2</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">&#39;code&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;001&#39;</span><span class="p">,</span> <span class="s1">&#39;002&#39;</span><span class="p">,</span> <span class="s1">&#39;003&#39;</span><span class="p">],</span>
-<span class="gp">... </span>                    <span class="s1">&#39;year&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;2011&#39;</span><span class="p">,</span> <span class="s1">&#39;2012&#39;</span><span class="p">,</span> <span class="s1">&#39;2014&#39;</span><span class="p">],</span>
-<span class="gp">... </span>                    <span class="s1">&#39;value&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">],</span>
-<span class="gp">... </span>                    <span class="s1">&#39;value2&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]})</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">df_to_mysql</span><span class="p">(</span><span class="n">df2</span><span class="p">,</span> <span class="n">conn</span><span class="p">,</span> <span class="n">tb_name</span><span class="p">,</span> <span class="s1">&#39;insert&#39;</span><span class="p">,</span> <span class="n">db_name</span><span class="p">,</span>
-<span class="go">                cols=&#39;value2&#39;)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">df_to_mysql</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">conn</span><span class="p">,</span> <span class="n">tb_name</span><span class="p">,</span> <span class="s1">&#39;new&#39;</span><span class="p">,</span> <span class="n">db_name</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">set_primary_key</span><span class="p">(</span><span class="n">conn</span><span class="p">,</span> <span class="n">tb_name</span><span class="p">,</span> <span class="s1">&#39;code&#39;</span><span class="p">,</span> <span class="n">db_name</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">df_to_mysql</span><span class="p">(</span><span class="n">df2</span><span class="p">,</span> <span class="n">conn</span><span class="p">,</span> <span class="n">tb_name</span><span class="p">,</span> <span class="s1">&#39;replace&#39;</span><span class="p">,</span> <span class="n">db_name</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">df_to_mysql</span><span class="p">(</span><span class="n">df2</span><span class="p">,</span> <span class="n">conn</span><span class="p">,</span> <span class="n">tb_name</span><span class="p">,</span> <span class="s1">&#39;insert&#39;</span><span class="p">,</span> <span class="n">db_name</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">df_to_mysql</span><span class="p">(</span><span class="n">df2</span><span class="p">,</span> <span class="n">conn</span><span class="p">,</span> <span class="n">tb_name</span><span class="p">,</span> <span class="s1">&#39;insert_ignore&#39;</span><span class="p">,</span> <span class="n">db_name</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">df_to_mysql</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">conn</span><span class="p">,</span> <span class="n">tb_name</span><span class="p">,</span> <span class="s1">&#39;new&#39;</span><span class="p">,</span> <span class="n">db_name</span><span class="o">=</span><span class="n">db_name</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">df_to_mysql</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">conn</span><span class="p">,</span> <span class="n">tb_name2</span><span class="p">,</span> <span class="n">act_type</span><span class="o">=</span><span class="s1">&#39;new&#39;</span><span class="p">,</span>
+<span class="go">                db_name=db_name, idcols=[&#39;code&#39;, &#39;year&#39;])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">df2</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">&#39;code&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;002&#39;</span><span class="p">,</span> <span class="s1">&#39;003&#39;</span><span class="p">,</span> <span class="s1">&#39;005&#39;</span><span class="p">],</span>
+<span class="gp">... </span>                    <span class="s1">&#39;value&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">],</span>
+<span class="gp">... </span>                    <span class="s1">&#39;year&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;2012&#39;</span><span class="p">,</span> <span class="s1">&#39;2014&#39;</span><span class="p">,</span> <span class="s1">&#39;2015&#39;</span><span class="p">],</span>
+<span class="gp">... </span>                    <span class="s1">&#39;value2&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">]})</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">df_to_mysql</span><span class="p">(</span><span class="n">df2</span><span class="p">,</span> <span class="n">conn</span><span class="p">,</span> <span class="n">tb_name</span><span class="p">,</span> <span class="s1">&#39;insert&#39;</span><span class="p">,</span> <span class="n">db_name</span><span class="o">=</span><span class="n">db_name</span><span class="p">,</span>
+<span class="gp">... </span>            <span class="n">cols</span><span class="o">=</span><span class="s1">&#39;value2&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">df_to_mysql</span><span class="p">(</span><span class="n">df2</span><span class="p">,</span> <span class="n">conn</span><span class="p">,</span> <span class="n">tb_name</span><span class="p">,</span> <span class="s1">&#39;replace&#39;</span><span class="p">,</span> <span class="n">db_name</span><span class="o">=</span><span class="n">db_name</span><span class="p">,</span>
+<span class="gp">... </span>            <span class="n">cols</span><span class="o">=</span><span class="s1">&#39;value2&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">df_to_mysql</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">conn</span><span class="p">,</span> <span class="n">tb_name</span><span class="p">,</span> <span class="s1">&#39;new&#39;</span><span class="p">,</span> <span class="n">db_name</span><span class="o">=</span><span class="n">db_name</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">set_primary_key</span><span class="p">(</span><span class="n">conn</span><span class="p">,</span> <span class="n">tb_name</span><span class="p">,</span> <span class="s1">&#39;code&#39;</span><span class="p">,</span> <span class="n">db_name</span><span class="o">=</span><span class="n">db_name</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">df_to_mysql</span><span class="p">(</span><span class="n">df2</span><span class="p">,</span> <span class="n">conn</span><span class="p">,</span> <span class="n">tb_name</span><span class="p">,</span> <span class="s1">&#39;replace&#39;</span><span class="p">,</span> <span class="n">db_name</span><span class="o">=</span><span class="n">db_name</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">df_to_mysql</span><span class="p">(</span><span class="n">df2</span><span class="p">,</span> <span class="n">conn</span><span class="p">,</span> <span class="n">tb_name</span><span class="p">,</span> <span class="s1">&#39;insert&#39;</span><span class="p">,</span> <span class="n">db_name</span><span class="o">=</span><span class="n">db_name</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">df_to_mysql</span><span class="p">(</span><span class="n">df2</span><span class="p">,</span> <span class="n">conn</span><span class="p">,</span> <span class="n">tb_name</span><span class="p">,</span> <span class="s1">&#39;insert_ignore&#39;</span><span class="p">,</span> <span class="n">db_name</span><span class="o">=</span><span class="n">db_name</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">df_to_mysql</span><span class="p">(</span><span class="n">df2</span><span class="p">,</span> <span class="n">conn</span><span class="p">,</span> <span class="n">tb_name</span><span class="p">,</span> <span class="s1">&#39;insert_ignore&#39;</span><span class="p">,</span> <span class="s1">&#39;value2&#39;</span><span class="p">,</span> <span class="n">db_name</span><span class="o">=</span><span class="n">db_name</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">df_to_mysql</span><span class="p">(</span><span class="n">df2</span><span class="p">,</span> <span class="n">conn</span><span class="p">,</span> <span class="n">tb_name</span><span class="p">,</span> <span class="s1">&#39;insert_ignore&#39;</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;code&#39;</span><span class="p">,</span> <span class="s1">&#39;value2&#39;</span><span class="p">],</span> <span class="n">db_name</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">df_to_mysql</span><span class="p">(</span><span class="n">df2</span><span class="p">,</span> <span class="n">conn</span><span class="p">,</span> <span class="n">tb_name</span><span class="p">,</span> <span class="s1">&#39;replace&#39;</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;code&#39;</span><span class="p">,</span> <span class="s1">&#39;value2&#39;</span><span class="p">],</span> <span class="n">db_name</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">df_to_mysql</span><span class="p">(</span><span class="n">df2</span><span class="p">,</span> <span class="n">conn</span><span class="p">,</span> <span class="n">tb_name</span><span class="p">,</span> <span class="s1">&#39;replace&#39;</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;code&#39;</span><span class="p">,</span> <span class="s1">&#39;year&#39;</span><span class="p">,</span> <span class="s1">&#39;value2&#39;</span><span class="p">],</span> <span class="n">db_name</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">modify_cols_type</span><span class="p">(</span><span class="n">conn</span><span class="p">,</span> <span class="s1">&#39;test1&#39;</span><span class="p">,</span> <span class="p">(</span><span class="s1">&#39;code VARCHAR(20)&#39;</span><span class="p">,</span> <span class="s1">&#39;year VARCHAR(10) DEFAULT &quot;XX&quot;&#39;</span><span class="p">,</span> <span class="p">),</span> <span class="n">db_name</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">df3</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">&#39;code&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;006&#39;</span><span class="p">,</span> <span class="s1">&#39;007&#39;</span><span class="p">,</span> <span class="s1">&#39;008&#39;</span><span class="p">],</span>
+<span class="gp">... </span>                    <span class="s1">&#39;value&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">],</span>
+<span class="gp">... </span>                    <span class="s1">&#39;value2&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">]})</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">df_to_mysql</span><span class="p">(</span><span class="n">df3</span><span class="p">,</span> <span class="n">conn</span><span class="p">,</span> <span class="n">tb_name</span><span class="p">,</span> <span class="s1">&#39;replace&#39;</span><span class="p">,</span> <span class="n">db_name</span><span class="o">=</span><span class="n">db_name</span><span class="p">)</span>
 </pre></div>
 </div>
 <p class="rubric">References</p>
@@ -264,6 +700,22 @@
 <li><p><a class="reference external" href="https://blog.csdn.net/weixin_44848356/article/details/119113174">https://blog.csdn.net/weixin_44848356/article/details/119113174</a></p></li>
 <li><p><a class="reference external" href="https://blog.csdn.net/weixin_42272869/article/details/116480732">https://blog.csdn.net/weixin_42272869/article/details/116480732</a></p></li>
 </ul>
+</dd></dl>
+
+</section>
+<section id="df-to-mysql-by-row">
+<h3>df_to_mysql_by_row<a class="headerlink" href="#df-to-mysql-by-row" title="Permalink to this headline"></a></h3>
+<dl class="py function">
+<dt class="sig sig-object py" id="dramkit.sqltools.py_mysql.df_to_mysql_by_row">
+<span class="sig-prename descclassname"><span class="pre">dramkit.sqltools.py_mysql.</span></span><span class="sig-name descname"><span class="pre">df_to_mysql_by_row</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">df</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">conn</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tb_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">act_type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'insert'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cols</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">db_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">na_val</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">idcols</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">logger</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs_cols</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.sqltools.py_mysql.df_to_mysql_by_row" title="Permalink to this definition"></a></dt>
+<dd><p>把pandas.DataFrame存入MySQL数据库中（不考虑列的新增或缺省）</p>
+<p>参数见 <a class="reference internal" href="#dramkit.sqltools.py_mysql.df_to_mysql" title="dramkit.sqltools.py_mysql.df_to_mysql"><code class="xref py py-func docutils literal notranslate"><span class="pre">df_to_mysql()</span></code></a></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>判断数据是否存在时是根据主键或唯一索引来的，
+因此当待插入数据字段只是已存在数据字段的一部分时，
+此函数应慎用’replace’（可能导致原有数据变成Null）</p>
+</div>
 </dd></dl>
 
 </section>
@@ -284,8 +736,8 @@
 </dd></dl>
 
 </section>
-<section id="id1">
-<h3>get_conn<a class="headerlink" href="#id1" title="Permalink to this headline"></a></h3>
+<section id="id3">
+<h3>get_conn<a class="headerlink" href="#id3" title="Permalink to this headline"></a></h3>
 <dl class="py function">
 <dt class="sig sig-object py" id="dramkit.sqltools.sql_alchemy.get_conn">
 <span class="sig-prename descclassname"><span class="pre">dramkit.sqltools.sql_alchemy.</span></span><span class="sig-name descname"><span class="pre">get_conn</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dialect</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'mysql'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">driver</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'pymysql'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">username</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'root'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">password</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">host</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'localhost'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">port</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3306</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">database</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.sqltools.sql_alchemy.get_conn" title="Permalink to this definition"></a></dt>

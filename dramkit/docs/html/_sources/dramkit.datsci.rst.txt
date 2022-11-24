@@ -880,10 +880,10 @@ lgb_cv_grid_search
 
 .. autofunction:: dramkit.datsci.utils_lgb.lgb_cv_grid_search
 
-lgb_cv_hoo
-^^^^^^^^^^^
+lgb_cv_mdls
+^^^^^^^^^^^^
 
-.. autofunction:: dramkit.datsci.utils_lgb.lgb_cv_hoo
+.. autofunction:: dramkit.datsci.utils_lgb.lgb_cv_mdls
 
 lgb_predict
 ^^^^^^^^^^^^

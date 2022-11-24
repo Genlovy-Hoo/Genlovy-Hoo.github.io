@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>dramkit &mdash; DramKit 0.3.14 documentation</title>
+  <title>dramkit &mdash; DramKit 0.3.15 documentation</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <!--[if lt IE 9]>
@@ -41,33 +41,43 @@
 <ul class="current">
 <li class="toctree-l1 current"><a class="current reference internal" href="#">dramkit</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#module-dramkit.datetimetools">datetimetools</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#pd-str2datetime">pd_str2datetime</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#datetime2str">datetime2str</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#get-datetime-strformat">get_datetime_strformat</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#str2datetime">str2datetime</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#str2timestamp">str2timestamp</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#timestamp2str">timestamp2str</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#datetime-now">datetime_now</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#get-datetime-format">get_datetime_format</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#copy-format">copy_format</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#x2datetime">x2datetime</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#time-add">time_add</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#get-date-format">get_date_format</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#date-add-nday">date_add_nday</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#is-datetime">is_datetime</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#get-year-month">get_year_month</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#today-date">today_date</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#is-month-end">is_month_end</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#is-month-start">is_month_start</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#is-quarter-end">is_quarter_end</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#is-quarter-start">is_quarter_start</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#datetime-now">datetime_now</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#today-month">today_month</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#today-date">today_date</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#get-quarter">get_quarter</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#today-quarter">today_quarter</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#get-dayofweek">get_dayofweek</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#get-dayofyear">get_dayofyear</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#get-date-format">get_date_format</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#date-reformat-simple">date_reformat_simple</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#date-reformat-chn">date_reformat_chn</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#gen-strformat">gen_strformat</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#date-reformat">date_reformat</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#date8-to-date10">date8_to_date10</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#date10-to-date8">date10_to_date8</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#date-add-nday">date_add_nday</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#diff-time-second">diff_time_second</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#diff-days-date">diff_days_date</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#get-dates-between">get_dates_between</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#get-dayofweek">get_dayofweek</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#get-dayofyear">get_dayofyear</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#isworkday-chncal">isworkday_chncal</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#get-work-dates-chncal">get_work_dates_chncal</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#get-recent-workday-chncal">get_recent_workday_chncal</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#get-next-nth-workday-chncal">get_next_nth_workday_chncal</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#get-date-weekday">get_date_weekday</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#get-recent-inweekday">get_recent_inweekday</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#get-next-nth-inweekday">get_next_nth_inweekday</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#cut-date">cut_date</a></li>
@@ -104,6 +114,7 @@
 <li class="toctree-l3"><a class="reference internal" href="#val-gap-cond">val_gap_cond</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#filter-by-func-prenext">filter_by_func_prenext</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#filter-by-func-prenext-series">filter_by_func_prenext_series</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#df-na2value">df_na2value</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#merge-df">merge_df</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#cut-df-by-con-val">cut_df_by_con_val</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#get-con-start-end">get_con_start_end</a></li>
@@ -120,6 +131,8 @@
 <li class="toctree-l3"><a class="reference internal" href="#max-com-divisor">max_com_divisor</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#mcd2-tad">mcd2_tad</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#max-com-divisor-tad">max_com_divisor_tad</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#df-rows2cols">df_rows2cols</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#df-cols2rows">df_cols2rows</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#get-first-appear-index">get_first_appear_index</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#get-appear-order">get_appear_order</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#label-rep-index-str">label_rep_index_str</a></li>
@@ -129,6 +142,8 @@
 <li class="toctree-l3"><a class="reference internal" href="#group-shift">group_shift</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#group-fillna">group_fillna</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#group-rank">group_rank</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#get-func-df-concat">get_func_df_concat</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#df-groupby-func">df_groupby_func</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#bootstrapping">bootstrapping</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#groupby-rolling-func">groupby_rolling_func</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#merge-dicts">merge_dicts</a></li>
@@ -170,7 +185,8 @@
 <li class="toctree-l3"><a class="reference internal" href="#copy-file-to-file">copy_file_to_file</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#copy-dir-structure">copy_dir_structure</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#copy-dir">copy_dir</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#move-file">move_file</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#move-file-to-file">move_file_to_file</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#move-file-to-dir">move_file_to_dir</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#move-dir">move_dir</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#move-specified-type-files">move_specified_type_files</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#make-dir">make_dir</a></li>
@@ -187,6 +203,8 @@
 <li class="toctree-l3"><a class="reference internal" href="#get-ip1">get_ip1</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#get-ip2">get_ip2</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#get-ip-public">get_ip_public</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#get-tasks-info-win">get_tasks_info_win</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#get-ports-info-win">get_ports_info_win</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#zip-files">zip_files</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#zip-fpath">zip_fpath</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#zip-fpaths">zip_fpaths</a></li>
@@ -195,9 +213,12 @@
 <li class="toctree-l3"><a class="reference internal" href="#zip-fpaths-7z">zip_fpaths_7z</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#extract-7z">extract_7z</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#cmdrun">cmdrun</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#cmdruns-multi-process">cmdruns_multi_process</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#cmd-run-pys-multi-process">cmd_run_pys_multi_process</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#cmd-run-pys">cmd_run_pys</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#rename-files-in-dir">rename_files_in_dir</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#find-files-include-str">find_files_include_str</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#get-pip-pkgs-win">get_pip_pkgs_win</a></li>
 </ul>
 </li>
 </ul>
@@ -246,11 +267,83 @@
 <h1>dramkit<a class="headerlink" href="#dramkit" title="Permalink to this headline"></a></h1>
 <section id="module-dramkit.datetimetools">
 <span id="datetimetools"></span><h2>datetimetools<a class="headerlink" href="#module-dramkit.datetimetools" title="Permalink to this headline"></a></h2>
+<section id="pd-str2datetime">
+<h3>pd_str2datetime<a class="headerlink" href="#pd-str2datetime" title="Permalink to this headline"></a></h3>
+<dl class="py function">
+<dt class="sig sig-object py" id="dramkit.datetimetools.pd_str2datetime">
+<span class="sig-prename descclassname"><span class="pre">dramkit.datetimetools.</span></span><span class="sig-name descname"><span class="pre">pd_str2datetime</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">o</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.datetimetools.pd_str2datetime" title="Permalink to this definition"></a></dt>
+<dd><p>pd.to_datetime函数封装，排除o为时间戳（统一按str处理）</p>
+</dd></dl>
+
+</section>
+<section id="datetime2str">
+<h3>datetime2str<a class="headerlink" href="#datetime2str" title="Permalink to this headline"></a></h3>
+<dl class="py function">
+<dt class="sig sig-object py" id="dramkit.datetimetools.datetime2str">
+<span class="sig-prename descclassname"><span class="pre">dramkit.datetimetools.</span></span><span class="sig-name descname"><span class="pre">datetime2str</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dt</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">strformat</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tz</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'local'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.datetimetools.datetime2str" title="Permalink to this definition"></a></dt>
+<dd><p>datatime格式转为str格式</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>dt</strong> (<em>datetime.datetime</em><em>, </em><em>datetime.date</em><em>, </em><em>time.struct_time</em><em>, </em><em>pd.Timestamp</em>) – datetime、time或pandas格式时间</p></li>
+<li><p><strong>strformat</strong> (<em>None</em><em>, </em><em>bool</em><em>, </em><em>str</em>) – <p>设置返回文本格式：</p>
+<ul>
+<li><p>False, 直接返回dt</p></li>
+<li><p>’timestamp’, 返回timestamp</p></li>
+<li><p>’int’, 返回int格式日期，如’20221106’</p></li>
+<li><p>None, 默认’%Y-%m-%d %H:%M:%S’格式</p></li>
+<li><p>指定其他文本格式</p></li>
+</ul>
+</p></li>
+<li><p><strong>tz</strong> (<em>str</em>) – 指定时区，可选[‘local’, ‘utc’]</p></li>
+</ul>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">dt1</span><span class="p">,</span> <span class="n">dt2</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">(),</span> <span class="n">time</span><span class="o">.</span><span class="n">localtime</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">dt3</span> <span class="o">=</span> <span class="n">pd_str2datetime</span><span class="p">(</span><span class="n">datetime_now</span><span class="p">())</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">datetime2str</span><span class="p">(</span><span class="n">dt1</span><span class="p">,</span> <span class="s1">&#39;timestamp&#39;</span><span class="p">,</span> <span class="s1">&#39;utc&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">datetime2str</span><span class="p">(</span><span class="n">dt2</span><span class="p">,</span> <span class="s1">&#39;timestamp&#39;</span><span class="p">,</span> <span class="s1">&#39;utc&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">datetime2str</span><span class="p">(</span><span class="n">dt3</span><span class="p">,</span> <span class="s1">&#39;timestamp&#39;</span><span class="p">,</span> <span class="s1">&#39;utc&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">dt4</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">gmtime</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">datetime2str</span><span class="p">(</span><span class="n">dt3</span><span class="p">,</span> <span class="s1">&#39;timestamp&#39;</span><span class="p">,</span> <span class="s1">&#39;utc&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">datetime2str</span><span class="p">(</span><span class="n">dt3</span><span class="p">,</span> <span class="s1">&#39;timestamp&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</section>
+<section id="get-datetime-strformat">
+<h3>get_datetime_strformat<a class="headerlink" href="#get-datetime-strformat" title="Permalink to this headline"></a></h3>
+<dl class="py function">
+<dt class="sig sig-object py" id="dramkit.datetimetools.get_datetime_strformat">
+<span class="sig-prename descclassname"><span class="pre">dramkit.datetimetools.</span></span><span class="sig-name descname"><span class="pre">get_datetime_strformat</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tstr</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ymd</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">['-',</span> <span class="pre">'',</span> <span class="pre">'.',</span> <span class="pre">'/']</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ymd_hms</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">['</span> <span class="pre">',</span> <span class="pre">'',</span> <span class="pre">'.']</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hms</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[':',</span> <span class="pre">'']</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hms_ms</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">['.',</span> <span class="pre">'']</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.datetimetools.get_datetime_strformat" title="Permalink to this definition"></a></dt>
+<dd><div class="line-block">
+<div class="line">获取常用的文本时间格式format，支持包含以下几个部分的时间类型：</div>
+<div class="line">年月日、年月日时分秒、年月日时分、年月日时分秒毫秒、年月日时、年月</div>
+</div>
+<div class="admonition-todo admonition" id="id1">
+<p class="admonition-title">Todo</p>
+<p>改为用正则表达式匹配（根据连接符、数字占位限制和数字大小限制来匹配）</p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>ymd</strong> (<em>list</em>) – 年月日连接符</p></li>
+<li><p><strong>ymd_hms</strong> (<em>list</em>) – 年月日-时分秒连接符</p></li>
+<li><p><strong>hms</strong> (<em>list</em>) – 时分秒连接符</p></li>
+<li><p><strong>hms_ms</strong> (<em>list</em>) – 时分秒-毫秒连接符</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
 <section id="str2datetime">
 <h3>str2datetime<a class="headerlink" href="#str2datetime" title="Permalink to this headline"></a></h3>
 <dl class="py function">
 <dt class="sig sig-object py" id="dramkit.datetimetools.str2datetime">
-<span class="sig-prename descclassname"><span class="pre">dramkit.datetimetools.</span></span><span class="sig-name descname"><span class="pre">str2datetime</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tstr</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">strformat</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'%Y-%m-%d'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.datetimetools.str2datetime" title="Permalink to this definition"></a></dt>
+<span class="sig-prename descclassname"><span class="pre">dramkit.datetimetools.</span></span><span class="sig-name descname"><span class="pre">str2datetime</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tstr</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">strformat</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.datetimetools.str2datetime" title="Permalink to this definition"></a></dt>
 <dd><p>时间字符串转datetime格式</p>
 </dd></dl>
 
@@ -259,8 +352,11 @@
 <h3>str2timestamp<a class="headerlink" href="#str2timestamp" title="Permalink to this headline"></a></h3>
 <dl class="py function">
 <dt class="sig sig-object py" id="dramkit.datetimetools.str2timestamp">
-<span class="sig-prename descclassname"><span class="pre">dramkit.datetimetools.</span></span><span class="sig-name descname"><span class="pre">str2timestamp</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">t</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">strformat</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'%Y-%m-%d</span> <span class="pre">%H:%M:%S'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.datetimetools.str2timestamp" title="Permalink to this definition"></a></dt>
-<dd><p>时间字符串转时间戳(精确到秒)</p>
+<span class="sig-prename descclassname"><span class="pre">dramkit.datetimetools.</span></span><span class="sig-name descname"><span class="pre">str2timestamp</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">t</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">strformat</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tz</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'local'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.datetimetools.str2timestamp" title="Permalink to this definition"></a></dt>
+<dd><div class="line-block">
+<div class="line">时间字符串转时间戳</div>
+<div class="line">若大于16位(纳秒级)，返回string，否则返回float(毫秒级)</div>
+</div>
 </dd></dl>
 
 </section>
@@ -268,37 +364,112 @@
 <h3>timestamp2str<a class="headerlink" href="#timestamp2str" title="Permalink to this headline"></a></h3>
 <dl class="py function">
 <dt class="sig sig-object py" id="dramkit.datetimetools.timestamp2str">
-<span class="sig-prename descclassname"><span class="pre">dramkit.datetimetools.</span></span><span class="sig-name descname"><span class="pre">timestamp2str</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">t</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">strformat</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.datetimetools.timestamp2str" title="Permalink to this definition"></a></dt>
-<dd><p>时间戳转化为字符串</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>t</strong> (<em>str</em><em>, </em><em>int</em><em>, </em><em>float</em>) – <div class="line-block">
-<div class="line">时间戳，可为数字字符串、整数或浮点数</div>
-<div class="line">当t取整后位数小于等于10位时，精度按秒处理</div>
-<div class="line">当t取整后位数大于10位小于等于13位时，精度按毫秒处理</div>
-<div class="line">当t取整后位数大于13位时，精度按微秒处理</div>
+<span class="sig-prename descclassname"><span class="pre">dramkit.datetimetools.</span></span><span class="sig-name descname"><span class="pre">timestamp2str</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">t</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">strformat</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tz</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'local'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">method</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.datetimetools.timestamp2str" title="Permalink to this definition"></a></dt>
+<dd><div class="line-block">
+<div class="line">时间戳转化为字符串格式</div>
+<div class="line">注意：t小于0时直接按t为秒数处理（即使整数部分超过10位也不会处理为小数）</div>
 </div>
-</p></li>
-<li><p><strong>strformat</strong> (<em>str</em><em>, </em><em>None</em>) – 返回时间格式，默认 <code class="docutils literal notranslate"><span class="pre">%Y-%m-%d</span> <span class="pre">%H:%M:%S</span></code></p></li>
-</ul>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p><cite>str</cite> - 字符串格式时间</p>
-</dd>
-</dl>
-<div class="admonition hint">
-<p class="admonition-title">Hint</p>
+</dd></dl>
+
+</section>
+<section id="get-datetime-format">
+<h3>get_datetime_format<a class="headerlink" href="#get-datetime-format" title="Permalink to this headline"></a></h3>
+<dl class="py function">
+<dt class="sig sig-object py" id="dramkit.datetimetools.get_datetime_format">
+<span class="sig-prename descclassname"><span class="pre">dramkit.datetimetools.</span></span><span class="sig-name descname"><span class="pre">get_datetime_format</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dt</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ymd</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">['-',</span> <span class="pre">'',</span> <span class="pre">'.',</span> <span class="pre">'/']</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ymd_hms</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">['</span> <span class="pre">',</span> <span class="pre">'',</span> <span class="pre">'.']</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hms</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[':',</span> <span class="pre">'']</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hms_ms</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">['.',</span> <span class="pre">'']</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.datetimetools.get_datetime_format" title="Permalink to this definition"></a></dt>
+<dd><div class="line-block">
+<div class="line">获取常用日期时间格式format</div>
+<div class="line">注：整数和浮点数都可能是时间戳，这里以常用的规则来判断：</div>
 <div class="line-block">
-<div class="line">正常到秒级别的时间戳为10位整数</div>
-<div class="line">到毫秒/千分之一秒(milliseconds)级别的时间戳为13位整数</div>
-<div class="line">到微秒/百万分之一秒(microseconds)级别的时间戳为16位整数</div>
+<div class="line">- 若整数长度为8位，判断为整数型日期</div>
+<div class="line">- 若整数或浮点数长度不小于10位不大于19位，判断为时间戳</div>
+<div class="line">- 其他情况下的整数或浮点数报错处理</div>
 </div>
 </div>
-<div class="admonition-todo admonition" id="id1">
-<p class="admonition-title">Todo</p>
-<p>纳秒级别精度添加</p>
+</dd></dl>
+
+</section>
+<section id="copy-format">
+<h3>copy_format<a class="headerlink" href="#copy-format" title="Permalink to this headline"></a></h3>
+<dl class="py function">
+<dt class="sig sig-object py" id="dramkit.datetimetools.copy_format">
+<span class="sig-prename descclassname"><span class="pre">dramkit.datetimetools.</span></span><span class="sig-name descname"><span class="pre">copy_format</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">to_tm</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">from_tm</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.datetimetools.copy_format" title="Permalink to this definition"></a></dt>
+<dd><p>复制日期时间格式</p>
+</dd></dl>
+
+</section>
+<section id="x2datetime">
+<h3>x2datetime<a class="headerlink" href="#x2datetime" title="Permalink to this headline"></a></h3>
+<dl class="py function">
+<dt class="sig sig-object py" id="dramkit.datetimetools.x2datetime">
+<span class="sig-prename descclassname"><span class="pre">dramkit.datetimetools.</span></span><span class="sig-name descname"><span class="pre">x2datetime</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.datetimetools.x2datetime" title="Permalink to this definition"></a></dt>
+<dd><div class="line-block">
+<div class="line">x转化为datetime格式</div>
+<div class="line">若x为8位整数，则转化为str处理，其余情况直接用用pd.to_datetime处理</div>
 </div>
+</dd></dl>
+
+</section>
+<section id="time-add">
+<h3>time_add<a class="headerlink" href="#time-add" title="Permalink to this headline"></a></h3>
+<dl class="py function">
+<dt class="sig sig-object py" id="dramkit.datetimetools.time_add">
+<span class="sig-prename descclassname"><span class="pre">dramkit.datetimetools.</span></span><span class="sig-name descname"><span class="pre">time_add</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">t</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">seconds</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">minutes</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hours</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">days</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.datetimetools.time_add" title="Permalink to this definition"></a></dt>
+<dd><p>时间运算，return_format指定返回格式，若为False，返回datetime格式</p>
+</dd></dl>
+
+</section>
+<section id="date-add-nday">
+<h3>date_add_nday<a class="headerlink" href="#date-add-nday" title="Permalink to this headline"></a></h3>
+<dl class="py function">
+<dt class="sig sig-object py" id="dramkit.datetimetools.date_add_nday">
+<span class="sig-prename descclassname"><span class="pre">dramkit.datetimetools.</span></span><span class="sig-name descname"><span class="pre">date_add_nday</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">date</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.datetimetools.date_add_nday" title="Permalink to this definition"></a></dt>
+<dd><p>在给定日期date上加上n天（减去时n写成负数即可）</p>
+</dd></dl>
+
+</section>
+<section id="is-datetime">
+<h3>is_datetime<a class="headerlink" href="#is-datetime" title="Permalink to this headline"></a></h3>
+<dl class="py function">
+<dt class="sig sig-object py" id="dramkit.datetimetools.is_datetime">
+<span class="sig-prename descclassname"><span class="pre">dramkit.datetimetools.</span></span><span class="sig-name descname"><span class="pre">is_datetime</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.datetimetools.is_datetime" title="Permalink to this definition"></a></dt>
+<dd><p>判断x是否为时间日期</p>
+</dd></dl>
+
+</section>
+<section id="is-month-end">
+<h3>is_month_end<a class="headerlink" href="#is-month-end" title="Permalink to this headline"></a></h3>
+<dl class="py function">
+<dt class="sig sig-object py" id="dramkit.datetimetools.is_month_end">
+<span class="sig-prename descclassname"><span class="pre">dramkit.datetimetools.</span></span><span class="sig-name descname"><span class="pre">is_month_end</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">date</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.datetimetools.is_month_end" title="Permalink to this definition"></a></dt>
+<dd><p>判断date是否为月末</p>
+</dd></dl>
+
+</section>
+<section id="is-month-start">
+<h3>is_month_start<a class="headerlink" href="#is-month-start" title="Permalink to this headline"></a></h3>
+<dl class="py function">
+<dt class="sig sig-object py" id="dramkit.datetimetools.is_month_start">
+<span class="sig-prename descclassname"><span class="pre">dramkit.datetimetools.</span></span><span class="sig-name descname"><span class="pre">is_month_start</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">date</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.datetimetools.is_month_start" title="Permalink to this definition"></a></dt>
+<dd><p>判断date是否为月初</p>
+</dd></dl>
+
+</section>
+<section id="is-quarter-end">
+<h3>is_quarter_end<a class="headerlink" href="#is-quarter-end" title="Permalink to this headline"></a></h3>
+<dl class="py function">
+<dt class="sig sig-object py" id="dramkit.datetimetools.is_quarter_end">
+<span class="sig-prename descclassname"><span class="pre">dramkit.datetimetools.</span></span><span class="sig-name descname"><span class="pre">is_quarter_end</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">date</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.datetimetools.is_quarter_end" title="Permalink to this definition"></a></dt>
+<dd><p>判断date是否为季末</p>
+</dd></dl>
+
+</section>
+<section id="is-quarter-start">
+<h3>is_quarter_start<a class="headerlink" href="#is-quarter-start" title="Permalink to this headline"></a></h3>
+<dl class="py function">
+<dt class="sig sig-object py" id="dramkit.datetimetools.is_quarter_start">
+<span class="sig-prename descclassname"><span class="pre">dramkit.datetimetools.</span></span><span class="sig-name descname"><span class="pre">is_quarter_start</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">date</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.datetimetools.is_quarter_start" title="Permalink to this definition"></a></dt>
+<dd><p>判断date是否为季末</p>
 </dd></dl>
 
 </section>
@@ -307,16 +478,61 @@
 <dl class="py function">
 <dt class="sig sig-object py" id="dramkit.datetimetools.datetime_now">
 <span class="sig-prename descclassname"><span class="pre">dramkit.datetimetools.</span></span><span class="sig-name descname"><span class="pre">datetime_now</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">strformat</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.datetimetools.datetime_now" title="Permalink to this definition"></a></dt>
-<dd><p>获取当前时间日期</p>
+<dd><p>获取当前时间</p>
 </dd></dl>
 
 </section>
-<section id="time-add">
-<h3>time_add<a class="headerlink" href="#time-add" title="Permalink to this headline"></a></h3>
+<section id="today-month">
+<h3>today_month<a class="headerlink" href="#today-month" title="Permalink to this headline"></a></h3>
 <dl class="py function">
-<dt class="sig sig-object py" id="dramkit.datetimetools.time_add">
-<span class="sig-prename descclassname"><span class="pre">dramkit.datetimetools.</span></span><span class="sig-name descname"><span class="pre">time_add</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">t</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">seconds</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">minutes</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hours</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">days</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">return_format</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.datetimetools.time_add" title="Permalink to this definition"></a></dt>
-<dd><p>时间运算</p>
+<dt class="sig sig-object py" id="dramkit.datetimetools.today_month">
+<span class="sig-prename descclassname"><span class="pre">dramkit.datetimetools.</span></span><span class="sig-name descname"><span class="pre">today_month</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">joiner</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'-'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.datetimetools.today_month" title="Permalink to this definition"></a></dt>
+<dd><p>获取今日所在年月，格式由连接符joiner确定</p>
+</dd></dl>
+
+</section>
+<section id="today-date">
+<h3>today_date<a class="headerlink" href="#today-date" title="Permalink to this headline"></a></h3>
+<dl class="py function">
+<dt class="sig sig-object py" id="dramkit.datetimetools.today_date">
+<span class="sig-prename descclassname"><span class="pre">dramkit.datetimetools.</span></span><span class="sig-name descname"><span class="pre">today_date</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">joiner</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'-'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.datetimetools.today_date" title="Permalink to this definition"></a></dt>
+<dd><p>获取今日日期，格式由连接符joiner确定</p>
+</dd></dl>
+
+</section>
+<section id="get-quarter">
+<h3>get_quarter<a class="headerlink" href="#get-quarter" title="Permalink to this headline"></a></h3>
+<dl class="py function">
+<dt class="sig sig-object py" id="dramkit.datetimetools.get_quarter">
+<span class="sig-prename descclassname"><span class="pre">dramkit.datetimetools.</span></span><span class="sig-name descname"><span class="pre">get_quarter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dt</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">joiner</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'Q'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.datetimetools.get_quarter" title="Permalink to this definition"></a></dt>
+<dd><p>获取日期所在季度</p>
+</dd></dl>
+
+</section>
+<section id="today-quarter">
+<h3>today_quarter<a class="headerlink" href="#today-quarter" title="Permalink to this headline"></a></h3>
+<dl class="py function">
+<dt class="sig sig-object py" id="dramkit.datetimetools.today_quarter">
+<span class="sig-prename descclassname"><span class="pre">dramkit.datetimetools.</span></span><span class="sig-name descname"><span class="pre">today_quarter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">joiner</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'Q'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.datetimetools.today_quarter" title="Permalink to this definition"></a></dt>
+<dd><p>获取今日所在季度</p>
+</dd></dl>
+
+</section>
+<section id="get-dayofweek">
+<h3>get_dayofweek<a class="headerlink" href="#get-dayofweek" title="Permalink to this headline"></a></h3>
+<dl class="py function">
+<dt class="sig sig-object py" id="dramkit.datetimetools.get_dayofweek">
+<span class="sig-prename descclassname"><span class="pre">dramkit.datetimetools.</span></span><span class="sig-name descname"><span class="pre">get_dayofweek</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">date</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.datetimetools.get_dayofweek" title="Permalink to this definition"></a></dt>
+<dd><p>返回date属于星期几（1-7）</p>
+</dd></dl>
+
+</section>
+<section id="get-dayofyear">
+<h3>get_dayofyear<a class="headerlink" href="#get-dayofyear" title="Permalink to this headline"></a></h3>
+<dl class="py function">
+<dt class="sig sig-object py" id="dramkit.datetimetools.get_dayofyear">
+<span class="sig-prename descclassname"><span class="pre">dramkit.datetimetools.</span></span><span class="sig-name descname"><span class="pre">get_dayofyear</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">date</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.datetimetools.get_dayofyear" title="Permalink to this definition"></a></dt>
+<dd><p>返回date属于一年当中的第几天（从1开始记）</p>
 </dd></dl>
 
 </section>
@@ -345,68 +561,11 @@
 </dd></dl>
 
 </section>
-<section id="is-datetime">
-<h3>is_datetime<a class="headerlink" href="#is-datetime" title="Permalink to this headline"></a></h3>
-<dl class="py function">
-<dt class="sig sig-object py" id="dramkit.datetimetools.is_datetime">
-<span class="sig-prename descclassname"><span class="pre">dramkit.datetimetools.</span></span><span class="sig-name descname"><span class="pre">is_datetime</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.datetimetools.is_datetime" title="Permalink to this definition"></a></dt>
-<dd><p>判断x是否为时间日期</p>
-</dd></dl>
-
-</section>
-<section id="get-year-month">
-<h3>get_year_month<a class="headerlink" href="#get-year-month" title="Permalink to this headline"></a></h3>
-<dl class="py function">
-<dt class="sig sig-object py" id="dramkit.datetimetools.get_year_month">
-<span class="sig-prename descclassname"><span class="pre">dramkit.datetimetools.</span></span><span class="sig-name descname"><span class="pre">get_year_month</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">date</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.datetimetools.get_year_month" title="Permalink to this definition"></a></dt>
-<dd><div class="line-block">
-<div class="line">提取date中的年月</div>
-<div class="line">例：’20200305’—&gt;’202003’, ‘2020-03-05’—&gt;’2020-03’</div>
-</div>
-</dd></dl>
-
-</section>
-<section id="today-date">
-<h3>today_date<a class="headerlink" href="#today-date" title="Permalink to this headline"></a></h3>
-<dl class="py function">
-<dt class="sig sig-object py" id="dramkit.datetimetools.today_date">
-<span class="sig-prename descclassname"><span class="pre">dramkit.datetimetools.</span></span><span class="sig-name descname"><span class="pre">today_date</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">joiner</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'-'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">forbid_joiners</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">['%']</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.datetimetools.today_date" title="Permalink to this definition"></a></dt>
-<dd><p>获取今日日期，格式由连接符joiner确定，forbid_joiners指定禁用的连接符</p>
-</dd></dl>
-
-</section>
-<section id="today-month">
-<h3>today_month<a class="headerlink" href="#today-month" title="Permalink to this headline"></a></h3>
-<dl class="py function">
-<dt class="sig sig-object py" id="dramkit.datetimetools.today_month">
-<span class="sig-prename descclassname"><span class="pre">dramkit.datetimetools.</span></span><span class="sig-name descname"><span class="pre">today_month</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">joiner</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'-'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">forbid_joiners</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">['%']</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.datetimetools.today_month" title="Permalink to this definition"></a></dt>
-<dd><p>获取今日所在年月</p>
-</dd></dl>
-
-</section>
-<section id="get-quarter">
-<h3>get_quarter<a class="headerlink" href="#get-quarter" title="Permalink to this headline"></a></h3>
-<dl class="py function">
-<dt class="sig sig-object py" id="dramkit.datetimetools.get_quarter">
-<span class="sig-prename descclassname"><span class="pre">dramkit.datetimetools.</span></span><span class="sig-name descname"><span class="pre">get_quarter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">date_time</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">joiner</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'Q'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.datetimetools.get_quarter" title="Permalink to this definition"></a></dt>
-<dd><p>获取日期所在季度</p>
-</dd></dl>
-
-</section>
-<section id="today-quarter">
-<h3>today_quarter<a class="headerlink" href="#today-quarter" title="Permalink to this headline"></a></h3>
-<dl class="py function">
-<dt class="sig sig-object py" id="dramkit.datetimetools.today_quarter">
-<span class="sig-prename descclassname"><span class="pre">dramkit.datetimetools.</span></span><span class="sig-name descname"><span class="pre">today_quarter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">joiner</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'Q'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.datetimetools.today_quarter" title="Permalink to this definition"></a></dt>
-<dd><p>获取今日所在季度</p>
-</dd></dl>
-
-</section>
 <section id="date-reformat-simple">
 <h3>date_reformat_simple<a class="headerlink" href="#date-reformat-simple" title="Permalink to this headline"></a></h3>
 <dl class="py function">
 <dt class="sig sig-object py" id="dramkit.datetimetools.date_reformat_simple">
-<span class="sig-prename descclassname"><span class="pre">dramkit.datetimetools.</span></span><span class="sig-name descname"><span class="pre">date_reformat_simple</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">date</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">joiner_ori</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">joiner_new</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'-'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">forbid_joiners</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">['%']</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.datetimetools.date_reformat_simple" title="Permalink to this definition"></a></dt>
+<span class="sig-prename descclassname"><span class="pre">dramkit.datetimetools.</span></span><span class="sig-name descname"><span class="pre">date_reformat_simple</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">date</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">joiner_ori</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">joiner_new</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'-'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.datetimetools.date_reformat_simple" title="Permalink to this definition"></a></dt>
 <dd><p>时间格式简单转化</p>
 </dd></dl>
 
@@ -415,20 +574,25 @@
 <h3>date_reformat_chn<a class="headerlink" href="#date-reformat-chn" title="Permalink to this headline"></a></h3>
 <dl class="py function">
 <dt class="sig sig-object py" id="dramkit.datetimetools.date_reformat_chn">
-<span class="sig-prename descclassname"><span class="pre">dramkit.datetimetools.</span></span><span class="sig-name descname"><span class="pre">date_reformat_chn</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">date</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">joiner</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'-'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">forbid_joiners</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">['%']</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.datetimetools.date_reformat_chn" title="Permalink to this definition"></a></dt>
-<dd><div class="line-block">
-<div class="line">指定连接符为joiner，重新格式化date，date格式为x年x月x日.</div>
-<div class="line">forbid_joiners指定禁用的连接符</div>
-</div>
+<span class="sig-prename descclassname"><span class="pre">dramkit.datetimetools.</span></span><span class="sig-name descname"><span class="pre">date_reformat_chn</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">date</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">joiner</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'-'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.datetimetools.date_reformat_chn" title="Permalink to this definition"></a></dt>
+<dd><p>指定连接符为joiner，重新格式化date，date格式为x年x月x日</p>
 </dd></dl>
+
+</section>
+<section id="gen-strformat">
+<h3>gen_strformat<a class="headerlink" href="#gen-strformat" title="Permalink to this headline"></a></h3>
+<dl class="py function">
+<dt class="sig sig-object py" id="dramkit.datetimetools.gen_strformat">
+<span class="sig-prename descclassname"><span class="pre">dramkit.datetimetools.</span></span><span class="sig-name descname"><span class="pre">gen_strformat</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">joiner</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.datetimetools.gen_strformat" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
 
 </section>
 <section id="date-reformat">
 <h3>date_reformat<a class="headerlink" href="#date-reformat" title="Permalink to this headline"></a></h3>
 <dl class="py function">
 <dt class="sig sig-object py" id="dramkit.datetimetools.date_reformat">
-<span class="sig-prename descclassname"><span class="pre">dramkit.datetimetools.</span></span><span class="sig-name descname"><span class="pre">date_reformat</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">date</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">joiner</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'-'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">forbid_joiners</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">['%']</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.datetimetools.date_reformat" title="Permalink to this definition"></a></dt>
-<dd><p>指定连接符为joiner，重新格式化date，forbid_joiners指定禁用的连接符</p>
+<span class="sig-prename descclassname"><span class="pre">dramkit.datetimetools.</span></span><span class="sig-name descname"><span class="pre">date_reformat</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">date</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">joiner</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'-'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.datetimetools.date_reformat" title="Permalink to this definition"></a></dt>
+<dd><p>指定连接符为joiner，重新格式化date</p>
 </dd></dl>
 
 </section>
@@ -450,18 +614,6 @@
 </dd></dl>
 
 </section>
-<section id="date-add-nday">
-<h3>date_add_nday<a class="headerlink" href="#date-add-nday" title="Permalink to this headline"></a></h3>
-<dl class="py function">
-<dt class="sig sig-object py" id="dramkit.datetimetools.date_add_nday">
-<span class="sig-prename descclassname"><span class="pre">dramkit.datetimetools.</span></span><span class="sig-name descname"><span class="pre">date_add_nday</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">date</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.datetimetools.date_add_nday" title="Permalink to this definition"></a></dt>
-<dd><div class="line-block">
-<div class="line">在给定日期date上加上n天（减去时n写成负数即可）</div>
-<div class="line">日期输入输出符合get_date_format函数支持的格式</div>
-</div>
-</dd></dl>
-
-</section>
 <section id="diff-time-second">
 <h3>diff_time_second<a class="headerlink" href="#diff-time-second" title="Permalink to this headline"></a></h3>
 <dl class="py function">
@@ -479,10 +631,7 @@
 <dl class="py function">
 <dt class="sig sig-object py" id="dramkit.datetimetools.diff_days_date">
 <span class="sig-prename descclassname"><span class="pre">dramkit.datetimetools.</span></span><span class="sig-name descname"><span class="pre">diff_days_date</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">date1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">date2</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.datetimetools.diff_days_date" title="Permalink to this definition"></a></dt>
-<dd><div class="line-block">
-<div class="line">计算两个日期间相隔天数，若date1大于date2，则输出为正，否则为负</div>
-<div class="line">日期输入输出符合get_date_format函数支持的格式</div>
-</div>
+<dd><p>计算两个日期间相隔天数，若date1大于date2，则输出为正，否则为负</p>
 </dd></dl>
 
 </section>
@@ -496,33 +645,6 @@
 <p class="admonition-title">Note</p>
 <p>是否为workday用了chncal包，若chncal库没更新，可能导致结果不准确</p>
 </div>
-</dd></dl>
-
-</section>
-<section id="get-dayofweek">
-<h3>get_dayofweek<a class="headerlink" href="#get-dayofweek" title="Permalink to this headline"></a></h3>
-<dl class="py function">
-<dt class="sig sig-object py" id="dramkit.datetimetools.get_dayofweek">
-<span class="sig-prename descclassname"><span class="pre">dramkit.datetimetools.</span></span><span class="sig-name descname"><span class="pre">get_dayofweek</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">date</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.datetimetools.get_dayofweek" title="Permalink to this definition"></a></dt>
-<dd><p>返回date属于星期几（1-7）</p>
-</dd></dl>
-
-</section>
-<section id="get-dayofyear">
-<h3>get_dayofyear<a class="headerlink" href="#get-dayofyear" title="Permalink to this headline"></a></h3>
-<dl class="py function">
-<dt class="sig sig-object py" id="dramkit.datetimetools.get_dayofyear">
-<span class="sig-prename descclassname"><span class="pre">dramkit.datetimetools.</span></span><span class="sig-name descname"><span class="pre">get_dayofyear</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">date</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.datetimetools.get_dayofyear" title="Permalink to this definition"></a></dt>
-<dd><p>返回date属于一年当中的第几天（从1开始记）</p>
-</dd></dl>
-
-</section>
-<section id="isworkday-chncal">
-<h3>isworkday_chncal<a class="headerlink" href="#isworkday-chncal" title="Permalink to this headline"></a></h3>
-<dl class="py function">
-<dt class="sig sig-object py" id="dramkit.datetimetools.isworkday_chncal">
-<span class="sig-prename descclassname"><span class="pre">dramkit.datetimetools.</span></span><span class="sig-name descname"><span class="pre">isworkday_chncal</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">date</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.datetimetools.isworkday_chncal" title="Permalink to this definition"></a></dt>
-<dd><p>利用chncal库判断date（str格式）是否为工作日</p>
 </dd></dl>
 
 </section>
@@ -564,12 +686,35 @@
 </dd></dl>
 
 </section>
+<section id="get-date-weekday">
+<h3>get_date_weekday<a class="headerlink" href="#get-date-weekday" title="Permalink to this headline"></a></h3>
+<dl class="py function">
+<dt class="sig sig-object py" id="dramkit.datetimetools.get_date_weekday">
+<span class="sig-prename descclassname"><span class="pre">dramkit.datetimetools.</span></span><span class="sig-name descname"><span class="pre">get_date_weekday</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">weekday</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_week</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">joiner</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.datetimetools.get_date_weekday" title="Permalink to this definition"></a></dt>
+<dd><p>获取指定星期的日期</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>weekday</strong> (<em>int</em>) – 指定星期，如5表示星期5，7表示星期天</p></li>
+<li><p><strong>n_week</strong> (<em>int</em>) – 表示距离现在第几个星期，0表示当前星期，大于0表示往后推，小于0表示往前推</p></li>
+</ul>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">get_date_weekday</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span> <span class="c1"># 获取本周三的日期</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">get_date_weekday</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="c1"># 获取上周六的日期</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">get_date_weekday</span><span class="p">(</span><span class="mi">7</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="c1"># 获取下周日的日期</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</section>
 <section id="get-recent-inweekday">
 <h3>get_recent_inweekday<a class="headerlink" href="#get-recent-inweekday" title="Permalink to this headline"></a></h3>
 <dl class="py function">
 <dt class="sig sig-object py" id="dramkit.datetimetools.get_recent_inweekday">
 <span class="sig-prename descclassname"><span class="pre">dramkit.datetimetools.</span></span><span class="sig-name descname"><span class="pre">get_recent_inweekday</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">date</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dirt</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'post'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.datetimetools.get_recent_inweekday" title="Permalink to this definition"></a></dt>
-<dd><p>若date不是周末，则返回，否则返回下一个(post)或上一个(pre)周内日期</p>
+<dd><p>若date不是周末，则返回date，否则返回下一个(post)或上一个(pre)周内日期</p>
 </dd></dl>
 
 </section>
@@ -589,7 +734,7 @@
 <h3>cut_date<a class="headerlink" href="#cut-date" title="Permalink to this headline"></a></h3>
 <dl class="py function">
 <dt class="sig sig-object py" id="dramkit.datetimetools.cut_date">
-<span class="sig-prename descclassname"><span class="pre">dramkit.datetimetools.</span></span><span class="sig-name descname"><span class="pre">cut_date</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">start_date</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">end_date</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">500</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">joiner</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.datetimetools.cut_date" title="Permalink to this definition"></a></dt>
+<span class="sig-prename descclassname"><span class="pre">dramkit.datetimetools.</span></span><span class="sig-name descname"><span class="pre">cut_date</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">start_date</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">end_date</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">500</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.datetimetools.cut_date" title="Permalink to this definition"></a></dt>
 <dd><p>以间隔为n天划分start_date和end_date之间日期子集</p>
 <p class="rubric">Examples</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">start_date</span><span class="p">,</span> <span class="n">end_date</span><span class="p">,</span> <span class="n">n</span> <span class="o">=</span> <span class="s1">&#39;20200201&#39;</span><span class="p">,</span> <span class="s1">&#39;20200225&#39;</span><span class="p">,</span> <span class="mi">10</span>
@@ -607,10 +752,7 @@
 <dl class="py function">
 <dt class="sig sig-object py" id="dramkit.datetimetools.diff_workdays_date">
 <span class="sig-prename descclassname"><span class="pre">dramkit.datetimetools.</span></span><span class="sig-name descname"><span class="pre">diff_workdays_date</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">date1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">date2</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.datetimetools.diff_workdays_date" title="Permalink to this definition"></a></dt>
-<dd><div class="line-block">
-<div class="line">计算两个日期间相隔的工作日天数，若date1大于date2，则输出为正，否则为负</div>
-<div class="line">日期输入输出符合get_date_format函数支持的格式</div>
-</div>
+<dd><p>计算两个日期间相隔的工作日天数，若date1大于date2，则输出为正，否则为负</p>
 </dd></dl>
 
 </section>
@@ -1713,6 +1855,18 @@ func_val0的值(这里连续出现是指不出现除了满足func_val为True和�
 </dd></dl>
 
 </section>
+<section id="df-na2value">
+<h3>df_na2value<a class="headerlink" href="#df-na2value" title="Permalink to this headline"></a></h3>
+<dl class="py function">
+<dt class="sig sig-object py" id="dramkit.gentools.df_na2value">
+<span class="sig-prename descclassname"><span class="pre">dramkit.gentools.</span></span><span class="sig-name descname"><span class="pre">df_na2value</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">df</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.gentools.df_na2value" title="Permalink to this definition"></a></dt>
+<dd><div class="line-block">
+<div class="line">df中nan值替换为value</div>
+<div class="line"><a class="reference external" href="https://blog.csdn.net/Shone1214/article/details/125968784">https://blog.csdn.net/Shone1214/article/details/125968784</a></div>
+</div>
+</dd></dl>
+
+</section>
 <section id="merge-df">
 <h3>merge_df<a class="headerlink" href="#merge-df" title="Permalink to this headline"></a></h3>
 <dl class="py function">
@@ -1956,6 +2110,72 @@ func_val0的值(这里连续出现是指不出现除了满足func_val为True和�
 </dd></dl>
 
 </section>
+<section id="df-rows2cols">
+<h3>df_rows2cols<a class="headerlink" href="#df-rows2cols" title="Permalink to this headline"></a></h3>
+<dl class="py function">
+<dt class="sig sig-object py" id="dramkit.gentools.df_rows2cols">
+<span class="sig-prename descclassname"><span class="pre">dramkit.gentools.</span></span><span class="sig-name descname"><span class="pre">df_rows2cols</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">df</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">col_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">col_val_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fill_value</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.gentools.df_rows2cols" title="Permalink to this definition"></a></dt>
+<dd><p>把df中col_value_name列数据按col_name列分组，通过unstack拆分为多列数据，新列名为col_name列中的值</p>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">df0</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span>
+<span class="gp">... </span>        <span class="p">[[</span><span class="s1">&#39;Saliy&#39;</span><span class="p">,</span> <span class="s1">&#39;midterm&#39;</span><span class="p">,</span> <span class="s1">&#39;class1&#39;</span><span class="p">,</span> <span class="s1">&#39;A&#39;</span><span class="p">],</span>
+<span class="gp">... </span>        <span class="p">[</span><span class="s1">&#39;Saliy&#39;</span><span class="p">,</span> <span class="s1">&#39;midterm&#39;</span><span class="p">,</span> <span class="s1">&#39;class3&#39;</span><span class="p">,</span> <span class="s1">&#39;B&#39;</span><span class="p">],</span>
+<span class="gp">... </span>        <span class="p">[</span><span class="s1">&#39;Saliy&#39;</span><span class="p">,</span> <span class="s1">&#39;final&#39;</span><span class="p">,</span> <span class="s1">&#39;class1&#39;</span><span class="p">,</span> <span class="s1">&#39;C&#39;</span><span class="p">],</span>
+<span class="gp">... </span>        <span class="p">[</span><span class="s1">&#39;Saliy&#39;</span><span class="p">,</span> <span class="s1">&#39;final&#39;</span><span class="p">,</span> <span class="s1">&#39;class3&#39;</span><span class="p">,</span> <span class="s1">&#39;C&#39;</span><span class="p">],</span>
+<span class="gp">... </span>        <span class="p">[</span><span class="s1">&#39;Jeff&#39;</span><span class="p">,</span> <span class="s1">&#39;midterm&#39;</span><span class="p">,</span> <span class="s1">&#39;class2&#39;</span><span class="p">,</span> <span class="s1">&#39;D&#39;</span><span class="p">],</span>
+<span class="gp">... </span>        <span class="p">[</span><span class="s1">&#39;Jeff&#39;</span><span class="p">,</span> <span class="s1">&#39;midterm&#39;</span><span class="p">,</span> <span class="s1">&#39;class4&#39;</span><span class="p">,</span> <span class="s1">&#39;A&#39;</span><span class="p">],</span>
+<span class="gp">... </span>        <span class="p">[</span><span class="s1">&#39;Jeff&#39;</span><span class="p">,</span> <span class="s1">&#39;final&#39;</span><span class="p">,</span> <span class="s1">&#39;class2&#39;</span><span class="p">,</span> <span class="s1">&#39;E&#39;</span><span class="p">],</span>
+<span class="gp">... </span>        <span class="p">[</span><span class="s1">&#39;Jeff&#39;</span><span class="p">,</span> <span class="s1">&#39;final&#39;</span><span class="p">,</span> <span class="s1">&#39;class4&#39;</span><span class="p">,</span> <span class="s1">&#39;C&#39;</span><span class="p">],</span>
+<span class="gp">... </span>        <span class="p">[</span><span class="s1">&#39;Roger&#39;</span><span class="p">,</span> <span class="s1">&#39;midterm&#39;</span><span class="p">,</span> <span class="s1">&#39;class2&#39;</span><span class="p">,</span> <span class="s1">&#39;C&#39;</span><span class="p">],</span>
+<span class="gp">... </span>        <span class="p">[</span><span class="s1">&#39;Roger&#39;</span><span class="p">,</span> <span class="s1">&#39;midterm&#39;</span><span class="p">,</span> <span class="s1">&#39;class5&#39;</span><span class="p">,</span> <span class="s1">&#39;B&#39;</span><span class="p">],</span>
+<span class="gp">... </span>        <span class="p">[</span><span class="s1">&#39;Roger&#39;</span><span class="p">,</span> <span class="s1">&#39;final&#39;</span><span class="p">,</span> <span class="s1">&#39;class2&#39;</span><span class="p">,</span> <span class="s1">&#39;A&#39;</span><span class="p">],</span>
+<span class="gp">... </span>        <span class="p">[</span><span class="s1">&#39;Roger&#39;</span><span class="p">,</span> <span class="s1">&#39;final&#39;</span><span class="p">,</span> <span class="s1">&#39;class5&#39;</span><span class="p">,</span> <span class="s1">&#39;A&#39;</span><span class="p">],</span>
+<span class="gp">... </span>        <span class="p">[</span><span class="s1">&#39;Karen&#39;</span><span class="p">,</span> <span class="s1">&#39;midterm&#39;</span><span class="p">,</span> <span class="s1">&#39;class3&#39;</span><span class="p">,</span> <span class="s1">&#39;C&#39;</span><span class="p">],</span>
+<span class="gp">... </span>        <span class="p">[</span><span class="s1">&#39;Karen&#39;</span><span class="p">,</span> <span class="s1">&#39;midterm&#39;</span><span class="p">,</span> <span class="s1">&#39;class4&#39;</span><span class="p">,</span> <span class="s1">&#39;A&#39;</span><span class="p">],</span>
+<span class="gp">... </span>        <span class="p">[</span><span class="s1">&#39;Karen&#39;</span><span class="p">,</span> <span class="s1">&#39;final&#39;</span><span class="p">,</span> <span class="s1">&#39;class3&#39;</span><span class="p">,</span> <span class="s1">&#39;C&#39;</span><span class="p">],</span>
+<span class="gp">... </span>        <span class="p">[</span><span class="s1">&#39;Karen&#39;</span><span class="p">,</span> <span class="s1">&#39;final&#39;</span><span class="p">,</span> <span class="s1">&#39;class4&#39;</span><span class="p">,</span> <span class="s1">&#39;A&#39;</span><span class="p">],</span>
+<span class="gp">... </span>        <span class="p">[</span><span class="s1">&#39;Brain&#39;</span><span class="p">,</span> <span class="s1">&#39;midterm&#39;</span><span class="p">,</span> <span class="s1">&#39;class1&#39;</span><span class="p">,</span> <span class="s1">&#39;B&#39;</span><span class="p">],</span>
+<span class="gp">... </span>        <span class="p">[</span><span class="s1">&#39;Brain&#39;</span><span class="p">,</span> <span class="s1">&#39;midterm&#39;</span><span class="p">,</span> <span class="s1">&#39;class5&#39;</span><span class="p">,</span> <span class="s1">&#39;A&#39;</span><span class="p">],</span>
+<span class="gp">... </span>        <span class="p">[</span><span class="s1">&#39;Brain&#39;</span><span class="p">,</span> <span class="s1">&#39;final&#39;</span><span class="p">,</span> <span class="s1">&#39;class1&#39;</span><span class="p">,</span> <span class="s1">&#39;B&#39;</span><span class="p">],</span>
+<span class="gp">... </span>        <span class="p">[</span><span class="s1">&#39;Brain&#39;</span><span class="p">,</span> <span class="s1">&#39;final&#39;</span><span class="p">,</span> <span class="s1">&#39;class5&#39;</span><span class="p">,</span> <span class="s1">&#39;C&#39;</span><span class="p">]],</span>
+<span class="gp">... </span>        <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">,</span> <span class="s1">&#39;test&#39;</span><span class="p">,</span> <span class="s1">&#39;class&#39;</span><span class="p">,</span> <span class="s1">&#39;grade&#39;</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">col_name</span><span class="p">,</span> <span class="n">col_val_name</span> <span class="o">=</span> <span class="s1">&#39;class&#39;</span><span class="p">,</span> <span class="s1">&#39;grade&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">df1</span> <span class="o">=</span> <span class="n">df_rows2cols</span><span class="p">(</span><span class="n">df0</span><span class="p">,</span> <span class="n">col_name</span><span class="p">,</span> <span class="n">col_val_name</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">df2</span> <span class="o">=</span> <span class="n">df_rows2cols</span><span class="p">(</span><span class="n">df0</span><span class="p">,</span> <span class="n">col_name</span><span class="p">,</span> <span class="n">col_val_name</span><span class="p">,</span>
+<span class="go">                       fill_value=&#39;None&#39;)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</section>
+<section id="df-cols2rows">
+<h3>df_cols2rows<a class="headerlink" href="#df-cols2rows" title="Permalink to this headline"></a></h3>
+<dl class="py function">
+<dt class="sig sig-object py" id="dramkit.gentools.df_cols2rows">
+<span class="sig-prename descclassname"><span class="pre">dramkit.gentools.</span></span><span class="sig-name descname"><span class="pre">df_cols2rows</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">df</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cols</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">col_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">col_val_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dropna</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.gentools.df_cols2rows" title="Permalink to this definition"></a></dt>
+<dd><p>把df中指定的cols列数据通过stack堆积为行数据，新列名为col_name</p>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">na</span> <span class="o">=</span> <span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">df3</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;Saliy&#39;</span><span class="p">,</span> <span class="s1">&#39;Saliy&#39;</span><span class="p">,</span> <span class="s1">&#39;Jeff&#39;</span><span class="p">,</span> <span class="s1">&#39;Jeff&#39;</span><span class="p">,</span>
+<span class="gp">... </span>                             <span class="s1">&#39;Roger&#39;</span><span class="p">,</span> <span class="s1">&#39;Roger&#39;</span><span class="p">,</span> <span class="s1">&#39;Karen&#39;</span><span class="p">,</span> <span class="s1">&#39;Karen&#39;</span><span class="p">,</span>
+<span class="gp">... </span>                             <span class="s1">&#39;Brain&#39;</span><span class="p">,</span> <span class="s1">&#39;Brain&#39;</span><span class="p">],</span>
+<span class="gp">... </span>                    <span class="s1">&#39;test&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;midterm&#39;</span><span class="p">,</span> <span class="s1">&#39;final&#39;</span><span class="p">]</span> <span class="o">*</span> <span class="mi">5</span><span class="p">,</span>
+<span class="gp">... </span>                    <span class="s1">&#39;class1&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;A&#39;</span><span class="p">,</span> <span class="s1">&#39;C&#39;</span><span class="p">]</span> <span class="o">+</span> <span class="n">na</span><span class="o">*</span><span class="mi">6</span> <span class="o">+</span> <span class="p">[</span><span class="s1">&#39;B&#39;</span><span class="p">,</span> <span class="s1">&#39;B&#39;</span><span class="p">],</span>
+<span class="gp">... </span>                    <span class="s1">&#39;class2&#39;</span><span class="p">:</span> <span class="n">na</span><span class="o">*</span><span class="mi">2</span> <span class="o">+</span> <span class="p">[</span><span class="s1">&#39;D&#39;</span><span class="p">,</span> <span class="s1">&#39;E&#39;</span><span class="p">,</span> <span class="s1">&#39;C&#39;</span><span class="p">,</span> <span class="s1">&#39;A&#39;</span><span class="p">]</span> <span class="o">+</span> <span class="n">na</span><span class="o">*</span><span class="mi">4</span><span class="p">,</span>
+<span class="gp">... </span>                    <span class="s1">&#39;class3&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;B&#39;</span><span class="p">,</span> <span class="s1">&#39;C&#39;</span><span class="p">]</span> <span class="o">+</span> <span class="n">na</span><span class="o">*</span><span class="mi">4</span> <span class="o">+</span> <span class="p">[</span><span class="s1">&#39;C&#39;</span><span class="p">,</span> <span class="s1">&#39;C&#39;</span><span class="p">]</span> <span class="o">+</span> <span class="n">na</span><span class="o">*</span><span class="mi">2</span><span class="p">,</span>
+<span class="gp">... </span>                    <span class="s1">&#39;class4&#39;</span><span class="p">:</span> <span class="n">na</span><span class="o">*</span><span class="mi">2</span> <span class="o">+</span> <span class="p">[</span><span class="s1">&#39;A&#39;</span><span class="p">,</span> <span class="s1">&#39;C&#39;</span><span class="p">]</span> <span class="o">+</span> <span class="n">na</span><span class="o">*</span><span class="mi">2</span> <span class="o">+</span> <span class="p">[</span><span class="s1">&#39;A&#39;</span><span class="p">,</span> <span class="s1">&#39;A&#39;</span><span class="p">]</span> <span class="o">+</span> <span class="n">na</span><span class="o">*</span><span class="mi">2</span><span class="p">,</span>
+<span class="gp">... </span>                    <span class="s1">&#39;class5&#39;</span><span class="p">:</span> <span class="n">na</span><span class="o">*</span><span class="mi">4</span> <span class="o">+</span> <span class="p">[</span><span class="s1">&#39;B&#39;</span><span class="p">,</span> <span class="s1">&#39;A&#39;</span><span class="p">]</span> <span class="o">+</span> <span class="n">na</span><span class="o">*</span><span class="mi">2</span> <span class="o">+</span> <span class="p">[</span><span class="s1">&#39;A&#39;</span><span class="p">,</span> <span class="s1">&#39;C&#39;</span><span class="p">]})</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">cols</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;class</span><span class="si">%s</span><span class="s1">&#39;</span><span class="o">%</span><span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">6</span><span class="p">)]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">col_name</span> <span class="o">=</span> <span class="s1">&#39;class&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">col_val_name</span> <span class="o">=</span> <span class="s1">&#39;grade&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">df4</span> <span class="o">=</span> <span class="n">df_cols2rows</span><span class="p">(</span><span class="n">df3</span><span class="p">,</span> <span class="n">cols</span><span class="p">,</span> <span class="n">col_name</span><span class="p">,</span> <span class="n">col_val_name</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">df5</span> <span class="o">=</span> <span class="n">df_cols2rows</span><span class="p">(</span><span class="n">df3</span><span class="p">,</span> <span class="n">cols</span><span class="p">,</span> <span class="n">col_name</span><span class="p">,</span> <span class="n">col_val_name</span><span class="p">,</span>
+<span class="gp">... </span>                   <span class="n">dropna</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</section>
 <section id="get-first-appear-index">
 <h3>get_first_appear_index<a class="headerlink" href="#get-first-appear-index" title="Permalink to this headline"></a></h3>
 <dl class="py function">
@@ -2103,6 +2323,51 @@ func_val0的值(这里连续出现是指不出现除了满足func_val为True和�
 <dd class="field-odd"><p>pandas.Series</p>
 </dd>
 </dl>
+</dd></dl>
+
+</section>
+<section id="get-func-df-concat">
+<h3>get_func_df_concat<a class="headerlink" href="#get-func-df-concat" title="Permalink to this headline"></a></h3>
+<dl class="py function">
+<dt class="sig sig-object py" id="dramkit.gentools.get_func_df_concat">
+<span class="sig-prename descclassname"><span class="pre">dramkit.gentools.</span></span><span class="sig-name descname"><span class="pre">get_func_df_concat</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">func</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">args_kwargs_list</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">concat_axis</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.gentools.get_func_df_concat" title="Permalink to this definition"></a></dt>
+<dd><div class="line-block">
+<div class="line">func(args, **kwargs)作用于args_kwargs_list中的参数，将所有结果concat返回</div>
+<div class="line">func函数返回值必须为pd.DataFrame</div>
+</div>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">func</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">&#39;a&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">]})</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">args_kwargs_list</span> <span class="o">=</span> <span class="p">[[(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="p">{</span><span class="s1">&#39;z&#39;</span><span class="p">:</span> <span class="mi">3</span><span class="p">}],</span>
+<span class="gp">... </span>                    <span class="p">[(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="p">{</span><span class="s1">&#39;z&#39;</span><span class="p">:</span> <span class="mi">4</span><span class="p">}]]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">get_func_df_concat</span><span class="p">(</span><span class="n">func</span><span class="p">,</span> <span class="n">args_kwargs_list</span><span class="p">)</span>
+<span class="go">   a</span>
+<span class="go">0  1</span>
+<span class="go">1  2</span>
+<span class="go">2  3</span>
+<span class="go">0  2</span>
+<span class="go">1  3</span>
+<span class="go">2  4</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</section>
+<section id="df-groupby-func">
+<h3>df_groupby_func<a class="headerlink" href="#df-groupby-func" title="Permalink to this headline"></a></h3>
+<dl class="py function">
+<dt class="sig sig-object py" id="dramkit.gentools.df_groupby_func">
+<span class="sig-prename descclassname"><span class="pre">dramkit.gentools.</span></span><span class="sig-name descname"><span class="pre">df_groupby_func</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">df</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">by_cols</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">func</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">as_index</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">reset_index</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'drop'</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args_func</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs_func</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.gentools.df_groupby_func" title="Permalink to this definition"></a></dt>
+<dd><div class="line-block">
+<div class="line">df按by_cols分组作用于func(x, *args, **kwargs)函数</div>
+<div class="line">reset_index:</div>
+<div class="line-block">
+<div class="line">若为drop，则重置返回的index</div>
+<div class="line">若为False，则不处理groupby之后的index</div>
+<div class="line">若为ori，如返回数据与原始df行数相同，则使用原始index，否则不处理groupby之后的index</div>
+</div>
+<div class="line">解决groupby.apply出现执行多次的问题(貌似pandas更新到1.5.0之后没出现了)，参考:</div>
+<div class="line"><a class="reference external" href="http://t.zoukankan.com/wkang-p-10150401.html">http://t.zoukankan.com/wkang-p-10150401.html</a></div>
+</div>
 </dd></dl>
 
 </section>
@@ -2534,8 +2799,8 @@ cols_groupby设定</p>
 <h3>clear_specified_type_files<a class="headerlink" href="#clear-specified-type-files" title="Permalink to this headline"></a></h3>
 <dl class="py function">
 <dt class="sig sig-object py" id="dramkit.iotools.clear_specified_type_files">
-<span class="sig-prename descclassname"><span class="pre">dramkit.iotools.</span></span><span class="sig-name descname"><span class="pre">clear_specified_type_files</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dir_path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">type_list</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">encoding</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">recu_sub_dir</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.iotools.clear_specified_type_files" title="Permalink to this definition"></a></dt>
-<dd><p>清空dir_path文件夹下所有类型在type_list中的文件内容，保留文件</p>
+<span class="sig-prename descclassname"><span class="pre">dramkit.iotools.</span></span><span class="sig-name descname"><span class="pre">clear_specified_type_files</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dir_path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">type_list</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">encoding</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">recu_sub_dir</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs_getpath</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.iotools.clear_specified_type_files" title="Permalink to this definition"></a></dt>
+<dd><p>清空dir_path文件夹下所有类型在type_list中的文件内容，保留文件夹</p>
 </dd></dl>
 
 </section>
@@ -2543,7 +2808,7 @@ cols_groupby设定</p>
 <h3>get_all_paths<a class="headerlink" href="#get-all-paths" title="Permalink to this headline"></a></h3>
 <dl class="py function">
 <dt class="sig sig-object py" id="dramkit.iotools.get_all_paths">
-<span class="sig-prename descclassname"><span class="pre">dramkit.iotools.</span></span><span class="sig-name descname"><span class="pre">get_all_paths</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dir_path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ext</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">include_dir</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">abspath</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">recu_sub_dir</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">only_dir</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.iotools.get_all_paths" title="Permalink to this definition"></a></dt>
+<span class="sig-prename descclassname"><span class="pre">dramkit.iotools.</span></span><span class="sig-name descname"><span class="pre">get_all_paths</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dir_path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ext</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">start</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">include_dir</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">abspath</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">recu_sub_dir</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">only_dir</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name_func</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.iotools.get_all_paths" title="Permalink to this definition"></a></dt>
 <dd><blockquote>
 <div><p>获取指定文件夹(及其子文件夹)中所有的文件路径</p>
 </div></blockquote>
@@ -2551,12 +2816,15 @@ cols_groupby设定</p>
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>dir_path</strong> (<em>str</em>) – 文件夹路径</p></li>
-<li><p><strong>ext</strong> (<em>None</em><em>, </em><em>str</em><em>, </em><em>list</em>) – 指定文件后缀列表，若为None，则包含所有类型文件</p></li>
-<li><p><strong>include_dir</strong> (<em>bool</em>) – 返回结果中是否包含文件夹路径，默认不包含（即只返回文件路径）</p></li>
+<li><p><strong>ext</strong> (<em>None</em><em>, </em><em>str</em><em>, </em><em>list</em><em>, </em><em>tuple</em>) – 指定文件后缀列表，若为None，则包含所有类型文件</p></li>
+<li><p><strong>start</strong> (<em>None</em><em>, </em><em>str</em><em>, </em><em>list</em><em>, </em><em>tuple</em>) – 指定文件前缀名列表，若为None，则包含所有类型文件</p></li>
+<li><p><strong>include_dir</strong> (<em>bool</em>) – 返回结果中是否包含文件夹路径（包含返回文件路径的文件夹），默认不包含（即只返回文件路径）</p></li>
 <li><p><strong>abspath</strong> (<em>bool</em>) – 是否返回绝对路径，默认返回相对路径</p></li>
 <li><p><strong>rec_sub_dir</strong> (<em>bool</em>) – 若为False，则不对子文件中的文件进行遍历，即只返回dir_path下的文件（夹）路径</p></li>
 <li><p><strong>only_dir</strong> (<em>bool</em>) – 若为True，则只返回子文件夹路径(文件夹名称尾部与ext指定尾部相同的文件夹)，
 不返回文件路径，此时include_dir不起作用</p></li>
+<li><p><strong>name_func</strong> (<em>function</em>) – 判断是否符合文件名筛选的函数，即满足name_func(fpath)值为True的路径被保留，
+name_func参数为路径，返回结果只能为True或False</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns</dt>
@@ -2570,7 +2838,7 @@ cols_groupby设定</p>
 <h3>del_specified_type_files<a class="headerlink" href="#del-specified-type-files" title="Permalink to this headline"></a></h3>
 <dl class="py function">
 <dt class="sig sig-object py" id="dramkit.iotools.del_specified_type_files">
-<span class="sig-prename descclassname"><span class="pre">dramkit.iotools.</span></span><span class="sig-name descname"><span class="pre">del_specified_type_files</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dir_path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">type_list</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">recu_sub_dir</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.iotools.del_specified_type_files" title="Permalink to this definition"></a></dt>
+<span class="sig-prename descclassname"><span class="pre">dramkit.iotools.</span></span><span class="sig-name descname"><span class="pre">del_specified_type_files</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dir_path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">type_list</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">recu_sub_dir</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs_getpath</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.iotools.del_specified_type_files" title="Permalink to this definition"></a></dt>
 <dd><p>删除dir_path文件夹下所有类型在type_list中的文件</p>
 </dd></dl>
 
@@ -2588,7 +2856,7 @@ cols_groupby设定</p>
 <h3>del_specified_subdir<a class="headerlink" href="#del-specified-subdir" title="Permalink to this headline"></a></h3>
 <dl class="py function">
 <dt class="sig sig-object py" id="dramkit.iotools.del_specified_subdir">
-<span class="sig-prename descclassname"><span class="pre">dramkit.iotools.</span></span><span class="sig-name descname"><span class="pre">del_specified_subdir</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dir_path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">del_names</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">recu_sub_dir</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.iotools.del_specified_subdir" title="Permalink to this definition"></a></dt>
+<span class="sig-prename descclassname"><span class="pre">dramkit.iotools.</span></span><span class="sig-name descname"><span class="pre">del_specified_subdir</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dir_path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">del_names</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">recu_sub_dir</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs_getpath</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.iotools.del_specified_subdir" title="Permalink to this definition"></a></dt>
 <dd><p>删除dir_path文件夹下所有文件夹名尾缀在del_names中的子文件夹</p>
 </dd></dl>
 
@@ -2607,7 +2875,7 @@ cols_groupby设定</p>
 <dl class="py function">
 <dt class="sig sig-object py" id="dramkit.iotools.copy_file_to_file">
 <span class="sig-prename descclassname"><span class="pre">dramkit.iotools.</span></span><span class="sig-name descname"><span class="pre">copy_file_to_file</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">src_path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tgt_path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">force</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.iotools.copy_file_to_file" title="Permalink to this definition"></a></dt>
-<dd><p>文件复制（重命名）</p>
+<dd><p>文件复制（指定文件名）</p>
 </dd></dl>
 
 </section>
@@ -2615,7 +2883,7 @@ cols_groupby设定</p>
 <h3>copy_dir_structure<a class="headerlink" href="#copy-dir-structure" title="Permalink to this headline"></a></h3>
 <dl class="py function">
 <dt class="sig sig-object py" id="dramkit.iotools.copy_dir_structure">
-<span class="sig-prename descclassname"><span class="pre">dramkit.iotools.</span></span><span class="sig-name descname"><span class="pre">copy_dir_structure</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">src_dir</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tgt_dir</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ext</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">recu_sub_dir</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">keep_root_same</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">return_map</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.iotools.copy_dir_structure" title="Permalink to this definition"></a></dt>
+<span class="sig-prename descclassname"><span class="pre">dramkit.iotools.</span></span><span class="sig-name descname"><span class="pre">copy_dir_structure</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">src_dir</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tgt_dir</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ext</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">recu_sub_dir</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">keep_root_same</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">return_map</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs_getpath</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.iotools.copy_dir_structure" title="Permalink to this definition"></a></dt>
 <dd><p>复制文件夹结构，不复制里面的文件</p>
 </dd></dl>
 
@@ -2624,16 +2892,25 @@ cols_groupby设定</p>
 <h3>copy_dir<a class="headerlink" href="#copy-dir" title="Permalink to this headline"></a></h3>
 <dl class="py function">
 <dt class="sig sig-object py" id="dramkit.iotools.copy_dir">
-<span class="sig-prename descclassname"><span class="pre">dramkit.iotools.</span></span><span class="sig-name descname"><span class="pre">copy_dir</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">src_dir</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tgt_dir</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ext_file</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ext_dir</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">recu_sub_dir</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">force</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">keep_root_same</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">keep_empty_dir_when_not_recu</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.iotools.copy_dir" title="Permalink to this definition"></a></dt>
+<span class="sig-prename descclassname"><span class="pre">dramkit.iotools.</span></span><span class="sig-name descname"><span class="pre">copy_dir</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">src_dir</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tgt_dir</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ext_file</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ext_dir</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">recu_sub_dir</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">force</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">keep_root_same</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">keep_empty_dir_when_not_recu</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kwargs_getpath_dir</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">{}</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kwargs_getpath_file</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">{}</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.iotools.copy_dir" title="Permalink to this definition"></a></dt>
 <dd><p>复制整个文件夹及其内容</p>
 </dd></dl>
 
 </section>
-<section id="move-file">
-<h3>move_file<a class="headerlink" href="#move-file" title="Permalink to this headline"></a></h3>
+<section id="move-file-to-file">
+<h3>move_file_to_file<a class="headerlink" href="#move-file-to-file" title="Permalink to this headline"></a></h3>
 <dl class="py function">
-<dt class="sig sig-object py" id="dramkit.iotools.move_file">
-<span class="sig-prename descclassname"><span class="pre">dramkit.iotools.</span></span><span class="sig-name descname"><span class="pre">move_file</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.iotools.move_file" title="Permalink to this definition"></a></dt>
+<dt class="sig sig-object py" id="dramkit.iotools.move_file_to_file">
+<span class="sig-prename descclassname"><span class="pre">dramkit.iotools.</span></span><span class="sig-name descname"><span class="pre">move_file_to_file</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">src_path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tgt_path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">force</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.iotools.move_file_to_file" title="Permalink to this definition"></a></dt>
+<dd><p>移动文件（指定文件名）</p>
+</dd></dl>
+
+</section>
+<section id="move-file-to-dir">
+<h3>move_file_to_dir<a class="headerlink" href="#move-file-to-dir" title="Permalink to this headline"></a></h3>
+<dl class="py function">
+<dt class="sig sig-object py" id="dramkit.iotools.move_file_to_dir">
+<span class="sig-prename descclassname"><span class="pre">dramkit.iotools.</span></span><span class="sig-name descname"><span class="pre">move_file_to_dir</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">src_path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tgt_dir</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">force</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.iotools.move_file_to_dir" title="Permalink to this definition"></a></dt>
 <dd><p>移动文件</p>
 </dd></dl>
 
@@ -2642,8 +2919,8 @@ cols_groupby设定</p>
 <h3>move_dir<a class="headerlink" href="#move-dir" title="Permalink to this headline"></a></h3>
 <dl class="py function">
 <dt class="sig sig-object py" id="dramkit.iotools.move_dir">
-<span class="sig-prename descclassname"><span class="pre">dramkit.iotools.</span></span><span class="sig-name descname"><span class="pre">move_dir</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.iotools.move_dir" title="Permalink to this definition"></a></dt>
-<dd><p>移动文件夹</p>
+<span class="sig-prename descclassname"><span class="pre">dramkit.iotools.</span></span><span class="sig-name descname"><span class="pre">move_dir</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">src_dir</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tgt_dir</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ext_file</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ext_dir</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">recu_sub_dir</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">force</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">keep_root_same</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">keep_empty_dir_when_not_recu</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kwargs_getpath_dir</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">{}</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kwargs_getpath_file</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">{}</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.iotools.move_dir" title="Permalink to this definition"></a></dt>
+<dd><p>移动整个文件夹及其内容</p>
 </dd></dl>
 
 </section>
@@ -2696,7 +2973,7 @@ cols_groupby设定</p>
 <h3>get_files_info_dir<a class="headerlink" href="#get-files-info-dir" title="Permalink to this headline"></a></h3>
 <dl class="py function">
 <dt class="sig sig-object py" id="dramkit.iotools.get_files_info_dir">
-<span class="sig-prename descclassname"><span class="pre">dramkit.iotools.</span></span><span class="sig-name descname"><span class="pre">get_files_info_dir</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dir_path</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.iotools.get_files_info_dir" title="Permalink to this definition"></a></dt>
+<span class="sig-prename descclassname"><span class="pre">dramkit.iotools.</span></span><span class="sig-name descname"><span class="pre">get_files_info_dir</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dir_path</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs_getpath</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.iotools.get_files_info_dir" title="Permalink to this definition"></a></dt>
 <dd><div class="line-block">
 <div class="line">获取dir_path文件夹中所有文件的信息</div>
 <div class="line">**kwargs为 <code class="xref py py-func docutils literal notranslate"><span class="pre">dramkit.iotoos.get_all_paths()</span></code> 接受的参数</div>
@@ -2717,7 +2994,7 @@ cols_groupby设定</p>
 <h3>py2pyc_dir<a class="headerlink" href="#py2pyc-dir" title="Permalink to this headline"></a></h3>
 <dl class="py function">
 <dt class="sig sig-object py" id="dramkit.iotools.py2pyc_dir">
-<span class="sig-prename descclassname"><span class="pre">dramkit.iotools.</span></span><span class="sig-name descname"><span class="pre">py2pyc_dir</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dir_path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">force</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">del_py</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">recu_sub_dir</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs_compile</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.iotools.py2pyc_dir" title="Permalink to this definition"></a></dt>
+<span class="sig-prename descclassname"><span class="pre">dramkit.iotools.</span></span><span class="sig-name descname"><span class="pre">py2pyc_dir</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dir_path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">force</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">del_py</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">recu_sub_dir</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kwargs_compile</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">{}</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kwargs_getpath</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">{}</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.iotools.py2pyc_dir" title="Permalink to this definition"></a></dt>
 <dd><p>将一个文件夹下的所有.py文件编译为.pyc文件</p>
 </dd></dl>
 
@@ -2735,7 +3012,7 @@ cols_groupby设定</p>
 <h3>pyc2py_dir<a class="headerlink" href="#pyc2py-dir" title="Permalink to this headline"></a></h3>
 <dl class="py function">
 <dt class="sig sig-object py" id="dramkit.iotools.pyc2py_dir">
-<span class="sig-prename descclassname"><span class="pre">dramkit.iotools.</span></span><span class="sig-name descname"><span class="pre">pyc2py_dir</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dir_path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">force</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">del_pyc</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">recu_sub_dir</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">logger</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.iotools.pyc2py_dir" title="Permalink to this definition"></a></dt>
+<span class="sig-prename descclassname"><span class="pre">dramkit.iotools.</span></span><span class="sig-name descname"><span class="pre">pyc2py_dir</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dir_path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">force</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">del_pyc</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">recu_sub_dir</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">logger</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs_getpath</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.iotools.pyc2py_dir" title="Permalink to this definition"></a></dt>
 <dd><p>将一个文件夹下的所有.pyc文件反编译为.py文件</p>
 </dd></dl>
 
@@ -2797,6 +3074,24 @@ cols_groupby设定</p>
 </dd></dl>
 
 </section>
+<section id="get-tasks-info-win">
+<h3>get_tasks_info_win<a class="headerlink" href="#get-tasks-info-win" title="Permalink to this headline"></a></h3>
+<dl class="py function">
+<dt class="sig sig-object py" id="dramkit.iotools.get_tasks_info_win">
+<span class="sig-prename descclassname"><span class="pre">dramkit.iotools.</span></span><span class="sig-name descname"><span class="pre">get_tasks_info_win</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.iotools.get_tasks_info_win" title="Permalink to this definition"></a></dt>
+<dd><p>windows下获取任务信息</p>
+</dd></dl>
+
+</section>
+<section id="get-ports-info-win">
+<h3>get_ports_info_win<a class="headerlink" href="#get-ports-info-win" title="Permalink to this headline"></a></h3>
+<dl class="py function">
+<dt class="sig sig-object py" id="dramkit.iotools.get_ports_info_win">
+<span class="sig-prename descclassname"><span class="pre">dramkit.iotools.</span></span><span class="sig-name descname"><span class="pre">get_ports_info_win</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.iotools.get_ports_info_win" title="Permalink to this definition"></a></dt>
+<dd><p>windows下获取端口信息</p>
+</dd></dl>
+
+</section>
 <section id="zip-files">
 <h3>zip_files<a class="headerlink" href="#zip-files" title="Permalink to this headline"></a></h3>
 <dl class="py function">
@@ -2824,14 +3119,14 @@ cols_groupby设定</p>
 <h3>zip_fpath<a class="headerlink" href="#zip-fpath" title="Permalink to this headline"></a></h3>
 <dl class="py function">
 <dt class="sig sig-object py" id="dramkit.iotools.zip_fpath">
-<span class="sig-prename descclassname"><span class="pre">dramkit.iotools.</span></span><span class="sig-name descname"><span class="pre">zip_fpath</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fpath</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">zip_path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.iotools.zip_fpath" title="Permalink to this definition"></a></dt>
+<span class="sig-prename descclassname"><span class="pre">dramkit.iotools.</span></span><span class="sig-name descname"><span class="pre">zip_fpath</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fpath</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">zip_path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kwargs_zip</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">{}</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kwargs_getpath</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">{}</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.iotools.zip_fpath" title="Permalink to this definition"></a></dt>
 <dd><p>使用zipfile压缩单个文件(夹)下所有内容为.zip文件</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>fpath</strong> (<em>str</em>) – 待压缩文件(夹)路径(应为相对路径)</p></li>
 <li><p><strong>zip_path</strong> (<em>None</em><em>, </em><em>str</em>) – 压缩文件保存路径，若为None，则为fpath路径加后缀</p></li>
-<li><p><strong>**kwargs</strong> – <a class="reference internal" href="#dramkit.iotools.zip_files" title="dramkit.iotools.zip_files"><code class="xref py py-func docutils literal notranslate"><span class="pre">dramkit.iotools.zip_files()</span></code></a> 接受的参数</p></li>
+<li><p><strong>**kwargs_zip</strong> – <a class="reference internal" href="#dramkit.iotools.zip_files" title="dramkit.iotools.zip_files"><code class="xref py py-func docutils literal notranslate"><span class="pre">dramkit.iotools.zip_files()</span></code></a> 接受的参数</p></li>
 </ul>
 </dd>
 </dl>
@@ -2842,14 +3137,14 @@ cols_groupby设定</p>
 <h3>zip_fpaths<a class="headerlink" href="#zip-fpaths" title="Permalink to this headline"></a></h3>
 <dl class="py function">
 <dt class="sig sig-object py" id="dramkit.iotools.zip_fpaths">
-<span class="sig-prename descclassname"><span class="pre">dramkit.iotools.</span></span><span class="sig-name descname"><span class="pre">zip_fpaths</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">zip_path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fpaths</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.iotools.zip_fpaths" title="Permalink to this definition"></a></dt>
+<span class="sig-prename descclassname"><span class="pre">dramkit.iotools.</span></span><span class="sig-name descname"><span class="pre">zip_fpaths</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">zip_path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fpaths</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kwargs_zip</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">{}</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kwargs_getpath</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">{}</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.iotools.zip_fpaths" title="Permalink to this definition"></a></dt>
 <dd><p>使用zipfile将指定路径列表(包括子文件(夹)所有内容)打包为.zip文件</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>zip_path</strong> (<em>str</em>) – zip压缩包保存路径</p></li>
 <li><p><strong>fpaths</strong> (<em>list</em>) – 需要压缩的路径列表(可为文件也可为文件夹, 应为相对路径)</p></li>
-<li><p><strong>**kwargs</strong> – <a class="reference internal" href="#dramkit.iotools.zip_files" title="dramkit.iotools.zip_files"><code class="xref py py-func docutils literal notranslate"><span class="pre">dramkit.iotools.zip_files()</span></code></a> 接受的参数</p></li>
+<li><p><strong>**kwargs_zip</strong> – <a class="reference internal" href="#dramkit.iotools.zip_files" title="dramkit.iotools.zip_files"><code class="xref py py-func docutils literal notranslate"><span class="pre">dramkit.iotools.zip_files()</span></code></a> 接受的参数</p></li>
 </ul>
 </dd>
 </dl>
@@ -2931,9 +3226,25 @@ cols_groupby设定</p>
 <h3>cmdrun<a class="headerlink" href="#cmdrun" title="Permalink to this headline"></a></h3>
 <dl class="py function">
 <dt class="sig sig-object py" id="dramkit.iotools.cmdrun">
-<span class="sig-prename descclassname"><span class="pre">dramkit.iotools.</span></span><span class="sig-name descname"><span class="pre">cmdrun</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cmd_str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.iotools.cmdrun" title="Permalink to this definition"></a></dt>
+<span class="sig-prename descclassname"><span class="pre">dramkit.iotools.</span></span><span class="sig-name descname"><span class="pre">cmdrun</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cmd_str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">logger</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.iotools.cmdrun" title="Permalink to this definition"></a></dt>
 <dd><p>调用cmd执行cmd_str命令</p>
 </dd></dl>
+
+</section>
+<section id="cmdruns-multi-process">
+<h3>cmdruns_multi_process<a class="headerlink" href="#cmdruns-multi-process" title="Permalink to this headline"></a></h3>
+<dl class="py function">
+<dt class="sig sig-object py" id="dramkit.iotools.cmdruns_multi_process">
+<span class="sig-prename descclassname"><span class="pre">dramkit.iotools.</span></span><span class="sig-name descname"><span class="pre">cmdruns_multi_process</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cmd_str_list</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">logger</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">multi_line</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">keep_order</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.iotools.cmdruns_multi_process" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</section>
+<section id="cmd-run-pys-multi-process">
+<h3>cmd_run_pys_multi_process<a class="headerlink" href="#cmd-run-pys-multi-process" title="Permalink to this headline"></a></h3>
+<dl class="py function">
+<dt class="sig sig-object py" id="dramkit.iotools.cmd_run_pys_multi_process">
+<span class="sig-prename descclassname"><span class="pre">dramkit.iotools.</span></span><span class="sig-name descname"><span class="pre">cmd_run_pys_multi_process</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">py_list</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">logger</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">multi_line</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">keep_order</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.iotools.cmd_run_pys_multi_process" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
 
 </section>
 <section id="cmd-run-pys">
@@ -2966,7 +3277,7 @@ cols_groupby设定</p>
 <h3>find_files_include_str<a class="headerlink" href="#find-files-include-str" title="Permalink to this headline"></a></h3>
 <dl class="py function">
 <dt class="sig sig-object py" id="dramkit.iotools.find_files_include_str">
-<span class="sig-prename descclassname"><span class="pre">dramkit.iotools.</span></span><span class="sig-name descname"><span class="pre">find_files_include_str</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">target_str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">root_dir</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">file_types</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">logger</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.iotools.find_files_include_str" title="Permalink to this definition"></a></dt>
+<span class="sig-prename descclassname"><span class="pre">dramkit.iotools.</span></span><span class="sig-name descname"><span class="pre">find_files_include_str</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">target_str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">root_dir</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">file_types</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">re_match</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">logger</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs_getpath</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.iotools.find_files_include_str" title="Permalink to this definition"></a></dt>
 <dd><p>在指定目录下的文件中，查找那些文件里面包含了目标字符串</p>
 <div class="admonition-todo admonition" id="id6">
 <p class="admonition-title">Todo</p>
@@ -2985,6 +3296,7 @@ cols_groupby设定</p>
 <li><p>list, 指定一个后缀列表, 如[‘.py’, ‘.txt’]</p></li>
 </ul>
 </p></li>
+<li><p><strong>re_match</strong> (<em>bool</em>) – 若为True，则目标字符串 <code class="docutils literal notranslate"><span class="pre">target_str</span></code> 按正则表达式处理</p></li>
 <li><p><strong>logger</strong> (<em>None</em><em>, </em><em>logging.Logger</em>) – 日志记录器</p></li>
 </ul>
 </dd>
@@ -2992,6 +3304,15 @@ cols_groupby设定</p>
 <dd class="field-even"><p><cite>dict</cite> - 返回dict, key为找到的文件路径，value为包含目标字符串的文本内容(仅第一次出现的位置)</p>
 </dd>
 </dl>
+</dd></dl>
+
+</section>
+<section id="get-pip-pkgs-win">
+<h3>get_pip_pkgs_win<a class="headerlink" href="#get-pip-pkgs-win" title="Permalink to this headline"></a></h3>
+<dl class="py function">
+<dt class="sig sig-object py" id="dramkit.iotools.get_pip_pkgs_win">
+<span class="sig-prename descclassname"><span class="pre">dramkit.iotools.</span></span><span class="sig-name descname"><span class="pre">get_pip_pkgs_win</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.iotools.get_pip_pkgs_win" title="Permalink to this definition"></a></dt>
+<dd><p>获取windows下pip安装包列表</p>
 </dd></dl>
 
 </section>

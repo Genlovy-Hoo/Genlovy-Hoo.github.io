@@ -21,10 +21,45 @@ get_conn
 
 .. autofunction:: dramkit.sqltools.py_mysql.get_conn
 
+get_fields
+^^^^^^^^^^^
+
+.. autofunction:: dramkit.sqltools.py_mysql.get_fields
+
 execute_sql
 ^^^^^^^^^^^^
 
 .. autofunction:: dramkit.sqltools.py_mysql.execute_sql
+
+get_unique_values
+^^^^^^^^^^^^^^^^^^
+
+.. autofunction:: dramkit.sqltools.py_mysql.get_unique_values
+
+show_tables
+^^^^^^^^^^^^
+
+.. autofunction:: dramkit.sqltools.py_mysql.show_tables
+
+get_now_database
+^^^^^^^^^^^^^^^^^
+
+.. autofunction:: dramkit.sqltools.py_mysql.get_now_database
+
+get_split_tabel_info
+^^^^^^^^^^^^^^^^^^^^^
+
+.. autofunction:: dramkit.sqltools.py_mysql.get_split_tabel_info
+
+drop_table_split
+^^^^^^^^^^^^^^^^^
+
+.. autofunction:: dramkit.sqltools.py_mysql.drop_table_split
+
+cancel_split_table
+^^^^^^^^^^^^^^^^^^^
+
+.. autofunction:: dramkit.sqltools.py_mysql.cancel_split_table
 
 get_primary_keys
 ^^^^^^^^^^^^^^^^^
@@ -36,6 +71,11 @@ get_uni_indexs
 
 .. autofunction:: dramkit.sqltools.py_mysql.get_uni_indexs
 
+get_id_fields
+^^^^^^^^^^^^^^
+
+.. autofunction:: dramkit.sqltools.py_mysql.get_id_fields
+
 set_primary_key
 ^^^^^^^^^^^^^^^^
 
@@ -46,10 +86,90 @@ set_uni_index
 
 .. autofunction:: dramkit.sqltools.py_mysql.set_uni_index
 
+drop_index
+^^^^^^^^^^^
+
+.. autofunction:: dramkit.sqltools.py_mysql.drop_index
+
+drop_primary_key
+^^^^^^^^^^^^^^^^^
+
+.. autofunction:: dramkit.sqltools.py_mysql.drop_primary_key
+
+create_database
+^^^^^^^^^^^^^^^^
+
+.. autofunction:: dramkit.sqltools.py_mysql.create_database
+
+create_table
+^^^^^^^^^^^^^
+
+.. autofunction:: dramkit.sqltools.py_mysql.create_table
+
+drop_database
+^^^^^^^^^^^^^^
+
+.. autofunction:: dramkit.sqltools.py_mysql.drop_database
+
+drop_table
+^^^^^^^^^^^
+
+.. autofunction:: dramkit.sqltools.py_mysql.drop_table
+
+drop_cols
+^^^^^^^^^^
+
+.. autofunction:: dramkit.sqltools.py_mysql.drop_cols
+
+clear_data
+^^^^^^^^^^^
+
+.. autofunction:: dramkit.sqltools.py_mysql.clear_data
+
+get_data
+^^^^^^^^^
+
+.. autofunction:: dramkit.sqltools.py_mysql.get_data
+
+get_data_tables
+^^^^^^^^^^^^^^^^
+
+.. autofunction:: dramkit.sqltools.py_mysql.get_data_tables
+
+drop_data_by_where_str
+^^^^^^^^^^^^^^^^^^^^^^^
+
+.. autofunction:: dramkit.sqltools.py_mysql.drop_data_by_where_str
+
+add_cols
+^^^^^^^^^
+
+.. autofunction:: dramkit.sqltools.py_mysql.add_cols
+
+modify_cols_type
+^^^^^^^^^^^^^^^^^
+
+.. autofunction:: dramkit.sqltools.py_mysql.modify_cols_type
+
+change_cols_info
+^^^^^^^^^^^^^^^^^
+
+.. autofunction:: dramkit.sqltools.py_mysql.change_cols_info
+
+get_cols_info_df
+^^^^^^^^^^^^^^^^^
+
+.. autofunction:: dramkit.sqltools.py_mysql.get_cols_info_df
+
 df_to_mysql
 ^^^^^^^^^^^^
 
 .. autofunction:: dramkit.sqltools.py_mysql.df_to_mysql
+
+df_to_mysql_by_row
+^^^^^^^^^^^^^^^^^^^
+
+.. autofunction:: dramkit.sqltools.py_mysql.df_to_mysql_by_row
 
 sql_alchemy
 ------------

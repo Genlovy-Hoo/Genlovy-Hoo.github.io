@@ -8,6 +8,21 @@ datetimetools
 
 .. currentmodule:: dramkit.datetimetools
 
+pd_str2datetime
+^^^^^^^^^^^^^^^^
+
+.. autofunction:: dramkit.datetimetools.pd_str2datetime
+
+datetime2str
+^^^^^^^^^^^^^
+
+.. autofunction:: dramkit.datetimetools.datetime2str
+
+get_datetime_strformat
+^^^^^^^^^^^^^^^^^^^^^^^
+
+.. autofunction:: dramkit.datetimetools.get_datetime_strformat
+
 str2datetime
 ^^^^^^^^^^^^^
 
@@ -23,40 +38,70 @@ timestamp2str
 
 .. autofunction:: dramkit.datetimetools.timestamp2str
 
-datetime_now
-^^^^^^^^^^^^^
+get_datetime_format
+^^^^^^^^^^^^^^^^^^^^
 
-.. autofunction:: dramkit.datetimetools.datetime_now
+.. autofunction:: dramkit.datetimetools.get_datetime_format
+
+copy_format
+^^^^^^^^^^^^
+
+.. autofunction:: dramkit.datetimetools.copy_format
+
+x2datetime
+^^^^^^^^^^^
+
+.. autofunction:: dramkit.datetimetools.x2datetime
 
 time_add
 ^^^^^^^^^
 
 .. autofunction:: dramkit.datetimetools.time_add
 
-get_date_format
-^^^^^^^^^^^^^^^^
+date_add_nday
+^^^^^^^^^^^^^^
 
-.. autofunction:: dramkit.datetimetools.get_date_format
+.. autofunction:: dramkit.datetimetools.date_add_nday
 
 is_datetime
 ^^^^^^^^^^^^
 
 .. autofunction:: dramkit.datetimetools.is_datetime
 
-get_year_month
+is_month_end
+^^^^^^^^^^^^^
+
+.. autofunction:: dramkit.datetimetools.is_month_end
+
+is_month_start
 ^^^^^^^^^^^^^^^
 
-.. autofunction:: dramkit.datetimetools.get_year_month
+.. autofunction:: dramkit.datetimetools.is_month_start
 
-today_date
-^^^^^^^^^^^
+is_quarter_end
+^^^^^^^^^^^^^^^
 
-.. autofunction:: dramkit.datetimetools.today_date
+.. autofunction:: dramkit.datetimetools.is_quarter_end
+
+is_quarter_start
+^^^^^^^^^^^^^^^^^
+
+.. autofunction:: dramkit.datetimetools.is_quarter_start
+
+datetime_now
+^^^^^^^^^^^^^
+
+.. autofunction:: dramkit.datetimetools.datetime_now
 
 today_month
 ^^^^^^^^^^^^
 
 .. autofunction:: dramkit.datetimetools.today_month
+
+today_date
+^^^^^^^^^^^
+
+.. autofunction:: dramkit.datetimetools.today_date
 
 get_quarter
 ^^^^^^^^^^^^
@@ -68,6 +113,21 @@ today_quarter
 
 .. autofunction:: dramkit.datetimetools.today_quarter
 
+get_dayofweek
+^^^^^^^^^^^^^^
+
+.. autofunction:: dramkit.datetimetools.get_dayofweek
+
+get_dayofyear
+^^^^^^^^^^^^^^
+
+.. autofunction:: dramkit.datetimetools.get_dayofyear
+
+get_date_format
+^^^^^^^^^^^^^^^^
+
+.. autofunction:: dramkit.datetimetools.get_date_format
+
 date_reformat_simple
 ^^^^^^^^^^^^^^^^^^^^^
 
@@ -77,6 +137,11 @@ date_reformat_chn
 ^^^^^^^^^^^^^^^^^^
 
 .. autofunction:: dramkit.datetimetools.date_reformat_chn
+
+gen_strformat
+^^^^^^^^^^^^^^
+
+.. autofunction:: dramkit.datetimetools.gen_strformat
 
 date_reformat
 ^^^^^^^^^^^^^^
@@ -93,11 +158,6 @@ date10_to_date8
 
 .. autofunction:: dramkit.datetimetools.date10_to_date8
 
-date_add_nday
-^^^^^^^^^^^^^^
-
-.. autofunction:: dramkit.datetimetools.date_add_nday
-
 diff_time_second
 ^^^^^^^^^^^^^^^^^
 
@@ -113,21 +173,6 @@ get_dates_between
 
 .. autofunction:: dramkit.datetimetools.get_dates_between
 
-get_dayofweek
-^^^^^^^^^^^^^^
-
-.. autofunction:: dramkit.datetimetools.get_dayofweek
-
-get_dayofyear
-^^^^^^^^^^^^^^
-
-.. autofunction:: dramkit.datetimetools.get_dayofyear
-
-isworkday_chncal
-^^^^^^^^^^^^^^^^^
-
-.. autofunction:: dramkit.datetimetools.isworkday_chncal
-
 get_work_dates_chncal
 ^^^^^^^^^^^^^^^^^^^^^^
 
@@ -142,6 +187,11 @@ get_next_nth_workday_chncal
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. autofunction:: dramkit.datetimetools.get_next_nth_workday_chncal
+
+get_date_weekday
+^^^^^^^^^^^^^^^^^
+
+.. autofunction:: dramkit.datetimetools.get_date_weekday
 
 get_recent_inweekday
 ^^^^^^^^^^^^^^^^^^^^^
@@ -324,6 +374,11 @@ filter_by_func_prenext_series
 
 .. autofunction:: dramkit.gentools.filter_by_func_prenext_series
 
+df_na2value
+^^^^^^^^^^^^
+
+.. autofunction:: dramkit.gentools.df_na2value
+
 merge_df
 ^^^^^^^^^
 
@@ -404,6 +459,16 @@ max_com_divisor_tad
 
 .. autofunction:: dramkit.gentools.max_com_divisor_tad
 
+df_rows2cols
+^^^^^^^^^^^^^
+
+.. autofunction:: dramkit.gentools.df_rows2cols
+
+df_cols2rows
+^^^^^^^^^^^^^
+
+.. autofunction:: dramkit.gentools.df_cols2rows
+
 get_first_appear_index
 ^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -448,6 +513,16 @@ group_rank
 ^^^^^^^^^^^
 
 .. autofunction:: dramkit.gentools.group_rank
+
+get_func_df_concat
+^^^^^^^^^^^^^^^^^^^
+
+.. autofunction:: dramkit.gentools.get_func_df_concat
+
+df_groupby_func
+^^^^^^^^^^^^^^^^
+
+.. autofunction:: dramkit.gentools.df_groupby_func
 
 bootstrapping
 ^^^^^^^^^^^^^^
@@ -638,10 +713,15 @@ copy_dir
 
 .. autofunction:: dramkit.iotools.copy_dir
 
-move_file
-^^^^^^^^^^
+move_file_to_file
+^^^^^^^^^^^^^^^^^^
 
-.. autofunction:: dramkit.iotools.move_file
+.. autofunction:: dramkit.iotools.move_file_to_file
+
+move_file_to_dir
+^^^^^^^^^^^^^^^^^
+
+.. autofunction:: dramkit.iotools.move_file_to_dir
 
 move_dir
 ^^^^^^^^^
@@ -723,6 +803,16 @@ get_ip_public
 
 .. autofunction:: dramkit.iotools.get_ip_public
 
+get_tasks_info_win
+^^^^^^^^^^^^^^^^^^^
+
+.. autofunction:: dramkit.iotools.get_tasks_info_win
+
+get_ports_info_win
+^^^^^^^^^^^^^^^^^^^
+
+.. autofunction:: dramkit.iotools.get_ports_info_win
+
 zip_files
 ^^^^^^^^^^
 
@@ -763,6 +853,16 @@ cmdrun
 
 .. autofunction:: dramkit.iotools.cmdrun
 
+cmdruns_multi_process
+^^^^^^^^^^^^^^^^^^^^^^
+
+.. autofunction:: dramkit.iotools.cmdruns_multi_process
+
+cmd_run_pys_multi_process
+^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. autofunction:: dramkit.iotools.cmd_run_pys_multi_process
+
 cmd_run_pys
 ^^^^^^^^^^^^
 
@@ -777,3 +877,8 @@ find_files_include_str
 ^^^^^^^^^^^^^^^^^^^^^^^
 
 .. autofunction:: dramkit.iotools.find_files_include_str
+
+get_pip_pkgs_win
+^^^^^^^^^^^^^^^^^
+
+.. autofunction:: dramkit.iotools.get_pip_pkgs_win

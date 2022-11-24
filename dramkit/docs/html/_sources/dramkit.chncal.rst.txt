@@ -163,10 +163,10 @@ lun2gen
 
 .. autofunction:: dramkit.chncal.apis.lun2gen
 
-get_age_by_suxing
-^^^^^^^^^^^^^^^^^^
+get_age_by_shuxiang
+^^^^^^^^^^^^^^^^^^^^
 
-.. autofunction:: dramkit.chncal.apis.get_age_by_suxing
+.. autofunction:: dramkit.chncal.apis.get_age_by_shuxiang
 
 constants
 ----------
@@ -183,13 +183,6 @@ Holiday
     :undoc-members:
     :show-inheritance:
 
-constants_atrade
------------------
-
-.. automodule:: dramkit.chncal.constants_atrade
-
-.. currentmodule:: dramkit.chncal.constants_atrade
-
 constants_fate
 ---------------
 
@@ -203,6 +196,13 @@ constants_hko
 .. automodule:: dramkit.chncal.constants_hko
 
 .. currentmodule:: dramkit.chncal.constants_hko
+
+constants_trade_dates
+----------------------
+
+.. automodule:: dramkit.chncal.constants_trade_dates
+
+.. currentmodule:: dramkit.chncal.constants_trade_dates
 
 constants_wuxing
 -----------------
