@@ -29,6 +29,11 @@ gen_py_logger
 
 .. autofunction:: finfactory.utils.utils.gen_py_logger
 
+check_trade_date
+^^^^^^^^^^^^^^^^^
+
+.. autofunction:: finfactory.utils.utils.check_trade_date
+
 check_date_loss
 ^^^^^^^^^^^^^^^^
 

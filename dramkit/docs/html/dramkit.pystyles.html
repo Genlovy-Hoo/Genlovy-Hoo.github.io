@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>pystyles &mdash; DramKit 0.3.15 documentation</title>
+  <title>pystyles &mdash; DramKit 0.5.42 documentation</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <!--[if lt IE 9]>
@@ -14,6 +14,7 @@
         <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
         <script src="_static/jquery.js"></script>
         <script src="_static/underscore.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="_static/doctools.js"></script>
         <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script src="_static/js/theme.js"></script>
@@ -28,11 +29,15 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-            <a href="index.html" class="icon icon-home"> DramKit
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            DramKit
           </a>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
@@ -46,6 +51,7 @@
 <li class="toctree-l1"><a class="reference internal" href="dramkit.datsci.html">datsci</a></li>
 <li class="toctree-l1"><a class="reference internal" href="dramkit.find_addends.html">find_addends</a></li>
 <li class="toctree-l1"><a class="reference internal" href="dramkit.logtools.html">logtools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dramkit.openai.html">openai</a></li>
 <li class="toctree-l1"><a class="reference internal" href="dramkit.optimizer.html">optimizer</a></li>
 <li class="toctree-l1"><a class="reference internal" href="dramkit.other.html">other</a></li>
 <li class="toctree-l1"><a class="reference internal" href="dramkit.plottools.html">plottools</a></li>
@@ -77,8 +83,8 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
-      <li>pystyles</li>
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">pystyles</li>
       <li class="wy-breadcrumbs-aside">
             <a href="_sources/dramkit.pystyles.rst.txt" rel="nofollow"> View page source</a>
       </li>
@@ -89,66 +95,76 @@
            <div itemprop="articleBody">
              
   <section id="pystyles">
-<h1>pystyles<a class="headerlink" href="#pystyles" title="Permalink to this headline"></a></h1>
+<h1>pystyles<a class="headerlink" href="#pystyles" title="Permalink to this heading"></a></h1>
 <section id="module-dramkit.pystyles.dramkit_style">
-<span id="dramkit-style"></span><h2>dramkit_style<a class="headerlink" href="#module-dramkit.pystyles.dramkit_style" title="Permalink to this headline"></a></h2>
+<span id="dramkit-style"></span><h2>dramkit_style<a class="headerlink" href="#module-dramkit.pystyles.dramkit_style" title="Permalink to this heading"></a></h2>
 <p>程序风格参考模板</p>
-<p>dramkit(本程序)的注释文本格式主要借鉴Numpy注释风格 <a class="footnote-reference brackets" href="#id10" id="id1">1</a> ，遵循
-re-structured text (reST)语法 <a class="footnote-reference brackets" href="#id11" id="id2">2</a> 并参考Google代码风格 <a class="footnote-reference brackets" href="#id12" id="id3">3</a> <a class="footnote-reference brackets" href="#id13" id="id4">4</a>。
-本程序的说明文档由Sphinx自动生成 <a class="footnote-reference brackets" href="#id14" id="id5">5</a> <a class="footnote-reference brackets" href="#id15" id="id6">6</a> <a class="footnote-reference brackets" href="#id16" id="id7">7</a> <a class="reference internal" href="#r1" id="id8"><span>[r1]</span></a> <a class="footnote-reference brackets" href="#id17" id="id9">13</a> 。</p>
+<p>dramkit(本程序)的注释文本格式主要借鉴Numpy注释风格 <a class="footnote-reference brackets" href="#id10" id="id1" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a> ，遵循
+re-structured text (reST)语法 <a class="footnote-reference brackets" href="#id11" id="id2" role="doc-noteref"><span class="fn-bracket">[</span>2<span class="fn-bracket">]</span></a> 并参考Google代码风格 <a class="footnote-reference brackets" href="#id12" id="id3" role="doc-noteref"><span class="fn-bracket">[</span>3<span class="fn-bracket">]</span></a> <a class="footnote-reference brackets" href="#id13" id="id4" role="doc-noteref"><span class="fn-bracket">[</span>4<span class="fn-bracket">]</span></a>。
+本程序的说明文档由Sphinx自动生成 <a class="footnote-reference brackets" href="#id14" id="id5" role="doc-noteref"><span class="fn-bracket">[</span>5<span class="fn-bracket">]</span></a> <a class="footnote-reference brackets" href="#id15" id="id6" role="doc-noteref"><span class="fn-bracket">[</span>6<span class="fn-bracket">]</span></a> <a class="footnote-reference brackets" href="#id16" id="id7" role="doc-noteref"><span class="fn-bracket">[</span>7<span class="fn-bracket">]</span></a> <a class="reference internal" href="#r1" id="id8"><span>[r1]</span></a> <a class="footnote-reference brackets" href="#id17" id="id9" role="doc-noteref"><span class="fn-bracket">[</span>13<span class="fn-bracket">]</span></a> 。</p>
 <p class="rubric">References</p>
-<dl class="footnote brackets">
-<dt class="label" id="id10"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
-<dd><p>Numpy注释风格指南: <a class="reference external" href="https://numpydoc.readthedocs.io/en/latest/format.html">https://numpydoc.readthedocs.io/en/latest/format.html</a></p>
-</dd>
-<dt class="label" id="id11"><span class="brackets"><a class="fn-backref" href="#id2">2</a></span></dt>
-<dd><p><a class="reference external" href="https://docutils.sourceforge.io/docs/user/rst/quickref.html">https://docutils.sourceforge.io/docs/user/rst/quickref.html</a></p>
-</dd>
-<dt class="label" id="id12"><span class="brackets"><a class="fn-backref" href="#id3">3</a></span></dt>
-<dd><p>Google注释风格指南: <a class="reference external" href="https://google.github.io/styleguide/pyguide.html">https://google.github.io/styleguide/pyguide.html</a></p>
-</dd>
-<dt class="label" id="id13"><span class="brackets"><a class="fn-backref" href="#id4">4</a></span></dt>
-<dd><p><a class="reference external" href="https://zh-google-styleguide.readthedocs.io/en/latest/contents/">https://zh-google-styleguide.readthedocs.io/en/latest/contents/</a></p>
-</dd>
-<dt class="label" id="id14"><span class="brackets"><a class="fn-backref" href="#id5">5</a></span></dt>
-<dd><p><a class="reference external" href="https://blog.csdn.net/lixiaomei0623/article/details/120530642">https://blog.csdn.net/lixiaomei0623/article/details/120530642</a></p>
-</dd>
-<dt class="label" id="id15"><span class="brackets"><a class="fn-backref" href="#id6">6</a></span></dt>
-<dd><p>Sphinx语法: <a class="reference external" href="https://mathpretty.com/13551.html">https://mathpretty.com/13551.html</a></p>
-</dd>
-<dt class="label" id="id16"><span class="brackets"><a class="fn-backref" href="#id7">7</a></span></dt>
-<dd><p><a class="reference external" href="https://zhuanlan.zhihu.com/p/264647009">https://zhuanlan.zhihu.com/p/264647009</a></p>
-</dd>
-</dl>
-<dl class="citation">
-<dt class="label" id="r1"><span class="brackets"><a class="fn-backref" href="#id8">r1</a></span></dt>
-<dd><p><a class="reference external" href="https://www.sphinx-doc.org/en/master/">https://www.sphinx-doc.org/en/master/</a></p>
-</dd>
-</dl>
-<dl class="footnote brackets">
-<dt class="label" id="id17"><span class="brackets"><a class="fn-backref" href="#id9">13</a></span></dt>
-<dd><p><a class="reference external" href="https://www.osgeo.cn/sphinx/index.html">https://www.osgeo.cn/sphinx/index.html</a> 引文编号貌似必须用数字才会正常显示？</p>
-</dd>
-<dt class="label" id="id18"><span class="brackets">8</span></dt>
-<dd><p><a class="reference external" href="https://blog.csdn.net/dengdi8115/article/details/102077973">https://blog.csdn.net/dengdi8115/article/details/102077973</a></p>
-</dd>
-<dt class="label" id="id19"><span class="brackets">9</span></dt>
-<dd><p>reStructuredText在线工具: <a class="reference external" href="http://rst.ninjs.org/">http://rst.ninjs.org/</a></p>
-</dd>
-<dt class="label" id="id20"><span class="brackets">10</span></dt>
-<dd><p>markdown转reST: <a class="reference external" href="https://cloudconvert.com/md-to-rst">https://cloudconvert.com/md-to-rst</a></p>
-</dd>
-<dt class="label" id="id21"><span class="brackets">11</span></dt>
-<dd><p><a class="reference external" href="https://lightgbm.readthedocs.io/en/latest/index.html">LightGBM文档</a></p>
-</dd>
-<dt class="label" id="id22"><span class="brackets">12</span></dt>
-<dd><p>Niu, Mingfei, Hu, et al. A novel hybrid decomposition-ensemble model
+<aside class="footnote brackets" id="id10" role="note">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id1">1</a><span class="fn-bracket">]</span></span>
+<p>Numpy注释风格指南: <a class="reference external" href="https://numpydoc.readthedocs.io/en/latest/format.html">https://numpydoc.readthedocs.io/en/latest/format.html</a></p>
+</aside>
+<aside class="footnote brackets" id="id11" role="note">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id2">2</a><span class="fn-bracket">]</span></span>
+<p><a class="reference external" href="https://docutils.sourceforge.io/docs/user/rst/quickref.html">https://docutils.sourceforge.io/docs/user/rst/quickref.html</a></p>
+</aside>
+<aside class="footnote brackets" id="id12" role="note">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id3">3</a><span class="fn-bracket">]</span></span>
+<p>Google注释风格指南: <a class="reference external" href="https://google.github.io/styleguide/pyguide.html">https://google.github.io/styleguide/pyguide.html</a></p>
+</aside>
+<aside class="footnote brackets" id="id13" role="note">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id4">4</a><span class="fn-bracket">]</span></span>
+<p><a class="reference external" href="https://zh-google-styleguide.readthedocs.io/en/latest/contents/">https://zh-google-styleguide.readthedocs.io/en/latest/contents/</a></p>
+</aside>
+<aside class="footnote brackets" id="id14" role="note">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id5">5</a><span class="fn-bracket">]</span></span>
+<p><a class="reference external" href="https://blog.csdn.net/lixiaomei0623/article/details/120530642">https://blog.csdn.net/lixiaomei0623/article/details/120530642</a></p>
+</aside>
+<aside class="footnote brackets" id="id15" role="note">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id6">6</a><span class="fn-bracket">]</span></span>
+<p>Sphinx语法: <a class="reference external" href="https://mathpretty.com/13551.html">https://mathpretty.com/13551.html</a></p>
+</aside>
+<aside class="footnote brackets" id="id16" role="note">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id7">7</a><span class="fn-bracket">]</span></span>
+<p><a class="reference external" href="https://zhuanlan.zhihu.com/p/264647009">https://zhuanlan.zhihu.com/p/264647009</a></p>
+</aside>
+<div role="list" class="citation-list">
+<div class="citation" id="r1" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id8">r1</a><span class="fn-bracket">]</span></span>
+<p><a class="reference external" href="https://www.sphinx-doc.org/en/master/">https://www.sphinx-doc.org/en/master/</a></p>
+</div>
+</div>
+<aside class="footnote brackets" id="id17" role="note">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id9">13</a><span class="fn-bracket">]</span></span>
+<p><a class="reference external" href="https://www.osgeo.cn/sphinx/index.html">https://www.osgeo.cn/sphinx/index.html</a> 引文编号貌似必须用数字才会正常显示？</p>
+</aside>
+<aside class="footnote brackets" id="id18" role="note">
+<span class="label"><span class="fn-bracket">[</span>8<span class="fn-bracket">]</span></span>
+<p><a class="reference external" href="https://blog.csdn.net/dengdi8115/article/details/102077973">https://blog.csdn.net/dengdi8115/article/details/102077973</a></p>
+</aside>
+<aside class="footnote brackets" id="id19" role="note">
+<span class="label"><span class="fn-bracket">[</span>9<span class="fn-bracket">]</span></span>
+<p>reStructuredText在线工具: <a class="reference external" href="http://rst.ninjs.org/">http://rst.ninjs.org/</a></p>
+</aside>
+<aside class="footnote brackets" id="id20" role="note">
+<span class="label"><span class="fn-bracket">[</span>10<span class="fn-bracket">]</span></span>
+<p>markdown转reST: <a class="reference external" href="https://cloudconvert.com/md-to-rst">https://cloudconvert.com/md-to-rst</a></p>
+</aside>
+<aside class="footnote brackets" id="id21" role="note">
+<span class="label"><span class="fn-bracket">[</span>11<span class="fn-bracket">]</span></span>
+<p><a class="reference external" href="https://lightgbm.readthedocs.io/en/latest/index.html">LightGBM文档</a></p>
+</aside>
+<aside class="footnote brackets" id="id22" role="note">
+<span class="label"><span class="fn-bracket">[</span>12<span class="fn-bracket">]</span></span>
+<p>Niu, Mingfei, Hu, et al. A novel hybrid decomposition-ensemble model
 based on VMD and HGWO for container throughput forecasting[J].
 <em>Applied Mathematical Modelling</em> , 2018.</p>
-</dd>
-</dl>
+</aside>
 <section id="dramkitclassstyle">
-<h3>DramkitClassStyle<a class="headerlink" href="#dramkitclassstyle" title="Permalink to this headline"></a></h3>
+<h3>DramkitClassStyle<a class="headerlink" href="#dramkitclassstyle" title="Permalink to this heading"></a></h3>
 <dl class="py class">
 <dt class="sig sig-object py" id="dramkit.pystyles.dramkit_style.DramkitClassStyle">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">dramkit.pystyles.dramkit_style.</span></span><span class="sig-name descname"><span class="pre">DramkitClassStyle</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'DramkitDocStyle'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">parm2</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.pystyles.dramkit_style.DramkitClassStyle" title="Permalink to this definition"></a></dt>
@@ -162,7 +178,7 @@ based on VMD and HGWO for container throughput forecasting[J].
 <span class="sig-name descname"><span class="pre">name</span></span><a class="headerlink" href="#dramkit.pystyles.dramkit_style.DramkitClassStyle.name" title="Permalink to this definition"></a></dt>
 <dd><p>class nick name</p>
 <dl class="field-list simple">
-<dt class="field-odd">Type</dt>
+<dt class="field-odd">Type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>str</p>
 </dd>
 </dl>
@@ -192,7 +208,7 @@ based on VMD and HGWO for container throughput forecasting[J].
 <span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'DramkitDocStyle'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">parm2</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.pystyles.dramkit_style.DramkitClassStyle.__init__" title="Permalink to this definition"></a></dt>
 <dd><p>初始化</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>name</strong> (<em>str</em>) – value for self.name</p></li>
 <li><p><strong>parm2</strong> (<em>str</em><em>, </em><em>None</em>) – self.vparm2</p></li>
@@ -205,7 +221,7 @@ based on VMD and HGWO for container throughput forecasting[J].
 <span class="sig-name descname"><span class="pre">otherattr</span></span><a class="headerlink" href="#dramkit.pystyles.dramkit_style.DramkitClassStyle.otherattr" title="Permalink to this definition"></a></dt>
 <dd><p>description of other attribute</p>
 <dl class="field-list simple">
-<dt class="field-odd">Type</dt>
+<dt class="field-odd">Type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>str</p>
 </dd>
 </dl>
@@ -224,7 +240,7 @@ based on VMD and HGWO for container throughput forecasting[J].
 <span class="sig-name descname"><span class="pre">show</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.pystyles.dramkit_style.DramkitClassStyle.show" title="Permalink to this definition"></a></dt>
 <dd><p>class中函数的注释参照function的注释规范</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>x</strong> (<em>str</em>) – string to print</p>
 </dd>
 </dl>
@@ -256,7 +272,7 @@ based on VMD and HGWO for container throughput forecasting[J].
 
 </section>
 <section id="dramkit-funcsytle">
-<h3>dramkit_funcsytle<a class="headerlink" href="#dramkit-funcsytle" title="Permalink to this headline"></a></h3>
+<h3>dramkit_funcsytle<a class="headerlink" href="#dramkit-funcsytle" title="Permalink to this heading"></a></h3>
 <dl class="py function">
 <dt class="sig sig-object py" id="dramkit.pystyles.dramkit_style.dramkit_funcsytle">
 <span class="sig-prename descclassname"><span class="pre">dramkit.pystyles.dramkit_style.</span></span><span class="sig-name descname"><span class="pre">dramkit_funcsytle</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">a</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">b</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'b'</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.pystyles.dramkit_style.dramkit_funcsytle" title="Permalink to this definition"></a></dt>
@@ -273,7 +289,7 @@ based on VMD and HGWO for container throughput forecasting[J].
 </ul>
 </div>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>a</strong> (<em>str</em>) – <p>description of argument <em>a斜体</em> : string to print</p>
 <div class="versionadded">
@@ -344,7 +360,7 @@ based on VMD and HGWO for container throughput forecasting[J].
 </p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p><ul class="simple">
 <li><p><strong>a</strong> (<em>str</em>) – return a</p></li>
 <li><p><strong>b</strong> (<em>str</em>) – 返回b的值，这里的描述可能也很长长长长长长长长长长长长长长长长长长长长长
@@ -353,7 +369,7 @@ based on VMD and HGWO for container throughput forecasting[J].
 </ul>
 </p>
 </dd>
-<dt class="field-odd">Raises</dt>
+<dt class="field-odd">Raises<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>ValueError</strong> – if a is not str</p>
 </dd>
 </dl>
@@ -400,13 +416,15 @@ beautiful mathematical formulas.</p>
 <p class="rubric">References</p>
 <p>Sphinxg数学公式: <a class="reference external" href="http://doc.yonyoucloud.com/doc/zh-sphinx-doc/ext/math.html">http://doc.yonyoucloud.com/doc/zh-sphinx-doc/ext/math.html</a></p>
 <p>我的论文 <a class="reference internal" href="#i" id="id24"><span>[i]</span></a></p>
-<dl class="citation">
-<dt class="label" id="i"><span class="brackets">i</span><span class="fn-backref">(<a href="#id24">1</a>,<a href="#id25">2</a>)</span></dt>
-<dd><p>Niu, Mingfei, Hu, et al. A novel hybrid decomposition-ensemble model
+<div role="list" class="citation-list">
+<div class="citation" id="i" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>i<span class="fn-bracket">]</span></span>
+<span class="backrefs">(<a role="doc-backlink" href="#id24">1</a>,<a role="doc-backlink" href="#id25">2</a>)</span>
+<p>Niu, Mingfei, Hu, et al. A novel hybrid decomposition-ensemble model
 based on VMD and HGWO for container throughput forecasting[J].
 Applied Mathematical Modelling, 2018.</p>
-</dd>
-</dl>
+</div>
+</div>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="k">def</span> <span class="nf">hello</span><span class="p">():</span>
 <span class="linenos">2</span>    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;这里是Python代码块，linenos用于设置生成行号&#39;</span><span class="p">)</span>
 </pre></div>
@@ -435,7 +453,7 @@ Applied Mathematical Modelling, 2018.</p>
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2020-2022, YueYong Hu.</p>
+    <p>&#169; Copyright 2020-2023, YueYong Hu.</p>
   </div>
 
   Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a

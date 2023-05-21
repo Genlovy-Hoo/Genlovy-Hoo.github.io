@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>speedup &mdash; DramKit 0.3.15 documentation</title>
+  <title>speedup &mdash; DramKit 0.5.42 documentation</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <!--[if lt IE 9]>
@@ -14,6 +14,7 @@
         <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
         <script src="_static/jquery.js"></script>
         <script src="_static/underscore.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="_static/doctools.js"></script>
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
@@ -27,11 +28,15 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-            <a href="index.html" class="icon icon-home"> DramKit
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            DramKit
           </a>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
@@ -45,14 +50,22 @@
 <li class="toctree-l1"><a class="reference internal" href="dramkit.datsci.html">datsci</a></li>
 <li class="toctree-l1"><a class="reference internal" href="dramkit.find_addends.html">find_addends</a></li>
 <li class="toctree-l1"><a class="reference internal" href="dramkit.logtools.html">logtools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dramkit.openai.html">openai</a></li>
 <li class="toctree-l1"><a class="reference internal" href="dramkit.optimizer.html">optimizer</a></li>
 <li class="toctree-l1"><a class="reference internal" href="dramkit.other.html">other</a></li>
 <li class="toctree-l1"><a class="reference internal" href="dramkit.plottools.html">plottools</a></li>
 <li class="toctree-l1"><a class="reference internal" href="dramkit.pystyles.html">pystyles</a></li>
 <li class="toctree-l1"><a class="reference internal" href="dramkit.sorts.html">sorts</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">speedup</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#module-dramkit.speedup.multi_process">multi_process</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#multi-process-concurrent">multi_process_concurrent</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-dramkit.speedup.iotools_tmp">iotools_tmp</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#run-func-with-timeout-process-notwin">run_func_with_timeout_process_notwin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#with-timeout-process-notwin">with_timeout_process_notwin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#func">func</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#test">test</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#module-dramkit.speedup.multi_process_concurrent">multi_process_concurrent</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id1">multi_process_concurrent</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#module-dramkit.speedup.multi_thread">multi_thread</a><ul>
@@ -81,8 +94,8 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
-      <li>speedup</li>
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">speedup</li>
       <li class="wy-breadcrumbs-aside">
             <a href="_sources/dramkit.speedup.rst.txt" rel="nofollow"> View page source</a>
       </li>
@@ -93,17 +106,87 @@
            <div itemprop="articleBody">
              
   <section id="speedup">
-<h1>speedup<a class="headerlink" href="#speedup" title="Permalink to this headline"></a></h1>
-<section id="module-dramkit.speedup.multi_process">
-<span id="multi-process"></span><h2>multi_process<a class="headerlink" href="#module-dramkit.speedup.multi_process" title="Permalink to this headline"></a></h2>
-<section id="multi-process-concurrent">
-<h3>multi_process_concurrent<a class="headerlink" href="#multi-process-concurrent" title="Permalink to this headline"></a></h3>
+<h1>speedup<a class="headerlink" href="#speedup" title="Permalink to this heading"></a></h1>
+<section id="module-dramkit.speedup.iotools_tmp">
+<span id="iotools-tmp"></span><h2>iotools_tmp<a class="headerlink" href="#module-dramkit.speedup.iotools_tmp" title="Permalink to this heading"></a></h2>
+<section id="run-func-with-timeout-process-notwin">
+<h3>run_func_with_timeout_process_notwin<a class="headerlink" href="#run-func-with-timeout-process-notwin" title="Permalink to this heading"></a></h3>
 <dl class="py function">
-<dt class="sig sig-object py" id="dramkit.speedup.multi_process.multi_process_concurrent">
-<span class="sig-prename descclassname"><span class="pre">dramkit.speedup.multi_process.</span></span><span class="sig-name descname"><span class="pre">multi_process_concurrent</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">func</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">args_list</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">keep_order</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">multi_line</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.speedup.multi_process.multi_process_concurrent" title="Permalink to this definition"></a></dt>
+<dt class="sig sig-object py" id="dramkit.speedup.iotools_tmp.run_func_with_timeout_process_notwin">
+<span class="sig-prename descclassname"><span class="pre">dramkit.speedup.iotools_tmp.</span></span><span class="sig-name descname"><span class="pre">run_func_with_timeout_process_notwin</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">func</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timeout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">logger_timeout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timeout_show_str</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kill_when_timeout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.speedup.iotools_tmp.run_func_with_timeout_process_notwin" title="Permalink to this definition"></a></dt>
+<dd><div class="line-block">
+<div class="line">限定时间(timeout秒)执行函数func，若限定时间内未执行完毕，返回None</div>
+<div class="line">args为tuple或list，为func函数接受的参数列表</div>
+</div>
+</dd></dl>
+
+</section>
+<section id="with-timeout-process-notwin">
+<h3>with_timeout_process_notwin<a class="headerlink" href="#with-timeout-process-notwin" title="Permalink to this heading"></a></h3>
+<dl class="py function">
+<dt class="sig sig-object py" id="dramkit.speedup.iotools_tmp.with_timeout_process_notwin">
+<span class="sig-prename descclassname"><span class="pre">dramkit.speedup.iotools_tmp.</span></span><span class="sig-name descname"><span class="pre">with_timeout_process_notwin</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">timeout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">30</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">logger_error</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">logger_timeout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timeout_show_str</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kill_when_timeout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.speedup.iotools_tmp.with_timeout_process_notwin" title="Permalink to this definition"></a></dt>
+<dd><div class="line-block">
+<div class="line">作为装饰器在指定时间timeout(秒)内运行函数，超时则结束运行</div>
+<div class="line">通过控制线程实现</div>
+</div>
+<p class="rubric">Examples</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="kn">import</span> <span class="nn">os</span>
+<span class="linenos"> 2</span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="linenos"> 3</span><span class="kn">from</span> <span class="nn">dramkit.gentools</span> <span class="kn">import</span> <span class="n">tmprint</span>
+<span class="linenos"> 4</span>
+<span class="linenos"> 5</span><span class="n">df1</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]])</span>
+<span class="linenos"> 6</span><span class="n">df2</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">([[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">],</span> <span class="p">[</span><span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">]])</span>
+<span class="linenos"> 7</span><span class="n">df1</span><span class="o">.</span><span class="n">to_excel</span><span class="p">(</span><span class="s1">&#39;df.xlsx&#39;</span><span class="p">)</span>
+<span class="linenos"> 8</span><span class="n">TIMEOUT</span> <span class="o">=</span> <span class="mi">3</span>
+<span class="linenos"> 9</span>
+<span class="linenos">10</span><span class="nd">@with_timeout_process_notwin</span><span class="p">(</span><span class="n">TIMEOUT</span><span class="p">)</span>
+<span class="linenos">11</span><span class="k">def</span> <span class="nf">func</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+<span class="linenos">12</span>    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;df.xlsx&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+<span class="linenos">13</span>        <span class="n">tmprint</span><span class="p">(</span><span class="s1">&#39;sleeping...&#39;</span><span class="p">)</span>
+<span class="linenos">14</span>        <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+<span class="linenos">15</span>    <span class="n">df2</span><span class="o">.</span><span class="n">to_excel</span><span class="p">(</span><span class="s1">&#39;df.xlsx&#39;</span><span class="p">)</span>
+<span class="linenos">16</span>    <span class="k">return</span> <span class="n">x</span>
+<span class="linenos">17</span>
+<span class="linenos">18</span><span class="k">def</span> <span class="nf">test</span><span class="p">():</span>
+<span class="linenos">19</span>    <span class="n">res</span> <span class="o">=</span> <span class="n">func</span><span class="p">(</span><span class="s1">&#39;test&#39;</span><span class="p">)</span>
+<span class="linenos">20</span>    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;res:&#39;</span><span class="p">,</span> <span class="n">res</span><span class="p">)</span>
+<span class="linenos">21</span>    <span class="n">os</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="s1">&#39;df.xlsx&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">test</span><span class="p">()</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</section>
+<section id="func">
+<h3>func<a class="headerlink" href="#func" title="Permalink to this heading"></a></h3>
+<dl class="py function">
+<dt class="sig sig-object py" id="dramkit.speedup.iotools_tmp.func">
+<span class="sig-prename descclassname"><span class="pre">dramkit.speedup.iotools_tmp.</span></span><span class="sig-name descname"><span class="pre">func</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.speedup.iotools_tmp.func" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</section>
+<section id="test">
+<h3>test<a class="headerlink" href="#test" title="Permalink to this heading"></a></h3>
+<dl class="py function">
+<dt class="sig sig-object py" id="dramkit.speedup.iotools_tmp.test">
+<span class="sig-prename descclassname"><span class="pre">dramkit.speedup.iotools_tmp.</span></span><span class="sig-name descname"><span class="pre">test</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.speedup.iotools_tmp.test" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</section>
+</section>
+<section id="module-dramkit.speedup.multi_process_concurrent">
+<span id="multi-process-concurrent"></span><h2>multi_process_concurrent<a class="headerlink" href="#module-dramkit.speedup.multi_process_concurrent" title="Permalink to this heading"></a></h2>
+<section id="id1">
+<h3>multi_process_concurrent<a class="headerlink" href="#id1" title="Permalink to this heading"></a></h3>
+<dl class="py function">
+<dt class="sig sig-object py" id="dramkit.speedup.multi_process_concurrent.multi_process_concurrent">
+<span class="sig-prename descclassname"><span class="pre">dramkit.speedup.multi_process_concurrent.</span></span><span class="sig-name descname"><span class="pre">multi_process_concurrent</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">func</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">args_list</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">keep_order</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">multi_line</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.speedup.multi_process_concurrent.multi_process_concurrent" title="Permalink to this definition"></a></dt>
 <dd><p>多进程，同一个函数执行多次</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>func</strong> (<em>function</em>) – 需要多进程运行的目标函数</p></li>
 <li><p><strong>args_list</strong> (<em>list</em>) – 每个元素都是目标函数func的参数列表</p></li>
@@ -119,13 +202,13 @@
 </div>
 </div>
 </p></li>
-<li><p><strong>multi_line</strong> (<em>int</em><em>, </em><em>None</em>) – 最大线程数，默认等于len(args_list)</p></li>
+<li><p><strong>multi_line</strong> (<em>int</em><em>, </em><em>None</em>) – 最大进程数，默认等于len(args_list)</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p><strong>results</strong> – 每个元素对应func以args_list的元素为输入的返回结果</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>list</p>
 </dd>
 </dl>
@@ -138,30 +221,34 @@
 </section>
 </section>
 <section id="module-dramkit.speedup.multi_thread">
-<span id="multi-thread"></span><h2>multi_thread<a class="headerlink" href="#module-dramkit.speedup.multi_thread" title="Permalink to this headline"></a></h2>
+<span id="multi-thread"></span><h2>multi_thread<a class="headerlink" href="#module-dramkit.speedup.multi_thread" title="Permalink to this heading"></a></h2>
 <section id="singlethread">
-<h3>SingleThread<a class="headerlink" href="#singlethread" title="Permalink to this headline"></a></h3>
+<h3>SingleThread<a class="headerlink" href="#singlethread" title="Permalink to this heading"></a></h3>
 <dl class="py class">
 <dt class="sig sig-object py" id="dramkit.speedup.multi_thread.SingleThread">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">dramkit.speedup.multi_thread.</span></span><span class="sig-name descname"><span class="pre">SingleThread</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">func</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">logger</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.speedup.multi_thread.SingleThread" title="Permalink to this definition"></a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">threading.Thread</span></code></p>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">dramkit.speedup.multi_thread.</span></span><span class="sig-name descname"><span class="pre">SingleThread</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">func</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fargs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">()</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fkwargs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">{}</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">logger</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.speedup.multi_thread.SingleThread" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Thread</span></code></p>
 <div class="line-block">
 <div class="line">单个线程任务</div>
 <div class="line">参考：</div>
-<div class="line"><a class="reference external" href="https://www.csdn.net/tags/MtTaQg3sMDE1MzYtYmxvZwO0O0OO0O0O.html">https://www.csdn.net/tags/MtTaQg3sMDE1MzYtYmxvZwO0O0OO0O0O.html</a></div>
+<div class="line"><a class="reference external" href="https://zhuanlan.zhihu.com/p/208260624">https://zhuanlan.zhihu.com/p/208260624</a></div>
 <div class="line"><a class="reference external" href="https://www.cnblogs.com/ojbk6943/p/14047952.html">https://www.cnblogs.com/ojbk6943/p/14047952.html</a></div>
 <div class="line"><a class="reference external" href="https://blog.csdn.net/weixin_43285186/article/details/124338274">https://blog.csdn.net/weixin_43285186/article/details/124338274</a></div>
 <div class="line"><a class="reference external" href="https://m.php.cn/article/471342.html">https://m.php.cn/article/471342.html</a></div>
+<div class="line"><a class="reference external" href="https://stackoverflow.com/questions/323972/is-there-any-way-to-kill-a-thread">https://stackoverflow.com/questions/323972/is-there-any-way-to-kill-a-thread</a></div>
+<div class="line"><a class="reference external" href="https://www.bilibili.com/read/cv14368165">https://www.bilibili.com/read/cv14368165</a></div>
 </div>
 <dl class="py method">
 <dt class="sig sig-object py" id="dramkit.speedup.multi_thread.SingleThread.__init__">
-<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">func</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">logger</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.speedup.multi_thread.SingleThread.__init__" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">func</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fargs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">()</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fkwargs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">{}</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">logger</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.speedup.multi_thread.SingleThread.__init__" title="Permalink to this definition"></a></dt>
 <dd><dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>func</strong> (<em>function</em>) – 需要多线程运行的目标函数</p></li>
-<li><p><strong>args</strong> (<em>list</em>) – 目标函数func输入变量列表</p></li>
+<li><p><strong>func</strong> (<em>function</em>) – 目标函数</p></li>
+<li><p><strong>fargs</strong> (<em>tuple</em><em>, </em><em>list</em>) – 目标函数func接收的位置参数</p></li>
+<li><p><strong>fkwargs</strong> (<em>None</em><em>, </em><em>dict</em>) – 目标函数func接收的关键字参数</p></li>
 <li><p><strong>logger</strong> (<em>Logger</em><em>, </em><em>None</em>) – 日志记录器</p></li>
+<li><p><strong>**kwargs</strong> (<em>threading.Thread接收的其他参数</em>) – </p></li>
 </ul>
 </dd>
 </dl>
@@ -174,6 +261,16 @@
 </dd></dl>
 
 <dl class="py method">
+<dt class="sig sig-object py" id="dramkit.speedup.multi_thread.SingleThread.globaltrace">
+<span class="sig-name descname"><span class="pre">globaltrace</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">frame</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">event</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.speedup.multi_thread.SingleThread.globaltrace" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dramkit.speedup.multi_thread.SingleThread.localtrace">
+<span class="sig-name descname"><span class="pre">localtrace</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">frame</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">event</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.speedup.multi_thread.SingleThread.localtrace" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
 <dt class="sig sig-object py" id="dramkit.speedup.multi_thread.SingleThread.run">
 <span class="sig-name descname"><span class="pre">run</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.speedup.multi_thread.SingleThread.run" title="Permalink to this definition"></a></dt>
 <dd><p>执行目标函数func，获取返回结果</p>
@@ -182,30 +279,29 @@
 <dl class="py method">
 <dt class="sig sig-object py" id="dramkit.speedup.multi_thread.SingleThread.stop_thread">
 <span class="sig-name descname"><span class="pre">stop_thread</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.speedup.multi_thread.SingleThread.stop_thread" title="Permalink to this definition"></a></dt>
-<dd><p>结束线程</p>
-</dd></dl>
+<dd></dd></dl>
 
 </dd></dl>
 
 </section>
 <section id="multi-thread-threading">
-<h3>multi_thread_threading<a class="headerlink" href="#multi-thread-threading" title="Permalink to this headline"></a></h3>
+<h3>multi_thread_threading<a class="headerlink" href="#multi-thread-threading" title="Permalink to this heading"></a></h3>
 <dl class="py function">
 <dt class="sig sig-object py" id="dramkit.speedup.multi_thread.multi_thread_threading">
 <span class="sig-prename descclassname"><span class="pre">dramkit.speedup.multi_thread.</span></span><span class="sig-name descname"><span class="pre">multi_thread_threading</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">func</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">args_list</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">logger</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.speedup.multi_thread.multi_thread_threading" title="Permalink to this definition"></a></dt>
 <dd><p>多线程，同一个函数执行多次</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>func</strong> (<em>function</em>) – 需要多线程运行的目标函数</p></li>
 <li><p><strong>args_list</strong> (<em>list</em>) – 每个元素都是目标函数func的参数列表</p></li>
 <li><p><strong>logger</strong> (<em>Logger</em>) – logging库的日志记录器</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p><strong>results</strong> – 每个元素对应func以args_list的元素为输入的返回结果</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>list</p>
 </dd>
 </dl>
@@ -213,13 +309,13 @@
 
 </section>
 <section id="multi-thread-concurrent">
-<h3>multi_thread_concurrent<a class="headerlink" href="#multi-thread-concurrent" title="Permalink to this headline"></a></h3>
+<h3>multi_thread_concurrent<a class="headerlink" href="#multi-thread-concurrent" title="Permalink to this heading"></a></h3>
 <dl class="py function">
 <dt class="sig sig-object py" id="dramkit.speedup.multi_thread.multi_thread_concurrent">
 <span class="sig-prename descclassname"><span class="pre">dramkit.speedup.multi_thread.</span></span><span class="sig-name descname"><span class="pre">multi_thread_concurrent</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">func</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">args_list</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">multi_line</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">keep_order</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.speedup.multi_thread.multi_thread_concurrent" title="Permalink to this definition"></a></dt>
 <dd><p>多线程，同一个函数执行多次</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>func</strong> (<em>function</em>) – 需要多线程运行的目标函数</p></li>
 <li><p><strong>args_list</strong> (<em>list</em>) – 每个元素都是目标函数func的参数列表</p></li>
@@ -227,10 +323,10 @@
 <li><p><strong>keep_order</strong> (<em>bool</em>) – 是否保持输入args_list与输出results参数顺序一致性，默认是</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p><strong>results</strong> – 每个元素对应func以args_list的元素为输入的返回结果</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>list</p>
 </dd>
 </dl>
@@ -251,7 +347,7 @@
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2020-2022, YueYong Hu.</p>
+    <p>&#169; Copyright 2020-2023, YueYong Hu.</p>
   </div>
 
   Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a

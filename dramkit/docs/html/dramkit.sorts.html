@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>sorts &mdash; DramKit 0.3.15 documentation</title>
+  <title>sorts &mdash; DramKit 0.5.42 documentation</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <!--[if lt IE 9]>
@@ -14,6 +14,7 @@
         <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
         <script src="_static/jquery.js"></script>
         <script src="_static/underscore.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="_static/doctools.js"></script>
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
@@ -27,11 +28,15 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-            <a href="index.html" class="icon icon-home"> DramKit
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            DramKit
           </a>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
@@ -45,6 +50,7 @@
 <li class="toctree-l1"><a class="reference internal" href="dramkit.datsci.html">datsci</a></li>
 <li class="toctree-l1"><a class="reference internal" href="dramkit.find_addends.html">find_addends</a></li>
 <li class="toctree-l1"><a class="reference internal" href="dramkit.logtools.html">logtools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dramkit.openai.html">openai</a></li>
 <li class="toctree-l1"><a class="reference internal" href="dramkit.optimizer.html">optimizer</a></li>
 <li class="toctree-l1"><a class="reference internal" href="dramkit.other.html">other</a></li>
 <li class="toctree-l1"><a class="reference internal" href="dramkit.plottools.html">plottools</a></li>
@@ -95,8 +101,8 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
-      <li>sorts</li>
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">sorts</li>
       <li class="wy-breadcrumbs-aside">
             <a href="_sources/dramkit.sorts.rst.txt" rel="nofollow"> View page source</a>
       </li>
@@ -107,11 +113,11 @@
            <div itemprop="articleBody">
              
   <section id="sorts">
-<h1>sorts<a class="headerlink" href="#sorts" title="Permalink to this headline"></a></h1>
+<h1>sorts<a class="headerlink" href="#sorts" title="Permalink to this heading"></a></h1>
 <section id="module-dramkit.sorts.bubble_sort">
-<span id="bubble-sort"></span><h2>bubble_sort<a class="headerlink" href="#module-dramkit.sorts.bubble_sort" title="Permalink to this headline"></a></h2>
+<span id="bubble-sort"></span><h2>bubble_sort<a class="headerlink" href="#module-dramkit.sorts.bubble_sort" title="Permalink to this heading"></a></h2>
 <section id="id1">
-<h3>bubble_sort<a class="headerlink" href="#id1" title="Permalink to this headline"></a></h3>
+<h3>bubble_sort<a class="headerlink" href="#id1" title="Permalink to this heading"></a></h3>
 <dl class="py function">
 <dt class="sig sig-object py" id="dramkit.sorts.bubble_sort.bubble_sort">
 <span class="sig-prename descclassname"><span class="pre">dramkit.sorts.bubble_sort.</span></span><span class="sig-name descname"><span class="pre">bubble_sort</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">nums_ori</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ascending</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.sorts.bubble_sort.bubble_sort" title="Permalink to this definition"></a></dt>
@@ -125,13 +131,13 @@
 </ul>
 </div>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>nums_ori</strong> (<em>list</em>) – 待排序数列表</p></li>
 <li><p><strong>ascending</strong> (<em>bool</em>) – 是否升序，默认True</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p><cite>list</cite> - 返回排序之后的数据列表</p>
 </dd>
 </dl>
@@ -140,9 +146,9 @@
 </section>
 </section>
 <section id="module-dramkit.sorts.bucket_sort">
-<span id="bucket-sort"></span><h2>bucket_sort<a class="headerlink" href="#module-dramkit.sorts.bucket_sort" title="Permalink to this headline"></a></h2>
+<span id="bucket-sort"></span><h2>bucket_sort<a class="headerlink" href="#module-dramkit.sorts.bucket_sort" title="Permalink to this heading"></a></h2>
 <section id="id2">
-<h3>bucket_sort<a class="headerlink" href="#id2" title="Permalink to this headline"></a></h3>
+<h3>bucket_sort<a class="headerlink" href="#id2" title="Permalink to this heading"></a></h3>
 <dl class="py function">
 <dt class="sig sig-object py" id="dramkit.sorts.bucket_sort.bucket_sort">
 <span class="sig-prename descclassname"><span class="pre">dramkit.sorts.bucket_sort.</span></span><span class="sig-name descname"><span class="pre">bucket_sort</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">nums</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ascending</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.sorts.bucket_sort.bucket_sort" title="Permalink to this definition"></a></dt>
@@ -164,13 +170,13 @@
 </ul>
 </div>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>nums</strong> (<em>list</em>) – 待排序数列表</p></li>
 <li><p><strong>ascending</strong> (<em>bool</em>) – 是否升序，默认True</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p><cite>list</cite> - 返回排序之后的数据列表</p>
 </dd>
 </dl>
@@ -179,14 +185,14 @@
 </section>
 </section>
 <section id="module-dramkit.sorts.insert_sort">
-<span id="insert-sort"></span><h2>insert_sort<a class="headerlink" href="#module-dramkit.sorts.insert_sort" title="Permalink to this headline"></a></h2>
+<span id="insert-sort"></span><h2>insert_sort<a class="headerlink" href="#module-dramkit.sorts.insert_sort" title="Permalink to this heading"></a></h2>
 <p>插入排序</p>
 <div class="admonition-todo admonition" id="id3">
 <p class="admonition-title">Todo</p>
 <p>待排序数组中存在无效值的处理</p>
 </div>
 <section id="id4">
-<h3>insert_sort<a class="headerlink" href="#id4" title="Permalink to this headline"></a></h3>
+<h3>insert_sort<a class="headerlink" href="#id4" title="Permalink to this heading"></a></h3>
 <dl class="py function">
 <dt class="sig sig-object py" id="dramkit.sorts.insert_sort.insert_sort">
 <span class="sig-prename descclassname"><span class="pre">dramkit.sorts.insert_sort.</span></span><span class="sig-name descname"><span class="pre">insert_sort</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">nums_ori</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ascending</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.sorts.insert_sort.insert_sort" title="Permalink to this definition"></a></dt>
@@ -196,13 +202,13 @@
 <p>时间复杂度最坏为O(n^2)，最好为O(n)，n为待排序数的个数</p>
 </div>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>nums_ori</strong> (<em>list</em>) – 待排序数组</p></li>
 <li><p><strong>ascending</strong> (<em>bool</em>) – 是否升序排列</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p><cite>list</cite> - 返回排序之后的数据列表</p>
 </dd>
 </dl>
@@ -212,7 +218,7 @@
 
 </section>
 <section id="insert-to-sorted">
-<h3>insert_to_sorted<a class="headerlink" href="#insert-to-sorted" title="Permalink to this headline"></a></h3>
+<h3>insert_to_sorted<a class="headerlink" href="#insert-to-sorted" title="Permalink to this heading"></a></h3>
 <dl class="py function">
 <dt class="sig sig-object py" id="dramkit.sorts.insert_sort.insert_to_sorted">
 <span class="sig-prename descclassname"><span class="pre">dramkit.sorts.insert_sort.</span></span><span class="sig-name descname"><span class="pre">insert_to_sorted</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">nums_sorted</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ascending</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.sorts.insert_sort.insert_to_sorted" title="Permalink to this definition"></a></dt>
@@ -224,7 +230,7 @@
 
 </section>
 <section id="rank-of-insert">
-<h3>rank_of_insert<a class="headerlink" href="#rank-of-insert" title="Permalink to this headline"></a></h3>
+<h3>rank_of_insert<a class="headerlink" href="#rank-of-insert" title="Permalink to this heading"></a></h3>
 <dl class="py function">
 <dt class="sig sig-object py" id="dramkit.sorts.insert_sort.rank_of_insert">
 <span class="sig-prename descclassname"><span class="pre">dramkit.sorts.insert_sort.</span></span><span class="sig-name descname"><span class="pre">rank_of_insert</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">nums_sorted</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ranks</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ascending</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">method</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'dense'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.sorts.insert_sort.rank_of_insert" title="Permalink to this definition"></a></dt>
@@ -239,7 +245,7 @@
 </section>
 </section>
 <section id="module-dramkit.sorts.insert_sort_bin">
-<span id="insert-sort-bin"></span><h2>insert_sort_bin<a class="headerlink" href="#module-dramkit.sorts.insert_sort_bin" title="Permalink to this headline"></a></h2>
+<span id="insert-sort-bin"></span><h2>insert_sort_bin<a class="headerlink" href="#module-dramkit.sorts.insert_sort_bin" title="Permalink to this heading"></a></h2>
 <p>二分法改进的插入排序法</p>
 <div class="admonition-todo admonition" id="id5">
 <p class="admonition-title">Todo</p>
@@ -248,13 +254,13 @@
 <p class="rubric">References</p>
 <p><a class="reference external" href="https://cuijiahua.com/blog/2017/12/algorithm_2.html">https://cuijiahua.com/blog/2017/12/algorithm_2.html</a></p>
 <section id="bin-search">
-<h3>bin_search<a class="headerlink" href="#bin-search" title="Permalink to this headline"></a></h3>
+<h3>bin_search<a class="headerlink" href="#bin-search" title="Permalink to this heading"></a></h3>
 <dl class="py function">
 <dt class="sig sig-object py" id="dramkit.sorts.insert_sort_bin.bin_search">
 <span class="sig-prename descclassname"><span class="pre">dramkit.sorts.insert_sort_bin.</span></span><span class="sig-name descname"><span class="pre">bin_search</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">nums_sorted</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">start</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">end</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ascending</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.sorts.insert_sort_bin.bin_search" title="Permalink to this definition"></a></dt>
 <dd><p>二分法查找num应该插入到排序好的nums_sorted中的位置</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>nums_sorted</strong> (<em>list</em>) – 已经排序好的数据列表</p></li>
 <li><p><strong>num</strong> – 待插入数据</p></li>
@@ -272,19 +278,19 @@
 
 </section>
 <section id="id6">
-<h3>insert_sort_bin<a class="headerlink" href="#id6" title="Permalink to this headline"></a></h3>
+<h3>insert_sort_bin<a class="headerlink" href="#id6" title="Permalink to this heading"></a></h3>
 <dl class="py function">
 <dt class="sig sig-object py" id="dramkit.sorts.insert_sort_bin.insert_sort_bin">
 <span class="sig-prename descclassname"><span class="pre">dramkit.sorts.insert_sort_bin.</span></span><span class="sig-name descname"><span class="pre">insert_sort_bin</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">nums_ori</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ascending</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.sorts.insert_sort_bin.insert_sort_bin" title="Permalink to this definition"></a></dt>
 <dd><p>二分法改进的插入排序法</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>nums_ori</strong> (<em>list</em>) – 待排序数组</p></li>
 <li><p><strong>ascending</strong> (<em>bool</em>) – 是否升序排列</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p><cite>list</cite> - 返回排序之后的数据列表</p>
 </dd>
 </dl>
@@ -292,7 +298,7 @@
 
 </section>
 <section id="rank-of-insert-bin">
-<h3>rank_of_insert_bin<a class="headerlink" href="#rank-of-insert-bin" title="Permalink to this headline"></a></h3>
+<h3>rank_of_insert_bin<a class="headerlink" href="#rank-of-insert-bin" title="Permalink to this heading"></a></h3>
 <dl class="py function">
 <dt class="sig sig-object py" id="dramkit.sorts.insert_sort_bin.rank_of_insert_bin">
 <span class="sig-prename descclassname"><span class="pre">dramkit.sorts.insert_sort_bin.</span></span><span class="sig-name descname"><span class="pre">rank_of_insert_bin</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">nums_sorted</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ranks</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ascending</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">method</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'dense'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.sorts.insert_sort_bin.rank_of_insert_bin" title="Permalink to this definition"></a></dt>
@@ -311,9 +317,9 @@
 </section>
 </section>
 <section id="module-dramkit.sorts.quick_sort">
-<span id="quick-sort"></span><h2>quick_sort<a class="headerlink" href="#module-dramkit.sorts.quick_sort" title="Permalink to this headline"></a></h2>
+<span id="quick-sort"></span><h2>quick_sort<a class="headerlink" href="#module-dramkit.sorts.quick_sort" title="Permalink to this heading"></a></h2>
 <section id="id7">
-<h3>quick_sort<a class="headerlink" href="#id7" title="Permalink to this headline"></a></h3>
+<h3>quick_sort<a class="headerlink" href="#id7" title="Permalink to this heading"></a></h3>
 <dl class="py function">
 <dt class="sig sig-object py" id="dramkit.sorts.quick_sort.quick_sort">
 <span class="sig-prename descclassname"><span class="pre">dramkit.sorts.quick_sort.</span></span><span class="sig-name descname"><span class="pre">quick_sort</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">nums_ori</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ascending</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.sorts.quick_sort.quick_sort" title="Permalink to this definition"></a></dt>
@@ -323,13 +329,13 @@
 <p>时间复杂度O(N*logN)，N为待排序数的个数</p>
 </div>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>nums_ori</strong> (<em>list</em>) – 待排序数列表</p></li>
 <li><p><strong>ascending</strong> (<em>bool</em>) – 是否升序，默认True</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p><cite>list</cite> - 返回排序之后的数据列表</p>
 </dd>
 </dl>
@@ -350,7 +356,7 @@
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2020-2022, YueYong Hu.</p>
+    <p>&#169; Copyright 2020-2023, YueYong Hu.</p>
   </div>
 
   Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a

@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>openai &mdash; DramKit 0.5.42 documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="_static/doctools.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="optimizer" href="dramkit.optimizer.html" />
+    <link rel="prev" title="logtools" href="dramkit.logtools.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            DramKit
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="dramkit.html">dramkit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dramkit.backpacks.html">backpacks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dramkit.chncal.html">chncal</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dramkit.datsci.html">datsci</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dramkit.find_addends.html">find_addends</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dramkit.logtools.html">logtools</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">openai</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#module-dramkit.openai.aiedu_chat">aiedu_chat</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#openaichat">OpenAIChat</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#chat">chat</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#chat-con">chat_con</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#module-dramkit.openai.openai_chat">openai_chat</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#continuousdialogueerror">ContinuousDialogueError</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id1">OpenAIChat</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#load-config">load_config</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#raise-con">raise_con</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#secret">secret</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#unsecret">unsecret</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#get-api-key-url">get_api_key_url</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#get-api-key">get_api_key</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#get-embedding">get_embedding</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#chat-gpt3">chat_gpt3</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#chat-gpt35">chat_gpt35</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id2">chat</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#chat-con-gpt3">chat_con_gpt3</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#chat-con-gpt35">chat_con_gpt35</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id3">chat_con</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#module-dramkit.openai.openai_chat_hs">openai_chat_hs</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id4">ContinuousDialogueError</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#deprecationerror">DeprecationError</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id5">OpenAIChat</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id6">raise_con</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id7">chat</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#chat-mem">chat_mem</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id8">chat_con</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="dramkit.optimizer.html">optimizer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dramkit.other.html">other</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dramkit.plottools.html">plottools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dramkit.pystyles.html">pystyles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dramkit.sorts.html">sorts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dramkit.speedup.html">speedup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dramkit.sqltools.html">sqltools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dramkit.webtools.html">webtools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dramkit.wechat.html">wechat</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">DramKit</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">openai</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/dramkit.openai.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="openai">
+<h1>openai<a class="headerlink" href="#openai" title="Permalink to this heading"></a></h1>
+<section id="module-dramkit.openai.aiedu_chat">
+<span id="aiedu-chat"></span><h2>aiedu_chat<a class="headerlink" href="#module-dramkit.openai.aiedu_chat" title="Permalink to this heading"></a></h2>
+<section id="openaichat">
+<h3>OpenAIChat<a class="headerlink" href="#openaichat" title="Permalink to this heading"></a></h3>
+<dl class="py class">
+<dt class="sig sig-object py" id="dramkit.openai.aiedu_chat.OpenAIChat">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">dramkit.openai.aiedu_chat.</span></span><span class="sig-name descname"><span class="pre">OpenAIChat</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.openai.aiedu_chat.OpenAIChat" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="dramkit.openai.aiedu_chat.OpenAIChat.chat">
+<span class="sig-name descname"><span class="pre">chat</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">question</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">save_path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.openai.aiedu_chat.OpenAIChat.chat" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="chat">
+<h3>chat<a class="headerlink" href="#chat" title="Permalink to this heading"></a></h3>
+<dl class="py function">
+<dt class="sig sig-object py" id="dramkit.openai.aiedu_chat.chat">
+<span class="sig-prename descclassname"><span class="pre">dramkit.openai.aiedu_chat.</span></span><span class="sig-name descname"><span class="pre">chat</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">question</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">save_path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.openai.aiedu_chat.chat" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</section>
+<section id="chat-con">
+<h3>chat_con<a class="headerlink" href="#chat-con" title="Permalink to this heading"></a></h3>
+<dl class="py function">
+<dt class="sig sig-object py" id="dramkit.openai.aiedu_chat.chat_con">
+<span class="sig-prename descclassname"><span class="pre">dramkit.openai.aiedu_chat.</span></span><span class="sig-name descname"><span class="pre">chat_con</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.openai.aiedu_chat.chat_con" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</section>
+</section>
+<section id="module-dramkit.openai.openai_chat">
+<span id="openai-chat"></span><h2>openai_chat<a class="headerlink" href="#module-dramkit.openai.openai_chat" title="Permalink to this heading"></a></h2>
+<section id="continuousdialogueerror">
+<h3>ContinuousDialogueError<a class="headerlink" href="#continuousdialogueerror" title="Permalink to this heading"></a></h3>
+<dl class="py class">
+<dt class="sig sig-object py" id="dramkit.openai.openai_chat.ContinuousDialogueError">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">dramkit.openai.openai_chat.</span></span><span class="sig-name descname"><span class="pre">ContinuousDialogueError</span></span><a class="headerlink" href="#dramkit.openai.openai_chat.ContinuousDialogueError" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Exception</span></code></p>
+</dd></dl>
+
+</section>
+<section id="id1">
+<h3>OpenAIChat<a class="headerlink" href="#id1" title="Permalink to this heading"></a></h3>
+<dl class="py class">
+<dt class="sig sig-object py" id="dramkit.openai.openai_chat.OpenAIChat">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">dramkit.openai.openai_chat.</span></span><span class="sig-name descname"><span class="pre">OpenAIChat</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">api_key</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.openai.openai_chat.OpenAIChat" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="dramkit.openai.openai_chat.OpenAIChat.chat">
+<span class="sig-name descname"><span class="pre">chat</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">question</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">reset</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">api_key</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">version</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'gpt3.5'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">save_path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">write_api_key</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.openai.openai_chat.OpenAIChat.chat" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dramkit.openai.openai_chat.OpenAIChat.chat_gpt3">
+<span class="sig-name descname"><span class="pre">chat_gpt3</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">question</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">reset</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">api_key</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.openai.openai_chat.OpenAIChat.chat_gpt3" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dramkit.openai.openai_chat.OpenAIChat.chat_gpt35">
+<span class="sig-name descname"><span class="pre">chat_gpt35</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">question</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">reset</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">api_key</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.openai.openai_chat.OpenAIChat.chat_gpt35" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="load-config">
+<h3>load_config<a class="headerlink" href="#load-config" title="Permalink to this heading"></a></h3>
+<dl class="py function">
+<dt class="sig sig-object py" id="dramkit.openai.openai_chat.load_config">
+<span class="sig-prename descclassname"><span class="pre">dramkit.openai.openai_chat.</span></span><span class="sig-name descname"><span class="pre">load_config</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.openai.openai_chat.load_config" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</section>
+<section id="raise-con">
+<h3>raise_con<a class="headerlink" href="#raise-con" title="Permalink to this heading"></a></h3>
+<dl class="py function">
+<dt class="sig sig-object py" id="dramkit.openai.openai_chat.raise_con">
+<span class="sig-prename descclassname"><span class="pre">dramkit.openai.openai_chat.</span></span><span class="sig-name descname"><span class="pre">raise_con</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.openai.openai_chat.raise_con" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</section>
+<section id="secret">
+<h3>secret<a class="headerlink" href="#secret" title="Permalink to this heading"></a></h3>
+<dl class="py function">
+<dt class="sig sig-object py" id="dramkit.openai.openai_chat.secret">
+<span class="sig-prename descclassname"><span class="pre">dramkit.openai.openai_chat.</span></span><span class="sig-name descname"><span class="pre">secret</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">api_key</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.openai.openai_chat.secret" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</section>
+<section id="unsecret">
+<h3>unsecret<a class="headerlink" href="#unsecret" title="Permalink to this heading"></a></h3>
+<dl class="py function">
+<dt class="sig sig-object py" id="dramkit.openai.openai_chat.unsecret">
+<span class="sig-prename descclassname"><span class="pre">dramkit.openai.openai_chat.</span></span><span class="sig-name descname"><span class="pre">unsecret</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">secret_api_key</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.openai.openai_chat.unsecret" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</section>
+<section id="get-api-key-url">
+<h3>get_api_key_url<a class="headerlink" href="#get-api-key-url" title="Permalink to this heading"></a></h3>
+<dl class="py function">
+<dt class="sig sig-object py" id="dramkit.openai.openai_chat.get_api_key_url">
+<span class="sig-prename descclassname"><span class="pre">dramkit.openai.openai_chat.</span></span><span class="sig-name descname"><span class="pre">get_api_key_url</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.openai.openai_chat.get_api_key_url" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</section>
+<section id="get-api-key">
+<h3>get_api_key<a class="headerlink" href="#get-api-key" title="Permalink to this heading"></a></h3>
+<dl class="py function">
+<dt class="sig sig-object py" id="dramkit.openai.openai_chat.get_api_key">
+<span class="sig-prename descclassname"><span class="pre">dramkit.openai.openai_chat.</span></span><span class="sig-name descname"><span class="pre">get_api_key</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.openai.openai_chat.get_api_key" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</section>
+<section id="get-embedding">
+<h3>get_embedding<a class="headerlink" href="#get-embedding" title="Permalink to this heading"></a></h3>
+<dl class="py function">
+<dt class="sig sig-object py" id="dramkit.openai.openai_chat.get_embedding">
+<span class="sig-prename descclassname"><span class="pre">dramkit.openai.openai_chat.</span></span><span class="sig-name descname"><span class="pre">get_embedding</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">prompt</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">api_key</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">save_path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">save_embd</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">write_api_key</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.openai.openai_chat.get_embedding" title="Permalink to this definition"></a></dt>
+<dd><p>OpenAI Embedding</p>
+</dd></dl>
+
+</section>
+<section id="chat-gpt3">
+<h3>chat_gpt3<a class="headerlink" href="#chat-gpt3" title="Permalink to this heading"></a></h3>
+<dl class="py function">
+<dt class="sig sig-object py" id="dramkit.openai.openai_chat.chat_gpt3">
+<span class="sig-prename descclassname"><span class="pre">dramkit.openai.openai_chat.</span></span><span class="sig-name descname"><span class="pre">chat_gpt3</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">prompt</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">api_key</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.openai.openai_chat.chat_gpt3" title="Permalink to this definition"></a></dt>
+<dd><div class="line-block">
+<div class="line">OpenAI GPT3模型单句对话</div>
+<div class="line">返回(True/False, 回答内容/错误信息)</div>
+</div>
+</dd></dl>
+
+</section>
+<section id="chat-gpt35">
+<h3>chat_gpt35<a class="headerlink" href="#chat-gpt35" title="Permalink to this heading"></a></h3>
+<dl class="py function">
+<dt class="sig sig-object py" id="dramkit.openai.openai_chat.chat_gpt35">
+<span class="sig-prename descclassname"><span class="pre">dramkit.openai.openai_chat.</span></span><span class="sig-name descname"><span class="pre">chat_gpt35</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">question</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">api_key</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.openai.openai_chat.chat_gpt35" title="Permalink to this definition"></a></dt>
+<dd><div class="line-block">
+<div class="line">OpenAI GPT3.5模型(ChatGPT)单句对话</div>
+<div class="line">返回(True/False, 回答内容/错误信息)</div>
+</div>
+</dd></dl>
+
+</section>
+<section id="id2">
+<h3>chat<a class="headerlink" href="#id2" title="Permalink to this heading"></a></h3>
+<dl class="py function">
+<dt class="sig sig-object py" id="dramkit.openai.openai_chat.chat">
+<span class="sig-prename descclassname"><span class="pre">dramkit.openai.openai_chat.</span></span><span class="sig-name descname"><span class="pre">chat</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">prompt</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">api_key</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">version</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'gpt3.5'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">save_path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">write_api_key</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.openai.openai_chat.chat" title="Permalink to this definition"></a></dt>
+<dd><p>OpenAI GPT模型单句对话</p>
+</dd></dl>
+
+</section>
+<section id="chat-con-gpt3">
+<h3>chat_con_gpt3<a class="headerlink" href="#chat-con-gpt3" title="Permalink to this heading"></a></h3>
+<dl class="py function">
+<dt class="sig sig-object py" id="dramkit.openai.openai_chat.chat_con_gpt3">
+<span class="sig-prename descclassname"><span class="pre">dramkit.openai.openai_chat.</span></span><span class="sig-name descname"><span class="pre">chat_con_gpt3</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">api_key</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.openai.openai_chat.chat_con_gpt3" title="Permalink to this definition"></a></dt>
+<dd><p>gpt3交互式连续对话</p>
+</dd></dl>
+
+</section>
+<section id="chat-con-gpt35">
+<h3>chat_con_gpt35<a class="headerlink" href="#chat-con-gpt35" title="Permalink to this heading"></a></h3>
+<dl class="py function">
+<dt class="sig sig-object py" id="dramkit.openai.openai_chat.chat_con_gpt35">
+<span class="sig-prename descclassname"><span class="pre">dramkit.openai.openai_chat.</span></span><span class="sig-name descname"><span class="pre">chat_con_gpt35</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">api_key</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.openai.openai_chat.chat_con_gpt35" title="Permalink to this definition"></a></dt>
+<dd><p>gpt3.5(ChatGPT)交互式连续对话</p>
+</dd></dl>
+
+</section>
+<section id="id3">
+<h3>chat_con<a class="headerlink" href="#id3" title="Permalink to this heading"></a></h3>
+<dl class="py function">
+<dt class="sig sig-object py" id="dramkit.openai.openai_chat.chat_con">
+<span class="sig-prename descclassname"><span class="pre">dramkit.openai.openai_chat.</span></span><span class="sig-name descname"><span class="pre">chat_con</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">api_key</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">version</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'gpt3.5'</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.openai.openai_chat.chat_con" title="Permalink to this definition"></a></dt>
+<dd><p>OpenAI GPT模型连续对话</p>
+</dd></dl>
+
+</section>
+</section>
+<section id="module-dramkit.openai.openai_chat_hs">
+<span id="openai-chat-hs"></span><h2>openai_chat_hs<a class="headerlink" href="#module-dramkit.openai.openai_chat_hs" title="Permalink to this heading"></a></h2>
+<section id="id4">
+<h3>ContinuousDialogueError<a class="headerlink" href="#id4" title="Permalink to this heading"></a></h3>
+<dl class="py class">
+<dt class="sig sig-object py" id="dramkit.openai.openai_chat_hs.ContinuousDialogueError">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">dramkit.openai.openai_chat_hs.</span></span><span class="sig-name descname"><span class="pre">ContinuousDialogueError</span></span><a class="headerlink" href="#dramkit.openai.openai_chat_hs.ContinuousDialogueError" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Exception</span></code></p>
+</dd></dl>
+
+</section>
+<section id="deprecationerror">
+<h3>DeprecationError<a class="headerlink" href="#deprecationerror" title="Permalink to this heading"></a></h3>
+<dl class="py class">
+<dt class="sig sig-object py" id="dramkit.openai.openai_chat_hs.DeprecationError">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">dramkit.openai.openai_chat_hs.</span></span><span class="sig-name descname"><span class="pre">DeprecationError</span></span><a class="headerlink" href="#dramkit.openai.openai_chat_hs.DeprecationError" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Exception</span></code></p>
+</dd></dl>
+
+</section>
+<section id="id5">
+<h3>OpenAIChat<a class="headerlink" href="#id5" title="Permalink to this heading"></a></h3>
+<dl class="py class">
+<dt class="sig sig-object py" id="dramkit.openai.openai_chat_hs.OpenAIChat">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">dramkit.openai.openai_chat_hs.</span></span><span class="sig-name descname"><span class="pre">OpenAIChat</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.openai.openai_chat_hs.OpenAIChat" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+</dd></dl>
+
+</section>
+<section id="id6">
+<h3>raise_con<a class="headerlink" href="#id6" title="Permalink to this heading"></a></h3>
+<dl class="py function">
+<dt class="sig sig-object py" id="dramkit.openai.openai_chat_hs.raise_con">
+<span class="sig-prename descclassname"><span class="pre">dramkit.openai.openai_chat_hs.</span></span><span class="sig-name descname"><span class="pre">raise_con</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.openai.openai_chat_hs.raise_con" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</section>
+<section id="id7">
+<h3>chat<a class="headerlink" href="#id7" title="Permalink to this heading"></a></h3>
+<dl class="py function">
+<dt class="sig sig-object py" id="dramkit.openai.openai_chat_hs.chat">
+<span class="sig-prename descclassname"><span class="pre">dramkit.openai.openai_chat_hs.</span></span><span class="sig-name descname"><span class="pre">chat</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">prompt</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.openai.openai_chat_hs.chat" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</section>
+<section id="chat-mem">
+<h3>chat_mem<a class="headerlink" href="#chat-mem" title="Permalink to this heading"></a></h3>
+<dl class="py function">
+<dt class="sig sig-object py" id="dramkit.openai.openai_chat_hs.chat_mem">
+<span class="sig-prename descclassname"><span class="pre">dramkit.openai.openai_chat_hs.</span></span><span class="sig-name descname"><span class="pre">chat_mem</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">prompt</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">reset</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.openai.openai_chat_hs.chat_mem" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</section>
+<section id="id8">
+<h3>chat_con<a class="headerlink" href="#id8" title="Permalink to this heading"></a></h3>
+<dl class="py function">
+<dt class="sig sig-object py" id="dramkit.openai.openai_chat_hs.chat_con">
+<span class="sig-prename descclassname"><span class="pre">dramkit.openai.openai_chat_hs.</span></span><span class="sig-name descname"><span class="pre">chat_con</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.openai.openai_chat_hs.chat_con" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="dramkit.logtools.html" class="btn btn-neutral float-left" title="logtools" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="dramkit.optimizer.html" class="btn btn-neutral float-right" title="optimizer" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2020-2023, YueYong Hu.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

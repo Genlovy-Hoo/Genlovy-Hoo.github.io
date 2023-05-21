@@ -1,6 +1,72 @@
 fintools
 =========
 
+backtest_timselection
+----------------------
+
+.. automodule:: finfactory.fintools.backtest_timselection
+
+.. currentmodule:: finfactory.fintools.backtest_timselection
+
+TimeSelectionBacktest
+^^^^^^^^^^^^^^^^^^^^^^
+
+.. autoclass:: finfactory.fintools.backtest_timselection.TimeSelectionBacktest
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+cal_sig_gains
+--------------
+
+.. automodule:: finfactory.fintools.cal_sig_gains
+
+.. currentmodule:: finfactory.fintools.cal_sig_gains
+
+cal_sig_gains
+^^^^^^^^^^^^^^
+
+.. autofunction:: finfactory.fintools.cal_sig_gains.cal_sig_gains
+
+get_open_gain_info
+^^^^^^^^^^^^^^^^^^^
+
+.. autofunction:: finfactory.fintools.cal_sig_gains.get_open_gain_info
+
+cal_sig_gains_bk
+-----------------
+
+.. automodule:: finfactory.fintools.cal_sig_gains_bk
+
+.. currentmodule:: finfactory.fintools.cal_sig_gains_bk
+
+cal_sig_gains
+^^^^^^^^^^^^^^
+
+.. autofunction:: finfactory.fintools.cal_sig_gains_bk.cal_sig_gains
+
+get_open_gain_info
+^^^^^^^^^^^^^^^^^^^
+
+.. autofunction:: finfactory.fintools.cal_sig_gains_bk.get_open_gain_info
+
+copy_line
+----------
+
+.. automodule:: finfactory.fintools.copy_line
+
+.. currentmodule:: finfactory.fintools.copy_line
+
+copy_line
+^^^^^^^^^^
+
+.. autofunction:: finfactory.fintools.copy_line.copy_line
+
+do_something
+^^^^^^^^^^^^^
+
+.. autofunction:: finfactory.fintools.copy_line.do_something
+
 fintools
 ---------
 
@@ -267,34 +333,132 @@ bs_rho
 
 .. autofunction:: finfactory.fintools.options.bs_rho
 
-report_date_align
-------------------
-
-.. automodule:: finfactory.fintools.report_date_align
-
-.. currentmodule:: finfactory.fintools.report_date_align
-
-get_tushare_api
-^^^^^^^^^^^^^^^^
-
-.. autofunction:: finfactory.fintools.report_date_align.get_tushare_api
-
-get_trade_date
-^^^^^^^^^^^^^^^
-
-.. autofunction:: finfactory.fintools.report_date_align.get_trade_date
-
-get_aligned_data
-^^^^^^^^^^^^^^^^^
-
-.. autofunction:: finfactory.fintools.report_date_align.get_aligned_data
-
 utils_chn
 ----------
 
 .. automodule:: finfactory.fintools.utils_chn
 
 .. currentmodule:: finfactory.fintools.utils_chn
+
+get_recent_finreport_date
+^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. autofunction:: finfactory.fintools.utils_chn.get_recent_finreport_date
+
+get_finreport_dates
+^^^^^^^^^^^^^^^^^^^^
+
+.. autofunction:: finfactory.fintools.utils_chn.get_finreport_dates
+
+get_next_nth_trade_date
+^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. autofunction:: finfactory.fintools.utils_chn.get_next_nth_trade_date
+
+get_recent_trade_date
+^^^^^^^^^^^^^^^^^^^^^^
+
+.. autofunction:: finfactory.fintools.utils_chn.get_recent_trade_date
+
+get_trade_dates
+^^^^^^^^^^^^^^^^
+
+.. autofunction:: finfactory.fintools.utils_chn.get_trade_dates
+
+get_num_trade_dates
+^^^^^^^^^^^^^^^^^^^^
+
+.. autofunction:: finfactory.fintools.utils_chn.get_num_trade_dates
+
+is_period_edge_tradeday
+^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. autofunction:: finfactory.fintools.utils_chn.is_period_edge_tradeday
+
+is_weekend_tradeday
+^^^^^^^^^^^^^^^^^^^^
+
+.. autofunction:: finfactory.fintools.utils_chn.is_weekend_tradeday
+
+is_weekstart_tradeday
+^^^^^^^^^^^^^^^^^^^^^^
+
+.. autofunction:: finfactory.fintools.utils_chn.is_weekstart_tradeday
+
+is_monthend_tradeday
+^^^^^^^^^^^^^^^^^^^^^
+
+.. autofunction:: finfactory.fintools.utils_chn.is_monthend_tradeday
+
+is_monthstart_tradeday
+^^^^^^^^^^^^^^^^^^^^^^^
+
+.. autofunction:: finfactory.fintools.utils_chn.is_monthstart_tradeday
+
+is_quarterend_tradeday
+^^^^^^^^^^^^^^^^^^^^^^^
+
+.. autofunction:: finfactory.fintools.utils_chn.is_quarterend_tradeday
+
+is_quarterstart_tradeday
+^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. autofunction:: finfactory.fintools.utils_chn.is_quarterstart_tradeday
+
+is_yearend_tradeday
+^^^^^^^^^^^^^^^^^^^^
+
+.. autofunction:: finfactory.fintools.utils_chn.is_yearend_tradeday
+
+is_yearstart_tradeday
+^^^^^^^^^^^^^^^^^^^^^^
+
+.. autofunction:: finfactory.fintools.utils_chn.is_yearstart_tradeday
+
+is_periods_edge_tradeday
+^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. autofunction:: finfactory.fintools.utils_chn.is_periods_edge_tradeday
+
+get_all_trade_dates
+^^^^^^^^^^^^^^^^^^^^
+
+.. autofunction:: finfactory.fintools.utils_chn.get_all_trade_dates
+
+add_trade_dates_end
+^^^^^^^^^^^^^^^^^^^^
+
+.. autofunction:: finfactory.fintools.utils_chn.add_trade_dates_end
+
+add_trade_dates_start
+^^^^^^^^^^^^^^^^^^^^^^
+
+.. autofunction:: finfactory.fintools.utils_chn.add_trade_dates_start
+
+add_trade_dates_pre
+^^^^^^^^^^^^^^^^^^^^
+
+.. autofunction:: finfactory.fintools.utils_chn.add_trade_dates_pre
+
+add_trade_dates_next
+^^^^^^^^^^^^^^^^^^^^^
+
+.. autofunction:: finfactory.fintools.utils_chn.add_trade_dates_next
+
+get_dates_cond
+^^^^^^^^^^^^^^^
+
+.. autofunction:: finfactory.fintools.utils_chn.get_dates_cond
+
+df_freq_low2high
+^^^^^^^^^^^^^^^^^
+
+.. autofunction:: finfactory.fintools.utils_chn.df_freq_low2high
+
+get_full_components
+^^^^^^^^^^^^^^^^^^^^
+
+.. autofunction:: finfactory.fintools.utils_chn.get_full_components
 
 merge_minute_candle
 ^^^^^^^^^^^^^^^^^^^^
@@ -326,30 +490,10 @@ trade_fee_Astock
 
 .. autofunction:: finfactory.fintools.utils_chn.trade_fee_Astock
 
-is_trade_day
-^^^^^^^^^^^^^
+check_fill_trade_dates
+^^^^^^^^^^^^^^^^^^^^^^^
 
-.. autofunction:: finfactory.fintools.utils_chn.is_trade_day
-
-get_recent_trade_date
-^^^^^^^^^^^^^^^^^^^^^^
-
-.. autofunction:: finfactory.fintools.utils_chn.get_recent_trade_date
-
-get_next_nth_trade_date
-^^^^^^^^^^^^^^^^^^^^^^^^
-
-.. autofunction:: finfactory.fintools.utils_chn.get_next_nth_trade_date
-
-get_trade_dates
-^^^^^^^^^^^^^^^^
-
-.. autofunction:: finfactory.fintools.utils_chn.get_trade_dates
-
-get_num_trade_dates
-^^^^^^^^^^^^^^^^^^^^
-
-.. autofunction:: finfactory.fintools.utils_chn.get_num_trade_dates
+.. autofunction:: finfactory.fintools.utils_chn.check_fill_trade_dates
 
 utils_gains
 ------------
@@ -453,6 +597,11 @@ cal_sharpe
 
 .. autofunction:: finfactory.fintools.utils_gains.cal_sharpe
 
+cal_sortino
+^^^^^^^^^^^^
+
+.. autofunction:: finfactory.fintools.utils_gains.cal_sortino
+
 cal_sharpe2
 ^^^^^^^^^^^^
 
@@ -547,20 +696,3 @@ get_yield_curve2
 ^^^^^^^^^^^^^^^^^
 
 .. autofunction:: finfactory.fintools.utils_gains.get_yield_curve2
-
-zigzag
--------
-
-.. automodule:: finfactory.fintools.zigzag
-
-.. currentmodule:: finfactory.fintools.zigzag
-
-zigzag
-^^^^^^^
-
-.. autofunction:: finfactory.fintools.zigzag.zigzag
-
-plot_candle_zz
-^^^^^^^^^^^^^^^
-
-.. autofunction:: finfactory.fintools.zigzag.plot_candle_zz

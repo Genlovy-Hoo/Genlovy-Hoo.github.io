@@ -1,0 +1,166 @@
+openai
+=======
+
+aiedu_chat
+-----------
+
+.. automodule:: dramkit.openai.aiedu_chat
+
+.. currentmodule:: dramkit.openai.aiedu_chat
+
+OpenAIChat
+^^^^^^^^^^^
+
+.. autoclass:: dramkit.openai.aiedu_chat.OpenAIChat
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+chat
+^^^^^
+
+.. autofunction:: dramkit.openai.aiedu_chat.chat
+
+chat_con
+^^^^^^^^^
+
+.. autofunction:: dramkit.openai.aiedu_chat.chat_con
+
+openai_chat
+------------
+
+.. automodule:: dramkit.openai.openai_chat
+
+.. currentmodule:: dramkit.openai.openai_chat
+
+ContinuousDialogueError
+^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. autoclass:: dramkit.openai.openai_chat.ContinuousDialogueError
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+OpenAIChat
+^^^^^^^^^^^
+
+.. autoclass:: dramkit.openai.openai_chat.OpenAIChat
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+load_config
+^^^^^^^^^^^^
+
+.. autofunction:: dramkit.openai.openai_chat.load_config
+
+raise_con
+^^^^^^^^^^
+
+.. autofunction:: dramkit.openai.openai_chat.raise_con
+
+secret
+^^^^^^^
+
+.. autofunction:: dramkit.openai.openai_chat.secret
+
+unsecret
+^^^^^^^^^
+
+.. autofunction:: dramkit.openai.openai_chat.unsecret
+
+get_api_key_url
+^^^^^^^^^^^^^^^^
+
+.. autofunction:: dramkit.openai.openai_chat.get_api_key_url
+
+get_api_key
+^^^^^^^^^^^^
+
+.. autofunction:: dramkit.openai.openai_chat.get_api_key
+
+get_embedding
+^^^^^^^^^^^^^^
+
+.. autofunction:: dramkit.openai.openai_chat.get_embedding
+
+chat_gpt3
+^^^^^^^^^^
+
+.. autofunction:: dramkit.openai.openai_chat.chat_gpt3
+
+chat_gpt35
+^^^^^^^^^^^
+
+.. autofunction:: dramkit.openai.openai_chat.chat_gpt35
+
+chat
+^^^^^
+
+.. autofunction:: dramkit.openai.openai_chat.chat
+
+chat_con_gpt3
+^^^^^^^^^^^^^^
+
+.. autofunction:: dramkit.openai.openai_chat.chat_con_gpt3
+
+chat_con_gpt35
+^^^^^^^^^^^^^^^
+
+.. autofunction:: dramkit.openai.openai_chat.chat_con_gpt35
+
+chat_con
+^^^^^^^^^
+
+.. autofunction:: dramkit.openai.openai_chat.chat_con
+
+openai_chat_hs
+---------------
+
+.. automodule:: dramkit.openai.openai_chat_hs
+
+.. currentmodule:: dramkit.openai.openai_chat_hs
+
+ContinuousDialogueError
+^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. autoclass:: dramkit.openai.openai_chat_hs.ContinuousDialogueError
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+DeprecationError
+^^^^^^^^^^^^^^^^^
+
+.. autoclass:: dramkit.openai.openai_chat_hs.DeprecationError
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+OpenAIChat
+^^^^^^^^^^^
+
+.. autoclass:: dramkit.openai.openai_chat_hs.OpenAIChat
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+raise_con
+^^^^^^^^^^
+
+.. autofunction:: dramkit.openai.openai_chat_hs.raise_con
+
+chat
+^^^^^
+
+.. autofunction:: dramkit.openai.openai_chat_hs.chat
+
+chat_mem
+^^^^^^^^^
+
+.. autofunction:: dramkit.openai.openai_chat_hs.chat_mem
+
+chat_con
+^^^^^^^^^
+
+.. autofunction:: dramkit.openai.openai_chat_hs.chat_con

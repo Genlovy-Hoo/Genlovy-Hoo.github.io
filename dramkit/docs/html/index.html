@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Welcome to DramKit’s documentation! &mdash; DramKit 0.3.15 documentation</title>
+  <title>Welcome to DramKit’s documentation! &mdash; DramKit 0.5.42 documentation</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <!--[if lt IE 9]>
@@ -14,6 +14,7 @@
         <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
         <script src="_static/jquery.js"></script>
         <script src="_static/underscore.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="_static/doctools.js"></script>
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
@@ -26,11 +27,15 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-            <a href="#" class="icon icon-home"> DramKit
+
+          
+          
+          <a href="#" class="icon icon-home">
+            DramKit
           </a>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
@@ -44,6 +49,7 @@
 <li class="toctree-l1"><a class="reference internal" href="dramkit.datsci.html">datsci</a></li>
 <li class="toctree-l1"><a class="reference internal" href="dramkit.find_addends.html">find_addends</a></li>
 <li class="toctree-l1"><a class="reference internal" href="dramkit.logtools.html">logtools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dramkit.openai.html">openai</a></li>
 <li class="toctree-l1"><a class="reference internal" href="dramkit.optimizer.html">optimizer</a></li>
 <li class="toctree-l1"><a class="reference internal" href="dramkit.other.html">other</a></li>
 <li class="toctree-l1"><a class="reference internal" href="dramkit.plottools.html">plottools</a></li>
@@ -68,8 +74,8 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="#" class="icon icon-home"></a> &raquo;</li>
-      <li>Welcome to DramKit’s documentation!</li>
+      <li><a href="#" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Welcome to DramKit’s documentation!</li>
       <li class="wy-breadcrumbs-aside">
             <a href="_sources/index.rst.txt" rel="nofollow"> View page source</a>
       </li>
@@ -80,11 +86,12 @@
            <div itemprop="articleBody">
              
   <section id="welcome-to-dramkit-s-documentation">
-<h1>Welcome to DramKit’s documentation!<a class="headerlink" href="#welcome-to-dramkit-s-documentation" title="Permalink to this headline"></a></h1>
+<h1>Welcome to DramKit’s documentation!<a class="headerlink" href="#welcome-to-dramkit-s-documentation" title="Permalink to this heading"></a></h1>
 <div class="toctree-wrapper compound">
 <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="dramkit.html">dramkit</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="dramkit.html#module-dramkit.cryptotools">cryptotools</a></li>
 <li class="toctree-l2"><a class="reference internal" href="dramkit.html#module-dramkit.datetimetools">datetimetools</a></li>
 <li class="toctree-l2"><a class="reference internal" href="dramkit.html#module-dramkit.gentools">gentools</a></li>
 <li class="toctree-l2"><a class="reference internal" href="dramkit.html#module-dramkit.install_check">install_check</a></li>
@@ -125,6 +132,7 @@
 <li class="toctree-l2"><a class="reference internal" href="dramkit.datsci.html#module-dramkit.datsci.topsis">topsis</a></li>
 <li class="toctree-l2"><a class="reference internal" href="dramkit.datsci.html#module-dramkit.datsci.utils_lgb">utils_lgb</a></li>
 <li class="toctree-l2"><a class="reference internal" href="dramkit.datsci.html#module-dramkit.datsci.utils_ml">utils_ml</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dramkit.datsci.html#module-dramkit.datsci.zigzag">zigzag</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="dramkit.find_addends.html">find_addends</a><ul>
@@ -141,6 +149,12 @@
 <li class="toctree-l2"><a class="reference internal" href="dramkit.logtools.html#module-dramkit.logtools.logger_rotating">logger_rotating</a></li>
 <li class="toctree-l2"><a class="reference internal" href="dramkit.logtools.html#module-dramkit.logtools.logger_timedrotating">logger_timedrotating</a></li>
 <li class="toctree-l2"><a class="reference internal" href="dramkit.logtools.html#module-dramkit.logtools.utils_logger">utils_logger</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="dramkit.openai.html">openai</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="dramkit.openai.html#module-dramkit.openai.aiedu_chat">aiedu_chat</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dramkit.openai.html#module-dramkit.openai.openai_chat">openai_chat</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dramkit.openai.html#module-dramkit.openai.openai_chat_hs">openai_chat_hs</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="dramkit.optimizer.html">optimizer</a><ul>
@@ -186,11 +200,14 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="dramkit.speedup.html">speedup</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="dramkit.speedup.html#module-dramkit.speedup.multi_process">multi_process</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dramkit.speedup.html#module-dramkit.speedup.iotools_tmp">iotools_tmp</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dramkit.speedup.html#module-dramkit.speedup.multi_process_concurrent">multi_process_concurrent</a></li>
 <li class="toctree-l2"><a class="reference internal" href="dramkit.speedup.html#module-dramkit.speedup.multi_thread">multi_thread</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="dramkit.sqltools.html">sqltools</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="dramkit.sqltools.html#module-dramkit.sqltools.cxoracle">cxoracle</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dramkit.sqltools.html#module-dramkit.sqltools.py_hive">py_hive</a></li>
 <li class="toctree-l2"><a class="reference internal" href="dramkit.sqltools.html#module-dramkit.sqltools.py_mysql">py_mysql</a></li>
 <li class="toctree-l2"><a class="reference internal" href="dramkit.sqltools.html#module-dramkit.sqltools.sql_alchemy">sql_alchemy</a></li>
 </ul>
@@ -207,7 +224,7 @@
 </div>
 </section>
 <section id="indices-and-tables">
-<h1>Indices and tables<a class="headerlink" href="#indices-and-tables" title="Permalink to this headline"></a></h1>
+<h1>Indices and tables<a class="headerlink" href="#indices-and-tables" title="Permalink to this heading"></a></h1>
 <ul class="simple">
 <li><p><a class="reference internal" href="genindex.html"><span class="std std-ref">Index</span></a></p></li>
 <li><p><a class="reference internal" href="py-modindex.html"><span class="std std-ref">Module Index</span></a></p></li>
@@ -224,7 +241,7 @@
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2020-2022, YueYong Hu.</p>
+    <p>&#169; Copyright 2020-2023, YueYong Hu.</p>
   </div>
 
   Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a

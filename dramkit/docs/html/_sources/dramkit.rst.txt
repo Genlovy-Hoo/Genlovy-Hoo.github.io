@@ -1,6 +1,68 @@
 dramkit
 ========
 
+cryptotools
+------------
+
+.. automodule:: dramkit.cryptotools
+
+.. currentmodule:: dramkit.cryptotools
+
+expand
+^^^^^^^
+
+.. autofunction:: dramkit.cryptotools.expand
+
+en_aes_cbc
+^^^^^^^^^^^
+
+.. autofunction:: dramkit.cryptotools.en_aes_cbc
+
+de_aes_cbc
+^^^^^^^^^^^
+
+.. autofunction:: dramkit.cryptotools.de_aes_cbc
+
+en_aes_ecb
+^^^^^^^^^^^
+
+.. autofunction:: dramkit.cryptotools.en_aes_ecb
+
+de_aes_ecb
+^^^^^^^^^^^
+
+.. autofunction:: dramkit.cryptotools.de_aes_ecb
+
+en_base64
+^^^^^^^^^^
+
+.. autofunction:: dramkit.cryptotools.en_base64
+
+de_base64
+^^^^^^^^^^
+
+.. autofunction:: dramkit.cryptotools.de_base64
+
+en_base64_url
+^^^^^^^^^^^^^^
+
+.. autofunction:: dramkit.cryptotools.en_base64_url
+
+de_base64_url
+^^^^^^^^^^^^^^
+
+.. autofunction:: dramkit.cryptotools.de_base64_url
+
+gen_random_token
+^^^^^^^^^^^^^^^^^
+
+.. autofunction:: dramkit.cryptotools.gen_random_token
+
+gen_random_tokens
+^^^^^^^^^^^^^^^^^^
+
+.. autofunction:: dramkit.cryptotools.gen_random_tokens
+
 datetimetools
 --------------
 
@@ -17,6 +79,11 @@ datetime2str
 ^^^^^^^^^^^^^
 
 .. autofunction:: dramkit.datetimetools.datetime2str
+
+dtseries2str
+^^^^^^^^^^^^^
+
+.. autofunction:: dramkit.datetimetools.dtseries2str
 
 get_datetime_strformat
 ^^^^^^^^^^^^^^^^^^^^^^^
@@ -43,15 +110,20 @@ get_datetime_format
 
 .. autofunction:: dramkit.datetimetools.get_datetime_format
 
-copy_format
-^^^^^^^^^^^^
+copy_format0
+^^^^^^^^^^^^^
 
-.. autofunction:: dramkit.datetimetools.copy_format
+.. autofunction:: dramkit.datetimetools.copy_format0
 
 x2datetime
 ^^^^^^^^^^^
 
 .. autofunction:: dramkit.datetimetools.x2datetime
+
+copy_format
+^^^^^^^^^^^^
+
+.. autofunction:: dramkit.datetimetools.copy_format
 
 time_add
 ^^^^^^^^^
@@ -108,10 +180,30 @@ get_quarter
 
 .. autofunction:: dramkit.datetimetools.get_quarter
 
+get_quarter_start_end_by_yq
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. autofunction:: dramkit.datetimetools.get_quarter_start_end_by_yq
+
+get_quarter_start_end_by_date
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. autofunction:: dramkit.datetimetools.get_quarter_start_end_by_date
+
 today_quarter
 ^^^^^^^^^^^^^^
 
 .. autofunction:: dramkit.datetimetools.today_quarter
+
+get_2part_next
+^^^^^^^^^^^^^^^
+
+.. autofunction:: dramkit.datetimetools.get_2part_next
+
+get_pre_quarter
+^^^^^^^^^^^^^^^^
+
+.. autofunction:: dramkit.datetimetools.get_pre_quarter
 
 get_dayofweek
 ^^^^^^^^^^^^^^
@@ -122,6 +214,21 @@ get_dayofyear
 ^^^^^^^^^^^^^^
 
 .. autofunction:: dramkit.datetimetools.get_dayofyear
+
+get_month_end
+^^^^^^^^^^^^^^
+
+.. autofunction:: dramkit.datetimetools.get_month_end
+
+get_next_nmonth_start_end
+^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. autofunction:: dramkit.datetimetools.get_next_nmonth_start_end
+
+get_next_nquarter_start_end
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. autofunction:: dramkit.datetimetools.get_next_nquarter_start_end
 
 get_date_format
 ^^^^^^^^^^^^^^^^
@@ -228,14 +335,6 @@ TimeRecoder
     :undoc-members:
     :show-inheritance:
 
-StructureObject
-^^^^^^^^^^^^^^^^
-
-.. autoclass:: dramkit.gentools.StructureObject
-    :members:
-    :undoc-members:
-    :show-inheritance:
-
 DirtModifyError
 ^^^^^^^^^^^^^^^^
 
@@ -244,20 +343,49 @@ DirtModifyError
     :undoc-members:
     :show-inheritance:
 
-run_func_with_timeout
-^^^^^^^^^^^^^^^^^^^^^^
+GenObject
+^^^^^^^^^^
 
-.. autofunction:: dramkit.gentools.run_func_with_timeout
+.. autoclass:: dramkit.gentools.GenObject
+    :members:
+    :undoc-members:
+    :show-inheritance:
 
-get_func_arg_names
-^^^^^^^^^^^^^^^^^^^
+DeprecatedError
+^^^^^^^^^^^^^^^^
 
-.. autofunction:: dramkit.gentools.get_func_arg_names
+.. autoclass:: dramkit.gentools.DeprecatedError
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+StructureObject
+^^^^^^^^^^^^^^^^
+
+.. autoclass:: dramkit.gentools.StructureObject
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+run_func_with_timeout_thread
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. autofunction:: dramkit.gentools.run_func_with_timeout_thread
+
+with_timeout_thread
+^^^^^^^^^^^^^^^^^^^^
+
+.. autofunction:: dramkit.gentools.with_timeout_thread
 
 try_repeat_run
 ^^^^^^^^^^^^^^^
 
 .. autofunction:: dramkit.gentools.try_repeat_run
+
+capture_print
+^^^^^^^^^^^^^^
+
+.. autofunction:: dramkit.gentools.capture_print
 
 log_used_time
 ^^^^^^^^^^^^^^
@@ -269,10 +397,20 @@ print_used_time
 
 .. autofunction:: dramkit.gentools.print_used_time
 
+func_res_process_decorator
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. autofunction:: dramkit.gentools.func_res_process_decorator
+
 func_runtime_test
 ^^^^^^^^^^^^^^^^^^
 
 .. autofunction:: dramkit.gentools.func_runtime_test
+
+check_list_arg
+^^^^^^^^^^^^^^^
+
+.. autofunction:: dramkit.gentools.check_list_arg
 
 get_update_kwargs
 ^^^^^^^^^^^^^^^^^^
@@ -379,10 +517,35 @@ df_na2value
 
 .. autofunction:: dramkit.gentools.df_na2value
 
+copy_df_structure
+^^^^^^^^^^^^^^^^^^
+
+.. autofunction:: dramkit.gentools.copy_df_structure
+
+get_tmp_new
+^^^^^^^^^^^^
+
+.. autofunction:: dramkit.gentools.get_tmp_new
+
+get_tmp_col
+^^^^^^^^^^^^
+
+.. autofunction:: dramkit.gentools.get_tmp_col
+
 merge_df
 ^^^^^^^^^
 
 .. autofunction:: dramkit.gentools.merge_df
+
+update_df
+^^^^^^^^^^
+
+.. autofunction:: dramkit.gentools.update_df
+
+dfs_concat_axis1
+^^^^^^^^^^^^^^^^^
+
+.. autofunction:: dramkit.gentools.dfs_concat_axis1
 
 cut_df_by_con_val
 ^^^^^^^^^^^^^^^^^^
@@ -439,6 +602,16 @@ cal_pct
 
 .. autofunction:: dramkit.gentools.cal_pct
 
+pct_change
+^^^^^^^^^^^
+
+.. autofunction:: dramkit.gentools.pct_change
+
+s1divs2
+^^^^^^^^
+
+.. autofunction:: dramkit.gentools.s1divs2
+
 min_com_multer
 ^^^^^^^^^^^^^^^
 
@@ -469,10 +642,20 @@ df_cols2rows
 
 .. autofunction:: dramkit.gentools.df_cols2rows
 
-get_first_appear_index
+get_full_df
+^^^^^^^^^^^^
+
+.. autofunction:: dramkit.gentools.get_full_df
+
+get_full_components_df
 ^^^^^^^^^^^^^^^^^^^^^^^
 
-.. autofunction:: dramkit.gentools.get_first_appear_index
+.. autofunction:: dramkit.gentools.get_full_components_df
+
+get_first_appear
+^^^^^^^^^^^^^^^^^
+
+.. autofunction:: dramkit.gentools.get_first_appear
 
 get_appear_order
 ^^^^^^^^^^^^^^^^^
@@ -499,10 +682,20 @@ count_index
 
 .. autofunction:: dramkit.gentools.count_index
 
+get_all_turns
+^^^^^^^^^^^^^^
+
+.. autofunction:: dramkit.gentools.get_all_turns
+
 group_shift
 ^^^^^^^^^^^^
 
 .. autofunction:: dramkit.gentools.group_shift
+
+rolling_corr
+^^^^^^^^^^^^^
+
+.. autofunction:: dramkit.gentools.rolling_corr
 
 group_fillna
 ^^^^^^^^^^^^^
@@ -544,6 +737,16 @@ link_lists
 
 .. autofunction:: dramkit.gentools.link_lists
 
+get_lists_inter
+^^^^^^^^^^^^^^^^
+
+.. autofunction:: dramkit.gentools.get_lists_inter
+
+list_eq
+^^^^^^^^
+
+.. autofunction:: dramkit.gentools.list_eq
+
 get_num_decimal
 ^^^^^^^^^^^^^^^^
 
@@ -558,6 +761,56 @@ sort_dict
 ^^^^^^^^^^
 
 .. autofunction:: dramkit.gentools.sort_dict
+
+insert_into_list
+^^^^^^^^^^^^^^^^^
+
+.. autofunction:: dramkit.gentools.insert_into_list
+
+count_list
+^^^^^^^^^^^
+
+.. autofunction:: dramkit.gentools.count_list
+
+tmprint
+^^^^^^^^
+
+.. autofunction:: dramkit.gentools.tmprint
+
+url2chn
+^^^^^^^^
+
+.. autofunction:: dramkit.gentools.url2chn
+
+replace_con_blank
+^^^^^^^^^^^^^^^^^^
+
+.. autofunction:: dramkit.gentools.replace_con_blank
+
+change_dict_key
+^^^^^^^^^^^^^^^^
+
+.. autofunction:: dramkit.gentools.change_dict_key
+
+get_func_arg_info
+^^^^^^^^^^^^^^^^^^
+
+.. autofunction:: dramkit.gentools.get_func_arg_info
+
+parse_args
+^^^^^^^^^^^
+
+.. autofunction:: dramkit.gentools.parse_args
+
+gen_args_praser
+^^^^^^^^^^^^^^^^
+
+.. autofunction:: dramkit.gentools.gen_args_praser
+
+get_topn_names
+^^^^^^^^^^^^^^^
+
+.. autofunction:: dramkit.gentools.get_topn_names
 
 install_check
 --------------
@@ -577,6 +830,29 @@ iotools
 .. automodule:: dramkit.iotools
 
 .. currentmodule:: dramkit.iotools
+
+GetInputTimeoutError
+^^^^^^^^^^^^^^^^^^^^^
+
+.. autoclass:: dramkit.iotools.GetInputTimeoutError
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+get_input_timeout_win
+^^^^^^^^^^^^^^^^^^^^^^
+
+.. autofunction:: dramkit.iotools.get_input_timeout_win
+
+get_input_timeout_notwin
+^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. autofunction:: dramkit.iotools.get_input_timeout_notwin
+
+get_input_timeout
+^^^^^^^^^^^^^^^^^^
+
+.. autofunction:: dramkit.iotools.get_input_timeout
 
 get_input_with_timeout
 ^^^^^^^^^^^^^^^^^^^^^^^
@@ -633,10 +909,30 @@ load_text
 
 .. autofunction:: dramkit.iotools.load_text
 
+df2file_pd
+^^^^^^^^^^^
+
+.. autofunction:: dramkit.iotools.df2file_pd
+
+process_df_pd_big
+^^^^^^^^^^^^^^^^^^
+
+.. autofunction:: dramkit.iotools.process_df_pd_big
+
+load_df_pd
+^^^^^^^^^^^
+
+.. autofunction:: dramkit.iotools.load_df_pd
+
 load_csv
 ^^^^^^^^^
 
 .. autofunction:: dramkit.iotools.load_csv
+
+load_dfs_pd
+^^^^^^^^^^^^
+
+.. autofunction:: dramkit.iotools.load_dfs_pd
 
 load_csvs
 ^^^^^^^^^^
@@ -648,20 +944,45 @@ load_csvs_dir
 
 .. autofunction:: dramkit.iotools.load_csvs_dir
 
-cut_csv_by_maxline
+load_excels
+^^^^^^^^^^^^
+
+.. autofunction:: dramkit.iotools.load_excels
+
+archive_df
+^^^^^^^^^^^
+
+.. autofunction:: dramkit.iotools.archive_df
+
+add_ext_to_filename
+^^^^^^^^^^^^^^^^^^^^
+
+.. autofunction:: dramkit.iotools.add_ext_to_filename
+
+cut_dffile_by_maxline
+^^^^^^^^^^^^^^^^^^^^^^
+
+.. autofunction:: dramkit.iotools.cut_dffile_by_maxline
+
+get_fpath_ext_num
+^^^^^^^^^^^^^^^^^^
+
+.. autofunction:: dramkit.iotools.get_fpath_ext_num
+
+cut_bigdffile_by_maxline
+^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. autofunction:: dramkit.iotools.cut_bigdffile_by_maxline
+
+cut_dffile_by_year
 ^^^^^^^^^^^^^^^^^^^
 
-.. autofunction:: dramkit.iotools.cut_csv_by_maxline
+.. autofunction:: dramkit.iotools.cut_dffile_by_year
 
 cut_csv_by_year
 ^^^^^^^^^^^^^^^^
 
 .. autofunction:: dramkit.iotools.cut_csv_by_year
-
-load_excels
-^^^^^^^^^^^^
-
-.. autofunction:: dramkit.iotools.load_excels
 
 clear_text_file
 ^^^^^^^^^^^^^^^^
@@ -738,6 +1059,16 @@ make_dir
 
 .. autofunction:: dramkit.iotools.make_dir
 
+make_file_dir
+^^^^^^^^^^^^^^
+
+.. autofunction:: dramkit.iotools.make_file_dir
+
+make_path_dir
+^^^^^^^^^^^^^^
+
+.. autofunction:: dramkit.iotools.make_path_dir
+
 get_last_change_time
 ^^^^^^^^^^^^^^^^^^^^^
 
@@ -783,6 +1114,16 @@ get_mac_address
 
 .. autofunction:: dramkit.iotools.get_mac_address
 
+get_ipconfig_all_win
+^^^^^^^^^^^^^^^^^^^^^
+
+.. autofunction:: dramkit.iotools.get_ipconfig_all_win
+
+get_ipconfig_win
+^^^^^^^^^^^^^^^^^
+
+.. autofunction:: dramkit.iotools.get_ipconfig_win
+
 get_hardware_ids
 ^^^^^^^^^^^^^^^^^
 
@@ -802,6 +1143,11 @@ get_ip_public
 ^^^^^^^^^^^^^^
 
 .. autofunction:: dramkit.iotools.get_ip_public
+
+get_ip_public2
+^^^^^^^^^^^^^^^
+
+.. autofunction:: dramkit.iotools.get_ip_public2
 
 get_tasks_info_win
 ^^^^^^^^^^^^^^^^^^^
@@ -878,7 +1224,47 @@ find_files_include_str
 
 .. autofunction:: dramkit.iotools.find_files_include_str
 
+find_dir_include_str
+^^^^^^^^^^^^^^^^^^^^^
+
+.. autofunction:: dramkit.iotools.find_dir_include_str
+
+replace_str_in_file
+^^^^^^^^^^^^^^^^^^^^
+
+.. autofunction:: dramkit.iotools.replace_str_in_file
+
+replace_str_in_files
+^^^^^^^^^^^^^^^^^^^^^
+
+.. autofunction:: dramkit.iotools.replace_str_in_files
+
+get_pip_pkgs_win_deprecated
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. autofunction:: dramkit.iotools.get_pip_pkgs_win_deprecated
+
 get_pip_pkgs_win
 ^^^^^^^^^^^^^^^^^
 
 .. autofunction:: dramkit.iotools.get_pip_pkgs_win
+
+get_filedir
+^^^^^^^^^^^^
+
+.. autofunction:: dramkit.iotools.get_filedir
+
+get_filename
+^^^^^^^^^^^^^
+
+.. autofunction:: dramkit.iotools.get_filename
+
+get_file_ext_type
+^^^^^^^^^^^^^^^^^^
+
+.. autofunction:: dramkit.iotools.get_file_ext_type
+
+get_parent_path
+^^^^^^^^^^^^^^^^
+
+.. autofunction:: dramkit.iotools.get_parent_path

@@ -11,6 +11,7 @@ Welcome to DramKit's documentation!
    datsci <dramkit.datsci>
    find_addends <dramkit.find_addends>
    logtools <dramkit.logtools>
+   openai <dramkit.openai>
    optimizer <dramkit.optimizer>
    other <dramkit.other>
    plottools <dramkit.plottools>

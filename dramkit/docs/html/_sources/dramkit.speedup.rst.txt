@@ -1,17 +1,44 @@
 speedup
 ========
 
-multi_process
---------------
+iotools_tmp
+------------
 
-.. automodule:: dramkit.speedup.multi_process
+.. automodule:: dramkit.speedup.iotools_tmp
 
-.. currentmodule:: dramkit.speedup.multi_process
+.. currentmodule:: dramkit.speedup.iotools_tmp
+
+run_func_with_timeout_process_notwin
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. autofunction:: dramkit.speedup.iotools_tmp.run_func_with_timeout_process_notwin
+
+with_timeout_process_notwin
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. autofunction:: dramkit.speedup.iotools_tmp.with_timeout_process_notwin
+
+func
+^^^^^
+
+.. autofunction:: dramkit.speedup.iotools_tmp.func
+
+test
+^^^^^
+
+.. autofunction:: dramkit.speedup.iotools_tmp.test
+
+multi_process_concurrent
+-------------------------
+
+.. automodule:: dramkit.speedup.multi_process_concurrent
+
+.. currentmodule:: dramkit.speedup.multi_process_concurrent
 
 multi_process_concurrent
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. autofunction:: dramkit.speedup.multi_process.multi_process_concurrent
+.. autofunction:: dramkit.speedup.multi_process_concurrent.multi_process_concurrent
 
 multi_thread
 -------------

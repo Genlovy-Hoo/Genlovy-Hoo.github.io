@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>chncal &mdash; DramKit 0.3.15 documentation</title>
+  <title>chncal &mdash; DramKit 0.5.42 documentation</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <!--[if lt IE 9]>
@@ -14,6 +14,7 @@
         <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
         <script src="_static/jquery.js"></script>
         <script src="_static/underscore.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="_static/doctools.js"></script>
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
@@ -27,11 +28,15 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-            <a href="index.html" class="icon icon-home"> DramKit
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            DramKit
           </a>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
@@ -95,6 +100,7 @@
 <li class="toctree-l1"><a class="reference internal" href="dramkit.datsci.html">datsci</a></li>
 <li class="toctree-l1"><a class="reference internal" href="dramkit.find_addends.html">find_addends</a></li>
 <li class="toctree-l1"><a class="reference internal" href="dramkit.logtools.html">logtools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dramkit.openai.html">openai</a></li>
 <li class="toctree-l1"><a class="reference internal" href="dramkit.optimizer.html">optimizer</a></li>
 <li class="toctree-l1"><a class="reference internal" href="dramkit.other.html">other</a></li>
 <li class="toctree-l1"><a class="reference internal" href="dramkit.plottools.html">plottools</a></li>
@@ -119,8 +125,8 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
-      <li>chncal</li>
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">chncal</li>
       <li class="wy-breadcrumbs-aside">
             <a href="_sources/dramkit.chncal.rst.txt" rel="nofollow"> View page source</a>
       </li>
@@ -131,18 +137,18 @@
            <div itemprop="articleBody">
              
   <section id="chncal">
-<h1>chncal<a class="headerlink" href="#chncal" title="Permalink to this headline"></a></h1>
+<h1>chncal<a class="headerlink" href="#chncal" title="Permalink to this heading"></a></h1>
 <section id="module-dramkit.chncal.apis">
-<span id="apis"></span><h2>apis<a class="headerlink" href="#module-dramkit.chncal.apis" title="Permalink to this headline"></a></h2>
+<span id="apis"></span><h2>apis<a class="headerlink" href="#module-dramkit.chncal.apis" title="Permalink to this heading"></a></h2>
 <section id="is-holiday">
-<h3>is_holiday<a class="headerlink" href="#is-holiday" title="Permalink to this headline"></a></h3>
+<h3>is_holiday<a class="headerlink" href="#is-holiday" title="Permalink to this heading"></a></h3>
 <dl class="py function">
 <dt class="sig sig-object py" id="dramkit.chncal.apis.is_holiday">
 <span class="sig-prename descclassname"><span class="pre">dramkit.chncal.apis.</span></span><span class="sig-name descname"><span class="pre">is_holiday</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">date</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.chncal.apis.is_holiday" title="Permalink to this definition"></a></dt>
 <dd><p>check if one date is holiday in China.
 in other words, Chinese people get rest at that day.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>bool</p>
 </dd>
 </dl>
@@ -150,14 +156,14 @@ in other words, Chinese people get rest at that day.</p>
 
 </section>
 <section id="is-workday">
-<h3>is_workday<a class="headerlink" href="#is-workday" title="Permalink to this headline"></a></h3>
+<h3>is_workday<a class="headerlink" href="#is-workday" title="Permalink to this heading"></a></h3>
 <dl class="py function">
 <dt class="sig sig-object py" id="dramkit.chncal.apis.is_workday">
 <span class="sig-prename descclassname"><span class="pre">dramkit.chncal.apis.</span></span><span class="sig-name descname"><span class="pre">is_workday</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">date</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.chncal.apis.is_workday" title="Permalink to this definition"></a></dt>
 <dd><p>check if one date is workday in China.
 in other words, Chinese people works at that day.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>bool</p>
 </dd>
 </dl>
@@ -165,14 +171,14 @@ in other words, Chinese people works at that day.</p>
 
 </section>
 <section id="is-in-lieu">
-<h3>is_in_lieu<a class="headerlink" href="#is-in-lieu" title="Permalink to this headline"></a></h3>
+<h3>is_in_lieu<a class="headerlink" href="#is-in-lieu" title="Permalink to this heading"></a></h3>
 <dl class="py function">
 <dt class="sig sig-object py" id="dramkit.chncal.apis.is_in_lieu">
 <span class="sig-prename descclassname"><span class="pre">dramkit.chncal.apis.</span></span><span class="sig-name descname"><span class="pre">is_in_lieu</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">date</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.chncal.apis.is_in_lieu" title="Permalink to this definition"></a></dt>
 <dd><p>check if one date is in lieu in China.
 in other words, Chinese people get rest at that day because of legal holiday.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>bool</p>
 </dd>
 </dl>
@@ -180,17 +186,17 @@ in other words, Chinese people get rest at that day because of legal holiday.</p
 
 </section>
 <section id="get-holiday-detail">
-<h3>get_holiday_detail<a class="headerlink" href="#get-holiday-detail" title="Permalink to this headline"></a></h3>
+<h3>get_holiday_detail<a class="headerlink" href="#get-holiday-detail" title="Permalink to this heading"></a></h3>
 <dl class="py function">
 <dt class="sig sig-object py" id="dramkit.chncal.apis.get_holiday_detail">
 <span class="sig-prename descclassname"><span class="pre">dramkit.chncal.apis.</span></span><span class="sig-name descname"><span class="pre">get_holiday_detail</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">date</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.chncal.apis.get_holiday_detail" title="Permalink to this definition"></a></dt>
 <dd><p>check if one date is holiday in China,
 and return the holiday name (None if it’s a normal day)</p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>holiday bool indicator, and holiday name if it’s holiday related day</p>
 </dd>
-<dt class="field-even">Return type</dt>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
 <dd class="field-even"><p>(bool, str | None)</p>
 </dd>
 </dl>
@@ -198,13 +204,13 @@ and return the holiday name (None if it’s a normal day)</p>
 
 </section>
 <section id="get-dates">
-<h3>get_dates<a class="headerlink" href="#get-dates" title="Permalink to this headline"></a></h3>
+<h3>get_dates<a class="headerlink" href="#get-dates" title="Permalink to this heading"></a></h3>
 <dl class="py function">
 <dt class="sig sig-object py" id="dramkit.chncal.apis.get_dates">
 <span class="sig-prename descclassname"><span class="pre">dramkit.chncal.apis.</span></span><span class="sig-name descname"><span class="pre">get_dates</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">start</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">end</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.chncal.apis.get_dates" title="Permalink to this definition"></a></dt>
 <dd><p>get dates between start date and end date. (includes start date and end date)</p>
 <dl class="field-list simple">
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>list[datetime.date]</p>
 </dd>
 </dl>
@@ -212,16 +218,16 @@ and return the holiday name (None if it’s a normal day)</p>
 
 </section>
 <section id="get-holidays">
-<h3>get_holidays<a class="headerlink" href="#get-holidays" title="Permalink to this headline"></a></h3>
+<h3>get_holidays<a class="headerlink" href="#get-holidays" title="Permalink to this heading"></a></h3>
 <dl class="py function">
 <dt class="sig sig-object py" id="dramkit.chncal.apis.get_holidays">
 <span class="sig-prename descclassname"><span class="pre">dramkit.chncal.apis.</span></span><span class="sig-name descname"><span class="pre">get_holidays</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">start</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">end</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">include_weekends</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.chncal.apis.get_holidays" title="Permalink to this definition"></a></dt>
 <dd><p>get holidays between start date and end date. (includes start date and end date)</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>include_weekends</strong> (<em>bool</em>) – False for excluding Saturdays and Sundays</p>
 </dd>
-<dt class="field-even">Return type</dt>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
 <dd class="field-even"><p>list[datetime.date]</p>
 </dd>
 </dl>
@@ -229,13 +235,13 @@ and return the holiday name (None if it’s a normal day)</p>
 
 </section>
 <section id="get-workdays">
-<h3>get_workdays<a class="headerlink" href="#get-workdays" title="Permalink to this headline"></a></h3>
+<h3>get_workdays<a class="headerlink" href="#get-workdays" title="Permalink to this heading"></a></h3>
 <dl class="py function">
 <dt class="sig sig-object py" id="dramkit.chncal.apis.get_workdays">
 <span class="sig-prename descclassname"><span class="pre">dramkit.chncal.apis.</span></span><span class="sig-name descname"><span class="pre">get_workdays</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">start</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">end</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.chncal.apis.get_workdays" title="Permalink to this definition"></a></dt>
 <dd><p>get workdays between start date and end date. (includes start date and end date)</p>
 <dl class="field-list simple">
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>list[datetime.date]</p>
 </dd>
 </dl>
@@ -243,19 +249,19 @@ and return the holiday name (None if it’s a normal day)</p>
 
 </section>
 <section id="find-workday">
-<h3>find_workday<a class="headerlink" href="#find-workday" title="Permalink to this headline"></a></h3>
+<h3>find_workday<a class="headerlink" href="#find-workday" title="Permalink to this heading"></a></h3>
 <dl class="py function">
 <dt class="sig sig-object py" id="dramkit.chncal.apis.find_workday">
 <span class="sig-prename descclassname"><span class="pre">dramkit.chncal.apis.</span></span><span class="sig-name descname"><span class="pre">find_workday</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">delta_days</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">date</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.chncal.apis.find_workday" title="Permalink to this definition"></a></dt>
 <dd><p>find the workday after {delta_days} days.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>delta_days</strong> (<em>int</em>) – 0 means next workday (includes today), -1 means previous workday.</p>
 </dd>
-<dt class="field-even">Param</dt>
+<dt class="field-even">Param<span class="colon">:</span></dt>
 <dd class="field-even"><p>the start point</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>datetime.date</p>
 </dd>
 </dl>
@@ -263,7 +269,7 @@ and return the holiday name (None if it’s a normal day)</p>
 
 </section>
 <section id="get-solar-terms">
-<h3>get_solar_terms<a class="headerlink" href="#get-solar-terms" title="Permalink to this headline"></a></h3>
+<h3>get_solar_terms<a class="headerlink" href="#get-solar-terms" title="Permalink to this heading"></a></h3>
 <dl class="py function">
 <dt class="sig sig-object py" id="dramkit.chncal.apis.get_solar_terms">
 <span class="sig-prename descclassname"><span class="pre">dramkit.chncal.apis.</span></span><span class="sig-name descname"><span class="pre">get_solar_terms</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">start</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">end</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.chncal.apis.get_solar_terms" title="Permalink to this definition"></a></dt>
@@ -272,13 +278,13 @@ and return the holiday name (None if it’s a normal day)</p>
 <p>通式寿星公式：[Y×D+C]-L
 []里面取整数；Y=年数的后2位数；D=0.2422；L=Y/4，小寒、大寒、立春、雨水的 L=(Y-1)/4</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>start</strong> (<em>datetime.date</em>) – 开始日期</p></li>
 <li><p><strong>end</strong> (<em>datetime.date</em>) – 结束日期</p></li>
 </ul>
 </dd>
-<dt class="field-even">Return type</dt>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
 <dd class="field-even"><p>list[(datetime.date, str)]</p>
 </dd>
 </dl>
@@ -286,7 +292,7 @@ and return the holiday name (None if it’s a normal day)</p>
 
 </section>
 <section id="get-tgdz-year">
-<h3>get_tgdz_year<a class="headerlink" href="#get-tgdz-year" title="Permalink to this headline"></a></h3>
+<h3>get_tgdz_year<a class="headerlink" href="#get-tgdz-year" title="Permalink to this heading"></a></h3>
 <dl class="py function">
 <dt class="sig sig-object py" id="dramkit.chncal.apis.get_tgdz_year">
 <span class="sig-prename descclassname"><span class="pre">dramkit.chncal.apis.</span></span><span class="sig-name descname"><span class="pre">get_tgdz_year</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">year</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.chncal.apis.get_tgdz_year" title="Permalink to this definition"></a></dt>
@@ -295,7 +301,7 @@ and return the holiday name (None if it’s a normal day)</p>
 
 </section>
 <section id="get-tgdz-date">
-<h3>get_tgdz_date<a class="headerlink" href="#get-tgdz-date" title="Permalink to this headline"></a></h3>
+<h3>get_tgdz_date<a class="headerlink" href="#get-tgdz-date" title="Permalink to this heading"></a></h3>
 <dl class="py function">
 <dt class="sig sig-object py" id="dramkit.chncal.apis.get_tgdz_date">
 <span class="sig-prename descclassname"><span class="pre">dramkit.chncal.apis.</span></span><span class="sig-name descname"><span class="pre">get_tgdz_date</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">date</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.chncal.apis.get_tgdz_date" title="Permalink to this definition"></a></dt>
@@ -304,7 +310,7 @@ and return the holiday name (None if it’s a normal day)</p>
 
 </section>
 <section id="get-tgdz-hour">
-<h3>get_tgdz_hour<a class="headerlink" href="#get-tgdz-hour" title="Permalink to this headline"></a></h3>
+<h3>get_tgdz_hour<a class="headerlink" href="#get-tgdz-hour" title="Permalink to this heading"></a></h3>
 <dl class="py function">
 <dt class="sig sig-object py" id="dramkit.chncal.apis.get_tgdz_hour">
 <span class="sig-prename descclassname"><span class="pre">dramkit.chncal.apis.</span></span><span class="sig-name descname"><span class="pre">get_tgdz_hour</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">time</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.chncal.apis.get_tgdz_hour" title="Permalink to this definition"></a></dt>
@@ -313,7 +319,7 @@ and return the holiday name (None if it’s a normal day)</p>
 
 </section>
 <section id="get-bazi">
-<h3>get_bazi<a class="headerlink" href="#get-bazi" title="Permalink to this headline"></a></h3>
+<h3>get_bazi<a class="headerlink" href="#get-bazi" title="Permalink to this heading"></a></h3>
 <dl class="py function">
 <dt class="sig sig-object py" id="dramkit.chncal.apis.get_bazi">
 <span class="sig-prename descclassname"><span class="pre">dramkit.chncal.apis.</span></span><span class="sig-name descname"><span class="pre">get_bazi</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">time</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.chncal.apis.get_bazi" title="Permalink to this definition"></a></dt>
@@ -326,7 +332,7 @@ and return the holiday name (None if it’s a normal day)</p>
 
 </section>
 <section id="get-bazi-lunar">
-<h3>get_bazi_lunar<a class="headerlink" href="#get-bazi-lunar" title="Permalink to this headline"></a></h3>
+<h3>get_bazi_lunar<a class="headerlink" href="#get-bazi-lunar" title="Permalink to this heading"></a></h3>
 <dl class="py function">
 <dt class="sig sig-object py" id="dramkit.chncal.apis.get_bazi_lunar">
 <span class="sig-prename descclassname"><span class="pre">dramkit.chncal.apis.</span></span><span class="sig-name descname"><span class="pre">get_bazi_lunar</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">time</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">run</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.chncal.apis.get_bazi_lunar" title="Permalink to this definition"></a></dt>
@@ -343,7 +349,7 @@ and return the holiday name (None if it’s a normal day)</p>
 
 </section>
 <section id="get-wuxing">
-<h3>get_wuxing<a class="headerlink" href="#get-wuxing" title="Permalink to this headline"></a></h3>
+<h3>get_wuxing<a class="headerlink" href="#get-wuxing" title="Permalink to this heading"></a></h3>
 <dl class="py function">
 <dt class="sig sig-object py" id="dramkit.chncal.apis.get_wuxing">
 <span class="sig-prename descclassname"><span class="pre">dramkit.chncal.apis.</span></span><span class="sig-name descname"><span class="pre">get_wuxing</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">time</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.chncal.apis.get_wuxing" title="Permalink to this definition"></a></dt>
@@ -351,7 +357,7 @@ and return the holiday name (None if it’s a normal day)</p>
 
 </section>
 <section id="get-wuxing-lunar">
-<h3>get_wuxing_lunar<a class="headerlink" href="#get-wuxing-lunar" title="Permalink to this headline"></a></h3>
+<h3>get_wuxing_lunar<a class="headerlink" href="#get-wuxing-lunar" title="Permalink to this heading"></a></h3>
 <dl class="py function">
 <dt class="sig sig-object py" id="dramkit.chncal.apis.get_wuxing_lunar">
 <span class="sig-prename descclassname"><span class="pre">dramkit.chncal.apis.</span></span><span class="sig-name descname"><span class="pre">get_wuxing_lunar</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">time</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">run</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.chncal.apis.get_wuxing_lunar" title="Permalink to this definition"></a></dt>
@@ -359,7 +365,7 @@ and return the holiday name (None if it’s a normal day)</p>
 
 </section>
 <section id="get-zodiac-match">
-<h3>get_zodiac_match<a class="headerlink" href="#get-zodiac-match" title="Permalink to this headline"></a></h3>
+<h3>get_zodiac_match<a class="headerlink" href="#get-zodiac-match" title="Permalink to this heading"></a></h3>
 <dl class="py function">
 <dt class="sig sig-object py" id="dramkit.chncal.apis.get_zodiac_match">
 <span class="sig-prename descclassname"><span class="pre">dramkit.chncal.apis.</span></span><span class="sig-name descname"><span class="pre">get_zodiac_match</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">time</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.chncal.apis.get_zodiac_match" title="Permalink to this definition"></a></dt>
@@ -368,7 +374,7 @@ and return the holiday name (None if it’s a normal day)</p>
 
 </section>
 <section id="get-zodiac-match-lunar">
-<h3>get_zodiac_match_lunar<a class="headerlink" href="#get-zodiac-match-lunar" title="Permalink to this headline"></a></h3>
+<h3>get_zodiac_match_lunar<a class="headerlink" href="#get-zodiac-match-lunar" title="Permalink to this heading"></a></h3>
 <dl class="py function">
 <dt class="sig sig-object py" id="dramkit.chncal.apis.get_zodiac_match_lunar">
 <span class="sig-prename descclassname"><span class="pre">dramkit.chncal.apis.</span></span><span class="sig-name descname"><span class="pre">get_zodiac_match_lunar</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">time</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">run</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.chncal.apis.get_zodiac_match_lunar" title="Permalink to this definition"></a></dt>
@@ -377,7 +383,7 @@ and return the holiday name (None if it’s a normal day)</p>
 
 </section>
 <section id="fate-weight">
-<h3>fate_weight<a class="headerlink" href="#fate-weight" title="Permalink to this headline"></a></h3>
+<h3>fate_weight<a class="headerlink" href="#fate-weight" title="Permalink to this heading"></a></h3>
 <dl class="py function">
 <dt class="sig sig-object py" id="dramkit.chncal.apis.fate_weight">
 <span class="sig-prename descclassname"><span class="pre">dramkit.chncal.apis.</span></span><span class="sig-name descname"><span class="pre">fate_weight</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">time</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.chncal.apis.fate_weight" title="Permalink to this definition"></a></dt>
@@ -386,7 +392,7 @@ and return the holiday name (None if it’s a normal day)</p>
 
 </section>
 <section id="fate-weight-lunar">
-<h3>fate_weight_lunar<a class="headerlink" href="#fate-weight-lunar" title="Permalink to this headline"></a></h3>
+<h3>fate_weight_lunar<a class="headerlink" href="#fate-weight-lunar" title="Permalink to this heading"></a></h3>
 <dl class="py function">
 <dt class="sig sig-object py" id="dramkit.chncal.apis.fate_weight_lunar">
 <span class="sig-prename descclassname"><span class="pre">dramkit.chncal.apis.</span></span><span class="sig-name descname"><span class="pre">fate_weight_lunar</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">time</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">run</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.chncal.apis.fate_weight_lunar" title="Permalink to this definition"></a></dt>
@@ -399,7 +405,7 @@ and return the holiday name (None if it’s a normal day)</p>
 
 </section>
 <section id="get-xingzuo">
-<h3>get_xingzuo<a class="headerlink" href="#get-xingzuo" title="Permalink to this headline"></a></h3>
+<h3>get_xingzuo<a class="headerlink" href="#get-xingzuo" title="Permalink to this heading"></a></h3>
 <dl class="py function">
 <dt class="sig sig-object py" id="dramkit.chncal.apis.get_xingzuo">
 <span class="sig-prename descclassname"><span class="pre">dramkit.chncal.apis.</span></span><span class="sig-name descname"><span class="pre">get_xingzuo</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">date</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.chncal.apis.get_xingzuo" title="Permalink to this definition"></a></dt>
@@ -408,7 +414,7 @@ and return the holiday name (None if it’s a normal day)</p>
 
 </section>
 <section id="get-recent-workday">
-<h3>get_recent_workday<a class="headerlink" href="#get-recent-workday" title="Permalink to this headline"></a></h3>
+<h3>get_recent_workday<a class="headerlink" href="#get-recent-workday" title="Permalink to this heading"></a></h3>
 <dl class="py function">
 <dt class="sig sig-object py" id="dramkit.chncal.apis.get_recent_workday">
 <span class="sig-prename descclassname"><span class="pre">dramkit.chncal.apis.</span></span><span class="sig-name descname"><span class="pre">get_recent_workday</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">date</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dirt</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'post'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.chncal.apis.get_recent_workday" title="Permalink to this definition"></a></dt>
@@ -417,7 +423,7 @@ and return the holiday name (None if it’s a normal day)</p>
 
 </section>
 <section id="get-next-nth-workday">
-<h3>get_next_nth_workday<a class="headerlink" href="#get-next-nth-workday" title="Permalink to this headline"></a></h3>
+<h3>get_next_nth_workday<a class="headerlink" href="#get-next-nth-workday" title="Permalink to this heading"></a></h3>
 <dl class="py function">
 <dt class="sig sig-object py" id="dramkit.chncal.apis.get_next_nth_workday">
 <span class="sig-prename descclassname"><span class="pre">dramkit.chncal.apis.</span></span><span class="sig-name descname"><span class="pre">get_next_nth_workday</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">date</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.chncal.apis.get_next_nth_workday" title="Permalink to this definition"></a></dt>
@@ -429,7 +435,7 @@ and return the holiday name (None if it’s a normal day)</p>
 
 </section>
 <section id="get-work-dates">
-<h3>get_work_dates<a class="headerlink" href="#get-work-dates" title="Permalink to this headline"></a></h3>
+<h3>get_work_dates<a class="headerlink" href="#get-work-dates" title="Permalink to this heading"></a></h3>
 <dl class="py function">
 <dt class="sig sig-object py" id="dramkit.chncal.apis.get_work_dates">
 <span class="sig-prename descclassname"><span class="pre">dramkit.chncal.apis.</span></span><span class="sig-name descname"><span class="pre">get_work_dates</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">start_date</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">end_date</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.chncal.apis.get_work_dates" title="Permalink to this definition"></a></dt>
@@ -438,7 +444,7 @@ and return the holiday name (None if it’s a normal day)</p>
 
 </section>
 <section id="is-tradeday">
-<h3>is_tradeday<a class="headerlink" href="#is-tradeday" title="Permalink to this headline"></a></h3>
+<h3>is_tradeday<a class="headerlink" href="#is-tradeday" title="Permalink to this heading"></a></h3>
 <dl class="py function">
 <dt class="sig sig-object py" id="dramkit.chncal.apis.is_tradeday">
 <span class="sig-prename descclassname"><span class="pre">dramkit.chncal.apis.</span></span><span class="sig-name descname"><span class="pre">is_tradeday</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">date</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">market</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'SSE'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.chncal.apis.is_tradeday" title="Permalink to this definition"></a></dt>
@@ -447,7 +453,7 @@ and return the holiday name (None if it’s a normal day)</p>
 
 </section>
 <section id="get-recent-tradeday">
-<h3>get_recent_tradeday<a class="headerlink" href="#get-recent-tradeday" title="Permalink to this headline"></a></h3>
+<h3>get_recent_tradeday<a class="headerlink" href="#get-recent-tradeday" title="Permalink to this heading"></a></h3>
 <dl class="py function">
 <dt class="sig sig-object py" id="dramkit.chncal.apis.get_recent_tradeday">
 <span class="sig-prename descclassname"><span class="pre">dramkit.chncal.apis.</span></span><span class="sig-name descname"><span class="pre">get_recent_tradeday</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">date</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dirt</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'post'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">market</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'SSE'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.chncal.apis.get_recent_tradeday" title="Permalink to this definition"></a></dt>
@@ -456,7 +462,7 @@ and return the holiday name (None if it’s a normal day)</p>
 
 </section>
 <section id="get-next-nth-tradeday">
-<h3>get_next_nth_tradeday<a class="headerlink" href="#get-next-nth-tradeday" title="Permalink to this headline"></a></h3>
+<h3>get_next_nth_tradeday<a class="headerlink" href="#get-next-nth-tradeday" title="Permalink to this heading"></a></h3>
 <dl class="py function">
 <dt class="sig sig-object py" id="dramkit.chncal.apis.get_next_nth_tradeday">
 <span class="sig-prename descclassname"><span class="pre">dramkit.chncal.apis.</span></span><span class="sig-name descname"><span class="pre">get_next_nth_tradeday</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">date</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">market</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'SSE'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.chncal.apis.get_next_nth_tradeday" title="Permalink to this definition"></a></dt>
@@ -468,7 +474,7 @@ and return the holiday name (None if it’s a normal day)</p>
 
 </section>
 <section id="get-trade-dates">
-<h3>get_trade_dates<a class="headerlink" href="#get-trade-dates" title="Permalink to this headline"></a></h3>
+<h3>get_trade_dates<a class="headerlink" href="#get-trade-dates" title="Permalink to this heading"></a></h3>
 <dl class="py function">
 <dt class="sig sig-object py" id="dramkit.chncal.apis.get_trade_dates">
 <span class="sig-prename descclassname"><span class="pre">dramkit.chncal.apis.</span></span><span class="sig-name descname"><span class="pre">get_trade_dates</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">start_date</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">end_date</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">market</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'SSE'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.chncal.apis.get_trade_dates" title="Permalink to this definition"></a></dt>
@@ -477,7 +483,7 @@ and return the holiday name (None if it’s a normal day)</p>
 
 </section>
 <section id="gen2lun">
-<h3>gen2lun<a class="headerlink" href="#gen2lun" title="Permalink to this headline"></a></h3>
+<h3>gen2lun<a class="headerlink" href="#gen2lun" title="Permalink to this heading"></a></h3>
 <dl class="py function">
 <dt class="sig sig-object py" id="dramkit.chncal.apis.gen2lun">
 <span class="sig-prename descclassname"><span class="pre">dramkit.chncal.apis.</span></span><span class="sig-name descname"><span class="pre">gen2lun</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">date</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.chncal.apis.gen2lun" title="Permalink to this definition"></a></dt>
@@ -486,7 +492,7 @@ and return the holiday name (None if it’s a normal day)</p>
 
 </section>
 <section id="gen2gz">
-<h3>gen2gz<a class="headerlink" href="#gen2gz" title="Permalink to this headline"></a></h3>
+<h3>gen2gz<a class="headerlink" href="#gen2gz" title="Permalink to this heading"></a></h3>
 <dl class="py function">
 <dt class="sig sig-object py" id="dramkit.chncal.apis.gen2gz">
 <span class="sig-prename descclassname"><span class="pre">dramkit.chncal.apis.</span></span><span class="sig-name descname"><span class="pre">gen2gz</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">date</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.chncal.apis.gen2gz" title="Permalink to this definition"></a></dt>
@@ -495,7 +501,7 @@ and return the holiday name (None if it’s a normal day)</p>
 
 </section>
 <section id="lun2gen">
-<h3>lun2gen<a class="headerlink" href="#lun2gen" title="Permalink to this headline"></a></h3>
+<h3>lun2gen<a class="headerlink" href="#lun2gen" title="Permalink to this heading"></a></h3>
 <dl class="py function">
 <dt class="sig sig-object py" id="dramkit.chncal.apis.lun2gen">
 <span class="sig-prename descclassname"><span class="pre">dramkit.chncal.apis.</span></span><span class="sig-name descname"><span class="pre">lun2gen</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">date</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">run</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.chncal.apis.lun2gen" title="Permalink to this definition"></a></dt>
@@ -512,7 +518,7 @@ and return the holiday name (None if it’s a normal day)</p>
 
 </section>
 <section id="get-age-by-shuxiang">
-<h3>get_age_by_shuxiang<a class="headerlink" href="#get-age-by-shuxiang" title="Permalink to this headline"></a></h3>
+<h3>get_age_by_shuxiang<a class="headerlink" href="#get-age-by-shuxiang" title="Permalink to this heading"></a></h3>
 <dl class="py function">
 <dt class="sig sig-object py" id="dramkit.chncal.apis.get_age_by_shuxiang">
 <span class="sig-prename descclassname"><span class="pre">dramkit.chncal.apis.</span></span><span class="sig-name descname"><span class="pre">get_age_by_shuxiang</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">shuxiang</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">return_n</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.chncal.apis.get_age_by_shuxiang" title="Permalink to this definition"></a></dt>
@@ -522,13 +528,13 @@ and return the holiday name (None if it’s a normal day)</p>
 </section>
 </section>
 <section id="module-dramkit.chncal.constants">
-<span id="constants"></span><h2>constants<a class="headerlink" href="#module-dramkit.chncal.constants" title="Permalink to this headline"></a></h2>
+<span id="constants"></span><h2>constants<a class="headerlink" href="#module-dramkit.chncal.constants" title="Permalink to this heading"></a></h2>
 <section id="holiday">
-<h3>Holiday<a class="headerlink" href="#holiday" title="Permalink to this headline"></a></h3>
+<h3>Holiday<a class="headerlink" href="#holiday" title="Permalink to this heading"></a></h3>
 <dl class="py class">
 <dt class="sig sig-object py" id="dramkit.chncal.constants.Holiday">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">dramkit.chncal.constants.</span></span><span class="sig-name descname"><span class="pre">Holiday</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.chncal.constants.Holiday" title="Permalink to this definition"></a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">enum.Enum</span></code></p>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Enum</span></code></p>
 <p>An enumeration.</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="dramkit.chncal.constants.Holiday.anti_fascist_70th_day">
@@ -575,28 +581,28 @@ and return the holiday name (None if it’s a normal day)</p>
 </section>
 </section>
 <section id="module-dramkit.chncal.constants_fate">
-<span id="constants-fate"></span><h2>constants_fate<a class="headerlink" href="#module-dramkit.chncal.constants_fate" title="Permalink to this headline"></a></h2>
+<span id="constants-fate"></span><h2>constants_fate<a class="headerlink" href="#module-dramkit.chncal.constants_fate" title="Permalink to this heading"></a></h2>
 </section>
 <section id="module-dramkit.chncal.constants_hko">
-<span id="constants-hko"></span><h2>constants_hko<a class="headerlink" href="#module-dramkit.chncal.constants_hko" title="Permalink to this headline"></a></h2>
+<span id="constants-hko"></span><h2>constants_hko<a class="headerlink" href="#module-dramkit.chncal.constants_hko" title="Permalink to this heading"></a></h2>
 </section>
 <section id="module-dramkit.chncal.constants_trade_dates">
-<span id="constants-trade-dates"></span><h2>constants_trade_dates<a class="headerlink" href="#module-dramkit.chncal.constants_trade_dates" title="Permalink to this headline"></a></h2>
+<span id="constants-trade-dates"></span><h2>constants_trade_dates<a class="headerlink" href="#module-dramkit.chncal.constants_trade_dates" title="Permalink to this heading"></a></h2>
 </section>
 <section id="module-dramkit.chncal.constants_wuxing">
-<span id="constants-wuxing"></span><h2>constants_wuxing<a class="headerlink" href="#module-dramkit.chncal.constants_wuxing" title="Permalink to this headline"></a></h2>
+<span id="constants-wuxing"></span><h2>constants_wuxing<a class="headerlink" href="#module-dramkit.chncal.constants_wuxing" title="Permalink to this heading"></a></h2>
 </section>
 <section id="module-dramkit.chncal.constants_zodiac_marry">
-<span id="constants-zodiac-marry"></span><h2>constants_zodiac_marry<a class="headerlink" href="#module-dramkit.chncal.constants_zodiac_marry" title="Permalink to this headline"></a></h2>
+<span id="constants-zodiac-marry"></span><h2>constants_zodiac_marry<a class="headerlink" href="#module-dramkit.chncal.constants_zodiac_marry" title="Permalink to this heading"></a></h2>
 </section>
 <section id="module-dramkit.chncal.solar_terms">
-<span id="solar-terms"></span><h2>solar_terms<a class="headerlink" href="#module-dramkit.chncal.solar_terms" title="Permalink to this headline"></a></h2>
+<span id="solar-terms"></span><h2>solar_terms<a class="headerlink" href="#module-dramkit.chncal.solar_terms" title="Permalink to this heading"></a></h2>
 <section id="solarterms">
-<h3>SolarTerms<a class="headerlink" href="#solarterms" title="Permalink to this headline"></a></h3>
+<h3>SolarTerms<a class="headerlink" href="#solarterms" title="Permalink to this heading"></a></h3>
 <dl class="py class">
 <dt class="sig sig-object py" id="dramkit.chncal.solar_terms.SolarTerms">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">dramkit.chncal.solar_terms.</span></span><span class="sig-name descname"><span class="pre">SolarTerms</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.chncal.solar_terms.SolarTerms" title="Permalink to this definition"></a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">enum.Enum</span></code></p>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Enum</span></code></p>
 <p>中国24节气</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="dramkit.chncal.solar_terms.SolarTerms.code_dew">
@@ -735,7 +741,7 @@ and return the holiday name (None if it’s a normal day)</p>
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2020-2022, YueYong Hu.</p>
+    <p>&#169; Copyright 2020-2023, YueYong Hu.</p>
   </div>
 
   Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a

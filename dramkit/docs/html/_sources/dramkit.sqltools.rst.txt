@@ -1,6 +1,116 @@
 sqltools
 =========
 
+cxoracle
+---------
+
+.. automodule:: dramkit.sqltools.cxoracle
+
+.. currentmodule:: dramkit.sqltools.cxoracle
+
+CxOracle
+^^^^^^^^^
+
+.. autoclass:: dramkit.sqltools.cxoracle.CxOracle
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+get_conn
+^^^^^^^^^
+
+.. autofunction:: dramkit.sqltools.cxoracle.get_conn
+
+execute_sql
+^^^^^^^^^^^^
+
+.. autofunction:: dramkit.sqltools.cxoracle.execute_sql
+
+get_fields
+^^^^^^^^^^^
+
+.. autofunction:: dramkit.sqltools.cxoracle.get_fields
+
+clear_data
+^^^^^^^^^^^
+
+.. autofunction:: dramkit.sqltools.cxoracle.clear_data
+
+has_table
+^^^^^^^^^^
+
+.. autofunction:: dramkit.sqltools.cxoracle.has_table
+
+copy_table
+^^^^^^^^^^^
+
+.. autofunction:: dramkit.sqltools.cxoracle.copy_table
+
+create_table
+^^^^^^^^^^^^^
+
+.. autofunction:: dramkit.sqltools.cxoracle.create_table
+
+get_create_table_sql
+^^^^^^^^^^^^^^^^^^^^^
+
+.. autofunction:: dramkit.sqltools.cxoracle.get_create_table_sql
+
+drop_table
+^^^^^^^^^^^
+
+.. autofunction:: dramkit.sqltools.cxoracle.drop_table
+
+get_tables
+^^^^^^^^^^^
+
+.. autofunction:: dramkit.sqltools.cxoracle.get_tables
+
+get_cols_info_df
+^^^^^^^^^^^^^^^^^
+
+.. autofunction:: dramkit.sqltools.cxoracle.get_cols_info_df
+
+merge_into
+^^^^^^^^^^^
+
+.. autofunction:: dramkit.sqltools.cxoracle.merge_into
+
+df_to_sql
+^^^^^^^^^^
+
+.. autofunction:: dramkit.sqltools.cxoracle.df_to_sql
+
+py_hive
+--------
+
+.. automodule:: dramkit.sqltools.py_hive
+
+.. currentmodule:: dramkit.sqltools.py_hive
+
+PyHive
+^^^^^^^
+
+.. autoclass:: dramkit.sqltools.py_hive.PyHive
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+get_conn_pyhive
+^^^^^^^^^^^^^^^^
+
+.. autofunction:: dramkit.sqltools.py_hive.get_conn_pyhive
+
+get_conn_impala
+^^^^^^^^^^^^^^^^
+
+.. autofunction:: dramkit.sqltools.py_hive.get_conn_impala
+
+execute_sql
+^^^^^^^^^^^^
+
+.. autofunction:: dramkit.sqltools.py_hive.execute_sql
+
 py_mysql
 ---------
 
@@ -21,15 +131,20 @@ get_conn
 
 .. autofunction:: dramkit.sqltools.py_mysql.get_conn
 
-get_fields
-^^^^^^^^^^^
-
-.. autofunction:: dramkit.sqltools.py_mysql.get_fields
-
 execute_sql
 ^^^^^^^^^^^^
 
 .. autofunction:: dramkit.sqltools.py_mysql.execute_sql
+
+has_table
+^^^^^^^^^^
+
+.. autofunction:: dramkit.sqltools.py_mysql.has_table
+
+get_fields
+^^^^^^^^^^^
+
+.. autofunction:: dramkit.sqltools.py_mysql.get_fields
 
 get_unique_values
 ^^^^^^^^^^^^^^^^^^
@@ -45,6 +160,11 @@ get_now_database
 ^^^^^^^^^^^^^^^^^
 
 .. autofunction:: dramkit.sqltools.py_mysql.get_now_database
+
+get_data_file_dir
+^^^^^^^^^^^^^^^^^^
+
+.. autofunction:: dramkit.sqltools.py_mysql.get_data_file_dir
 
 get_split_tabel_info
 ^^^^^^^^^^^^^^^^^^^^^
@@ -101,6 +221,11 @@ create_database
 
 .. autofunction:: dramkit.sqltools.py_mysql.create_database
 
+copy_table
+^^^^^^^^^^^
+
+.. autofunction:: dramkit.sqltools.py_mysql.copy_table
+
 create_table
 ^^^^^^^^^^^^^
 
@@ -125,6 +250,11 @@ clear_data
 ^^^^^^^^^^^
 
 .. autofunction:: dramkit.sqltools.py_mysql.clear_data
+
+get_db_info
+^^^^^^^^^^^^
+
+.. autofunction:: dramkit.sqltools.py_mysql.get_db_info
 
 get_data
 ^^^^^^^^^
@@ -161,15 +291,25 @@ get_cols_info_df
 
 .. autofunction:: dramkit.sqltools.py_mysql.get_cols_info_df
 
-df_to_mysql
-^^^^^^^^^^^^
+df_to_sql_insert_values
+^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. autofunction:: dramkit.sqltools.py_mysql.df_to_mysql
+.. autofunction:: dramkit.sqltools.py_mysql.df_to_sql_insert_values
 
-df_to_mysql_by_row
-^^^^^^^^^^^^^^^^^^^
+df_to_sql
+^^^^^^^^^^
 
-.. autofunction:: dramkit.sqltools.py_mysql.df_to_mysql_by_row
+.. autofunction:: dramkit.sqltools.py_mysql.df_to_sql
+
+df_to_sql_by_row
+^^^^^^^^^^^^^^^^^
+
+.. autofunction:: dramkit.sqltools.py_mysql.df_to_sql_by_row
+
+gen_simple_proc_sql_str
+^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. autofunction:: dramkit.sqltools.py_mysql.gen_simple_proc_sql_str
 
 sql_alchemy
 ------------
@@ -190,3 +330,8 @@ get_conn
 ^^^^^^^^^
 
 .. autofunction:: dramkit.sqltools.sql_alchemy.get_conn
+
+get_cols_info_df_oracle
+^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. autofunction:: dramkit.sqltools.sql_alchemy.get_cols_info_df_oracle

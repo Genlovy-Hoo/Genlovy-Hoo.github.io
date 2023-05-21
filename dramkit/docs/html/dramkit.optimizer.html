@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>optimizer &mdash; DramKit 0.3.15 documentation</title>
+  <title>optimizer &mdash; DramKit 0.5.42 documentation</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <!--[if lt IE 9]>
@@ -14,12 +14,13 @@
         <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
         <script src="_static/jquery.js"></script>
         <script src="_static/underscore.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="_static/doctools.js"></script>
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="other" href="dramkit.other.html" />
-    <link rel="prev" title="logtools" href="dramkit.logtools.html" /> 
+    <link rel="prev" title="openai" href="dramkit.openai.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -27,11 +28,15 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-            <a href="index.html" class="icon icon-home"> DramKit
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            DramKit
           </a>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
@@ -45,6 +50,7 @@
 <li class="toctree-l1"><a class="reference internal" href="dramkit.datsci.html">datsci</a></li>
 <li class="toctree-l1"><a class="reference internal" href="dramkit.find_addends.html">find_addends</a></li>
 <li class="toctree-l1"><a class="reference internal" href="dramkit.logtools.html">logtools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dramkit.openai.html">openai</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">optimizer</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#module-dramkit.optimizer.alo">alo</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#id1">alo</a></li>
@@ -122,8 +128,8 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
-      <li>optimizer</li>
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">optimizer</li>
       <li class="wy-breadcrumbs-aside">
             <a href="_sources/dramkit.optimizer.rst.txt" rel="nofollow"> View page source</a>
       </li>
@@ -134,11 +140,11 @@
            <div itemprop="articleBody">
              
   <section id="optimizer">
-<h1>optimizer<a class="headerlink" href="#optimizer" title="Permalink to this headline"></a></h1>
+<h1>optimizer<a class="headerlink" href="#optimizer" title="Permalink to this heading"></a></h1>
 <section id="module-dramkit.optimizer.alo">
-<span id="alo"></span><h2>alo<a class="headerlink" href="#module-dramkit.optimizer.alo" title="Permalink to this headline"></a></h2>
+<span id="alo"></span><h2>alo<a class="headerlink" href="#module-dramkit.optimizer.alo" title="Permalink to this heading"></a></h2>
 <section id="id1">
-<h3>alo<a class="headerlink" href="#id1" title="Permalink to this headline"></a></h3>
+<h3>alo<a class="headerlink" href="#id1" title="Permalink to this heading"></a></h3>
 <dl class="py function">
 <dt class="sig sig-object py" id="dramkit.optimizer.alo.alo">
 <span class="sig-prename descclassname"><span class="pre">dramkit.optimizer.alo.</span></span><span class="sig-name descname"><span class="pre">alo</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">objf</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">func_opter_parms</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.optimizer.alo.alo" title="Permalink to this definition"></a></dt>
@@ -148,7 +154,7 @@
 <p>目前仅考虑自变量连续实数情况，以后可增加自变量为离散的情况</p>
 </div>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>objf</strong> (<em>function</em>) – 目标函数。注：须事先转化为求极小值问题</p></li>
 <li><p><strong>func_opter_parms</strong> (<a class="reference internal" href="#dramkit.optimizer.utils_heuristic.FuncOpterInfo" title="dramkit.optimizer.utils_heuristic.FuncOpterInfo"><em>FuncOpterInfo</em></a>) – <p><a class="reference internal" href="#dramkit.optimizer.utils_heuristic.FuncOpterInfo" title="dramkit.optimizer.utils_heuristic.FuncOpterInfo"><code class="xref py py-class docutils literal notranslate"><span class="pre">dramkit.optimizer.utils_heuristic.FuncOpterInfo</span></code></a> 类，
@@ -175,10 +181,10 @@
 </p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p><strong>func_opter_parms</strong> – 更新优化过程之后的func_opter_parms</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p><a class="reference internal" href="#dramkit.optimizer.utils_heuristic.FuncOpterInfo" title="dramkit.optimizer.utils_heuristic.FuncOpterInfo">FuncOpterInfo</a></p>
 </dd>
 </dl>
@@ -193,9 +199,9 @@
 </section>
 </section>
 <section id="module-dramkit.optimizer.base_funcs">
-<span id="base-funcs"></span><h2>base_funcs<a class="headerlink" href="#module-dramkit.optimizer.base_funcs" title="Permalink to this headline"></a></h2>
+<span id="base-funcs"></span><h2>base_funcs<a class="headerlink" href="#module-dramkit.optimizer.base_funcs" title="Permalink to this heading"></a></h2>
 <section id="testfuncs">
-<h3>TestFuncs<a class="headerlink" href="#testfuncs" title="Permalink to this headline"></a></h3>
+<h3>TestFuncs<a class="headerlink" href="#testfuncs" title="Permalink to this heading"></a></h3>
 <dl class="py class">
 <dt class="sig sig-object py" id="dramkit.optimizer.base_funcs.TestFuncs">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">dramkit.optimizer.base_funcs.</span></span><span class="sig-name descname"><span class="pre">TestFuncs</span></span><a class="headerlink" href="#dramkit.optimizer.base_funcs.TestFuncs" title="Permalink to this definition"></a></dt>
@@ -305,7 +311,7 @@
 
 </section>
 <section id="prod">
-<h3>prod<a class="headerlink" href="#prod" title="Permalink to this headline"></a></h3>
+<h3>prod<a class="headerlink" href="#prod" title="Permalink to this heading"></a></h3>
 <dl class="py function">
 <dt class="sig sig-object py" id="dramkit.optimizer.base_funcs.prod">
 <span class="sig-prename descclassname"><span class="pre">dramkit.optimizer.base_funcs.</span></span><span class="sig-name descname"><span class="pre">prod</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">it</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.optimizer.base_funcs.prod" title="Permalink to this definition"></a></dt>
@@ -315,9 +321,9 @@
 </section>
 </section>
 <section id="module-dramkit.optimizer.boa">
-<span id="boa"></span><h2>boa<a class="headerlink" href="#module-dramkit.optimizer.boa" title="Permalink to this headline"></a></h2>
+<span id="boa"></span><h2>boa<a class="headerlink" href="#module-dramkit.optimizer.boa" title="Permalink to this heading"></a></h2>
 <section id="id3">
-<h3>boa<a class="headerlink" href="#id3" title="Permalink to this headline"></a></h3>
+<h3>boa<a class="headerlink" href="#id3" title="Permalink to this heading"></a></h3>
 <dl class="py function">
 <dt class="sig sig-object py" id="dramkit.optimizer.boa.boa">
 <span class="sig-prename descclassname"><span class="pre">dramkit.optimizer.boa.</span></span><span class="sig-name descname"><span class="pre">boa</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">objf</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">func_opter_parms</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.optimizer.boa.boa" title="Permalink to this definition"></a></dt>
@@ -327,7 +333,7 @@
 <p>目前仅考虑自变量连续实数情况，以后可增加自变量为离散的情况</p>
 </div>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>objf</strong> (<em>function</em>) – 目标函数。注：须事先转化为求极小值问题</p></li>
 <li><p><strong>func_opter_parms</strong> (<a class="reference internal" href="#dramkit.optimizer.utils_heuristic.FuncOpterInfo" title="dramkit.optimizer.utils_heuristic.FuncOpterInfo"><em>FuncOpterInfo</em></a>) – <p><a class="reference internal" href="#dramkit.optimizer.utils_heuristic.FuncOpterInfo" title="dramkit.optimizer.utils_heuristic.FuncOpterInfo"><code class="xref py py-class docutils literal notranslate"><span class="pre">dramkit.optimizer.utils_heuristic.FuncOpterInfo</span></code></a> 类，
@@ -357,10 +363,10 @@
 </p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p><strong>func_opter_parms</strong> – 更新优化过程之后的func_opter_parms</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p><a class="reference internal" href="#dramkit.optimizer.utils_heuristic.FuncOpterInfo" title="dramkit.optimizer.utils_heuristic.FuncOpterInfo">FuncOpterInfo</a></p>
 </dd>
 </dl>
@@ -373,9 +379,9 @@
 </section>
 </section>
 <section id="module-dramkit.optimizer.cs">
-<span id="cs"></span><h2>cs<a class="headerlink" href="#module-dramkit.optimizer.cs" title="Permalink to this headline"></a></h2>
+<span id="cs"></span><h2>cs<a class="headerlink" href="#module-dramkit.optimizer.cs" title="Permalink to this heading"></a></h2>
 <section id="id5">
-<h3>cs<a class="headerlink" href="#id5" title="Permalink to this headline"></a></h3>
+<h3>cs<a class="headerlink" href="#id5" title="Permalink to this heading"></a></h3>
 <dl class="py function">
 <dt class="sig sig-object py" id="dramkit.optimizer.cs.cs">
 <span class="sig-prename descclassname"><span class="pre">dramkit.optimizer.cs.</span></span><span class="sig-name descname"><span class="pre">cs</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">objf</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">func_opter_parms</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.optimizer.cs.cs" title="Permalink to this definition"></a></dt>
@@ -385,7 +391,7 @@
 <p>目前仅考虑自变量连续实数情况，以后可增加自变量为离散的情况</p>
 </div>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>objf</strong> (<em>function</em>) – 目标函数。注：须事先转化为求极小值问题</p></li>
 <li><p><strong>func_opter_parms</strong> (<a class="reference internal" href="#dramkit.optimizer.utils_heuristic.FuncOpterInfo" title="dramkit.optimizer.utils_heuristic.FuncOpterInfo"><em>FuncOpterInfo</em></a>) – <p><a class="reference internal" href="#dramkit.optimizer.utils_heuristic.FuncOpterInfo" title="dramkit.optimizer.utils_heuristic.FuncOpterInfo"><code class="xref py py-class docutils literal notranslate"><span class="pre">dramkit.optimizer.utils_heuristic.FuncOpterInfo</span></code></a> 类，
@@ -414,10 +420,10 @@
 </p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p><strong>func_opter_parms</strong> – 更新优化过程之后的func_opter_parms</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p><a class="reference internal" href="#dramkit.optimizer.utils_heuristic.FuncOpterInfo" title="dramkit.optimizer.utils_heuristic.FuncOpterInfo">FuncOpterInfo</a></p>
 </dd>
 </dl>
@@ -432,9 +438,9 @@
 </section>
 </section>
 <section id="module-dramkit.optimizer.ga">
-<span id="ga"></span><h2>ga<a class="headerlink" href="#module-dramkit.optimizer.ga" title="Permalink to this headline"></a></h2>
+<span id="ga"></span><h2>ga<a class="headerlink" href="#module-dramkit.optimizer.ga" title="Permalink to this heading"></a></h2>
 <section id="id7">
-<h3>ga<a class="headerlink" href="#id7" title="Permalink to this headline"></a></h3>
+<h3>ga<a class="headerlink" href="#id7" title="Permalink to this heading"></a></h3>
 <dl class="py function">
 <dt class="sig sig-object py" id="dramkit.optimizer.ga.ga">
 <span class="sig-prename descclassname"><span class="pre">dramkit.optimizer.ga.</span></span><span class="sig-name descname"><span class="pre">ga</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">objf</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">func_opter_parms</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.optimizer.ga.ga" title="Permalink to this definition"></a></dt>
@@ -444,7 +450,7 @@
 <p>目前仅考虑自变量连续实数情况，以后可增加自变量为离散的情况</p>
 </div>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>objf</strong> (<em>function</em>) – 目标函数。注：须事先转化为求极小值问题</p></li>
 <li><p><strong>func_opter_parms</strong> (<a class="reference internal" href="#dramkit.optimizer.utils_heuristic.FuncOpterInfo" title="dramkit.optimizer.utils_heuristic.FuncOpterInfo"><em>FuncOpterInfo</em></a>) – <p><a class="reference internal" href="#dramkit.optimizer.utils_heuristic.FuncOpterInfo" title="dramkit.optimizer.utils_heuristic.FuncOpterInfo"><code class="xref py py-class docutils literal notranslate"><span class="pre">dramkit.optimizer.utils_heuristic.FuncOpterInfo</span></code></a> 类，
@@ -474,10 +480,10 @@
 </p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p><strong>func_opter_parms</strong> – 更新优化过程之后的func_opter_parms</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p><a class="reference internal" href="#dramkit.optimizer.utils_heuristic.FuncOpterInfo" title="dramkit.optimizer.utils_heuristic.FuncOpterInfo">FuncOpterInfo</a></p>
 </dd>
 </dl>
@@ -491,9 +497,9 @@
 </section>
 </section>
 <section id="module-dramkit.optimizer.gwo">
-<span id="gwo"></span><h2>gwo<a class="headerlink" href="#module-dramkit.optimizer.gwo" title="Permalink to this headline"></a></h2>
+<span id="gwo"></span><h2>gwo<a class="headerlink" href="#module-dramkit.optimizer.gwo" title="Permalink to this heading"></a></h2>
 <section id="id9">
-<h3>gwo<a class="headerlink" href="#id9" title="Permalink to this headline"></a></h3>
+<h3>gwo<a class="headerlink" href="#id9" title="Permalink to this heading"></a></h3>
 <dl class="py function">
 <dt class="sig sig-object py" id="dramkit.optimizer.gwo.gwo">
 <span class="sig-prename descclassname"><span class="pre">dramkit.optimizer.gwo.</span></span><span class="sig-name descname"><span class="pre">gwo</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">objf</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">func_opter_parms</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.optimizer.gwo.gwo" title="Permalink to this definition"></a></dt>
@@ -503,7 +509,7 @@
 <p>目前仅考虑自变量连续实数情况，以后可增加自变量为离散的情况</p>
 </div>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>objf</strong> (<em>function</em>) – 目标函数。注：须事先转化为求极小值问题</p></li>
 <li><p><strong>func_opter_parms</strong> (<a class="reference internal" href="#dramkit.optimizer.utils_heuristic.FuncOpterInfo" title="dramkit.optimizer.utils_heuristic.FuncOpterInfo"><em>FuncOpterInfo</em></a>) – <p><a class="reference internal" href="#dramkit.optimizer.utils_heuristic.FuncOpterInfo" title="dramkit.optimizer.utils_heuristic.FuncOpterInfo"><code class="xref py py-class docutils literal notranslate"><span class="pre">dramkit.optimizer.utils_heuristic.FuncOpterInfo</span></code></a> 类，
@@ -530,10 +536,10 @@
 </p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p><strong>func_opter_parms</strong> – 更新优化过程之后的func_opter_parms</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p><a class="reference internal" href="#dramkit.optimizer.utils_heuristic.FuncOpterInfo" title="dramkit.optimizer.utils_heuristic.FuncOpterInfo">FuncOpterInfo</a></p>
 </dd>
 </dl>
@@ -547,9 +553,9 @@
 </section>
 </section>
 <section id="module-dramkit.optimizer.hcpsoboa">
-<span id="hcpsoboa"></span><h2>hcpsoboa<a class="headerlink" href="#module-dramkit.optimizer.hcpsoboa" title="Permalink to this headline"></a></h2>
+<span id="hcpsoboa"></span><h2>hcpsoboa<a class="headerlink" href="#module-dramkit.optimizer.hcpsoboa" title="Permalink to this heading"></a></h2>
 <section id="id11">
-<h3>hcpsoboa<a class="headerlink" href="#id11" title="Permalink to this headline"></a></h3>
+<h3>hcpsoboa<a class="headerlink" href="#id11" title="Permalink to this heading"></a></h3>
 <dl class="py function">
 <dt class="sig sig-object py" id="dramkit.optimizer.hcpsoboa.hcpsoboa">
 <span class="sig-prename descclassname"><span class="pre">dramkit.optimizer.hcpsoboa.</span></span><span class="sig-name descname"><span class="pre">hcpsoboa</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">objf</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">func_opter_parms</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.optimizer.hcpsoboa.hcpsoboa" title="Permalink to this definition"></a></dt>
@@ -562,7 +568,7 @@
 </ul>
 </div>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>objf</strong> (<em>function</em>) – 目标函数。注：须事先转化为求极小值问题</p></li>
 <li><p><strong>func_opter_parms</strong> (<a class="reference internal" href="#dramkit.optimizer.utils_heuristic.FuncOpterInfo" title="dramkit.optimizer.utils_heuristic.FuncOpterInfo"><em>FuncOpterInfo</em></a>) – <p><a class="reference internal" href="#dramkit.optimizer.utils_heuristic.FuncOpterInfo" title="dramkit.optimizer.utils_heuristic.FuncOpterInfo"><code class="xref py py-class docutils literal notranslate"><span class="pre">dramkit.optimizer.utils_heuristic.FuncOpterInfo</span></code></a> 类，
@@ -592,10 +598,10 @@
 </p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p><strong>func_opter_parms</strong> – 更新优化过程之后的func_opter_parms</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p><a class="reference internal" href="#dramkit.optimizer.utils_heuristic.FuncOpterInfo" title="dramkit.optimizer.utils_heuristic.FuncOpterInfo">FuncOpterInfo</a></p>
 </dd>
 </dl>
@@ -610,9 +616,9 @@
 </section>
 </section>
 <section id="module-dramkit.optimizer.hho">
-<span id="hho"></span><h2>hho<a class="headerlink" href="#module-dramkit.optimizer.hho" title="Permalink to this headline"></a></h2>
+<span id="hho"></span><h2>hho<a class="headerlink" href="#module-dramkit.optimizer.hho" title="Permalink to this heading"></a></h2>
 <section id="id13">
-<h3>hho<a class="headerlink" href="#id13" title="Permalink to this headline"></a></h3>
+<h3>hho<a class="headerlink" href="#id13" title="Permalink to this heading"></a></h3>
 <dl class="py function">
 <dt class="sig sig-object py" id="dramkit.optimizer.hho.hho">
 <span class="sig-prename descclassname"><span class="pre">dramkit.optimizer.hho.</span></span><span class="sig-name descname"><span class="pre">hho</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">objf</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">func_opter_parms</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.optimizer.hho.hho" title="Permalink to this definition"></a></dt>
@@ -622,7 +628,7 @@
 <p>目前仅考虑自变量连续实数情况，以后可增加自变量为离散的情况</p>
 </div>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>objf</strong> (<em>function</em>) – 目标函数。注：须事先转化为求极小值问题</p></li>
 <li><p><strong>func_opter_parms</strong> (<a class="reference internal" href="#dramkit.optimizer.utils_heuristic.FuncOpterInfo" title="dramkit.optimizer.utils_heuristic.FuncOpterInfo"><em>FuncOpterInfo</em></a>) – <p><a class="reference internal" href="#dramkit.optimizer.utils_heuristic.FuncOpterInfo" title="dramkit.optimizer.utils_heuristic.FuncOpterInfo"><code class="xref py py-class docutils literal notranslate"><span class="pre">dramkit.optimizer.utils_heuristic.FuncOpterInfo</span></code></a> 类，
@@ -650,10 +656,10 @@
 </p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p><strong>func_opter_parms</strong> – 更新优化过程之后的func_opter_parms</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p><a class="reference internal" href="#dramkit.optimizer.utils_heuristic.FuncOpterInfo" title="dramkit.optimizer.utils_heuristic.FuncOpterInfo">FuncOpterInfo</a></p>
 </dd>
 </dl>
@@ -667,9 +673,9 @@
 </section>
 </section>
 <section id="module-dramkit.optimizer.hpsoboa">
-<span id="hpsoboa"></span><h2>hpsoboa<a class="headerlink" href="#module-dramkit.optimizer.hpsoboa" title="Permalink to this headline"></a></h2>
+<span id="hpsoboa"></span><h2>hpsoboa<a class="headerlink" href="#module-dramkit.optimizer.hpsoboa" title="Permalink to this heading"></a></h2>
 <section id="id15">
-<h3>hpsoboa<a class="headerlink" href="#id15" title="Permalink to this headline"></a></h3>
+<h3>hpsoboa<a class="headerlink" href="#id15" title="Permalink to this heading"></a></h3>
 <dl class="py function">
 <dt class="sig sig-object py" id="dramkit.optimizer.hpsoboa.hpsoboa">
 <span class="sig-prename descclassname"><span class="pre">dramkit.optimizer.hpsoboa.</span></span><span class="sig-name descname"><span class="pre">hpsoboa</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">objf</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">func_opter_parms</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.optimizer.hpsoboa.hpsoboa" title="Permalink to this definition"></a></dt>
@@ -682,7 +688,7 @@
 </ul>
 </div>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>objf</strong> (<em>function</em>) – 目标函数。注：须事先转化为求极小值问题</p></li>
 <li><p><strong>func_opter_parms</strong> (<a class="reference internal" href="#dramkit.optimizer.utils_heuristic.FuncOpterInfo" title="dramkit.optimizer.utils_heuristic.FuncOpterInfo"><em>FuncOpterInfo</em></a>) – <p><a class="reference internal" href="#dramkit.optimizer.utils_heuristic.FuncOpterInfo" title="dramkit.optimizer.utils_heuristic.FuncOpterInfo"><code class="xref py py-class docutils literal notranslate"><span class="pre">dramkit.optimizer.utils_heuristic.FuncOpterInfo</span></code></a> 类，
@@ -712,10 +718,10 @@
 </p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p><strong>func_opter_parms</strong> – 更新优化过程之后的func_opter_parms</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p><a class="reference internal" href="#dramkit.optimizer.utils_heuristic.FuncOpterInfo" title="dramkit.optimizer.utils_heuristic.FuncOpterInfo">FuncOpterInfo</a></p>
 </dd>
 </dl>
@@ -726,9 +732,9 @@
 </section>
 </section>
 <section id="module-dramkit.optimizer.pso">
-<span id="pso"></span><h2>pso<a class="headerlink" href="#module-dramkit.optimizer.pso" title="Permalink to this headline"></a></h2>
+<span id="pso"></span><h2>pso<a class="headerlink" href="#module-dramkit.optimizer.pso" title="Permalink to this heading"></a></h2>
 <section id="id17">
-<h3>pso<a class="headerlink" href="#id17" title="Permalink to this headline"></a></h3>
+<h3>pso<a class="headerlink" href="#id17" title="Permalink to this heading"></a></h3>
 <dl class="py function">
 <dt class="sig sig-object py" id="dramkit.optimizer.pso.pso">
 <span class="sig-prename descclassname"><span class="pre">dramkit.optimizer.pso.</span></span><span class="sig-name descname"><span class="pre">pso</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">objf</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">func_opter_parms</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.optimizer.pso.pso" title="Permalink to this definition"></a></dt>
@@ -738,7 +744,7 @@
 <p>目前仅考虑自变量连续实数情况，以后可增加自变量为离散的情况</p>
 </div>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>objf</strong> (<em>function</em>) – 目标函数。注：须事先转化为求极小值问题</p></li>
 <li><p><strong>func_opter_parms</strong> (<a class="reference internal" href="#dramkit.optimizer.utils_heuristic.FuncOpterInfo" title="dramkit.optimizer.utils_heuristic.FuncOpterInfo"><em>FuncOpterInfo</em></a>) – <p><a class="reference internal" href="#dramkit.optimizer.utils_heuristic.FuncOpterInfo" title="dramkit.optimizer.utils_heuristic.FuncOpterInfo"><code class="xref py py-class docutils literal notranslate"><span class="pre">dramkit.optimizer.utils_heuristic.FuncOpterInfo</span></code></a> 类，
@@ -773,10 +779,10 @@
 </p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p><strong>func_opter_parms</strong> – 更新优化过程之后的func_opter_parms</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p><a class="reference internal" href="#dramkit.optimizer.utils_heuristic.FuncOpterInfo" title="dramkit.optimizer.utils_heuristic.FuncOpterInfo">FuncOpterInfo</a></p>
 </dd>
 </dl>
@@ -790,9 +796,9 @@
 </section>
 </section>
 <section id="module-dramkit.optimizer.utils_heuristic">
-<span id="utils-heuristic"></span><h2>utils_heuristic<a class="headerlink" href="#module-dramkit.optimizer.utils_heuristic" title="Permalink to this headline"></a></h2>
+<span id="utils-heuristic"></span><h2>utils_heuristic<a class="headerlink" href="#module-dramkit.optimizer.utils_heuristic" title="Permalink to this heading"></a></h2>
 <section id="funcopterinfo">
-<h3>FuncOpterInfo<a class="headerlink" href="#funcopterinfo" title="Permalink to this headline"></a></h3>
+<h3>FuncOpterInfo<a class="headerlink" href="#funcopterinfo" title="Permalink to this heading"></a></h3>
 <dl class="py class">
 <dt class="sig sig-object py" id="dramkit.optimizer.utils_heuristic.FuncOpterInfo">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">dramkit.optimizer.utils_heuristic.</span></span><span class="sig-name descname"><span class="pre">FuncOpterInfo</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">parms_func</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">{}</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">parms_opter</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">{}</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">parms_log</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">{}</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.optimizer.utils_heuristic.FuncOpterInfo" title="Permalink to this definition"></a></dt>
@@ -803,7 +809,7 @@
 <span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">parms_func</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">{}</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">parms_opter</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">{}</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">parms_log</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">{}</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.optimizer.utils_heuristic.FuncOpterInfo.__init__" title="Permalink to this definition"></a></dt>
 <dd><p>初始化目标函数和优化器信息</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>parms_func</strong> (<em>dict</em>) – 目标函数信息，默认应包含’func_name’, ‘x_lb’, ‘x_ub’, ‘dim’</p></li>
 <li><p><strong>parms_opter</strong> (<em>dcit</em>) – 优化函数需要用到的参数信息，默认应包含’opter_name’, ‘popsize’, ‘max_iter’</p></li>
@@ -901,13 +907,13 @@
 
 </section>
 <section id="rand-init">
-<h3>rand_init<a class="headerlink" href="#rand-init" title="Permalink to this headline"></a></h3>
+<h3>rand_init<a class="headerlink" href="#rand-init" title="Permalink to this heading"></a></h3>
 <dl class="py function">
 <dt class="sig sig-object py" id="dramkit.optimizer.utils_heuristic.rand_init">
 <span class="sig-prename descclassname"><span class="pre">dramkit.optimizer.utils_heuristic.</span></span><span class="sig-name descname"><span class="pre">rand_init</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">popsize</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dim</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lb</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ub</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.optimizer.utils_heuristic.rand_init" title="Permalink to this definition"></a></dt>
 <dd><p>自变量随机初始化</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>popsize</strong> (<em>int</em>) – 需要初始化的种群数（样本数）</p></li>
 <li><p><strong>dim</strong> (<em>int</em>) – 自变量维度数，dim的值应与lb和ub的长度相等</p></li>
@@ -915,10 +921,10 @@
 <li><p><strong>ub</strong> (<em>list</em>) – 自变量每个维度取值上界</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p><strong>pos</strong> – 随机初始化结果，形状为popsize * dim</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>np.ndarray</p>
 </dd>
 </dl>
@@ -926,19 +932,19 @@
 
 </section>
 <section id="sort-population">
-<h3>sort_population<a class="headerlink" href="#sort-population" title="Permalink to this headline"></a></h3>
+<h3>sort_population<a class="headerlink" href="#sort-population" title="Permalink to this heading"></a></h3>
 <dl class="py function">
 <dt class="sig sig-object py" id="dramkit.optimizer.utils_heuristic.sort_population">
 <span class="sig-prename descclassname"><span class="pre">dramkit.optimizer.utils_heuristic.</span></span><span class="sig-name descname"><span class="pre">sort_population</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">population</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fvals</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.optimizer.utils_heuristic.sort_population" title="Permalink to this definition"></a></dt>
 <dd><p>个体排序：按fvals值从小到大对population进行排序</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>population</strong> (<em>np.ndarray</em>) – 所有个体位置（所有解）</p></li>
 <li><p><strong>fvals</strong> (<em>np.array</em>) – 所有个体值列表</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p><ul class="simple">
 <li><p><strong>population</strong> (<em>np.ndarray</em>) – 排序后的种群</p></li>
 <li><p><strong>fvals</strong> (<em>np.array</em>) – 排序后的个体值列表</p></li>
@@ -951,9 +957,9 @@
 </section>
 </section>
 <section id="module-dramkit.optimizer.woa">
-<span id="woa"></span><h2>woa<a class="headerlink" href="#module-dramkit.optimizer.woa" title="Permalink to this headline"></a></h2>
+<span id="woa"></span><h2>woa<a class="headerlink" href="#module-dramkit.optimizer.woa" title="Permalink to this heading"></a></h2>
 <section id="id19">
-<h3>woa<a class="headerlink" href="#id19" title="Permalink to this headline"></a></h3>
+<h3>woa<a class="headerlink" href="#id19" title="Permalink to this heading"></a></h3>
 <dl class="py function">
 <dt class="sig sig-object py" id="dramkit.optimizer.woa.woa">
 <span class="sig-prename descclassname"><span class="pre">dramkit.optimizer.woa.</span></span><span class="sig-name descname"><span class="pre">woa</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">objf</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">func_opter_parms</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.optimizer.woa.woa" title="Permalink to this definition"></a></dt>
@@ -963,7 +969,7 @@
 <p>目前仅考虑自变量连续实数情况，以后可增加自变量为离散的情况</p>
 </div>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>objf</strong> (<em>function</em>) – 目标函数。注：须事先转化为求极小值问题</p></li>
 <li><p><strong>func_opter_parms</strong> (<a class="reference internal" href="#dramkit.optimizer.utils_heuristic.FuncOpterInfo" title="dramkit.optimizer.utils_heuristic.FuncOpterInfo"><em>FuncOpterInfo</em></a>) – <p><a class="reference internal" href="#dramkit.optimizer.utils_heuristic.FuncOpterInfo" title="dramkit.optimizer.utils_heuristic.FuncOpterInfo"><code class="xref py py-class docutils literal notranslate"><span class="pre">dramkit.optimizer.utils_heuristic.FuncOpterInfo</span></code></a> 类，
@@ -990,10 +996,10 @@
 </p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p><strong>func_opter_parms</strong> – 更新优化过程之后的func_opter_parms</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p><a class="reference internal" href="#dramkit.optimizer.utils_heuristic.FuncOpterInfo" title="dramkit.optimizer.utils_heuristic.FuncOpterInfo">FuncOpterInfo</a></p>
 </dd>
 </dl>
@@ -1012,14 +1018,14 @@
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="dramkit.logtools.html" class="btn btn-neutral float-left" title="logtools" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="dramkit.openai.html" class="btn btn-neutral float-left" title="openai" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
         <a href="dramkit.other.html" class="btn btn-neutral float-right" title="other" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2020-2022, YueYong Hu.</p>
+    <p>&#169; Copyright 2020-2023, YueYong Hu.</p>
   </div>
 
   Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a

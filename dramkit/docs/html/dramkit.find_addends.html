@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>find_addends &mdash; DramKit 0.3.15 documentation</title>
+  <title>find_addends &mdash; DramKit 0.5.42 documentation</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <!--[if lt IE 9]>
@@ -14,6 +14,7 @@
         <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
         <script src="_static/jquery.js"></script>
         <script src="_static/underscore.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="_static/doctools.js"></script>
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
@@ -27,11 +28,15 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-            <a href="index.html" class="icon icon-home"> DramKit
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            DramKit
           </a>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
@@ -78,6 +83,7 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="dramkit.logtools.html">logtools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dramkit.openai.html">openai</a></li>
 <li class="toctree-l1"><a class="reference internal" href="dramkit.optimizer.html">optimizer</a></li>
 <li class="toctree-l1"><a class="reference internal" href="dramkit.other.html">other</a></li>
 <li class="toctree-l1"><a class="reference internal" href="dramkit.plottools.html">plottools</a></li>
@@ -102,8 +108,8 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
-      <li>find_addends</li>
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">find_addends</li>
       <li class="wy-breadcrumbs-aside">
             <a href="_sources/dramkit.find_addends.rst.txt" rel="nofollow"> View page source</a>
       </li>
@@ -114,11 +120,11 @@
            <div itemprop="articleBody">
              
   <section id="find-addends">
-<h1>find_addends<a class="headerlink" href="#find-addends" title="Permalink to this headline"></a></h1>
+<h1>find_addends<a class="headerlink" href="#find-addends" title="Permalink to this heading"></a></h1>
 <section id="module-dramkit.find_addends.find_addends_backpack01float">
-<span id="find-addends-backpack01float"></span><h2>find_addends_backpack01float<a class="headerlink" href="#module-dramkit.find_addends.find_addends_backpack01float" title="Permalink to this headline"></a></h2>
+<span id="find-addends-backpack01float"></span><h2>find_addends_backpack01float<a class="headerlink" href="#module-dramkit.find_addends.find_addends_backpack01float" title="Permalink to this heading"></a></h2>
 <section id="id1">
-<h3>find_addends_backpack01float<a class="headerlink" href="#id1" title="Permalink to this headline"></a></h3>
+<h3>find_addends_backpack01float<a class="headerlink" href="#id1" title="Permalink to this heading"></a></h3>
 <dl class="py function">
 <dt class="sig sig-object py" id="dramkit.find_addends.find_addends_backpack01float.find_addends_backpack01float">
 <span class="sig-prename descclassname"><span class="pre">dramkit.find_addends.find_addends_backpack01float.</span></span><span class="sig-name descname"><span class="pre">find_addends_backpack01float</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tgt_sum</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">alts</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.find_addends.find_addends_backpack01float.find_addends_backpack01float" title="Permalink to this definition"></a></dt>
@@ -127,13 +133,13 @@
 <div class="line">思路：求和问题转化为物品价值和重量相等的01（正）浮点数背包问题</div>
 </div>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>tgt_sum</strong> (<em>float</em>) – 目标和</p></li>
 <li><p><strong>alts</strong> (<em>list</em>) – 备选加数列表</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p><ul class="simple">
 <li><p><strong>max_v</strong> (<em>float</em>) – 最近接tgt_sum的最大和</p></li>
 <li><p><strong>addends</strong> (<em>list</em>) – 和为max_v的备选数列表</p></li>
@@ -153,9 +159,9 @@
 </section>
 </section>
 <section id="module-dramkit.find_addends.find_addends_backpack01int">
-<span id="find-addends-backpack01int"></span><h2>find_addends_backpack01int<a class="headerlink" href="#module-dramkit.find_addends.find_addends_backpack01int" title="Permalink to this headline"></a></h2>
+<span id="find-addends-backpack01int"></span><h2>find_addends_backpack01int<a class="headerlink" href="#module-dramkit.find_addends.find_addends_backpack01int" title="Permalink to this heading"></a></h2>
 <section id="id2">
-<h3>find_addends_backpack01int<a class="headerlink" href="#id2" title="Permalink to this headline"></a></h3>
+<h3>find_addends_backpack01int<a class="headerlink" href="#id2" title="Permalink to this heading"></a></h3>
 <dl class="py function">
 <dt class="sig sig-object py" id="dramkit.find_addends.find_addends_backpack01int.find_addends_backpack01int">
 <span class="sig-prename descclassname"><span class="pre">dramkit.find_addends.find_addends_backpack01int.</span></span><span class="sig-name descname"><span class="pre">find_addends_backpack01int</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tgt_sum</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">alts</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.find_addends.find_addends_backpack01int.find_addends_backpack01int" title="Permalink to this definition"></a></dt>
@@ -165,13 +171,13 @@
 <div class="line">缺点: 浪费空间</div>
 </div>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>tgt_sum</strong> (<em>float</em>) – 目标和</p></li>
 <li><p><strong>alts</strong> (<em>list</em>) – 备选加数列表</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p><ul class="simple">
 <li><p><strong>max_v</strong> (<em>float</em>) – 最近接tgt_sum的最大和</p></li>
 <li><p><strong>trace</strong> (<em>list</em>) – 和为max_v的备选数列表</p></li>
@@ -186,9 +192,9 @@
 </section>
 </section>
 <section id="module-dramkit.find_addends.find_addends_bigfirst">
-<span id="find-addends-bigfirst"></span><h2>find_addends_bigfirst<a class="headerlink" href="#module-dramkit.find_addends.find_addends_bigfirst" title="Permalink to this headline"></a></h2>
+<span id="find-addends-bigfirst"></span><h2>find_addends_bigfirst<a class="headerlink" href="#module-dramkit.find_addends.find_addends_bigfirst" title="Permalink to this heading"></a></h2>
 <section id="id3">
-<h3>find_addends_bigfirst<a class="headerlink" href="#id3" title="Permalink to this headline"></a></h3>
+<h3>find_addends_bigfirst<a class="headerlink" href="#id3" title="Permalink to this heading"></a></h3>
 <dl class="py function">
 <dt class="sig sig-object py" id="dramkit.find_addends.find_addends_bigfirst.find_addends_bigfirst">
 <span class="sig-prename descclassname"><span class="pre">dramkit.find_addends.find_addends_bigfirst.</span></span><span class="sig-name descname"><span class="pre">find_addends_bigfirst</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tgt_sum</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">alts</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_adds</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">check_alts</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">add_num</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tol_below</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tol_above</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_loop</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1000000</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">global_loop</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">log_info</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">save_process</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">logger</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.find_addends.find_addends_bigfirst.find_addends_bigfirst" title="Permalink to this definition"></a></dt>
@@ -207,7 +213,7 @@
 </div>
 </div>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>tgt_sum</strong> (<em>float</em><em>, </em><em>int</em>) – 目标和</p></li>
 <li><p><strong>alts</strong> (<em>list</em>) – 备选数列表</p></li>
@@ -228,7 +234,7 @@
 <li><p><strong>logger</strong> (<em>Logger</em>) – logging日志记录器</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p><ul class="simple">
 <li><p><strong>choseds_best</strong> (<em>list</em>) – 最优备选数列表</p></li>
 <li><p><strong>choseds_addends</strong> (<em>list</em>) – 最终备选数列表</p></li>
@@ -242,9 +248,9 @@
 </section>
 </section>
 <section id="module-dramkit.find_addends.find_addends_recu">
-<span id="find-addends-recu"></span><h2>find_addends_recu<a class="headerlink" href="#module-dramkit.find_addends.find_addends_recu" title="Permalink to this headline"></a></h2>
+<span id="find-addends-recu"></span><h2>find_addends_recu<a class="headerlink" href="#module-dramkit.find_addends.find_addends_recu" title="Permalink to this heading"></a></h2>
 <section id="id4">
-<h3>find_addends_recu<a class="headerlink" href="#id4" title="Permalink to this headline"></a></h3>
+<h3>find_addends_recu<a class="headerlink" href="#id4" title="Permalink to this heading"></a></h3>
 <dl class="py function">
 <dt class="sig sig-object py" id="dramkit.find_addends.find_addends_recu.find_addends_recu">
 <span class="sig-prename descclassname"><span class="pre">dramkit.find_addends.find_addends_recu.</span></span><span class="sig-name descname"><span class="pre">find_addends_recu</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tgt_sum</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">alts</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_idx</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">choseds</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[]</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">results</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[]</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tol_below</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tol_above</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_result</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">keep_order</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.find_addends.find_addends_recu.find_addends_recu" title="Permalink to this definition"></a></dt>
@@ -254,7 +260,7 @@
 <div class="line">缺点: 受递归深度限制，alts太长就无法求解；没有可行解的情况下不能返回相对最优解？</div>
 </div>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>tgt_sum</strong> (<em>float</em><em>, </em><em>int</em>) – 目标和</p></li>
 <li><p><strong>alts</strong> (<em>list</em>) – 备选数列表</p></li>
@@ -267,10 +273,10 @@
 <li><p><strong>keep_order</strong> (<em>bool</em>) – 是否保结果中备选数的进入顺序与alts中的顺序一致，默认是</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p><strong>results</strong> – 所有可能的解列表</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>list</p>
 </dd>
 </dl>
@@ -281,9 +287,9 @@
 </section>
 </section>
 <section id="module-dramkit.find_addends.find_addends_smlfirst">
-<span id="find-addends-smlfirst"></span><h2>find_addends_smlfirst<a class="headerlink" href="#module-dramkit.find_addends.find_addends_smlfirst" title="Permalink to this headline"></a></h2>
+<span id="find-addends-smlfirst"></span><h2>find_addends_smlfirst<a class="headerlink" href="#module-dramkit.find_addends.find_addends_smlfirst" title="Permalink to this heading"></a></h2>
 <section id="id5">
-<h3>find_addends_smlfirst<a class="headerlink" href="#id5" title="Permalink to this headline"></a></h3>
+<h3>find_addends_smlfirst<a class="headerlink" href="#id5" title="Permalink to this heading"></a></h3>
 <dl class="py function">
 <dt class="sig sig-object py" id="dramkit.find_addends.find_addends_smlfirst.find_addends_smlfirst">
 <span class="sig-prename descclassname"><span class="pre">dramkit.find_addends.find_addends_smlfirst.</span></span><span class="sig-name descname"><span class="pre">find_addends_smlfirst</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tgt_sum</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">alts</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_adds</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tol_below</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tol_above</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_loop</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1000000</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">global_loop</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">log_info</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">save_process</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">logger</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.find_addends.find_addends_smlfirst.find_addends_smlfirst" title="Permalink to this definition"></a></dt>
@@ -297,7 +303,7 @@
 </div>
 </div>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>tgt_sum</strong> (<em>float</em><em>, </em><em>int</em>) – 目标和</p></li>
 <li><p><strong>alts</strong> (<em>list</em>) – 备选数列表</p></li>
@@ -311,7 +317,7 @@
 <li><p><strong>logger</strong> (<em>Logger</em>) – logging日志记录器</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p><ul class="simple">
 <li><p><strong>choseds_best</strong> (<em>list</em>) – 最优备选数列表</p></li>
 <li><p><strong>choseds_addends</strong> (<em>list</em>) – 最终备选数列表</p></li>
@@ -325,9 +331,9 @@
 </section>
 </section>
 <section id="module-dramkit.find_addends.find_addends_utils">
-<span id="find-addends-utils"></span><h2>find_addends_utils<a class="headerlink" href="#module-dramkit.find_addends.find_addends_utils" title="Permalink to this headline"></a></h2>
+<span id="find-addends-utils"></span><h2>find_addends_utils<a class="headerlink" href="#module-dramkit.find_addends.find_addends_utils" title="Permalink to this heading"></a></h2>
 <section id="tol2side-x-eq-y">
-<h3>tol2side_x_eq_y<a class="headerlink" href="#tol2side-x-eq-y" title="Permalink to this headline"></a></h3>
+<h3>tol2side_x_eq_y<a class="headerlink" href="#tol2side-x-eq-y" title="Permalink to this heading"></a></h3>
 <dl class="py function">
 <dt class="sig sig-object py" id="dramkit.find_addends.find_addends_utils.tol2side_x_eq_y">
 <span class="sig-prename descclassname"><span class="pre">dramkit.find_addends.find_addends_utils.</span></span><span class="sig-name descname"><span class="pre">tol2side_x_eq_y</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tol_below</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tol_above</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.find_addends.find_addends_utils.tol2side_x_eq_y" title="Permalink to this definition"></a></dt>
@@ -336,7 +342,7 @@
 
 </section>
 <section id="tol-eq">
-<h3>tol_eq<a class="headerlink" href="#tol-eq" title="Permalink to this headline"></a></h3>
+<h3>tol_eq<a class="headerlink" href="#tol-eq" title="Permalink to this heading"></a></h3>
 <dl class="py function">
 <dt class="sig sig-object py" id="dramkit.find_addends.find_addends_utils.tol_eq">
 <span class="sig-prename descclassname"><span class="pre">dramkit.find_addends.find_addends_utils.</span></span><span class="sig-name descname"><span class="pre">tol_eq</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tol</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.find_addends.find_addends_utils.tol_eq" title="Permalink to this definition"></a></dt>
@@ -345,7 +351,7 @@
 
 </section>
 <section id="tol-x-big-y">
-<h3>tol_x_big_y<a class="headerlink" href="#tol-x-big-y" title="Permalink to this headline"></a></h3>
+<h3>tol_x_big_y<a class="headerlink" href="#tol-x-big-y" title="Permalink to this heading"></a></h3>
 <dl class="py function">
 <dt class="sig sig-object py" id="dramkit.find_addends.find_addends_utils.tol_x_big_y">
 <span class="sig-prename descclassname"><span class="pre">dramkit.find_addends.find_addends_utils.</span></span><span class="sig-name descname"><span class="pre">tol_x_big_y</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tol</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.find_addends.find_addends_utils.tol_x_big_y" title="Permalink to this definition"></a></dt>
@@ -354,7 +360,7 @@
 
 </section>
 <section id="tol-x-big-eq-y">
-<h3>tol_x_big_eq_y<a class="headerlink" href="#tol-x-big-eq-y" title="Permalink to this headline"></a></h3>
+<h3>tol_x_big_eq_y<a class="headerlink" href="#tol-x-big-eq-y" title="Permalink to this heading"></a></h3>
 <dl class="py function">
 <dt class="sig sig-object py" id="dramkit.find_addends.find_addends_utils.tol_x_big_eq_y">
 <span class="sig-prename descclassname"><span class="pre">dramkit.find_addends.find_addends_utils.</span></span><span class="sig-name descname"><span class="pre">tol_x_big_eq_y</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tol</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.find_addends.find_addends_utils.tol_x_big_eq_y" title="Permalink to this definition"></a></dt>
@@ -363,7 +369,7 @@
 
 </section>
 <section id="tol-x-sml-y">
-<h3>tol_x_sml_y<a class="headerlink" href="#tol-x-sml-y" title="Permalink to this headline"></a></h3>
+<h3>tol_x_sml_y<a class="headerlink" href="#tol-x-sml-y" title="Permalink to this heading"></a></h3>
 <dl class="py function">
 <dt class="sig sig-object py" id="dramkit.find_addends.find_addends_utils.tol_x_sml_y">
 <span class="sig-prename descclassname"><span class="pre">dramkit.find_addends.find_addends_utils.</span></span><span class="sig-name descname"><span class="pre">tol_x_sml_y</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tol</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.find_addends.find_addends_utils.tol_x_sml_y" title="Permalink to this definition"></a></dt>
@@ -372,7 +378,7 @@
 
 </section>
 <section id="tol-x-sml-eq-y">
-<h3>tol_x_sml_eq_y<a class="headerlink" href="#tol-x-sml-eq-y" title="Permalink to this headline"></a></h3>
+<h3>tol_x_sml_eq_y<a class="headerlink" href="#tol-x-sml-eq-y" title="Permalink to this heading"></a></h3>
 <dl class="py function">
 <dt class="sig sig-object py" id="dramkit.find_addends.find_addends_utils.tol_x_sml_eq_y">
 <span class="sig-prename descclassname"><span class="pre">dramkit.find_addends.find_addends_utils.</span></span><span class="sig-name descname"><span class="pre">tol_x_sml_eq_y</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tol</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.find_addends.find_addends_utils.tol_x_sml_eq_y" title="Permalink to this definition"></a></dt>
@@ -381,13 +387,13 @@
 
 </section>
 <section id="get-alts-sml">
-<h3>get_alts_sml<a class="headerlink" href="#get-alts-sml" title="Permalink to this headline"></a></h3>
+<h3>get_alts_sml<a class="headerlink" href="#get-alts-sml" title="Permalink to this heading"></a></h3>
 <dl class="py function">
 <dt class="sig sig-object py" id="dramkit.find_addends.find_addends_utils.get_alts_sml">
 <span class="sig-prename descclassname"><span class="pre">dramkit.find_addends.find_addends_utils.</span></span><span class="sig-name descname"><span class="pre">get_alts_sml</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tgt_sum</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">alts</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sort_type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'descend'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tol</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">add_num</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.find_addends.find_addends_utils.get_alts_sml" title="Permalink to this definition"></a></dt>
 <dd><p>从给定备选列表alts中挑选出和小于等于tgt_sum的可行备选数</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>tgt_sum</strong> (<em>float</em><em>, </em><em>int</em>) – 目标和</p></li>
 <li><p><strong>alts</strong> (<em>list</em>) – 备选数列表</p></li>
@@ -396,10 +402,10 @@
 <li><p><strong>add_num</strong> (<em>int</em><em>, </em><em>None</em>) – 限制在加起来和大于等于tgt_sum的基础上增加的备选数个数，默认无限制</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p><strong>alts</strong> – 可行备选数列表</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>list</p>
 </dd>
 </dl>
@@ -407,13 +413,13 @@
 
 </section>
 <section id="backfind-sml1st-index">
-<h3>backfind_sml1st_index<a class="headerlink" href="#backfind-sml1st-index" title="Permalink to this headline"></a></h3>
+<h3>backfind_sml1st_index<a class="headerlink" href="#backfind-sml1st-index" title="Permalink to this heading"></a></h3>
 <dl class="py function">
 <dt class="sig sig-object py" id="dramkit.find_addends.find_addends_utils.backfind_sml1st_index">
 <span class="sig-prename descclassname"><span class="pre">dramkit.find_addends.find_addends_utils.</span></span><span class="sig-name descname"><span class="pre">backfind_sml1st_index</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tgt_sum</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">alts</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tol</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">loop_count</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.find_addends.find_addends_utils.backfind_sml1st_index" title="Permalink to this definition"></a></dt>
 <dd><p>alts从后往前搜索，返回第一个小于等于tgt_sum的数的索引</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>tgt_sum</strong> (<em>int</em><em>, </em><em>float</em>) – 目标值</p></li>
 <li><p><strong>alts</strong> (<em>list</em>) – 待比较数列表</p></li>
@@ -422,7 +428,7 @@
 否则在loop_count基础上继续记录迭代次数</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p><ul class="simple">
 <li><p><strong>idx</strong> (<em>int</em>) – 从后往前搜索，alts中小于等于tgt_sum的第一个数的索引</p></li>
 <li><p><strong>loop_count</strong> (<em>int</em>) – 搜索结束时的迭代次数</p></li>
@@ -447,7 +453,7 @@
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2020-2022, YueYong Hu.</p>
+    <p>&#169; Copyright 2020-2023, YueYong Hu.</p>
   </div>
 
   Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a

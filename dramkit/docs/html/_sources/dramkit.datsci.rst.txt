@@ -205,6 +205,16 @@ check_maxmins
 
 .. autofunction:: dramkit.datsci.find_maxmin.check_maxmins
 
+find_maxmin_rolling
+^^^^^^^^^^^^^^^^^^^^
+
+.. autofunction:: dramkit.datsci.find_maxmin.find_maxmin_rolling
+
+find_maxmin_cum
+^^^^^^^^^^^^^^^^
+
+.. autofunction:: dramkit.datsci.find_maxmin.find_maxmin_cum
+
 get_his_maxmin_info
 ^^^^^^^^^^^^^^^^^^^^
 
@@ -317,6 +327,16 @@ ExternalStd
     :undoc-members:
     :show-inheritance:
 
+cut_mad
+^^^^^^^^
+
+.. autofunction:: dramkit.datsci.preprocess.cut_mad
+
+cut_nstd
+^^^^^^^^^
+
+.. autofunction:: dramkit.datsci.preprocess.cut_nstd
+
 norm_std
 ^^^^^^^^^
 
@@ -326,6 +346,11 @@ norm_linear
 ^^^^^^^^^^^^
 
 .. autofunction:: dramkit.datsci.preprocess.norm_linear
+
+series_norm_linear
+^^^^^^^^^^^^^^^^^^^
+
+.. autofunction:: dramkit.datsci.preprocess.series_norm_linear
 
 norm_mid
 ^^^^^^^^^
@@ -941,3 +966,15 @@ plot_roc_bin
 ^^^^^^^^^^^^^
 
 .. autofunction:: dramkit.datsci.utils_ml.plot_roc_bin
+
+zigzag
+-------
+
+.. automodule:: dramkit.datsci.zigzag
+
+.. currentmodule:: dramkit.datsci.zigzag
+
+zigzag
+^^^^^^^
+
+.. autofunction:: dramkit.datsci.zigzag.zigzag

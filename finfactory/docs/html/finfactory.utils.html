@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>utils &mdash; FinFactory 0.0.19 documentation</title>
+  <title>utils &mdash; FinFactory 0.1.25 documentation</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <!--[if lt IE 9]>
@@ -14,6 +14,7 @@
         <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
         <script src="_static/jquery.js"></script>
         <script src="_static/underscore.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="_static/doctools.js"></script>
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
@@ -26,11 +27,15 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-            <a href="index.html" class="icon icon-home"> FinFactory
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            FinFactory
           </a>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
@@ -39,7 +44,7 @@
               <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="finfactory.html">finfactory</a></li>
-<li class="toctree-l1"><a class="reference internal" href="finfactory.apis.html">apis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="finfactory.findata.html">findata</a></li>
 <li class="toctree-l1"><a class="reference internal" href="finfactory.finplot.html">finplot</a></li>
 <li class="toctree-l1"><a class="reference internal" href="finfactory.fintools.html">fintools</a></li>
 <li class="toctree-l1"><a class="reference internal" href="finfactory.get_data.html">get_data</a></li>
@@ -48,6 +53,7 @@
 <li class="toctree-l3"><a class="reference internal" href="#logdirerror">LogDirError</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#tokenerror">TokenError</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#gen-py-logger">gen_py_logger</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#check-trade-date">check_trade_date</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#check-date-loss">check_date_loss</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#check-daily-data-is-new">check_daily_data_is_new</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#check-month-loss">check_month_loss</a></li>
@@ -82,8 +88,8 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
-      <li>utils</li>
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">utils</li>
       <li class="wy-breadcrumbs-aside">
             <a href="_sources/finfactory.utils.rst.txt" rel="nofollow"> View page source</a>
       </li>
@@ -94,11 +100,11 @@
            <div itemprop="articleBody">
              
   <section id="utils">
-<h1>utils<a class="headerlink" href="#utils" title="Permalink to this headline"></a></h1>
+<h1>utils<a class="headerlink" href="#utils" title="Permalink to this heading"></a></h1>
 <section id="id1">
-<h2>utils<a class="headerlink" href="#id1" title="Permalink to this headline"></a></h2>
+<h2>utils<a class="headerlink" href="#id1" title="Permalink to this heading"></a></h2>
 <span class="target" id="module-finfactory.utils.utils"></span><section id="logdirerror">
-<h3>LogDirError<a class="headerlink" href="#logdirerror" title="Permalink to this headline"></a></h3>
+<h3>LogDirError<a class="headerlink" href="#logdirerror" title="Permalink to this heading"></a></h3>
 <dl class="py class">
 <dt class="sig sig-object py" id="finfactory.utils.utils.LogDirError">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">finfactory.utils.utils.</span></span><span class="sig-name descname"><span class="pre">LogDirError</span></span><a class="headerlink" href="#finfactory.utils.utils.LogDirError" title="Permalink to this definition"></a></dt>
@@ -107,7 +113,7 @@
 
 </section>
 <section id="tokenerror">
-<h3>TokenError<a class="headerlink" href="#tokenerror" title="Permalink to this headline"></a></h3>
+<h3>TokenError<a class="headerlink" href="#tokenerror" title="Permalink to this heading"></a></h3>
 <dl class="py class">
 <dt class="sig sig-object py" id="finfactory.utils.utils.TokenError">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">finfactory.utils.utils.</span></span><span class="sig-name descname"><span class="pre">TokenError</span></span><a class="headerlink" href="#finfactory.utils.utils.TokenError" title="Permalink to this definition"></a></dt>
@@ -116,7 +122,7 @@
 
 </section>
 <section id="gen-py-logger">
-<h3>gen_py_logger<a class="headerlink" href="#gen-py-logger" title="Permalink to this headline"></a></h3>
+<h3>gen_py_logger<a class="headerlink" href="#gen-py-logger" title="Permalink to this heading"></a></h3>
 <dl class="py function">
 <dt class="sig sig-object py" id="finfactory.utils.utils.gen_py_logger">
 <span class="sig-prename descclassname"><span class="pre">finfactory.utils.utils.</span></span><span class="sig-name descname"><span class="pre">gen_py_logger</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pypath</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">logdir</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">config</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#finfactory.utils.utils.gen_py_logger" title="Permalink to this definition"></a></dt>
@@ -124,20 +130,29 @@
 </dd></dl>
 
 </section>
+<section id="check-trade-date">
+<h3>check_trade_date<a class="headerlink" href="#check-trade-date" title="Permalink to this heading"></a></h3>
+<dl class="py function">
+<dt class="sig sig-object py" id="finfactory.utils.utils.check_trade_date">
+<span class="sig-prename descclassname"><span class="pre">finfactory.utils.utils.</span></span><span class="sig-name descname"><span class="pre">check_trade_date</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">df</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ascending</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nature</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#finfactory.utils.utils.check_trade_date" title="Permalink to this definition"></a></dt>
+<dd><p>检查df中的交易日所在列并补全</p>
+</dd></dl>
+
+</section>
 <section id="check-date-loss">
-<h3>check_date_loss<a class="headerlink" href="#check-date-loss" title="Permalink to this headline"></a></h3>
+<h3>check_date_loss<a class="headerlink" href="#check-date-loss" title="Permalink to this heading"></a></h3>
 <dl class="py function">
 <dt class="sig sig-object py" id="finfactory.utils.utils.check_date_loss">
-<span class="sig-prename descclassname"><span class="pre">finfactory.utils.utils.</span></span><span class="sig-name descname"><span class="pre">check_date_loss</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">df</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">date_col</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">only_workday</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">del_weekend</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">return_loss_data</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">trade_dates_df_path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#finfactory.utils.utils.check_date_loss" title="Permalink to this definition"></a></dt>
+<span class="sig-prename descclassname"><span class="pre">finfactory.utils.utils.</span></span><span class="sig-name descname"><span class="pre">check_date_loss</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">df</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">date_col</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">only_workday</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">del_weekend</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">return_loss_data</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">market</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'SSE'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#finfactory.utils.utils.check_date_loss" title="Permalink to this definition"></a></dt>
 <dd><p>检查df中日期列缺失情况</p>
 </dd></dl>
 
 </section>
 <section id="check-daily-data-is-new">
-<h3>check_daily_data_is_new<a class="headerlink" href="#check-daily-data-is-new" title="Permalink to this headline"></a></h3>
+<h3>check_daily_data_is_new<a class="headerlink" href="#check-daily-data-is-new" title="Permalink to this heading"></a></h3>
 <dl class="py function">
 <dt class="sig sig-object py" id="finfactory.utils.utils.check_daily_data_is_new">
-<span class="sig-prename descclassname"><span class="pre">finfactory.utils.utils.</span></span><span class="sig-name descname"><span class="pre">check_daily_data_is_new</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">df_path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">date_col</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'date'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">only_trade_day</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">only_workday</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">only_inweek</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">trade_dates</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">return_data</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#finfactory.utils.utils.check_daily_data_is_new" title="Permalink to this definition"></a></dt>
+<span class="sig-prename descclassname"><span class="pre">finfactory.utils.utils.</span></span><span class="sig-name descname"><span class="pre">check_daily_data_is_new</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">df_path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">date_col</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'date'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">only_trade_day</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">only_workday</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">only_inweek</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">market</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'SSE'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">return_data</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#finfactory.utils.utils.check_daily_data_is_new" title="Permalink to this definition"></a></dt>
 <dd><div class="line-block">
 <div class="line">检查日频数据是否为最新值</div>
 <div class="line">注：若date_col列不存在，则默认将索引作为日期</div>
@@ -146,7 +161,7 @@
 
 </section>
 <section id="check-month-loss">
-<h3>check_month_loss<a class="headerlink" href="#check-month-loss" title="Permalink to this headline"></a></h3>
+<h3>check_month_loss<a class="headerlink" href="#check-month-loss" title="Permalink to this heading"></a></h3>
 <dl class="py function">
 <dt class="sig sig-object py" id="finfactory.utils.utils.check_month_loss">
 <span class="sig-prename descclassname"><span class="pre">finfactory.utils.utils.</span></span><span class="sig-name descname"><span class="pre">check_month_loss</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">df</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">month_col</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'month'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">return_loss_data</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#finfactory.utils.utils.check_month_loss" title="Permalink to this definition"></a></dt>
@@ -158,7 +173,7 @@
 
 </section>
 <section id="check-quarter-loss">
-<h3>check_quarter_loss<a class="headerlink" href="#check-quarter-loss" title="Permalink to this headline"></a></h3>
+<h3>check_quarter_loss<a class="headerlink" href="#check-quarter-loss" title="Permalink to this heading"></a></h3>
 <dl class="py function">
 <dt class="sig sig-object py" id="finfactory.utils.utils.check_quarter_loss">
 <span class="sig-prename descclassname"><span class="pre">finfactory.utils.utils.</span></span><span class="sig-name descname"><span class="pre">check_quarter_loss</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">df</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">quarter_col</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'quarter'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">return_loss_data</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#finfactory.utils.utils.check_quarter_loss" title="Permalink to this definition"></a></dt>
@@ -170,7 +185,7 @@
 
 </section>
 <section id="check-minute-loss">
-<h3>check_minute_loss<a class="headerlink" href="#check-minute-loss" title="Permalink to this headline"></a></h3>
+<h3>check_minute_loss<a class="headerlink" href="#check-minute-loss" title="Permalink to this heading"></a></h3>
 <dl class="py function">
 <dt class="sig sig-object py" id="finfactory.utils.utils.check_minute_loss">
 <span class="sig-prename descclassname"><span class="pre">finfactory.utils.utils.</span></span><span class="sig-name descname"><span class="pre">check_minute_loss</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">df</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">freq</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'1min'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">time_col</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">only_workday</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">del_weekend</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#finfactory.utils.utils.check_minute_loss" title="Permalink to this definition"></a></dt>
@@ -179,7 +194,7 @@
 
 </section>
 <section id="get-tushare-api">
-<h3>get_tushare_api<a class="headerlink" href="#get-tushare-api" title="Permalink to this headline"></a></h3>
+<h3>get_tushare_api<a class="headerlink" href="#get-tushare-api" title="Permalink to this heading"></a></h3>
 <dl class="py function">
 <dt class="sig sig-object py" id="finfactory.utils.utils.get_tushare_api">
 <span class="sig-prename descclassname"><span class="pre">finfactory.utils.utils.</span></span><span class="sig-name descname"><span class="pre">get_tushare_api</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">token</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">logger</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#finfactory.utils.utils.get_tushare_api" title="Permalink to this definition"></a></dt>
@@ -188,7 +203,7 @@
 
 </section>
 <section id="parms-check-ts-daily">
-<h3>parms_check_ts_daily<a class="headerlink" href="#parms-check-ts-daily" title="Permalink to this headline"></a></h3>
+<h3>parms_check_ts_daily<a class="headerlink" href="#parms-check-ts-daily" title="Permalink to this heading"></a></h3>
 <dl class="py function">
 <dt class="sig sig-object py" id="finfactory.utils.utils.parms_check_ts_daily">
 <span class="sig-prename descclassname"><span class="pre">finfactory.utils.utils.</span></span><span class="sig-name descname"><span class="pre">parms_check_ts_daily</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">save_path_df</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">time_col</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'date'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">default_last_date</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'19891231'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">start_lag</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#finfactory.utils.utils.parms_check_ts_daily" title="Permalink to this definition"></a></dt>
@@ -197,7 +212,7 @@
 
 </section>
 <section id="get-gm-api">
-<h3>get_gm_api<a class="headerlink" href="#get-gm-api" title="Permalink to this headline"></a></h3>
+<h3>get_gm_api<a class="headerlink" href="#get-gm-api" title="Permalink to this heading"></a></h3>
 <dl class="py function">
 <dt class="sig sig-object py" id="finfactory.utils.utils.get_gm_api">
 <span class="sig-prename descclassname"><span class="pre">finfactory.utils.utils.</span></span><span class="sig-name descname"><span class="pre">get_gm_api</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">token</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">logger</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#finfactory.utils.utils.get_gm_api" title="Permalink to this definition"></a></dt>
@@ -207,9 +222,9 @@
 </section>
 </section>
 <section id="module-finfactory.utils.utils_crypto">
-<span id="utils-crypto"></span><h2>utils_crypto<a class="headerlink" href="#module-finfactory.utils.utils_crypto" title="Permalink to this headline"></a></h2>
+<span id="utils-crypto"></span><h2>utils_crypto<a class="headerlink" href="#module-finfactory.utils.utils_crypto" title="Permalink to this heading"></a></h2>
 <section id="get-ccxt-market">
-<h3>get_ccxt_market<a class="headerlink" href="#get-ccxt-market" title="Permalink to this headline"></a></h3>
+<h3>get_ccxt_market<a class="headerlink" href="#get-ccxt-market" title="Permalink to this heading"></a></h3>
 <dl class="py function">
 <dt class="sig sig-object py" id="finfactory.utils.utils_crypto.get_ccxt_market">
 <span class="sig-prename descclassname"><span class="pre">finfactory.utils.utils_crypto.</span></span><span class="sig-name descname"><span class="pre">get_ccxt_market</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mkt</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'binance'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#finfactory.utils.utils_crypto.get_ccxt_market" title="Permalink to this definition"></a></dt>
@@ -217,7 +232,7 @@
 
 </section>
 <section id="check-loss">
-<h3>check_loss<a class="headerlink" href="#check-loss" title="Permalink to this headline"></a></h3>
+<h3>check_loss<a class="headerlink" href="#check-loss" title="Permalink to this heading"></a></h3>
 <dl class="py function">
 <dt class="sig sig-object py" id="finfactory.utils.utils_crypto.check_loss">
 <span class="sig-prename descclassname"><span class="pre">finfactory.utils.utils_crypto.</span></span><span class="sig-name descname"><span class="pre">check_loss</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">df</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">freq</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tcol</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'time'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">return_loss_data</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#finfactory.utils.utils_crypto.check_loss" title="Permalink to this definition"></a></dt>
@@ -229,7 +244,7 @@
 
 </section>
 <section id="get-klines-ccxt">
-<h3>get_klines_ccxt<a class="headerlink" href="#get-klines-ccxt" title="Permalink to this headline"></a></h3>
+<h3>get_klines_ccxt<a class="headerlink" href="#get-klines-ccxt" title="Permalink to this heading"></a></h3>
 <dl class="py function">
 <dt class="sig sig-object py" id="finfactory.utils.utils_crypto.get_klines_ccxt">
 <span class="sig-prename descclassname"><span class="pre">finfactory.utils.utils_crypto.</span></span><span class="sig-name descname"><span class="pre">get_klines_ccxt</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">symbol</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">start_time</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">freq</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'1d'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mkt</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">logger</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#finfactory.utils.utils_crypto.get_klines_ccxt" title="Permalink to this definition"></a></dt>
@@ -237,11 +252,20 @@
 <div class="line">ccxt获取K线数据</div>
 <div class="line">freq如’1d’, ‘1m’等</div>
 </div>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">symbol</span><span class="p">,</span> <span class="n">mkt</span> <span class="o">=</span> <span class="s1">&#39;BTC/USDT&#39;</span><span class="p">,</span> <span class="s1">&#39;binance&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">start_time</span> <span class="o">=</span> <span class="s1">&#39;2022-11-23 08:00:00&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">freq</span> <span class="o">=</span> <span class="s1">&#39;1d&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">df</span> <span class="o">=</span> <span class="n">get_klines_ccxt</span><span class="p">(</span><span class="n">symbol</span><span class="p">,</span> <span class="n">start_time</span><span class="p">,</span> <span class="n">freq</span><span class="o">=</span><span class="n">freq</span><span class="p">,</span> <span class="n">mkt</span><span class="o">=</span><span class="n">mkt</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">freq</span> <span class="o">=</span> <span class="s1">&#39;30m&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">df1</span> <span class="o">=</span> <span class="n">get_klines_ccxt</span><span class="p">(</span><span class="n">symbol</span><span class="p">,</span> <span class="n">start_time</span><span class="p">,</span> <span class="n">freq</span><span class="o">=</span><span class="n">freq</span><span class="p">,</span> <span class="n">mkt</span><span class="o">=</span><span class="n">mkt</span><span class="p">)</span>
+</pre></div>
+</div>
 </dd></dl>
 
 </section>
 <section id="merge-minute-candle">
-<h3>merge_minute_candle<a class="headerlink" href="#merge-minute-candle" title="Permalink to this headline"></a></h3>
+<h3>merge_minute_candle<a class="headerlink" href="#merge-minute-candle" title="Permalink to this heading"></a></h3>
 <dl class="py function">
 <dt class="sig sig-object py" id="finfactory.utils.utils_crypto.merge_minute_candle">
 <span class="sig-prename descclassname"><span class="pre">finfactory.utils.utils_crypto.</span></span><span class="sig-name descname"><span class="pre">merge_minute_candle</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">new_freq</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">30</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cols_sum</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tstart</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">time_trans</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#finfactory.utils.utils_crypto.merge_minute_candle" title="Permalink to this definition"></a></dt>
@@ -285,7 +309,7 @@
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2020-2022, YueYong Hu.</p>
+    <p>&#169; Copyright 2020-2023, YueYong Hu.</p>
   </div>
 
   Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a

@@ -6,7 +6,7 @@ Welcome to FinFactory's documentation!
    :caption: Contents:
 
    finfactory <finfactory>
-   apis <finfactory.apis>
+   findata <finfactory.findata>
    finplot <finfactory.finplot>
    fintools <finfactory.fintools>
    get_data <finfactory.get_data>

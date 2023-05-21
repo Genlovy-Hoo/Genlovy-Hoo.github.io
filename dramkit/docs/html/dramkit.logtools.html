@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>logtools &mdash; DramKit 0.3.15 documentation</title>
+  <title>logtools &mdash; DramKit 0.5.42 documentation</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <!--[if lt IE 9]>
@@ -14,11 +14,12 @@
         <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
         <script src="_static/jquery.js"></script>
         <script src="_static/underscore.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="_static/doctools.js"></script>
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="optimizer" href="dramkit.optimizer.html" />
+    <link rel="next" title="openai" href="dramkit.openai.html" />
     <link rel="prev" title="find_addends" href="dramkit.find_addends.html" /> 
 </head>
 
@@ -27,11 +28,15 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-            <a href="index.html" class="icon icon-home"> DramKit
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            DramKit
           </a>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
@@ -62,10 +67,12 @@
 <li class="toctree-l3"><a class="reference internal" href="#close-log-file">close_log_file</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#remove-handlers">remove_handlers</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#set-level">set_level</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#make-path-dir">make_path_dir</a></li>
 </ul>
 </li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="dramkit.openai.html">openai</a></li>
 <li class="toctree-l1"><a class="reference internal" href="dramkit.optimizer.html">optimizer</a></li>
 <li class="toctree-l1"><a class="reference internal" href="dramkit.other.html">other</a></li>
 <li class="toctree-l1"><a class="reference internal" href="dramkit.plottools.html">plottools</a></li>
@@ -90,8 +97,8 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
-      <li>logtools</li>
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">logtools</li>
       <li class="wy-breadcrumbs-aside">
             <a href="_sources/dramkit.logtools.rst.txt" rel="nofollow"> View page source</a>
       </li>
@@ -102,17 +109,17 @@
            <div itemprop="articleBody">
              
   <section id="logtools">
-<h1>logtools<a class="headerlink" href="#logtools" title="Permalink to this headline"></a></h1>
+<h1>logtools<a class="headerlink" href="#logtools" title="Permalink to this heading"></a></h1>
 <section id="module-dramkit.logtools.logger_general">
-<span id="logger-general"></span><h2>logger_general<a class="headerlink" href="#module-dramkit.logtools.logger_general" title="Permalink to this headline"></a></h2>
+<span id="logger-general"></span><h2>logger_general<a class="headerlink" href="#module-dramkit.logtools.logger_general" title="Permalink to this heading"></a></h2>
 <section id="get-logger">
-<h3>get_logger<a class="headerlink" href="#get-logger" title="Permalink to this headline"></a></h3>
+<h3>get_logger<a class="headerlink" href="#get-logger" title="Permalink to this heading"></a></h3>
 <dl class="py function">
 <dt class="sig sig-object py" id="dramkit.logtools.logger_general.get_logger">
 <span class="sig-prename descclassname"><span class="pre">dramkit.logtools.logger_general.</span></span><span class="sig-name descname"><span class="pre">get_logger</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fpath</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fmode</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'w'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">logname</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">level</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">screen_show</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.logtools.logger_general.get_logger" title="Permalink to this definition"></a></dt>
 <dd><p>获取常规日志记录，将日志信息保存在文件或在屏幕中打印</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>fapth</strong> (<em>str</em><em>, </em><em>None</em>) – 日志文件路径，默认为None即不保存日志文件</p></li>
 <li><p><strong>fmode</strong> (<em>str</em>) – ‘w’或’a’，取’w’时会覆盖原有日志文件（若存在的话），取’a’则追加记录</p></li>
@@ -124,7 +131,7 @@
 </p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p><cite>logging.Logger</cite> - 日志记录器</p>
 </dd>
 </dl>
@@ -142,15 +149,15 @@
 </section>
 </section>
 <section id="module-dramkit.logtools.logger_rotating">
-<span id="logger-rotating"></span><h2>logger_rotating<a class="headerlink" href="#module-dramkit.logtools.logger_rotating" title="Permalink to this headline"></a></h2>
+<span id="logger-rotating"></span><h2>logger_rotating<a class="headerlink" href="#module-dramkit.logtools.logger_rotating" title="Permalink to this heading"></a></h2>
 <section id="id1">
-<h3>get_logger<a class="headerlink" href="#id1" title="Permalink to this headline"></a></h3>
+<h3>get_logger<a class="headerlink" href="#id1" title="Permalink to this heading"></a></h3>
 <dl class="py function">
 <dt class="sig sig-object py" id="dramkit.logtools.logger_rotating.get_logger">
 <span class="sig-prename descclassname"><span class="pre">dramkit.logtools.logger_rotating.</span></span><span class="sig-name descname"><span class="pre">get_logger</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fpath</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fmode</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'w'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_kb</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">128</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nfile</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">logname</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">level</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">screen_show</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.logtools.logger_rotating.get_logger" title="Permalink to this definition"></a></dt>
 <dd><p>滚动日志记录(按文件大小)，将日志信息滚动保存在文件或在屏幕中打印</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>fapth</strong> (<em>str</em><em>, </em><em>None</em>) – 日志文件路径，默认为None即不保存日志文件</p></li>
 <li><p><strong>fmode</strong> (<em>str</em>) – ‘w’或’a’，取’w’时会覆盖原有日志文件（若存在的话），取’a’则追加记录</p></li>
@@ -164,7 +171,7 @@
 </p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p><cite>logging.Logger</cite> - 日志记录器</p>
 </dd>
 </dl>
@@ -178,15 +185,15 @@
 </section>
 </section>
 <section id="module-dramkit.logtools.logger_timedrotating">
-<span id="logger-timedrotating"></span><h2>logger_timedrotating<a class="headerlink" href="#module-dramkit.logtools.logger_timedrotating" title="Permalink to this headline"></a></h2>
+<span id="logger-timedrotating"></span><h2>logger_timedrotating<a class="headerlink" href="#module-dramkit.logtools.logger_timedrotating" title="Permalink to this heading"></a></h2>
 <section id="id2">
-<h3>get_logger<a class="headerlink" href="#id2" title="Permalink to this headline"></a></h3>
+<h3>get_logger<a class="headerlink" href="#id2" title="Permalink to this heading"></a></h3>
 <dl class="py function">
 <dt class="sig sig-object py" id="dramkit.logtools.logger_timedrotating.get_logger">
 <span class="sig-prename descclassname"><span class="pre">dramkit.logtools.logger_timedrotating.</span></span><span class="sig-name descname"><span class="pre">get_logger</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fpath</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">when</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'M'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">interval</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nfile</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">logname</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">level</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">screen_show</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.logtools.logger_timedrotating.get_logger" title="Permalink to this definition"></a></dt>
 <dd><p>滚动日志记录（按时间），将日志信息滚动保存在文件或在屏幕中打印</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>fapth</strong> (<em>str</em><em>, </em><em>None</em>) – 日志文件路径，默认为None即不保存日志文件</p></li>
 <li><p><strong>when</strong> (<em>str</em>) – 回滚时间单位:
@@ -201,7 +208,7 @@
 </p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p><cite>logging.Logger</cite> - 日志记录器</p>
 </dd>
 </dl>
@@ -215,15 +222,15 @@
 </section>
 </section>
 <section id="module-dramkit.logtools.utils_logger">
-<span id="utils-logger"></span><h2>utils_logger<a class="headerlink" href="#module-dramkit.logtools.utils_logger" title="Permalink to this headline"></a></h2>
+<span id="utils-logger"></span><h2>utils_logger<a class="headerlink" href="#module-dramkit.logtools.utils_logger" title="Permalink to this heading"></a></h2>
 <section id="logger-show">
-<h3>logger_show<a class="headerlink" href="#logger-show" title="Permalink to this headline"></a></h3>
+<h3>logger_show<a class="headerlink" href="#logger-show" title="Permalink to this heading"></a></h3>
 <dl class="py function">
 <dt class="sig sig-object py" id="dramkit.logtools.utils_logger.logger_show">
 <span class="sig-prename descclassname"><span class="pre">dramkit.logtools.utils_logger.</span></span><span class="sig-name descname"><span class="pre">logger_show</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">log_str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">logger</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">level</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'info'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.logtools.utils_logger.logger_show" title="Permalink to this definition"></a></dt>
 <dd><p>显示|记录日志信息</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>log_str</strong> (<em>str</em>) – 日志内容字符串</p></li>
 <li><p><strong>logger</strong> (<em>logging.Logger</em><em>, </em><em>None</em><em>, </em><em>nan</em><em>, </em><em>False</em>) – <ul>
@@ -246,7 +253,7 @@
 
 </section>
 <section id="close-log-file">
-<h3>close_log_file<a class="headerlink" href="#close-log-file" title="Permalink to this headline"></a></h3>
+<h3>close_log_file<a class="headerlink" href="#close-log-file" title="Permalink to this heading"></a></h3>
 <dl class="py function">
 <dt class="sig sig-object py" id="dramkit.logtools.utils_logger.close_log_file">
 <span class="sig-prename descclassname"><span class="pre">dramkit.logtools.utils_logger.</span></span><span class="sig-name descname"><span class="pre">close_log_file</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">logger</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.logtools.utils_logger.close_log_file" title="Permalink to this definition"></a></dt>
@@ -255,7 +262,7 @@
 
 </section>
 <section id="remove-handlers">
-<h3>remove_handlers<a class="headerlink" href="#remove-handlers" title="Permalink to this headline"></a></h3>
+<h3>remove_handlers<a class="headerlink" href="#remove-handlers" title="Permalink to this heading"></a></h3>
 <dl class="py function">
 <dt class="sig sig-object py" id="dramkit.logtools.utils_logger.remove_handlers">
 <span class="sig-prename descclassname"><span class="pre">dramkit.logtools.utils_logger.</span></span><span class="sig-name descname"><span class="pre">remove_handlers</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">logger</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.logtools.utils_logger.remove_handlers" title="Permalink to this definition"></a></dt>
@@ -270,11 +277,20 @@
 
 </section>
 <section id="set-level">
-<h3>set_level<a class="headerlink" href="#set-level" title="Permalink to this headline"></a></h3>
+<h3>set_level<a class="headerlink" href="#set-level" title="Permalink to this heading"></a></h3>
 <dl class="py function">
 <dt class="sig sig-object py" id="dramkit.logtools.utils_logger.set_level">
 <span class="sig-prename descclassname"><span class="pre">dramkit.logtools.utils_logger.</span></span><span class="sig-name descname"><span class="pre">set_level</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">logger</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">level</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.logtools.utils_logger.set_level" title="Permalink to this definition"></a></dt>
 <dd><p>设置日志显示基本</p>
+</dd></dl>
+
+</section>
+<section id="make-path-dir">
+<h3>make_path_dir<a class="headerlink" href="#make-path-dir" title="Permalink to this heading"></a></h3>
+<dl class="py function">
+<dt class="sig sig-object py" id="dramkit.logtools.utils_logger.make_path_dir">
+<span class="sig-prename descclassname"><span class="pre">dramkit.logtools.utils_logger.</span></span><span class="sig-name descname"><span class="pre">make_path_dir</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fpath</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dramkit.logtools.utils_logger.make_path_dir" title="Permalink to this definition"></a></dt>
+<dd><p>若fpath所指文件夹路径不存在，则新建之</p>
 </dd></dl>
 
 </section>
@@ -286,13 +302,13 @@
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="dramkit.find_addends.html" class="btn btn-neutral float-left" title="find_addends" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="dramkit.optimizer.html" class="btn btn-neutral float-right" title="optimizer" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="dramkit.openai.html" class="btn btn-neutral float-right" title="openai" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2020-2022, YueYong Hu.</p>
+    <p>&#169; Copyright 2020-2023, YueYong Hu.</p>
   </div>
 
   Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a

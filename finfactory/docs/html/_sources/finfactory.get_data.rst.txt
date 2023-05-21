@@ -40,6 +40,11 @@ update_minute
 
 .. autofunction:: finfactory.get_data.ccxt_minute.update_minute
 
+try_add_loss_data
+^^^^^^^^^^^^^^^^^^
+
+.. autofunction:: finfactory.get_data.ccxt_minute.try_add_loss_data
+
 update_minute_check
 ^^^^^^^^^^^^^^^^^^^^
 
@@ -140,6 +145,18 @@ update_bond_yields_check
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. autofunction:: finfactory.get_data.chn_national_bond_rates.update_bond_yields_check
+
+eastmoney
+----------
+
+.. automodule:: finfactory.get_data.eastmoney
+
+.. currentmodule:: finfactory.get_data.eastmoney
+
+get_index_realtime
+^^^^^^^^^^^^^^^^^^^
+
+.. autofunction:: finfactory.get_data.eastmoney.get_index_realtime
 
 eastmoney_tonorth_netbuy_daily
 -------------------------------
@@ -420,6 +437,43 @@ update_daily_info_check
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. autofunction:: finfactory.get_data.sw_daily_info.update_daily_info_check
+
+sw_daily_info_old
+------------------
+
+.. automodule:: finfactory.get_data.sw_daily_info_old
+
+.. currentmodule:: finfactory.get_data.sw_daily_info_old
+
+load_sw_daily_ori
+^^^^^^^^^^^^^^^^^^
+
+.. autofunction:: finfactory.get_data.sw_daily_info_old.load_sw_daily_ori
+
+check_loss
+^^^^^^^^^^^
+
+.. autofunction:: finfactory.get_data.sw_daily_info_old.check_loss
+
+get_daily_info_by_date
+^^^^^^^^^^^^^^^^^^^^^^^
+
+.. autofunction:: finfactory.get_data.sw_daily_info_old.get_daily_info_by_date
+
+get_daily_info_by_dates
+^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. autofunction:: finfactory.get_data.sw_daily_info_old.get_daily_info_by_dates
+
+update_daily_info
+^^^^^^^^^^^^^^^^^^
+
+.. autofunction:: finfactory.get_data.sw_daily_info_old.update_daily_info
+
+update_daily_info_check
+^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. autofunction:: finfactory.get_data.sw_daily_info_old.update_daily_info_check
 
 tushare_astocks_list
 ---------------------

@@ -63,3 +63,8 @@ set_level
 ^^^^^^^^^^
 
 .. autofunction:: dramkit.logtools.utils_logger.set_level
+
+make_path_dir
+^^^^^^^^^^^^^^
+
+.. autofunction:: dramkit.logtools.utils_logger.make_path_dir

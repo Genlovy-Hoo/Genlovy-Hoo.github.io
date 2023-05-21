@@ -1,0 +1,24 @@
+findata
+========
+
+api
+----
+
+.. automodule:: finfactory.findata.api
+
+.. currentmodule:: finfactory.findata.api
+
+get_factor_data
+^^^^^^^^^^^^^^^^
+
+.. autofunction:: finfactory.findata.api.get_factor_data
+
+gptchat0
+^^^^^^^^^
+
+.. autofunction:: finfactory.findata.api.gptchat0
+
+gptchat
+^^^^^^^^
+
+.. autofunction:: finfactory.findata.api.gptchat
